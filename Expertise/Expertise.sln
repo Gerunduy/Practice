@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpertiseWCFService", "ExpertiseWCFService\ExpertiseWCFService.csproj", "{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpertiseWPFApplication", "ExpertiseWPFApplication\ExpertiseWPFApplication.csproj", "{D2D818AA-0BB7-4B34-938C-F74E2264930A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2D818AA-0BB7-4B34-938C-F74E2264930A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2D818AA-0BB7-4B34-938C-F74E2264930A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2D818AA-0BB7-4B34-938C-F74E2264930A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2D818AA-0BB7-4B34-938C-F74E2264930A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
