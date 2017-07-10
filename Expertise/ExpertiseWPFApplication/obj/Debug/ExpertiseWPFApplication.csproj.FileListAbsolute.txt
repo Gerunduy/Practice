@@ -12,3 +12,17 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csproj.GenerateResource.Cache
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.exe
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.pdb
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\bin\Debug\ExpertiseWPFApplication.exe.config
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.exe
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.pdb
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\bin\Debug\ExpertiseWPFApplication.exe
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\bin\Debug\ExpertiseWPFApplication.pdb
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csprojResolveAssemblyReference.cache
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\MainWindow.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\App.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication_MarkupCompile.cache
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication_MarkupCompile.lref
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\MainWindow.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.g.resources
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.Properties.Resources.resources
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csproj.GenerateResource.Cache
