@@ -26,3 +26,5 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.g.resources
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.Properties.Resources.resources
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csproj.GenerateResource.Cache
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\GRNTI.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\GRNTI.baml

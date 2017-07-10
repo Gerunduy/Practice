@@ -1,0 +1,18 @@
+﻿<Window x:Class="ExpertiseWPFApplication.GRNTI"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="GRNTI" Height="293.617" Width="520.213">
+    <Grid>
+        <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="*" Binding="{Binding code_grnti }" Header="Код ГРНТИ" />
+                <DataGridTextColumn Width="1.3*" Binding="{Binding name_grnti  }" Header="Название"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

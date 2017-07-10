@@ -5,10 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="399" Width="573">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="274,77,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <DataGrid x:Name="dataGrid1" HorizontalAlignment="Left" Margin="0,155,0,0" VerticalAlignment="Top" Height="110" Width="507"/>
+        <Button x:Name="button" Content="Новый проект" HorizontalAlignment="Left" Margin="33,40,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button x:Name="button1" Content="Новый эксперт" HorizontalAlignment="Left" Margin="33,81,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button x:Name="button2" Content="Новая экспертиза" HorizontalAlignment="Left" Margin="33,121,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button x:Name="button3" Content="Проекты" HorizontalAlignment="Left" Margin="155,40,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="button4" Content="Эксперты" HorizontalAlignment="Left" Margin="155,81,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="button5" Content="Критерии" HorizontalAlignment="Left" Margin="155,116,0,0" VerticalAlignment="Top" Width="113"/>
+        <Button x:Name="button6" Content="Направление науки" HorizontalAlignment="Left" Margin="155,154,0,0" VerticalAlignment="Top" Width="116"/>
+        <Button x:Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="155,191,0,0" VerticalAlignment="Top" Width="113" Click="button7_Click"/>
+        <Button x:Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Left" Margin="273,40,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Left" Margin="273,81,0,0" VerticalAlignment="Top" Width="144"/>
+        <Button x:Name="button10" Content="вход" HorizontalAlignment="Left" Margin="422,40,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="меню" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="справочники" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="отчеты" HorizontalAlignment="Left" Margin="273,10,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="кабинет эксперта" HorizontalAlignment="Left" Margin="422,10,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
