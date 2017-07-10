@@ -12,3 +12,6 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csproj.GenerateResource.Cache
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.exe
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.pdb
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\bin\Debug\ExpertiseWPFApplication.exe.config
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.exe
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.pdb
