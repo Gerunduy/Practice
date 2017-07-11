@@ -15,6 +15,10 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         string GetData(int value);
+        [OperationContract]
+        List<GRNTI> GetListGRNTI();
+        [OperationContract]
+        string Gethello();
 
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);

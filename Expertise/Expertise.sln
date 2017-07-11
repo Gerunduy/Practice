@@ -6,6 +6,9 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpertiseWCFService", "ExpertiseWCFService\ExpertiseWCFService.csproj", "{2A0DFF2D-09D5-447C-B4E9-9C35692B1957}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExpertiseWPFApplication", "ExpertiseWPFApplication\ExpertiseWPFApplication.csproj", "{D2D818AA-0BB7-4B34-938C-F74E2264930A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2A0DFF2D-09D5-447C-B4E9-9C35692B1957} = {2A0DFF2D-09D5-447C-B4E9-9C35692B1957}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

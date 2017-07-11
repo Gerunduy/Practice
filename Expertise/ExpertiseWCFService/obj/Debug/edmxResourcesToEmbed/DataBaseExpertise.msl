@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище db_AAZModelContainer" CdmEntityContainer="db_AAZEntities">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="db_AAZModel.Authors">
+        <MappingFragment StoreEntitySet="Authors">
+          <ScalarProperty Name="id_author" ColumnName="id_author" />
+          <ScalarProperty Name="surname_author" ColumnName="surname_author" />
+          <ScalarProperty Name="name_author" ColumnName="name_author" />
+          <ScalarProperty Name="patronymic_author" ColumnName="patronymic_author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CatCrit">
+      <EntityTypeMapping TypeName="db_AAZModel.CatCrit">
+        <MappingFragment StoreEntitySet="CatCrit">
+          <ScalarProperty Name="id_cat_crit" ColumnName="id_cat_crit" />
+          <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="db_AAZModel.Categories">
+        <MappingFragment StoreEntitySet="Categories">
+          <ScalarProperty Name="id_category" ColumnName="id_category" />
+          <ScalarProperty Name="name_category" ColumnName="name_category" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Criterions">
+      <EntityTypeMapping TypeName="db_AAZModel.Criterions">
+        <MappingFragment StoreEntitySet="Criterions">
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+          <ScalarProperty Name="name_crit" ColumnName="name_crit" />
+          <ScalarProperty Name="qualit_crit" ColumnName="qualit_crit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CritValues">
+      <EntityTypeMapping TypeName="db_AAZModel.CritValues">
+        <MappingFragment StoreEntitySet="CritValues">
+          <ScalarProperty Name="id_value" ColumnName="id_value" />
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+          <ScalarProperty Name="valid_values" ColumnName="valid_values" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpCrit">
+      <EntityTypeMapping TypeName="db_AAZModel.ExpCrit">
+        <MappingFragment StoreEntitySet="ExpCrit">
+          <ScalarProperty Name="id_exp_crit" ColumnName="id_exp_crit" />
+          <ScalarProperty Name="id_exp" ColumnName="id_exp" />
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpertFos">
+      <EntityTypeMapping TypeName="db_AAZModel.ExpertFos">
+        <MappingFragment StoreEntitySet="ExpertFos">
+          <ScalarProperty Name="id_expert_fos" ColumnName="id_expert_fos" />
+          <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+          <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExpertiseMark">
+      <EntityTypeMapping TypeName="db_AAZModel.ExpertiseMark">
+        <MappingFragment StoreEntitySet="ExpertiseMark">
+          <ScalarProperty Name="id_expertise_mark" ColumnName="id_expertise_mark" />
+          <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+          <ScalarProperty Name="id_mark" ColumnName="id_mark" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Expertises">
+      <EntityTypeMapping TypeName="db_AAZModel.Expertises">
+        <MappingFragment StoreEntitySet="Expertises">
+          <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+          <ScalarProperty Name="name_expertise" ColumnName="name_expertise" />
+          <ScalarProperty Name="date_expertise" ColumnName="date_expertise" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Experts">
+      <EntityTypeMapping TypeName="db_AAZModel.Experts">
+        <MappingFragment StoreEntitySet="Experts">
+          <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+          <ScalarProperty Name="surname_expert" ColumnName="surname_expert" />
+          <ScalarProperty Name="name_expert" ColumnName="name_expert" />
+          <ScalarProperty Name="patronymic_expert" ColumnName="patronymic_expert" />
+          <ScalarProperty Name="job_expert" ColumnName="job_expert" />
+          <ScalarProperty Name="post_expert" ColumnName="post_expert" />
+          <ScalarProperty Name="degree_expert" ColumnName="degree_expert" />
+          <ScalarProperty Name="rank_expert" ColumnName="rank_expert" />
+          <ScalarProperty Name="contacts_expert" ColumnName="contacts_expert" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FiledsOfScience">
+      <EntityTypeMapping TypeName="db_AAZModel.FiledsOfScience">
+        <MappingFragment StoreEntitySet="FiledsOfScience">
+          <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+          <ScalarProperty Name="name_fos" ColumnName="name_fos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Filmes">
+      <EntityTypeMapping TypeName="db_AAZModel.Filmes">
+        <MappingFragment StoreEntitySet="Filmes">
+          <ScalarProperty Name="id_film" ColumnName="id_film" />
+          <ScalarProperty Name="name_film" ColumnName="name_film" />
+          <ScalarProperty Name="year_film" ColumnName="year_film" />
+          <ScalarProperty Name="rating_film" ColumnName="rating_film" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FilmGenre">
+      <EntityTypeMapping TypeName="db_AAZModel.FilmGenre">
+        <MappingFragment StoreEntitySet="FilmGenre">
+          <ScalarProperty Name="id_film_genre" ColumnName="id_film_genre" />
+          <ScalarProperty Name="id_film" ColumnName="id_film" />
+          <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genrs">
+      <EntityTypeMapping TypeName="db_AAZModel.Genrs">
+        <MappingFragment StoreEntitySet="Genrs">
+          <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+          <ScalarProperty Name="name_genre" ColumnName="name_genre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GRNTI">
+      <EntityTypeMapping TypeName="db_AAZModel.GRNTI">
+        <MappingFragment StoreEntitySet="GRNTI">
+          <ScalarProperty Name="code_grnti" ColumnName="code_grnti" />
+          <ScalarProperty Name="name_grnti" ColumnName="name_grnti" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Logs">
+      <EntityTypeMapping TypeName="db_AAZModel.Logs">
+        <MappingFragment StoreEntitySet="Logs">
+          <ScalarProperty Name="log_id" ColumnName="log_id" />
+          <ScalarProperty Name="log_date" ColumnName="log_date" />
+          <ScalarProperty Name="log_source" ColumnName="log_source" />
+          <ScalarProperty Name="log_message" ColumnName="log_message" />
+          <ScalarProperty Name="log_place" ColumnName="log_place" />
+          <ScalarProperty Name="log_param" ColumnName="log_param" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Marks">
+      <EntityTypeMapping TypeName="db_AAZModel.Marks">
+        <MappingFragment StoreEntitySet="Marks">
+          <ScalarProperty Name="id_mark" ColumnName="id_mark" />
+          <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="rating" ColumnName="rating" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectAuthors">
+      <EntityTypeMapping TypeName="db_AAZModel.ProjectAuthors">
+        <MappingFragment StoreEntitySet="ProjectAuthors">
+          <ScalarProperty Name="id_proj_author" ColumnName="id_proj_author" />
+          <ScalarProperty Name="id_proj" ColumnName="id_proj" />
+          <ScalarProperty Name="id_author" ColumnName="id_author" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectExpertise">
+      <EntityTypeMapping TypeName="db_AAZModel.ProjectExpertise">
+        <MappingFragment StoreEntitySet="ProjectExpertise">
+          <ScalarProperty Name="id_project_expertise" ColumnName="id_project_expertise" />
+          <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="accept" ColumnName="accept" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProjectFos">
+      <EntityTypeMapping TypeName="db_AAZModel.ProjectFos">
+        <MappingFragment StoreEntitySet="ProjectFos">
+          <ScalarProperty Name="id_project_fos" ColumnName="id_project_fos" />
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Projects">
+      <EntityTypeMapping TypeName="db_AAZModel.Projects">
+        <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="id_project" ColumnName="id_project" />
+          <ScalarProperty Name="name_project" ColumnName="name_project" />
+          <ScalarProperty Name="lead_project" ColumnName="lead_project" />
+          <ScalarProperty Name="grnti_project" ColumnName="grnti_project" />
+          <ScalarProperty Name="begin_project" ColumnName="begin_project" />
+          <ScalarProperty Name="end_project" ColumnName="end_project" />
+          <ScalarProperty Name="money_project" ColumnName="money_project" />
+          <ScalarProperty Name="email_project" ColumnName="email_project" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RatedFilms">
+      <EntityTypeMapping TypeName="db_AAZModel.RatedFilms">
+        <MappingFragment StoreEntitySet="RatedFilms">
+          <ScalarProperty Name="id_watch" ColumnName="id_watch" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="film_id" ColumnName="film_id" />
+          <ScalarProperty Name="user_rate_film" ColumnName="user_rate_film" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RatedSerials">
+      <EntityTypeMapping TypeName="db_AAZModel.RatedSerials">
+        <MappingFragment StoreEntitySet="RatedSerials">
+          <ScalarProperty Name="id_watch_ser" ColumnName="id_watch_ser" />
+          <ScalarProperty Name="user_id" ColumnName="user_id" />
+          <ScalarProperty Name="ser_id" ColumnName="ser_id" />
+          <ScalarProperty Name="user_rate_ser" ColumnName="user_rate_ser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rights">
+      <EntityTypeMapping TypeName="db_AAZModel.Rights">
+        <MappingFragment StoreEntitySet="Rights">
+          <ScalarProperty Name="id_right" ColumnName="id_right" />
+          <ScalarProperty Name="name_right" ColumnName="name_right" />
+          <ScalarProperty Name="level_right" ColumnName="level_right" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Serials">
+      <EntityTypeMapping TypeName="db_AAZModel.Serials">
+        <MappingFragment StoreEntitySet="Serials">
+          <ScalarProperty Name="id_ser" ColumnName="id_ser" />
+          <ScalarProperty Name="name_ser" ColumnName="name_ser" />
+          <ScalarProperty Name="season_ser" ColumnName="season_ser" />
+          <ScalarProperty Name="year_ser" ColumnName="year_ser" />
+          <ScalarProperty Name="rating_ser" ColumnName="rating_ser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="db_AAZModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="db_AAZModel.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="id_user" ColumnName="id_user" />
+          <ScalarProperty Name="user_id_right" ColumnName="user_id_right" />
+          <ScalarProperty Name="nick_user" ColumnName="nick_user" />
+          <ScalarProperty Name="login_user" ColumnName="login_user" />
+          <ScalarProperty Name="password_user" ColumnName="password_user" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="database_firewall_rules">
+      <EntityTypeMapping TypeName="db_AAZModel.database_firewall_rules">
+        <MappingFragment StoreEntitySet="database_firewall_rules">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+          <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+          <ScalarProperty Name="create_date" ColumnName="create_date" />
+          <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

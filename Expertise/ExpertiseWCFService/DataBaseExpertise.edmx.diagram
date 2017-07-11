@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4a9456cd127248b7af0dbcbb93fb46d0" Name="Diagram1" ZoomLevel="93">
+        <EntityTypeShape EntityType="db_AAZModel.Authors" Width="1.5" PointX="13" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.CatCrit" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Categories" Width="1.5" PointX="0.75" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Criterions" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.CritValues" Width="1.5" PointX="3" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ExpCrit" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ExpertFos" Width="1.5" PointX="15.25" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ExpertiseMark" Width="1.5" PointX="8.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Expertises" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Experts" Width="1.5" PointX="3.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.FiledsOfScience" Width="1.5" PointX="13" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Filmes" Width="1.5" PointX="8" PointY="15.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.FilmGenre" Width="1.5" PointX="10.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Genrs" Width="1.5" PointX="8" PointY="22.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.GRNTI" Width="1.5" PointX="10.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Logs" Width="1.5" PointX="5.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Marks" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ProjectAuthors" Width="1.5" PointX="15.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ProjectExpertise" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.ProjectFos" Width="1.5" PointX="15.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Projects" Width="1.5" PointX="13" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.RatedFilms" Width="1.5" PointX="10.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.RatedSerials" Width="1.5" PointX="10.25" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Rights" Width="1.5" PointX="5.75" PointY="12" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Serials" Width="1.5" PointX="8" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="2.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Users" Width="1.5" PointX="8" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.database_firewall_rules" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectAuthors_Authors" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_CatCrit_Categories" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_CatCrit_Criterions" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_CritValues_Criterions" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpCrit_Criterions" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_Marks_Criterions" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpCrit_Expertises" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertFos_Experts" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertFos_FiledsOfScience" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertiseMark_Expertises" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertiseMark_Marks" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectExpertise_Expertises" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_Marks_Experts" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectFos_FiledsOfScience" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_FilmGenre_Filmes" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_RatedFilms_Filmes" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_FilmGenre_Genrs" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_Projects_GRNTI" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectAuthors_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectFos_Projects" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_RatedFilms_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_RatedSerials_Serials" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_RatedSerials_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_Users_Rights" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

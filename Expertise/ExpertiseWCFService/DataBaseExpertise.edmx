@@ -1,0 +1,1717 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище db_AAZModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Authors">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="surname_author" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="name_author" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="patronymic_author" Type="nvarchar" MaxLength="40" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CatCrit">
+          <Key>
+            <PropertyRef Name="id_cat_crit" />
+          </Key>
+          <Property Name="id_cat_crit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_cat" Type="int" Nullable="false" />
+          <Property Name="id_crit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_category" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Criterions">
+          <Key>
+            <PropertyRef Name="id_crit" />
+          </Key>
+          <Property Name="id_crit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_crit" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="qualit_crit" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CritValues">
+          <Key>
+            <PropertyRef Name="id_value" />
+          </Key>
+          <Property Name="id_value" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_crit" Type="int" Nullable="false" />
+          <Property Name="valid_values" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpCrit">
+          <Key>
+            <PropertyRef Name="id_exp_crit" />
+          </Key>
+          <Property Name="id_exp_crit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_exp" Type="int" Nullable="false" />
+          <Property Name="id_crit" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpertFos">
+          <Key>
+            <PropertyRef Name="id_expert_fos" />
+          </Key>
+          <Property Name="id_expert_fos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_expert" Type="int" Nullable="false" />
+          <Property Name="id_fos" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ExpertiseMark">
+          <Key>
+            <PropertyRef Name="id_expertise_mark" />
+          </Key>
+          <Property Name="id_expertise_mark" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_expertise" Type="int" Nullable="false" />
+          <Property Name="id_mark" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Expertises">
+          <Key>
+            <PropertyRef Name="id_expertise" />
+          </Key>
+          <Property Name="id_expertise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_expertise" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="date_expertise" Type="date" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Experts">
+          <Key>
+            <PropertyRef Name="id_expert" />
+          </Key>
+          <Property Name="id_expert" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="surname_expert" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="name_expert" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="patronymic_expert" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="job_expert" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="post_expert" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="degree_expert" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="rank_expert" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="contacts_expert" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FiledsOfScience">
+          <Key>
+            <PropertyRef Name="id_fos" />
+          </Key>
+          <Property Name="id_fos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_fos" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Filmes">
+          <Key>
+            <PropertyRef Name="id_film" />
+          </Key>
+          <Property Name="id_film" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_film" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="year_film" Type="int" Nullable="false" />
+          <Property Name="rating_film" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="FilmGenre">
+          <Key>
+            <PropertyRef Name="id_film_genre" />
+          </Key>
+          <Property Name="id_film_genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_film" Type="int" Nullable="false" />
+          <Property Name="id_genre" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Genrs">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_genre" Type="nvarchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="GRNTI">
+          <Key>
+            <PropertyRef Name="code_grnti" />
+          </Key>
+          <Property Name="code_grnti" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="name_grnti" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="log_id" />
+          </Key>
+          <Property Name="log_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="log_date" Type="date" Nullable="false" />
+          <Property Name="log_source" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="log_message" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="log_place" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="log_param" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marks">
+          <Key>
+            <PropertyRef Name="id_mark" />
+          </Key>
+          <Property Name="id_mark" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_expert" Type="int" Nullable="false" />
+          <Property Name="id_crit" Type="int" Nullable="false" />
+          <Property Name="id_project" Type="int" Nullable="false" />
+          <Property Name="rating" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectAuthors">
+          <Key>
+            <PropertyRef Name="id_proj_author" />
+          </Key>
+          <Property Name="id_proj_author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_proj" Type="int" Nullable="false" />
+          <Property Name="id_author" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectExpertise">
+          <Key>
+            <PropertyRef Name="id_project_expertise" />
+          </Key>
+          <Property Name="id_project_expertise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_expertise" Type="int" Nullable="false" />
+          <Property Name="id_project" Type="int" Nullable="false" />
+          <Property Name="accept" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProjectFos">
+          <Key>
+            <PropertyRef Name="id_project_fos" />
+          </Key>
+          <Property Name="id_project_fos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="id_project" Type="int" Nullable="false" />
+          <Property Name="id_fos" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="id_project" />
+          </Key>
+          <Property Name="id_project" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_project" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="lead_project" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="grnti_project" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="begin_project" Type="date" Nullable="false" />
+          <Property Name="end_project" Type="date" Nullable="false" />
+          <Property Name="money_project" Type="nchar" MaxLength="30" Nullable="false" />
+          <Property Name="email_project" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RatedFilms">
+          <Key>
+            <PropertyRef Name="id_watch" />
+          </Key>
+          <Property Name="id_watch" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="film_id" Type="int" Nullable="false" />
+          <Property Name="user_rate_film" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RatedSerials">
+          <Key>
+            <PropertyRef Name="id_watch_ser" />
+          </Key>
+          <Property Name="id_watch_ser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="ser_id" Type="int" Nullable="false" />
+          <Property Name="user_rate_ser" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rights">
+          <Key>
+            <PropertyRef Name="id_right" />
+          </Key>
+          <Property Name="id_right" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_right" Type="nchar" MaxLength="20" Nullable="false" />
+          <Property Name="level_right" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Serials">
+          <Key>
+            <PropertyRef Name="id_ser" />
+          </Key>
+          <Property Name="id_ser" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name_ser" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="season_ser" Type="int" Nullable="false" />
+          <Property Name="year_ser" Type="int" Nullable="false" />
+          <Property Name="rating_ser" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id_right" Type="int" Nullable="false" />
+          <Property Name="nick_user" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="login_user" Type="nchar" MaxLength="50" Nullable="false" />
+          <Property Name="password_user" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "db_AAZ.sys.database_firewall_rules" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="start_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="end_ip_address" Type="varchar" MaxLength="45" Nullable="false" />
+          <Property Name="create_date" Type="datetime" Nullable="false" />
+          <Property Name="modify_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_CatCrit_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="CatCrit" Type="Self.CatCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="CatCrit">
+              <PropertyRef Name="id_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CatCrit_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="CatCrit" Type="Self.CatCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="CatCrit">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CritValues_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="CritValues" Type="Self.CritValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="CritValues">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpCrit_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="ExpCrit" Type="Self.ExpCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="ExpCrit">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpCrit_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ExpCrit" Type="Self.ExpCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ExpCrit">
+              <PropertyRef Name="id_exp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertFos_Experts">
+          <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+          <End Role="ExpertFos" Type="Self.ExpertFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experts">
+              <PropertyRef Name="id_expert" />
+            </Principal>
+            <Dependent Role="ExpertFos">
+              <PropertyRef Name="id_expert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertFos_FiledsOfScience">
+          <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
+          <End Role="ExpertFos" Type="Self.ExpertFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FiledsOfScience">
+              <PropertyRef Name="id_fos" />
+            </Principal>
+            <Dependent Role="ExpertFos">
+              <PropertyRef Name="id_fos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertiseMark_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ExpertiseMark" Type="Self.ExpertiseMark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ExpertiseMark">
+              <PropertyRef Name="id_expertise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertiseMark_Marks">
+          <End Role="Marks" Type="Self.Marks" Multiplicity="1" />
+          <End Role="ExpertiseMark" Type="Self.ExpertiseMark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marks">
+              <PropertyRef Name="id_mark" />
+            </Principal>
+            <Dependent Role="ExpertiseMark">
+              <PropertyRef Name="id_mark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmGenre_Filmes">
+          <End Role="Filmes" Type="Self.Filmes" Multiplicity="1" />
+          <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filmes">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="FilmGenre">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmGenre_Genrs">
+          <End Role="Genrs" Type="Self.Genrs" Multiplicity="1" />
+          <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genrs">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="FilmGenre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marks_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="Marks">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marks_Experts">
+          <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+          <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experts">
+              <PropertyRef Name="id_expert" />
+            </Principal>
+            <Dependent Role="Marks">
+              <PropertyRef Name="id_expert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectAuthors_Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+          <End Role="ProjectAuthors" Type="Self.ProjectAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="ProjectAuthors">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectAuthors_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectAuthors" Type="Self.ProjectAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectAuthors">
+              <PropertyRef Name="id_proj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectExpertise_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ProjectExpertise" Type="Self.ProjectExpertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ProjectExpertise">
+              <PropertyRef Name="id_expertise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFos_FiledsOfScience">
+          <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
+          <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FiledsOfScience">
+              <PropertyRef Name="id_fos" />
+            </Principal>
+            <Dependent Role="ProjectFos">
+              <PropertyRef Name="id_fos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFos_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectFos">
+              <PropertyRef Name="id_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_GRNTI">
+          <End Role="GRNTI" Type="Self.GRNTI" Multiplicity="1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRNTI">
+              <PropertyRef Name="code_grnti" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="grnti_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedFilms_Filmes">
+          <End Role="Filmes" Type="Self.Filmes" Multiplicity="1" />
+          <End Role="RatedFilms" Type="Self.RatedFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filmes">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="RatedFilms">
+              <PropertyRef Name="film_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedFilms_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RatedFilms" Type="Self.RatedFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="RatedFilms">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedSerials_Serials">
+          <End Role="Serials" Type="Self.Serials" Multiplicity="1" />
+          <End Role="RatedSerials" Type="Self.RatedSerials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serials">
+              <PropertyRef Name="id_ser" />
+            </Principal>
+            <Dependent Role="RatedSerials">
+              <PropertyRef Name="ser_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedSerials_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RatedSerials" Type="Self.RatedSerials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="RatedSerials">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Rights">
+          <End Role="Rights" Type="Self.Rights" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rights">
+              <PropertyRef Name="id_right" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="user_id_right" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище db_AAZModelContainer">
+          <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CatCrit" EntityType="Self.CatCrit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Criterions" EntityType="Self.Criterions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CritValues" EntityType="Self.CritValues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpCrit" EntityType="Self.ExpCrit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpertFos" EntityType="Self.ExpertFos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ExpertiseMark" EntityType="Self.ExpertiseMark" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Expertises" EntityType="Self.Expertises" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Experts" EntityType="Self.Experts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FiledsOfScience" EntityType="Self.FiledsOfScience" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Filmes" EntityType="Self.Filmes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FilmGenre" EntityType="Self.FilmGenre" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Genrs" EntityType="Self.Genrs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GRNTI" EntityType="Self.GRNTI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Marks" EntityType="Self.Marks" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectAuthors" EntityType="Self.ProjectAuthors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectExpertise" EntityType="Self.ProjectExpertise" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectFos" EntityType="Self.ProjectFos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RatedFilms" EntityType="Self.RatedFilms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RatedSerials" EntityType="Self.RatedSerials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rights" EntityType="Self.Rights" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Serials" EntityType="Self.Serials" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" store:Type="Views" store:Schema="sys">
+            <DefiningQuery>SELECT 
+    [database_firewall_rules].[id] AS [id], 
+    [database_firewall_rules].[name] AS [name], 
+    [database_firewall_rules].[start_ip_address] AS [start_ip_address], 
+    [database_firewall_rules].[end_ip_address] AS [end_ip_address], 
+    [database_firewall_rules].[create_date] AS [create_date], 
+    [database_firewall_rules].[modify_date] AS [modify_date]
+    FROM [sys].[database_firewall_rules] AS [database_firewall_rules]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_CatCrit_Categories" Association="Self.FK_CatCrit_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="CatCrit" EntitySet="CatCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CatCrit_Criterions" Association="Self.FK_CatCrit_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="CatCrit" EntitySet="CatCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CritValues_Criterions" Association="Self.FK_CritValues_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="CritValues" EntitySet="CritValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpCrit_Criterions" Association="Self.FK_ExpCrit_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="ExpCrit" EntitySet="ExpCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpCrit_Expertises" Association="Self.FK_ExpCrit_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ExpCrit" EntitySet="ExpCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertFos_Experts" Association="Self.FK_ExpertFos_Experts">
+            <End Role="Experts" EntitySet="Experts" />
+            <End Role="ExpertFos" EntitySet="ExpertFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertFos_FiledsOfScience" Association="Self.FK_ExpertFos_FiledsOfScience">
+            <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
+            <End Role="ExpertFos" EntitySet="ExpertFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertiseMark_Expertises" Association="Self.FK_ExpertiseMark_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ExpertiseMark" EntitySet="ExpertiseMark" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertiseMark_Marks" Association="Self.FK_ExpertiseMark_Marks">
+            <End Role="Marks" EntitySet="Marks" />
+            <End Role="ExpertiseMark" EntitySet="ExpertiseMark" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmGenre_Filmes" Association="Self.FK_FilmGenre_Filmes">
+            <End Role="Filmes" EntitySet="Filmes" />
+            <End Role="FilmGenre" EntitySet="FilmGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmGenre_Genrs" Association="Self.FK_FilmGenre_Genrs">
+            <End Role="Genrs" EntitySet="Genrs" />
+            <End Role="FilmGenre" EntitySet="FilmGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marks_Criterions" Association="Self.FK_Marks_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="Marks" EntitySet="Marks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marks_Experts" Association="Self.FK_Marks_Experts">
+            <End Role="Experts" EntitySet="Experts" />
+            <End Role="Marks" EntitySet="Marks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectAuthors_Authors" Association="Self.FK_ProjectAuthors_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="ProjectAuthors" EntitySet="ProjectAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectAuthors_Projects" Association="Self.FK_ProjectAuthors_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectAuthors" EntitySet="ProjectAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectExpertise_Expertises" Association="Self.FK_ProjectExpertise_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFos_FiledsOfScience" Association="Self.FK_ProjectFos_FiledsOfScience">
+            <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
+            <End Role="ProjectFos" EntitySet="ProjectFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFos_Projects" Association="Self.FK_ProjectFos_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectFos" EntitySet="ProjectFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_GRNTI" Association="Self.FK_Projects_GRNTI">
+            <End Role="GRNTI" EntitySet="GRNTI" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedFilms_Filmes" Association="Self.FK_RatedFilms_Filmes">
+            <End Role="Filmes" EntitySet="Filmes" />
+            <End Role="RatedFilms" EntitySet="RatedFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedFilms_Users" Association="Self.FK_RatedFilms_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RatedFilms" EntitySet="RatedFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedSerials_Serials" Association="Self.FK_RatedSerials_Serials">
+            <End Role="Serials" EntitySet="Serials" />
+            <End Role="RatedSerials" EntitySet="RatedSerials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedSerials_Users" Association="Self.FK_RatedSerials_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RatedSerials" EntitySet="RatedSerials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Rights" Association="Self.FK_Users_Rights">
+            <End Role="Rights" EntitySet="Rights" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="db_AAZModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Authors">
+          <Key>
+            <PropertyRef Name="id_author" />
+          </Key>
+          <Property Name="id_author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="surname_author" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_author" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patronymic_author" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ProjectAuthors" Relationship="Self.FK_ProjectAuthors_Authors" FromRole="Authors" ToRole="ProjectAuthors" />
+        </EntityType>
+        <EntityType Name="CatCrit">
+          <Key>
+            <PropertyRef Name="id_cat_crit" />
+          </Key>
+          <Property Name="id_cat_crit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_cat" Type="Int32" Nullable="false" />
+          <Property Name="id_crit" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Categories" Relationship="Self.FK_CatCrit_Categories" FromRole="CatCrit" ToRole="Categories" />
+          <NavigationProperty Name="Criterions" Relationship="Self.FK_CatCrit_Criterions" FromRole="CatCrit" ToRole="Criterions" />
+        </EntityType>
+        <EntityType Name="Categories">
+          <Key>
+            <PropertyRef Name="id_category" />
+          </Key>
+          <Property Name="id_category" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_category" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="CatCrit" Relationship="Self.FK_CatCrit_Categories" FromRole="Categories" ToRole="CatCrit" />
+        </EntityType>
+        <EntityType Name="Criterions">
+          <Key>
+            <PropertyRef Name="id_crit" />
+          </Key>
+          <Property Name="id_crit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_crit" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="qualit_crit" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="CatCrit" Relationship="Self.FK_CatCrit_Criterions" FromRole="Criterions" ToRole="CatCrit" />
+          <NavigationProperty Name="CritValues" Relationship="Self.FK_CritValues_Criterions" FromRole="Criterions" ToRole="CritValues" />
+          <NavigationProperty Name="ExpCrit" Relationship="Self.FK_ExpCrit_Criterions" FromRole="Criterions" ToRole="ExpCrit" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Criterions" FromRole="Criterions" ToRole="Marks" />
+        </EntityType>
+        <EntityType Name="CritValues">
+          <Key>
+            <PropertyRef Name="id_value" />
+          </Key>
+          <Property Name="id_value" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_crit" Type="Int32" Nullable="false" />
+          <Property Name="valid_values" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Criterions" Relationship="Self.FK_CritValues_Criterions" FromRole="CritValues" ToRole="Criterions" />
+        </EntityType>
+        <EntityType Name="ExpCrit">
+          <Key>
+            <PropertyRef Name="id_exp_crit" />
+          </Key>
+          <Property Name="id_exp_crit" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_exp" Type="Int32" Nullable="false" />
+          <Property Name="id_crit" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Criterions" Relationship="Self.FK_ExpCrit_Criterions" FromRole="ExpCrit" ToRole="Criterions" />
+          <NavigationProperty Name="Expertises" Relationship="Self.FK_ExpCrit_Expertises" FromRole="ExpCrit" ToRole="Expertises" />
+        </EntityType>
+        <EntityType Name="ExpertFos">
+          <Key>
+            <PropertyRef Name="id_expert_fos" />
+          </Key>
+          <Property Name="id_expert_fos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_expert" Type="Int32" Nullable="false" />
+          <Property Name="id_fos" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Experts" Relationship="Self.FK_ExpertFos_Experts" FromRole="ExpertFos" ToRole="Experts" />
+          <NavigationProperty Name="FiledsOfScience" Relationship="Self.FK_ExpertFos_FiledsOfScience" FromRole="ExpertFos" ToRole="FiledsOfScience" />
+        </EntityType>
+        <EntityType Name="ExpertiseMark">
+          <Key>
+            <PropertyRef Name="id_expertise_mark" />
+          </Key>
+          <Property Name="id_expertise_mark" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_expertise" Type="Int32" Nullable="false" />
+          <Property Name="id_mark" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Expertises" Relationship="Self.FK_ExpertiseMark_Expertises" FromRole="ExpertiseMark" ToRole="Expertises" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK_ExpertiseMark_Marks" FromRole="ExpertiseMark" ToRole="Marks" />
+        </EntityType>
+        <EntityType Name="Expertises">
+          <Key>
+            <PropertyRef Name="id_expertise" />
+          </Key>
+          <Property Name="id_expertise" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_expertise" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="date_expertise" Type="DateTime" Nullable="false" Precision="0" />
+          <NavigationProperty Name="ExpCrit" Relationship="Self.FK_ExpCrit_Expertises" FromRole="Expertises" ToRole="ExpCrit" />
+          <NavigationProperty Name="ExpertiseMark" Relationship="Self.FK_ExpertiseMark_Expertises" FromRole="Expertises" ToRole="ExpertiseMark" />
+          <NavigationProperty Name="ProjectExpertise" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="Expertises" ToRole="ProjectExpertise" />
+        </EntityType>
+        <EntityType Name="Experts">
+          <Key>
+            <PropertyRef Name="id_expert" />
+          </Key>
+          <Property Name="id_expert" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="surname_expert" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="name_expert" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="patronymic_expert" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="job_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="post_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="degree_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="rank_expert" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="contacts_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_Experts" FromRole="Experts" ToRole="ExpertFos" />
+          <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Experts" FromRole="Experts" ToRole="Marks" />
+        </EntityType>
+        <EntityType Name="FiledsOfScience">
+          <Key>
+            <PropertyRef Name="id_fos" />
+          </Key>
+          <Property Name="id_fos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_fos" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_FiledsOfScience" FromRole="FiledsOfScience" ToRole="ExpertFos" />
+          <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_FiledsOfScience" FromRole="FiledsOfScience" ToRole="ProjectFos" />
+        </EntityType>
+        <EntityType Name="Filmes">
+          <Key>
+            <PropertyRef Name="id_film" />
+          </Key>
+          <Property Name="id_film" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_film" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="year_film" Type="Int32" Nullable="false" />
+          <Property Name="rating_film" Type="Double" Nullable="false" />
+          <NavigationProperty Name="FilmGenre" Relationship="Self.FK_FilmGenre_Filmes" FromRole="Filmes" ToRole="FilmGenre" />
+          <NavigationProperty Name="RatedFilms" Relationship="Self.FK_RatedFilms_Filmes" FromRole="Filmes" ToRole="RatedFilms" />
+        </EntityType>
+        <EntityType Name="FilmGenre">
+          <Key>
+            <PropertyRef Name="id_film_genre" />
+          </Key>
+          <Property Name="id_film_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_film" Type="Int32" Nullable="false" />
+          <Property Name="id_genre" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Filmes" Relationship="Self.FK_FilmGenre_Filmes" FromRole="FilmGenre" ToRole="Filmes" />
+          <NavigationProperty Name="Genrs" Relationship="Self.FK_FilmGenre_Genrs" FromRole="FilmGenre" ToRole="Genrs" />
+        </EntityType>
+        <EntityType Name="Genrs">
+          <Key>
+            <PropertyRef Name="id_genre" />
+          </Key>
+          <Property Name="id_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_genre" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="FilmGenre" Relationship="Self.FK_FilmGenre_Genrs" FromRole="Genrs" ToRole="FilmGenre" />
+        </EntityType>
+        <EntityType Name="GRNTI">
+          <Key>
+            <PropertyRef Name="code_grnti" />
+          </Key>
+          <Property Name="code_grnti" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="name_grnti" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_Projects_GRNTI" FromRole="GRNTI" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Logs">
+          <Key>
+            <PropertyRef Name="log_id" />
+          </Key>
+          <Property Name="log_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="log_date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="log_source" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="log_message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="log_place" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="log_param" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Marks">
+          <Key>
+            <PropertyRef Name="id_mark" />
+          </Key>
+          <Property Name="id_mark" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_expert" Type="Int32" Nullable="false" />
+          <Property Name="id_crit" Type="Int32" Nullable="false" />
+          <Property Name="id_project" Type="Int32" Nullable="false" />
+          <Property Name="rating" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Criterions" Relationship="Self.FK_Marks_Criterions" FromRole="Marks" ToRole="Criterions" />
+          <NavigationProperty Name="ExpertiseMark" Relationship="Self.FK_ExpertiseMark_Marks" FromRole="Marks" ToRole="ExpertiseMark" />
+          <NavigationProperty Name="Experts" Relationship="Self.FK_Marks_Experts" FromRole="Marks" ToRole="Experts" />
+        </EntityType>
+        <EntityType Name="ProjectAuthors">
+          <Key>
+            <PropertyRef Name="id_proj_author" />
+          </Key>
+          <Property Name="id_proj_author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_proj" Type="Int32" Nullable="false" />
+          <Property Name="id_author" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Authors" Relationship="Self.FK_ProjectAuthors_Authors" FromRole="ProjectAuthors" ToRole="Authors" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_ProjectAuthors_Projects" FromRole="ProjectAuthors" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="ProjectExpertise">
+          <Key>
+            <PropertyRef Name="id_project_expertise" />
+          </Key>
+          <Property Name="id_project_expertise" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_expertise" Type="Int32" Nullable="false" />
+          <Property Name="id_project" Type="Int32" Nullable="false" />
+          <Property Name="accept" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Expertises" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="ProjectExpertise" ToRole="Expertises" />
+        </EntityType>
+        <EntityType Name="ProjectFos">
+          <Key>
+            <PropertyRef Name="id_project_fos" />
+          </Key>
+          <Property Name="id_project_fos" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="id_project" Type="Int32" Nullable="false" />
+          <Property Name="id_fos" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="FiledsOfScience" Relationship="Self.FK_ProjectFos_FiledsOfScience" FromRole="ProjectFos" ToRole="FiledsOfScience" />
+          <NavigationProperty Name="Projects" Relationship="Self.FK_ProjectFos_Projects" FromRole="ProjectFos" ToRole="Projects" />
+        </EntityType>
+        <EntityType Name="Projects">
+          <Key>
+            <PropertyRef Name="id_project" />
+          </Key>
+          <Property Name="id_project" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_project" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="lead_project" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="grnti_project" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="begin_project" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="end_project" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="money_project" Type="String" MaxLength="30" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="email_project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="GRNTI" Relationship="Self.FK_Projects_GRNTI" FromRole="Projects" ToRole="GRNTI" />
+          <NavigationProperty Name="ProjectAuthors" Relationship="Self.FK_ProjectAuthors_Projects" FromRole="Projects" ToRole="ProjectAuthors" />
+          <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_Projects" FromRole="Projects" ToRole="ProjectFos" />
+        </EntityType>
+        <EntityType Name="RatedFilms">
+          <Key>
+            <PropertyRef Name="id_watch" />
+          </Key>
+          <Property Name="id_watch" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="film_id" Type="Int32" Nullable="false" />
+          <Property Name="user_rate_film" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Filmes" Relationship="Self.FK_RatedFilms_Filmes" FromRole="RatedFilms" ToRole="Filmes" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_RatedFilms_Users" FromRole="RatedFilms" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="RatedSerials">
+          <Key>
+            <PropertyRef Name="id_watch_ser" />
+          </Key>
+          <Property Name="id_watch_ser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="ser_id" Type="Int32" Nullable="false" />
+          <Property Name="user_rate_ser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Serials" Relationship="Self.FK_RatedSerials_Serials" FromRole="RatedSerials" ToRole="Serials" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_RatedSerials_Users" FromRole="RatedSerials" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Rights">
+          <Key>
+            <PropertyRef Name="id_right" />
+          </Key>
+          <Property Name="id_right" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_right" Type="String" MaxLength="20" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="level_right" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK_Users_Rights" FromRole="Rights" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Serials">
+          <Key>
+            <PropertyRef Name="id_ser" />
+          </Key>
+          <Property Name="id_ser" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name_ser" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="season_ser" Type="Int32" Nullable="false" />
+          <Property Name="year_ser" Type="Int32" Nullable="false" />
+          <Property Name="rating_ser" Type="Double" Nullable="false" />
+          <NavigationProperty Name="RatedSerials" Relationship="Self.FK_RatedSerials_Serials" FromRole="Serials" ToRole="RatedSerials" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_user" />
+          </Key>
+          <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id_right" Type="Int32" Nullable="false" />
+          <Property Name="nick_user" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="login_user" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="password_user" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="RatedFilms" Relationship="Self.FK_RatedFilms_Users" FromRole="Users" ToRole="RatedFilms" />
+          <NavigationProperty Name="RatedSerials" Relationship="Self.FK_RatedSerials_Users" FromRole="Users" ToRole="RatedSerials" />
+          <NavigationProperty Name="Rights" Relationship="Self.FK_Users_Rights" FromRole="Users" ToRole="Rights" />
+        </EntityType>
+        <EntityType Name="database_firewall_rules">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="name" />
+            <PropertyRef Name="start_ip_address" />
+            <PropertyRef Name="end_ip_address" />
+            <PropertyRef Name="create_date" />
+            <PropertyRef Name="modify_date" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="start_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="end_ip_address" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="modify_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <Association Name="FK_ProjectAuthors_Authors">
+          <End Role="Authors" Type="Self.Authors" Multiplicity="1" />
+          <End Role="ProjectAuthors" Type="Self.ProjectAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Authors">
+              <PropertyRef Name="id_author" />
+            </Principal>
+            <Dependent Role="ProjectAuthors">
+              <PropertyRef Name="id_author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CatCrit_Categories">
+          <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
+          <End Role="CatCrit" Type="Self.CatCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categories">
+              <PropertyRef Name="id_category" />
+            </Principal>
+            <Dependent Role="CatCrit">
+              <PropertyRef Name="id_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CatCrit_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="CatCrit" Type="Self.CatCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="CatCrit">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CritValues_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="CritValues" Type="Self.CritValues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="CritValues">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpCrit_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="ExpCrit" Type="Self.ExpCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="ExpCrit">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marks_Criterions">
+          <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+          <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Criterions">
+              <PropertyRef Name="id_crit" />
+            </Principal>
+            <Dependent Role="Marks">
+              <PropertyRef Name="id_crit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpCrit_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ExpCrit" Type="Self.ExpCrit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ExpCrit">
+              <PropertyRef Name="id_exp" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertFos_Experts">
+          <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+          <End Role="ExpertFos" Type="Self.ExpertFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experts">
+              <PropertyRef Name="id_expert" />
+            </Principal>
+            <Dependent Role="ExpertFos">
+              <PropertyRef Name="id_expert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertFos_FiledsOfScience">
+          <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
+          <End Role="ExpertFos" Type="Self.ExpertFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FiledsOfScience">
+              <PropertyRef Name="id_fos" />
+            </Principal>
+            <Dependent Role="ExpertFos">
+              <PropertyRef Name="id_fos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertiseMark_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ExpertiseMark" Type="Self.ExpertiseMark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ExpertiseMark">
+              <PropertyRef Name="id_expertise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ExpertiseMark_Marks">
+          <End Role="Marks" Type="Self.Marks" Multiplicity="1" />
+          <End Role="ExpertiseMark" Type="Self.ExpertiseMark" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Marks">
+              <PropertyRef Name="id_mark" />
+            </Principal>
+            <Dependent Role="ExpertiseMark">
+              <PropertyRef Name="id_mark" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectExpertise_Expertises">
+          <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+          <End Role="ProjectExpertise" Type="Self.ProjectExpertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Expertises">
+              <PropertyRef Name="id_expertise" />
+            </Principal>
+            <Dependent Role="ProjectExpertise">
+              <PropertyRef Name="id_expertise" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Marks_Experts">
+          <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+          <End Role="Marks" Type="Self.Marks" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Experts">
+              <PropertyRef Name="id_expert" />
+            </Principal>
+            <Dependent Role="Marks">
+              <PropertyRef Name="id_expert" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFos_FiledsOfScience">
+          <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
+          <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="FiledsOfScience">
+              <PropertyRef Name="id_fos" />
+            </Principal>
+            <Dependent Role="ProjectFos">
+              <PropertyRef Name="id_fos" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmGenre_Filmes">
+          <End Role="Filmes" Type="Self.Filmes" Multiplicity="1" />
+          <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filmes">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="FilmGenre">
+              <PropertyRef Name="id_film" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedFilms_Filmes">
+          <End Role="Filmes" Type="Self.Filmes" Multiplicity="1" />
+          <End Role="RatedFilms" Type="Self.RatedFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Filmes">
+              <PropertyRef Name="id_film" />
+            </Principal>
+            <Dependent Role="RatedFilms">
+              <PropertyRef Name="film_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FilmGenre_Genrs">
+          <End Role="Genrs" Type="Self.Genrs" Multiplicity="1" />
+          <End Role="FilmGenre" Type="Self.FilmGenre" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genrs">
+              <PropertyRef Name="id_genre" />
+            </Principal>
+            <Dependent Role="FilmGenre">
+              <PropertyRef Name="id_genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Projects_GRNTI">
+          <End Role="GRNTI" Type="Self.GRNTI" Multiplicity="1" />
+          <End Role="Projects" Type="Self.Projects" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GRNTI">
+              <PropertyRef Name="code_grnti" />
+            </Principal>
+            <Dependent Role="Projects">
+              <PropertyRef Name="grnti_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectAuthors_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectAuthors" Type="Self.ProjectAuthors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectAuthors">
+              <PropertyRef Name="id_proj" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProjectFos_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectFos">
+              <PropertyRef Name="id_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedFilms_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RatedFilms" Type="Self.RatedFilms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="RatedFilms">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedSerials_Serials">
+          <End Role="Serials" Type="Self.Serials" Multiplicity="1" />
+          <End Role="RatedSerials" Type="Self.RatedSerials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Serials">
+              <PropertyRef Name="id_ser" />
+            </Principal>
+            <Dependent Role="RatedSerials">
+              <PropertyRef Name="ser_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RatedSerials_Users">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="RatedSerials" Type="Self.RatedSerials" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="id_user" />
+            </Principal>
+            <Dependent Role="RatedSerials">
+              <PropertyRef Name="user_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Users_Rights">
+          <End Role="Rights" Type="Self.Rights" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rights">
+              <PropertyRef Name="id_right" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="user_id_right" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="db_AAZEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Authors" EntityType="Self.Authors" />
+          <EntitySet Name="CatCrit" EntityType="Self.CatCrit" />
+          <EntitySet Name="Categories" EntityType="Self.Categories" />
+          <EntitySet Name="Criterions" EntityType="Self.Criterions" />
+          <EntitySet Name="CritValues" EntityType="Self.CritValues" />
+          <EntitySet Name="ExpCrit" EntityType="Self.ExpCrit" />
+          <EntitySet Name="ExpertFos" EntityType="Self.ExpertFos" />
+          <EntitySet Name="ExpertiseMark" EntityType="Self.ExpertiseMark" />
+          <EntitySet Name="Expertises" EntityType="Self.Expertises" />
+          <EntitySet Name="Experts" EntityType="Self.Experts" />
+          <EntitySet Name="FiledsOfScience" EntityType="Self.FiledsOfScience" />
+          <EntitySet Name="Filmes" EntityType="Self.Filmes" />
+          <EntitySet Name="FilmGenre" EntityType="Self.FilmGenre" />
+          <EntitySet Name="Genrs" EntityType="Self.Genrs" />
+          <EntitySet Name="GRNTI" EntityType="Self.GRNTI" />
+          <EntitySet Name="Logs" EntityType="Self.Logs" />
+          <EntitySet Name="Marks" EntityType="Self.Marks" />
+          <EntitySet Name="ProjectAuthors" EntityType="Self.ProjectAuthors" />
+          <EntitySet Name="ProjectExpertise" EntityType="Self.ProjectExpertise" />
+          <EntitySet Name="ProjectFos" EntityType="Self.ProjectFos" />
+          <EntitySet Name="Projects" EntityType="Self.Projects" />
+          <EntitySet Name="RatedFilms" EntityType="Self.RatedFilms" />
+          <EntitySet Name="RatedSerials" EntityType="Self.RatedSerials" />
+          <EntitySet Name="Rights" EntityType="Self.Rights" />
+          <EntitySet Name="Serials" EntityType="Self.Serials" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="database_firewall_rules" EntityType="Self.database_firewall_rules" />
+          <AssociationSet Name="FK_ProjectAuthors_Authors" Association="Self.FK_ProjectAuthors_Authors">
+            <End Role="Authors" EntitySet="Authors" />
+            <End Role="ProjectAuthors" EntitySet="ProjectAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CatCrit_Categories" Association="Self.FK_CatCrit_Categories">
+            <End Role="Categories" EntitySet="Categories" />
+            <End Role="CatCrit" EntitySet="CatCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CatCrit_Criterions" Association="Self.FK_CatCrit_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="CatCrit" EntitySet="CatCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CritValues_Criterions" Association="Self.FK_CritValues_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="CritValues" EntitySet="CritValues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpCrit_Criterions" Association="Self.FK_ExpCrit_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="ExpCrit" EntitySet="ExpCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marks_Criterions" Association="Self.FK_Marks_Criterions">
+            <End Role="Criterions" EntitySet="Criterions" />
+            <End Role="Marks" EntitySet="Marks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpCrit_Expertises" Association="Self.FK_ExpCrit_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ExpCrit" EntitySet="ExpCrit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertFos_Experts" Association="Self.FK_ExpertFos_Experts">
+            <End Role="Experts" EntitySet="Experts" />
+            <End Role="ExpertFos" EntitySet="ExpertFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertFos_FiledsOfScience" Association="Self.FK_ExpertFos_FiledsOfScience">
+            <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
+            <End Role="ExpertFos" EntitySet="ExpertFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertiseMark_Expertises" Association="Self.FK_ExpertiseMark_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ExpertiseMark" EntitySet="ExpertiseMark" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ExpertiseMark_Marks" Association="Self.FK_ExpertiseMark_Marks">
+            <End Role="Marks" EntitySet="Marks" />
+            <End Role="ExpertiseMark" EntitySet="ExpertiseMark" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectExpertise_Expertises" Association="Self.FK_ProjectExpertise_Expertises">
+            <End Role="Expertises" EntitySet="Expertises" />
+            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Marks_Experts" Association="Self.FK_Marks_Experts">
+            <End Role="Experts" EntitySet="Experts" />
+            <End Role="Marks" EntitySet="Marks" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFos_FiledsOfScience" Association="Self.FK_ProjectFos_FiledsOfScience">
+            <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
+            <End Role="ProjectFos" EntitySet="ProjectFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmGenre_Filmes" Association="Self.FK_FilmGenre_Filmes">
+            <End Role="Filmes" EntitySet="Filmes" />
+            <End Role="FilmGenre" EntitySet="FilmGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedFilms_Filmes" Association="Self.FK_RatedFilms_Filmes">
+            <End Role="Filmes" EntitySet="Filmes" />
+            <End Role="RatedFilms" EntitySet="RatedFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FilmGenre_Genrs" Association="Self.FK_FilmGenre_Genrs">
+            <End Role="Genrs" EntitySet="Genrs" />
+            <End Role="FilmGenre" EntitySet="FilmGenre" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Projects_GRNTI" Association="Self.FK_Projects_GRNTI">
+            <End Role="GRNTI" EntitySet="GRNTI" />
+            <End Role="Projects" EntitySet="Projects" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectAuthors_Projects" Association="Self.FK_ProjectAuthors_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectAuthors" EntitySet="ProjectAuthors" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProjectFos_Projects" Association="Self.FK_ProjectFos_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectFos" EntitySet="ProjectFos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedFilms_Users" Association="Self.FK_RatedFilms_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RatedFilms" EntitySet="RatedFilms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedSerials_Serials" Association="Self.FK_RatedSerials_Serials">
+            <End Role="Serials" EntitySet="Serials" />
+            <End Role="RatedSerials" EntitySet="RatedSerials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RatedSerials_Users" Association="Self.FK_RatedSerials_Users">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="RatedSerials" EntitySet="RatedSerials" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Users_Rights" Association="Self.FK_Users_Rights">
+            <End Role="Rights" EntitySet="Rights" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище db_AAZModelContainer" CdmEntityContainer="db_AAZEntities">
+          <EntitySetMapping Name="Authors">
+            <EntityTypeMapping TypeName="db_AAZModel.Authors">
+              <MappingFragment StoreEntitySet="Authors">
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+                <ScalarProperty Name="surname_author" ColumnName="surname_author" />
+                <ScalarProperty Name="name_author" ColumnName="name_author" />
+                <ScalarProperty Name="patronymic_author" ColumnName="patronymic_author" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CatCrit">
+            <EntityTypeMapping TypeName="db_AAZModel.CatCrit">
+              <MappingFragment StoreEntitySet="CatCrit">
+                <ScalarProperty Name="id_cat_crit" ColumnName="id_cat_crit" />
+                <ScalarProperty Name="id_cat" ColumnName="id_cat" />
+                <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="db_AAZModel.Categories">
+              <MappingFragment StoreEntitySet="Categories">
+                <ScalarProperty Name="id_category" ColumnName="id_category" />
+                <ScalarProperty Name="name_category" ColumnName="name_category" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Criterions">
+            <EntityTypeMapping TypeName="db_AAZModel.Criterions">
+              <MappingFragment StoreEntitySet="Criterions">
+                <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+                <ScalarProperty Name="name_crit" ColumnName="name_crit" />
+                <ScalarProperty Name="qualit_crit" ColumnName="qualit_crit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CritValues">
+            <EntityTypeMapping TypeName="db_AAZModel.CritValues">
+              <MappingFragment StoreEntitySet="CritValues">
+                <ScalarProperty Name="id_value" ColumnName="id_value" />
+                <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+                <ScalarProperty Name="valid_values" ColumnName="valid_values" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpCrit">
+            <EntityTypeMapping TypeName="db_AAZModel.ExpCrit">
+              <MappingFragment StoreEntitySet="ExpCrit">
+                <ScalarProperty Name="id_exp_crit" ColumnName="id_exp_crit" />
+                <ScalarProperty Name="id_exp" ColumnName="id_exp" />
+                <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpertFos">
+            <EntityTypeMapping TypeName="db_AAZModel.ExpertFos">
+              <MappingFragment StoreEntitySet="ExpertFos">
+                <ScalarProperty Name="id_expert_fos" ColumnName="id_expert_fos" />
+                <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+                <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ExpertiseMark">
+            <EntityTypeMapping TypeName="db_AAZModel.ExpertiseMark">
+              <MappingFragment StoreEntitySet="ExpertiseMark">
+                <ScalarProperty Name="id_expertise_mark" ColumnName="id_expertise_mark" />
+                <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+                <ScalarProperty Name="id_mark" ColumnName="id_mark" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Expertises">
+            <EntityTypeMapping TypeName="db_AAZModel.Expertises">
+              <MappingFragment StoreEntitySet="Expertises">
+                <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+                <ScalarProperty Name="name_expertise" ColumnName="name_expertise" />
+                <ScalarProperty Name="date_expertise" ColumnName="date_expertise" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Experts">
+            <EntityTypeMapping TypeName="db_AAZModel.Experts">
+              <MappingFragment StoreEntitySet="Experts">
+                <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+                <ScalarProperty Name="surname_expert" ColumnName="surname_expert" />
+                <ScalarProperty Name="name_expert" ColumnName="name_expert" />
+                <ScalarProperty Name="patronymic_expert" ColumnName="patronymic_expert" />
+                <ScalarProperty Name="job_expert" ColumnName="job_expert" />
+                <ScalarProperty Name="post_expert" ColumnName="post_expert" />
+                <ScalarProperty Name="degree_expert" ColumnName="degree_expert" />
+                <ScalarProperty Name="rank_expert" ColumnName="rank_expert" />
+                <ScalarProperty Name="contacts_expert" ColumnName="contacts_expert" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FiledsOfScience">
+            <EntityTypeMapping TypeName="db_AAZModel.FiledsOfScience">
+              <MappingFragment StoreEntitySet="FiledsOfScience">
+                <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+                <ScalarProperty Name="name_fos" ColumnName="name_fos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Filmes">
+            <EntityTypeMapping TypeName="db_AAZModel.Filmes">
+              <MappingFragment StoreEntitySet="Filmes">
+                <ScalarProperty Name="id_film" ColumnName="id_film" />
+                <ScalarProperty Name="name_film" ColumnName="name_film" />
+                <ScalarProperty Name="year_film" ColumnName="year_film" />
+                <ScalarProperty Name="rating_film" ColumnName="rating_film" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FilmGenre">
+            <EntityTypeMapping TypeName="db_AAZModel.FilmGenre">
+              <MappingFragment StoreEntitySet="FilmGenre">
+                <ScalarProperty Name="id_film_genre" ColumnName="id_film_genre" />
+                <ScalarProperty Name="id_film" ColumnName="id_film" />
+                <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Genrs">
+            <EntityTypeMapping TypeName="db_AAZModel.Genrs">
+              <MappingFragment StoreEntitySet="Genrs">
+                <ScalarProperty Name="id_genre" ColumnName="id_genre" />
+                <ScalarProperty Name="name_genre" ColumnName="name_genre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GRNTI">
+            <EntityTypeMapping TypeName="db_AAZModel.GRNTI">
+              <MappingFragment StoreEntitySet="GRNTI">
+                <ScalarProperty Name="code_grnti" ColumnName="code_grnti" />
+                <ScalarProperty Name="name_grnti" ColumnName="name_grnti" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Logs">
+            <EntityTypeMapping TypeName="db_AAZModel.Logs">
+              <MappingFragment StoreEntitySet="Logs">
+                <ScalarProperty Name="log_id" ColumnName="log_id" />
+                <ScalarProperty Name="log_date" ColumnName="log_date" />
+                <ScalarProperty Name="log_source" ColumnName="log_source" />
+                <ScalarProperty Name="log_message" ColumnName="log_message" />
+                <ScalarProperty Name="log_place" ColumnName="log_place" />
+                <ScalarProperty Name="log_param" ColumnName="log_param" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Marks">
+            <EntityTypeMapping TypeName="db_AAZModel.Marks">
+              <MappingFragment StoreEntitySet="Marks">
+                <ScalarProperty Name="id_mark" ColumnName="id_mark" />
+                <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+                <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="rating" ColumnName="rating" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectAuthors">
+            <EntityTypeMapping TypeName="db_AAZModel.ProjectAuthors">
+              <MappingFragment StoreEntitySet="ProjectAuthors">
+                <ScalarProperty Name="id_proj_author" ColumnName="id_proj_author" />
+                <ScalarProperty Name="id_proj" ColumnName="id_proj" />
+                <ScalarProperty Name="id_author" ColumnName="id_author" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectExpertise">
+            <EntityTypeMapping TypeName="db_AAZModel.ProjectExpertise">
+              <MappingFragment StoreEntitySet="ProjectExpertise">
+                <ScalarProperty Name="id_project_expertise" ColumnName="id_project_expertise" />
+                <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="accept" ColumnName="accept" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProjectFos">
+            <EntityTypeMapping TypeName="db_AAZModel.ProjectFos">
+              <MappingFragment StoreEntitySet="ProjectFos">
+                <ScalarProperty Name="id_project_fos" ColumnName="id_project_fos" />
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="id_fos" ColumnName="id_fos" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Projects">
+            <EntityTypeMapping TypeName="db_AAZModel.Projects">
+              <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="id_project" ColumnName="id_project" />
+                <ScalarProperty Name="name_project" ColumnName="name_project" />
+                <ScalarProperty Name="lead_project" ColumnName="lead_project" />
+                <ScalarProperty Name="grnti_project" ColumnName="grnti_project" />
+                <ScalarProperty Name="begin_project" ColumnName="begin_project" />
+                <ScalarProperty Name="end_project" ColumnName="end_project" />
+                <ScalarProperty Name="money_project" ColumnName="money_project" />
+                <ScalarProperty Name="email_project" ColumnName="email_project" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RatedFilms">
+            <EntityTypeMapping TypeName="db_AAZModel.RatedFilms">
+              <MappingFragment StoreEntitySet="RatedFilms">
+                <ScalarProperty Name="id_watch" ColumnName="id_watch" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="film_id" ColumnName="film_id" />
+                <ScalarProperty Name="user_rate_film" ColumnName="user_rate_film" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RatedSerials">
+            <EntityTypeMapping TypeName="db_AAZModel.RatedSerials">
+              <MappingFragment StoreEntitySet="RatedSerials">
+                <ScalarProperty Name="id_watch_ser" ColumnName="id_watch_ser" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="ser_id" ColumnName="ser_id" />
+                <ScalarProperty Name="user_rate_ser" ColumnName="user_rate_ser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rights">
+            <EntityTypeMapping TypeName="db_AAZModel.Rights">
+              <MappingFragment StoreEntitySet="Rights">
+                <ScalarProperty Name="id_right" ColumnName="id_right" />
+                <ScalarProperty Name="name_right" ColumnName="name_right" />
+                <ScalarProperty Name="level_right" ColumnName="level_right" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Serials">
+            <EntityTypeMapping TypeName="db_AAZModel.Serials">
+              <MappingFragment StoreEntitySet="Serials">
+                <ScalarProperty Name="id_ser" ColumnName="id_ser" />
+                <ScalarProperty Name="name_ser" ColumnName="name_ser" />
+                <ScalarProperty Name="season_ser" ColumnName="season_ser" />
+                <ScalarProperty Name="year_ser" ColumnName="year_ser" />
+                <ScalarProperty Name="rating_ser" ColumnName="rating_ser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="db_AAZModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="db_AAZModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id_user" ColumnName="id_user" />
+                <ScalarProperty Name="user_id_right" ColumnName="user_id_right" />
+                <ScalarProperty Name="nick_user" ColumnName="nick_user" />
+                <ScalarProperty Name="login_user" ColumnName="login_user" />
+                <ScalarProperty Name="password_user" ColumnName="password_user" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="database_firewall_rules">
+            <EntityTypeMapping TypeName="db_AAZModel.database_firewall_rules">
+              <MappingFragment StoreEntitySet="database_firewall_rules">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="start_ip_address" ColumnName="start_ip_address" />
+                <ScalarProperty Name="end_ip_address" ColumnName="end_ip_address" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="modify_date" ColumnName="modify_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
