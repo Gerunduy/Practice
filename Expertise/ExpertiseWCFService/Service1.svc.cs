@@ -15,7 +15,7 @@ namespace ExpertiseWCFService
         public db_AAZEntities db_AAZ = new db_AAZEntities();
         public string GetData(int value)
         {
-            return string.Format("You entered  : {0}", value);
+            return string.Format("You entered: {0}", value);
         }
 
         public CompositeType GetDataUsingDataContract(CompositeType composite)
