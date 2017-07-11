@@ -20,7 +20,7 @@
         <EntityTypeShape EntityType="db_AAZModel.FilmGenre" Width="0.625" PointX="5.5" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.Genrs" Width="0.625" PointX="6.25" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.GRNTI" Width="1.5" PointX="15.875" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_AAZModel.Logs" Width="1.5" PointX="12.875" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.Logs" Width="1.5" PointX="7.625" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.Marks" Width="1.5" PointX="6" PointY="6.625" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.ProjectAuthors" Width="1.5" PointX="13.875" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.ProjectExpertise" Width="1.5" PointX="5.125" PointY="0.5" IsExpanded="true" />

@@ -30,6 +30,18 @@ namespace ExpertiseWCFService
         List<Criterions> GetListCriterions();
 
         [OperationContract]
+        List<CritValues> GetListCritValues();
+
+        [OperationContract]
+        List<ExpCrit> GetListExpCrit();
+
+        [OperationContract]
+        List<ExpertFos> GetListExpertFos();
+
+        [OperationContract]
+        List<ExpertiseMark> GetListExpertiseMark();
+
+        [OperationContract]
         List<GRNTI> GetListGRNTI();
 
         [OperationContract]

@@ -96,6 +96,70 @@ namespace ExpertiseWCFService
             return result;
         }
 
+        public List<CritValues> GetListCritValues()
+        {
+            List<CritValues> result = new List<CritValues>();
+            List<CritValues> tmplCV = db_AAZ.CritValues.ToList();
+            foreach (CritValues pCV in tmplCV)
+            {
+                CritValues tmpCV = new CritValues();
+                tmpCV.id_value = pCV.id_value;
+                tmpCV.id_crit = pCV.id_crit;
+                tmpCV.valid_values = pCV.valid_values;
+
+                result.Add(tmpCV);
+            }
+            return result;
+        }
+
+        public List<ExpCrit> GetListExpCrit()
+        {
+            List<ExpCrit> result = new List<ExpCrit>();
+            List<ExpCrit> tmplEC = db_AAZ.ExpCrit.ToList();
+            foreach (ExpCrit pEC in tmplEC)
+            {
+                ExpCrit tmpEC = new ExpCrit();
+                tmpEC.id_exp_crit = pEC.id_exp_crit;
+                tmpEC.id_exp = pEC.id_exp;
+                tmpEC.id_crit = pEC.id_crit;
+
+                result.Add(tmpEC);
+            }
+            return result;
+        }
+
+        public List<ExpertFos> GetListExpertFos()
+        {
+            List<ExpertFos> result = new List<ExpertFos>();
+            List<ExpertFos> tmplEF = db_AAZ.ExpertFos.ToList();
+            foreach (ExpertFos pEF in tmplEF)
+            {
+                ExpertFos tmpEF = new ExpertFos();
+                tmpEF.id_expert_fos = pEF.id_expert_fos;
+                tmpEF.id_expert = pEF.id_expert;
+                tmpEF.id_fos = pEF.id_fos;
+
+                result.Add(tmpEF);
+            }
+            return result;
+        }
+
+        public List<ExpertiseMark> GetListExpertiseMark()
+        {
+            List<ExpertiseMark> result = new List<ExpertiseMark>();
+            List<ExpertiseMark> tmplEM = db_AAZ.ExpertiseMark.ToList();
+            foreach (ExpertiseMark pEM in tmplEM)
+            {
+                ExpertiseMark tmpEM = new ExpertiseMark();
+                tmpEM.id_expertise_mark = pEM.id_expertise_mark;
+                tmpEM.id_expertise = pEM.id_expertise;
+                tmpEM.id_mark = pEM.id_mark;
+
+                result.Add(tmpEM);
+            }
+            return result;
+        }
+
         public List<GRNTI> GetListGRNTI()
         {
             List<GRNTI> result = new List<GRNTI>();
