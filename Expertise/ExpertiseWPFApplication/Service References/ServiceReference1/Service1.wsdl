@@ -13,11 +13,47 @@
   <wsdl:message name="IService1_GetData_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetDataResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCatCrit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCatCrit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCatCrit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCatCritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCriterionsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListGRNTI_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListGRNTI" />
   </wsdl:message>
   <wsdl:message name="IService1_GetListGRNTI_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListGRNTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListExperts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListExperts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListExperts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListExpertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListExpertsWithCountExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListExpertsWithCountExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListExpertsWithCountExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListExpertsWithCountExpertiseResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
@@ -36,9 +72,33 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAuthors" message="tns:IService1_GetListAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAuthorsResponse" message="tns:IService1_GetListAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCatCrit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCatCrit" message="tns:IService1_GetListCatCrit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCatCritResponse" message="tns:IService1_GetListCatCrit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCategories" message="tns:IService1_GetListCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCategoriesResponse" message="tns:IService1_GetListCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCriterions" message="tns:IService1_GetListCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCriterionsResponse" message="tns:IService1_GetListCriterions_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetListGRNTI">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListGRNTI" message="tns:IService1_GetListGRNTI_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListGRNTIResponse" message="tns:IService1_GetListGRNTI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListExperts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExperts" message="tns:IService1_GetListExperts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertsResponse" message="tns:IService1_GetListExperts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListExpertsWithCountExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExpertsWithCountExpertise" message="tns:IService1_GetListExpertsWithCountExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertsWithCountExpertiseResponse" message="tns:IService1_GetListExpertsWithCountExpertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
@@ -60,8 +120,62 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCatCrit">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCatCrit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCriterions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListGRNTI">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListGRNTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListExperts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListExperts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListExpertsWithCountExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListExpertsWithCountExpertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -35,6 +35,8 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<Experts> GetListExperts();
 
+        [OperationContract]
+        List<ExpertsWithCountExpertise> GetListExpertsWithCountExpertise();
 
         #endregion
 
@@ -45,6 +47,23 @@ namespace ExpertiseWCFService
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Добавьте здесь операции служб
+    }
+
+    public class ExpertsWithCountExpertise
+    {
+        public int number { get; set; }
+        public int id_expert { get; set; }
+        public string surname_expert { get; set; }
+        public string name_expert { get; set; }
+        public string patronymic_expert { get; set; }
+        public string FIO { get; set; }
+        public string job_expert { get; set; }//место работы
+        public string post_expert { get; set; }//должность
+        public string degree_expert { get; set; }//степень
+        public string rank_expert { get; set; }//звание
+        public string degree_rank_expert { get; set; }//звание + степень
+        public string contacts_expert { get; set; }
+        public int countexpertise { get; set; }
     }
 
 

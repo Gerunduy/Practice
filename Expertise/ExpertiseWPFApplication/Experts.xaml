@@ -1,0 +1,34 @@
+﻿<Window x:Class="ExpertiseWPFApplication.Experts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="Experts" Height="495.839" Width="896.273">
+    <Grid>
+        <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True" Margin="10">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Номер п\п" />
+                <DataGridTextColumn Width="2*" Binding="{Binding FIO  }" Header="ФИО"/>
+                <DataGridTextColumn Width="*" Binding="{Binding job_expert }" Header="Организация" />
+                <DataGridTextColumn Width="*" Binding="{Binding post_expert }" Header="Должность"/>
+                <DataGridTextColumn Width="2*" Binding="{Binding degree_rank_expert  }" Header="Ученая степень, ученое звание"   />
+                <DataGridTextColumn Width="*" Binding="{Binding countexpertise  }" Header="Кол-во проведенных экспертиз"   />
+
+
+                <DataGridTemplateColumn Width="2*" Header="Карточка эксперта">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+
+                            <Button Content="перейте в карточку эксперта"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_expert_Click"/>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

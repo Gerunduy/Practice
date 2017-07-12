@@ -135,6 +135,59 @@ namespace ExpertiseWCFService
             return result;
         }
 
+    
+        public List<ExpertsWithCountExpertise> GetListExpertsWithCountExpertise()
+        {
+            List<ExpertsWithCountExpertise> result = new List<ExpertsWithCountExpertise>();
+            List<Experts> tmplE = db_AAZ.Experts.ToList();
+            int t = 0;
+            foreach (Experts pE in tmplE)
+            {
+                ExpertsWithCountExpertise tmpE = new ExpertsWithCountExpertise();
+                tmpE.id_expert = pE.id_expert;
+                tmpE.surname_expert = pE.surname_expert;
+                tmpE.name_expert = pE.name_expert;
+                tmpE.patronymic_expert = pE.patronymic_expert;
+                tmpE.FIO = pE.surname_expert + " " + pE.name_expert + " " + pE.patronymic_expert;
+                tmpE.job_expert = pE.job_expert;
+                tmpE.post_expert = pE.post_expert;
+                tmpE.degree_expert = pE.degree_expert;
+                tmpE.degree_rank_expert = pE.rank_expert + "," + pE.degree_expert;
+                tmpE.rank_expert = pE.rank_expert;
+                tmpE.contacts_expert = pE.contacts_expert;
+                List<Marks> tmpMarks = db_AAZ.Marks.Where(o => o.id_expert == pE.id_expert).ToList();
+                List<int> countexpertise = new List<int>();
+                for (int i = 0; i < tmpMarks.Count; i++)
+                {
+                    int id_mark = tmpMarks[i].id_mark;
+                    ExpertiseMark id_expertise = db_AAZ.ExpertiseMark.FirstOrDefault(o => o.id_mark == id_mark);
+                    if (countexpertise.Count == 0)
+                    {
+                        countexpertise.Add(id_expertise.id_expertise);
+                    }
+                    else
+                    {
+                        List<int> idtemplist = new List<int>();
+                        for (int j = 0; j < countexpertise.Count; j++)
+                        {
+                            if (countexpertise[j] != id_expertise.id_expertise)
+                            {
+                                idtemplist.Add(id_expertise.id_expertise);
+                            }
+                        }
+                        countexpertise.AddRange(idtemplist);
+                        idtemplist.Clear();
+                    }
+
+                }
+                tmpE.countexpertise = countexpertise.Count();
+                tmpE.number = t;
+                result.Add(tmpE);
+                countexpertise.Clear();
+                t++;
+            }
+            return result;
+        }
         #endregion
 
 

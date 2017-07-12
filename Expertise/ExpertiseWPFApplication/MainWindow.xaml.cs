@@ -21,6 +21,7 @@ namespace ExpertiseWPFApplication
     public partial class MainWindow : Window
     {
         GRNTI _GRNTI;
+        Experts _Experts;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -65,13 +66,20 @@ namespace ExpertiseWPFApplication
             _GRNTI.Owner = this;
             _GRNTI.ShowDialog();
         }
-
+        //ГРНТИ
         private void button7_Click(object sender, RoutedEventArgs e)
         {
             _GRNTI = new GRNTI();
             _GRNTI.Owner = this;
             _GRNTI.ShowDialog();
             
+        }
+        //Эксперты
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            _Experts = new Experts();
+            _Experts.Owner = this;
+            _Experts.ShowDialog();
         }
     }
 }
