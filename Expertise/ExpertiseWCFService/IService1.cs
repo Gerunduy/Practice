@@ -15,7 +15,32 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         string GetData(int value);
+        #region Получение таблиц
 
+        [OperationContract]
+        List<Authors> GetListAuthors();
+
+        [OperationContract]
+        List<CatCrit> GetListCatCrit();
+
+        [OperationContract]
+        List<Categories> GetListCategories();
+
+        [OperationContract]
+        List<Criterions> GetListCriterions();
+
+        [OperationContract]
+        List<GRNTI> GetListGRNTI();
+
+        [OperationContract]
+        List<Experts> GetListExperts();
+
+
+        #endregion
+
+
+        [OperationContract]
+        string Gethello();
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
