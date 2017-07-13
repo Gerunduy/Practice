@@ -20,6 +20,7 @@ namespace ExpertiseWPFApplication
     public partial class Experts : Window
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        ExpertCard _ExpertCard;
         public Experts()
         {
             InitializeComponent();
@@ -42,7 +43,38 @@ namespace ExpertiseWPFApplication
 
         private void bt_expert_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("тест");
+            ServiceReference1.ExpertsWithCountExpertise temp = dataGrid1.SelectedItem as ServiceReference1.ExpertsWithCountExpertise;
+            
+            _ExpertCard = new ExpertCard();
+            _ExpertCard.Owner = this;
+            _ExpertCard.textBox.Text = temp.surname_expert;
+            _ExpertCard.textBox1.Text = temp.name_expert;
+            _ExpertCard.textBox2.Text = temp.patronymic_expert;
+            _ExpertCard.textBox3.Text = temp.job_expert;
+            _ExpertCard.textBox7.Text = temp.post_expert;
+            _ExpertCard.textBox4.Text = temp.degree_expert;
+            _ExpertCard.textBox5.Text = temp.rank_expert;
+            _ExpertCard.textBox6.Text = temp.contacts_expert;
+            _ExpertCard.id_expert = temp.id_expert;
+            _ExpertCard.textBlock.Text = "";
+            _ExpertCard.dataGrid.ItemsSource = null;
+            _ExpertCard.listFOSCurrentExpert.Clear();
+            
+            for(int i = 0; i < temp.ListFOS.ToList().Count; i++)
+            {
+                int j = i+1;
+                _ExpertCard.listFOSCurrentExpert.Add(temp.ListFOS[i]);
+                _ExpertCard.textBlock.Text +=j +" "+ temp.ListFOS[i].name_fos + "\r\n";
+                _ExpertCard.j = j;
+            }
+            if (_ExpertCard.ShowDialog() == true)
+            {
+                client.GetListExpertsWithCountExpertiseAsync();
+            }
+            else
+            {
+                client.GetListExpertsWithCountExpertiseAsync();
+            }
         }
         
     }
