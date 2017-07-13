@@ -105,6 +105,7 @@
     <Property Name="contacts_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_Experts" FromRole="Experts" ToRole="ExpertFos" />
     <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Experts" FromRole="Experts" ToRole="Marks" />
+    <Property Name="delete_expert" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>

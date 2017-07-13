@@ -16,7 +16,8 @@
                 <DataGridTextColumn Width="*" Binding="{Binding post_expert }" Header="Должность"/>
                 <DataGridTextColumn Width="2*" Binding="{Binding degree_rank_expert  }" Header="Ученая степень, ученое звание"   />
                 <DataGridTextColumn Width="*" Binding="{Binding countexpertise  }" Header="Кол-во проведенных экспертиз"   />
-
+                <DataGridTextColumn Width="*" Binding="{Binding delete_expert  }" Header="статус"   />
+                
 
                 <DataGridTemplateColumn Width="2*" Header="Карточка эксперта">
                     <DataGridTemplateColumn.CellTemplate>

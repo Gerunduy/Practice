@@ -85,6 +85,7 @@
     <Property Name="degree_expert" Type="nvarchar(max)" Nullable="false" />
     <Property Name="rank_expert" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="contacts_expert" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="delete_expert" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>

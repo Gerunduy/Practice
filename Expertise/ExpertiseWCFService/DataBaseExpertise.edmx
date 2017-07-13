@@ -90,6 +90,7 @@
           <Property Name="degree_expert" Type="nvarchar(max)" Nullable="false" />
           <Property Name="rank_expert" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="contacts_expert" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="delete_expert" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="FiledsOfScience">
           <Key>
@@ -794,6 +795,7 @@
           <Property Name="contacts_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_Experts" FromRole="Experts" ToRole="ExpertFos" />
           <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Experts" FromRole="Experts" ToRole="Marks" />
+          <Property Name="delete_expert" Type="Boolean" Nullable="false" />
         </EntityType>
         <EntityType Name="FiledsOfScience">
           <Key>
@@ -1496,6 +1498,7 @@
           <EntitySetMapping Name="Experts">
             <EntityTypeMapping TypeName="db_AAZModel.Experts">
               <MappingFragment StoreEntitySet="Experts">
+                <ScalarProperty Name="delete_expert" ColumnName="delete_expert" />
                 <ScalarProperty Name="id_expert" ColumnName="id_expert" />
                 <ScalarProperty Name="surname_expert" ColumnName="surname_expert" />
                 <ScalarProperty Name="name_expert" ColumnName="name_expert" />
