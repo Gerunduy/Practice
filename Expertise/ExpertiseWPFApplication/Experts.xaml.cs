@@ -19,6 +19,7 @@ namespace ExpertiseWPFApplication
     /// </summary>
     public partial class Experts : Window
     {
+        ExpertСard _ExpertСard;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public Experts()
         {
@@ -42,7 +43,18 @@ namespace ExpertiseWPFApplication
 
         private void bt_expert_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("тест");
+            _ExpertСard = new ExpertСard();
+            ServiceReference1.ExpertsWithCountExpertise temp = dataGrid1.SelectedItem as ServiceReference1.ExpertsWithCountExpertise;
+            _ExpertСard.textBox.Text = temp.surname_expert;
+            _ExpertСard.textBox1.Text = temp.name_expert;
+            _ExpertСard.textBox2.Text = temp.patronymic_expert;
+            _ExpertСard.textBox3.Text = temp.job_expert;
+            _ExpertСard.textBox4.Text = temp.post_expert;
+            _ExpertСard.textBox5.Text = temp.degree_expert;
+            _ExpertСard.textBox6.Text = temp.rank_expert;
+            _ExpertСard.textBox7.Text = temp.contacts_expert;
+            _ExpertСard.Owner = this;
+            _ExpertСard.ShowDialog();
         }
         
     }

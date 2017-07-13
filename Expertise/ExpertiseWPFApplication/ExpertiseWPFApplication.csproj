@@ -60,6 +60,9 @@
     <Compile Include="Experts.xaml.cs">
       <DependentUpon>Experts.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpertСard.xaml.cs">
+      <DependentUpon>ExpertСard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
     </Compile>
@@ -69,6 +72,10 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Page Include="Experts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpertСard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
