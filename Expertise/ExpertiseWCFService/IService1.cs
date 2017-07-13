@@ -38,8 +38,23 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<ExpertsWithCountExpertise> GetListExpertsWithCountExpertise();
 
+        [OperationContract]
+        List<FiledsOfScience> GetListFOS();
+
         #endregion
 
+        [OperationContract]
+        List<FiledsOfScience> test();
+        [OperationContract]
+        void test2();
+
+        [OperationContract]
+        void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert,
+            string job_expert, string post_expert, string degree_expert, string rank_expert, 
+            Boolean delete_expert, string contacts_expert, int[]  ListFOS);
+
+        [OperationContract]
+        List<Expertise_Expert> Expertise_Expert(int id_expert);
 
         [OperationContract]
         string Gethello();
@@ -62,10 +77,22 @@ namespace ExpertiseWCFService
         public string degree_expert { get; set; }//степень
         public string rank_expert { get; set; }//звание
         public string degree_rank_expert { get; set; }//звание + степень
+        public Boolean delete_expert { get; set; }//удален\активен
         public string contacts_expert { get; set; }
         public int countexpertise { get; set; }
+        public List<FiledsOfScience> ListFOS { get; set; }
     }
 
+    public class Expertise_Expert
+    {
+        public int number { get; set; }
+        public int id_expertise { get; set; }
+        public string name_expertise { get; set; }
+        public string name_fos { get; set; }
+        public DateTime date_expertise { get; set; }
+        public  List<string> victory_project { get; set; }
+        public string status_expertise { get; set; }
+    }
 
     // Используйте контракт данных, как показано в примере ниже, чтобы добавить составные типы к операциям служб.
     [DataContract]
