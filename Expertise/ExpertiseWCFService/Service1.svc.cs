@@ -201,6 +201,345 @@ namespace ExpertiseWCFService
 
         #endregion
 
+        #region Добавление записей
+
+        public bool AddAuthors(string surname_author, string name_author, string patronymic_author)
+        {
+            try
+            {
+                Authors A = new Authors();
+                A.surname_author = surname_author;
+                A.name_author = name_author;
+                A.patronymic_author = patronymic_author;
+
+                db_AAZ.Authors.Add(A);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCatCrit(int id_cat, int id_crit)
+        {
+            try
+            {
+                CatCrit CC = new CatCrit();
+                CC.id_cat = id_cat;
+                CC.id_crit = id_crit;
+
+                db_AAZ.CatCrit.Add(CC);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCategories(string name_category)
+        {
+            try
+            {
+                Categories C = new Categories();
+                C.name_category = name_category;
+
+                db_AAZ.Categories.Add(C);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCriterions(string name_crit, bool qualit_crit)
+        {
+            try
+            {
+                Criterions C = new Criterions();
+                C.name_crit = name_crit;
+                C.qualit_crit = qualit_crit;
+
+                db_AAZ.Criterions.Add(C);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCritValues(int id_crit, string valid_values)
+        {
+            try
+            {
+                CritValues CV = new CritValues();
+                CV.id_crit = id_crit;
+                CV.valid_values = valid_values;
+
+                db_AAZ.CritValues.Add(CV);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExpCrit(int id_exp, int id_crit)
+        {
+            try
+            {
+                ExpCrit EC = new ExpCrit();
+                EC.id_exp = id_exp;
+                EC.id_crit = id_crit;
+
+                db_AAZ.ExpCrit.Add(EC);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExpertFos(int id_expert, int id_fos)
+        {
+            try
+            {
+                ExpertFos EF = new ExpertFos();
+                EF.id_expert = id_expert;
+                EF.id_fos = id_fos;
+
+                db_AAZ.ExpertFos.Add(EF);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExpertiseMark(int id_expertise, int id_mark)
+        {
+            try
+            {
+                ExpertiseMark EM = new ExpertiseMark();
+                EM.id_expertise = id_expertise;
+                EM.id_mark = id_mark;
+
+                db_AAZ.ExpertiseMark.Add(EM);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExpertises(string name_expertise, DateTime date_expertise)
+        {
+            try
+            {
+                Expertises E = new Expertises();
+                E.name_expertise = name_expertise;
+                E.date_expertise = date_expertise;
+
+                db_AAZ.Expertises.Add(E);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert)
+        {
+            try
+            {
+                Experts E = new Experts();
+                E.surname_expert = surname_expert;
+                E.name_expert = name_expert;
+                E.patronymic_expert = patronymic_expert;
+                E.job_expert = job_expert;
+                E.post_expert = post_expert;
+                E.degree_expert = degree_expert;
+                E.rank_expert = rank_expert;
+                E.contacts_expert = contacts_expert;
+
+                db_AAZ.Experts.Add(E);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddFiledsOfScience(string name_fos)
+        {
+            try
+            {
+                FiledsOfScience FOS = new FiledsOfScience();
+                FOS.name_fos = name_fos;
+
+                db_AAZ.FiledsOfScience.Add(FOS);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddGRNTI(string name_grnti)
+        {
+            try
+            {
+                GRNTI grnti = new GRNTI();
+                grnti.name_grnti = name_grnti;
+
+                db_AAZ.GRNTI.Add(grnti);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddMarks(int id_expert, int id_crit, int id_project, int rating)
+        {
+            try
+            {
+                Marks M= new Marks();
+                M.id_expert = id_expert;
+                M.id_crit = id_crit;
+                M.id_project = id_project;
+                M.rating = rating;
+
+                db_AAZ.Marks.Add(M);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddProjectAuthors(int id_proj, int id_author)
+        {
+            try
+            {
+                ProjectAuthors PA = new ProjectAuthors();
+                PA.id_proj = id_proj;
+                PA.id_author = id_author;
+
+                db_AAZ.ProjectAuthors.Add(PA);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddProjectExpertise(int id_expertise, int id_project, bool accept)
+        {
+            try
+            {
+                ProjectExpertise PE = new ProjectExpertise();
+                PE.id_expertise = id_expertise;
+                PE.id_project = id_project;
+                PE.accept = accept;
+
+                db_AAZ.ProjectExpertise.Add(PE);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddProjectFos(int id_project, int id_fos)
+        {
+            try
+            {
+                ProjectFos PF = new ProjectFos();
+                PF.id_project = id_project;
+                PF.id_fos = id_fos;
+
+                db_AAZ.ProjectFos.Add(PF);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project)
+        {
+            try
+            {
+                Projects P = new Projects();
+                P.name_project = name_project;
+                P.lead_project = lead_project;
+                P.grnti_project = grnti_project;
+                P.begin_project = begin_project;
+                P.end_project = end_project;
+                P.money_project = money_project;
+                P.email_project = email_project;
+
+                db_AAZ.Projects.Add(P);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        #endregion
+
         #region Редактирование таблиц
 
         public bool EditAuthors(int id_author, string surname_author, string name_author, string patronymic_author)

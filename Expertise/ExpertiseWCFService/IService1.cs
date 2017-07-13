@@ -50,6 +50,61 @@ namespace ExpertiseWCFService
 
         #endregion
 
+        #region Добавление записей
+
+        [OperationContract]
+        bool AddAuthors(string surname_author, string name_author, string patronymic_author);
+
+        [OperationContract]
+        bool AddCatCrit(int id_cat, int id_crit);
+
+        [OperationContract]
+        bool AddCategories(string name_category);
+
+        [OperationContract]
+        bool AddCriterions(string name_crit, bool qualit_crit);
+
+        [OperationContract]
+        bool AddCritValues(int id_crit, string valid_values);
+
+        [OperationContract]
+        bool AddExpCrit(int id_exp, int id_crit);
+
+        [OperationContract]
+        bool AddExpertFos(int id_expert, int id_fos);
+
+        [OperationContract]
+        bool AddExpertiseMark(int id_expertise, int id_mark);
+
+        [OperationContract]
+        bool AddExpertises(string name_expertise, DateTime date_expertise);
+
+        [OperationContract]
+        bool AddExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert);
+
+        [OperationContract]
+        bool AddFiledsOfScience(string name_fos);
+
+        [OperationContract]
+        bool AddGRNTI(string name_grnti);
+
+        [OperationContract]
+        bool AddMarks(int id_expert, int id_crit, int id_project, int rating);
+
+        [OperationContract]
+        bool AddProjectAuthors(int id_proj, int id_author);
+
+        [OperationContract]
+        bool AddProjectExpertise(int id_expertise, int id_project, bool accept);
+
+        [OperationContract]
+        bool AddProjectFos(int id_project, int id_fos);
+
+        [OperationContract]
+        bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project);
+
+        #endregion
+
         #region Редактирование таблиц
 
         [OperationContract]
