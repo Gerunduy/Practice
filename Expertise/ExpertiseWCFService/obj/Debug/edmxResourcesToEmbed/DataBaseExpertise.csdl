@@ -105,6 +105,7 @@
     <Property Name="contacts_expert" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_Experts" FromRole="Experts" ToRole="ExpertFos" />
     <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Experts" FromRole="Experts" ToRole="Marks" />
+    <Property Name="delete_expert" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -195,6 +196,7 @@
     <Property Name="id_project" Type="Int32" Nullable="false" />
     <Property Name="accept" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="Expertises" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="ProjectExpertise" ToRole="Expertises" />
+    <NavigationProperty Name="Projects" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="ProjectExpertise" ToRole="Projects" />
   </EntityType>
   <EntityType Name="ProjectFos">
     <Key>
@@ -221,6 +223,7 @@
     <NavigationProperty Name="GRNTI" Relationship="Self.FK_Projects_GRNTI" FromRole="Projects" ToRole="GRNTI" />
     <NavigationProperty Name="ProjectAuthors" Relationship="Self.FK_ProjectAuthors_Projects" FromRole="Projects" ToRole="ProjectAuthors" />
     <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_Projects" FromRole="Projects" ToRole="ProjectFos" />
+    <NavigationProperty Name="ProjectExpertise" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="Projects" ToRole="ProjectExpertise" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>
@@ -716,5 +719,21 @@
       <End Role="Rights" EntitySet="Rights" />
       <End Role="Users" EntitySet="Users" />
     </AssociationSet>
+    <AssociationSet Name="FK_ProjectExpertise_Projects" Association="db_AAZModel.FK_ProjectExpertise_Projects">
+      <End Role="Projects" EntitySet="Projects" />
+      <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+    </AssociationSet>
   </EntityContainer>
+  <Association Name="FK_ProjectExpertise_Projects">
+    <End Type="db_AAZModel.Projects" Role="Projects" Multiplicity="1" />
+    <End Type="db_AAZModel.ProjectExpertise" Role="ProjectExpertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="id_project" />
+      </Principal>
+      <Dependent Role="ProjectExpertise">
+        <PropertyRef Name="id_project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
