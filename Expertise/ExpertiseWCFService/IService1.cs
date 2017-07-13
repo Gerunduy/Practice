@@ -15,6 +15,8 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         string GetData(int value);
+
+
         #region Получение таблиц
 
         [OperationContract]
@@ -42,11 +44,31 @@ namespace ExpertiseWCFService
         List<ExpertiseMark> GetListExpertiseMark();
 
         [OperationContract]
-        List<GRNTI> GetListGRNTI();
+        List<Expertises> GetListExpertises();
 
         [OperationContract]
         List<Experts> GetListExperts();
 
+        [OperationContract]
+        List<FiledsOfScience> GetListFiledsOfScience();
+
+        [OperationContract]
+        List<GRNTI> GetListGRNTI();
+
+        [OperationContract]
+        List<Marks> GetListMarks();
+
+        [OperationContract]
+        List<ProjectAuthors> GetListProjectAuthors();
+
+        [OperationContract]
+        List<ProjectExpertise> GetListProjectExpertise();
+
+        [OperationContract]
+        List<ProjectFos> GetListProjectFos();
+
+        [OperationContract]
+        List<Projects> GetListProjects();
 
         #endregion
 

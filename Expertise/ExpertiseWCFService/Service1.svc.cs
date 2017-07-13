@@ -12,191 +12,516 @@ namespace ExpertiseWCFService
     // ПРИМЕЧАНИЕ. Чтобы запустить клиент проверки WCF для тестирования службы, выберите элементы Service1.svc или Service1.svc.cs в обозревателе решений и начните отладку.
     public class Service1 : IService1
     {
+        // =================================================================================================================================================
         public db_AAZEntities db_AAZ = new db_AAZEntities();
-        public string GetData(int value)
-        {
-            return string.Format("You entered  : {0}", value);
-        }
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
-        {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
-        }
 
         #region Получение таблиц
 
         public List<Authors> GetListAuthors()
         {
-            List<Authors> result = new List<Authors>();
-            List<Authors> tmplA = db_AAZ.Authors.ToList();
-            foreach (Authors pA in tmplA)
+            try
             {
-                Authors tmpA = new Authors();
-                tmpA.id_author = pA.id_author;
-                tmpA.surname_author = pA.surname_author;
-                tmpA.name_author = pA.name_author;
-                tmpA.patronymic_author = pA.patronymic_author;
+                List<Authors> result = new List<Authors>();
+                List<Authors> tmplA = db_AAZ.Authors.ToList();
+                foreach (Authors pA in tmplA)
+                {
+                    Authors tmpA = new Authors();
+                    tmpA.id_author = pA.id_author;
+                    tmpA.surname_author = pA.surname_author;
+                    tmpA.name_author = pA.name_author;
+                    tmpA.patronymic_author = pA.patronymic_author;
 
-                result.Add(tmpA);
+                    result.Add(tmpA);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Authors> result = new List<Authors>();
+                Authors tmpA = new Authors();
+                tmpA.id_author = -1;
+                tmpA.surname_author = "Содержимое таблицы не получено";
+                result.Add(tmpA);
+
+                return result;
+            }
         }
 
         public List<CatCrit> GetListCatCrit()
         {
-            List<CatCrit> result = new List<CatCrit>();
-            List<CatCrit> tmplCC = db_AAZ.CatCrit.ToList();
-            foreach (CatCrit pCC in tmplCC)
+            try
             {
-                CatCrit tmpCC = new CatCrit();
-                tmpCC.id_cat_crit = pCC.id_cat_crit;
-                tmpCC.id_cat = pCC.id_cat;
-                tmpCC.id_crit = pCC.id_crit;
+                List<CatCrit> result = new List<CatCrit>();
+                List<CatCrit> tmplCC = db_AAZ.CatCrit.ToList();
+                foreach (CatCrit pCC in tmplCC)
+                {
+                    CatCrit tmpCC = new CatCrit();
+                    tmpCC.id_cat_crit = pCC.id_cat_crit;
+                    tmpCC.id_cat = pCC.id_cat;
+                    tmpCC.id_crit = pCC.id_crit;
 
-                result.Add(tmpCC);
+                    result.Add(tmpCC);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<CatCrit> result = new List<CatCrit>();
+                CatCrit tmpCC = new CatCrit();
+                tmpCC.id_cat_crit = -1;
+                result.Add(tmpCC);
+
+                return result;
+            }
         }
 
         public List<Categories> GetListCategories()
         {
-            List<Categories> result = new List<Categories>();
-            List<Categories> tmplC = db_AAZ.Categories.ToList();
-            foreach (Categories pC in tmplC)
+            try
             {
-                Categories tmpC = new Categories();
-                tmpC.id_category = pC.id_category;
-                tmpC.name_category = pC.name_category;
+                List<Categories> result = new List<Categories>();
+                List<Categories> tmplC = db_AAZ.Categories.ToList();
+                foreach (Categories pC in tmplC)
+                {
+                    Categories tmpC = new Categories();
+                    tmpC.id_category = pC.id_category;
+                    tmpC.name_category = pC.name_category;
 
-                result.Add(tmpC);
+                    result.Add(tmpC);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Categories> result = new List<Categories>();
+                Categories tmpC = new Categories();
+                tmpC.id_category = -1;
+                result.Add(tmpC);
+
+                return result;
+            }
         }
 
         public List<Criterions> GetListCriterions()
         {
-            List<Criterions> result = new List<Criterions>();
-            List<Criterions> tmplC = db_AAZ.Criterions.ToList();
-            foreach (Criterions pC in tmplC)
+            try
             {
-                Criterions tmpC = new Criterions();
-                tmpC.id_crit = pC.id_crit;
-                tmpC.name_crit = pC.name_crit;
-                tmpC.qualit_crit = pC.qualit_crit;
+                List<Criterions> result = new List<Criterions>();
+                List<Criterions> tmplC = db_AAZ.Criterions.ToList();
+                foreach (Criterions pC in tmplC)
+                {
+                    Criterions tmpC = new Criterions();
+                    tmpC.id_crit = pC.id_crit;
+                    tmpC.name_crit = pC.name_crit;
+                    tmpC.qualit_crit = pC.qualit_crit;
 
-                result.Add(tmpC);
+                    result.Add(tmpC);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Criterions> result = new List<Criterions>();
+                Criterions tmpC = new Criterions();
+                tmpC.id_crit = -1;
+                result.Add(tmpC);
+
+                return result;
+            }
         }
 
         public List<CritValues> GetListCritValues()
         {
-            List<CritValues> result = new List<CritValues>();
-            List<CritValues> tmplCV = db_AAZ.CritValues.ToList();
-            foreach (CritValues pCV in tmplCV)
+            try
             {
-                CritValues tmpCV = new CritValues();
-                tmpCV.id_value = pCV.id_value;
-                tmpCV.id_crit = pCV.id_crit;
-                tmpCV.valid_values = pCV.valid_values;
+                List<CritValues> result = new List<CritValues>();
+                List<CritValues> tmplCV = db_AAZ.CritValues.ToList();
+                foreach (CritValues pCV in tmplCV)
+                {
+                    CritValues tmpCV = new CritValues();
+                    tmpCV.id_value = pCV.id_value;
+                    tmpCV.id_crit = pCV.id_crit;
+                    tmpCV.valid_values = pCV.valid_values;
 
-                result.Add(tmpCV);
+                    result.Add(tmpCV);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<CritValues> result = new List<CritValues>();
+                CritValues tmpCV = new CritValues();
+                tmpCV.id_value = -1;
+                result.Add(tmpCV);
+
+                return result;
+            }
         }
 
         public List<ExpCrit> GetListExpCrit()
         {
-            List<ExpCrit> result = new List<ExpCrit>();
-            List<ExpCrit> tmplEC = db_AAZ.ExpCrit.ToList();
-            foreach (ExpCrit pEC in tmplEC)
+            try
             {
-                ExpCrit tmpEC = new ExpCrit();
-                tmpEC.id_exp_crit = pEC.id_exp_crit;
-                tmpEC.id_exp = pEC.id_exp;
-                tmpEC.id_crit = pEC.id_crit;
+                List<ExpCrit> result = new List<ExpCrit>();
+                List<ExpCrit> tmplEC = db_AAZ.ExpCrit.ToList();
+                foreach (ExpCrit pEC in tmplEC)
+                {
+                    ExpCrit tmpEC = new ExpCrit();
+                    tmpEC.id_exp_crit = pEC.id_exp_crit;
+                    tmpEC.id_exp = pEC.id_exp;
+                    tmpEC.id_crit = pEC.id_crit;
 
-                result.Add(tmpEC);
+                    result.Add(tmpEC);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ExpCrit> result = new List<ExpCrit>();
+                ExpCrit tmpEC = new ExpCrit();
+                tmpEC.id_exp_crit = -1;
+                result.Add(tmpEC);
+
+                return result;
+            }
         }
 
         public List<ExpertFos> GetListExpertFos()
         {
-            List<ExpertFos> result = new List<ExpertFos>();
-            List<ExpertFos> tmplEF = db_AAZ.ExpertFos.ToList();
-            foreach (ExpertFos pEF in tmplEF)
+            try
             {
-                ExpertFos tmpEF = new ExpertFos();
-                tmpEF.id_expert_fos = pEF.id_expert_fos;
-                tmpEF.id_expert = pEF.id_expert;
-                tmpEF.id_fos = pEF.id_fos;
+                List<ExpertFos> result = new List<ExpertFos>();
+                List<ExpertFos> tmplEF = db_AAZ.ExpertFos.ToList();
+                foreach (ExpertFos pEF in tmplEF)
+                {
+                    ExpertFos tmpEF = new ExpertFos();
+                    tmpEF.id_expert_fos = pEF.id_expert_fos;
+                    tmpEF.id_expert = pEF.id_expert;
+                    tmpEF.id_fos = pEF.id_fos;
 
-                result.Add(tmpEF);
+                    result.Add(tmpEF);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ExpertFos> result = new List<ExpertFos>();
+                ExpertFos tmpEF = new ExpertFos();
+                tmpEF.id_expert_fos = -1;
+                result.Add(tmpEF);
+
+                return result;
+            }
         }
 
         public List<ExpertiseMark> GetListExpertiseMark()
         {
-            List<ExpertiseMark> result = new List<ExpertiseMark>();
-            List<ExpertiseMark> tmplEM = db_AAZ.ExpertiseMark.ToList();
-            foreach (ExpertiseMark pEM in tmplEM)
+            try
             {
-                ExpertiseMark tmpEM = new ExpertiseMark();
-                tmpEM.id_expertise_mark = pEM.id_expertise_mark;
-                tmpEM.id_expertise = pEM.id_expertise;
-                tmpEM.id_mark = pEM.id_mark;
+                List<ExpertiseMark> result = new List<ExpertiseMark>();
+                List<ExpertiseMark> tmplEM = db_AAZ.ExpertiseMark.ToList();
+                foreach (ExpertiseMark pEM in tmplEM)
+                {
+                    ExpertiseMark tmpEM = new ExpertiseMark();
+                    tmpEM.id_expertise_mark = pEM.id_expertise_mark;
+                    tmpEM.id_expertise = pEM.id_expertise;
+                    tmpEM.id_mark = pEM.id_mark;
 
-                result.Add(tmpEM);
+                    result.Add(tmpEM);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ExpertiseMark> result = new List<ExpertiseMark>();
+                ExpertiseMark tmpEM = new ExpertiseMark();
+                tmpEM.id_expertise_mark = -1;
+                result.Add(tmpEM);
+
+                return result;
+            }
         }
 
-        public List<GRNTI> GetListGRNTI()
+        public List<Expertises> GetListExpertises()
         {
-            List<GRNTI> result = new List<GRNTI>();
-            List<GRNTI> lv = db_AAZ.GRNTI.ToList();
-            for (int i = 0; i < lv.Count; i++)
+            try
             {
-                GRNTI temp = new GRNTI();
-                temp.code_grnti = lv[i].code_grnti;
-                temp.name_grnti = lv[i].name_grnti;
+                List<Expertises> result = new List<Expertises>();
+                List<Expertises> tmplE = db_AAZ.Expertises.ToList();
+                foreach (Expertises pE in tmplE)
+                {
+                    Expertises tmpE = new Expertises();
+                    tmpE.id_expertise = pE.id_expertise;
+                    tmpE.name_expertise = pE.name_expertise;
+                    tmpE.date_expertise = pE.date_expertise;
 
-                result.Add(temp);
 
-
+                    result.Add(tmpE);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Expertises> result = new List<Expertises>();
+                Expertises tmpE = new Expertises();
+                tmpE.id_expertise = -1;
+                result.Add(tmpE);
+
+                return result;
+            }
         }
 
         public List<Experts> GetListExperts()
         {
-            List<Experts> result = new List<Experts>();
-            List<Experts> tmplE = db_AAZ.Experts.ToList();
-            foreach (Experts pE in tmplE)
+            try
             {
-                Experts tmpE = new Experts();
-                tmpE.id_expert = pE.id_expert;
-                tmpE.surname_expert = pE.surname_expert;
-                tmpE.name_expert = pE.name_expert;
-                tmpE.patronymic_expert = pE.patronymic_expert;
-                tmpE.job_expert = pE.job_expert;
-                tmpE.post_expert = pE.post_expert;
-                tmpE.degree_expert = pE.degree_expert;
-                tmpE.rank_expert = pE.rank_expert;
-                tmpE.contacts_expert = pE.contacts_expert;
+                List<Experts> result = new List<Experts>();
+                List<Experts> tmplE = db_AAZ.Experts.ToList();
+                foreach (Experts pE in tmplE)
+                {
+                    Experts tmpE = new Experts();
+                    tmpE.id_expert = pE.id_expert;
+                    tmpE.surname_expert = pE.surname_expert;
+                    tmpE.name_expert = pE.name_expert;
+                    tmpE.patronymic_expert = pE.patronymic_expert;
+                    tmpE.job_expert = pE.job_expert;
+                    tmpE.post_expert = pE.post_expert;
+                    tmpE.degree_expert = pE.degree_expert;
+                    tmpE.rank_expert = pE.rank_expert;
+                    tmpE.contacts_expert = pE.contacts_expert;
 
-                result.Add(tmpE);
+                    result.Add(tmpE);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Experts> result = new List<Experts>();
+                Experts tmpE = new Experts();
+                tmpE.id_expert = -1;
+                result.Add(tmpE);
+
+                return result;
+            }
+        }
+
+        public List<FiledsOfScience> GetListFiledsOfScience()
+        {
+            try
+            {
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                List<FiledsOfScience> tmplFOS = db_AAZ.FiledsOfScience.ToList();
+                foreach (FiledsOfScience pFOS in tmplFOS)
+                {
+                    FiledsOfScience tmpFOS = new FiledsOfScience();
+                    tmpFOS.id_fos = pFOS.id_fos;
+                    tmpFOS.name_fos = pFOS.name_fos;
+
+                    result.Add(tmpFOS);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                FiledsOfScience tmpFOS = new FiledsOfScience();
+                tmpFOS.id_fos = -1;
+                result.Add(tmpFOS);
+
+                return result;
+            }
+        }
+
+        public List<GRNTI> GetListGRNTI()
+        {
+            try
+            {
+                List<GRNTI> result = new List<GRNTI>();
+                List<GRNTI> lv = db_AAZ.GRNTI.ToList();
+                for (int i = 0; i < lv.Count; i++)
+                {
+                    GRNTI temp = new GRNTI();
+                    temp.code_grnti = lv[i].code_grnti;
+                    temp.name_grnti = lv[i].name_grnti;
+
+                    result.Add(temp);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<GRNTI> result = new List<GRNTI>();
+                GRNTI temp = new GRNTI();
+                temp.code_grnti = "-1";
+                result.Add(temp);
+
+                return result;
+            }
+        }
+
+        public List<Marks> GetListMarks()
+        {
+            try
+            {
+                List<Marks> result = new List<Marks>();
+                List<Marks> tmplM = db_AAZ.Marks.ToList();
+                foreach (Marks pM in tmplM)
+                {
+                    Marks tmpM = new Marks();
+                    tmpM.id_mark = pM.id_mark;
+                    tmpM.id_expert = pM.id_expert;
+                    tmpM.id_crit = pM.id_crit;
+                    tmpM.id_project = pM.id_project;
+                    tmpM.rating = pM.rating;
+
+                    result.Add(tmpM);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Marks> result = new List<Marks>();
+                Marks tmpM = new Marks();
+                tmpM.id_mark = -1;
+                result.Add(tmpM);
+
+                return result;
+            }
+        }
+
+        public List<ProjectAuthors> GetListProjectAuthors()
+        {
+            try
+            {
+                List<ProjectAuthors> result = new List<ProjectAuthors>();
+                List<ProjectAuthors> tmplPA = db_AAZ.ProjectAuthors.ToList();
+                foreach (ProjectAuthors pPA in tmplPA)
+                {
+                    ProjectAuthors tmpPA = new ProjectAuthors();
+                    tmpPA.id_proj_author = pPA.id_proj_author;
+                    tmpPA.id_proj = pPA.id_proj;
+                    tmpPA.id_author = pPA.id_author;
+
+                    result.Add(tmpPA);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ProjectAuthors> result = new List<ProjectAuthors>();
+                ProjectAuthors tmpPA = new ProjectAuthors();
+                tmpPA.id_proj_author = -1;
+                result.Add(tmpPA);
+
+                return result;
+            }
+        }
+
+        public List<ProjectExpertise> GetListProjectExpertise()
+        {
+            try
+            {
+                List<ProjectExpertise> result = new List<ProjectExpertise>();
+                List<ProjectExpertise> tmplPE = db_AAZ.ProjectExpertise.ToList();
+                foreach (ProjectExpertise pPE in tmplPE)
+                {
+                    ProjectExpertise tmpPE = new ProjectExpertise();
+                    tmpPE.id_project_expertise = pPE.id_project_expertise;
+                    tmpPE.id_expertise = pPE.id_expertise;
+                    tmpPE.id_project = pPE.id_project;
+                    tmpPE.accept = pPE.accept;
+
+                    result.Add(tmpPE);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ProjectExpertise> result = new List<ProjectExpertise>();
+                ProjectExpertise tmpPE = new ProjectExpertise();
+                tmpPE.id_project_expertise = -1;
+                result.Add(tmpPE);
+
+                return result;
+            }
+        }
+
+        public List<ProjectFos> GetListProjectFos()
+        {
+            try
+            {
+                List<ProjectFos> result = new List<ProjectFos>();
+                List<ProjectFos> tmplPF = db_AAZ.ProjectFos.ToList();
+                foreach (ProjectFos pPF in tmplPF)
+                {
+                    ProjectFos tmpPF = new ProjectFos();
+                    tmpPF.id_project_fos = pPF.id_project_fos;
+                    tmpPF.id_project = pPF.id_project;
+                    tmpPF.id_fos = pPF.id_fos;
+
+                    result.Add(tmpPF);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ProjectFos> result = new List<ProjectFos>();
+                ProjectFos tmpPF = new ProjectFos();
+                tmpPF.id_project_fos = -1;
+                result.Add(tmpPF);
+
+                return result;
+            }
+        }
+
+        public List<Projects> GetListProjects()
+        {
+            try
+            {
+                List<Projects> result = new List<Projects>();
+                List<Projects> tmplP = db_AAZ.Projects.ToList();
+                foreach (Projects pP in tmplP)
+                {
+                    Projects tmpP = new Projects();
+                    tmpP.id_project = pP.id_project;
+                    tmpP.name_project = pP.name_project;
+                    tmpP.lead_project = pP.lead_project;
+                    tmpP.grnti_project = pP.grnti_project;
+                    tmpP.begin_project = pP.begin_project;
+                    tmpP.email_project = pP.email_project;
+                    tmpP.money_project = pP.money_project;
+                    tmpP.email_project = pP.email_project;
+
+                    result.Add(tmpP);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Projects> result = new List<Projects>();
+                Projects tmpP = new Projects();
+                tmpP.id_project = -1;
+                result.Add(tmpP);
+
+                return result;
+            }
         }
 
         #endregion
@@ -439,7 +764,7 @@ namespace ExpertiseWCFService
         {
             try
             {
-                Marks M= new Marks();
+                Marks M = new Marks();
                 M.id_expert = id_expert;
                 M.id_crit = id_crit;
                 M.id_project = id_project;
@@ -870,8 +1195,23 @@ namespace ExpertiseWCFService
 
         #endregion
 
-
-
+        // =================================================================================================================================================
+        public string GetData(int value)
+        {
+            return string.Format("You entered  : {0}", value);
+        }
+        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        {
+            if (composite == null)
+            {
+                throw new ArgumentNullException("composite");
+            }
+            if (composite.BoolValue)
+            {
+                composite.StringValue += "Suffix";
+            }
+            return composite;
+        }
         public string Gethello()
         {
             string a;
