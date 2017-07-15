@@ -62,6 +62,12 @@
   <wsdl:message name="IService1_GetListFOS_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListFOSResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProjects" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProjectsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_test_InputMessage">
     <wsdl:part name="parameters" element="tns:test" />
   </wsdl:message>
@@ -85,6 +91,18 @@
   </wsdl:message>
   <wsdl:message name="IService1_Expertise_Expert_OutputMessage">
     <wsdl:part name="parameters" element="tns:Expertise_ExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddProjects" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddAuthorsResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
@@ -135,6 +153,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListFOS" message="tns:IService1_GetListFOS_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListFOSResponse" message="tns:IService1_GetListFOS_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListProjects" message="tns:IService1_GetListProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListProjectsResponse" message="tns:IService1_GetListProjects_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="test">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/test" message="tns:IService1_test_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/testResponse" message="tns:IService1_test_OutputMessage" />
@@ -150,6 +172,14 @@
     <wsdl:operation name="Expertise_Expert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Expertise_Expert" message="tns:IService1_Expertise_Expert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Expertise_ExpertResponse" message="tns:IService1_Expertise_Expert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddProjects" message="tns:IService1_AddProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddProjectsResponse" message="tns:IService1_AddProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAuthors" message="tns:IService1_AddAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAuthorsResponse" message="tns:IService1_AddAuthors_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
@@ -243,6 +273,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListProjects">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="test">
       <soap:operation soapAction="http://tempuri.org/IService1/test" style="document" />
       <wsdl:input>
@@ -272,6 +311,24 @@
     </wsdl:operation>
     <wsdl:operation name="Expertise_Expert">
       <soap:operation soapAction="http://tempuri.org/IService1/Expertise_Expert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddProjects">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddAuthors" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

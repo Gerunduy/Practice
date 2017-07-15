@@ -18,7 +18,7 @@ namespace ExpertiseWCFService
         #region Получение таблиц
 
         [OperationContract]
-        List<Authors> GetListAuthors();
+        List<myAuthors> GetListAuthors();
 
         [OperationContract]
         List<CatCrit> GetListCatCrit();
@@ -41,6 +41,8 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<FiledsOfScience> GetListFOS();
 
+        [OperationContract]
+        List<myProject> GetListProjects();
         #endregion
 
         [OperationContract]
@@ -56,12 +58,44 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<Expertise_Expert> Expertise_Expert(int id_expert);
 
+
+        [OperationContract]
+        bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project,
+            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+
+        [OperationContract]
+        bool AddAuthors(string surname_author, string name_author, string patronymic_author);
+
         [OperationContract]
         string Gethello();
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Добавьте здесь операции служб
+    }
+
+    public class myAuthors
+    {
+        public string FIO { get; set; }
+        public int id_author { get; set; }
+        public string surname_author { get; set; }
+        public string name_author { get; set; }
+        public string patronymic_author { get; set; }
+    }
+    public class myProject
+    {
+        public int number { get; set; }
+        public int id_project { get; set; }
+        public string name_project { get; set; }
+        public string lead_project { get; set; }
+        public string grnti_project { get; set; }
+        public DateTime begin_project { get; set; }
+        public DateTime end_project { get; set; }
+        public string money_project { get; set; }
+        public string email_project { get; set; }
+        public string fos { get; set; }
+        public Boolean expertisa { get; set; }
+       
     }
 
     public class ExpertsWithCountExpertise

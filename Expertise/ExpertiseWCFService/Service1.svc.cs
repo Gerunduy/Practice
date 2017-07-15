@@ -32,22 +32,37 @@ namespace ExpertiseWCFService
 
         #region Получение таблиц
 
-        public List<Authors> GetListAuthors()
+        public List<myAuthors> GetListAuthors()
         {
-            List<Authors> result = new List<Authors>();
-            List<Authors> tmplA = db_AAZ.Authors.ToList();
-            foreach (Authors pA in tmplA)
+            try
             {
-                Authors tmpA = new Authors();
-                tmpA.id_author = pA.id_author;
-                tmpA.surname_author = pA.surname_author;
-                tmpA.name_author = pA.name_author;
-                tmpA.patronymic_author = pA.patronymic_author;
+                List<myAuthors> result = new List<myAuthors>();
+                List<Authors> tmplA = db_AAZ.Authors.ToList();
+                foreach (Authors pA in tmplA)
+                {
+                    myAuthors tmpA = new myAuthors();
+                    tmpA.id_author = pA.id_author;
+                    tmpA.surname_author = pA.surname_author;
+                    tmpA.name_author = pA.name_author;
+                    tmpA.patronymic_author = pA.patronymic_author;
+                    tmpA.FIO = pA.surname_author + " " + pA.name_author + " " + pA.patronymic_author;
 
-                result.Add(tmpA);
+                    result.Add(tmpA);
+                }
+                return result;
             }
-            return result;
-        }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<myAuthors> result = new List<myAuthors>();
+                myAuthors tmpA = new myAuthors();
+                tmpA.id_author = -1;
+                tmpA.surname_author = "Содержимое таблицы не получено";
+                result.Add(tmpA);
+
+                return result;
+            }
+        } 
 
         public List<CatCrit> GetListCatCrit()
         {
@@ -98,19 +113,30 @@ namespace ExpertiseWCFService
 
         public List<GRNTI> GetListGRNTI()
         {
-            List<GRNTI> result = new List<GRNTI>();
-            List<GRNTI> lv = db_AAZ.GRNTI.ToList();
-            for (int i = 0; i < lv.Count; i++)
+            try
             {
-                GRNTI temp = new GRNTI();
-                temp.code_grnti = lv[i].code_grnti;
-                temp.name_grnti = lv[i].name_grnti;
+                List<GRNTI> result = new List<GRNTI>();
+                List<GRNTI> lv = db_AAZ.GRNTI.ToList();
+                for (int i = 0; i < lv.Count; i++)
+                {
+                    GRNTI temp = new GRNTI();
+                    temp.code_grnti = lv[i].code_grnti;
+                    temp.name_grnti = lv[i].name_grnti;
 
+                    result.Add(temp);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<GRNTI> result = new List<GRNTI>();
+                GRNTI temp = new GRNTI();
+                temp.code_grnti = "-1";
                 result.Add(temp);
 
-
+                return result;
             }
-            return result;
         }
 
         public List<Experts> GetListExperts()
@@ -223,17 +249,79 @@ namespace ExpertiseWCFService
 
         public List<FiledsOfScience> GetListFOS()
         {
-            List<FiledsOfScience> result = new List<FiledsOfScience>();
-            List<FiledsOfScience> tmplE = db_AAZ.FiledsOfScience.ToList();
-            foreach (FiledsOfScience pE in tmplE)
+            try
             {
-                FiledsOfScience tmpE = new FiledsOfScience();
-                tmpE.id_fos = pE.id_fos;
-                tmpE.name_fos = pE.name_fos;
-                result.Add(tmpE);
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                List<FiledsOfScience> tmplFOS = db_AAZ.FiledsOfScience.ToList();
+                foreach (FiledsOfScience pFOS in tmplFOS)
+                {
+                    FiledsOfScience tmpFOS = new FiledsOfScience();
+                    tmpFOS.id_fos = pFOS.id_fos;
+                    tmpFOS.name_fos = pFOS.name_fos;
+
+                    result.Add(tmpFOS);
+                }
+                return result;
             }
-            return result;
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                FiledsOfScience tmpFOS = new FiledsOfScience();
+                tmpFOS.id_fos = -1;
+                result.Add(tmpFOS);
+
+                return result;
+            }
         }
+
+        public List<myProject> GetListProjects()
+        {
+            try
+            {
+                List<myProject> result = new List<myProject>();
+                List<Projects> tmplP = db_AAZ.Projects.ToList();
+                foreach (Projects pP in tmplP)
+                {
+                    myProject tmpP = new myProject();
+                    tmpP.id_project = pP.id_project;
+                    tmpP.name_project = pP.name_project;
+                    tmpP.lead_project = pP.lead_project;
+                    tmpP.grnti_project = pP.grnti_project;
+                    tmpP.begin_project = pP.begin_project;
+                    
+                    tmpP.end_project = pP.end_project;
+                    tmpP.money_project = pP.money_project;
+                    tmpP.email_project = pP.email_project;
+                    ProjectExpertise prexp = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == pP.id_project);
+                    if (prexp != null)
+                    {
+                        tmpP.expertisa = true;
+                    }
+                    else tmpP.expertisa = false;
+                    ProjectFos prfos = db_AAZ.ProjectFos.FirstOrDefault(o=>o.id_project == pP.id_project);
+                    if (prfos != null)
+                    {
+                        FiledsOfScience fos= db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == prfos.id_fos);
+                        tmpP.fos = fos.name_fos;
+                    }
+                    
+                    result.Add(tmpP);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<myProject> result = new List<myProject>();
+                myProject tmpP = new myProject();
+                tmpP.id_project = -1;
+                result.Add(tmpP);
+
+                return result;
+            }
+        }
+
         #endregion
         public List<FiledsOfScience> test()
         {
@@ -383,6 +471,62 @@ namespace ExpertiseWCFService
             }
             return result;
             
+        }
+
+        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project,int[] listauthor,int fos)
+        {
+            try
+            {
+                Projects P = new Projects();
+                P.name_project = name_project;
+                P.lead_project = lead_project;
+                P.grnti_project = grnti_project;
+                P.begin_project = begin_project;
+                P.end_project = end_project;
+                P.money_project = money_project;
+                P.email_project = email_project;
+
+                db_AAZ.Projects.Add(P);
+                db_AAZ.SaveChanges();
+                ProjectFos PF = new ProjectFos();
+                PF.id_project = P.id_project;
+                PF.id_fos = fos;
+                db_AAZ.ProjectFos.Add(PF);
+                db_AAZ.SaveChanges();
+                for(int i = 0; i < listauthor.Length; i++)
+                {
+                    ProjectAuthors temp = new ProjectAuthors();
+                    temp.id_proj = P.id_project;
+                    temp.id_author = listauthor[i];
+                    db_AAZ.ProjectAuthors.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+        public bool AddAuthors(string surname_author, string name_author, string patronymic_author)
+        {
+            try
+            {
+                Authors A = new Authors();
+                A.surname_author = surname_author;
+                A.name_author = name_author;
+                A.patronymic_author = patronymic_author;
+
+                db_AAZ.Authors.Add(A);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
         }
         public string Gethello()
         {

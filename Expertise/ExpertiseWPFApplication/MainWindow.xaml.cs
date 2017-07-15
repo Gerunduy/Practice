@@ -22,19 +22,44 @@ namespace ExpertiseWPFApplication
     {
         GRNTI _GRNTI;
         Experts _Experts;
+        ProjectCard _ProjectCard;
+        Projects _Projects;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
             InitializeComponent();
             client.GetListGRNTICompleted += Client_GetListGRNTICompleted;
             client.GethelloCompleted += Client_GethelloCompleted;
-            client.GetListGRNTIAsync();
+            client.GetListAuthorsCompleted += Client_GetListAuthorsCompleted;
+            client.GetListFOSCompleted += Client_GetListFOSCompleted;
 
             client.testCompleted += Client_testCompleted;
             //client.testAsync();
 
             client.test2Completed += Client_test2Completed;
             //client.test2Async();
+        }
+
+        private void Client_GetListFOSCompleted(object sender, ServiceReference1.GetListFOSCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+
+                _ProjectCard.comboBox1.ItemsSource = e.Result.ToList();
+            }
+            else
+                MessageBox.Show(e.Error.Message);
+        }
+
+        private void Client_GetListAuthorsCompleted(object sender, ServiceReference1.GetListAuthorsCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+
+                _ProjectCard.comboBox.ItemsSource = e.Result.ToList();
+            }
+            else
+                MessageBox.Show(e.Error.Message);
         }
 
         private void Client_test2Completed(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -85,8 +110,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                //dataGrid1.ItemsSource = e.Result.ToList();
-
+                _ProjectCard.comboBox2.ItemsSource = e.Result.ToList();
             }
 
 
@@ -98,7 +122,7 @@ namespace ExpertiseWPFApplication
         {
             MessageBox.Show("test");
             //client.GethelloAsync();
-            client.GetListGRNTIAsync();
+            //client.GetListGRNTIAsync();
             _GRNTI = new GRNTI();
             _GRNTI.Owner = this;
             _GRNTI.ShowDialog();
@@ -117,6 +141,24 @@ namespace ExpertiseWPFApplication
             _Experts = new Experts();
             _Experts.Owner = this;
             _Experts.ShowDialog();
+        }
+        //новый проект
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            _ProjectCard = new ProjectCard();
+            _ProjectCard.Owner = this;
+            client.GetListAuthorsAsync();
+            client.GetListFOSAsync();
+            client.GetListGRNTIAsync();
+            _ProjectCard.ShowDialog();
+        }
+        //проект
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            
+                _Projects = new Projects();
+            _Projects.Owner = this;
+            _Projects.ShowDialog();
         }
     }
 }
