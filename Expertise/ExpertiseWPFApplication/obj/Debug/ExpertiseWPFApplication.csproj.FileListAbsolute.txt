@@ -35,3 +35,5 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Experts.baml
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertCard.g.cs
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertCard.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertСard.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertСard.baml
