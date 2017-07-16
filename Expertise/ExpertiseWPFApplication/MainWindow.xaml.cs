@@ -23,7 +23,9 @@ namespace ExpertiseWPFApplication
         GRNTI _GRNTI;
         Experts _Experts;
         ProjectCard _ProjectCard;
+        ExpertCard _ExpertCard;
         Projects _Projects;
+        Criterions _Criterions;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -156,9 +158,36 @@ namespace ExpertiseWPFApplication
         private void button3_Click(object sender, RoutedEventArgs e)
         {
             
-                _Projects = new Projects();
+            _Projects = new Projects();
             _Projects.Owner = this;
             _Projects.ShowDialog();
+        }
+        //новый эксперт
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertCard = new ExpertCard();
+            _ExpertCard.Owner = this;
+            _ExpertCard.tabControl.Visibility = Visibility.Hidden;
+            _ExpertCard.comboBox.Visibility = Visibility.Visible;
+            _ExpertCard.button1.Visibility = Visibility.Visible;
+            _ExpertCard.button2.Visibility = Visibility.Hidden;
+            _ExpertCard.button.Content = "Сохранить";
+            _ExpertCard.textBox.IsReadOnly = false;
+            _ExpertCard.textBox1.IsReadOnly = false;
+            _ExpertCard.textBox2.IsReadOnly = false;
+            _ExpertCard.textBox3.IsReadOnly = false;
+            _ExpertCard.textBox4.IsReadOnly = false;
+            _ExpertCard.textBox5.IsReadOnly = false;
+            _ExpertCard.textBox6.IsReadOnly = false;
+            _ExpertCard.textBox7.IsReadOnly = false;
+            _ExpertCard.ShowDialog();
+        }
+        //критерии
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            _Criterions = new Criterions();
+            _Criterions.Owner = this;
+            _Criterions.ShowDialog();
         }
     }
 }

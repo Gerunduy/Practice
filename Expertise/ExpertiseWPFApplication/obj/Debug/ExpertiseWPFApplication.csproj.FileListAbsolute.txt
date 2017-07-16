@@ -41,3 +41,7 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\AddAuthor.baml
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Projects.g.cs
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Projects.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\AddCriterions_categories.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\AddCriterions_categories.baml

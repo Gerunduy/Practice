@@ -27,7 +27,7 @@ namespace ExpertiseWCFService
         List<Categories> GetListCategories();
 
         [OperationContract]
-        List<Criterions> GetListCriterions();
+        List<Criterions> GetListCriterions(int id_category);
 
         [OperationContract]
         List<GRNTI> GetListGRNTI();
@@ -66,6 +66,20 @@ namespace ExpertiseWCFService
         [OperationContract]
         bool AddAuthors(string surname_author, string name_author, string patronymic_author);
 
+        [OperationContract]
+        bool AddCategories(string name_category);
+
+
+        [OperationContract]
+        bool DeleteExpert(int id_expert);
+
+        [OperationContract]
+        void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
+          string job_expert, string post_expert, string degree_expert, string rank_expert
+        , string contacts_expert, int[] ListFOS);
+
+        [OperationContract]
+        bool AddCriterions(string name_crit, bool qualit_crit, string valid_values,int id_category);
         [OperationContract]
         string Gethello();
         [OperationContract]

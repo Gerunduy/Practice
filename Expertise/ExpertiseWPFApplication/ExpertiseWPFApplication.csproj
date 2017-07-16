@@ -60,6 +60,12 @@
     <Compile Include="AddAuthor.xaml.cs">
       <DependentUpon>AddAuthor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddCriterions_categories.xaml.cs">
+      <DependentUpon>AddCriterions_categories.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Criterions.xaml.cs">
+      <DependentUpon>Criterions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
     </Compile>
@@ -81,6 +87,14 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Page Include="AddAuthor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddCriterions_categories.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Criterions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -82,31 +82,45 @@ namespace ExpertiseWCFService
 
         public List<Categories> GetListCategories()
         {
-            List<Categories> result = new List<Categories>();
-            List<Categories> tmplC = db_AAZ.Categories.ToList();
-            foreach (Categories pC in tmplC)
+            try
             {
-                Categories tmpC = new Categories();
-                tmpC.id_category = pC.id_category;
-                tmpC.name_category = pC.name_category;
+                List<Categories> result = new List<Categories>();
+                List<Categories> tmplC = db_AAZ.Categories.ToList();
+                foreach (Categories pC in tmplC)
+                {
+                    Categories tmpC = new Categories();
+                    tmpC.id_category = pC.id_category;
+                    tmpC.name_category = pC.name_category;
 
-                result.Add(tmpC);
+                    result.Add(tmpC);
+                }
+                return result;
             }
-            return result;
-        }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Categories> result = new List<Categories>();
+                Categories tmpC = new Categories();
+                tmpC.id_category = -1;
+                result.Add(tmpC);
 
-        public List<Criterions> GetListCriterions()
+                return result;
+            }
+        }
+        public List<Criterions> GetListCriterions(int id_category)
         {
             List<Criterions> result = new List<Criterions>();
-            List<Criterions> tmplC = db_AAZ.Criterions.ToList();
-            foreach (Criterions pC in tmplC)
+            List<CatCrit> tmplC = db_AAZ.CatCrit.Where(o=>o.id_cat== id_category).ToList();
+            foreach (CatCrit pC in tmplC)
             {
-                Criterions tmpC = new Criterions();
-                tmpC.id_crit = pC.id_crit;
-                tmpC.name_crit = pC.name_crit;
-                tmpC.qualit_crit = pC.qualit_crit;
+                Criterions tmpC = db_AAZ.Criterions.FirstOrDefault(o=>o.id_crit==pC.id_crit);
+                Criterions tmp = new Criterions();
 
-                result.Add(tmpC);
+                tmp.id_crit = tmpC.id_crit;
+                tmp.name_crit = tmpC.name_crit;
+                tmp.qualit_crit = tmpC.qualit_crit;
+
+                result.Add(tmp);
             }
             return result;
         }
@@ -161,7 +175,8 @@ namespace ExpertiseWCFService
             return result;
         }
 
-    
+       
+
         public List<ExpertsWithCountExpertise> GetListExpertsWithCountExpertise()
         {
             List<ExpertsWithCountExpertise> result = new List<ExpertsWithCountExpertise>();
@@ -279,6 +294,7 @@ namespace ExpertiseWCFService
         {
             try
             {
+                int t = 1;
                 List<myProject> result = new List<myProject>();
                 List<Projects> tmplP = db_AAZ.Projects.ToList();
                 foreach (Projects pP in tmplP)
@@ -289,7 +305,7 @@ namespace ExpertiseWCFService
                     tmpP.lead_project = pP.lead_project;
                     tmpP.grnti_project = pP.grnti_project;
                     tmpP.begin_project = pP.begin_project;
-                    
+                    tmpP.number = t;
                     tmpP.end_project = pP.end_project;
                     tmpP.money_project = pP.money_project;
                     tmpP.email_project = pP.email_project;
@@ -305,7 +321,7 @@ namespace ExpertiseWCFService
                         FiledsOfScience fos= db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == prfos.id_fos);
                         tmpP.fos = fos.name_fos;
                     }
-                    
+                    t = t + 1;
                     result.Add(tmpP);
                 }
                 return result;
@@ -415,6 +431,45 @@ namespace ExpertiseWCFService
 
         }
 
+        public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
+           string job_expert, string post_expert, string degree_expert, string rank_expert
+         , string contacts_expert, int[] ListFOS)
+        {
+            Experts expert =new Experts();
+            expert.surname_expert = surname_expert;
+            expert.name_expert = name_expert;
+            expert.patronymic_expert = patronymic_expert;
+            expert.job_expert = job_expert;
+            expert.post_expert = post_expert;
+            expert.degree_expert = degree_expert;
+            expert.rank_expert = rank_expert;
+            expert.delete_expert =false;
+            expert.contacts_expert = contacts_expert;
+            db_AAZ.Experts.Add(expert);
+            db_AAZ.SaveChanges();
+           
+            if (ListFOS != null)
+            {
+
+                for (int i = 0; i < ListFOS.Length; i++)
+                {
+                    ExpertFos temp = new ExpertFos();
+                    temp.id_expert = expert.id_expert;
+                    temp.id_fos = ListFOS[i];
+                    db_AAZ.ExpertFos.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+            }
+
+        }
+
+        public bool DeleteExpert(int id_expert)
+        {
+            Experts updateexpert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
+            updateexpert.delete_expert = true;
+            db_AAZ.SaveChanges();
+            return true;
+        }
         public List<Expertise_Expert> Expertise_Expert(int id_expert)
         {
             List<Expertise_Expert> result = new List<Expertise_Expert>();
@@ -528,6 +583,54 @@ namespace ExpertiseWCFService
                 return false;
             }
         }
+
+        public bool AddCategories(string name_category)
+        {
+            try
+            {
+                Categories C = new Categories();
+                C.name_category = name_category;
+
+                db_AAZ.Categories.Add(C);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCriterions(string name_crit, bool qualit_crit,string valid_values,int id_category)
+        {
+            try
+            {
+                Criterions C = new Criterions();
+                C.name_crit = name_crit;
+                C.qualit_crit = qualit_crit;
+
+                db_AAZ.Criterions.Add(C);
+                db_AAZ.SaveChanges();
+                CritValues crval = new CritValues();
+                crval.id_crit = C.id_crit;
+                crval.valid_values = valid_values;
+                db_AAZ.CritValues.Add(crval);
+                db_AAZ.SaveChanges();
+                CatCrit catcrit = new CatCrit();
+                catcrit.id_crit = C.id_crit;
+                catcrit.id_cat = id_category;
+                db_AAZ.CatCrit.Add(catcrit);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
         public string Gethello()
         {
             string a;

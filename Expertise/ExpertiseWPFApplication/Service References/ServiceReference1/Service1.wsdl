@@ -104,6 +104,30 @@
   <wsdl:message name="IService1_AddAuthors_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddAuthorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteExpert_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExpert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteExpert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddExpert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddExpert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCriterionsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
   </wsdl:message>
@@ -180,6 +204,22 @@
     <wsdl:operation name="AddAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddAuthors" message="tns:IService1_AddAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddAuthorsResponse" message="tns:IService1_AddAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCategories" message="tns:IService1_AddCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCategoriesResponse" message="tns:IService1_AddCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExpert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteExpert" message="tns:IService1_DeleteExpert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteExpertResponse" message="tns:IService1_DeleteExpert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExpert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert" message="tns:IService1_AddExpert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddExpertResponse" message="tns:IService1_AddExpert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCriterions" message="tns:IService1_AddCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCriterionsResponse" message="tns:IService1_AddCriterions_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
@@ -329,6 +369,42 @@
     </wsdl:operation>
     <wsdl:operation name="AddAuthors">
       <soap:operation soapAction="http://tempuri.org/IService1/AddAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteExpert">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddExpert">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddCriterions" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

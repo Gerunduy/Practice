@@ -22,7 +22,7 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
        public List<ServiceReference1.FiledsOfScience> listFOSCurrentExpert = new List<ServiceReference1.FiledsOfScience>();
         public int j;
-        public int id_expert;
+        public int id_expert=-1;
         public Boolean die = false;
         public ExpertCard()
         {
@@ -30,7 +30,34 @@ namespace ExpertiseWPFApplication
             client.GetListFOSCompleted += Client_GetListFOSCompleted;
             client.UpdateExpertCardCompleted += Client_UpdateExpertCardCompleted;
             client.Expertise_ExpertCompleted += Client_Expertise_ExpertCompleted;
+            client.AddExpertCompleted += Client_AddExpertCompleted;
+            client.DeleteExpertCompleted += Client_DeleteExpertCompleted;
             client.Expertise_ExpertAsync(id_expert);
+            client.GetListFOSAsync();
+        }
+
+        private void Client_DeleteExpertCompleted(object sender, ServiceReference1.DeleteExpertCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                MessageBox.Show("запись удалена");
+                //button.Content = "Редактировать";
+                this.DialogResult = true;
+            }
+            else
+                MessageBox.Show(e.Error.Message);
+        }
+
+        private void Client_AddExpertCompleted(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                MessageBox.Show("запись добавлена");
+                //button.Content = "Редактировать";
+                this.DialogResult = true;
+            }
+            else
+                MessageBox.Show(e.Error.Message);
         }
 
         private void Client_Expertise_ExpertCompleted(object sender, ServiceReference1.Expertise_ExpertCompletedEventArgs e)
@@ -40,8 +67,6 @@ namespace ExpertiseWPFApplication
                 dataGrid.ItemsSource = e.Result.ToList();
 
             }
-
-
             else
                 MessageBox.Show(e.Error.Message);
         }
@@ -50,11 +75,10 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("обновлена");
-
+                MessageBox.Show("запись обновлена");
+                button.Content = "Редактировать";
+                //this.DialogResult = true;
             }
-
-
             else
                 MessageBox.Show(e.Error.Message);
         }
@@ -93,7 +117,6 @@ namespace ExpertiseWPFApplication
             }
             else
             {
-
                 string surname_expert = textBox.Text;
                 string name_expert = textBox1.Text;
                 string patronymic_expert = textBox2.Text;
@@ -108,8 +131,17 @@ namespace ExpertiseWPFApplication
                 {
                     idFOSList[i] = listFOSCurrentExpert[i].id_fos;
                 }
-                client.UpdateExpertCardAsync(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, 
-                    post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, idFOSList);
+                if (id_expert != -1)
+                {
+                    client.UpdateExpertCardAsync(id_expert, surname_expert, name_expert, patronymic_expert, job_expert,
+                   post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, idFOSList);
+                }
+                else
+                {
+                   client.AddExpertAsync(surname_expert, name_expert, patronymic_expert, job_expert,
+                   post_expert, degree_expert, rank_expert, contacts_expert, idFOSList);
+                }
+               
                 //List<FiledsOfScience> ListFOS { get; set; }
                 textBox.IsReadOnly = true;
                 textBox1.IsReadOnly = true;
@@ -119,10 +151,9 @@ namespace ExpertiseWPFApplication
                 textBox5.IsReadOnly = true;
                 textBox6.IsReadOnly = true;
                 textBox7.IsReadOnly = true;
-               
                 comboBox.Visibility = Visibility.Hidden;
                 button1.Visibility = Visibility.Hidden;
-                button.Content = "Редактировать";
+               
                 
             }
         }
@@ -163,7 +194,19 @@ namespace ExpertiseWPFApplication
 
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            die = true;
+            
+            if (MessageBox.Show("Вы точно хотите удалить эту запись?", "Предупреждение", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                die = true;
+                client.DeleteExpertAsync(id_expert);
+                //DialogResult = true;
+
+            }
+            else
+            {
+
+
+            }
         }
     }
 }

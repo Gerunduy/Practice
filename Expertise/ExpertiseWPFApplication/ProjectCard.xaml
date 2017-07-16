@@ -24,7 +24,6 @@
         <Label x:Name="label8" Content="Контактные данные" HorizontalAlignment="Left" Margin="17,341,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="171,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="171,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Height="23" Margin="296,231,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="171,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="171,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="comboBox" Visibility="Visible" HorizontalAlignment="Left" Margin="171,87,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged">
@@ -48,7 +47,6 @@
         <Button x:Name="button" Content="Сохранить" HorizontalAlignment="Left" Margin="151,392,0,0" VerticalAlignment="Top" Width="108" Height="42" Click="button_Click"/>
         <Button x:Name="button1" Content="Новый автор" HorizontalAlignment="Left" Margin="296,87,0,0" VerticalAlignment="Top" Width="118" Height="22" Click="button1_Click"/>
         <Button x:Name="button2" Content="очистить авторов" HorizontalAlignment="Left" Margin="296,175,0,0" VerticalAlignment="Top" Width="118" Click="button2_Click"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="296,203,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="171,231,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox2_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
