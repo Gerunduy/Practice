@@ -45,3 +45,9 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions.baml
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\AddCriterions_categories.g.cs
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\AddCriterions_categories.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\FiledsOfScience.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\FiledsOfScience.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\FOSCard.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\FOSCard.baml
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseCard.g.cs
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseCard.baml

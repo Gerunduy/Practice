@@ -125,6 +125,35 @@ namespace ExpertiseWCFService
             return result;
         }
 
+        public List<CritValues> GetListCritValues(int id_crit)
+        {
+            try
+            {
+                List<CritValues> result = new List<CritValues>();
+                List<CritValues> tmplCV = db_AAZ.CritValues.Where(o=>o.id_crit== id_crit).ToList();
+                foreach (CritValues pCV in tmplCV)
+                {
+                    CritValues tmpCV = new CritValues();
+                    tmpCV.id_value = pCV.id_value;
+                    tmpCV.id_crit = pCV.id_crit;
+                    tmpCV.valid_values = pCV.valid_values;
+
+                    result.Add(tmpCV);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<CritValues> result = new List<CritValues>();
+                CritValues tmpCV = new CritValues();
+                tmpCV.id_value = -1;
+                result.Add(tmpCV);
+
+                return result;
+            }
+        }
+
         public List<GRNTI> GetListGRNTI()
         {
             try
@@ -431,6 +460,43 @@ namespace ExpertiseWCFService
 
         }
 
+        public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit)
+        {
+            try
+            {
+                Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
+                C.name_crit = name_crit;
+                C.qualit_crit = qualit_crit;
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool EditCritValues(int id_value, int id_crit, string valid_values)
+        {
+            try
+            {
+                CritValues CV = db_AAZ.CritValues.Where(p => p.id_value == id_value).FirstOrDefault();
+                CV.id_crit = id_crit;
+                CV.valid_values = valid_values;
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+
         public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
            string job_expert, string post_expert, string degree_expert, string rank_expert
          , string contacts_expert, int[] ListFOS)
@@ -461,6 +527,24 @@ namespace ExpertiseWCFService
                 }
             }
 
+        }
+
+        public bool EditFiledsOfScience(int id_fos, string name_fos)
+        {
+            try
+            {
+                FiledsOfScience FOS = db_AAZ.FiledsOfScience.Where(p => p.id_fos == id_fos).FirstOrDefault();
+                FOS.name_fos = name_fos;
+
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
         }
 
         public bool DeleteExpert(int id_expert)
@@ -621,6 +705,24 @@ namespace ExpertiseWCFService
                 catcrit.id_crit = C.id_crit;
                 catcrit.id_cat = id_category;
                 db_AAZ.CatCrit.Add(catcrit);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddFiledsOfScience(string name_fos)
+        {
+            try
+            {
+                FiledsOfScience FOS = new FiledsOfScience();
+                FOS.name_fos = name_fos;
+
+                db_AAZ.FiledsOfScience.Add(FOS);
                 db_AAZ.SaveChanges();
                 return true;
             }

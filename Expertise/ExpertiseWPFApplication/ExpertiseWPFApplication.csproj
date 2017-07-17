@@ -69,8 +69,17 @@
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpertiseCard.xaml.cs">
+      <DependentUpon>ExpertiseCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Experts.xaml.cs">
       <DependentUpon>Experts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FiledsOfScience.xaml.cs">
+      <DependentUpon>FiledsOfScience.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FOSCard.xaml.cs">
+      <DependentUpon>FOSCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
@@ -102,7 +111,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ExpertiseCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Experts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FiledsOfScience.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FOSCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -164,6 +185,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Criterions.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CritValues.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Expertise_Expert.datasource">

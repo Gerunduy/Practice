@@ -30,6 +30,9 @@ namespace ExpertiseWCFService
         List<Criterions> GetListCriterions(int id_category);
 
         [OperationContract]
+        List<CritValues> GetListCritValues(int id_crit);
+
+        [OperationContract]
         List<GRNTI> GetListGRNTI();
 
         [OperationContract]
@@ -54,6 +57,14 @@ namespace ExpertiseWCFService
         void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert, 
             Boolean delete_expert, string contacts_expert, int[]  ListFOS);
+        [OperationContract]
+        bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
+
+        [OperationContract]
+        bool EditCritValues(int id_value, int id_crit, string valid_values);
+
+        [OperationContract]
+        bool EditFiledsOfScience(int id_fos, string name_fos);
 
         [OperationContract]
         List<Expertise_Expert> Expertise_Expert(int id_expert);
@@ -80,6 +91,10 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         bool AddCriterions(string name_crit, bool qualit_crit, string valid_values,int id_category);
+
+        [OperationContract]
+        bool AddFiledsOfScience(string name_fos);
+
         [OperationContract]
         string Gethello();
         [OperationContract]

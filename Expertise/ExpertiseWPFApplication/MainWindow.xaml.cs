@@ -26,6 +26,8 @@ namespace ExpertiseWPFApplication
         ExpertCard _ExpertCard;
         Projects _Projects;
         Criterions _Criterions;
+        FiledsOfScience _FiledsOfScience;
+        ExpertiseCard _ExpertiseCard;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -188,6 +190,21 @@ namespace ExpertiseWPFApplication
             _Criterions = new Criterions();
             _Criterions.Owner = this;
             _Criterions.ShowDialog();
+        }
+        //направление науки
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            _FiledsOfScience = new FiledsOfScience();
+            _FiledsOfScience.Owner = this;
+            _FiledsOfScience.ShowDialog();
+        }
+        //new expertise
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertiseCard = new ExpertiseCard();
+            _ExpertiseCard.Owner = this;
+            _ExpertiseCard.ShowDialog();
+            
         }
     }
 }
