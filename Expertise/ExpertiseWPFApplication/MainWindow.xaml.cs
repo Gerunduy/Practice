@@ -29,6 +29,43 @@ namespace ExpertiseWPFApplication
             client.GetListGRNTICompleted += Client_GetListGRNTICompleted;
             client.GethelloCompleted += Client_GethelloCompleted;
             client.GetListGRNTIAsync();
+
+            client.testCompleted += Client_testCompleted;
+            //client.testAsync();
+
+            client.test2Completed += Client_test2Completed;
+            //client.test2Async();
+        }
+
+        private void Client_test2Completed(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                
+                    MessageBox.Show("gfh");
+                
+
+            }
+
+
+            else
+                MessageBox.Show(e.Error.Message);
+        }
+
+        private void Client_testCompleted(object sender, ServiceReference1.testCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                for(int i = 0; i < e.Result.ToList().Count; i++)
+                {
+                    MessageBox.Show(e.Result[i].name_fos);
+                }
+                
+            }
+
+
+            else
+                MessageBox.Show(e.Error.Message);
         }
 
         private void Client_GethelloCompleted(object sender, ServiceReference1.GethelloCompletedEventArgs e)

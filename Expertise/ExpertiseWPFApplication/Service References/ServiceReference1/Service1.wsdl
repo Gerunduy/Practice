@@ -5,6 +5,7 @@
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" />
+      <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService1_GetData_InputMessage">
@@ -55,6 +56,36 @@
   <wsdl:message name="IService1_GetListExpertsWithCountExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListExpertsWithCountExpertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListFOS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListFOS" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListFOS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListFOSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_test_InputMessage">
+    <wsdl:part name="parameters" element="tns:test" />
+  </wsdl:message>
+  <wsdl:message name="IService1_test_OutputMessage">
+    <wsdl:part name="parameters" element="tns:testResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_test2_InputMessage">
+    <wsdl:part name="parameters" element="tns:test2" />
+  </wsdl:message>
+  <wsdl:message name="IService1_test2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:test2Response" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateExpertCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpertCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateExpertCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateExpertCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Expertise_Expert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Expertise_Expert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Expertise_Expert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Expertise_ExpertResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
   </wsdl:message>
@@ -99,6 +130,26 @@
     <wsdl:operation name="GetListExpertsWithCountExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExpertsWithCountExpertise" message="tns:IService1_GetListExpertsWithCountExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertsWithCountExpertiseResponse" message="tns:IService1_GetListExpertsWithCountExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListFOS">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListFOS" message="tns:IService1_GetListFOS_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListFOSResponse" message="tns:IService1_GetListFOS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/test" message="tns:IService1_test_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/testResponse" message="tns:IService1_test_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="test2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/test2" message="tns:IService1_test2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/test2Response" message="tns:IService1_test2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpertCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateExpertCard" message="tns:IService1_UpdateExpertCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateExpertCardResponse" message="tns:IService1_UpdateExpertCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Expertise_Expert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Expertise_Expert" message="tns:IService1_Expertise_Expert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/Expertise_ExpertResponse" message="tns:IService1_Expertise_Expert_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
@@ -176,6 +227,51 @@
     </wsdl:operation>
     <wsdl:operation name="GetListExpertsWithCountExpertise">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListExpertsWithCountExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListFOS">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListFOS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test">
+      <soap:operation soapAction="http://tempuri.org/IService1/test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="test2">
+      <soap:operation soapAction="http://tempuri.org/IService1/test2" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateExpertCard">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateExpertCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Expertise_Expert">
+      <soap:operation soapAction="http://tempuri.org/IService1/Expertise_Expert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

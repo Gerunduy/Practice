@@ -57,8 +57,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ExpertCard.xaml.cs">
+      <DependentUpon>ExpertCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Experts.xaml.cs">
       <DependentUpon>Experts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ExpertСard.xaml.cs">
+      <DependentUpon>ExpertСard.xaml</DependentUpon>
     </Compile>
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
@@ -68,7 +74,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Page Include="ExpertCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Experts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpertСard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -127,10 +141,16 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Criterions.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Expertise_Expert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Experts.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.FiledsOfScience.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.GRNTI.datasource">
@@ -144,6 +164,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\ServiceReference1\Service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\ServiceReference1\Service13.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
