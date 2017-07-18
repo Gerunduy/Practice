@@ -777,7 +777,7 @@ namespace ExpertiseWCFService
                 {
                     if (!tmpExp.delete_expert) // если не удалён
                     {
-                        if (tmpExp.password_expert == Password) // Есди пароль введён верно
+                        if (tmpExp.password_expert == Password) // если пароль введён верно
                         {
                             Experts expert = new Experts();
                             expert.id_expert = tmpExp.id_expert;
@@ -793,7 +793,7 @@ namespace ExpertiseWCFService
 
                             return expert;
                         }
-                        else // Есди пароль введён неверно
+                        else // если пароль введён неверно
                         {
                             Experts expert = new Experts();
                             expert.id_expert = -1;
