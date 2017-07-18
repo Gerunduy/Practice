@@ -70,11 +70,38 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="Текущие экспертизы:"/>
                 <DataGrid Grid.Row="1" Name="dgCurrentExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
-                    
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=F}" Header="№" Width="auto" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=L}" Header="Наименование" Width="1*" DisplayIndex="1"/>
+                        <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="2">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="3">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Перейти к проведению экспертизы" Name="btnGoToExpertise"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
                 </DataGrid>
                 <TextBlock Grid.Row="3" Text="Завершенные экспертизы:"/>
                 <DataGrid Grid.Row="4" Name="dgCompletedExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
-
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=F}" Header="№" Width="auto" DisplayIndex="0"/>
+                        <DataGridTemplateColumn Header="" Width="1*" DisplayIndex="1">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTextColumn Binding="{Binding Path=D}" Header="Дата завершения" Width="auto" DisplayIndex="2"/>
+                    </DataGrid.Columns>
                 </DataGrid>
             </Grid>
         </Grid>
