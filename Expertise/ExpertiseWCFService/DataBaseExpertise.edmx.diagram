@@ -57,6 +57,7 @@
         <AssociationConnector Association="db_AAZModel.FK_RatedSerials_Serials" ManuallyRouted="false" />
         <AssociationConnector Association="db_AAZModel.FK_RatedSerials_Users" ManuallyRouted="false" />
         <AssociationConnector Association="db_AAZModel.FK_Users_Rights" ManuallyRouted="false" />
+        <AssociationConnector Association="db_AAZModel.FK_ProjectExpertise_Projects" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

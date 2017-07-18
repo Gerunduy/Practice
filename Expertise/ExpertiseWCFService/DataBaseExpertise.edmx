@@ -91,6 +91,8 @@
           <Property Name="rank_expert" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="contacts_expert" Type="nvarchar(max)" Nullable="false" />
           <Property Name="delete_expert" Type="bit" Nullable="false" />
+          <Property Name="login_expert" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="password_expert" Type="nvarchar(max)" Nullable="false" />
         </EntityType>
         <EntityType Name="FiledsOfScience">
           <Key>
@@ -188,6 +190,7 @@
           <Property Name="end_project" Type="date" Nullable="false" />
           <Property Name="money_project" Type="nchar" MaxLength="30" Nullable="false" />
           <Property Name="email_project" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="delete_project" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="RatedFilms">
           <Key>
@@ -455,6 +458,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ProjectExpertise_Projects">
+          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+          <End Role="ProjectExpertise" Type="Self.ProjectExpertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectExpertise">
+              <PropertyRef Name="id_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_ProjectFos_FiledsOfScience">
           <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
           <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
@@ -653,6 +668,10 @@
             <End Role="Expertises" EntitySet="Expertises" />
             <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProjectExpertise_Projects" Association="Self.FK_ProjectExpertise_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+          </AssociationSet>
           <AssociationSet Name="FK_ProjectFos_FiledsOfScience" Association="Self.FK_ProjectFos_FiledsOfScience">
             <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
             <End Role="ProjectFos" EntitySet="ProjectFos" />
@@ -796,6 +815,8 @@
           <NavigationProperty Name="ExpertFos" Relationship="Self.FK_ExpertFos_Experts" FromRole="Experts" ToRole="ExpertFos" />
           <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Experts" FromRole="Experts" ToRole="Marks" />
           <Property Name="delete_expert" Type="Boolean" Nullable="false" />
+          <Property Name="login_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="password_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="FiledsOfScience">
           <Key>
@@ -886,6 +907,7 @@
           <Property Name="id_project" Type="Int32" Nullable="false" />
           <Property Name="accept" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Expertises" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="ProjectExpertise" ToRole="Expertises" />
+          <NavigationProperty Name="Projects" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="ProjectExpertise" ToRole="Projects" />
         </EntityType>
         <EntityType Name="ProjectFos">
           <Key>
@@ -912,6 +934,8 @@
           <NavigationProperty Name="GRNTI" Relationship="Self.FK_Projects_GRNTI" FromRole="Projects" ToRole="GRNTI" />
           <NavigationProperty Name="ProjectAuthors" Relationship="Self.FK_ProjectAuthors_Projects" FromRole="Projects" ToRole="ProjectAuthors" />
           <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_Projects" FromRole="Projects" ToRole="ProjectFos" />
+          <Property Name="delete_project" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ProjectExpertise" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="Projects" ToRole="ProjectExpertise" />
         </EntityType>
         <EntityType Name="RatedFilms">
           <Key>
@@ -1407,7 +1431,23 @@
             <End Role="Rights" EntitySet="Rights" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
+          <AssociationSet Name="FK_ProjectExpertise_Projects" Association="db_AAZModel.FK_ProjectExpertise_Projects">
+            <End Role="Projects" EntitySet="Projects" />
+            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+          </AssociationSet>
         </EntityContainer>
+        <Association Name="FK_ProjectExpertise_Projects">
+          <End Type="db_AAZModel.Projects" Role="Projects" Multiplicity="1" />
+          <End Type="db_AAZModel.ProjectExpertise" Role="ProjectExpertise" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Projects">
+              <PropertyRef Name="id_project" />
+            </Principal>
+            <Dependent Role="ProjectExpertise">
+              <PropertyRef Name="id_project" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1498,6 +1538,8 @@
           <EntitySetMapping Name="Experts">
             <EntityTypeMapping TypeName="db_AAZModel.Experts">
               <MappingFragment StoreEntitySet="Experts">
+                <ScalarProperty Name="password_expert" ColumnName="password_expert" />
+                <ScalarProperty Name="login_expert" ColumnName="login_expert" />
                 <ScalarProperty Name="delete_expert" ColumnName="delete_expert" />
                 <ScalarProperty Name="id_expert" ColumnName="id_expert" />
                 <ScalarProperty Name="surname_expert" ColumnName="surname_expert" />
@@ -1608,6 +1650,7 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="db_AAZModel.Projects">
               <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="delete_project" ColumnName="delete_project" />
                 <ScalarProperty Name="id_project" ColumnName="id_project" />
                 <ScalarProperty Name="name_project" ColumnName="name_project" />
                 <ScalarProperty Name="lead_project" ColumnName="lead_project" />
