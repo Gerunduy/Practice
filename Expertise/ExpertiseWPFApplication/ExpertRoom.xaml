@@ -23,43 +23,7 @@
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0" Grid.Column="0">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="25"/>
-                        <RowDefinition Height="10"/>
-                        <RowDefinition Height="25"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="80"/>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="180"/>
-                        <ColumnDefinition Width="10"/>
-                        <ColumnDefinition Width="20"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <TextBlock Grid.Row="0" Grid.Column="1" Text="Login:" VerticalAlignment="Center" TextAlignment="Right" Name="tblLogin"/>
-                    <TextBox Grid.Row="0" Grid.Column="3" Name="tbxLogin"/>
-                    <TextBlock Grid.Row="2" Grid.Column="1" Text="Password:" VerticalAlignment="Center" TextAlignment="Right" Name="tblPassword"/>
-                    <PasswordBox Grid.Row="2" Grid.Column="3" Name="pbxPassword"/>
-                    <Button Grid.Row="0" Grid.Column="5" Content="X" Name="btnClearLogin"/>
-                    <Button Grid.Row="2" Grid.Column="5" Content="X" Name="btnClearPassword"/>
-                 </Grid>
-                <Grid Grid.Row="2" Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="180"/>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="1*"/>
-                    </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" Content="Показать" Name="btnShowExpertInfo"/>
-                </Grid>
-            </Grid>
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Эксперт: Фамилия Имя Отчество" VerticalAlignment="Center" TextAlignment="Right" Name="tblExpertFullName"/>
             <Grid Grid.Row="2" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>

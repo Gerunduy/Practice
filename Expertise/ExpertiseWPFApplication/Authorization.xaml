@@ -1,0 +1,61 @@
+﻿<Window x:Class="ExpertiseWPFApplication.Authorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="Авторизация" Height="160" Width="320" ResizeMode="NoResize" WindowStyle="ToolWindow">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Вход в систему" TextAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="150"/>
+                <ColumnDefinition Width="8"/>
+                <ColumnDefinition Width="20"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Login:" VerticalAlignment="Center" TextAlignment="Right" Name="tblLogin"/>
+            <TextBox Grid.Row="0" Grid.Column="2" Name="tbxLogin"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Password:" VerticalAlignment="Center" TextAlignment="Right" Name="tblPassword"/>
+            <PasswordBox Grid.Row="2" Grid.Column="2" Name="pbxPassword"/>
+            <Button Grid.Row="0" Grid.Column="4" Content="X" Name="btnClearLogin" ToolTip="Очистить поле Login" Click="btnClearLogin_Click"/>
+            <Button Grid.Row="2" Grid.Column="4" Content="X" Name="btnClearPassword" ToolTip="Очистить поле Password" Click="btnClearPassword_Click"/>
+        </Grid>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="1" Grid.Column="0" Content="Войти" Name="btnLogIn" Click="btnLogIn_Click"/>
+            <Button Grid.Row="1" Grid.Column="2" Content="Отмена" Name="btnCancel" Click="btnCancel_Click"/>
+        </Grid>
+    </Grid>
+</Window>

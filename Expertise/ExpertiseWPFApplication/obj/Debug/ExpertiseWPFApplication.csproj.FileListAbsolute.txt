@@ -86,3 +86,5 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.g.resources
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.Properties.Resources.resources
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertiseWPFApplication.csproj.GenerateResource.Cache
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Authorization.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Authorization.baml

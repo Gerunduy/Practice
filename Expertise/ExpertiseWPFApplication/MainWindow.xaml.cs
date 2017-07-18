@@ -28,6 +28,7 @@ namespace ExpertiseWPFApplication
         Criterions _Criterions;
         FiledsOfScience _FiledsOfScience;
         ExpertiseCard _ExpertiseCard;
+        Authorization _Authorization;
         ExpertRoom _ExpertRoom;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
@@ -214,6 +215,13 @@ namespace ExpertiseWPFApplication
             _ExpertRoom = new ExpertRoom();
             _ExpertRoom.Owner = this;
             _ExpertRoom.ShowDialog();
+        }
+
+        private void button11_Click(object sender, RoutedEventArgs e)
+        {
+            _Authorization = new Authorization();
+            _Authorization.Owner = this;
+            _Authorization.ShowDialog();
         }
     }
 }
