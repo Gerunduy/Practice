@@ -86,6 +86,8 @@
     <Property Name="rank_expert" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="contacts_expert" Type="nvarchar(max)" Nullable="false" />
     <Property Name="delete_expert" Type="bit" Nullable="false" />
+    <Property Name="login_expert" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="password_expert" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -183,6 +185,7 @@
     <Property Name="end_project" Type="date" Nullable="false" />
     <Property Name="money_project" Type="nchar" MaxLength="30" Nullable="false" />
     <Property Name="email_project" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="delete_project" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>
@@ -450,6 +453,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ProjectExpertise_Projects">
+    <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
+    <End Role="ProjectExpertise" Type="Self.ProjectExpertise" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Projects">
+        <PropertyRef Name="id_project" />
+      </Principal>
+      <Dependent Role="ProjectExpertise">
+        <PropertyRef Name="id_project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ProjectFos_FiledsOfScience">
     <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
     <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
@@ -646,6 +661,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_ProjectExpertise_Expertises" Association="Self.FK_ProjectExpertise_Expertises">
       <End Role="Expertises" EntitySet="Expertises" />
+      <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProjectExpertise_Projects" Association="Self.FK_ProjectExpertise_Projects">
+      <End Role="Projects" EntitySet="Projects" />
       <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
     </AssociationSet>
     <AssociationSet Name="FK_ProjectFos_FiledsOfScience" Association="Self.FK_ProjectFos_FiledsOfScience">

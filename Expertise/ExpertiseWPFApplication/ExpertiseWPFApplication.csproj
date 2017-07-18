@@ -72,6 +72,9 @@
     <Compile Include="ExpertiseCard.xaml.cs">
       <DependentUpon>ExpertiseCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExpertRoom.xaml.cs">
+      <DependentUpon>ExpertRoom.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Experts.xaml.cs">
       <DependentUpon>Experts.xaml</DependentUpon>
     </Compile>
@@ -112,6 +115,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ExpertiseCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExpertRoom.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

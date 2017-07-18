@@ -28,6 +28,7 @@ namespace ExpertiseWPFApplication
         Criterions _Criterions;
         FiledsOfScience _FiledsOfScience;
         ExpertiseCard _ExpertiseCard;
+        ExpertRoom _ExpertRoom;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -205,6 +206,14 @@ namespace ExpertiseWPFApplication
             _ExpertiseCard.Owner = this;
             _ExpertiseCard.ShowDialog();
             
+        }
+
+        // вход в личный кабинет
+        private void button10_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertRoom = new ExpertRoom();
+            _ExpertRoom.Owner = this;
+            _ExpertRoom.ShowDialog();
         }
     }
 }

@@ -85,6 +85,8 @@
     <EntitySetMapping Name="Experts">
       <EntityTypeMapping TypeName="db_AAZModel.Experts">
         <MappingFragment StoreEntitySet="Experts">
+          <ScalarProperty Name="password_expert" ColumnName="password_expert" />
+          <ScalarProperty Name="login_expert" ColumnName="login_expert" />
           <ScalarProperty Name="delete_expert" ColumnName="delete_expert" />
           <ScalarProperty Name="id_expert" ColumnName="id_expert" />
           <ScalarProperty Name="surname_expert" ColumnName="surname_expert" />
@@ -195,6 +197,7 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="db_AAZModel.Projects">
         <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="delete_project" ColumnName="delete_project" />
           <ScalarProperty Name="id_project" ColumnName="id_project" />
           <ScalarProperty Name="name_project" ColumnName="name_project" />
           <ScalarProperty Name="lead_project" ColumnName="lead_project" />

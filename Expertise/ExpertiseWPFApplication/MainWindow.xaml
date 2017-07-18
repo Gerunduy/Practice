@@ -17,7 +17,7 @@
         <Button x:Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="155,191,0,0" VerticalAlignment="Top" Width="113" Click="button7_Click"/>
         <Button x:Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Left" Margin="273,40,0,0" VerticalAlignment="Top" Width="144"/>
         <Button x:Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Left" Margin="273,81,0,0" VerticalAlignment="Top" Width="144"/>
-        <Button x:Name="button10" Content="вход" HorizontalAlignment="Left" Margin="422,40,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button10" Content="вход" HorizontalAlignment="Left" Margin="422,40,0,0" VerticalAlignment="Top" Width="75" Click="button10_Click"/>
         <Label x:Name="label" Content="меню" HorizontalAlignment="Left" Margin="33,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="справочники" HorizontalAlignment="Left" Margin="155,10,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label2" Content="отчеты" HorizontalAlignment="Left" Margin="273,10,0,0" VerticalAlignment="Top"/>
