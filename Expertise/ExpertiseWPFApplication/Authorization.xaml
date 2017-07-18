@@ -23,6 +23,7 @@
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="1" Grid.Column="0" Text="Вход в систему" TextAlignment="Center"/>
         </Grid>
+        <TextBlock Grid.Row="1" Grid.Column="1" FontSize="25" Text="Выполняется вход..." VerticalAlignment="Center" TextAlignment="Center" Name="tblWaitInfo"/>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="25"/>

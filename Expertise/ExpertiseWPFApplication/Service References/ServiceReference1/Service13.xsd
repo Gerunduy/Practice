@@ -331,6 +331,28 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
+  <xs:element name="AddExpert_new">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="surname_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patronymic_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="job_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="post_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="degree_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFOS" nillable="true" type="q16:ArrayOfint" />
+        <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExpert_newResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
   <xs:element name="AddCriterions">
     <xs:complexType>
       <xs:sequence>
@@ -362,6 +384,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="Authorization">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="Login" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AuthorizationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="AuthorizationResult" nillable="true" type="q17:Experts" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="Gethello">
     <xs:complexType>
       <xs:sequence />
@@ -377,14 +414,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="composite" nillable="true" type="q16:CompositeType" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="composite" nillable="true" type="q18:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q17:CompositeType" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q19:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

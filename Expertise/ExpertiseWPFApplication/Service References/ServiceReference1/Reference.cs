@@ -1055,6 +1055,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Projects ProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool acceptField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1085,6 +1088,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
                     this.ExpertisesField = value;
                     this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Projects Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
                 }
             }
         }
@@ -1182,7 +1198,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private string job_expertField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string login_expertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string name_expertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string password_expertField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string patronymic_expertField;
@@ -1298,6 +1320,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string login_expert {
+            get {
+                return this.login_expertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.login_expertField, value) != true)) {
+                    this.login_expertField = value;
+                    this.RaisePropertyChanged("login_expert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string name_expert {
             get {
                 return this.name_expertField;
@@ -1306,6 +1341,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.name_expertField, value) != true)) {
                     this.name_expertField = value;
                     this.RaisePropertyChanged("name_expert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string password_expert {
+            get {
+                return this.password_expertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.password_expertField, value) != true)) {
+                    this.password_expertField = value;
+                    this.RaisePropertyChanged("password_expert");
                 }
             }
         }
@@ -1699,10 +1747,16 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] ProjectAuthorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ExpertiseWPFApplication.ServiceReference1.ProjectFos[] ProjectFosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime begin_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool delete_projectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string email_projectField;
@@ -1762,6 +1816,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertise {
+            get {
+                return this.ProjectExpertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectExpertiseField, value) != true)) {
+                    this.ProjectExpertiseField = value;
+                    this.RaisePropertyChanged("ProjectExpertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] ProjectFos {
             get {
                 return this.ProjectFosField;
@@ -1783,6 +1850,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.begin_projectField.Equals(value) != true)) {
                     this.begin_projectField = value;
                     this.RaisePropertyChanged("begin_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool delete_project {
+            get {
+                return this.delete_projectField;
+            }
+            set {
+                if ((this.delete_projectField.Equals(value) != true)) {
+                    this.delete_projectField = value;
+                    this.RaisePropertyChanged("delete_project");
                 }
             }
         }
@@ -3047,6 +3127,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         void EndAddExpert(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert_new", ReplyAction="http://tempuri.org/IService1/AddExpert_newResponse")]
+        void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddExpert_new", ReplyAction="http://tempuri.org/IService1/AddExpert_newResponse")]
+        System.IAsyncResult BeginAddExpert_new(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddExpert_new(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddCriterions", ReplyAction="http://tempuri.org/IService1/AddCriterionsResponse")]
         bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category);
         
@@ -3062,6 +3150,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginAddFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState);
         
         bool EndAddFiledsOfScience(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Authorization", ReplyAction="http://tempuri.org/IService1/AuthorizationResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Experts Authorization(string Login, string Password);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Authorization", ReplyAction="http://tempuri.org/IService1/AuthorizationResponse")]
+        System.IAsyncResult BeginAuthorization(string Login, string Password, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Experts EndAuthorization(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Gethello", ReplyAction="http://tempuri.org/IService1/GethelloResponse")]
         string Gethello();
@@ -3504,6 +3600,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AuthorizationCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AuthorizationCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Experts)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GethelloCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -3682,6 +3797,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onAddExpertCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddExpert_newDelegate;
+        
+        private EndOperationDelegate onEndAddExpert_newDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddExpert_newCompletedDelegate;
+        
         private BeginOperationDelegate onBeginAddCriterionsDelegate;
         
         private EndOperationDelegate onEndAddCriterionsDelegate;
@@ -3693,6 +3814,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndAddFiledsOfScienceDelegate;
         
         private System.Threading.SendOrPostCallback onAddFiledsOfScienceCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAuthorizationDelegate;
+        
+        private EndOperationDelegate onEndAuthorizationDelegate;
+        
+        private System.Threading.SendOrPostCallback onAuthorizationCompletedDelegate;
         
         private BeginOperationDelegate onBeginGethelloDelegate;
         
@@ -3771,9 +3898,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddExpertCompleted;
         
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddExpert_newCompleted;
+        
         public event System.EventHandler<AddCriterionsCompletedEventArgs> AddCriterionsCompleted;
         
         public event System.EventHandler<AddFiledsOfScienceCompletedEventArgs> AddFiledsOfScienceCompleted;
+        
+        public event System.EventHandler<AuthorizationCompletedEventArgs> AuthorizationCompleted;
         
         public event System.EventHandler<GethelloCompletedEventArgs> GethelloCompleted;
         
@@ -4972,6 +5103,75 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         ListFOS}, this.onEndAddExpertDelegate, this.onAddExpertCompletedDelegate, userState);
         }
         
+        public void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert) {
+            base.Channel.AddExpert_new(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddExpert_new(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddExpert_new(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndAddExpert_new(System.IAsyncResult result) {
+            base.Channel.EndAddExpert_new(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddExpert_new(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string surname_expert = ((string)(inValues[0]));
+            string name_expert = ((string)(inValues[1]));
+            string patronymic_expert = ((string)(inValues[2]));
+            string job_expert = ((string)(inValues[3]));
+            string post_expert = ((string)(inValues[4]));
+            string degree_expert = ((string)(inValues[5]));
+            string rank_expert = ((string)(inValues[6]));
+            string contacts_expert = ((string)(inValues[7]));
+            int[] ListFOS = ((int[])(inValues[8]));
+            string login_expert = ((string)(inValues[9]));
+            string password_expert = ((string)(inValues[10]));
+            return this.BeginAddExpert_new(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, callback, asyncState);
+        }
+        
+        private object[] OnEndAddExpert_new(System.IAsyncResult result) {
+            this.EndAddExpert_new(result);
+            return null;
+        }
+        
+        private void OnAddExpert_newCompleted(object state) {
+            if ((this.AddExpert_newCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddExpert_newCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddExpert_newAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert) {
+            this.AddExpert_newAsync(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, null);
+        }
+        
+        public void AddExpert_newAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, object userState) {
+            if ((this.onBeginAddExpert_newDelegate == null)) {
+                this.onBeginAddExpert_newDelegate = new BeginOperationDelegate(this.OnBeginAddExpert_new);
+            }
+            if ((this.onEndAddExpert_newDelegate == null)) {
+                this.onEndAddExpert_newDelegate = new EndOperationDelegate(this.OnEndAddExpert_new);
+            }
+            if ((this.onAddExpert_newCompletedDelegate == null)) {
+                this.onAddExpert_newCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddExpert_newCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddExpert_newDelegate, new object[] {
+                        surname_expert,
+                        name_expert,
+                        patronymic_expert,
+                        job_expert,
+                        post_expert,
+                        degree_expert,
+                        rank_expert,
+                        contacts_expert,
+                        ListFOS,
+                        login_expert,
+                        password_expert}, this.onEndAddExpert_newDelegate, this.onAddExpert_newCompletedDelegate, userState);
+        }
+        
         public bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category) {
             return base.Channel.AddCriterions(name_crit, qualit_crit, valid_values, id_category);
         }
@@ -5076,6 +5276,58 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginAddFiledsOfScienceDelegate, new object[] {
                         name_fos}, this.onEndAddFiledsOfScienceDelegate, this.onAddFiledsOfScienceCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts Authorization(string Login, string Password) {
+            return base.Channel.Authorization(Login, Password);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAuthorization(string Login, string Password, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAuthorization(Login, Password, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Experts EndAuthorization(System.IAsyncResult result) {
+            return base.Channel.EndAuthorization(result);
+        }
+        
+        private System.IAsyncResult OnBeginAuthorization(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string Login = ((string)(inValues[0]));
+            string Password = ((string)(inValues[1]));
+            return this.BeginAuthorization(Login, Password, callback, asyncState);
+        }
+        
+        private object[] OnEndAuthorization(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Experts retVal = this.EndAuthorization(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAuthorizationCompleted(object state) {
+            if ((this.AuthorizationCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AuthorizationCompleted(this, new AuthorizationCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AuthorizationAsync(string Login, string Password) {
+            this.AuthorizationAsync(Login, Password, null);
+        }
+        
+        public void AuthorizationAsync(string Login, string Password, object userState) {
+            if ((this.onBeginAuthorizationDelegate == null)) {
+                this.onBeginAuthorizationDelegate = new BeginOperationDelegate(this.OnBeginAuthorization);
+            }
+            if ((this.onEndAuthorizationDelegate == null)) {
+                this.onEndAuthorizationDelegate = new EndOperationDelegate(this.OnEndAuthorization);
+            }
+            if ((this.onAuthorizationCompletedDelegate == null)) {
+                this.onAuthorizationCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAuthorizationCompleted);
+            }
+            base.InvokeAsync(this.onBeginAuthorizationDelegate, new object[] {
+                        Login,
+                        Password}, this.onEndAuthorizationDelegate, this.onAuthorizationCompletedDelegate, userState);
         }
         
         public string Gethello() {

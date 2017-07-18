@@ -146,6 +146,12 @@
   <wsdl:message name="IService1_AddExpert_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddExpertResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddExpert_new_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpert_new" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddExpert_new_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpert_newResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_AddCriterions_InputMessage">
     <wsdl:part name="parameters" element="tns:AddCriterions" />
   </wsdl:message>
@@ -157,6 +163,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_AddFiledsOfScience_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddFiledsOfScienceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Authorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authorization" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Authorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
@@ -263,6 +275,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert" message="tns:IService1_AddExpert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddExpertResponse" message="tns:IService1_AddExpert_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddExpert_new">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert_new" message="tns:IService1_AddExpert_new_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddExpert_newResponse" message="tns:IService1_AddExpert_new_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="AddCriterions">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCriterions" message="tns:IService1_AddCriterions_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCriterionsResponse" message="tns:IService1_AddCriterions_OutputMessage" />
@@ -270,6 +286,10 @@
     <wsdl:operation name="AddFiledsOfScience">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScience" message="tns:IService1_AddFiledsOfScience_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScienceResponse" message="tns:IService1_AddFiledsOfScience_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authorization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authorization" message="tns:IService1_Authorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthorizationResponse" message="tns:IService1_Authorization_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
@@ -489,6 +509,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="AddExpert_new">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddExpert_new" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="AddCriterions">
       <soap:operation soapAction="http://tempuri.org/IService1/AddCriterions" style="document" />
       <wsdl:input>
@@ -500,6 +529,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddFiledsOfScience">
       <soap:operation soapAction="http://tempuri.org/IService1/AddFiledsOfScience" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authorization">
+      <soap:operation soapAction="http://tempuri.org/IService1/Authorization" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

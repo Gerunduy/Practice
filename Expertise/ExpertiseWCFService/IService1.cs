@@ -90,10 +90,19 @@ namespace ExpertiseWCFService
         , string contacts_expert, int[] ListFOS);
 
         [OperationContract]
+        void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert,
+          string job_expert, string post_expert, string degree_expert, string rank_expert
+        , string contacts_expert, int[] ListFOS, string login_expert, string password_expert);
+
+        [OperationContract]
         bool AddCriterions(string name_crit, bool qualit_crit, string valid_values,int id_category);
 
         [OperationContract]
         bool AddFiledsOfScience(string name_fos);
+
+        [OperationContract]
+        Experts Authorization(string Login, string Password);
+
 
         [OperationContract]
         string Gethello();

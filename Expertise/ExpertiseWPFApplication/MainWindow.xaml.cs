@@ -20,6 +20,8 @@ namespace ExpertiseWPFApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ServiceReference1.Experts User;
+
         GRNTI _GRNTI;
         Experts _Experts;
         ProjectCard _ProjectCard;
@@ -44,6 +46,8 @@ namespace ExpertiseWPFApplication
 
             client.test2Completed += Client_test2Completed;
             //client.test2Async();
+
+            ShowUserInfo();
         }
 
         private void Client_GetListFOSCompleted(object sender, ServiceReference1.GetListFOSCompletedEventArgs e)
@@ -217,11 +221,30 @@ namespace ExpertiseWPFApplication
             _ExpertRoom.ShowDialog();
         }
 
+        // авторизация
         private void button11_Click(object sender, RoutedEventArgs e)
         {
             _Authorization = new Authorization();
             _Authorization.Owner = this;
             _Authorization.ShowDialog();
+            if (_Authorization.DialogResult == true)
+            {
+                this.User = _Authorization.User;
+                ShowUserInfo();
+            }
+        }
+        private void ShowUserInfo()
+        {
+            if (User != null)
+            {
+                string FullNameUser = string.Format("Эксперт: {0} {1} {2} ", User.surname_expert, User.name_expert, User.patronymic_expert);
+                tblUserInfo.Text = FullNameUser;
+            }
+            else
+            {
+                string FullNameUser = string.Format("Вход не выполнен ");
+                tblUserInfo.Text = FullNameUser;
+            }
         }
     }
 }

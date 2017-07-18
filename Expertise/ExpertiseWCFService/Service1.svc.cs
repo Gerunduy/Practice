@@ -198,6 +198,8 @@ namespace ExpertiseWCFService
                 tmpE.degree_expert = pE.degree_expert;
                 tmpE.rank_expert = pE.rank_expert;
                 tmpE.contacts_expert = pE.contacts_expert;
+                tmpE.login_expert = pE.login_expert;
+                tmpE.password_expert = pE.password_expert;
 
                 result.Add(tmpE);
             }
@@ -501,6 +503,37 @@ namespace ExpertiseWCFService
            string job_expert, string post_expert, string degree_expert, string rank_expert
          , string contacts_expert, int[] ListFOS)
         {
+            Experts expert = new Experts();
+            expert.surname_expert = surname_expert;
+            expert.name_expert = name_expert;
+            expert.patronymic_expert = patronymic_expert;
+            expert.job_expert = job_expert;
+            expert.post_expert = post_expert;
+            expert.degree_expert = degree_expert;
+            expert.rank_expert = rank_expert;
+            expert.delete_expert = false;
+            expert.contacts_expert = contacts_expert;
+            db_AAZ.Experts.Add(expert);
+            db_AAZ.SaveChanges();
+
+            if (ListFOS != null)
+            {
+
+                for (int i = 0; i < ListFOS.Length; i++)
+                {
+                    ExpertFos temp = new ExpertFos();
+                    temp.id_expert = expert.id_expert;
+                    temp.id_fos = ListFOS[i];
+                    db_AAZ.ExpertFos.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+            }
+
+        }
+        public void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert,
+           string job_expert, string post_expert, string degree_expert, string rank_expert
+         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
+        {
             Experts expert =new Experts();
             expert.surname_expert = surname_expert;
             expert.name_expert = name_expert;
@@ -511,6 +544,8 @@ namespace ExpertiseWCFService
             expert.rank_expert = rank_expert;
             expert.delete_expert =false;
             expert.contacts_expert = contacts_expert;
+            expert.login_expert = login_expert;
+            expert.password_expert = password_expert;
             db_AAZ.Experts.Add(expert);
             db_AAZ.SaveChanges();
            
@@ -732,6 +767,66 @@ namespace ExpertiseWCFService
                 return false;
             }
         }
+
+        public Experts Authorization(string Login, string Password)
+        {
+            try
+            {
+                Experts tmpExp = db_AAZ.Experts.Where(p => p.login_expert == Login).FirstOrDefault();
+                if (tmpExp != null) // если эксперт с таким логином найден
+                {
+                    if (!tmpExp.delete_expert) // если не удалён
+                    {
+                        if (tmpExp.password_expert == Password) // Есди пароль введён верно
+                        {
+                            Experts expert = new Experts();
+                            expert.id_expert = tmpExp.id_expert;
+                            expert.surname_expert = tmpExp.surname_expert;
+                            expert.name_expert = tmpExp.name_expert;
+                            expert.patronymic_expert = tmpExp.patronymic_expert;
+                            expert.job_expert = tmpExp.job_expert;
+                            expert.post_expert = tmpExp.post_expert;
+                            expert.degree_expert = tmpExp.degree_expert;
+                            expert.rank_expert = tmpExp.rank_expert;
+                            expert.delete_expert = tmpExp.delete_expert;
+                            expert.contacts_expert = tmpExp.contacts_expert;
+
+                            return expert;
+                        }
+                        else // Есди пароль введён неверно
+                        {
+                            Experts expert = new Experts();
+                            expert.id_expert = -1;
+                            expert.surname_expert = "Неверный Login или Password";
+                            return expert;
+                        } 
+                    }
+                    else // если удалён
+                    {
+                        Experts expert = new Experts();
+                        expert.id_expert = -1;
+                        expert.surname_expert = "Неверный Login или Password";
+                        return expert;
+                    }
+                }
+                else // если эксперт с таким логином не найден
+                {
+                    Experts expert = new Experts();
+                    expert.id_expert = -1;
+                    expert.surname_expert = "Неверный Login или Password";
+                    return expert;
+                }
+            }
+            catch (Exception Ex)
+            {
+                // логируем
+                Experts expert = new Experts();
+                expert.id_expert = -2;
+                expert.surname_expert = "Ошибка";
+                return expert;
+            }
+        }
+
 
         public string Gethello()
         {
