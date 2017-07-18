@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 ExpertiseWPFApplication
 none
 false
 DEBUG;TRACE
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\App.xaml
-5-760585562
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\App.xaml
+12-1108581488
 
-14640385492
+21-268827579
 151560689069
-ExpertCard.xaml;Experts.xaml;ExpertСard.xaml;GRNTI.xaml;MainWindow.xaml;
+AddAuthor.xaml;AddCriterions_categories.xaml;Criterions.xaml;ExpertCard.xaml;ExpertiseCard.xaml;Experts.xaml;FiledsOfScience.xaml;FOSCard.xaml;GRNTI.xaml;MainWindow.xaml;ProjectCard.xaml;Projects.xaml;
 
-False
+True
 

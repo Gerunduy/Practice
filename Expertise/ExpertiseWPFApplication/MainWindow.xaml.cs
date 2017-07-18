@@ -22,19 +22,48 @@ namespace ExpertiseWPFApplication
     {
         GRNTI _GRNTI;
         Experts _Experts;
+        ProjectCard _ProjectCard;
+        ExpertCard _ExpertCard;
+        Projects _Projects;
+        Criterions _Criterions;
+        FiledsOfScience _FiledsOfScience;
+        ExpertiseCard _ExpertiseCard;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
             InitializeComponent();
             client.GetListGRNTICompleted += Client_GetListGRNTICompleted;
             client.GethelloCompleted += Client_GethelloCompleted;
-            client.GetListGRNTIAsync();
+            client.GetListAuthorsCompleted += Client_GetListAuthorsCompleted;
+            client.GetListFOSCompleted += Client_GetListFOSCompleted;
 
             client.testCompleted += Client_testCompleted;
             //client.testAsync();
 
             client.test2Completed += Client_test2Completed;
             //client.test2Async();
+        }
+
+        private void Client_GetListFOSCompleted(object sender, ServiceReference1.GetListFOSCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+
+                _ProjectCard.comboBox1.ItemsSource = e.Result.ToList();
+            }
+            else
+                MessageBox.Show(e.Error.Message);
+        }
+
+        private void Client_GetListAuthorsCompleted(object sender, ServiceReference1.GetListAuthorsCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+
+                _ProjectCard.comboBox.ItemsSource = e.Result.ToList();
+            }
+            else
+                MessageBox.Show(e.Error.Message);
         }
 
         private void Client_test2Completed(object sender, System.ComponentModel.AsyncCompletedEventArgs e)
@@ -85,8 +114,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                //dataGrid1.ItemsSource = e.Result.ToList();
-
+                _ProjectCard.comboBox2.ItemsSource = e.Result.ToList();
             }
 
 
@@ -98,7 +126,7 @@ namespace ExpertiseWPFApplication
         {
             MessageBox.Show("test");
             //client.GethelloAsync();
-            client.GetListGRNTIAsync();
+            //client.GetListGRNTIAsync();
             _GRNTI = new GRNTI();
             _GRNTI.Owner = this;
             _GRNTI.ShowDialog();
@@ -117,6 +145,66 @@ namespace ExpertiseWPFApplication
             _Experts = new Experts();
             _Experts.Owner = this;
             _Experts.ShowDialog();
+        }
+        //новый проект
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            _ProjectCard = new ProjectCard();
+            _ProjectCard.Owner = this;
+            client.GetListAuthorsAsync();
+            client.GetListFOSAsync();
+            client.GetListGRNTIAsync();
+            _ProjectCard.ShowDialog();
+        }
+        //проект
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            
+            _Projects = new Projects();
+            _Projects.Owner = this;
+            _Projects.ShowDialog();
+        }
+        //новый эксперт
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertCard = new ExpertCard();
+            _ExpertCard.Owner = this;
+            _ExpertCard.tabControl.Visibility = Visibility.Hidden;
+            _ExpertCard.comboBox.Visibility = Visibility.Visible;
+            _ExpertCard.button1.Visibility = Visibility.Visible;
+            _ExpertCard.button2.Visibility = Visibility.Hidden;
+            _ExpertCard.button.Content = "Сохранить";
+            _ExpertCard.textBox.IsReadOnly = false;
+            _ExpertCard.textBox1.IsReadOnly = false;
+            _ExpertCard.textBox2.IsReadOnly = false;
+            _ExpertCard.textBox3.IsReadOnly = false;
+            _ExpertCard.textBox4.IsReadOnly = false;
+            _ExpertCard.textBox5.IsReadOnly = false;
+            _ExpertCard.textBox6.IsReadOnly = false;
+            _ExpertCard.textBox7.IsReadOnly = false;
+            _ExpertCard.ShowDialog();
+        }
+        //критерии
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            _Criterions = new Criterions();
+            _Criterions.Owner = this;
+            _Criterions.ShowDialog();
+        }
+        //направление науки
+        private void button6_Click(object sender, RoutedEventArgs e)
+        {
+            _FiledsOfScience = new FiledsOfScience();
+            _FiledsOfScience.Owner = this;
+            _FiledsOfScience.ShowDialog();
+        }
+        //new expertise
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertiseCard = new ExpertiseCard();
+            _ExpertiseCard.Owner = this;
+            _ExpertiseCard.ShowDialog();
+            
         }
     }
 }

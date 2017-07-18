@@ -58,6 +58,7 @@ namespace ExpertiseWPFApplication
             _ExpertCard.id_expert = temp.id_expert;
             _ExpertCard.textBlock.Text = "";
             _ExpertCard.dataGrid.ItemsSource = null;
+            _ExpertCard.tabControl.Visibility = Visibility.Visible;
             _ExpertCard.listFOSCurrentExpert.Clear();
             
             for(int i = 0; i < temp.ListFOS.ToList().Count; i++)

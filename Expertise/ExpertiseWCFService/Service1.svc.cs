@@ -32,19 +32,20 @@ namespace ExpertiseWCFService
 
         #region Получение таблиц
 
-        public List<Authors> GetListAuthors()
+        public List<myAuthors> GetListAuthors()
         {
             try
             {
-                List<Authors> result = new List<Authors>();
+                List<myAuthors> result = new List<myAuthors>();
                 List<Authors> tmplA = db_AAZ.Authors.ToList();
                 foreach (Authors pA in tmplA)
                 {
-                    Authors tmpA = new Authors();
+                    myAuthors tmpA = new myAuthors();
                     tmpA.id_author = pA.id_author;
                     tmpA.surname_author = pA.surname_author;
                     tmpA.name_author = pA.name_author;
                     tmpA.patronymic_author = pA.patronymic_author;
+                    tmpA.FIO = pA.surname_author + " " + pA.name_author + " " + pA.patronymic_author;
 
                     result.Add(tmpA);
                 }
@@ -53,43 +54,30 @@ namespace ExpertiseWCFService
             catch (Exception Ex)
             {
                 // тут логируется ошибка
-                List<Authors> result = new List<Authors>();
-                Authors tmpA = new Authors();
+                List<myAuthors> result = new List<myAuthors>();
+                myAuthors tmpA = new myAuthors();
                 tmpA.id_author = -1;
                 tmpA.surname_author = "Содержимое таблицы не получено";
                 result.Add(tmpA);
 
                 return result;
             }
-        }
+        } 
 
         public List<CatCrit> GetListCatCrit()
         {
-            try
+            List<CatCrit> result = new List<CatCrit>();
+            List<CatCrit> tmplCC = db_AAZ.CatCrit.ToList();
+            foreach (CatCrit pCC in tmplCC)
             {
-                List<CatCrit> result = new List<CatCrit>();
-                List<CatCrit> tmplCC = db_AAZ.CatCrit.ToList();
-                foreach (CatCrit pCC in tmplCC)
-                {
-                    CatCrit tmpCC = new CatCrit();
-                    tmpCC.id_cat_crit = pCC.id_cat_crit;
-                    tmpCC.id_cat = pCC.id_cat;
-                    tmpCC.id_crit = pCC.id_crit;
-
-                    result.Add(tmpCC);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<CatCrit> result = new List<CatCrit>();
                 CatCrit tmpCC = new CatCrit();
-                tmpCC.id_cat_crit = -1;
-                result.Add(tmpCC);
+                tmpCC.id_cat_crit = pCC.id_cat_crit;
+                tmpCC.id_cat = pCC.id_cat;
+                tmpCC.id_crit = pCC.id_crit;
 
-                return result;
+                result.Add(tmpCC);
             }
+            return result;
         }
 
         public List<Categories> GetListCategories()
@@ -119,42 +107,30 @@ namespace ExpertiseWCFService
                 return result;
             }
         }
-
-        public List<Criterions> GetListCriterions()
+        public List<Criterions> GetListCriterions(int id_category)
         {
-            try
+            List<Criterions> result = new List<Criterions>();
+            List<CatCrit> tmplC = db_AAZ.CatCrit.Where(o=>o.id_cat== id_category).ToList();
+            foreach (CatCrit pC in tmplC)
             {
-                List<Criterions> result = new List<Criterions>();
-                List<Criterions> tmplC = db_AAZ.Criterions.ToList();
-                foreach (Criterions pC in tmplC)
-                {
-                    Criterions tmpC = new Criterions();
-                    tmpC.id_crit = pC.id_crit;
-                    tmpC.name_crit = pC.name_crit;
-                    tmpC.qualit_crit = pC.qualit_crit;
+                Criterions tmpC = db_AAZ.Criterions.FirstOrDefault(o=>o.id_crit==pC.id_crit);
+                Criterions tmp = new Criterions();
 
-                    result.Add(tmpC);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<Criterions> result = new List<Criterions>();
-                Criterions tmpC = new Criterions();
-                tmpC.id_crit = -1;
-                result.Add(tmpC);
+                tmp.id_crit = tmpC.id_crit;
+                tmp.name_crit = tmpC.name_crit;
+                tmp.qualit_crit = tmpC.qualit_crit;
 
-                return result;
+                result.Add(tmp);
             }
+            return result;
         }
 
-        public List<CritValues> GetListCritValues()
+        public List<CritValues> GetListCritValues(int id_crit)
         {
             try
             {
                 List<CritValues> result = new List<CritValues>();
-                List<CritValues> tmplCV = db_AAZ.CritValues.ToList();
+                List<CritValues> tmplCV = db_AAZ.CritValues.Where(o=>o.id_crit== id_crit).ToList();
                 foreach (CritValues pCV in tmplCV)
                 {
                     CritValues tmpCV = new CritValues();
@@ -173,186 +149,6 @@ namespace ExpertiseWCFService
                 CritValues tmpCV = new CritValues();
                 tmpCV.id_value = -1;
                 result.Add(tmpCV);
-
-                return result;
-            }
-        }
-
-        public List<ExpCrit> GetListExpCrit()
-        {
-            try
-            {
-                List<ExpCrit> result = new List<ExpCrit>();
-                List<ExpCrit> tmplEC = db_AAZ.ExpCrit.ToList();
-                foreach (ExpCrit pEC in tmplEC)
-                {
-                    ExpCrit tmpEC = new ExpCrit();
-                    tmpEC.id_exp_crit = pEC.id_exp_crit;
-                    tmpEC.id_exp = pEC.id_exp;
-                    tmpEC.id_crit = pEC.id_crit;
-
-                    result.Add(tmpEC);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ExpCrit> result = new List<ExpCrit>();
-                ExpCrit tmpEC = new ExpCrit();
-                tmpEC.id_exp_crit = -1;
-                result.Add(tmpEC);
-
-                return result;
-            }
-        }
-
-        public List<ExpertFos> GetListExpertFos()
-        {
-            try
-            {
-                List<ExpertFos> result = new List<ExpertFos>();
-                List<ExpertFos> tmplEF = db_AAZ.ExpertFos.ToList();
-                foreach (ExpertFos pEF in tmplEF)
-                {
-                    ExpertFos tmpEF = new ExpertFos();
-                    tmpEF.id_expert_fos = pEF.id_expert_fos;
-                    tmpEF.id_expert = pEF.id_expert;
-                    tmpEF.id_fos = pEF.id_fos;
-
-                    result.Add(tmpEF);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ExpertFos> result = new List<ExpertFos>();
-                ExpertFos tmpEF = new ExpertFos();
-                tmpEF.id_expert_fos = -1;
-                result.Add(tmpEF);
-
-                return result;
-            }
-        }
-
-        public List<ExpertiseMark> GetListExpertiseMark()
-        {
-            try
-            {
-                List<ExpertiseMark> result = new List<ExpertiseMark>();
-                List<ExpertiseMark> tmplEM = db_AAZ.ExpertiseMark.ToList();
-                foreach (ExpertiseMark pEM in tmplEM)
-                {
-                    ExpertiseMark tmpEM = new ExpertiseMark();
-                    tmpEM.id_expertise_mark = pEM.id_expertise_mark;
-                    tmpEM.id_expertise = pEM.id_expertise;
-                    tmpEM.id_mark = pEM.id_mark;
-
-                    result.Add(tmpEM);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ExpertiseMark> result = new List<ExpertiseMark>();
-                ExpertiseMark tmpEM = new ExpertiseMark();
-                tmpEM.id_expertise_mark = -1;
-                result.Add(tmpEM);
-
-                return result;
-            }
-        }
-
-        public List<Expertises> GetListExpertises()
-        {
-            try
-            {
-                List<Expertises> result = new List<Expertises>();
-                List<Expertises> tmplE = db_AAZ.Expertises.ToList();
-                foreach (Expertises pE in tmplE)
-                {
-                    Expertises tmpE = new Expertises();
-                    tmpE.id_expertise = pE.id_expertise;
-                    tmpE.name_expertise = pE.name_expertise;
-                    tmpE.date_expertise = pE.date_expertise;
-
-
-                    result.Add(tmpE);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<Expertises> result = new List<Expertises>();
-                Expertises tmpE = new Expertises();
-                tmpE.id_expertise = -1;
-                result.Add(tmpE);
-
-                return result;
-            }
-        }
-
-        public List<Experts> GetListExperts()
-        {
-            try
-            {
-                List<Experts> result = new List<Experts>();
-                List<Experts> tmplE = db_AAZ.Experts.ToList();
-                foreach (Experts pE in tmplE)
-                {
-                    Experts tmpE = new Experts();
-                    tmpE.id_expert = pE.id_expert;
-                    tmpE.surname_expert = pE.surname_expert;
-                    tmpE.name_expert = pE.name_expert;
-                    tmpE.patronymic_expert = pE.patronymic_expert;
-                    tmpE.job_expert = pE.job_expert;
-                    tmpE.post_expert = pE.post_expert;
-                    tmpE.degree_expert = pE.degree_expert;
-                    tmpE.rank_expert = pE.rank_expert;
-                    tmpE.contacts_expert = pE.contacts_expert;
-
-                    result.Add(tmpE);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<Experts> result = new List<Experts>();
-                Experts tmpE = new Experts();
-                tmpE.id_expert = -1;
-                result.Add(tmpE);
-
-                return result;
-            }
-        }
-
-        public List<FiledsOfScience> GetListFiledsOfScience()
-        {
-            try
-            {
-                List<FiledsOfScience> result = new List<FiledsOfScience>();
-                List<FiledsOfScience> tmplFOS = db_AAZ.FiledsOfScience.ToList();
-                foreach (FiledsOfScience pFOS in tmplFOS)
-                {
-                    FiledsOfScience tmpFOS = new FiledsOfScience();
-                    tmpFOS.id_fos = pFOS.id_fos;
-                    tmpFOS.name_fos = pFOS.name_fos;
-
-                    result.Add(tmpFOS);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<FiledsOfScience> result = new List<FiledsOfScience>();
-                FiledsOfScience tmpFOS = new FiledsOfScience();
-                tmpFOS.id_fos = -1;
-                result.Add(tmpFOS);
 
                 return result;
             }
@@ -386,173 +182,29 @@ namespace ExpertiseWCFService
             }
         }
 
-        public List<Marks> GetListMarks()
+        public List<Experts> GetListExperts()
         {
-            try
+            List<Experts> result = new List<Experts>();
+            List<Experts> tmplE = db_AAZ.Experts.ToList();
+            foreach (Experts pE in tmplE)
             {
-                List<Marks> result = new List<Marks>();
-                List<Marks> tmplM = db_AAZ.Marks.ToList();
-                foreach (Marks pM in tmplM)
-                {
-                    Marks tmpM = new Marks();
-                    tmpM.id_mark = pM.id_mark;
-                    tmpM.id_expert = pM.id_expert;
-                    tmpM.id_crit = pM.id_crit;
-                    tmpM.id_project = pM.id_project;
-                    tmpM.rating = pM.rating;
+                Experts tmpE = new Experts();
+                tmpE.id_expert = pE.id_expert;
+                tmpE.surname_expert = pE.surname_expert;
+                tmpE.name_expert = pE.name_expert;
+                tmpE.patronymic_expert = pE.patronymic_expert;
+                tmpE.job_expert = pE.job_expert;
+                tmpE.post_expert = pE.post_expert;
+                tmpE.degree_expert = pE.degree_expert;
+                tmpE.rank_expert = pE.rank_expert;
+                tmpE.contacts_expert = pE.contacts_expert;
 
-                    result.Add(tmpM);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<Marks> result = new List<Marks>();
-                Marks tmpM = new Marks();
-                tmpM.id_mark = -1;
-                result.Add(tmpM);
-
-                return result;
-            }
-        }
-
-        public List<ProjectAuthors> GetListProjectAuthors()
-        {
-            try
-            {
-                List<ProjectAuthors> result = new List<ProjectAuthors>();
-                List<ProjectAuthors> tmplPA = db_AAZ.ProjectAuthors.ToList();
-                foreach (ProjectAuthors pPA in tmplPA)
-                {
-                    ProjectAuthors tmpPA = new ProjectAuthors();
-                    tmpPA.id_proj_author = pPA.id_proj_author;
-                    tmpPA.id_proj = pPA.id_proj;
-                    tmpPA.id_author = pPA.id_author;
-
-                    result.Add(tmpPA);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ProjectAuthors> result = new List<ProjectAuthors>();
-                ProjectAuthors tmpPA = new ProjectAuthors();
-                tmpPA.id_proj_author = -1;
-                result.Add(tmpPA);
-
-                return result;
-            }
-        }
-
-        public List<ProjectExpertise> GetListProjectExpertise()
-        {
-            try
-            {
-                List<ProjectExpertise> result = new List<ProjectExpertise>();
-                List<ProjectExpertise> tmplPE = db_AAZ.ProjectExpertise.ToList();
-                foreach (ProjectExpertise pPE in tmplPE)
-                {
-                    ProjectExpertise tmpPE = new ProjectExpertise();
-                    tmpPE.id_project_expertise = pPE.id_project_expertise;
-                    tmpPE.id_expertise = pPE.id_expertise;
-                    tmpPE.id_project = pPE.id_project;
-                    tmpPE.accept = pPE.accept;
-
-                    result.Add(tmpPE);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ProjectExpertise> result = new List<ProjectExpertise>();
-                ProjectExpertise tmpPE = new ProjectExpertise();
-                tmpPE.id_project_expertise = -1;
-                result.Add(tmpPE);
-
-                return result;
-            }
-        }
-
-        public List<ProjectFos> GetListProjectFos()
-        {
-            try
-            {
-                List<ProjectFos> result = new List<ProjectFos>();
-                List<ProjectFos> tmplPF = db_AAZ.ProjectFos.ToList();
-                foreach (ProjectFos pPF in tmplPF)
-                {
-                    ProjectFos tmpPF = new ProjectFos();
-                    tmpPF.id_project_fos = pPF.id_project_fos;
-                    tmpPF.id_project = pPF.id_project;
-                    tmpPF.id_fos = pPF.id_fos;
-
-                    result.Add(tmpPF);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<ProjectFos> result = new List<ProjectFos>();
-                ProjectFos tmpPF = new ProjectFos();
-                tmpPF.id_project_fos = -1;
-                result.Add(tmpPF);
-
-                return result;
-            }
-        }
-
-        public List<Projects> GetListProjects()
-        {
-            try
-            {
-                List<Projects> result = new List<Projects>();
-                List<Projects> tmplP = db_AAZ.Projects.ToList();
-                foreach (Projects pP in tmplP)
-                {
-                    Projects tmpP = new Projects();
-                    tmpP.id_project = pP.id_project;
-                    tmpP.name_project = pP.name_project;
-                    tmpP.lead_project = pP.lead_project;
-                    tmpP.grnti_project = pP.grnti_project;
-                    tmpP.begin_project = pP.begin_project;
-                    tmpP.email_project = pP.email_project;
-                    tmpP.money_project = pP.money_project;
-                    tmpP.email_project = pP.email_project;
-
-                    result.Add(tmpP);
-                }
-                return result;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                List<Projects> result = new List<Projects>();
-                Projects tmpP = new Projects();
-                tmpP.id_project = -1;
-                result.Add(tmpP);
-
-                return result;
-            }
-        }
-
-
-        public List<FiledsOfScience> GetListFOS()
-        {
-            List<FiledsOfScience> result = new List<FiledsOfScience>();
-            List<FiledsOfScience> tmplE = db_AAZ.FiledsOfScience.ToList();
-            foreach (FiledsOfScience pE in tmplE)
-            {
-                FiledsOfScience tmpE = new FiledsOfScience();
-                tmpE.id_fos = pE.id_fos;
-                tmpE.name_fos = pE.name_fos;
                 result.Add(tmpE);
             }
             return result;
         }
+
+       
 
         public List<ExpertsWithCountExpertise> GetListExpertsWithCountExpertise()
         {
@@ -637,678 +289,85 @@ namespace ExpertiseWCFService
             }
             return result;
         }
+       
 
-        #endregion
-
-        #region Добавление записей
-
-        public bool AddAuthors(string surname_author, string name_author, string patronymic_author)
+        public List<FiledsOfScience> GetListFOS()
         {
             try
             {
-                Authors A = new Authors();
-                A.surname_author = surname_author;
-                A.name_author = name_author;
-                A.patronymic_author = patronymic_author;
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                List<FiledsOfScience> tmplFOS = db_AAZ.FiledsOfScience.ToList();
+                foreach (FiledsOfScience pFOS in tmplFOS)
+                {
+                    FiledsOfScience tmpFOS = new FiledsOfScience();
+                    tmpFOS.id_fos = pFOS.id_fos;
+                    tmpFOS.name_fos = pFOS.name_fos;
 
-                db_AAZ.Authors.Add(A);
-                db_AAZ.SaveChanges();
-                return true;
+                    result.Add(tmpFOS);
+                }
+                return result;
             }
             catch (Exception Ex)
             {
                 // тут логируется ошибка
-                return false;
+                List<FiledsOfScience> result = new List<FiledsOfScience>();
+                FiledsOfScience tmpFOS = new FiledsOfScience();
+                tmpFOS.id_fos = -1;
+                result.Add(tmpFOS);
+
+                return result;
             }
         }
 
-        public bool AddCatCrit(int id_cat, int id_crit)
+        public List<myProject> GetListProjects()
         {
             try
             {
-                CatCrit CC = new CatCrit();
-                CC.id_cat = id_cat;
-                CC.id_crit = id_crit;
-
-                db_AAZ.CatCrit.Add(CC);
-                db_AAZ.SaveChanges();
-                return true;
+                int t = 1;
+                List<myProject> result = new List<myProject>();
+                List<Projects> tmplP = db_AAZ.Projects.ToList();
+                foreach (Projects pP in tmplP)
+                {
+                    myProject tmpP = new myProject();
+                    tmpP.id_project = pP.id_project;
+                    tmpP.name_project = pP.name_project;
+                    tmpP.lead_project = pP.lead_project;
+                    tmpP.grnti_project = pP.grnti_project;
+                    tmpP.begin_project = pP.begin_project;
+                    tmpP.number = t;
+                    tmpP.end_project = pP.end_project;
+                    tmpP.money_project = pP.money_project;
+                    tmpP.email_project = pP.email_project;
+                    ProjectExpertise prexp = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == pP.id_project);
+                    if (prexp != null)
+                    {
+                        tmpP.expertisa = true;
+                    }
+                    else tmpP.expertisa = false;
+                    ProjectFos prfos = db_AAZ.ProjectFos.FirstOrDefault(o=>o.id_project == pP.id_project);
+                    if (prfos != null)
+                    {
+                        FiledsOfScience fos= db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == prfos.id_fos);
+                        tmpP.fos = fos.name_fos;
+                    }
+                    t = t + 1;
+                    result.Add(tmpP);
+                }
+                return result;
             }
             catch (Exception Ex)
             {
                 // тут логируется ошибка
-                return false;
-            }
-        }
+                List<myProject> result = new List<myProject>();
+                myProject tmpP = new myProject();
+                tmpP.id_project = -1;
+                result.Add(tmpP);
 
-        public bool AddCategories(string name_category)
-        {
-            try
-            {
-                Categories C = new Categories();
-                C.name_category = name_category;
-
-                db_AAZ.Categories.Add(C);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddCriterions(string name_crit, bool qualit_crit)
-        {
-            try
-            {
-                Criterions C = new Criterions();
-                C.name_crit = name_crit;
-                C.qualit_crit = qualit_crit;
-
-                db_AAZ.Criterions.Add(C);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddCritValues(int id_crit, string valid_values)
-        {
-            try
-            {
-                CritValues CV = new CritValues();
-                CV.id_crit = id_crit;
-                CV.valid_values = valid_values;
-
-                db_AAZ.CritValues.Add(CV);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddExpCrit(int id_exp, int id_crit)
-        {
-            try
-            {
-                ExpCrit EC = new ExpCrit();
-                EC.id_exp = id_exp;
-                EC.id_crit = id_crit;
-
-                db_AAZ.ExpCrit.Add(EC);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddExpertFos(int id_expert, int id_fos)
-        {
-            try
-            {
-                ExpertFos EF = new ExpertFos();
-                EF.id_expert = id_expert;
-                EF.id_fos = id_fos;
-
-                db_AAZ.ExpertFos.Add(EF);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddExpertiseMark(int id_expertise, int id_mark)
-        {
-            try
-            {
-                ExpertiseMark EM = new ExpertiseMark();
-                EM.id_expertise = id_expertise;
-                EM.id_mark = id_mark;
-
-                db_AAZ.ExpertiseMark.Add(EM);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddExpertises(string name_expertise, DateTime date_expertise)
-        {
-            try
-            {
-                Expertises E = new Expertises();
-                E.name_expertise = name_expertise;
-                E.date_expertise = date_expertise;
-
-                db_AAZ.Expertises.Add(E);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert)
-        {
-            try
-            {
-                Experts E = new Experts();
-                E.surname_expert = surname_expert;
-                E.name_expert = name_expert;
-                E.patronymic_expert = patronymic_expert;
-                E.job_expert = job_expert;
-                E.post_expert = post_expert;
-                E.degree_expert = degree_expert;
-                E.rank_expert = rank_expert;
-                E.contacts_expert = contacts_expert;
-
-                db_AAZ.Experts.Add(E);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddFiledsOfScience(string name_fos)
-        {
-            try
-            {
-                FiledsOfScience FOS = new FiledsOfScience();
-                FOS.name_fos = name_fos;
-
-                db_AAZ.FiledsOfScience.Add(FOS);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddGRNTI(string name_grnti)
-        {
-            try
-            {
-                GRNTI grnti = new GRNTI();
-                grnti.name_grnti = name_grnti;
-
-                db_AAZ.GRNTI.Add(grnti);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddMarks(int id_expert, int id_crit, int id_project, int rating)
-        {
-            try
-            {
-                Marks M = new Marks();
-                M.id_expert = id_expert;
-                M.id_crit = id_crit;
-                M.id_project = id_project;
-                M.rating = rating;
-
-                db_AAZ.Marks.Add(M);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddProjectAuthors(int id_proj, int id_author)
-        {
-            try
-            {
-                ProjectAuthors PA = new ProjectAuthors();
-                PA.id_proj = id_proj;
-                PA.id_author = id_author;
-
-                db_AAZ.ProjectAuthors.Add(PA);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddProjectExpertise(int id_expertise, int id_project, bool accept)
-        {
-            try
-            {
-                ProjectExpertise PE = new ProjectExpertise();
-                PE.id_expertise = id_expertise;
-                PE.id_project = id_project;
-                PE.accept = accept;
-
-                db_AAZ.ProjectExpertise.Add(PE);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddProjectFos(int id_project, int id_fos)
-        {
-            try
-            {
-                ProjectFos PF = new ProjectFos();
-                PF.id_project = id_project;
-                PF.id_fos = id_fos;
-
-                db_AAZ.ProjectFos.Add(PF);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project)
-        {
-            try
-            {
-                Projects P = new Projects();
-                P.name_project = name_project;
-                P.lead_project = lead_project;
-                P.grnti_project = grnti_project;
-                P.begin_project = begin_project;
-                P.end_project = end_project;
-                P.money_project = money_project;
-                P.email_project = email_project;
-
-                db_AAZ.Projects.Add(P);
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
+                return result;
             }
         }
 
         #endregion
-
-        #region Редактирование таблиц
-
-        public bool EditAuthors(int id_author, string surname_author, string name_author, string patronymic_author)
-        {
-            try
-            {
-                Authors A = db_AAZ.Authors.Where(p => p.id_author == id_author).FirstOrDefault();
-                A.surname_author = surname_author;
-                A.name_author = name_author;
-                A.patronymic_author = patronymic_author;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditCatCrit(int id_cat_crit, int id_cat, int id_crit)
-        {
-            try
-            {
-                CatCrit CC = db_AAZ.CatCrit.Where(p => p.id_cat_crit == id_cat_crit).FirstOrDefault();
-                CC.id_cat = id_cat;
-                CC.id_crit = id_crit;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditCategories(int id_category, string name_category)
-        {
-            try
-            {
-                Categories C = db_AAZ.Categories.Where(p => p.id_category == id_category).FirstOrDefault();
-                C.name_category = name_category;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit)
-        {
-            try
-            {
-                Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
-                C.name_crit = name_crit;
-                C.qualit_crit = qualit_crit;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditCritValues(int id_value, int id_crit, string valid_values)
-        {
-            try
-            {
-                CritValues CV = db_AAZ.CritValues.Where(p => p.id_value == id_value).FirstOrDefault();
-                CV.id_crit = id_crit;
-                CV.valid_values = valid_values;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditExpCrit(int id_exp_crit, int id_exp, int id_crit)
-        {
-            try
-            {
-                ExpCrit EC = db_AAZ.ExpCrit.Where(p => p.id_exp_crit == id_exp_crit).FirstOrDefault();
-                EC.id_exp = id_exp;
-                EC.id_crit = id_crit;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditExpertFos(int id_expert_fos, int id_expert, int id_fos)
-        {
-            try
-            {
-                ExpertFos EF = db_AAZ.ExpertFos.Where(p => p.id_expert_fos == id_expert_fos).FirstOrDefault();
-                EF.id_expert = id_expert;
-                EF.id_fos = id_fos;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditExpertiseMark(int id_expertise_mark, int id_expertise, int id_mark)
-        {
-            try
-            {
-                ExpertiseMark EM = db_AAZ.ExpertiseMark.Where(p => p.id_expertise_mark == id_expertise_mark).FirstOrDefault();
-                EM.id_expertise = id_expertise;
-                EM.id_mark = id_mark;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditExpertises(int id_expertise, string name_expertise, DateTime date_expertise)
-        {
-            try
-            {
-                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
-                E.name_expertise = name_expertise;
-                E.date_expertise = date_expertise;
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditExperts(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert)
-        {
-            try
-            {
-                Experts E = db_AAZ.Experts.Where(p => p.id_expert == id_expert).FirstOrDefault();
-                E.surname_expert = surname_expert;
-                E.name_expert = name_expert;
-                E.patronymic_expert = patronymic_expert;
-                E.job_expert = job_expert;
-                E.post_expert = post_expert;
-                E.degree_expert = degree_expert;
-                E.rank_expert = rank_expert;
-                E.contacts_expert = contacts_expert;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditFiledsOfScience(int id_fos, string name_fos)
-        {
-            try
-            {
-                FiledsOfScience FOS = db_AAZ.FiledsOfScience.Where(p => p.id_fos == id_fos).FirstOrDefault();
-                FOS.name_fos = name_fos;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditGRNTI(string code_grnti, string name_grnti)
-        {
-            try
-            {
-                GRNTI grnti = db_AAZ.GRNTI.Where(p => p.code_grnti == code_grnti).FirstOrDefault();
-                grnti.name_grnti = name_grnti;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditMarks(int id_mark, int id_expert, int id_crit, int id_project, int rating)
-        {
-            try
-            {
-                Marks M = db_AAZ.Marks.Where(p => p.id_mark == id_mark).FirstOrDefault();
-                M.id_expert = id_expert;
-                M.id_crit = id_crit;
-                M.id_project = id_project;
-                M.rating = rating;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditProjectAuthors(int id_proj_author, int id_proj, int id_author)
-        {
-            try
-            {
-                ProjectAuthors PA = db_AAZ.ProjectAuthors.Where(p => p.id_proj_author == id_proj_author).FirstOrDefault();
-                PA.id_proj = id_proj;
-                PA.id_author = id_author;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept)
-        {
-            try
-            {
-                ProjectExpertise PE = db_AAZ.ProjectExpertise.Where(p => p.id_project_expertise == id_project_expertise).FirstOrDefault();
-                PE.id_expertise = id_expertise;
-                PE.id_project = id_project;
-                PE.accept = accept;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditProjectFos(int id_project_fos, int id_project, int id_fos)
-        {
-            try
-            {
-                ProjectFos PF = db_AAZ.ProjectFos.Where(p => p.id_project_fos == id_project_fos).FirstOrDefault();
-                PF.id_project = id_project;
-                PF.id_fos = id_fos;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        public bool EditProjects(int id_project, string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project)
-        {
-            try
-            {
-                Projects P = db_AAZ.Projects.Where(p => p.id_project == id_project).FirstOrDefault();
-                P.name_project = name_project;
-                P.lead_project = lead_project;
-                P.grnti_project = grnti_project;
-                P.begin_project = begin_project;
-                P.end_project = end_project;
-                P.money_project = money_project;
-                P.email_project = email_project;
-
-
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
-
-        #endregion
-
         public List<FiledsOfScience> test()
         {
             //Experts tempexperts = new Experts();
@@ -1401,6 +460,100 @@ namespace ExpertiseWCFService
 
         }
 
+        public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit)
+        {
+            try
+            {
+                Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
+                C.name_crit = name_crit;
+                C.qualit_crit = qualit_crit;
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool EditCritValues(int id_value, int id_crit, string valid_values)
+        {
+            try
+            {
+                CritValues CV = db_AAZ.CritValues.Where(p => p.id_value == id_value).FirstOrDefault();
+                CV.id_crit = id_crit;
+                CV.valid_values = valid_values;
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+
+        public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
+           string job_expert, string post_expert, string degree_expert, string rank_expert
+         , string contacts_expert, int[] ListFOS)
+        {
+            Experts expert =new Experts();
+            expert.surname_expert = surname_expert;
+            expert.name_expert = name_expert;
+            expert.patronymic_expert = patronymic_expert;
+            expert.job_expert = job_expert;
+            expert.post_expert = post_expert;
+            expert.degree_expert = degree_expert;
+            expert.rank_expert = rank_expert;
+            expert.delete_expert =false;
+            expert.contacts_expert = contacts_expert;
+            db_AAZ.Experts.Add(expert);
+            db_AAZ.SaveChanges();
+           
+            if (ListFOS != null)
+            {
+
+                for (int i = 0; i < ListFOS.Length; i++)
+                {
+                    ExpertFos temp = new ExpertFos();
+                    temp.id_expert = expert.id_expert;
+                    temp.id_fos = ListFOS[i];
+                    db_AAZ.ExpertFos.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+            }
+
+        }
+
+        public bool EditFiledsOfScience(int id_fos, string name_fos)
+        {
+            try
+            {
+                FiledsOfScience FOS = db_AAZ.FiledsOfScience.Where(p => p.id_fos == id_fos).FirstOrDefault();
+                FOS.name_fos = name_fos;
+
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool DeleteExpert(int id_expert)
+        {
+            Experts updateexpert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
+            updateexpert.delete_expert = true;
+            db_AAZ.SaveChanges();
+            return true;
+        }
         public List<Expertise_Expert> Expertise_Expert(int id_expert)
         {
             List<Expertise_Expert> result = new List<Expertise_Expert>();
@@ -1458,6 +611,128 @@ namespace ExpertiseWCFService
             return result;
             
         }
+
+        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project,int[] listauthor,int fos)
+        {
+            try
+            {
+                Projects P = new Projects();
+                P.name_project = name_project;
+                P.lead_project = lead_project;
+                P.grnti_project = grnti_project;
+                P.begin_project = begin_project;
+                P.end_project = end_project;
+                P.money_project = money_project;
+                P.email_project = email_project;
+
+                db_AAZ.Projects.Add(P);
+                db_AAZ.SaveChanges();
+                ProjectFos PF = new ProjectFos();
+                PF.id_project = P.id_project;
+                PF.id_fos = fos;
+                db_AAZ.ProjectFos.Add(PF);
+                db_AAZ.SaveChanges();
+                for(int i = 0; i < listauthor.Length; i++)
+                {
+                    ProjectAuthors temp = new ProjectAuthors();
+                    temp.id_proj = P.id_project;
+                    temp.id_author = listauthor[i];
+                    db_AAZ.ProjectAuthors.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+        public bool AddAuthors(string surname_author, string name_author, string patronymic_author)
+        {
+            try
+            {
+                Authors A = new Authors();
+                A.surname_author = surname_author;
+                A.name_author = name_author;
+                A.patronymic_author = patronymic_author;
+
+                db_AAZ.Authors.Add(A);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCategories(string name_category)
+        {
+            try
+            {
+                Categories C = new Categories();
+                C.name_category = name_category;
+
+                db_AAZ.Categories.Add(C);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddCriterions(string name_crit, bool qualit_crit,string valid_values,int id_category)
+        {
+            try
+            {
+                Criterions C = new Criterions();
+                C.name_crit = name_crit;
+                C.qualit_crit = qualit_crit;
+
+                db_AAZ.Criterions.Add(C);
+                db_AAZ.SaveChanges();
+                CritValues crval = new CritValues();
+                crval.id_crit = C.id_crit;
+                crval.valid_values = valid_values;
+                db_AAZ.CritValues.Add(crval);
+                db_AAZ.SaveChanges();
+                CatCrit catcrit = new CatCrit();
+                catcrit.id_crit = C.id_crit;
+                catcrit.id_cat = id_category;
+                db_AAZ.CatCrit.Add(catcrit);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddFiledsOfScience(string name_fos)
+        {
+            try
+            {
+                FiledsOfScience FOS = new FiledsOfScience();
+                FOS.name_fos = name_fos;
+
+                db_AAZ.FiledsOfScience.Add(FOS);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
         public string Gethello()
         {
             string a;

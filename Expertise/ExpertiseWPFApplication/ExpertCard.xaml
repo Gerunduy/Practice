@@ -42,25 +42,32 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button x:Name="button1" Content="очистить" Visibility="Hidden" HorizontalAlignment="Left" Margin="130,324,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
-        <DataGrid x:Name="dataGrid" Margin="10,458,10,10" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True">
-            <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Номер п\п" />
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Наименование конкурса" />
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Направление" />
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Дата экспертизы" />
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Поддержаный проект" />
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Статус экспертизы" />
-                <DataGridTemplateColumn Width="2*" Header="Карточка экспертизы">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-
-                            <Button Content="перейте в карточку экспертизы"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  />
-
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
         <Button x:Name="button2" Content="удалить карточку" HorizontalAlignment="Left" Margin="466,403,0,0" VerticalAlignment="Top" Width="133" Height="39" Click="button2_Click"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="130" BorderBrush="White" Foreground="White" Margin="10,447,0,0" VerticalAlignment="Top" Width="639">
+            <TabItem Header="" Height="0" Width="0" Margin="0">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Номер п\п" />
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Наименование конкурса" />
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Направление" />
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Дата экспертизы" />
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Поддержаный проект" />
+                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Статус экспертизы" />
+                            <DataGridTemplateColumn Width="2*" Header="Карточка экспертизы">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+
+                                        <Button Content="перейте в карточку экспертизы"  Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ComboBox}, Mode=FindAncestor}}"  />
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

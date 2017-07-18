@@ -1,0 +1,37 @@
+﻿<Window x:Class="ExpertiseWPFApplication.FiledsOfScience"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="FiledsOfScience" Height="281.25" Width="654.375">
+    <Grid>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="207" Width="626">
+            <DataGrid.Columns>
+                <DataGridTextColumn Width="2.4*" Binding="{Binding name_fos}" Header="Направление науки" />
+                <DataGridTemplateColumn Width="*" Header="Редактирование">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+
+                            <Button Content="Редактировать"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_updatefos_Click"/>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="*" Header="Удаление">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+
+                            <Button Content="Удалить"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_deletefos_Click"/>
+
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+
+    </Grid>
+</Window>

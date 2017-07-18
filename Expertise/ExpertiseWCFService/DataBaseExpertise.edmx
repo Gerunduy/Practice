@@ -455,18 +455,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ProjectExpertise_Projects">
-          <End Role="Projects" Type="Self.Projects" Multiplicity="1" />
-          <End Role="ProjectExpertise" Type="Self.ProjectExpertise" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projects">
-              <PropertyRef Name="id_project" />
-            </Principal>
-            <Dependent Role="ProjectExpertise">
-              <PropertyRef Name="id_project" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ProjectFos_FiledsOfScience">
           <End Role="FiledsOfScience" Type="Self.FiledsOfScience" Multiplicity="1" />
           <End Role="ProjectFos" Type="Self.ProjectFos" Multiplicity="*" />
@@ -663,10 +651,6 @@
           </AssociationSet>
           <AssociationSet Name="FK_ProjectExpertise_Expertises" Association="Self.FK_ProjectExpertise_Expertises">
             <End Role="Expertises" EntitySet="Expertises" />
-            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProjectExpertise_Projects" Association="Self.FK_ProjectExpertise_Projects">
-            <End Role="Projects" EntitySet="Projects" />
             <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
           </AssociationSet>
           <AssociationSet Name="FK_ProjectFos_FiledsOfScience" Association="Self.FK_ProjectFos_FiledsOfScience">
@@ -902,7 +886,6 @@
           <Property Name="id_project" Type="Int32" Nullable="false" />
           <Property Name="accept" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Expertises" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="ProjectExpertise" ToRole="Expertises" />
-          <NavigationProperty Name="Projects" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="ProjectExpertise" ToRole="Projects" />
         </EntityType>
         <EntityType Name="ProjectFos">
           <Key>
@@ -929,7 +912,6 @@
           <NavigationProperty Name="GRNTI" Relationship="Self.FK_Projects_GRNTI" FromRole="Projects" ToRole="GRNTI" />
           <NavigationProperty Name="ProjectAuthors" Relationship="Self.FK_ProjectAuthors_Projects" FromRole="Projects" ToRole="ProjectAuthors" />
           <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_Projects" FromRole="Projects" ToRole="ProjectFos" />
-          <NavigationProperty Name="ProjectExpertise" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="Projects" ToRole="ProjectExpertise" />
         </EntityType>
         <EntityType Name="RatedFilms">
           <Key>
@@ -1425,23 +1407,7 @@
             <End Role="Rights" EntitySet="Rights" />
             <End Role="Users" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_ProjectExpertise_Projects" Association="db_AAZModel.FK_ProjectExpertise_Projects">
-            <End Role="Projects" EntitySet="Projects" />
-            <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
-          </AssociationSet>
         </EntityContainer>
-        <Association Name="FK_ProjectExpertise_Projects">
-          <End Type="db_AAZModel.Projects" Role="Projects" Multiplicity="1" />
-          <End Type="db_AAZModel.ProjectExpertise" Role="ProjectExpertise" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Projects">
-              <PropertyRef Name="id_project" />
-            </Principal>
-            <Dependent Role="ProjectExpertise">
-              <PropertyRef Name="id_project" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
