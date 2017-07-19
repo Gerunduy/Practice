@@ -224,14 +224,22 @@ namespace ExpertiseWPFApplication
         // авторизация
         private void button11_Click(object sender, RoutedEventArgs e)
         {
-            _Authorization = new Authorization();
-            _Authorization.Owner = this;
-            _Authorization.ShowDialog();
-            if (_Authorization.DialogResult == true)
+            if (User != null)
             {
-                this.User = _Authorization.User;
+                User = null;
                 ShowUserInfo();
             }
+            else
+            {
+                _Authorization = new Authorization();
+                _Authorization.Owner = this;
+                _Authorization.ShowDialog();
+                if (_Authorization.DialogResult == true)
+                {
+                    this.User = _Authorization.User;
+                    ShowUserInfo();
+                }
+            }  
         }
         private void ShowUserInfo()
         {
@@ -239,11 +247,15 @@ namespace ExpertiseWPFApplication
             {
                 string FullNameUser = string.Format("Эксперт: {0} {1} {2} ", User.surname_expert, User.name_expert, User.patronymic_expert);
                 tblUserInfo.Text = FullNameUser;
+                button10.IsEnabled = true;
+                button11.Content = "Выход";
             }
             else
             {
                 string FullNameUser = string.Format("Вход не выполнен ");
                 tblUserInfo.Text = FullNameUser;
+                button10.IsEnabled = false;
+                button11.Content = "Вход";
             }
         }
     }
