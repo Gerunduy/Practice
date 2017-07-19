@@ -56,6 +56,14 @@
     <Property Name="id_expert" Type="int" Nullable="false" />
     <Property Name="id_fos" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="ExpertiseExpert">
+    <Key>
+      <PropertyRef Name="id_expertise_expert" />
+    </Key>
+    <Property Name="id_expertise_expert" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_expertise" Type="int" Nullable="false" />
+    <Property Name="id_expert" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="ExpertiseMark">
     <Key>
       <PropertyRef Name="id_expertise_mark" />
@@ -71,6 +79,7 @@
     <Property Name="id_expertise" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name_expertise" Type="nvarchar(max)" Nullable="false" />
     <Property Name="date_expertise" Type="date" Nullable="false" />
+    <Property Name="end_expertise" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
@@ -345,6 +354,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_ExpertiseExpert_Expertises">
+    <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+    <End Role="ExpertiseExpert" Type="Self.ExpertiseExpert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expertises">
+        <PropertyRef Name="id_expertise" />
+      </Principal>
+      <Dependent Role="ExpertiseExpert">
+        <PropertyRef Name="id_expertise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpertiseExpert_Experts">
+    <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+    <End Role="ExpertiseExpert" Type="Self.ExpertiseExpert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experts">
+        <PropertyRef Name="id_expert" />
+      </Principal>
+      <Dependent Role="ExpertiseExpert">
+        <PropertyRef Name="id_expert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ExpertiseMark_Expertises">
     <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
     <End Role="ExpertiseMark" Type="Self.ExpertiseMark" Multiplicity="*" />
@@ -569,6 +602,7 @@
     <EntitySet Name="CritValues" EntityType="Self.CritValues" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExpCrit" EntityType="Self.ExpCrit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExpertFos" EntityType="Self.ExpertFos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ExpertiseExpert" EntityType="Self.ExpertiseExpert" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExpertiseMark" EntityType="Self.ExpertiseMark" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Expertises" EntityType="Self.Expertises" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Experts" EntityType="Self.Experts" Schema="dbo" store:Type="Tables" />
@@ -626,6 +660,14 @@
     <AssociationSet Name="FK_ExpertFos_FiledsOfScience" Association="Self.FK_ExpertFos_FiledsOfScience">
       <End Role="FiledsOfScience" EntitySet="FiledsOfScience" />
       <End Role="ExpertFos" EntitySet="ExpertFos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpertiseExpert_Expertises" Association="Self.FK_ExpertiseExpert_Expertises">
+      <End Role="Expertises" EntitySet="Expertises" />
+      <End Role="ExpertiseExpert" EntitySet="ExpertiseExpert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpertiseExpert_Experts" Association="Self.FK_ExpertiseExpert_Experts">
+      <End Role="Experts" EntitySet="Experts" />
+      <End Role="ExpertiseExpert" EntitySet="ExpertiseExpert" />
     </AssociationSet>
     <AssociationSet Name="FK_ExpertiseMark_Expertises" Association="Self.FK_ExpertiseMark_Expertises">
       <End Role="Expertises" EntitySet="Expertises" />

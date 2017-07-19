@@ -46,6 +46,9 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         List<myProject> GetListProjects();
+
+        [OperationContract]
+        List<Expertises> GetListExpertisesForExpert(int id_expert);
         #endregion
 
         [OperationContract]
@@ -79,6 +82,9 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         bool AddCategories(string name_category);
+
+        [OperationContract]
+        bool AddExpertises(string name_expertise, DateTime date_expertise, int[] arrExperts);
 
 
         [OperationContract]

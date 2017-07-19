@@ -30,6 +30,8 @@ namespace ExpertiseWPFApplication
         public Authorization()
         {
             InitializeComponent();
+            tbxLogin.Text = "ivan";
+            pbxPassword.Password = "ivan";
             client.AuthorizationCompleted += Client_AuthorizationCompleted;
             Waiting(false);
         }

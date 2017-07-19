@@ -369,6 +369,42 @@ namespace ExpertiseWCFService
             }
         }
 
+        public List<Expertises> GetListExpertisesForExpert(int id_expert)
+        {
+            try
+            {
+                List<Expertises> result = new List<Expertises>();
+                List<Expertises> tmplExp = new List<Expertises>();
+                List<ExpertiseExpert> lEE = db_AAZ.ExpertiseExpert.Where(p => p.id_expert == id_expert).ToList();
+                foreach (ExpertiseExpert pEE in lEE)
+                {
+                    tmplExp.Add(db_AAZ.Expertises.Where(o => o.id_expertise == pEE.id_expertise).FirstOrDefault());
+                }
+
+                foreach (Expertises pE in tmplExp)
+                {
+                    Expertises tmpExp = new Expertises();
+                    tmpExp.id_expertise = pE.id_expertise;
+                    tmpExp.name_expertise = pE.name_expertise;
+                    tmpExp.date_expertise = pE.date_expertise;
+                    tmpExp.end_expertise = pE.end_expertise;
+                    result.Add(tmpExp);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Expertises> result = new List<Expertises>();
+                Expertises tmpExp = new Expertises();
+                tmpExp.id_expertise = -1;
+                tmpExp.name_expertise = "Ошибка получения данных";
+                result.Add(tmpExp);
+
+                return result;
+            }
+        }
+
         #endregion
         public List<FiledsOfScience> test()
         {
@@ -758,6 +794,35 @@ namespace ExpertiseWCFService
                 FOS.name_fos = name_fos;
 
                 db_AAZ.FiledsOfScience.Add(FOS);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public bool AddExpertises(string name_expertise, DateTime date_expertise, int[] arrExperts)
+        {
+            try
+            {
+                Expertises E = new Expertises();
+                E.name_expertise = name_expertise;
+                E.date_expertise = date_expertise;
+                E.end_expertise = false;
+
+                List<ExpertiseExpert> lEE = new List<ExpertiseExpert>();
+                foreach (int i in arrExperts)
+                {
+                    ExpertiseExpert EE = new ExpertiseExpert();
+                    EE.id_expert = i;
+                    lEE.Add(EE);
+                }
+                E.ExpertiseExpert = lEE;
+
+                db_AAZ.Expertises.Add(E);
                 db_AAZ.SaveChanges();
                 return true;
             }

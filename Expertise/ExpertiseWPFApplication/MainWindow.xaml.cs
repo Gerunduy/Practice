@@ -216,9 +216,9 @@ namespace ExpertiseWPFApplication
         // вход в личный кабинет
         private void button10_Click(object sender, RoutedEventArgs e)
         {
-            _ExpertRoom = new ExpertRoom();
+            _ExpertRoom = new ExpertRoom(User);
             _ExpertRoom.Owner = this;
-            _ExpertRoom.ShowDialog();
+            _ExpertRoom.ShowDialog(); // скорее всего здесь _ExpertRoom.Show();
         }
 
         // авторизация

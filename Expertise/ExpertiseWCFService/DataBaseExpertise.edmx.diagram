@@ -58,6 +58,9 @@
         <AssociationConnector Association="db_AAZModel.FK_RatedSerials_Users" ManuallyRouted="false" />
         <AssociationConnector Association="db_AAZModel.FK_Users_Rights" ManuallyRouted="false" />
         <AssociationConnector Association="db_AAZModel.FK_ProjectExpertise_Projects" />
+        <EntityTypeShape EntityType="db_AAZModel.ExpertiseExpert" Width="1.5" PointX="7.625" PointY="5" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertiseExpert_Expertises" />
+        <AssociationConnector Association="db_AAZModel.FK_ExpertiseExpert_Experts" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

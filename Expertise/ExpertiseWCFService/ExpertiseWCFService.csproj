@@ -152,6 +152,9 @@
     <Compile Include="ExpertFos.cs">
       <DependentUpon>DataBaseExpertise.tt</DependentUpon>
     </Compile>
+    <Compile Include="ExpertiseExpert.cs">
+      <DependentUpon>DataBaseExpertise.tt</DependentUpon>
+    </Compile>
     <Compile Include="ExpertiseMark.cs">
       <DependentUpon>DataBaseExpertise.tt</DependentUpon>
     </Compile>

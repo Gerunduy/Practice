@@ -89,6 +89,8 @@
     <NavigationProperty Name="ExpCrit" Relationship="Self.FK_ExpCrit_Expertises" FromRole="Expertises" ToRole="ExpCrit" />
     <NavigationProperty Name="ExpertiseMark" Relationship="Self.FK_ExpertiseMark_Expertises" FromRole="Expertises" ToRole="ExpertiseMark" />
     <NavigationProperty Name="ProjectExpertise" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="Expertises" ToRole="ProjectExpertise" />
+    <Property Name="end_expertise" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="Expertises" ToRole="ExpertiseExpert" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
@@ -108,6 +110,7 @@
     <Property Name="delete_expert" Type="Boolean" Nullable="false" />
     <Property Name="login_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="password_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Experts" FromRole="Experts" ToRole="ExpertiseExpert" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -726,6 +729,15 @@
       <End Role="Projects" EntitySet="Projects" />
       <End Role="ProjectExpertise" EntitySet="ProjectExpertise" />
     </AssociationSet>
+    <EntitySet Name="ExpertiseExpert" EntityType="db_AAZModel.ExpertiseExpert" />
+    <AssociationSet Name="FK_ExpertiseExpert_Expertises" Association="db_AAZModel.FK_ExpertiseExpert_Expertises">
+      <End Role="Expertises" EntitySet="Expertises" />
+      <End Role="ExpertiseExpert" EntitySet="ExpertiseExpert" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExpertiseExpert_Experts" Association="db_AAZModel.FK_ExpertiseExpert_Experts">
+      <End Role="Experts" EntitySet="Experts" />
+      <End Role="ExpertiseExpert" EntitySet="ExpertiseExpert" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_ProjectExpertise_Projects">
     <End Type="db_AAZModel.Projects" Role="Projects" Multiplicity="1" />
@@ -736,6 +748,40 @@
       </Principal>
       <Dependent Role="ProjectExpertise">
         <PropertyRef Name="id_project" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="ExpertiseExpert">
+    <Key>
+      <PropertyRef Name="id_expertise_expert" />
+    </Key>
+    <Property Name="id_expertise_expert" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_expertise" Type="Int32" Nullable="false" />
+    <Property Name="id_expert" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Expertises" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="ExpertiseExpert" ToRole="Expertises" />
+    <NavigationProperty Name="Experts" Relationship="db_AAZModel.FK_ExpertiseExpert_Experts" FromRole="ExpertiseExpert" ToRole="Experts" />
+  </EntityType>
+  <Association Name="FK_ExpertiseExpert_Expertises">
+    <End Type="db_AAZModel.Expertises" Role="Expertises" Multiplicity="1" />
+    <End Type="db_AAZModel.ExpertiseExpert" Role="ExpertiseExpert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expertises">
+        <PropertyRef Name="id_expertise" />
+      </Principal>
+      <Dependent Role="ExpertiseExpert">
+        <PropertyRef Name="id_expertise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExpertiseExpert_Experts">
+    <End Type="db_AAZModel.Experts" Role="Experts" Multiplicity="1" />
+    <End Type="db_AAZModel.ExpertiseExpert" Role="ExpertiseExpert" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experts">
+        <PropertyRef Name="id_expert" />
+      </Principal>
+      <Dependent Role="ExpertiseExpert">
+        <PropertyRef Name="id_expert" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
