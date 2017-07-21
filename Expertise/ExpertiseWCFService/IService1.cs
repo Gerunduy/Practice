@@ -53,8 +53,6 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<Expertises> GetListExpertisesForExpert(int id_expert);
 
-        [OperationContract]
-        TablesForExpertise GetTablesForExpertise();
         #endregion
 
         #region Получение полных таблиц
@@ -110,6 +108,64 @@ namespace ExpertiseWCFService
         List<Projects> GetListAllProjects();
 
         #endregion
+
+        #region Добавление записей
+
+        [OperationContract]
+        bool AddNewAuthors(string surname_author, string name_author, string patronymic_author);
+
+        [OperationContract]
+        bool AddNewCatCrit(int id_cat, int id_crit);
+
+        [OperationContract]
+        bool AddNewCategories(string name_category);
+
+        [OperationContract]
+        bool AddNewCriterions(string name_crit, bool qualit_crit);
+
+        [OperationContract]
+        bool AddNewCritValues(int id_crit, string valid_values);
+
+        [OperationContract]
+        bool AddNewExpCrit(int id_exp, int id_crit);
+
+        [OperationContract]
+        bool AddNewExpertFos(int id_expert, int id_fos);
+
+        [OperationContract]
+        bool AddNewExpertiseMark(int id_expertise, int id_mark);
+
+        [OperationContract]
+        bool AddNewExpertises(string name_expertise, DateTime date_expertise);
+
+        [OperationContract]
+        bool AddNewExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert);
+
+        [OperationContract]
+        bool AddNewFiledsOfScience(string name_fos);
+
+        [OperationContract]
+        bool AddNewGRNTI(string name_grnti);
+
+        [OperationContract]
+        bool AddNewMarks(int id_expert, int id_crit, int id_project, int rating);
+
+        [OperationContract]
+        bool AddNewProjectAuthors(int id_proj, int id_author);
+
+        [OperationContract]
+        bool AddNewProjectExpertise(int id_expertise, int id_project, bool accept);
+
+        [OperationContract]
+        bool AddNewProjectFos(int id_project, int id_fos);
+
+        [OperationContract]
+        bool AddNewProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project);
+
+        #endregion
+
+        [OperationContract]
+        TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]
         List<FiledsOfScience> test();
