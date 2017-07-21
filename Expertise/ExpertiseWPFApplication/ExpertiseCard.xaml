@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ExpertiseCard" Height="600" Width="1000" MinHeight="600" MinWidth="1000">
+        Title="ExpertiseCard" Height="800" Width="1000" MinHeight="600" MinWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -27,6 +27,8 @@
                 <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
@@ -153,6 +155,49 @@
                 <TextBox Grid.Row="0" Grid.Column="2" FontSize="19" Text="1" TextAlignment="Center"/>
             </Grid>
             <Grid Grid.Row="8" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Эксперты-участники:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExperts" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddExpert"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteExpert"/>
+                </Grid>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Все эксперты:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="10" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10"/>
                     <RowDefinition Height="30"/>
