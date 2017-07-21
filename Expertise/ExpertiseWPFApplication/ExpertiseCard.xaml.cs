@@ -22,7 +22,7 @@ namespace ExpertiseWPFApplication
         public ExpertiseCard()
         {
             InitializeComponent();
-            //Waiting(true);
+            Waiting(false);
         }
         //=======================================================================================
         private void Waiting(bool Wait)

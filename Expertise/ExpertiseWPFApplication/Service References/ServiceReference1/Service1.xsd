@@ -368,6 +368,27 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfExpertises" nillable="true" type="tns:ArrayOfExpertises" />
+  <xs:complexType name="TablesForExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="lCatigories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="lCritValues" nillable="true" type="tns:ArrayOfCritValues" />
+      <xs:element minOccurs="0" name="lCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="lExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="lExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="lFOS" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+      <xs:element minOccurs="0" name="lProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="lProjects" nillable="true" type="tns:ArrayOfProjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablesForExpertise" nillable="true" type="tns:TablesForExpertise" />
+  <xs:complexType name="ArrayOfAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Authors" nillable="true" type="tns:Authors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
   <xs:complexType name="ArrayOfExpertise_Expert">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />

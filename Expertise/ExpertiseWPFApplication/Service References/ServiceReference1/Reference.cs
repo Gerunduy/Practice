@@ -2896,6 +2896,195 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TablesForExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class TablesForExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ErrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] lCatCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Categories[] lCatigoriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CritValues[] lCritValuesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions[] lCriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertFos[] lExpertFosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Experts[] lExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] lFOSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ProjectFos[] lProjectFosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Projects[] lProjectsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Err {
+            get {
+                return this.ErrField;
+            }
+            set {
+                if ((this.ErrField.Equals(value) != true)) {
+                    this.ErrField = value;
+                    this.RaisePropertyChanged("Err");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] lCatCrit {
+            get {
+                return this.lCatCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCatCritField, value) != true)) {
+                    this.lCatCritField = value;
+                    this.RaisePropertyChanged("lCatCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Categories[] lCatigories {
+            get {
+                return this.lCatigoriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCatigoriesField, value) != true)) {
+                    this.lCatigoriesField = value;
+                    this.RaisePropertyChanged("lCatigories");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] lCritValues {
+            get {
+                return this.lCritValuesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCritValuesField, value) != true)) {
+                    this.lCritValuesField = value;
+                    this.RaisePropertyChanged("lCritValues");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] lCriterions {
+            get {
+                return this.lCriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCriterionsField, value) != true)) {
+                    this.lCriterionsField = value;
+                    this.RaisePropertyChanged("lCriterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertFos[] lExpertFos {
+            get {
+                return this.lExpertFosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpertFosField, value) != true)) {
+                    this.lExpertFosField = value;
+                    this.RaisePropertyChanged("lExpertFos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] lExperts {
+            get {
+                return this.lExpertsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpertsField, value) != true)) {
+                    this.lExpertsField = value;
+                    this.RaisePropertyChanged("lExperts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] lFOS {
+            get {
+                return this.lFOSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lFOSField, value) != true)) {
+                    this.lFOSField = value;
+                    this.RaisePropertyChanged("lFOS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] lProjectFos {
+            get {
+                return this.lProjectFosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lProjectFosField, value) != true)) {
+                    this.lProjectFosField = value;
+                    this.RaisePropertyChanged("lProjectFos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] lProjects {
+            get {
+                return this.lProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lProjectsField, value) != true)) {
+                    this.lProjectsField = value;
+                    this.RaisePropertyChanged("lProjects");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Expertise_Expert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class Expertise_Expert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3188,6 +3377,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.myProject[] EndGetListProjects(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListProjectFos", ReplyAction="http://tempuri.org/IService1/GetListProjectFosResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ProjectFos[] GetListProjectFos();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListProjectFos", ReplyAction="http://tempuri.org/IService1/GetListProjectFosResponse")]
+        System.IAsyncResult BeginGetListProjectFos(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ProjectFos[] EndGetListProjectFos(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListExpertisesForExpert", ReplyAction="http://tempuri.org/IService1/GetListExpertisesForExpertResponse")]
         ExpertiseWPFApplication.ServiceReference1.Expertises[] GetListExpertisesForExpert(int id_expert);
         
@@ -3195,6 +3392,150 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginGetListExpertisesForExpert(int id_expert, System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.Expertises[] EndGetListExpertisesForExpert(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
+        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
+        System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllAuthors", ReplyAction="http://tempuri.org/IService1/GetListAllAuthorsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Authors[] GetListAllAuthors();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllAuthors", ReplyAction="http://tempuri.org/IService1/GetListAllAuthorsResponse")]
+        System.IAsyncResult BeginGetListAllAuthors(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Authors[] EndGetListAllAuthors(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllCatCrit", ReplyAction="http://tempuri.org/IService1/GetListAllCatCritResponse")]
+        ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListAllCatCrit();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllCatCrit", ReplyAction="http://tempuri.org/IService1/GetListAllCatCritResponse")]
+        System.IAsyncResult BeginGetListAllCatCrit(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.CatCrit[] EndGetListAllCatCrit(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllCategories", ReplyAction="http://tempuri.org/IService1/GetListAllCategoriesResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Categories[] GetListAllCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllCategories", ReplyAction="http://tempuri.org/IService1/GetListAllCategoriesResponse")]
+        System.IAsyncResult BeginGetListAllCategories(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Categories[] EndGetListAllCategories(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllCriterions", ReplyAction="http://tempuri.org/IService1/GetListAllCriterionsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Criterions[] GetListAllCriterions();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllCriterions", ReplyAction="http://tempuri.org/IService1/GetListAllCriterionsResponse")]
+        System.IAsyncResult BeginGetListAllCriterions(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Criterions[] EndGetListAllCriterions(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllCritValues", ReplyAction="http://tempuri.org/IService1/GetListAllCritValuesResponse")]
+        ExpertiseWPFApplication.ServiceReference1.CritValues[] GetListAllCritValues();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllCritValues", ReplyAction="http://tempuri.org/IService1/GetListAllCritValuesResponse")]
+        System.IAsyncResult BeginGetListAllCritValues(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.CritValues[] EndGetListAllCritValues(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpCrit", ReplyAction="http://tempuri.org/IService1/GetListAllExpCritResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ExpCrit[] GetListAllExpCrit();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExpCrit", ReplyAction="http://tempuri.org/IService1/GetListAllExpCritResponse")]
+        System.IAsyncResult BeginGetListAllExpCrit(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ExpCrit[] EndGetListAllExpCrit(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpertFos", ReplyAction="http://tempuri.org/IService1/GetListAllExpertFosResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ExpertFos[] GetListAllExpertFos();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExpertFos", ReplyAction="http://tempuri.org/IService1/GetListAllExpertFosResponse")]
+        System.IAsyncResult BeginGetListAllExpertFos(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ExpertFos[] EndGetListAllExpertFos(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpertiseMark", ReplyAction="http://tempuri.org/IService1/GetListAllExpertiseMarkResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] GetListAllExpertiseMark();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExpertiseMark", ReplyAction="http://tempuri.org/IService1/GetListAllExpertiseMarkResponse")]
+        System.IAsyncResult BeginGetListAllExpertiseMark(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] EndGetListAllExpertiseMark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpertises", ReplyAction="http://tempuri.org/IService1/GetListAllExpertisesResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Expertises[] GetListAllExpertises();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExpertises", ReplyAction="http://tempuri.org/IService1/GetListAllExpertisesResponse")]
+        System.IAsyncResult BeginGetListAllExpertises(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Expertises[] EndGetListAllExpertises(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExperts", ReplyAction="http://tempuri.org/IService1/GetListAllExpertsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Experts[] GetListAllExperts();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExperts", ReplyAction="http://tempuri.org/IService1/GetListAllExpertsResponse")]
+        System.IAsyncResult BeginGetListAllExperts(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Experts[] EndGetListAllExperts(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllFiledsOfScience", ReplyAction="http://tempuri.org/IService1/GetListAllFiledsOfScienceResponse")]
+        ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] GetListAllFiledsOfScience();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllFiledsOfScience", ReplyAction="http://tempuri.org/IService1/GetListAllFiledsOfScienceResponse")]
+        System.IAsyncResult BeginGetListAllFiledsOfScience(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] EndGetListAllFiledsOfScience(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllGRNTI", ReplyAction="http://tempuri.org/IService1/GetListAllGRNTIResponse")]
+        ExpertiseWPFApplication.ServiceReference1.GRNTI[] GetListAllGRNTI();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllGRNTI", ReplyAction="http://tempuri.org/IService1/GetListAllGRNTIResponse")]
+        System.IAsyncResult BeginGetListAllGRNTI(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.GRNTI[] EndGetListAllGRNTI(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllMarks", ReplyAction="http://tempuri.org/IService1/GetListAllMarksResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Marks[] GetListAllMarks();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllMarks", ReplyAction="http://tempuri.org/IService1/GetListAllMarksResponse")]
+        System.IAsyncResult BeginGetListAllMarks(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Marks[] EndGetListAllMarks(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllProjectAuthors", ReplyAction="http://tempuri.org/IService1/GetListAllProjectAuthorsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] GetListAllProjectAuthors();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllProjectAuthors", ReplyAction="http://tempuri.org/IService1/GetListAllProjectAuthorsResponse")]
+        System.IAsyncResult BeginGetListAllProjectAuthors(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] EndGetListAllProjectAuthors(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllProjectExpertise", ReplyAction="http://tempuri.org/IService1/GetListAllProjectExpertiseResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] GetListAllProjectExpertise();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllProjectExpertise", ReplyAction="http://tempuri.org/IService1/GetListAllProjectExpertiseResponse")]
+        System.IAsyncResult BeginGetListAllProjectExpertise(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] EndGetListAllProjectExpertise(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllProjectFos", ReplyAction="http://tempuri.org/IService1/GetListAllProjectFosResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ProjectFos[] GetListAllProjectFos();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllProjectFos", ReplyAction="http://tempuri.org/IService1/GetListAllProjectFosResponse")]
+        System.IAsyncResult BeginGetListAllProjectFos(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ProjectFos[] EndGetListAllProjectFos(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllProjects", ReplyAction="http://tempuri.org/IService1/GetListAllProjectsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Projects[] GetListAllProjects();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllProjects", ReplyAction="http://tempuri.org/IService1/GetListAllProjectsResponse")]
+        System.IAsyncResult BeginGetListAllProjects(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Projects[] EndGetListAllProjects(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
         ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test();
@@ -3564,6 +3905,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListProjectFosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListProjectFosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectFos[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetListExpertisesForExpertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -3577,6 +3937,348 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.Expertises[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetTablesForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetTablesForExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.TablesForExpertise)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllAuthorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Authors[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Authors[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllCatCritCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllCatCritCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.CatCrit[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllCategoriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Categories[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Categories[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllCriterionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllCriterionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Criterions[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllCritValuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllCritValuesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.CritValues[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpCritCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpCritCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ExpCrit[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpertFosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpertFosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertFos[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ExpertFos[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpertiseMarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpertiseMarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpertisesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpertisesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Expertises[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Expertises[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpertsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpertsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Experts[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllFiledsOfScienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllFiledsOfScienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllGRNTICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllGRNTICompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.GRNTI[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.GRNTI[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllMarksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllMarksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Marks[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Marks[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllProjectAuthorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllProjectAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllProjectExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllProjectExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllProjectFosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllProjectFosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectFos[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllProjectsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllProjectsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Projects[])(this.results[0]));
             }
         }
     }
@@ -3936,11 +4638,125 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetListProjectsCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListProjectFosDelegate;
+        
+        private EndOperationDelegate onEndGetListProjectFosDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListProjectFosCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListExpertisesForExpertDelegate;
         
         private EndOperationDelegate onEndGetListExpertisesForExpertDelegate;
         
         private System.Threading.SendOrPostCallback onGetListExpertisesForExpertCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetTablesForExpertiseDelegate;
+        
+        private EndOperationDelegate onEndGetTablesForExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetTablesForExpertiseCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllAuthorsDelegate;
+        
+        private EndOperationDelegate onEndGetListAllAuthorsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllAuthorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllCatCritDelegate;
+        
+        private EndOperationDelegate onEndGetListAllCatCritDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllCatCritCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllCategoriesDelegate;
+        
+        private EndOperationDelegate onEndGetListAllCategoriesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllCategoriesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllCriterionsDelegate;
+        
+        private EndOperationDelegate onEndGetListAllCriterionsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllCriterionsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllCritValuesDelegate;
+        
+        private EndOperationDelegate onEndGetListAllCritValuesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllCritValuesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllExpCritDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpCritDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpCritCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllExpertFosDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpertFosDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpertFosCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllExpertiseMarkDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpertiseMarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpertiseMarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllExpertisesDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpertisesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpertisesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllExpertsDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpertsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpertsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllFiledsOfScienceDelegate;
+        
+        private EndOperationDelegate onEndGetListAllFiledsOfScienceDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllFiledsOfScienceCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllGRNTIDelegate;
+        
+        private EndOperationDelegate onEndGetListAllGRNTIDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllGRNTICompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllMarksDelegate;
+        
+        private EndOperationDelegate onEndGetListAllMarksDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllMarksCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllProjectAuthorsDelegate;
+        
+        private EndOperationDelegate onEndGetListAllProjectAuthorsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllProjectAuthorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllProjectExpertiseDelegate;
+        
+        private EndOperationDelegate onEndGetListAllProjectExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllProjectExpertiseCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllProjectFosDelegate;
+        
+        private EndOperationDelegate onEndGetListAllProjectFosDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllProjectFosCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAllProjectsDelegate;
+        
+        private EndOperationDelegate onEndGetListAllProjectsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllProjectsCompletedDelegate;
         
         private BeginOperationDelegate onBegintestDelegate;
         
@@ -4097,7 +4913,45 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetListProjectsCompletedEventArgs> GetListProjectsCompleted;
         
+        public event System.EventHandler<GetListProjectFosCompletedEventArgs> GetListProjectFosCompleted;
+        
         public event System.EventHandler<GetListExpertisesForExpertCompletedEventArgs> GetListExpertisesForExpertCompleted;
+        
+        public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
+        
+        public event System.EventHandler<GetListAllAuthorsCompletedEventArgs> GetListAllAuthorsCompleted;
+        
+        public event System.EventHandler<GetListAllCatCritCompletedEventArgs> GetListAllCatCritCompleted;
+        
+        public event System.EventHandler<GetListAllCategoriesCompletedEventArgs> GetListAllCategoriesCompleted;
+        
+        public event System.EventHandler<GetListAllCriterionsCompletedEventArgs> GetListAllCriterionsCompleted;
+        
+        public event System.EventHandler<GetListAllCritValuesCompletedEventArgs> GetListAllCritValuesCompleted;
+        
+        public event System.EventHandler<GetListAllExpCritCompletedEventArgs> GetListAllExpCritCompleted;
+        
+        public event System.EventHandler<GetListAllExpertFosCompletedEventArgs> GetListAllExpertFosCompleted;
+        
+        public event System.EventHandler<GetListAllExpertiseMarkCompletedEventArgs> GetListAllExpertiseMarkCompleted;
+        
+        public event System.EventHandler<GetListAllExpertisesCompletedEventArgs> GetListAllExpertisesCompleted;
+        
+        public event System.EventHandler<GetListAllExpertsCompletedEventArgs> GetListAllExpertsCompleted;
+        
+        public event System.EventHandler<GetListAllFiledsOfScienceCompletedEventArgs> GetListAllFiledsOfScienceCompleted;
+        
+        public event System.EventHandler<GetListAllGRNTICompletedEventArgs> GetListAllGRNTICompleted;
+        
+        public event System.EventHandler<GetListAllMarksCompletedEventArgs> GetListAllMarksCompleted;
+        
+        public event System.EventHandler<GetListAllProjectAuthorsCompletedEventArgs> GetListAllProjectAuthorsCompleted;
+        
+        public event System.EventHandler<GetListAllProjectExpertiseCompletedEventArgs> GetListAllProjectExpertiseCompleted;
+        
+        public event System.EventHandler<GetListAllProjectFosCompletedEventArgs> GetListAllProjectFosCompleted;
+        
+        public event System.EventHandler<GetListAllProjectsCompletedEventArgs> GetListAllProjectsCompleted;
         
         public event System.EventHandler<testCompletedEventArgs> testCompleted;
         
@@ -4671,6 +5525,54 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginGetListProjectsDelegate, null, this.onEndGetListProjectsDelegate, this.onGetListProjectsCompletedDelegate, userState);
         }
         
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] GetListProjectFos() {
+            return base.Channel.GetListProjectFos();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListProjectFos(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListProjectFos(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] EndGetListProjectFos(System.IAsyncResult result) {
+            return base.Channel.EndGetListProjectFos(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListProjectFos(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListProjectFos(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListProjectFos(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ProjectFos[] retVal = this.EndGetListProjectFos(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListProjectFosCompleted(object state) {
+            if ((this.GetListProjectFosCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListProjectFosCompleted(this, new GetListProjectFosCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListProjectFosAsync() {
+            this.GetListProjectFosAsync(null);
+        }
+        
+        public void GetListProjectFosAsync(object userState) {
+            if ((this.onBeginGetListProjectFosDelegate == null)) {
+                this.onBeginGetListProjectFosDelegate = new BeginOperationDelegate(this.OnBeginGetListProjectFos);
+            }
+            if ((this.onEndGetListProjectFosDelegate == null)) {
+                this.onEndGetListProjectFosDelegate = new EndOperationDelegate(this.OnEndGetListProjectFos);
+            }
+            if ((this.onGetListProjectFosCompletedDelegate == null)) {
+                this.onGetListProjectFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListProjectFosCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListProjectFosDelegate, null, this.onEndGetListProjectFosDelegate, this.onGetListProjectFosCompletedDelegate, userState);
+        }
+        
         public ExpertiseWPFApplication.ServiceReference1.Expertises[] GetListExpertisesForExpert(int id_expert) {
             return base.Channel.GetListExpertisesForExpert(id_expert);
         }
@@ -4719,6 +5621,870 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginGetListExpertisesForExpertDelegate, new object[] {
                         id_expert}, this.onEndGetListExpertisesForExpertDelegate, this.onGetListExpertisesForExpertCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise() {
+            return base.Channel.GetTablesForExpertise();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetTablesForExpertise(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result) {
+            return base.Channel.EndGetTablesForExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetTablesForExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetTablesForExpertise(callback, asyncState);
+        }
+        
+        private object[] OnEndGetTablesForExpertise(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.TablesForExpertise retVal = this.EndGetTablesForExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetTablesForExpertiseCompleted(object state) {
+            if ((this.GetTablesForExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetTablesForExpertiseCompleted(this, new GetTablesForExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetTablesForExpertiseAsync() {
+            this.GetTablesForExpertiseAsync(null);
+        }
+        
+        public void GetTablesForExpertiseAsync(object userState) {
+            if ((this.onBeginGetTablesForExpertiseDelegate == null)) {
+                this.onBeginGetTablesForExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetTablesForExpertise);
+            }
+            if ((this.onEndGetTablesForExpertiseDelegate == null)) {
+                this.onEndGetTablesForExpertiseDelegate = new EndOperationDelegate(this.OnEndGetTablesForExpertise);
+            }
+            if ((this.onGetTablesForExpertiseCompletedDelegate == null)) {
+                this.onGetTablesForExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTablesForExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetTablesForExpertiseDelegate, null, this.onEndGetTablesForExpertiseDelegate, this.onGetTablesForExpertiseCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Authors[] GetListAllAuthors() {
+            return base.Channel.GetListAllAuthors();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllAuthors(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllAuthors(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Authors[] EndGetListAllAuthors(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllAuthors(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllAuthors(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllAuthors(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllAuthors(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Authors[] retVal = this.EndGetListAllAuthors(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllAuthorsCompleted(object state) {
+            if ((this.GetListAllAuthorsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllAuthorsCompleted(this, new GetListAllAuthorsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllAuthorsAsync() {
+            this.GetListAllAuthorsAsync(null);
+        }
+        
+        public void GetListAllAuthorsAsync(object userState) {
+            if ((this.onBeginGetListAllAuthorsDelegate == null)) {
+                this.onBeginGetListAllAuthorsDelegate = new BeginOperationDelegate(this.OnBeginGetListAllAuthors);
+            }
+            if ((this.onEndGetListAllAuthorsDelegate == null)) {
+                this.onEndGetListAllAuthorsDelegate = new EndOperationDelegate(this.OnEndGetListAllAuthors);
+            }
+            if ((this.onGetListAllAuthorsCompletedDelegate == null)) {
+                this.onGetListAllAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllAuthorsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllAuthorsDelegate, null, this.onEndGetListAllAuthorsDelegate, this.onGetListAllAuthorsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListAllCatCrit() {
+            return base.Channel.GetListAllCatCrit();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllCatCrit(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllCatCrit(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] EndGetListAllCatCrit(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllCatCrit(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllCatCrit(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllCatCrit(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllCatCrit(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.CatCrit[] retVal = this.EndGetListAllCatCrit(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllCatCritCompleted(object state) {
+            if ((this.GetListAllCatCritCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllCatCritCompleted(this, new GetListAllCatCritCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllCatCritAsync() {
+            this.GetListAllCatCritAsync(null);
+        }
+        
+        public void GetListAllCatCritAsync(object userState) {
+            if ((this.onBeginGetListAllCatCritDelegate == null)) {
+                this.onBeginGetListAllCatCritDelegate = new BeginOperationDelegate(this.OnBeginGetListAllCatCrit);
+            }
+            if ((this.onEndGetListAllCatCritDelegate == null)) {
+                this.onEndGetListAllCatCritDelegate = new EndOperationDelegate(this.OnEndGetListAllCatCrit);
+            }
+            if ((this.onGetListAllCatCritCompletedDelegate == null)) {
+                this.onGetListAllCatCritCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllCatCritCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllCatCritDelegate, null, this.onEndGetListAllCatCritDelegate, this.onGetListAllCatCritCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Categories[] GetListAllCategories() {
+            return base.Channel.GetListAllCategories();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllCategories(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllCategories(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Categories[] EndGetListAllCategories(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllCategories(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllCategories(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllCategories(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllCategories(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Categories[] retVal = this.EndGetListAllCategories(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllCategoriesCompleted(object state) {
+            if ((this.GetListAllCategoriesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllCategoriesCompleted(this, new GetListAllCategoriesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllCategoriesAsync() {
+            this.GetListAllCategoriesAsync(null);
+        }
+        
+        public void GetListAllCategoriesAsync(object userState) {
+            if ((this.onBeginGetListAllCategoriesDelegate == null)) {
+                this.onBeginGetListAllCategoriesDelegate = new BeginOperationDelegate(this.OnBeginGetListAllCategories);
+            }
+            if ((this.onEndGetListAllCategoriesDelegate == null)) {
+                this.onEndGetListAllCategoriesDelegate = new EndOperationDelegate(this.OnEndGetListAllCategories);
+            }
+            if ((this.onGetListAllCategoriesCompletedDelegate == null)) {
+                this.onGetListAllCategoriesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllCategoriesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllCategoriesDelegate, null, this.onEndGetListAllCategoriesDelegate, this.onGetListAllCategoriesCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] GetListAllCriterions() {
+            return base.Channel.GetListAllCriterions();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllCriterions(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllCriterions(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] EndGetListAllCriterions(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllCriterions(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllCriterions(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllCriterions(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Criterions[] retVal = this.EndGetListAllCriterions(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllCriterionsCompleted(object state) {
+            if ((this.GetListAllCriterionsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllCriterionsCompleted(this, new GetListAllCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllCriterionsAsync() {
+            this.GetListAllCriterionsAsync(null);
+        }
+        
+        public void GetListAllCriterionsAsync(object userState) {
+            if ((this.onBeginGetListAllCriterionsDelegate == null)) {
+                this.onBeginGetListAllCriterionsDelegate = new BeginOperationDelegate(this.OnBeginGetListAllCriterions);
+            }
+            if ((this.onEndGetListAllCriterionsDelegate == null)) {
+                this.onEndGetListAllCriterionsDelegate = new EndOperationDelegate(this.OnEndGetListAllCriterions);
+            }
+            if ((this.onGetListAllCriterionsCompletedDelegate == null)) {
+                this.onGetListAllCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllCriterionsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllCriterionsDelegate, null, this.onEndGetListAllCriterionsDelegate, this.onGetListAllCriterionsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] GetListAllCritValues() {
+            return base.Channel.GetListAllCritValues();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllCritValues(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllCritValues(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] EndGetListAllCritValues(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllCritValues(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllCritValues(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllCritValues(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllCritValues(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.CritValues[] retVal = this.EndGetListAllCritValues(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllCritValuesCompleted(object state) {
+            if ((this.GetListAllCritValuesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllCritValuesCompleted(this, new GetListAllCritValuesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllCritValuesAsync() {
+            this.GetListAllCritValuesAsync(null);
+        }
+        
+        public void GetListAllCritValuesAsync(object userState) {
+            if ((this.onBeginGetListAllCritValuesDelegate == null)) {
+                this.onBeginGetListAllCritValuesDelegate = new BeginOperationDelegate(this.OnBeginGetListAllCritValues);
+            }
+            if ((this.onEndGetListAllCritValuesDelegate == null)) {
+                this.onEndGetListAllCritValuesDelegate = new EndOperationDelegate(this.OnEndGetListAllCritValues);
+            }
+            if ((this.onGetListAllCritValuesCompletedDelegate == null)) {
+                this.onGetListAllCritValuesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllCritValuesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllCritValuesDelegate, null, this.onEndGetListAllCritValuesDelegate, this.onGetListAllCritValuesCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] GetListAllExpCrit() {
+            return base.Channel.GetListAllExpCrit();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExpCrit(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExpCrit(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] EndGetListAllExpCrit(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExpCrit(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExpCrit(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExpCrit(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExpCrit(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ExpCrit[] retVal = this.EndGetListAllExpCrit(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpCritCompleted(object state) {
+            if ((this.GetListAllExpCritCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpCritCompleted(this, new GetListAllExpCritCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpCritAsync() {
+            this.GetListAllExpCritAsync(null);
+        }
+        
+        public void GetListAllExpCritAsync(object userState) {
+            if ((this.onBeginGetListAllExpCritDelegate == null)) {
+                this.onBeginGetListAllExpCritDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExpCrit);
+            }
+            if ((this.onEndGetListAllExpCritDelegate == null)) {
+                this.onEndGetListAllExpCritDelegate = new EndOperationDelegate(this.OnEndGetListAllExpCrit);
+            }
+            if ((this.onGetListAllExpCritCompletedDelegate == null)) {
+                this.onGetListAllExpCritCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpCritCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpCritDelegate, null, this.onEndGetListAllExpCritDelegate, this.onGetListAllExpCritCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertFos[] GetListAllExpertFos() {
+            return base.Channel.GetListAllExpertFos();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExpertFos(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExpertFos(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertFos[] EndGetListAllExpertFos(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExpertFos(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExpertFos(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExpertFos(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExpertFos(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ExpertFos[] retVal = this.EndGetListAllExpertFos(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpertFosCompleted(object state) {
+            if ((this.GetListAllExpertFosCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpertFosCompleted(this, new GetListAllExpertFosCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpertFosAsync() {
+            this.GetListAllExpertFosAsync(null);
+        }
+        
+        public void GetListAllExpertFosAsync(object userState) {
+            if ((this.onBeginGetListAllExpertFosDelegate == null)) {
+                this.onBeginGetListAllExpertFosDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExpertFos);
+            }
+            if ((this.onEndGetListAllExpertFosDelegate == null)) {
+                this.onEndGetListAllExpertFosDelegate = new EndOperationDelegate(this.OnEndGetListAllExpertFos);
+            }
+            if ((this.onGetListAllExpertFosCompletedDelegate == null)) {
+                this.onGetListAllExpertFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertFosCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpertFosDelegate, null, this.onEndGetListAllExpertFosDelegate, this.onGetListAllExpertFosCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] GetListAllExpertiseMark() {
+            return base.Channel.GetListAllExpertiseMark();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExpertiseMark(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExpertiseMark(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] EndGetListAllExpertiseMark(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExpertiseMark(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExpertiseMark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExpertiseMark(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExpertiseMark(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] retVal = this.EndGetListAllExpertiseMark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpertiseMarkCompleted(object state) {
+            if ((this.GetListAllExpertiseMarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpertiseMarkCompleted(this, new GetListAllExpertiseMarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpertiseMarkAsync() {
+            this.GetListAllExpertiseMarkAsync(null);
+        }
+        
+        public void GetListAllExpertiseMarkAsync(object userState) {
+            if ((this.onBeginGetListAllExpertiseMarkDelegate == null)) {
+                this.onBeginGetListAllExpertiseMarkDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExpertiseMark);
+            }
+            if ((this.onEndGetListAllExpertiseMarkDelegate == null)) {
+                this.onEndGetListAllExpertiseMarkDelegate = new EndOperationDelegate(this.OnEndGetListAllExpertiseMark);
+            }
+            if ((this.onGetListAllExpertiseMarkCompletedDelegate == null)) {
+                this.onGetListAllExpertiseMarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertiseMarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpertiseMarkDelegate, null, this.onEndGetListAllExpertiseMarkDelegate, this.onGetListAllExpertiseMarkCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Expertises[] GetListAllExpertises() {
+            return base.Channel.GetListAllExpertises();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExpertises(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExpertises(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises[] EndGetListAllExpertises(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExpertises(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExpertises(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExpertises(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExpertises(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Expertises[] retVal = this.EndGetListAllExpertises(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpertisesCompleted(object state) {
+            if ((this.GetListAllExpertisesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpertisesCompleted(this, new GetListAllExpertisesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpertisesAsync() {
+            this.GetListAllExpertisesAsync(null);
+        }
+        
+        public void GetListAllExpertisesAsync(object userState) {
+            if ((this.onBeginGetListAllExpertisesDelegate == null)) {
+                this.onBeginGetListAllExpertisesDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExpertises);
+            }
+            if ((this.onEndGetListAllExpertisesDelegate == null)) {
+                this.onEndGetListAllExpertisesDelegate = new EndOperationDelegate(this.OnEndGetListAllExpertises);
+            }
+            if ((this.onGetListAllExpertisesCompletedDelegate == null)) {
+                this.onGetListAllExpertisesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertisesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpertisesDelegate, null, this.onEndGetListAllExpertisesDelegate, this.onGetListAllExpertisesCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] GetListAllExperts() {
+            return base.Channel.GetListAllExperts();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExperts(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExperts(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] EndGetListAllExperts(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExperts(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExperts(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExperts(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExperts(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Experts[] retVal = this.EndGetListAllExperts(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpertsCompleted(object state) {
+            if ((this.GetListAllExpertsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpertsCompleted(this, new GetListAllExpertsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpertsAsync() {
+            this.GetListAllExpertsAsync(null);
+        }
+        
+        public void GetListAllExpertsAsync(object userState) {
+            if ((this.onBeginGetListAllExpertsDelegate == null)) {
+                this.onBeginGetListAllExpertsDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExperts);
+            }
+            if ((this.onEndGetListAllExpertsDelegate == null)) {
+                this.onEndGetListAllExpertsDelegate = new EndOperationDelegate(this.OnEndGetListAllExperts);
+            }
+            if ((this.onGetListAllExpertsCompletedDelegate == null)) {
+                this.onGetListAllExpertsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpertsDelegate, null, this.onEndGetListAllExpertsDelegate, this.onGetListAllExpertsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] GetListAllFiledsOfScience() {
+            return base.Channel.GetListAllFiledsOfScience();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllFiledsOfScience(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllFiledsOfScience(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] EndGetListAllFiledsOfScience(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllFiledsOfScience(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllFiledsOfScience(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllFiledsOfScience(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllFiledsOfScience(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] retVal = this.EndGetListAllFiledsOfScience(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllFiledsOfScienceCompleted(object state) {
+            if ((this.GetListAllFiledsOfScienceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllFiledsOfScienceCompleted(this, new GetListAllFiledsOfScienceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllFiledsOfScienceAsync() {
+            this.GetListAllFiledsOfScienceAsync(null);
+        }
+        
+        public void GetListAllFiledsOfScienceAsync(object userState) {
+            if ((this.onBeginGetListAllFiledsOfScienceDelegate == null)) {
+                this.onBeginGetListAllFiledsOfScienceDelegate = new BeginOperationDelegate(this.OnBeginGetListAllFiledsOfScience);
+            }
+            if ((this.onEndGetListAllFiledsOfScienceDelegate == null)) {
+                this.onEndGetListAllFiledsOfScienceDelegate = new EndOperationDelegate(this.OnEndGetListAllFiledsOfScience);
+            }
+            if ((this.onGetListAllFiledsOfScienceCompletedDelegate == null)) {
+                this.onGetListAllFiledsOfScienceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllFiledsOfScienceCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllFiledsOfScienceDelegate, null, this.onEndGetListAllFiledsOfScienceDelegate, this.onGetListAllFiledsOfScienceCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.GRNTI[] GetListAllGRNTI() {
+            return base.Channel.GetListAllGRNTI();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllGRNTI(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllGRNTI(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.GRNTI[] EndGetListAllGRNTI(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllGRNTI(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllGRNTI(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllGRNTI(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllGRNTI(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.GRNTI[] retVal = this.EndGetListAllGRNTI(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllGRNTICompleted(object state) {
+            if ((this.GetListAllGRNTICompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllGRNTICompleted(this, new GetListAllGRNTICompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllGRNTIAsync() {
+            this.GetListAllGRNTIAsync(null);
+        }
+        
+        public void GetListAllGRNTIAsync(object userState) {
+            if ((this.onBeginGetListAllGRNTIDelegate == null)) {
+                this.onBeginGetListAllGRNTIDelegate = new BeginOperationDelegate(this.OnBeginGetListAllGRNTI);
+            }
+            if ((this.onEndGetListAllGRNTIDelegate == null)) {
+                this.onEndGetListAllGRNTIDelegate = new EndOperationDelegate(this.OnEndGetListAllGRNTI);
+            }
+            if ((this.onGetListAllGRNTICompletedDelegate == null)) {
+                this.onGetListAllGRNTICompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllGRNTICompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllGRNTIDelegate, null, this.onEndGetListAllGRNTIDelegate, this.onGetListAllGRNTICompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Marks[] GetListAllMarks() {
+            return base.Channel.GetListAllMarks();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllMarks(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllMarks(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Marks[] EndGetListAllMarks(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllMarks(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllMarks(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllMarks(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllMarks(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Marks[] retVal = this.EndGetListAllMarks(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllMarksCompleted(object state) {
+            if ((this.GetListAllMarksCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllMarksCompleted(this, new GetListAllMarksCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllMarksAsync() {
+            this.GetListAllMarksAsync(null);
+        }
+        
+        public void GetListAllMarksAsync(object userState) {
+            if ((this.onBeginGetListAllMarksDelegate == null)) {
+                this.onBeginGetListAllMarksDelegate = new BeginOperationDelegate(this.OnBeginGetListAllMarks);
+            }
+            if ((this.onEndGetListAllMarksDelegate == null)) {
+                this.onEndGetListAllMarksDelegate = new EndOperationDelegate(this.OnEndGetListAllMarks);
+            }
+            if ((this.onGetListAllMarksCompletedDelegate == null)) {
+                this.onGetListAllMarksCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllMarksCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllMarksDelegate, null, this.onEndGetListAllMarksDelegate, this.onGetListAllMarksCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] GetListAllProjectAuthors() {
+            return base.Channel.GetListAllProjectAuthors();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllProjectAuthors(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllProjectAuthors(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] EndGetListAllProjectAuthors(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllProjectAuthors(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllProjectAuthors(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllProjectAuthors(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllProjectAuthors(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ProjectAuthors[] retVal = this.EndGetListAllProjectAuthors(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllProjectAuthorsCompleted(object state) {
+            if ((this.GetListAllProjectAuthorsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllProjectAuthorsCompleted(this, new GetListAllProjectAuthorsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllProjectAuthorsAsync() {
+            this.GetListAllProjectAuthorsAsync(null);
+        }
+        
+        public void GetListAllProjectAuthorsAsync(object userState) {
+            if ((this.onBeginGetListAllProjectAuthorsDelegate == null)) {
+                this.onBeginGetListAllProjectAuthorsDelegate = new BeginOperationDelegate(this.OnBeginGetListAllProjectAuthors);
+            }
+            if ((this.onEndGetListAllProjectAuthorsDelegate == null)) {
+                this.onEndGetListAllProjectAuthorsDelegate = new EndOperationDelegate(this.OnEndGetListAllProjectAuthors);
+            }
+            if ((this.onGetListAllProjectAuthorsCompletedDelegate == null)) {
+                this.onGetListAllProjectAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllProjectAuthorsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllProjectAuthorsDelegate, null, this.onEndGetListAllProjectAuthorsDelegate, this.onGetListAllProjectAuthorsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] GetListAllProjectExpertise() {
+            return base.Channel.GetListAllProjectExpertise();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllProjectExpertise(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllProjectExpertise(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] EndGetListAllProjectExpertise(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllProjectExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllProjectExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllProjectExpertise(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllProjectExpertise(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] retVal = this.EndGetListAllProjectExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllProjectExpertiseCompleted(object state) {
+            if ((this.GetListAllProjectExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllProjectExpertiseCompleted(this, new GetListAllProjectExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllProjectExpertiseAsync() {
+            this.GetListAllProjectExpertiseAsync(null);
+        }
+        
+        public void GetListAllProjectExpertiseAsync(object userState) {
+            if ((this.onBeginGetListAllProjectExpertiseDelegate == null)) {
+                this.onBeginGetListAllProjectExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetListAllProjectExpertise);
+            }
+            if ((this.onEndGetListAllProjectExpertiseDelegate == null)) {
+                this.onEndGetListAllProjectExpertiseDelegate = new EndOperationDelegate(this.OnEndGetListAllProjectExpertise);
+            }
+            if ((this.onGetListAllProjectExpertiseCompletedDelegate == null)) {
+                this.onGetListAllProjectExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllProjectExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllProjectExpertiseDelegate, null, this.onEndGetListAllProjectExpertiseDelegate, this.onGetListAllProjectExpertiseCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] GetListAllProjectFos() {
+            return base.Channel.GetListAllProjectFos();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllProjectFos(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllProjectFos(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] EndGetListAllProjectFos(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllProjectFos(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllProjectFos(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllProjectFos(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllProjectFos(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ProjectFos[] retVal = this.EndGetListAllProjectFos(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllProjectFosCompleted(object state) {
+            if ((this.GetListAllProjectFosCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllProjectFosCompleted(this, new GetListAllProjectFosCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllProjectFosAsync() {
+            this.GetListAllProjectFosAsync(null);
+        }
+        
+        public void GetListAllProjectFosAsync(object userState) {
+            if ((this.onBeginGetListAllProjectFosDelegate == null)) {
+                this.onBeginGetListAllProjectFosDelegate = new BeginOperationDelegate(this.OnBeginGetListAllProjectFos);
+            }
+            if ((this.onEndGetListAllProjectFosDelegate == null)) {
+                this.onEndGetListAllProjectFosDelegate = new EndOperationDelegate(this.OnEndGetListAllProjectFos);
+            }
+            if ((this.onGetListAllProjectFosCompletedDelegate == null)) {
+                this.onGetListAllProjectFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllProjectFosCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllProjectFosDelegate, null, this.onEndGetListAllProjectFosDelegate, this.onGetListAllProjectFosCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] GetListAllProjects() {
+            return base.Channel.GetListAllProjects();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllProjects(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllProjects(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] EndGetListAllProjects(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllProjects(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllProjects(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllProjects(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllProjects(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Projects[] retVal = this.EndGetListAllProjects(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllProjectsCompleted(object state) {
+            if ((this.GetListAllProjectsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllProjectsCompleted(this, new GetListAllProjectsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllProjectsAsync() {
+            this.GetListAllProjectsAsync(null);
+        }
+        
+        public void GetListAllProjectsAsync(object userState) {
+            if ((this.onBeginGetListAllProjectsDelegate == null)) {
+                this.onBeginGetListAllProjectsDelegate = new BeginOperationDelegate(this.OnBeginGetListAllProjects);
+            }
+            if ((this.onEndGetListAllProjectsDelegate == null)) {
+                this.onEndGetListAllProjectsDelegate = new EndOperationDelegate(this.OnEndGetListAllProjects);
+            }
+            if ((this.onGetListAllProjectsCompletedDelegate == null)) {
+                this.onGetListAllProjectsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllProjectsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllProjectsDelegate, null, this.onEndGetListAllProjectsDelegate, this.onGetListAllProjectsCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test() {

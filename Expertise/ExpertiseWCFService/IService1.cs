@@ -48,7 +48,67 @@ namespace ExpertiseWCFService
         List<myProject> GetListProjects();
 
         [OperationContract]
+        List<ProjectFos> GetListProjectFos();
+
+        [OperationContract]
         List<Expertises> GetListExpertisesForExpert(int id_expert);
+
+        [OperationContract]
+        TablesForExpertise GetTablesForExpertise();
+        #endregion
+
+        #region Получение полных таблиц
+        [OperationContract]
+        List<Authors> GetListAllAuthors();
+
+        [OperationContract]
+        List<CatCrit> GetListAllCatCrit();
+
+        [OperationContract]
+        List<Categories> GetListAllCategories();
+
+        [OperationContract]
+        List<Criterions> GetListAllCriterions();
+
+        [OperationContract]
+        List<CritValues> GetListAllCritValues();
+
+        [OperationContract]
+        List<ExpCrit> GetListAllExpCrit();
+
+        [OperationContract]
+        List<ExpertFos> GetListAllExpertFos();
+
+        [OperationContract]
+        List<ExpertiseMark> GetListAllExpertiseMark();
+
+        [OperationContract]
+        List<Expertises> GetListAllExpertises();
+
+        [OperationContract]
+        List<Experts> GetListAllExperts();
+
+        [OperationContract]
+        List<FiledsOfScience> GetListAllFiledsOfScience();
+
+        [OperationContract]
+        List<GRNTI> GetListAllGRNTI();
+
+        [OperationContract]
+        List<Marks> GetListAllMarks();
+
+        [OperationContract]
+        List<ProjectAuthors> GetListAllProjectAuthors();
+
+        [OperationContract]
+        List<ProjectExpertise> GetListAllProjectExpertise();
+
+        [OperationContract]
+        List<ProjectFos> GetListAllProjectFos();
+
+        [OperationContract]
+        List<Projects> GetListAllProjects();
+
         #endregion
 
         [OperationContract]
@@ -172,11 +232,11 @@ namespace ExpertiseWCFService
         public string status_expertise { get; set; }
     }
 
-    // объект хранящий в себе таблицы необходимые для отображения информации в окне создания экспертизы
+    // объект класс хранит в себе таблицы необходимые для отображения информации в окне создания экспертизы
     public class TablesForExpertise
     {
         public List<FiledsOfScience> lFOS { get; set; }
-        public List<Projects> lProject { get; set; }
+        public List<Projects> lProjects { get; set; }
         public List<ProjectFos> lProjectFos { get; set; }
         public List<Categories> lCatigories { get; set; }
         public List<CatCrit> lCatCrit { get; set; }
@@ -184,6 +244,7 @@ namespace ExpertiseWCFService
         public List<CritValues> lCritValues { get; set; }
         public List<Experts> lExperts { get; set; }
         public List<ExpertFos> lExpertFos { get; set; }
+        public bool Err { get; set; }
     }
 
     // Используйте контракт данных, как показано в примере ниже, чтобы добавить составные типы к операциям служб.

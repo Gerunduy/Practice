@@ -74,11 +74,125 @@
   <wsdl:message name="IService1_GetListProjects_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListProjectsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListProjectFos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProjectFos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListProjectFos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListProjectFosResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListExpertisesForExpert_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListExpertisesForExpert" />
   </wsdl:message>
   <wsdl:message name="IService1_GetListExpertisesForExpert_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListExpertisesForExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTablesForExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesForExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTablesForExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesForExpertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCatCrit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCatCrit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCatCrit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCatCritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCriterionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCritValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCritValues" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllCritValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllCritValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpCrit_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpCrit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpCrit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpCritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertFos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertFos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertFos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertFosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertiseMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertiseMark" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertiseMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertiseMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertises" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExpertises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExperts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExperts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllExperts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllExpertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllFiledsOfScience_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllFiledsOfScience" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllFiledsOfScience_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllFiledsOfScienceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllGRNTI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllGRNTI" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllGRNTI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllGRNTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllMarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllMarks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllMarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllMarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectExpertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectFos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectFos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjectFos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectFosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjects" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAllProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAllProjectsResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_test_InputMessage">
     <wsdl:part name="parameters" element="tns:test" />
@@ -239,9 +353,85 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListProjects" message="tns:IService1_GetListProjects_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListProjectsResponse" message="tns:IService1_GetListProjects_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListProjectFos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListProjectFos" message="tns:IService1_GetListProjectFos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListProjectFosResponse" message="tns:IService1_GetListProjectFos_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetListExpertisesForExpert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpert" message="tns:IService1_GetListExpertisesForExpert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpertResponse" message="tns:IService1_GetListExpertisesForExpert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesForExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertiseResponse" message="tns:IService1_GetTablesForExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllAuthors" message="tns:IService1_GetListAllAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllAuthorsResponse" message="tns:IService1_GetListAllAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCatCrit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllCatCrit" message="tns:IService1_GetListAllCatCrit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllCatCritResponse" message="tns:IService1_GetListAllCatCrit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllCategories" message="tns:IService1_GetListAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllCategoriesResponse" message="tns:IService1_GetListAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllCriterions" message="tns:IService1_GetListAllCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllCriterionsResponse" message="tns:IService1_GetListAllCriterions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCritValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllCritValues" message="tns:IService1_GetListAllCritValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllCritValuesResponse" message="tns:IService1_GetListAllCritValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpCrit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllExpCrit" message="tns:IService1_GetListAllExpCrit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllExpCritResponse" message="tns:IService1_GetListAllExpCrit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertFos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllExpertFos" message="tns:IService1_GetListAllExpertFos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllExpertFosResponse" message="tns:IService1_GetListAllExpertFos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertiseMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllExpertiseMark" message="tns:IService1_GetListAllExpertiseMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllExpertiseMarkResponse" message="tns:IService1_GetListAllExpertiseMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllExpertises" message="tns:IService1_GetListAllExpertises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllExpertisesResponse" message="tns:IService1_GetListAllExpertises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExperts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllExperts" message="tns:IService1_GetListAllExperts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllExpertsResponse" message="tns:IService1_GetListAllExperts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllFiledsOfScience">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllFiledsOfScience" message="tns:IService1_GetListAllFiledsOfScience_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllFiledsOfScienceResponse" message="tns:IService1_GetListAllFiledsOfScience_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllGRNTI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllGRNTI" message="tns:IService1_GetListAllGRNTI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllGRNTIResponse" message="tns:IService1_GetListAllGRNTI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllMarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllMarks" message="tns:IService1_GetListAllMarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllMarksResponse" message="tns:IService1_GetListAllMarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllProjectAuthors" message="tns:IService1_GetListAllProjectAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllProjectAuthorsResponse" message="tns:IService1_GetListAllProjectAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllProjectExpertise" message="tns:IService1_GetListAllProjectExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllProjectExpertiseResponse" message="tns:IService1_GetListAllProjectExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectFos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllProjectFos" message="tns:IService1_GetListAllProjectFos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllProjectFosResponse" message="tns:IService1_GetListAllProjectFos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllProjects" message="tns:IService1_GetListAllProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllProjectsResponse" message="tns:IService1_GetListAllProjects_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="test">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/test" message="tns:IService1_test_InputMessage" />
@@ -421,8 +611,179 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListProjectFos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListProjectFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListExpertisesForExpert">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListExpertisesForExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesForExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTablesForExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCatCrit">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllCatCrit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllCriterions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllCritValues">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllCritValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpCrit">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllExpCrit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertFos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllExpertFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertiseMark">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllExpertiseMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExpertises">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllExpertises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllExperts">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllExperts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllFiledsOfScience">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllFiledsOfScience" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllGRNTI">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllGRNTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllMarks">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllMarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllProjectAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllProjectExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjectFos">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllProjectFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAllProjects">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAllProjects" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

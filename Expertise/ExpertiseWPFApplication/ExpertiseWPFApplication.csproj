@@ -189,6 +189,9 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Authors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CatCrit.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -202,6 +205,15 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CritValues.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpCrit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertFos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertiseMark.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Expertises.datasource">
@@ -222,10 +234,28 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.GRNTI.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Marks.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myAuthors.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myProject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ProjectAuthors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ProjectExpertise.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ProjectFos.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Projects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.TablesForExpertise.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\Service1.wsdl" />
