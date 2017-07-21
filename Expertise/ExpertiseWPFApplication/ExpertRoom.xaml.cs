@@ -70,8 +70,7 @@ namespace ExpertiseWPFApplication
             {
                 Waiting(false);
                 ShowInfo("Ошибка!", "Ошибка!");
-            }
-            
+            }      
         }
         // ===================================================================
         private void Waiting(bool Wait)

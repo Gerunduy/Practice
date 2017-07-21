@@ -46,7 +46,7 @@
                 <ComboBox Grid.Row="0" Grid.Column="2" Name="cmbFOS">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Path=F}"></TextBlock>
+                            <TextBlock Text="{Binding Path=name_fos}"></TextBlock>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
@@ -66,8 +66,8 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты-участники:" HorizontalAlignment="Left"/>
                 <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
-                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                        <DataGridTextColumn Binding="{Binding Path=id_project}" Header="id" DisplayIndex="0" Width="auto"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Grid Grid.Row="2" Grid.Column="1">
@@ -89,8 +89,8 @@
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Все проекты:" HorizontalAlignment="Left"/>
                 <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
-                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                        <DataGridTextColumn Binding="{Binding Path=id_project}" Header="id" DisplayIndex="0" Width="auto"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -110,7 +110,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Выбранные критерии:" HorizontalAlignment="Left"/>
                 <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_crit}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Grid Grid.Row="2" Grid.Column="1">
@@ -133,14 +133,14 @@
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Доступные критерии:" HorizontalAlignment="Center"/>
                 <DataGrid Grid.Row="2" Grid.Column="2" Name="dgCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_crit}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
                 <TextBlock Grid.Row="0" Grid.Column="4" Text="Категории:" HorizontalAlignment="Center"/>
                 <DataGrid Grid.Row="2" Grid.Column="4" Name="dgCatList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_category}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
@@ -169,8 +169,9 @@
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Эксперты-участники:" HorizontalAlignment="Left"/>
                 <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExperts" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
-                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                        <DataGridTextColumn Binding="{Binding Path=surname_expert}" Header="Фамилия" DisplayIndex="0" Width="1*"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_expert}" Header="Имя" DisplayIndex="1" Width="1*"/>
+                        <DataGridTextColumn Binding="{Binding Path=patronymic_expert}" Header="Отчество" DisplayIndex="2" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <Grid Grid.Row="2" Grid.Column="1">
@@ -192,8 +193,9 @@
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Все эксперты:" HorizontalAlignment="Left"/>
                 <DataGrid Grid.Row="2" Grid.Column="2" Name="dgExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
-                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                        <DataGridTextColumn Binding="{Binding Path=surname_expert}" Header="Фамилия" DisplayIndex="0" Width="1*"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_expert}" Header="Имя" DisplayIndex="1" Width="1*"/>
+                        <DataGridTextColumn Binding="{Binding Path=patronymic_expert}" Header="Отчество" DisplayIndex="2" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>

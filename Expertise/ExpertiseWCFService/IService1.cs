@@ -232,7 +232,7 @@ namespace ExpertiseWCFService
         public string status_expertise { get; set; }
     }
 
-    // объект класс хранит в себе таблицы необходимые для отображения информации в окне создания экспертизы
+    // объект класса хранит в себе таблицы необходимые для отображения информации в окне создания экспертизы
     public class TablesForExpertise
     {
         public List<FiledsOfScience> lFOS { get; set; }
