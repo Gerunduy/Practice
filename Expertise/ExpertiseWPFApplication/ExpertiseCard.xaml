@@ -5,32 +5,170 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ExpertiseCard" Height="300" Width="300">
+        Title="ExpertiseCard" Height="600" Width="1000" MinHeight="600" MinWidth="1000">
     <Grid>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="32,44,0,0" VerticalAlignment="Top" Height="118" Width="233">
-            <DataGrid.Columns>
-                <DataGridTextColumn Width="2.4*" Binding="{Binding name_fos}" Header="Направление науки" />
-                <DataGridTemplateColumn Width="*" Header="Редактирование">
-                    <DataGridTemplateColumn.CellTemplate>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="100" Text="Обработка..." Padding="200,200,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+        <Grid Grid.Row="1" Grid.Column="1" Name="Grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="115"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Направление науки:"/>
+                <ComboBox Grid.Row="0" Grid.Column="2" Name="cmbFOS">
+                    <ComboBox.ItemTemplate>
                         <DataTemplate>
-
-                            <CheckBox>
-                                
-                            </CheckBox>
-
+                            <TextBlock Text="{Binding Path=F}"></TextBlock>
                         </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn>
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <CheckBox IsChecked="{Binding  Path=IsSelected, UpdateSourceTrigger=PropertyChanged}" />
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-            </DataGrid.Columns>
-        </DataGrid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="90,207,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="180"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты-участники:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddProject"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteProject"/>
+                </Grid>
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Все проекты:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="№" DisplayIndex="0"/>
+                        <DataGridTextColumn Binding="{Binding Path=M}" Header="текст" DisplayIndex="1"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="4*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Выбранные критерии:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+                <Grid Grid.Row="2" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="15"/>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15"/>
+                        <ColumnDefinition Width="30"/>
+                        <ColumnDefinition Width="15"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddCrit"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteCrit"/>
+                </Grid>
 
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Доступные критерии:" HorizontalAlignment="Center"/>
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <TextBlock Grid.Row="0" Grid.Column="4" Text="Категории:" HorizontalAlignment="Center"/>
+                <DataGrid Grid.Row="2" Grid.Column="4" Name="dgCatList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=B}" Header="Название" DisplayIndex="0"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="155"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0">Количество проектов, <LineBreak/> которые предполагается поддержать:</TextBlock>
+                <TextBox Grid.Row="0" Grid.Column="2" FontSize="19" Text="1" TextAlignment="Center"/>
+            </Grid>
+            <Grid Grid.Row="8" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="160"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="1" Grid.Column="1" Content="Создать экспертизу" Name="btnOK"/>
+                <Button Grid.Row="1" Grid.Column="3" Content="Отмена" Name="btnCancel"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

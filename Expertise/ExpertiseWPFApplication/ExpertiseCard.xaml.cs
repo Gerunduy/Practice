@@ -22,35 +22,25 @@ namespace ExpertiseWPFApplication
         public ExpertiseCard()
         {
             InitializeComponent();
-            List<te> nads = new List<te>();
-            for(int i = 0; i < 5; i++)
+            //Waiting(false);
+        }
+        //=======================================================================================
+        private void Waiting(bool Wait)
+        {
+            if (Wait)
             {
-                te temp = new te();
-                temp.name = i.ToString();
-                temp.tr = false;
-                nads.Add(temp);
+                Grid.Visibility = Visibility.Hidden;
+                tblWait.Visibility = Visibility.Visible;
             }
-            dataGrid.ItemsSource = nads;
+            else
+            {
+                Grid.Visibility = Visibility.Visible;
+                tblWait.Visibility = Visibility.Hidden;
+            }
         }
-        public class te
-        {
-           public string name { get; set; }
-            public bool tr { get; set; }
-        }
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            //for (int i = 0; i < dataGrid.Items.Count; i++)
-            //{
-            //    if (dataGrid.Items[i] is CheckBox)
-            //    {
-            //       if( ((CheckBox)dataGrid.Items[i]).IsChecked==true)
-            //        {
-            //            MessageBox.Show("чекнут");
-            //        }
-            //    }
-            //}
-            
+        //=======================================================================================
+        //=======================================================================================
+        //=======================================================================================
 
-        }
     }
 }

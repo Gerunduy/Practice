@@ -59,23 +59,23 @@
                 <ColumnDefinition Width="auto"/>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="0" Name="textBlock" Text="меню" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="0" Name="textBlock" Text="Меню" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="0" Name="button" Content="Новый проект" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button_Click"/>
             <Button Grid.Row="4" Grid.Column="0" Name="button1" Content="Новый эксперт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button1_Click"/>
             <Button Grid.Row="6" Grid.Column="0" Name="button2" Content="Новая экспертиза" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button2_Click"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="2" Name="textBlock1" Text="справочники" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="2" Name="textBlock1" Text="Справочники" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="2" Name="button3" Content="Проекты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button3_Click"/>
             <Button Grid.Row="4" Grid.Column="2" Name="button4" Content="Эксперты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button4_Click"/>
             <Button Grid.Row="6" Grid.Column="2" Name="button5" Content="Критерии" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button5_Click"/>
             <Button Grid.Row="8" Grid.Column="2" Name="button6" Content="Направление науки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="116" Click="button6_Click"/>
             <Button Grid.Row="10" Grid.Column="2" Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button7_Click"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="4" Name="textBlock2" Text="отчеты" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="4" Name="textBlock2" Text="Отчеты" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="4" Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
             <Button Grid.Row="4" Grid.Column="4" Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
 
-            <TextBlock Grid.Row="0" Grid.Column="6" Name="textBlock3" Text="кабинет эксперта" HorizontalAlignment="Center"/>
+            <TextBlock Grid.Row="0" Grid.Column="6" Name="textBlock3" Text="Кабинет эксперта" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="6" Name="button10" Content="Кабинет эксперта" HorizontalAlignment="Center" VerticalAlignment="Center" Width="135" Click="button10_Click"/>
         </Grid>
     </Grid>
