@@ -172,6 +172,20 @@ namespace ExpertiseWCFService
         public string status_expertise { get; set; }
     }
 
+    // объект хранящий в себе таблицы необходимые для отображения информации в окне создания экспертизы
+    public class TablesForExpertise
+    {
+        public List<FiledsOfScience> lFOS { get; set; }
+        public List<Projects> lProject { get; set; }
+        public List<ProjectFos> lProjectFos { get; set; }
+        public List<Categories> lCatigories { get; set; }
+        public List<CatCrit> lCatCrit { get; set; }
+        public List<Criterions> lCriterions { get; set; }
+        public List<CritValues> lCritValues { get; set; }
+        public List<Experts> lExperts { get; set; }
+        public List<ExpertFos> lExpertFos { get; set; }
+    }
+
     // Используйте контракт данных, как показано в примере ниже, чтобы добавить составные типы к операциям служб.
     [DataContract]
     public class CompositeType
