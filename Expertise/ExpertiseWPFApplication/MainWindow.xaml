@@ -5,25 +5,78 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="399" Width="573">
+        Title="MainWindow" Height="310" Width="590" MinHeight="290" MinWidth="570" MaxHeight="360" MaxWidth="640">
     <Grid>
-        <TextBlock Text="" TextAlignment="Right" Margin="80,7,59,340" Name="tblUserInfo"/>
-        <Button x:Name="button" Content="Новый проект" HorizontalAlignment="Left" Margin="24,64,0,0" VerticalAlignment="Top" Width="106" Click="button_Click"/>
-        <Button x:Name="button1" Content="Новый эксперт" HorizontalAlignment="Left" Margin="24,105,0,0" VerticalAlignment="Top" Width="106" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Новая экспертиза" HorizontalAlignment="Left" Margin="24,145,0,0" VerticalAlignment="Top" Width="106" Click="button2_Click"/>
-        <Button x:Name="button3" Content="Проекты" HorizontalAlignment="Left" Margin="146,64,0,0" VerticalAlignment="Top" Width="113" Click="button3_Click"/>
-        <Button x:Name="button4" Content="Эксперты" HorizontalAlignment="Left" Margin="146,105,0,0" VerticalAlignment="Top" Width="113" Click="button4_Click"/>
-        <Button x:Name="button5" Content="Критерии" HorizontalAlignment="Left" Margin="146,140,0,0" VerticalAlignment="Top" Width="113" Click="button5_Click"/>
-        <Button x:Name="button6" Content="Направление науки" HorizontalAlignment="Left" Margin="146,178,0,0" VerticalAlignment="Top" Width="116" Click="button6_Click"/>
-        <Button x:Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="146,215,0,0" VerticalAlignment="Top" Width="113" Click="button7_Click"/>
-        <Button x:Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Left" Margin="264,64,0,0" VerticalAlignment="Top" Width="144"/>
-        <Button x:Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Left" Margin="264,105,0,0" VerticalAlignment="Top" Width="144"/>
-        <Button x:Name="button10" Content="Кабинет эксперта" HorizontalAlignment="Left" Margin="413,64,0,0" VerticalAlignment="Top" Width="135" Click="button10_Click"/>
-        <Label x:Name="label" Content="меню" HorizontalAlignment="Left" Margin="24,34,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="справочники" HorizontalAlignment="Left" Margin="146,34,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="отчеты" HorizontalAlignment="Left" Margin="264,34,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="кабинет эксперта" HorizontalAlignment="Left" Margin="413,34,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button11" Content="Вход" HorizontalAlignment="Left" Margin="511,7,0,0" VerticalAlignment="Top" Width="44" Click="button11_Click"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition Height="2"/>
+            <RowDefinition Height="3"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+        <Grid Grid.Row="3" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="5"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="auto" Text="Эксперт: Иванов Иван Иванович" TextAlignment="Right" Name="tblUserInfo"/>
+            <Button Grid.Row="0" Grid.Column="3" Name="button11" Content="Вход" Padding="5,0,5,0" Click="button11_Click"/>
+        </Grid>
+        <Grid Grid.Row="5" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
+        <Grid Grid.Row="6" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" Name="textBlock" Text="меню" HorizontalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="0" Name="button" Content="Новый проект" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button_Click"/>
+            <Button Grid.Row="4" Grid.Column="0" Name="button1" Content="Новый эксперт" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button1_Click"/>
+            <Button Grid.Row="6" Grid.Column="0" Name="button2" Content="Новая экспертиза" HorizontalAlignment="Center" VerticalAlignment="Center" Width="106" Click="button2_Click"/>
 
+            <TextBlock Grid.Row="0" Grid.Column="2" Name="textBlock1" Text="справочники" HorizontalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="2" Name="button3" Content="Проекты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button3_Click"/>
+            <Button Grid.Row="4" Grid.Column="2" Name="button4" Content="Эксперты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button4_Click"/>
+            <Button Grid.Row="6" Grid.Column="2" Name="button5" Content="Критерии" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button5_Click"/>
+            <Button Grid.Row="8" Grid.Column="2" Name="button6" Content="Направление науки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="116" Click="button6_Click"/>
+            <Button Grid.Row="10" Grid.Column="2" Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button7_Click"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="4" Name="textBlock2" Text="отчеты" HorizontalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="4" Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
+            <Button Grid.Row="4" Grid.Column="4" Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="6" Name="textBlock3" Text="кабинет эксперта" HorizontalAlignment="Center"/>
+            <Button Grid.Row="2" Grid.Column="6" Name="button10" Content="Кабинет эксперта" HorizontalAlignment="Center" VerticalAlignment="Center" Width="135" Click="button10_Click"/>
+        </Grid>
     </Grid>
 </Window>
