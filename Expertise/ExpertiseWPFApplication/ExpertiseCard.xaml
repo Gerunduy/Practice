@@ -64,7 +64,7 @@
                     <ColumnDefinition Width="180"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты-участники:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgExpertiseProjectList_CurrentCellChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_project}" Header="№" DisplayIndex="0" Width="auto"/>
                         <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
@@ -83,11 +83,11 @@
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddProject"/>
-                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteProject"/>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddProject" Click="btnAddProject_Click"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteProject" Click="btnDeleteProject_Click"/>
                 </Grid>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Все проекты:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgProjectList_CurrentCellChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_project}" Header="№" DisplayIndex="0" Width="auto"/>
                         <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>

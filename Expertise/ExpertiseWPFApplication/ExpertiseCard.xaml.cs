@@ -21,8 +21,18 @@ namespace ExpertiseWPFApplication
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
 
+        //=== ========================== ===
+        ServiceReference1.Projects tmpProj;
+        ServiceReference1.Projects tmpP;
+        ServiceReference1.Projects CurrentProj;
+        ServiceReference1.Projects CurrentExpertiseProj;
+        //=== ========================== ===
+
+        List<ServiceReference1.Projects> lExpertiseProjects = new List<ServiceReference1.Projects>();
+        List<ServiceReference1.Experts> lExpertiseExperts = new List<ServiceReference1.Experts>();
+
         List<ServiceReference1.FiledsOfScience> lFOS = new List<ServiceReference1.FiledsOfScience>();
-        ServiceReference1.FiledsOfScience tFOS = new ServiceReference1.FiledsOfScience();
+        //ServiceReference1.FiledsOfScience tFOS = new ServiceReference1.FiledsOfScience();
         List<ServiceReference1.Projects> lProjects = new List<ServiceReference1.Projects>();
         List<ServiceReference1.ProjectFos> lProjectFos = new List<ServiceReference1.ProjectFos>();
         List<ServiceReference1.Categories> lCatigories = new List<ServiceReference1.Categories>();
@@ -44,6 +54,7 @@ namespace ExpertiseWPFApplication
             client.GetTablesForExpertiseCompleted += Client_GetTablesForExpertiseCompleted;
             client.GetTablesForExpertiseAsync();
             Waiting(true);
+            CheckProjbtn();
         }
         //=======================================================================================
         private void Client_GetTablesForExpertiseCompleted(object sender, ServiceReference1.GetTablesForExpertiseCompletedEventArgs e)
@@ -151,13 +162,78 @@ namespace ExpertiseWPFApplication
             FilterFileds();
         }
 
-        //=== Нажатие на категорию ====================================
+        //=== Работа с категориями ====================================
         private void dgCatList_CurrentCellChanged(object sender, EventArgs e)
         {
             try
             {
                 ServiceReference1.Categories CurrentCat = dgCatList.CurrentCell.Item as ServiceReference1.Categories;
                 GetCritCurrCat(CurrentCat.id_category);
+            }
+            catch { }
+        }
+        //=== Работа с проектами ====================================
+        private void CheckProjbtn()
+        {
+            if (CurrentProj != null && tmpProj != null) btnAddProject.IsEnabled = true;
+            else btnAddProject.IsEnabled = false;
+        }
+        private void dgProjectList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentProj = dgProjectList.SelectedCells[0].Item as ServiceReference1.Projects;
+                tmpProj = new ServiceReference1.Projects();
+                tmpProj = CurrentProj;
+
+                CheckProjbtn();
+            }
+            catch { }  
+        }
+        private void dgExpertiseProjectList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                tmpP = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
+                if (tmpP != null) CurrentExpertiseProj = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
+            }
+            catch { }     
+        }
+
+        private void btnAddProject_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference1.Projects P = new ServiceReference1.Projects();
+            P = tmpProj;
+            if (lExpertiseProjects.Where(p => p.id_project == P.id_project).FirstOrDefault() == null) // если этот проект ещё не добавляли
+            {
+                lExpertiseProjects.Add(P);
+                dgExpertiseProjectList.ItemsSource = null;
+                dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+
+                tmpProj = null;
+                CheckProjbtn();
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Проект с id = {0} уже был добавлен ранее!", P.id_project));
+            }
+        }
+
+        private void btnDeleteProject_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < lExpertiseProjects.Count; i++)
+                {
+                    if (lExpertiseProjects[i].id_project == CurrentExpertiseProj.id_project)
+                    {
+                        lExpertiseProjects.RemoveAt(i);
+                    }
+                }
+                dgExpertiseProjectList.ItemsSource = null;
+                dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+
+                CurrentExpertiseProj = null;
             }
             catch { }
         }
