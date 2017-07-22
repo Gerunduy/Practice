@@ -33,6 +33,8 @@ namespace ExpertiseWPFApplication
         List<ServiceReference1.ExpertFos> lExpertFos = new List<ServiceReference1.ExpertFos>();
 
         List<ServiceReference1.Projects> ltmpProjects = new List<ServiceReference1.Projects>();
+        List<ServiceReference1.Criterions> ltmpCriterions = new List<ServiceReference1.Criterions>();
+        List<ServiceReference1.CatCrit> ltmpCatCrit = new List<ServiceReference1.CatCrit>();
         List<ServiceReference1.Experts> ltmpExperts = new List<ServiceReference1.Experts>();
 
 
@@ -60,8 +62,8 @@ namespace ExpertiseWPFApplication
                     lExperts = e.Result.lExperts.ToList();
                     lExpertFos = e.Result.lExpertFos.ToList();
 
-                    ltmpExperts = lExperts;
                     ltmpProjects = lProjects;
+                    ltmpExperts = lExperts;
                     FirstFillFileds();
 
                     Waiting(false);
@@ -84,8 +86,51 @@ namespace ExpertiseWPFApplication
             cmbFOS.ItemsSource = lFOS;
             dgProjectList.ItemsSource = ltmpProjects;
             dgCatList.ItemsSource = lCatigories;
-            dgCritList.ItemsSource = lCriterions;
+            dgCritList.ItemsSource = null;
             dgExpertList.ItemsSource = lExperts;
+        }
+        private void FilterFileds()
+        {
+            ServiceReference1.FiledsOfScience curFos = (ServiceReference1.FiledsOfScience)cmbFOS.SelectedItem;
+            ltmpProjects = new List<ServiceReference1.Projects>();
+            foreach (ServiceReference1.Projects pP in lProjects)
+            {
+                int Pid = pP.id_project;
+                if (lProjectFos.Where(p => p.id_project == Pid).FirstOrDefault().id_fos == curFos.id_fos) // если направление науки проекта совпадает с выбранным направлением
+                {
+                    ltmpProjects.Add(pP);
+                }
+            }
+            dgProjectList.ItemsSource = null;
+            dgProjectList.ItemsSource = ltmpProjects;
+
+            ltmpExperts = new List<ServiceReference1.Experts>();
+            foreach (ServiceReference1.Experts pE in lExperts)
+            {
+                int Eid = pE.id_expert;
+                foreach (ServiceReference1.ExpertFos pEFOS in lExpertFos)
+                {
+                    if (pEFOS.id_expert == Eid)
+                    {
+                        if (pEFOS.id_fos == curFos.id_fos) ltmpExperts.Add(pE); // если направление науки эксперта совпадает с выбранным направлением
+                    }
+                }
+            }
+            dgExpertList.ItemsSource = null;
+            dgExpertList.ItemsSource = ltmpExperts;
+        }
+        private void GetCritCurrCat(int id_cat)
+        {
+            ltmpCriterions = new List<ServiceReference1.Criterions>();
+            ltmpCatCrit = new List<ServiceReference1.CatCrit>();
+            ltmpCatCrit = lCatCrit.Where(p => p.id_cat == id_cat).ToList();
+            foreach (ServiceReference1.CatCrit pCC in ltmpCatCrit)
+            {
+                ltmpCriterions.Add(lCriterions.Where(o => o.id_crit == pCC.id_crit).FirstOrDefault());
+            }
+
+            dgCritList.ItemsSource = null;
+            dgCritList.ItemsSource = ltmpCriterions;
         }
         private void Waiting(bool Wait)
         {
@@ -101,6 +146,21 @@ namespace ExpertiseWPFApplication
             }
         }
         //=======================================================================================
+        private void cmbFOS_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            FilterFileds();
+        }
+
+        //=== Нажатие на категорию ====================================
+        private void dgCatList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.Categories CurrentCat = dgCatList.CurrentCell.Item as ServiceReference1.Categories;
+                GetCritCurrCat(CurrentCat.id_category);
+            }
+            catch { }
+        }
         //=======================================================================================
 
     }

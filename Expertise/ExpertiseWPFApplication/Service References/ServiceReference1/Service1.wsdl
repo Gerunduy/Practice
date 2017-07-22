@@ -86,12 +86,6 @@
   <wsdl:message name="IService1_GetListExpertisesForExpert_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListExpertisesForExpertResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetTablesForExpertise_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetTablesForExpertise" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetTablesForExpertise_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetTablesForExpertiseResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GetListAllAuthors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListAllAuthors" />
   </wsdl:message>
@@ -193,6 +187,114 @@
   </wsdl:message>
   <wsdl:message name="IService1_GetListAllProjects_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListAllProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCatCrit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCatCrit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCatCrit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCatCritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCriterionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCritValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCritValues" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCritValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCritValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpCrit_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpCrit" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpCrit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpCritResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertFos_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertFos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertFos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertFosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertiseMark_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertiseMark" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertiseMark_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertiseMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertises_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertises" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExperts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExperts" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExperts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewFiledsOfScience_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewFiledsOfScience" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewFiledsOfScience_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewFiledsOfScienceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewGRNTI_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGRNTI" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewGRNTI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewGRNTIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewMarks_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMarks" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewMarks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewMarksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectAuthors_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectAuthors" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectAuthors_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectAuthorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectExpertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectFos_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectFos" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjectFos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectFosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjects" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProjectsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTablesForExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesForExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetTablesForExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTablesForExpertiseResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_test_InputMessage">
     <wsdl:part name="parameters" element="tns:test" />
@@ -361,10 +463,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpert" message="tns:IService1_GetListExpertisesForExpert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpertResponse" message="tns:IService1_GetListExpertisesForExpert_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetTablesForExpertise">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertiseResponse" message="tns:IService1_GetTablesForExpertise_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetListAllAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllAuthors" message="tns:IService1_GetListAllAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllAuthorsResponse" message="tns:IService1_GetListAllAuthors_OutputMessage" />
@@ -432,6 +530,78 @@
     <wsdl:operation name="GetListAllProjects">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllProjects" message="tns:IService1_GetListAllProjects_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllProjectsResponse" message="tns:IService1_GetListAllProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewAuthors" message="tns:IService1_AddNewAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewAuthorsResponse" message="tns:IService1_AddNewAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCatCrit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewCatCrit" message="tns:IService1_AddNewCatCrit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewCatCritResponse" message="tns:IService1_AddNewCatCrit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewCategories" message="tns:IService1_AddNewCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewCategoriesResponse" message="tns:IService1_AddNewCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewCriterions" message="tns:IService1_AddNewCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewCriterionsResponse" message="tns:IService1_AddNewCriterions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCritValues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewCritValues" message="tns:IService1_AddNewCritValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewCritValuesResponse" message="tns:IService1_AddNewCritValues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpCrit">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpCrit" message="tns:IService1_AddNewExpCrit_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpCritResponse" message="tns:IService1_AddNewExpCrit_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertFos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertFos" message="tns:IService1_AddNewExpertFos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertFosResponse" message="tns:IService1_AddNewExpertFos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertiseMark">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertiseMark" message="tns:IService1_AddNewExpertiseMark_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertiseMarkResponse" message="tns:IService1_AddNewExpertiseMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertises" message="tns:IService1_AddNewExpertises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertisesResponse" message="tns:IService1_AddNewExpertises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExperts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExperts" message="tns:IService1_AddNewExperts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertsResponse" message="tns:IService1_AddNewExperts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewFiledsOfScience">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewFiledsOfScience" message="tns:IService1_AddNewFiledsOfScience_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewFiledsOfScienceResponse" message="tns:IService1_AddNewFiledsOfScience_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGRNTI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewGRNTI" message="tns:IService1_AddNewGRNTI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewGRNTIResponse" message="tns:IService1_AddNewGRNTI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMarks">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewMarks" message="tns:IService1_AddNewMarks_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewMarksResponse" message="tns:IService1_AddNewMarks_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectAuthors">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewProjectAuthors" message="tns:IService1_AddNewProjectAuthors_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewProjectAuthorsResponse" message="tns:IService1_AddNewProjectAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewProjectExpertise" message="tns:IService1_AddNewProjectExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewProjectExpertiseResponse" message="tns:IService1_AddNewProjectExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectFos">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewProjectFos" message="tns:IService1_AddNewProjectFos_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewProjectFosResponse" message="tns:IService1_AddNewProjectFos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewProjects" message="tns:IService1_AddNewProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewProjectsResponse" message="tns:IService1_AddNewProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesForExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertiseResponse" message="tns:IService1_GetTablesForExpertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="test">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/test" message="tns:IService1_test_InputMessage" />
@@ -629,15 +799,6 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetTablesForExpertise">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetTablesForExpertise" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="GetListAllAuthors">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListAllAuthors" style="document" />
       <wsdl:input>
@@ -784,6 +945,168 @@
     </wsdl:operation>
     <wsdl:operation name="GetListAllProjects">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListAllProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCatCrit">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewCatCrit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewCriterions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCritValues">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewCritValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpCrit">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpCrit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertFos">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpertFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertiseMark">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpertiseMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertises">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpertises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExperts">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExperts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewFiledsOfScience">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewFiledsOfScience" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewGRNTI">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewGRNTI" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewMarks">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewMarks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectAuthors">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewProjectAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewProjectExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjectFos">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewProjectFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProjects">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTablesForExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetTablesForExpertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

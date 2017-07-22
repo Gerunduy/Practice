@@ -368,6 +368,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfExpertises" nillable="true" type="tns:ArrayOfExpertises" />
+  <xs:complexType name="ArrayOfAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Authors" nillable="true" type="tns:Authors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
   <xs:complexType name="TablesForExpertise">
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />
@@ -383,12 +389,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="TablesForExpertise" nillable="true" type="tns:TablesForExpertise" />
-  <xs:complexType name="ArrayOfAuthors">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Authors" nillable="true" type="tns:Authors" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
   <xs:complexType name="ArrayOfExpertise_Expert">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />

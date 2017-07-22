@@ -3393,14 +3393,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.Expertises[] EndGetListExpertisesForExpert(System.IAsyncResult result);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
-        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise();
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
-        System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState);
-        
-        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllAuthors", ReplyAction="http://tempuri.org/IService1/GetListAllAuthorsResponse")]
         ExpertiseWPFApplication.ServiceReference1.Authors[] GetListAllAuthors();
         
@@ -3536,6 +3528,150 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginGetListAllProjects(System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.Projects[] EndGetListAllProjects(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewAuthors", ReplyAction="http://tempuri.org/IService1/AddNewAuthorsResponse")]
+        bool AddNewAuthors(string surname_author, string name_author, string patronymic_author);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewAuthors", ReplyAction="http://tempuri.org/IService1/AddNewAuthorsResponse")]
+        System.IAsyncResult BeginAddNewAuthors(string surname_author, string name_author, string patronymic_author, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewAuthors(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewCatCrit", ReplyAction="http://tempuri.org/IService1/AddNewCatCritResponse")]
+        bool AddNewCatCrit(int id_cat, int id_crit);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewCatCrit", ReplyAction="http://tempuri.org/IService1/AddNewCatCritResponse")]
+        System.IAsyncResult BeginAddNewCatCrit(int id_cat, int id_crit, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewCatCrit(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewCategories", ReplyAction="http://tempuri.org/IService1/AddNewCategoriesResponse")]
+        bool AddNewCategories(string name_category);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewCategories", ReplyAction="http://tempuri.org/IService1/AddNewCategoriesResponse")]
+        System.IAsyncResult BeginAddNewCategories(string name_category, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewCategories(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewCriterions", ReplyAction="http://tempuri.org/IService1/AddNewCriterionsResponse")]
+        bool AddNewCriterions(string name_crit, bool qualit_crit);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewCriterions", ReplyAction="http://tempuri.org/IService1/AddNewCriterionsResponse")]
+        System.IAsyncResult BeginAddNewCriterions(string name_crit, bool qualit_crit, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewCriterions(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewCritValues", ReplyAction="http://tempuri.org/IService1/AddNewCritValuesResponse")]
+        bool AddNewCritValues(int id_crit, string valid_values);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewCritValues", ReplyAction="http://tempuri.org/IService1/AddNewCritValuesResponse")]
+        System.IAsyncResult BeginAddNewCritValues(int id_crit, string valid_values, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewCritValues(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpCrit", ReplyAction="http://tempuri.org/IService1/AddNewExpCritResponse")]
+        bool AddNewExpCrit(int id_exp, int id_crit);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExpCrit", ReplyAction="http://tempuri.org/IService1/AddNewExpCritResponse")]
+        System.IAsyncResult BeginAddNewExpCrit(int id_exp, int id_crit, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExpCrit(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpertFos", ReplyAction="http://tempuri.org/IService1/AddNewExpertFosResponse")]
+        bool AddNewExpertFos(int id_expert, int id_fos);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExpertFos", ReplyAction="http://tempuri.org/IService1/AddNewExpertFosResponse")]
+        System.IAsyncResult BeginAddNewExpertFos(int id_expert, int id_fos, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExpertFos(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpertiseMark", ReplyAction="http://tempuri.org/IService1/AddNewExpertiseMarkResponse")]
+        bool AddNewExpertiseMark(int id_expertise, int id_mark);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExpertiseMark", ReplyAction="http://tempuri.org/IService1/AddNewExpertiseMarkResponse")]
+        System.IAsyncResult BeginAddNewExpertiseMark(int id_expertise, int id_mark, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExpertiseMark(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpertises", ReplyAction="http://tempuri.org/IService1/AddNewExpertisesResponse")]
+        bool AddNewExpertises(string name_expertise, System.DateTime date_expertise);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExpertises", ReplyAction="http://tempuri.org/IService1/AddNewExpertisesResponse")]
+        System.IAsyncResult BeginAddNewExpertises(string name_expertise, System.DateTime date_expertise, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExpertises(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExperts", ReplyAction="http://tempuri.org/IService1/AddNewExpertsResponse")]
+        bool AddNewExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExperts", ReplyAction="http://tempuri.org/IService1/AddNewExpertsResponse")]
+        System.IAsyncResult BeginAddNewExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExperts(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddNewFiledsOfScienceResponse")]
+        bool AddNewFiledsOfScience(string name_fos);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddNewFiledsOfScienceResponse")]
+        System.IAsyncResult BeginAddNewFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewFiledsOfScience(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewGRNTI", ReplyAction="http://tempuri.org/IService1/AddNewGRNTIResponse")]
+        bool AddNewGRNTI(string name_grnti);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewGRNTI", ReplyAction="http://tempuri.org/IService1/AddNewGRNTIResponse")]
+        System.IAsyncResult BeginAddNewGRNTI(string name_grnti, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewGRNTI(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewMarks", ReplyAction="http://tempuri.org/IService1/AddNewMarksResponse")]
+        bool AddNewMarks(int id_expert, int id_crit, int id_project, int rating);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewMarks", ReplyAction="http://tempuri.org/IService1/AddNewMarksResponse")]
+        System.IAsyncResult BeginAddNewMarks(int id_expert, int id_crit, int id_project, int rating, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewMarks(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewProjectAuthors", ReplyAction="http://tempuri.org/IService1/AddNewProjectAuthorsResponse")]
+        bool AddNewProjectAuthors(int id_proj, int id_author);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewProjectAuthors", ReplyAction="http://tempuri.org/IService1/AddNewProjectAuthorsResponse")]
+        System.IAsyncResult BeginAddNewProjectAuthors(int id_proj, int id_author, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewProjectAuthors(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewProjectExpertise", ReplyAction="http://tempuri.org/IService1/AddNewProjectExpertiseResponse")]
+        bool AddNewProjectExpertise(int id_expertise, int id_project, bool accept);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewProjectExpertise", ReplyAction="http://tempuri.org/IService1/AddNewProjectExpertiseResponse")]
+        System.IAsyncResult BeginAddNewProjectExpertise(int id_expertise, int id_project, bool accept, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewProjectExpertise(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewProjectFos", ReplyAction="http://tempuri.org/IService1/AddNewProjectFosResponse")]
+        bool AddNewProjectFos(int id_project, int id_fos);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewProjectFos", ReplyAction="http://tempuri.org/IService1/AddNewProjectFosResponse")]
+        System.IAsyncResult BeginAddNewProjectFos(int id_project, int id_fos, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewProjectFos(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewProjects", ReplyAction="http://tempuri.org/IService1/AddNewProjectsResponse")]
+        bool AddNewProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewProjects", ReplyAction="http://tempuri.org/IService1/AddNewProjectsResponse")]
+        System.IAsyncResult BeginAddNewProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewProjects(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
+        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
+        System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
         ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test();
@@ -3943,25 +4079,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GetTablesForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GetTablesForExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((ExpertiseWPFApplication.ServiceReference1.TablesForExpertise)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetListAllAuthorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4279,6 +4396,348 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.Projects[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewAuthorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewCatCritCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewCatCritCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewCategoriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewCriterionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewCriterionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewCritValuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewCritValuesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpCritCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpCritCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpertFosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpertFosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpertiseMarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpertiseMarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpertisesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpertisesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpertsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpertsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewFiledsOfScienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewFiledsOfScienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewGRNTICompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewGRNTICompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewMarksCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewMarksCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewProjectAuthorsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewProjectAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewProjectExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewProjectExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewProjectFosCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewProjectFosCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewProjectsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewProjectsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetTablesForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetTablesForExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.TablesForExpertise)(this.results[0]));
             }
         }
     }
@@ -4650,12 +5109,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetListExpertisesForExpertCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGetTablesForExpertiseDelegate;
-        
-        private EndOperationDelegate onEndGetTablesForExpertiseDelegate;
-        
-        private System.Threading.SendOrPostCallback onGetTablesForExpertiseCompletedDelegate;
-        
         private BeginOperationDelegate onBeginGetListAllAuthorsDelegate;
         
         private EndOperationDelegate onEndGetListAllAuthorsDelegate;
@@ -4757,6 +5210,114 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndGetListAllProjectsDelegate;
         
         private System.Threading.SendOrPostCallback onGetListAllProjectsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewAuthorsDelegate;
+        
+        private EndOperationDelegate onEndAddNewAuthorsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewAuthorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewCatCritDelegate;
+        
+        private EndOperationDelegate onEndAddNewCatCritDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewCatCritCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewCategoriesDelegate;
+        
+        private EndOperationDelegate onEndAddNewCategoriesDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewCategoriesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewCriterionsDelegate;
+        
+        private EndOperationDelegate onEndAddNewCriterionsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewCriterionsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewCritValuesDelegate;
+        
+        private EndOperationDelegate onEndAddNewCritValuesDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewCritValuesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewExpCritDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpCritDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpCritCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewExpertFosDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpertFosDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpertFosCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewExpertiseMarkDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpertiseMarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpertiseMarkCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewExpertisesDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpertisesDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpertisesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewExpertsDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpertsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpertsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewFiledsOfScienceDelegate;
+        
+        private EndOperationDelegate onEndAddNewFiledsOfScienceDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewFiledsOfScienceCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewGRNTIDelegate;
+        
+        private EndOperationDelegate onEndAddNewGRNTIDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewGRNTICompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewMarksDelegate;
+        
+        private EndOperationDelegate onEndAddNewMarksDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewMarksCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewProjectAuthorsDelegate;
+        
+        private EndOperationDelegate onEndAddNewProjectAuthorsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewProjectAuthorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewProjectExpertiseDelegate;
+        
+        private EndOperationDelegate onEndAddNewProjectExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewProjectExpertiseCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewProjectFosDelegate;
+        
+        private EndOperationDelegate onEndAddNewProjectFosDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewProjectFosCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddNewProjectsDelegate;
+        
+        private EndOperationDelegate onEndAddNewProjectsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewProjectsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetTablesForExpertiseDelegate;
+        
+        private EndOperationDelegate onEndGetTablesForExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetTablesForExpertiseCompletedDelegate;
         
         private BeginOperationDelegate onBegintestDelegate;
         
@@ -4917,8 +5478,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetListExpertisesForExpertCompletedEventArgs> GetListExpertisesForExpertCompleted;
         
-        public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
-        
         public event System.EventHandler<GetListAllAuthorsCompletedEventArgs> GetListAllAuthorsCompleted;
         
         public event System.EventHandler<GetListAllCatCritCompletedEventArgs> GetListAllCatCritCompleted;
@@ -4952,6 +5511,42 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<GetListAllProjectFosCompletedEventArgs> GetListAllProjectFosCompleted;
         
         public event System.EventHandler<GetListAllProjectsCompletedEventArgs> GetListAllProjectsCompleted;
+        
+        public event System.EventHandler<AddNewAuthorsCompletedEventArgs> AddNewAuthorsCompleted;
+        
+        public event System.EventHandler<AddNewCatCritCompletedEventArgs> AddNewCatCritCompleted;
+        
+        public event System.EventHandler<AddNewCategoriesCompletedEventArgs> AddNewCategoriesCompleted;
+        
+        public event System.EventHandler<AddNewCriterionsCompletedEventArgs> AddNewCriterionsCompleted;
+        
+        public event System.EventHandler<AddNewCritValuesCompletedEventArgs> AddNewCritValuesCompleted;
+        
+        public event System.EventHandler<AddNewExpCritCompletedEventArgs> AddNewExpCritCompleted;
+        
+        public event System.EventHandler<AddNewExpertFosCompletedEventArgs> AddNewExpertFosCompleted;
+        
+        public event System.EventHandler<AddNewExpertiseMarkCompletedEventArgs> AddNewExpertiseMarkCompleted;
+        
+        public event System.EventHandler<AddNewExpertisesCompletedEventArgs> AddNewExpertisesCompleted;
+        
+        public event System.EventHandler<AddNewExpertsCompletedEventArgs> AddNewExpertsCompleted;
+        
+        public event System.EventHandler<AddNewFiledsOfScienceCompletedEventArgs> AddNewFiledsOfScienceCompleted;
+        
+        public event System.EventHandler<AddNewGRNTICompletedEventArgs> AddNewGRNTICompleted;
+        
+        public event System.EventHandler<AddNewMarksCompletedEventArgs> AddNewMarksCompleted;
+        
+        public event System.EventHandler<AddNewProjectAuthorsCompletedEventArgs> AddNewProjectAuthorsCompleted;
+        
+        public event System.EventHandler<AddNewProjectExpertiseCompletedEventArgs> AddNewProjectExpertiseCompleted;
+        
+        public event System.EventHandler<AddNewProjectFosCompletedEventArgs> AddNewProjectFosCompleted;
+        
+        public event System.EventHandler<AddNewProjectsCompletedEventArgs> AddNewProjectsCompleted;
+        
+        public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
         
         public event System.EventHandler<testCompletedEventArgs> testCompleted;
         
@@ -5621,54 +6216,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginGetListExpertisesForExpertDelegate, new object[] {
                         id_expert}, this.onEndGetListExpertisesForExpertDelegate, this.onGetListExpertisesForExpertCompletedDelegate, userState);
-        }
-        
-        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise() {
-            return base.Channel.GetTablesForExpertise();
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGetTablesForExpertise(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result) {
-            return base.Channel.EndGetTablesForExpertise(result);
-        }
-        
-        private System.IAsyncResult OnBeginGetTablesForExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGetTablesForExpertise(callback, asyncState);
-        }
-        
-        private object[] OnEndGetTablesForExpertise(System.IAsyncResult result) {
-            ExpertiseWPFApplication.ServiceReference1.TablesForExpertise retVal = this.EndGetTablesForExpertise(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGetTablesForExpertiseCompleted(object state) {
-            if ((this.GetTablesForExpertiseCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GetTablesForExpertiseCompleted(this, new GetTablesForExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GetTablesForExpertiseAsync() {
-            this.GetTablesForExpertiseAsync(null);
-        }
-        
-        public void GetTablesForExpertiseAsync(object userState) {
-            if ((this.onBeginGetTablesForExpertiseDelegate == null)) {
-                this.onBeginGetTablesForExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetTablesForExpertise);
-            }
-            if ((this.onEndGetTablesForExpertiseDelegate == null)) {
-                this.onEndGetTablesForExpertiseDelegate = new EndOperationDelegate(this.OnEndGetTablesForExpertise);
-            }
-            if ((this.onGetTablesForExpertiseCompletedDelegate == null)) {
-                this.onGetTablesForExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTablesForExpertiseCompleted);
-            }
-            base.InvokeAsync(this.onBeginGetTablesForExpertiseDelegate, null, this.onEndGetTablesForExpertiseDelegate, this.onGetTablesForExpertiseCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.Authors[] GetListAllAuthors() {
@@ -6485,6 +7032,962 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 this.onGetListAllProjectsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllProjectsCompleted);
             }
             base.InvokeAsync(this.onBeginGetListAllProjectsDelegate, null, this.onEndGetListAllProjectsDelegate, this.onGetListAllProjectsCompletedDelegate, userState);
+        }
+        
+        public bool AddNewAuthors(string surname_author, string name_author, string patronymic_author) {
+            return base.Channel.AddNewAuthors(surname_author, name_author, patronymic_author);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewAuthors(string surname_author, string name_author, string patronymic_author, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewAuthors(surname_author, name_author, patronymic_author, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewAuthors(System.IAsyncResult result) {
+            return base.Channel.EndAddNewAuthors(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewAuthors(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string surname_author = ((string)(inValues[0]));
+            string name_author = ((string)(inValues[1]));
+            string patronymic_author = ((string)(inValues[2]));
+            return this.BeginAddNewAuthors(surname_author, name_author, patronymic_author, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewAuthors(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewAuthors(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewAuthorsCompleted(object state) {
+            if ((this.AddNewAuthorsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewAuthorsCompleted(this, new AddNewAuthorsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewAuthorsAsync(string surname_author, string name_author, string patronymic_author) {
+            this.AddNewAuthorsAsync(surname_author, name_author, patronymic_author, null);
+        }
+        
+        public void AddNewAuthorsAsync(string surname_author, string name_author, string patronymic_author, object userState) {
+            if ((this.onBeginAddNewAuthorsDelegate == null)) {
+                this.onBeginAddNewAuthorsDelegate = new BeginOperationDelegate(this.OnBeginAddNewAuthors);
+            }
+            if ((this.onEndAddNewAuthorsDelegate == null)) {
+                this.onEndAddNewAuthorsDelegate = new EndOperationDelegate(this.OnEndAddNewAuthors);
+            }
+            if ((this.onAddNewAuthorsCompletedDelegate == null)) {
+                this.onAddNewAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewAuthorsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewAuthorsDelegate, new object[] {
+                        surname_author,
+                        name_author,
+                        patronymic_author}, this.onEndAddNewAuthorsDelegate, this.onAddNewAuthorsCompletedDelegate, userState);
+        }
+        
+        public bool AddNewCatCrit(int id_cat, int id_crit) {
+            return base.Channel.AddNewCatCrit(id_cat, id_crit);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewCatCrit(int id_cat, int id_crit, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewCatCrit(id_cat, id_crit, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewCatCrit(System.IAsyncResult result) {
+            return base.Channel.EndAddNewCatCrit(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewCatCrit(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_cat = ((int)(inValues[0]));
+            int id_crit = ((int)(inValues[1]));
+            return this.BeginAddNewCatCrit(id_cat, id_crit, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewCatCrit(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewCatCrit(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewCatCritCompleted(object state) {
+            if ((this.AddNewCatCritCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewCatCritCompleted(this, new AddNewCatCritCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewCatCritAsync(int id_cat, int id_crit) {
+            this.AddNewCatCritAsync(id_cat, id_crit, null);
+        }
+        
+        public void AddNewCatCritAsync(int id_cat, int id_crit, object userState) {
+            if ((this.onBeginAddNewCatCritDelegate == null)) {
+                this.onBeginAddNewCatCritDelegate = new BeginOperationDelegate(this.OnBeginAddNewCatCrit);
+            }
+            if ((this.onEndAddNewCatCritDelegate == null)) {
+                this.onEndAddNewCatCritDelegate = new EndOperationDelegate(this.OnEndAddNewCatCrit);
+            }
+            if ((this.onAddNewCatCritCompletedDelegate == null)) {
+                this.onAddNewCatCritCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewCatCritCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewCatCritDelegate, new object[] {
+                        id_cat,
+                        id_crit}, this.onEndAddNewCatCritDelegate, this.onAddNewCatCritCompletedDelegate, userState);
+        }
+        
+        public bool AddNewCategories(string name_category) {
+            return base.Channel.AddNewCategories(name_category);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewCategories(string name_category, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewCategories(name_category, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewCategories(System.IAsyncResult result) {
+            return base.Channel.EndAddNewCategories(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewCategories(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_category = ((string)(inValues[0]));
+            return this.BeginAddNewCategories(name_category, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewCategories(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewCategories(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewCategoriesCompleted(object state) {
+            if ((this.AddNewCategoriesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewCategoriesCompleted(this, new AddNewCategoriesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewCategoriesAsync(string name_category) {
+            this.AddNewCategoriesAsync(name_category, null);
+        }
+        
+        public void AddNewCategoriesAsync(string name_category, object userState) {
+            if ((this.onBeginAddNewCategoriesDelegate == null)) {
+                this.onBeginAddNewCategoriesDelegate = new BeginOperationDelegate(this.OnBeginAddNewCategories);
+            }
+            if ((this.onEndAddNewCategoriesDelegate == null)) {
+                this.onEndAddNewCategoriesDelegate = new EndOperationDelegate(this.OnEndAddNewCategories);
+            }
+            if ((this.onAddNewCategoriesCompletedDelegate == null)) {
+                this.onAddNewCategoriesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewCategoriesCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewCategoriesDelegate, new object[] {
+                        name_category}, this.onEndAddNewCategoriesDelegate, this.onAddNewCategoriesCompletedDelegate, userState);
+        }
+        
+        public bool AddNewCriterions(string name_crit, bool qualit_crit) {
+            return base.Channel.AddNewCriterions(name_crit, qualit_crit);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewCriterions(string name_crit, bool qualit_crit, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewCriterions(name_crit, qualit_crit, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewCriterions(System.IAsyncResult result) {
+            return base.Channel.EndAddNewCriterions(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_crit = ((string)(inValues[0]));
+            bool qualit_crit = ((bool)(inValues[1]));
+            return this.BeginAddNewCriterions(name_crit, qualit_crit, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewCriterions(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewCriterions(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewCriterionsCompleted(object state) {
+            if ((this.AddNewCriterionsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewCriterionsCompleted(this, new AddNewCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewCriterionsAsync(string name_crit, bool qualit_crit) {
+            this.AddNewCriterionsAsync(name_crit, qualit_crit, null);
+        }
+        
+        public void AddNewCriterionsAsync(string name_crit, bool qualit_crit, object userState) {
+            if ((this.onBeginAddNewCriterionsDelegate == null)) {
+                this.onBeginAddNewCriterionsDelegate = new BeginOperationDelegate(this.OnBeginAddNewCriterions);
+            }
+            if ((this.onEndAddNewCriterionsDelegate == null)) {
+                this.onEndAddNewCriterionsDelegate = new EndOperationDelegate(this.OnEndAddNewCriterions);
+            }
+            if ((this.onAddNewCriterionsCompletedDelegate == null)) {
+                this.onAddNewCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewCriterionsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewCriterionsDelegate, new object[] {
+                        name_crit,
+                        qualit_crit}, this.onEndAddNewCriterionsDelegate, this.onAddNewCriterionsCompletedDelegate, userState);
+        }
+        
+        public bool AddNewCritValues(int id_crit, string valid_values) {
+            return base.Channel.AddNewCritValues(id_crit, valid_values);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewCritValues(int id_crit, string valid_values, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewCritValues(id_crit, valid_values, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewCritValues(System.IAsyncResult result) {
+            return base.Channel.EndAddNewCritValues(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewCritValues(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_crit = ((int)(inValues[0]));
+            string valid_values = ((string)(inValues[1]));
+            return this.BeginAddNewCritValues(id_crit, valid_values, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewCritValues(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewCritValues(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewCritValuesCompleted(object state) {
+            if ((this.AddNewCritValuesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewCritValuesCompleted(this, new AddNewCritValuesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewCritValuesAsync(int id_crit, string valid_values) {
+            this.AddNewCritValuesAsync(id_crit, valid_values, null);
+        }
+        
+        public void AddNewCritValuesAsync(int id_crit, string valid_values, object userState) {
+            if ((this.onBeginAddNewCritValuesDelegate == null)) {
+                this.onBeginAddNewCritValuesDelegate = new BeginOperationDelegate(this.OnBeginAddNewCritValues);
+            }
+            if ((this.onEndAddNewCritValuesDelegate == null)) {
+                this.onEndAddNewCritValuesDelegate = new EndOperationDelegate(this.OnEndAddNewCritValues);
+            }
+            if ((this.onAddNewCritValuesCompletedDelegate == null)) {
+                this.onAddNewCritValuesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewCritValuesCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewCritValuesDelegate, new object[] {
+                        id_crit,
+                        valid_values}, this.onEndAddNewCritValuesDelegate, this.onAddNewCritValuesCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExpCrit(int id_exp, int id_crit) {
+            return base.Channel.AddNewExpCrit(id_exp, id_crit);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExpCrit(int id_exp, int id_crit, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExpCrit(id_exp, id_crit, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExpCrit(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExpCrit(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExpCrit(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_exp = ((int)(inValues[0]));
+            int id_crit = ((int)(inValues[1]));
+            return this.BeginAddNewExpCrit(id_exp, id_crit, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExpCrit(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExpCrit(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpCritCompleted(object state) {
+            if ((this.AddNewExpCritCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpCritCompleted(this, new AddNewExpCritCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpCritAsync(int id_exp, int id_crit) {
+            this.AddNewExpCritAsync(id_exp, id_crit, null);
+        }
+        
+        public void AddNewExpCritAsync(int id_exp, int id_crit, object userState) {
+            if ((this.onBeginAddNewExpCritDelegate == null)) {
+                this.onBeginAddNewExpCritDelegate = new BeginOperationDelegate(this.OnBeginAddNewExpCrit);
+            }
+            if ((this.onEndAddNewExpCritDelegate == null)) {
+                this.onEndAddNewExpCritDelegate = new EndOperationDelegate(this.OnEndAddNewExpCrit);
+            }
+            if ((this.onAddNewExpCritCompletedDelegate == null)) {
+                this.onAddNewExpCritCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpCritCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpCritDelegate, new object[] {
+                        id_exp,
+                        id_crit}, this.onEndAddNewExpCritDelegate, this.onAddNewExpCritCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExpertFos(int id_expert, int id_fos) {
+            return base.Channel.AddNewExpertFos(id_expert, id_fos);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExpertFos(int id_expert, int id_fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExpertFos(id_expert, id_fos, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExpertFos(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExpertFos(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExpertFos(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expert = ((int)(inValues[0]));
+            int id_fos = ((int)(inValues[1]));
+            return this.BeginAddNewExpertFos(id_expert, id_fos, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExpertFos(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExpertFos(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpertFosCompleted(object state) {
+            if ((this.AddNewExpertFosCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpertFosCompleted(this, new AddNewExpertFosCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpertFosAsync(int id_expert, int id_fos) {
+            this.AddNewExpertFosAsync(id_expert, id_fos, null);
+        }
+        
+        public void AddNewExpertFosAsync(int id_expert, int id_fos, object userState) {
+            if ((this.onBeginAddNewExpertFosDelegate == null)) {
+                this.onBeginAddNewExpertFosDelegate = new BeginOperationDelegate(this.OnBeginAddNewExpertFos);
+            }
+            if ((this.onEndAddNewExpertFosDelegate == null)) {
+                this.onEndAddNewExpertFosDelegate = new EndOperationDelegate(this.OnEndAddNewExpertFos);
+            }
+            if ((this.onAddNewExpertFosCompletedDelegate == null)) {
+                this.onAddNewExpertFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpertFosCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpertFosDelegate, new object[] {
+                        id_expert,
+                        id_fos}, this.onEndAddNewExpertFosDelegate, this.onAddNewExpertFosCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExpertiseMark(int id_expertise, int id_mark) {
+            return base.Channel.AddNewExpertiseMark(id_expertise, id_mark);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExpertiseMark(int id_expertise, int id_mark, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExpertiseMark(id_expertise, id_mark, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExpertiseMark(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExpertiseMark(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExpertiseMark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            int id_mark = ((int)(inValues[1]));
+            return this.BeginAddNewExpertiseMark(id_expertise, id_mark, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExpertiseMark(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExpertiseMark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpertiseMarkCompleted(object state) {
+            if ((this.AddNewExpertiseMarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpertiseMarkCompleted(this, new AddNewExpertiseMarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpertiseMarkAsync(int id_expertise, int id_mark) {
+            this.AddNewExpertiseMarkAsync(id_expertise, id_mark, null);
+        }
+        
+        public void AddNewExpertiseMarkAsync(int id_expertise, int id_mark, object userState) {
+            if ((this.onBeginAddNewExpertiseMarkDelegate == null)) {
+                this.onBeginAddNewExpertiseMarkDelegate = new BeginOperationDelegate(this.OnBeginAddNewExpertiseMark);
+            }
+            if ((this.onEndAddNewExpertiseMarkDelegate == null)) {
+                this.onEndAddNewExpertiseMarkDelegate = new EndOperationDelegate(this.OnEndAddNewExpertiseMark);
+            }
+            if ((this.onAddNewExpertiseMarkCompletedDelegate == null)) {
+                this.onAddNewExpertiseMarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpertiseMarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpertiseMarkDelegate, new object[] {
+                        id_expertise,
+                        id_mark}, this.onEndAddNewExpertiseMarkDelegate, this.onAddNewExpertiseMarkCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExpertises(string name_expertise, System.DateTime date_expertise) {
+            return base.Channel.AddNewExpertises(name_expertise, date_expertise);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExpertises(string name_expertise, System.DateTime date_expertise, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExpertises(name_expertise, date_expertise, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExpertises(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExpertises(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExpertises(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_expertise = ((string)(inValues[0]));
+            System.DateTime date_expertise = ((System.DateTime)(inValues[1]));
+            return this.BeginAddNewExpertises(name_expertise, date_expertise, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExpertises(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExpertises(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpertisesCompleted(object state) {
+            if ((this.AddNewExpertisesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpertisesCompleted(this, new AddNewExpertisesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpertisesAsync(string name_expertise, System.DateTime date_expertise) {
+            this.AddNewExpertisesAsync(name_expertise, date_expertise, null);
+        }
+        
+        public void AddNewExpertisesAsync(string name_expertise, System.DateTime date_expertise, object userState) {
+            if ((this.onBeginAddNewExpertisesDelegate == null)) {
+                this.onBeginAddNewExpertisesDelegate = new BeginOperationDelegate(this.OnBeginAddNewExpertises);
+            }
+            if ((this.onEndAddNewExpertisesDelegate == null)) {
+                this.onEndAddNewExpertisesDelegate = new EndOperationDelegate(this.OnEndAddNewExpertises);
+            }
+            if ((this.onAddNewExpertisesCompletedDelegate == null)) {
+                this.onAddNewExpertisesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpertisesCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpertisesDelegate, new object[] {
+                        name_expertise,
+                        date_expertise}, this.onEndAddNewExpertisesDelegate, this.onAddNewExpertisesCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert) {
+            return base.Channel.AddNewExperts(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExperts(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExperts(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExperts(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExperts(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExperts(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string surname_expert = ((string)(inValues[0]));
+            string name_expert = ((string)(inValues[1]));
+            string patronymic_expert = ((string)(inValues[2]));
+            string job_expert = ((string)(inValues[3]));
+            string post_expert = ((string)(inValues[4]));
+            string degree_expert = ((string)(inValues[5]));
+            string rank_expert = ((string)(inValues[6]));
+            string contacts_expert = ((string)(inValues[7]));
+            return this.BeginAddNewExperts(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExperts(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExperts(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpertsCompleted(object state) {
+            if ((this.AddNewExpertsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpertsCompleted(this, new AddNewExpertsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpertsAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert) {
+            this.AddNewExpertsAsync(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, null);
+        }
+        
+        public void AddNewExpertsAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, object userState) {
+            if ((this.onBeginAddNewExpertsDelegate == null)) {
+                this.onBeginAddNewExpertsDelegate = new BeginOperationDelegate(this.OnBeginAddNewExperts);
+            }
+            if ((this.onEndAddNewExpertsDelegate == null)) {
+                this.onEndAddNewExpertsDelegate = new EndOperationDelegate(this.OnEndAddNewExperts);
+            }
+            if ((this.onAddNewExpertsCompletedDelegate == null)) {
+                this.onAddNewExpertsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpertsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpertsDelegate, new object[] {
+                        surname_expert,
+                        name_expert,
+                        patronymic_expert,
+                        job_expert,
+                        post_expert,
+                        degree_expert,
+                        rank_expert,
+                        contacts_expert}, this.onEndAddNewExpertsDelegate, this.onAddNewExpertsCompletedDelegate, userState);
+        }
+        
+        public bool AddNewFiledsOfScience(string name_fos) {
+            return base.Channel.AddNewFiledsOfScience(name_fos);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewFiledsOfScience(name_fos, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewFiledsOfScience(System.IAsyncResult result) {
+            return base.Channel.EndAddNewFiledsOfScience(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewFiledsOfScience(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_fos = ((string)(inValues[0]));
+            return this.BeginAddNewFiledsOfScience(name_fos, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewFiledsOfScience(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewFiledsOfScience(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewFiledsOfScienceCompleted(object state) {
+            if ((this.AddNewFiledsOfScienceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewFiledsOfScienceCompleted(this, new AddNewFiledsOfScienceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewFiledsOfScienceAsync(string name_fos) {
+            this.AddNewFiledsOfScienceAsync(name_fos, null);
+        }
+        
+        public void AddNewFiledsOfScienceAsync(string name_fos, object userState) {
+            if ((this.onBeginAddNewFiledsOfScienceDelegate == null)) {
+                this.onBeginAddNewFiledsOfScienceDelegate = new BeginOperationDelegate(this.OnBeginAddNewFiledsOfScience);
+            }
+            if ((this.onEndAddNewFiledsOfScienceDelegate == null)) {
+                this.onEndAddNewFiledsOfScienceDelegate = new EndOperationDelegate(this.OnEndAddNewFiledsOfScience);
+            }
+            if ((this.onAddNewFiledsOfScienceCompletedDelegate == null)) {
+                this.onAddNewFiledsOfScienceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewFiledsOfScienceCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewFiledsOfScienceDelegate, new object[] {
+                        name_fos}, this.onEndAddNewFiledsOfScienceDelegate, this.onAddNewFiledsOfScienceCompletedDelegate, userState);
+        }
+        
+        public bool AddNewGRNTI(string name_grnti) {
+            return base.Channel.AddNewGRNTI(name_grnti);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewGRNTI(string name_grnti, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewGRNTI(name_grnti, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewGRNTI(System.IAsyncResult result) {
+            return base.Channel.EndAddNewGRNTI(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewGRNTI(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_grnti = ((string)(inValues[0]));
+            return this.BeginAddNewGRNTI(name_grnti, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewGRNTI(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewGRNTI(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewGRNTICompleted(object state) {
+            if ((this.AddNewGRNTICompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewGRNTICompleted(this, new AddNewGRNTICompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewGRNTIAsync(string name_grnti) {
+            this.AddNewGRNTIAsync(name_grnti, null);
+        }
+        
+        public void AddNewGRNTIAsync(string name_grnti, object userState) {
+            if ((this.onBeginAddNewGRNTIDelegate == null)) {
+                this.onBeginAddNewGRNTIDelegate = new BeginOperationDelegate(this.OnBeginAddNewGRNTI);
+            }
+            if ((this.onEndAddNewGRNTIDelegate == null)) {
+                this.onEndAddNewGRNTIDelegate = new EndOperationDelegate(this.OnEndAddNewGRNTI);
+            }
+            if ((this.onAddNewGRNTICompletedDelegate == null)) {
+                this.onAddNewGRNTICompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewGRNTICompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewGRNTIDelegate, new object[] {
+                        name_grnti}, this.onEndAddNewGRNTIDelegate, this.onAddNewGRNTICompletedDelegate, userState);
+        }
+        
+        public bool AddNewMarks(int id_expert, int id_crit, int id_project, int rating) {
+            return base.Channel.AddNewMarks(id_expert, id_crit, id_project, rating);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewMarks(int id_expert, int id_crit, int id_project, int rating, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewMarks(id_expert, id_crit, id_project, rating, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewMarks(System.IAsyncResult result) {
+            return base.Channel.EndAddNewMarks(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewMarks(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expert = ((int)(inValues[0]));
+            int id_crit = ((int)(inValues[1]));
+            int id_project = ((int)(inValues[2]));
+            int rating = ((int)(inValues[3]));
+            return this.BeginAddNewMarks(id_expert, id_crit, id_project, rating, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewMarks(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewMarks(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewMarksCompleted(object state) {
+            if ((this.AddNewMarksCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewMarksCompleted(this, new AddNewMarksCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewMarksAsync(int id_expert, int id_crit, int id_project, int rating) {
+            this.AddNewMarksAsync(id_expert, id_crit, id_project, rating, null);
+        }
+        
+        public void AddNewMarksAsync(int id_expert, int id_crit, int id_project, int rating, object userState) {
+            if ((this.onBeginAddNewMarksDelegate == null)) {
+                this.onBeginAddNewMarksDelegate = new BeginOperationDelegate(this.OnBeginAddNewMarks);
+            }
+            if ((this.onEndAddNewMarksDelegate == null)) {
+                this.onEndAddNewMarksDelegate = new EndOperationDelegate(this.OnEndAddNewMarks);
+            }
+            if ((this.onAddNewMarksCompletedDelegate == null)) {
+                this.onAddNewMarksCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewMarksCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewMarksDelegate, new object[] {
+                        id_expert,
+                        id_crit,
+                        id_project,
+                        rating}, this.onEndAddNewMarksDelegate, this.onAddNewMarksCompletedDelegate, userState);
+        }
+        
+        public bool AddNewProjectAuthors(int id_proj, int id_author) {
+            return base.Channel.AddNewProjectAuthors(id_proj, id_author);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewProjectAuthors(int id_proj, int id_author, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewProjectAuthors(id_proj, id_author, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewProjectAuthors(System.IAsyncResult result) {
+            return base.Channel.EndAddNewProjectAuthors(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewProjectAuthors(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_proj = ((int)(inValues[0]));
+            int id_author = ((int)(inValues[1]));
+            return this.BeginAddNewProjectAuthors(id_proj, id_author, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewProjectAuthors(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewProjectAuthors(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewProjectAuthorsCompleted(object state) {
+            if ((this.AddNewProjectAuthorsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewProjectAuthorsCompleted(this, new AddNewProjectAuthorsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewProjectAuthorsAsync(int id_proj, int id_author) {
+            this.AddNewProjectAuthorsAsync(id_proj, id_author, null);
+        }
+        
+        public void AddNewProjectAuthorsAsync(int id_proj, int id_author, object userState) {
+            if ((this.onBeginAddNewProjectAuthorsDelegate == null)) {
+                this.onBeginAddNewProjectAuthorsDelegate = new BeginOperationDelegate(this.OnBeginAddNewProjectAuthors);
+            }
+            if ((this.onEndAddNewProjectAuthorsDelegate == null)) {
+                this.onEndAddNewProjectAuthorsDelegate = new EndOperationDelegate(this.OnEndAddNewProjectAuthors);
+            }
+            if ((this.onAddNewProjectAuthorsCompletedDelegate == null)) {
+                this.onAddNewProjectAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewProjectAuthorsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewProjectAuthorsDelegate, new object[] {
+                        id_proj,
+                        id_author}, this.onEndAddNewProjectAuthorsDelegate, this.onAddNewProjectAuthorsCompletedDelegate, userState);
+        }
+        
+        public bool AddNewProjectExpertise(int id_expertise, int id_project, bool accept) {
+            return base.Channel.AddNewProjectExpertise(id_expertise, id_project, accept);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewProjectExpertise(int id_expertise, int id_project, bool accept, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewProjectExpertise(id_expertise, id_project, accept, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewProjectExpertise(System.IAsyncResult result) {
+            return base.Channel.EndAddNewProjectExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewProjectExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            int id_project = ((int)(inValues[1]));
+            bool accept = ((bool)(inValues[2]));
+            return this.BeginAddNewProjectExpertise(id_expertise, id_project, accept, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewProjectExpertise(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewProjectExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewProjectExpertiseCompleted(object state) {
+            if ((this.AddNewProjectExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewProjectExpertiseCompleted(this, new AddNewProjectExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewProjectExpertiseAsync(int id_expertise, int id_project, bool accept) {
+            this.AddNewProjectExpertiseAsync(id_expertise, id_project, accept, null);
+        }
+        
+        public void AddNewProjectExpertiseAsync(int id_expertise, int id_project, bool accept, object userState) {
+            if ((this.onBeginAddNewProjectExpertiseDelegate == null)) {
+                this.onBeginAddNewProjectExpertiseDelegate = new BeginOperationDelegate(this.OnBeginAddNewProjectExpertise);
+            }
+            if ((this.onEndAddNewProjectExpertiseDelegate == null)) {
+                this.onEndAddNewProjectExpertiseDelegate = new EndOperationDelegate(this.OnEndAddNewProjectExpertise);
+            }
+            if ((this.onAddNewProjectExpertiseCompletedDelegate == null)) {
+                this.onAddNewProjectExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewProjectExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewProjectExpertiseDelegate, new object[] {
+                        id_expertise,
+                        id_project,
+                        accept}, this.onEndAddNewProjectExpertiseDelegate, this.onAddNewProjectExpertiseCompletedDelegate, userState);
+        }
+        
+        public bool AddNewProjectFos(int id_project, int id_fos) {
+            return base.Channel.AddNewProjectFos(id_project, id_fos);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewProjectFos(int id_project, int id_fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewProjectFos(id_project, id_fos, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewProjectFos(System.IAsyncResult result) {
+            return base.Channel.EndAddNewProjectFos(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewProjectFos(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            int id_fos = ((int)(inValues[1]));
+            return this.BeginAddNewProjectFos(id_project, id_fos, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewProjectFos(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewProjectFos(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewProjectFosCompleted(object state) {
+            if ((this.AddNewProjectFosCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewProjectFosCompleted(this, new AddNewProjectFosCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewProjectFosAsync(int id_project, int id_fos) {
+            this.AddNewProjectFosAsync(id_project, id_fos, null);
+        }
+        
+        public void AddNewProjectFosAsync(int id_project, int id_fos, object userState) {
+            if ((this.onBeginAddNewProjectFosDelegate == null)) {
+                this.onBeginAddNewProjectFosDelegate = new BeginOperationDelegate(this.OnBeginAddNewProjectFos);
+            }
+            if ((this.onEndAddNewProjectFosDelegate == null)) {
+                this.onEndAddNewProjectFosDelegate = new EndOperationDelegate(this.OnEndAddNewProjectFos);
+            }
+            if ((this.onAddNewProjectFosCompletedDelegate == null)) {
+                this.onAddNewProjectFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewProjectFosCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewProjectFosDelegate, new object[] {
+                        id_project,
+                        id_fos}, this.onEndAddNewProjectFosDelegate, this.onAddNewProjectFosCompletedDelegate, userState);
+        }
+        
+        public bool AddNewProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project) {
+            return base.Channel.AddNewProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewProjects(System.IAsyncResult result) {
+            return base.Channel.EndAddNewProjects(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewProjects(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_project = ((string)(inValues[0]));
+            string lead_project = ((string)(inValues[1]));
+            string grnti_project = ((string)(inValues[2]));
+            System.DateTime begin_project = ((System.DateTime)(inValues[3]));
+            System.DateTime end_project = ((System.DateTime)(inValues[4]));
+            string money_project = ((string)(inValues[5]));
+            string email_project = ((string)(inValues[6]));
+            return this.BeginAddNewProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewProjects(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewProjects(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewProjectsCompleted(object state) {
+            if ((this.AddNewProjectsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewProjectsCompleted(this, new AddNewProjectsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project) {
+            this.AddNewProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, null);
+        }
+        
+        public void AddNewProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, object userState) {
+            if ((this.onBeginAddNewProjectsDelegate == null)) {
+                this.onBeginAddNewProjectsDelegate = new BeginOperationDelegate(this.OnBeginAddNewProjects);
+            }
+            if ((this.onEndAddNewProjectsDelegate == null)) {
+                this.onEndAddNewProjectsDelegate = new EndOperationDelegate(this.OnEndAddNewProjects);
+            }
+            if ((this.onAddNewProjectsCompletedDelegate == null)) {
+                this.onAddNewProjectsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewProjectsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewProjectsDelegate, new object[] {
+                        name_project,
+                        lead_project,
+                        grnti_project,
+                        begin_project,
+                        end_project,
+                        money_project,
+                        email_project}, this.onEndAddNewProjectsDelegate, this.onAddNewProjectsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise() {
+            return base.Channel.GetTablesForExpertise();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetTablesForExpertise(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetTablesForExpertise(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result) {
+            return base.Channel.EndGetTablesForExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetTablesForExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetTablesForExpertise(callback, asyncState);
+        }
+        
+        private object[] OnEndGetTablesForExpertise(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.TablesForExpertise retVal = this.EndGetTablesForExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetTablesForExpertiseCompleted(object state) {
+            if ((this.GetTablesForExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetTablesForExpertiseCompleted(this, new GetTablesForExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetTablesForExpertiseAsync() {
+            this.GetTablesForExpertiseAsync(null);
+        }
+        
+        public void GetTablesForExpertiseAsync(object userState) {
+            if ((this.onBeginGetTablesForExpertiseDelegate == null)) {
+                this.onBeginGetTablesForExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetTablesForExpertise);
+            }
+            if ((this.onEndGetTablesForExpertiseDelegate == null)) {
+                this.onEndGetTablesForExpertiseDelegate = new EndOperationDelegate(this.OnEndGetTablesForExpertise);
+            }
+            if ((this.onGetTablesForExpertiseCompletedDelegate == null)) {
+                this.onGetTablesForExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTablesForExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetTablesForExpertiseDelegate, null, this.onEndGetTablesForExpertiseDelegate, this.onGetTablesForExpertiseCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test() {

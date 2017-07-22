@@ -166,18 +166,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetTablesForExpertise">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetTablesForExpertiseResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetTablesForExpertiseResult" nillable="true" type="q13:TablesForExpertise" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetListAllAuthors">
     <xs:complexType>
       <xs:sequence />
@@ -186,7 +174,7 @@
   <xs:element name="GetListAllAuthorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllAuthorsResult" nillable="true" type="q14:ArrayOfAuthors" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllAuthorsResult" nillable="true" type="q13:ArrayOfAuthors" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -198,7 +186,7 @@
   <xs:element name="GetListAllCatCritResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCatCritResult" nillable="true" type="q15:ArrayOfCatCrit" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCatCritResult" nillable="true" type="q14:ArrayOfCatCrit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -210,7 +198,7 @@
   <xs:element name="GetListAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCategoriesResult" nillable="true" type="q16:ArrayOfCategories" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCategoriesResult" nillable="true" type="q15:ArrayOfCategories" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -222,7 +210,7 @@
   <xs:element name="GetListAllCriterionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCriterionsResult" nillable="true" type="q17:ArrayOfCriterions" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCriterionsResult" nillable="true" type="q16:ArrayOfCriterions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -234,7 +222,7 @@
   <xs:element name="GetListAllCritValuesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCritValuesResult" nillable="true" type="q18:ArrayOfCritValues" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCritValuesResult" nillable="true" type="q17:ArrayOfCritValues" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -246,7 +234,7 @@
   <xs:element name="GetListAllExpCritResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpCritResult" nillable="true" type="q19:ArrayOfExpCrit" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpCritResult" nillable="true" type="q18:ArrayOfExpCrit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -258,7 +246,7 @@
   <xs:element name="GetListAllExpertFosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertFosResult" nillable="true" type="q20:ArrayOfExpertFos" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertFosResult" nillable="true" type="q19:ArrayOfExpertFos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -270,7 +258,7 @@
   <xs:element name="GetListAllExpertiseMarkResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseMarkResult" nillable="true" type="q21:ArrayOfExpertiseMark" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseMarkResult" nillable="true" type="q20:ArrayOfExpertiseMark" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -282,7 +270,7 @@
   <xs:element name="GetListAllExpertisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertisesResult" nillable="true" type="q22:ArrayOfExpertises" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertisesResult" nillable="true" type="q21:ArrayOfExpertises" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -294,7 +282,7 @@
   <xs:element name="GetListAllExpertsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertsResult" nillable="true" type="q23:ArrayOfExperts" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertsResult" nillable="true" type="q22:ArrayOfExperts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -306,7 +294,7 @@
   <xs:element name="GetListAllFiledsOfScienceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllFiledsOfScienceResult" nillable="true" type="q24:ArrayOfFiledsOfScience" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllFiledsOfScienceResult" nillable="true" type="q23:ArrayOfFiledsOfScience" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -318,7 +306,7 @@
   <xs:element name="GetListAllGRNTIResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllGRNTIResult" nillable="true" type="q25:ArrayOfGRNTI" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllGRNTIResult" nillable="true" type="q24:ArrayOfGRNTI" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -330,7 +318,7 @@
   <xs:element name="GetListAllMarksResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllMarksResult" nillable="true" type="q26:ArrayOfMarks" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllMarksResult" nillable="true" type="q25:ArrayOfMarks" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -342,7 +330,7 @@
   <xs:element name="GetListAllProjectAuthorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectAuthorsResult" nillable="true" type="q27:ArrayOfProjectAuthors" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectAuthorsResult" nillable="true" type="q26:ArrayOfProjectAuthors" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -354,7 +342,7 @@
   <xs:element name="GetListAllProjectExpertiseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectExpertiseResult" nillable="true" type="q28:ArrayOfProjectExpertise" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectExpertiseResult" nillable="true" type="q27:ArrayOfProjectExpertise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -366,7 +354,7 @@
   <xs:element name="GetListAllProjectFosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectFosResult" nillable="true" type="q29:ArrayOfProjectFos" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectFosResult" nillable="true" type="q28:ArrayOfProjectFos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -378,7 +366,286 @@
   <xs:element name="GetListAllProjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectsResult" nillable="true" type="q30:ArrayOfProjects" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectsResult" nillable="true" type="q29:ArrayOfProjects" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAuthors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="surname_author" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name_author" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patronymic_author" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewAuthorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewAuthorsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCatCrit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_cat" type="xs:int" />
+        <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCatCritResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewCatCritResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCategories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_category" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCategoriesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewCategoriesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCriterions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_crit" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="qualit_crit" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCriterionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewCriterionsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCritValues">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+        <xs:element minOccurs="0" name="valid_values" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewCritValuesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewCritValuesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpCrit">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_exp" type="xs:int" />
+        <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpCritResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewExpCritResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertFos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+        <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertFosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewExpertFosResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertiseMark">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+        <xs:element minOccurs="0" name="id_mark" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertiseMarkResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewExpertiseMarkResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertises">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertisesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewExpertisesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExperts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="surname_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="name_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="patronymic_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="job_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="post_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="degree_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewExpertsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewExpertsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewFiledsOfScience">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewFiledsOfScienceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewFiledsOfScienceResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewGRNTI">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_grnti" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewGRNTIResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewGRNTIResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewMarks">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+        <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+        <xs:element minOccurs="0" name="id_project" type="xs:int" />
+        <xs:element minOccurs="0" name="rating" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewMarksResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewMarksResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectAuthors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_proj" type="xs:int" />
+        <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectAuthorsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewProjectAuthorsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectExpertise">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+        <xs:element minOccurs="0" name="id_project" type="xs:int" />
+        <xs:element minOccurs="0" name="accept" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectExpertiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewProjectExpertiseResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectFos">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_project" type="xs:int" />
+        <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectFosResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewProjectFosResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddNewProjectsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddNewProjectsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesForExpertise">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTablesForExpertiseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetTablesForExpertiseResult" nillable="true" type="q30:TablesForExpertise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
