@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="AddCriterions_categories" Height="373.334" Width="394.667">
+        Title="AddCriterions_categories" Height="373.334" Width="394.667" MaxHeight="374" MaxWidth="395">
     <Grid>
         <TabControl x:Name="tabControl" BorderBrush="White" Foreground="White">
             <TabItem Header="" Height="0" Width="0" Margin="0">
                 <Grid >
-                    <Label x:Name="label" Content="Название" HorizontalAlignment="Left" Margin="10,53,0,0" VerticalAlignment="Top"/>
-                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="88,56,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-                    <Button x:Name="button" Content="Сохранить" HorizontalAlignment="Left" Margin="88,105,0,0" VerticalAlignment="Top" Width="105" Height="33" Click="button_Click"/>
+                    <Label x:Name="label" Content="Название" HorizontalAlignment="Left" Margin="91,112,0,0" VerticalAlignment="Top"/>
+                    <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="24" Margin="169,114,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+                    <Button x:Name="button" Content="Сохранить" HorizontalAlignment="Left" Margin="91,164,0,0" VerticalAlignment="Top" Width="198" Height="32" Click="button_Click"/>
                 </Grid>
             </TabItem>
             <TabItem Header="" Height="0" Width="0" Margin="0">

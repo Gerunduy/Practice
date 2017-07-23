@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="FiledsOfScience" Height="281.25" Width="654.375">
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="207" Width="626">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True" Margin="10">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="2.4*" Binding="{Binding name_fos}" Header="Направление науки" />
                 <DataGridTemplateColumn Width="*" Header="Редактирование">
@@ -20,18 +24,10 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
 
-                <DataGridTemplateColumn Width="*" Header="Удаление">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-
-                            <Button Content="Удалить"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_deletefos_Click"/>
-
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
+                
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="10,222,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button" Grid.Row="1" Content="Добавить" Margin="254,10,288,10" Click="button_Click" RenderTransformOrigin="0.5,0.5"/>
 
     </Grid>
 </Window>

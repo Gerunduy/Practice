@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="FOSCard" Height="254" Width="412.5">
+        Title="FOSCard" Height="254" Width="412.5" MaxHeight="254" MaxWidth="413" >
     <Grid>
         <Label x:Name="label" Content="название" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="33" Margin="76,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="318"/>

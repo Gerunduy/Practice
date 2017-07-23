@@ -5,34 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ExpertCard" Height="617.981" Width="667.211">
+        Title="ExpertCard" Height="617.981" Width="667.211" MaxHeight="620" MaxWidth="670">
     <Grid>
-        <Label x:Name="label" Content="Фамилия" HorizontalAlignment="Left" Margin="35,30,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Имя" HorizontalAlignment="Left" Margin="35,57,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Отчество" HorizontalAlignment="Left" Margin="35,85,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="Место работы" HorizontalAlignment="Left" Margin="35,112,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Ученая степень" HorizontalAlignment="Left" Margin="35,171,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Ученое звание" HorizontalAlignment="Left" Margin="35,199,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6" Content="Направление работы" HorizontalAlignment="Left" Margin="35,229,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="Контактные данные" HorizontalAlignment="Left" Margin="36,357,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,33,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,61,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox2" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,89,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox3" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,117,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox4" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,173,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox5" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,201,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox6" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="177,360,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label" Content="Фамилия" HorizontalAlignment="Left" Margin="136,33,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Имя" HorizontalAlignment="Left" Margin="136,60,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Отчество" HorizontalAlignment="Left" Margin="136,88,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="Место работы" HorizontalAlignment="Left" Margin="136,115,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="Ученая степень" HorizontalAlignment="Left" Margin="136,174,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Ученое звание" HorizontalAlignment="Left" Margin="136,202,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Направление работы" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Content="Контактные данные" HorizontalAlignment="Left" Margin="137,360,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox1" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox2" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox3" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox4" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox5" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <TextBox x:Name="textBox6" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="278,363,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
-        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Margin="35,256,0,0" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" Width="262">
+        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Margin="136,259,0,0" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" Width="393">
             <ScrollViewer  VerticalScrollBarVisibility="Visible">
                 <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top"  Width="239" Height="61"/>
             </ScrollViewer>
         </Border>
 
         <Button x:Name="button" Content="Редактировать" HorizontalAlignment="Left" Margin="114,403,0,0" VerticalAlignment="Top" Width="136" Height="39" Click="button_Click"/>
-        <Label x:Name="label8" Content="Должность" HorizontalAlignment="Left" Margin="35,142,0,0" VerticalAlignment="Top" Width="88"/>
-        <TextBox x:Name="textBox7" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="176,145,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="176,229,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged">
+        <Label x:Name="label8" Content="Должность" HorizontalAlignment="Left" Margin="136,145,0,0" VerticalAlignment="Top" Width="88"/>
+        <TextBox x:Name="textBox7" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
+        <ComboBox x:Name="comboBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="277,232,0,0" VerticalAlignment="Top" Width="252" SelectionChanged="comboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=name_fos}">
@@ -41,7 +41,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="button1" Content="очистить" Visibility="Hidden" HorizontalAlignment="Left" Margin="130,324,0,0" VerticalAlignment="Top" Width="75" Click="button1_Click"/>
+        <Button x:Name="button1" Content="очистить" Visibility="Hidden" Margin="260,329,285,0" VerticalAlignment="Top" Click="button1_Click"/>
         <Button x:Name="button2" Content="удалить карточку" HorizontalAlignment="Left" Margin="466,403,0,0" VerticalAlignment="Top" Width="133" Height="39" Click="button2_Click"/>
         <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="130" BorderBrush="White" Foreground="White" Margin="10,447,0,0" VerticalAlignment="Top" Width="639">
             <TabItem Header="" Height="0" Width="0" Margin="0">
@@ -63,7 +63,7 @@
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            
+
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>

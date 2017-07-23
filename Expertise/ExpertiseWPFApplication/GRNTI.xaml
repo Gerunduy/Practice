@@ -9,8 +9,8 @@
     <Grid>
         <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10">
             <DataGrid.Columns>
-                <DataGridTextColumn Width="*" Binding="{Binding code_grnti }" Header="Код ГРНТИ" />
-                <DataGridTextColumn Width="1.3*" Binding="{Binding name_grnti  }" Header="Название"/>
+                <DataGridTextColumn Width="20*" Binding="{Binding code_grnti }" Header="Код ГРНТИ" />
+                <DataGridTextColumn Width="80*" Binding="{Binding name_grnti  }" Header="Название"/>
             </DataGrid.Columns>
         </DataGrid>
 

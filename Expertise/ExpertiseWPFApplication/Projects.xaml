@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Projects" Height="300" Width="780">
+        Title="Projects" Height="300" Width="795">
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True"  Margin="10,10,10,98">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True"  Margin="10">
             <DataGrid.Columns>
 
                 <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Номер п\п" />

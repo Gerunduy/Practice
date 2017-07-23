@@ -73,9 +73,6 @@ namespace ExpertiseWPFApplication
             }
         }
 
-        private void bt_deletefos_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
     }
 }

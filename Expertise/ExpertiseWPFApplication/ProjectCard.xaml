@@ -5,28 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ProjectCard" Height="475" Width="432">
-    <Grid>
-        <Label x:Name="label" Content="Наименование проекта" HorizontalAlignment="Left" Margin="10,26,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Руководитель проекта" HorizontalAlignment="Left" Margin="10,52,0,0" VerticalAlignment="Top"/>
+        Title="ProjectCard" Height="475" Width="487" MaxHeight="500">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30*"></ColumnDefinition>
+            <ColumnDefinition Width="10*"></ColumnDefinition>
 
-        <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Margin="17,114,0,0" Height="81" VerticalAlignment="Top" HorizontalAlignment="Left" Width="274">
+
+        </Grid.ColumnDefinitions>
+
+
+        <Label x:Name="label" Grid.Column="0" Content="Наименование проекта" Margin="10,26,0,0" HorizontalAlignment="Left" Width="140" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Grid.Column="0" Content="Руководитель проекта" HorizontalAlignment="Left" Margin="10,52,0,0" Height="26" VerticalAlignment="Top"/>
+
+        <Border x:Name="border" Grid.Column="0" BorderBrush="Black" BorderThickness="1" Margin="17,114,10,0" Height="81" VerticalAlignment="Top">
             <ScrollViewer  VerticalScrollBarVisibility="Visible">
-                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top"  Width="246" Height="79"/>
+                <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap"  VerticalAlignment="Top"  Width="311" Height="79"/>
             </ScrollViewer>
         </Border>
-        <Label x:Name="label2" Content="Авторский коллектив" HorizontalAlignment="Left" Margin="10,83,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label3" Content="Область знаний" HorizontalAlignment="Left" Margin="17,200,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label4" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="17,231,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Дата начала проекта" HorizontalAlignment="Left" Margin="17,262,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6" Content="Дата завершения" HorizontalAlignment="Left" Margin="17,284,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="Сумма финансирования" HorizontalAlignment="Left" Margin="17,310,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label8" Content="Контактные данные" HorizontalAlignment="Left" Margin="17,341,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="171,30,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="171,58,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox6" HorizontalAlignment="Left" Height="23" Margin="171,316,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox7" HorizontalAlignment="Left" Height="23" Margin="171,344,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="comboBox" Visibility="Visible" HorizontalAlignment="Left" Margin="171,87,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged">
+        <Label x:Name="label2" Grid.Column="0" Content="Авторский коллектив" HorizontalAlignment="Left" Margin="10,83,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Grid.Column="0" Content="Область знаний" HorizontalAlignment="Left" Margin="17,200,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Grid.Column="0" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="17,231,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Grid.Column="0" Content="Дата начала проекта" HorizontalAlignment="Left" Margin="17,262,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Grid.Column="0" Content="Дата завершения" HorizontalAlignment="Left" Margin="17,284,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Grid.Column="0" Content="Сумма финансирования" HorizontalAlignment="Left" Margin="17,310,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label8" Grid.Column="0" Content="Контактные данные" HorizontalAlignment="Left" Margin="17,341,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" Grid.Column="0" Height="23" Margin="171,30,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" Grid.Column="0" Height="23" Margin="171,58,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox6" Grid.Column="0" Height="23" Margin="171,316,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox7" Grid.Column="0" Height="23" Margin="171,344,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" Grid.Column="0" Visibility="Visible" Margin="171,87,10,0" VerticalAlignment="Top" SelectionChanged="comboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=FIO}">
@@ -35,7 +43,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="comboBox1" Visibility="Visible" HorizontalAlignment="Left" Margin="171,204,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox1_SelectionChanged">
+        <ComboBox x:Name="comboBox1" Grid.Column="0" Visibility="Visible" Margin="171,204,10,0" VerticalAlignment="Top" SelectionChanged="comboBox1_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=name_fos}">
@@ -44,10 +52,14 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="button" Content="Сохранить" HorizontalAlignment="Left" Margin="151,392,0,0" VerticalAlignment="Top" Width="108" Height="42" Click="button_Click"/>
-        <Button x:Name="button1" Content="Новый автор" HorizontalAlignment="Left" Margin="296,87,0,0" VerticalAlignment="Top" Width="118" Height="22" Click="button1_Click"/>
-        <Button x:Name="button2" Content="очистить авторов" HorizontalAlignment="Left" Margin="296,175,0,0" VerticalAlignment="Top" Width="118" Click="button2_Click"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="171,231,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox2_SelectionChanged">
+        <Button x:Name="button" Content="Сохранить" Grid.Column="0" Margin="151,392,100,0" VerticalAlignment="Top" Height="42" Click="button_Click"/>
+        <Button x:Name="button1" Grid.Column="1" Content="Новый автор" Margin="10,87,10,0" VerticalAlignment="Top" Height="22" Click="button1_Click" RenderTransformOrigin="0.5,0.5">
+
+        </Button>
+        <Button x:Name="button2" Grid.Column="1" Content="очистить авторов" Margin="10,175,6,0" VerticalAlignment="Top" Click="button2_Click" RenderTransformOrigin="0.5,0.5">
+
+        </Button>
+        <ComboBox x:Name="comboBox2" Grid.Column="0" Margin="171,231,10,0" VerticalAlignment="Top" SelectionChanged="comboBox2_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Path=name_grnti}">
@@ -56,7 +68,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DatePicker Name="datePicker1" HorizontalAlignment="Left" Margin="171,258,0,0" VerticalAlignment="Top" Width="120"/>
-        <DatePicker Name="datePicker2" HorizontalAlignment="Left" Margin="171,287,0,0" VerticalAlignment="Top" Width="120"/>
+        <DatePicker Name="datePicker1" Grid.Column="0" Margin="171,258,10,0" VerticalAlignment="Top"/>
+        <DatePicker Name="datePicker2" Grid.Column="0" Margin="171,287,10,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>
