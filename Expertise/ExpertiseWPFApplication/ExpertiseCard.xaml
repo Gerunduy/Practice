@@ -51,7 +51,7 @@
                     </ComboBox.ItemTemplate>
                 </ComboBox>
             </Grid>
-            <Grid Grid.Row="2" Grid.Column="0">
+            <Grid Grid.Row="2" Grid.Column="0" Name="gProjects">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="5"/>
@@ -94,7 +94,7 @@
                     </DataGrid.Columns>
                 </DataGrid>
             </Grid>
-            <Grid Grid.Row="4" Grid.Column="0">
+            <Grid Grid.Row="4" Grid.Column="0" Name="gCriterions">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="5"/>
@@ -154,7 +154,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="0">Количество проектов, <LineBreak/> которые предполагается поддержать:</TextBlock>
                 <TextBox Grid.Row="0" Grid.Column="2" FontSize="19" Text="1" TextAlignment="Center"/>
             </Grid>
-            <Grid Grid.Row="8" Grid.Column="0">
+            <Grid Grid.Row="8" Grid.Column="0" Name="gExperts">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="5"/>
