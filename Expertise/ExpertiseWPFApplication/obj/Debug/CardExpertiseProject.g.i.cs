@@ -256,6 +256,14 @@ namespace ExpertiseWPFApplication {
         #line default
         #line hidden
         
+        
+        #line 77 "..\..\CardExpertiseProject.xaml"
+        [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1823:AvoidUnusedPrivateFields")]
+        internal System.Windows.Controls.Button button4;
+        
+        #line default
+        #line hidden
+        
         private bool _contentLoaded;
         
         /// <summary>
@@ -408,6 +416,15 @@ namespace ExpertiseWPFApplication {
             return;
             case 27:
             this.dataGrid = ((System.Windows.Controls.DataGrid)(target));
+            return;
+            case 28:
+            this.button4 = ((System.Windows.Controls.Button)(target));
+            
+            #line 77 "..\..\CardExpertiseProject.xaml"
+            this.button4.Click += new System.Windows.RoutedEventHandler(this.button4_Click);
+            
+            #line default
+            #line hidden
             return;
             }
             this._contentLoaded = true;

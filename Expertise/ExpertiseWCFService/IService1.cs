@@ -24,6 +24,9 @@ namespace ExpertiseWCFService
         List<myAuthors> GetListAuthorsForProject(int id_project);
 
         [OperationContract]
+        List<Experts> GetListExpertForProject(int id_project);
+
+        [OperationContract]
         List<CatCrit> GetListCatCrit();
 
         [OperationContract]
@@ -170,6 +173,10 @@ namespace ExpertiseWCFService
         [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
+
+      
+
+
         [OperationContract]
         List<FiledsOfScience> test();
         [OperationContract]
@@ -243,6 +250,7 @@ namespace ExpertiseWCFService
 
         // TODO: Добавьте здесь операции служб
     }
+
 
     public class myAuthors
     {

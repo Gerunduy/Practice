@@ -453,6 +453,11 @@ namespace ExpertiseWCFService
             return ListAuthor;
         }
 
+        public List<Experts> GetListExpertForProject(int id_project)
+        {
+
+        }
+
         #endregion
 
         #region Получение полных таблиц

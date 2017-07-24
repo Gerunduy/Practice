@@ -64,3 +64,4 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\bin\Microsoft.
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\bin\ru\EntityFramework.resources.dll
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.dll
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.pdb
+C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.csprojResolveAssemblyReference.cache
