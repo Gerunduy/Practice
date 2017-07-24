@@ -173,12 +173,13 @@ namespace ExpertiseWCFService
         [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
+        [OperationContract]
+        List<myRaitinfExpert> GetListRaitingForExpertise(int id_project);
 
-      
 
 
         [OperationContract]
-        List<FiledsOfScience> test();
+        List<ProjectExpertise> test();
         [OperationContract]
         void test2();
 
@@ -251,6 +252,11 @@ namespace ExpertiseWCFService
         // TODO: Добавьте здесь операции служб
     }
 
+    public class myRaitinfExpert
+    {
+        public string name_crit { get; set; }
+        public string raiting_crit { get; set; }
+    }
 
     public class myAuthors
     {

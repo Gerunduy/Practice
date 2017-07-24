@@ -124,1192 +124,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CatCrit", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class CatCrit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Categories CategoriesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_catField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_cat_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_critField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Categories Categories {
-            get {
-                return this.CategoriesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CategoriesField, value) != true)) {
-                    this.CategoriesField = value;
-                    this.RaisePropertyChanged("Categories");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
-            get {
-                return this.CriterionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
-                    this.CriterionsField = value;
-                    this.RaisePropertyChanged("Criterions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_cat {
-            get {
-                return this.id_catField;
-            }
-            set {
-                if ((this.id_catField.Equals(value) != true)) {
-                    this.id_catField = value;
-                    this.RaisePropertyChanged("id_cat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_cat_crit {
-            get {
-                return this.id_cat_critField;
-            }
-            set {
-                if ((this.id_cat_critField.Equals(value) != true)) {
-                    this.id_cat_critField = value;
-                    this.RaisePropertyChanged("id_cat_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_crit {
-            get {
-                return this.id_critField;
-            }
-            set {
-                if ((this.id_critField.Equals(value) != true)) {
-                    this.id_critField = value;
-                    this.RaisePropertyChanged("id_crit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class Categories : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCritField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_categoryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string name_categoryField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCrit {
-            get {
-                return this.CatCritField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CatCritField, value) != true)) {
-                    this.CatCritField = value;
-                    this.RaisePropertyChanged("CatCrit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_category {
-            get {
-                return this.id_categoryField;
-            }
-            set {
-                if ((this.id_categoryField.Equals(value) != true)) {
-                    this.id_categoryField = value;
-                    this.RaisePropertyChanged("id_category");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name_category {
-            get {
-                return this.name_categoryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.name_categoryField, value) != true)) {
-                    this.name_categoryField = value;
-                    this.RaisePropertyChanged("name_category");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Criterions", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class Criterions : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCritField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.CritValues[] CritValuesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCritField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Marks[] MarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string name_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool qualit_critField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCrit {
-            get {
-                return this.CatCritField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CatCritField, value) != true)) {
-                    this.CatCritField = value;
-                    this.RaisePropertyChanged("CatCrit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.CritValues[] CritValues {
-            get {
-                return this.CritValuesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CritValuesField, value) != true)) {
-                    this.CritValuesField = value;
-                    this.RaisePropertyChanged("CritValues");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCrit {
-            get {
-                return this.ExpCritField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpCritField, value) != true)) {
-                    this.ExpCritField = value;
-                    this.RaisePropertyChanged("ExpCrit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Marks[] Marks {
-            get {
-                return this.MarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarksField, value) != true)) {
-                    this.MarksField = value;
-                    this.RaisePropertyChanged("Marks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_crit {
-            get {
-                return this.id_critField;
-            }
-            set {
-                if ((this.id_critField.Equals(value) != true)) {
-                    this.id_critField = value;
-                    this.RaisePropertyChanged("id_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name_crit {
-            get {
-                return this.name_critField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.name_critField, value) != true)) {
-                    this.name_critField = value;
-                    this.RaisePropertyChanged("name_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool qualit_crit {
-            get {
-                return this.qualit_critField;
-            }
-            set {
-                if ((this.qualit_critField.Equals(value) != true)) {
-                    this.qualit_critField = value;
-                    this.RaisePropertyChanged("qualit_crit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CritValues", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class CritValues : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_valueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string valid_valuesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
-            get {
-                return this.CriterionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
-                    this.CriterionsField = value;
-                    this.RaisePropertyChanged("Criterions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_crit {
-            get {
-                return this.id_critField;
-            }
-            set {
-                if ((this.id_critField.Equals(value) != true)) {
-                    this.id_critField = value;
-                    this.RaisePropertyChanged("id_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_value {
-            get {
-                return this.id_valueField;
-            }
-            set {
-                if ((this.id_valueField.Equals(value) != true)) {
-                    this.id_valueField = value;
-                    this.RaisePropertyChanged("id_value");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string valid_values {
-            get {
-                return this.valid_valuesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.valid_valuesField, value) != true)) {
-                    this.valid_valuesField = value;
-                    this.RaisePropertyChanged("valid_values");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpCrit", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class ExpCrit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_exp_critField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
-            get {
-                return this.CriterionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
-                    this.CriterionsField = value;
-                    this.RaisePropertyChanged("Criterions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
-            get {
-                return this.ExpertisesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
-                    this.ExpertisesField = value;
-                    this.RaisePropertyChanged("Expertises");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_crit {
-            get {
-                return this.id_critField;
-            }
-            set {
-                if ((this.id_critField.Equals(value) != true)) {
-                    this.id_critField = value;
-                    this.RaisePropertyChanged("id_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_exp {
-            get {
-                return this.id_expField;
-            }
-            set {
-                if ((this.id_expField.Equals(value) != true)) {
-                    this.id_expField = value;
-                    this.RaisePropertyChanged("id_exp");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_exp_crit {
-            get {
-                return this.id_exp_critField;
-            }
-            set {
-                if ((this.id_exp_critField.Equals(value) != true)) {
-                    this.id_exp_critField = value;
-                    this.RaisePropertyChanged("id_exp_crit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Marks", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class Marks : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Experts ExpertsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_critField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_markField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_projectField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int ratingField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
-            get {
-                return this.CriterionsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
-                    this.CriterionsField = value;
-                    this.RaisePropertyChanged("Criterions");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMark {
-            get {
-                return this.ExpertiseMarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertiseMarkField, value) != true)) {
-                    this.ExpertiseMarkField = value;
-                    this.RaisePropertyChanged("ExpertiseMark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Experts Experts {
-            get {
-                return this.ExpertsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertsField, value) != true)) {
-                    this.ExpertsField = value;
-                    this.RaisePropertyChanged("Experts");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_crit {
-            get {
-                return this.id_critField;
-            }
-            set {
-                if ((this.id_critField.Equals(value) != true)) {
-                    this.id_critField = value;
-                    this.RaisePropertyChanged("id_crit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expert {
-            get {
-                return this.id_expertField;
-            }
-            set {
-                if ((this.id_expertField.Equals(value) != true)) {
-                    this.id_expertField = value;
-                    this.RaisePropertyChanged("id_expert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_mark {
-            get {
-                return this.id_markField;
-            }
-            set {
-                if ((this.id_markField.Equals(value) != true)) {
-                    this.id_markField = value;
-                    this.RaisePropertyChanged("id_mark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_project {
-            get {
-                return this.id_projectField;
-            }
-            set {
-                if ((this.id_projectField.Equals(value) != true)) {
-                    this.id_projectField = value;
-                    this.RaisePropertyChanged("id_project");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int rating {
-            get {
-                return this.ratingField;
-            }
-            set {
-                if ((this.ratingField.Equals(value) != true)) {
-                    this.ratingField = value;
-                    this.RaisePropertyChanged("rating");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Expertises", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class Expertises : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCritField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] ExpertiseExpertField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime date_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool end_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string name_expertiseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCrit {
-            get {
-                return this.ExpCritField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpCritField, value) != true)) {
-                    this.ExpCritField = value;
-                    this.RaisePropertyChanged("ExpCrit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] ExpertiseExpert {
-            get {
-                return this.ExpertiseExpertField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertiseExpertField, value) != true)) {
-                    this.ExpertiseExpertField = value;
-                    this.RaisePropertyChanged("ExpertiseExpert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMark {
-            get {
-                return this.ExpertiseMarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertiseMarkField, value) != true)) {
-                    this.ExpertiseMarkField = value;
-                    this.RaisePropertyChanged("ExpertiseMark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertise {
-            get {
-                return this.ProjectExpertiseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectExpertiseField, value) != true)) {
-                    this.ProjectExpertiseField = value;
-                    this.RaisePropertyChanged("ProjectExpertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date_expertise {
-            get {
-                return this.date_expertiseField;
-            }
-            set {
-                if ((this.date_expertiseField.Equals(value) != true)) {
-                    this.date_expertiseField = value;
-                    this.RaisePropertyChanged("date_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool end_expertise {
-            get {
-                return this.end_expertiseField;
-            }
-            set {
-                if ((this.end_expertiseField.Equals(value) != true)) {
-                    this.end_expertiseField = value;
-                    this.RaisePropertyChanged("end_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise {
-            get {
-                return this.id_expertiseField;
-            }
-            set {
-                if ((this.id_expertiseField.Equals(value) != true)) {
-                    this.id_expertiseField = value;
-                    this.RaisePropertyChanged("id_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string name_expertise {
-            get {
-                return this.name_expertiseField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.name_expertiseField, value) != true)) {
-                    this.name_expertiseField = value;
-                    this.RaisePropertyChanged("name_expertise");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpertiseExpert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class ExpertiseExpert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Experts ExpertsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertise_expertField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
-            get {
-                return this.ExpertisesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
-                    this.ExpertisesField = value;
-                    this.RaisePropertyChanged("Expertises");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Experts Experts {
-            get {
-                return this.ExpertsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertsField, value) != true)) {
-                    this.ExpertsField = value;
-                    this.RaisePropertyChanged("Experts");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expert {
-            get {
-                return this.id_expertField;
-            }
-            set {
-                if ((this.id_expertField.Equals(value) != true)) {
-                    this.id_expertField = value;
-                    this.RaisePropertyChanged("id_expert");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise {
-            get {
-                return this.id_expertiseField;
-            }
-            set {
-                if ((this.id_expertiseField.Equals(value) != true)) {
-                    this.id_expertiseField = value;
-                    this.RaisePropertyChanged("id_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise_expert {
-            get {
-                return this.id_expertise_expertField;
-            }
-            set {
-                if ((this.id_expertise_expertField.Equals(value) != true)) {
-                    this.id_expertise_expertField = value;
-                    this.RaisePropertyChanged("id_expertise_expert");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ExpertiseMark", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class ExpertiseMark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Marks MarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertise_markField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_markField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
-            get {
-                return this.ExpertisesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
-                    this.ExpertisesField = value;
-                    this.RaisePropertyChanged("Expertises");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Marks Marks {
-            get {
-                return this.MarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarksField, value) != true)) {
-                    this.MarksField = value;
-                    this.RaisePropertyChanged("Marks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise {
-            get {
-                return this.id_expertiseField;
-            }
-            set {
-                if ((this.id_expertiseField.Equals(value) != true)) {
-                    this.id_expertiseField = value;
-                    this.RaisePropertyChanged("id_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise_mark {
-            get {
-                return this.id_expertise_markField;
-            }
-            set {
-                if ((this.id_expertise_markField.Equals(value) != true)) {
-                    this.id_expertise_markField = value;
-                    this.RaisePropertyChanged("id_expertise_mark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_mark {
-            get {
-                return this.id_markField;
-            }
-            set {
-                if ((this.id_markField.Equals(value) != true)) {
-                    this.id_markField = value;
-                    this.RaisePropertyChanged("id_mark");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
-    [System.SerializableAttribute()]
-    public partial class ProjectExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private ExpertiseWPFApplication.ServiceReference1.Projects ProjectsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool acceptField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_projectField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int id_project_expertiseField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
-            get {
-                return this.ExpertisesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
-                    this.ExpertisesField = value;
-                    this.RaisePropertyChanged("Expertises");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public ExpertiseWPFApplication.ServiceReference1.Projects Projects {
-            get {
-                return this.ProjectsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
-                    this.ProjectsField = value;
-                    this.RaisePropertyChanged("Projects");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool accept {
-            get {
-                return this.acceptField;
-            }
-            set {
-                if ((this.acceptField.Equals(value) != true)) {
-                    this.acceptField = value;
-                    this.RaisePropertyChanged("accept");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_expertise {
-            get {
-                return this.id_expertiseField;
-            }
-            set {
-                if ((this.id_expertiseField.Equals(value) != true)) {
-                    this.id_expertiseField = value;
-                    this.RaisePropertyChanged("id_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_project {
-            get {
-                return this.id_projectField;
-            }
-            set {
-                if ((this.id_projectField.Equals(value) != true)) {
-                    this.id_projectField = value;
-                    this.RaisePropertyChanged("id_project");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id_project_expertise {
-            get {
-                return this.id_project_expertiseField;
-            }
-            set {
-                if ((this.id_project_expertiseField.Equals(value) != true)) {
-                    this.id_project_expertiseField = value;
-                    this.RaisePropertyChanged("id_project_expertise");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Experts", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class Experts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -1672,6 +486,272 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.id_fosField.Equals(value) != true)) {
                     this.id_fosField = value;
                     this.RaisePropertyChanged("id_fos");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpertiseExpert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class ExpertiseExpert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Experts ExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertise_expertField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
+            get {
+                return this.ExpertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
+                    this.ExpertisesField = value;
+                    this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Experts Experts {
+            get {
+                return this.ExpertsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertsField, value) != true)) {
+                    this.ExpertsField = value;
+                    this.RaisePropertyChanged("Experts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expert {
+            get {
+                return this.id_expertField;
+            }
+            set {
+                if ((this.id_expertField.Equals(value) != true)) {
+                    this.id_expertField = value;
+                    this.RaisePropertyChanged("id_expert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise {
+            get {
+                return this.id_expertiseField;
+            }
+            set {
+                if ((this.id_expertiseField.Equals(value) != true)) {
+                    this.id_expertiseField = value;
+                    this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise_expert {
+            get {
+                return this.id_expertise_expertField;
+            }
+            set {
+                if ((this.id_expertise_expertField.Equals(value) != true)) {
+                    this.id_expertise_expertField = value;
+                    this.RaisePropertyChanged("id_expertise_expert");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Marks", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Marks : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Experts ExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_markField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int ratingField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
+            get {
+                return this.CriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
+                    this.CriterionsField = value;
+                    this.RaisePropertyChanged("Criterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMark {
+            get {
+                return this.ExpertiseMarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertiseMarkField, value) != true)) {
+                    this.ExpertiseMarkField = value;
+                    this.RaisePropertyChanged("ExpertiseMark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Experts Experts {
+            get {
+                return this.ExpertsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertsField, value) != true)) {
+                    this.ExpertsField = value;
+                    this.RaisePropertyChanged("Experts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_crit {
+            get {
+                return this.id_critField;
+            }
+            set {
+                if ((this.id_critField.Equals(value) != true)) {
+                    this.id_critField = value;
+                    this.RaisePropertyChanged("id_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expert {
+            get {
+                return this.id_expertField;
+            }
+            set {
+                if ((this.id_expertField.Equals(value) != true)) {
+                    this.id_expertField = value;
+                    this.RaisePropertyChanged("id_expert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_mark {
+            get {
+                return this.id_markField;
+            }
+            set {
+                if ((this.id_markField.Equals(value) != true)) {
+                    this.id_markField = value;
+                    this.RaisePropertyChanged("id_mark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_project {
+            get {
+                return this.id_projectField;
+            }
+            set {
+                if ((this.id_projectField.Equals(value) != true)) {
+                    this.id_projectField = value;
+                    this.RaisePropertyChanged("id_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int rating {
+            get {
+                return this.ratingField;
+            }
+            set {
+                if ((this.ratingField.Equals(value) != true)) {
+                    this.ratingField = value;
+                    this.RaisePropertyChanged("rating");
                 }
             }
         }
@@ -2313,6 +1393,131 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProjectExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class ProjectExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Projects ProjectsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool acceptField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_project_expertiseField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
+            get {
+                return this.ExpertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
+                    this.ExpertisesField = value;
+                    this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Projects Projects {
+            get {
+                return this.ProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectsField, value) != true)) {
+                    this.ProjectsField = value;
+                    this.RaisePropertyChanged("Projects");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool accept {
+            get {
+                return this.acceptField;
+            }
+            set {
+                if ((this.acceptField.Equals(value) != true)) {
+                    this.acceptField = value;
+                    this.RaisePropertyChanged("accept");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise {
+            get {
+                return this.id_expertiseField;
+            }
+            set {
+                if ((this.id_expertiseField.Equals(value) != true)) {
+                    this.id_expertiseField = value;
+                    this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_project {
+            get {
+                return this.id_projectField;
+            }
+            set {
+                if ((this.id_projectField.Equals(value) != true)) {
+                    this.id_projectField = value;
+                    this.RaisePropertyChanged("id_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_project_expertise {
+            get {
+                return this.id_project_expertiseField;
+            }
+            set {
+                if ((this.id_project_expertiseField.Equals(value) != true)) {
+                    this.id_project_expertiseField = value;
+                    this.RaisePropertyChanged("id_project_expertise");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Authors", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class Authors : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2406,6 +1611,801 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.surname_authorField, value) != true)) {
                     this.surname_authorField = value;
                     this.RaisePropertyChanged("surname_author");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Expertises", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Expertises : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] ExpertiseExpertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime date_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool end_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_expertiseField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCrit {
+            get {
+                return this.ExpCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpCritField, value) != true)) {
+                    this.ExpCritField = value;
+                    this.RaisePropertyChanged("ExpCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] ExpertiseExpert {
+            get {
+                return this.ExpertiseExpertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertiseExpertField, value) != true)) {
+                    this.ExpertiseExpertField = value;
+                    this.RaisePropertyChanged("ExpertiseExpert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] ExpertiseMark {
+            get {
+                return this.ExpertiseMarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertiseMarkField, value) != true)) {
+                    this.ExpertiseMarkField = value;
+                    this.RaisePropertyChanged("ExpertiseMark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] ProjectExpertise {
+            get {
+                return this.ProjectExpertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectExpertiseField, value) != true)) {
+                    this.ProjectExpertiseField = value;
+                    this.RaisePropertyChanged("ProjectExpertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date_expertise {
+            get {
+                return this.date_expertiseField;
+            }
+            set {
+                if ((this.date_expertiseField.Equals(value) != true)) {
+                    this.date_expertiseField = value;
+                    this.RaisePropertyChanged("date_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool end_expertise {
+            get {
+                return this.end_expertiseField;
+            }
+            set {
+                if ((this.end_expertiseField.Equals(value) != true)) {
+                    this.end_expertiseField = value;
+                    this.RaisePropertyChanged("end_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise {
+            get {
+                return this.id_expertiseField;
+            }
+            set {
+                if ((this.id_expertiseField.Equals(value) != true)) {
+                    this.id_expertiseField = value;
+                    this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_expertise {
+            get {
+                return this.name_expertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_expertiseField, value) != true)) {
+                    this.name_expertiseField = value;
+                    this.RaisePropertyChanged("name_expertise");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpCrit", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class ExpCrit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_exp_critField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
+            get {
+                return this.CriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
+                    this.CriterionsField = value;
+                    this.RaisePropertyChanged("Criterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
+            get {
+                return this.ExpertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
+                    this.ExpertisesField = value;
+                    this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_crit {
+            get {
+                return this.id_critField;
+            }
+            set {
+                if ((this.id_critField.Equals(value) != true)) {
+                    this.id_critField = value;
+                    this.RaisePropertyChanged("id_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_exp {
+            get {
+                return this.id_expField;
+            }
+            set {
+                if ((this.id_expField.Equals(value) != true)) {
+                    this.id_expField = value;
+                    this.RaisePropertyChanged("id_exp");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_exp_crit {
+            get {
+                return this.id_exp_critField;
+            }
+            set {
+                if ((this.id_exp_critField.Equals(value) != true)) {
+                    this.id_exp_critField = value;
+                    this.RaisePropertyChanged("id_exp_crit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ExpertiseMark", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class ExpertiseMark : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertisesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Marks MarksField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertise_markField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_markField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertises {
+            get {
+                return this.ExpertisesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertisesField, value) != true)) {
+                    this.ExpertisesField = value;
+                    this.RaisePropertyChanged("Expertises");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Marks Marks {
+            get {
+                return this.MarksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarksField, value) != true)) {
+                    this.MarksField = value;
+                    this.RaisePropertyChanged("Marks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise {
+            get {
+                return this.id_expertiseField;
+            }
+            set {
+                if ((this.id_expertiseField.Equals(value) != true)) {
+                    this.id_expertiseField = value;
+                    this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise_mark {
+            get {
+                return this.id_expertise_markField;
+            }
+            set {
+                if ((this.id_expertise_markField.Equals(value) != true)) {
+                    this.id_expertise_markField = value;
+                    this.RaisePropertyChanged("id_expertise_mark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_mark {
+            get {
+                return this.id_markField;
+            }
+            set {
+                if ((this.id_markField.Equals(value) != true)) {
+                    this.id_markField = value;
+                    this.RaisePropertyChanged("id_mark");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Criterions", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Criterions : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CritValues[] CritValuesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Marks[] MarksField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool qualit_critField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCrit {
+            get {
+                return this.CatCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatCritField, value) != true)) {
+                    this.CatCritField = value;
+                    this.RaisePropertyChanged("CatCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] CritValues {
+            get {
+                return this.CritValuesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CritValuesField, value) != true)) {
+                    this.CritValuesField = value;
+                    this.RaisePropertyChanged("CritValues");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] ExpCrit {
+            get {
+                return this.ExpCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpCritField, value) != true)) {
+                    this.ExpCritField = value;
+                    this.RaisePropertyChanged("ExpCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Marks[] Marks {
+            get {
+                return this.MarksField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarksField, value) != true)) {
+                    this.MarksField = value;
+                    this.RaisePropertyChanged("Marks");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_crit {
+            get {
+                return this.id_critField;
+            }
+            set {
+                if ((this.id_critField.Equals(value) != true)) {
+                    this.id_critField = value;
+                    this.RaisePropertyChanged("id_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_crit {
+            get {
+                return this.name_critField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_critField, value) != true)) {
+                    this.name_critField = value;
+                    this.RaisePropertyChanged("name_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool qualit_crit {
+            get {
+                return this.qualit_critField;
+            }
+            set {
+                if ((this.qualit_critField.Equals(value) != true)) {
+                    this.qualit_critField = value;
+                    this.RaisePropertyChanged("qualit_crit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CatCrit", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class CatCrit : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Categories CategoriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_catField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_cat_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_critField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Categories Categories {
+            get {
+                return this.CategoriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoriesField, value) != true)) {
+                    this.CategoriesField = value;
+                    this.RaisePropertyChanged("Categories");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
+            get {
+                return this.CriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
+                    this.CriterionsField = value;
+                    this.RaisePropertyChanged("Criterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_cat {
+            get {
+                return this.id_catField;
+            }
+            set {
+                if ((this.id_catField.Equals(value) != true)) {
+                    this.id_catField = value;
+                    this.RaisePropertyChanged("id_cat");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_cat_crit {
+            get {
+                return this.id_cat_critField;
+            }
+            set {
+                if ((this.id_cat_critField.Equals(value) != true)) {
+                    this.id_cat_critField = value;
+                    this.RaisePropertyChanged("id_cat_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_crit {
+            get {
+                return this.id_critField;
+            }
+            set {
+                if ((this.id_critField.Equals(value) != true)) {
+                    this.id_critField = value;
+                    this.RaisePropertyChanged("id_crit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CritValues", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class CritValues : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_valueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string valid_valuesField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
+            get {
+                return this.CriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
+                    this.CriterionsField = value;
+                    this.RaisePropertyChanged("Criterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_crit {
+            get {
+                return this.id_critField;
+            }
+            set {
+                if ((this.id_critField.Equals(value) != true)) {
+                    this.id_critField = value;
+                    this.RaisePropertyChanged("id_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_value {
+            get {
+                return this.id_valueField;
+            }
+            set {
+                if ((this.id_valueField.Equals(value) != true)) {
+                    this.id_valueField = value;
+                    this.RaisePropertyChanged("id_value");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string valid_values {
+            get {
+                return this.valid_valuesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.valid_valuesField, value) != true)) {
+                    this.valid_valuesField = value;
+                    this.RaisePropertyChanged("valid_values");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Categories", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class Categories : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_categoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_categoryField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] CatCrit {
+            get {
+                return this.CatCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CatCritField, value) != true)) {
+                    this.CatCritField = value;
+                    this.RaisePropertyChanged("CatCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_category {
+            get {
+                return this.id_categoryField;
+            }
+            set {
+                if ((this.id_categoryField.Equals(value) != true)) {
+                    this.id_categoryField = value;
+                    this.RaisePropertyChanged("id_category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_category {
+            get {
+                return this.name_categoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_categoryField, value) != true)) {
+                    this.name_categoryField = value;
+                    this.RaisePropertyChanged("name_category");
                 }
             }
         }
@@ -3085,6 +3085,67 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="myRaitinfExpert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class myRaitinfExpert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_critField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string raiting_critField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_crit {
+            get {
+                return this.name_critField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_critField, value) != true)) {
+                    this.name_critField = value;
+                    this.RaisePropertyChanged("name_crit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string raiting_crit {
+            get {
+                return this.raiting_critField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.raiting_critField, value) != true)) {
+                    this.raiting_critField = value;
+                    this.RaisePropertyChanged("raiting_crit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Expertise_Expert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class Expertise_Expert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -3312,6 +3373,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginGetListAuthorsForProject(int id_project, System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.myAuthors[] EndGetListAuthorsForProject(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListExpertForProject", ReplyAction="http://tempuri.org/IService1/GetListExpertForProjectResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Experts[] GetListExpertForProject(int id_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListExpertForProject", ReplyAction="http://tempuri.org/IService1/GetListExpertForProjectResponse")]
+        System.IAsyncResult BeginGetListExpertForProject(int id_project, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Experts[] EndGetListExpertForProject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListCatCrit", ReplyAction="http://tempuri.org/IService1/GetListCatCritResponse")]
         ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListCatCrit();
@@ -3681,13 +3750,21 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListRaitingForExpertise", ReplyAction="http://tempuri.org/IService1/GetListRaitingForExpertiseResponse")]
+        ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] GetListRaitingForExpertise(int id_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListRaitingForExpertise", ReplyAction="http://tempuri.org/IService1/GetListRaitingForExpertiseResponse")]
+        System.IAsyncResult BeginGetListRaitingForExpertise(int id_project, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] EndGetListRaitingForExpertise(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
-        ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test();
+        ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] test();
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
         System.IAsyncResult Begintest(System.AsyncCallback callback, object asyncState);
         
-        ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] Endtest(System.IAsyncResult result);
+        ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Endtest(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/test2", ReplyAction="http://tempuri.org/IService1/test2Response")]
         void test2();
@@ -3907,6 +3984,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.myAuthors[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListExpertForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListExpertForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Experts[])(this.results[0]));
             }
         }
     }
@@ -4787,6 +4883,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListRaitingForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListRaitingForExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class testCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4796,10 +4911,10 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             this.results = results;
         }
         
-        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] Result {
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[])(this.results[0]));
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[])(this.results[0]));
             }
         }
     }
@@ -5130,6 +5245,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetListAuthorsForProjectCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListExpertForProjectDelegate;
+        
+        private EndOperationDelegate onEndGetListExpertForProjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListExpertForProjectCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListCatCritDelegate;
         
         private EndOperationDelegate onEndGetListCatCritDelegate;
@@ -5406,6 +5527,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetTablesForExpertiseCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListRaitingForExpertiseDelegate;
+        
+        private EndOperationDelegate onEndGetListRaitingForExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListRaitingForExpertiseCompletedDelegate;
+        
         private BeginOperationDelegate onBegintestDelegate;
         
         private EndOperationDelegate onEndtestDelegate;
@@ -5557,6 +5684,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetListAuthorsForProjectCompletedEventArgs> GetListAuthorsForProjectCompleted;
         
+        public event System.EventHandler<GetListExpertForProjectCompletedEventArgs> GetListExpertForProjectCompleted;
+        
         public event System.EventHandler<GetListCatCritCompletedEventArgs> GetListCatCritCompleted;
         
         public event System.EventHandler<GetListCategoriesCompletedEventArgs> GetListCategoriesCompleted;
@@ -5648,6 +5777,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<AddNewProjectsCompletedEventArgs> AddNewProjectsCompleted;
         
         public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
+        
+        public event System.EventHandler<GetListRaitingForExpertiseCompletedEventArgs> GetListRaitingForExpertiseCompleted;
         
         public event System.EventHandler<testCompletedEventArgs> testCompleted;
         
@@ -5837,6 +5968,56 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginGetListAuthorsForProjectDelegate, new object[] {
                         id_project}, this.onEndGetListAuthorsForProjectDelegate, this.onGetListAuthorsForProjectCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] GetListExpertForProject(int id_project) {
+            return base.Channel.GetListExpertForProject(id_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListExpertForProject(int id_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListExpertForProject(id_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] EndGetListExpertForProject(System.IAsyncResult result) {
+            return base.Channel.EndGetListExpertForProject(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListExpertForProject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            return this.BeginGetListExpertForProject(id_project, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListExpertForProject(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Experts[] retVal = this.EndGetListExpertForProject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListExpertForProjectCompleted(object state) {
+            if ((this.GetListExpertForProjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListExpertForProjectCompleted(this, new GetListExpertForProjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListExpertForProjectAsync(int id_project) {
+            this.GetListExpertForProjectAsync(id_project, null);
+        }
+        
+        public void GetListExpertForProjectAsync(int id_project, object userState) {
+            if ((this.onBeginGetListExpertForProjectDelegate == null)) {
+                this.onBeginGetListExpertForProjectDelegate = new BeginOperationDelegate(this.OnBeginGetListExpertForProject);
+            }
+            if ((this.onEndGetListExpertForProjectDelegate == null)) {
+                this.onEndGetListExpertForProjectDelegate = new EndOperationDelegate(this.OnEndGetListExpertForProject);
+            }
+            if ((this.onGetListExpertForProjectCompletedDelegate == null)) {
+                this.onGetListExpertForProjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListExpertForProjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListExpertForProjectDelegate, new object[] {
+                        id_project}, this.onEndGetListExpertForProjectDelegate, this.onGetListExpertForProjectCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListCatCrit() {
@@ -8145,7 +8326,57 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginGetTablesForExpertiseDelegate, null, this.onEndGetTablesForExpertiseDelegate, this.onGetTablesForExpertiseCompletedDelegate, userState);
         }
         
-        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] test() {
+        public ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] GetListRaitingForExpertise(int id_project) {
+            return base.Channel.GetListRaitingForExpertise(id_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListRaitingForExpertise(int id_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListRaitingForExpertise(id_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] EndGetListRaitingForExpertise(System.IAsyncResult result) {
+            return base.Channel.EndGetListRaitingForExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListRaitingForExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            return this.BeginGetListRaitingForExpertise(id_project, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListRaitingForExpertise(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] retVal = this.EndGetListRaitingForExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListRaitingForExpertiseCompleted(object state) {
+            if ((this.GetListRaitingForExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListRaitingForExpertiseCompleted(this, new GetListRaitingForExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListRaitingForExpertiseAsync(int id_project) {
+            this.GetListRaitingForExpertiseAsync(id_project, null);
+        }
+        
+        public void GetListRaitingForExpertiseAsync(int id_project, object userState) {
+            if ((this.onBeginGetListRaitingForExpertiseDelegate == null)) {
+                this.onBeginGetListRaitingForExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetListRaitingForExpertise);
+            }
+            if ((this.onEndGetListRaitingForExpertiseDelegate == null)) {
+                this.onEndGetListRaitingForExpertiseDelegate = new EndOperationDelegate(this.OnEndGetListRaitingForExpertise);
+            }
+            if ((this.onGetListRaitingForExpertiseCompletedDelegate == null)) {
+                this.onGetListRaitingForExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListRaitingForExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListRaitingForExpertiseDelegate, new object[] {
+                        id_project}, this.onEndGetListRaitingForExpertiseDelegate, this.onGetListRaitingForExpertiseCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] test() {
             return base.Channel.test();
         }
         
@@ -8155,7 +8386,7 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] Endtest(System.IAsyncResult result) {
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Endtest(System.IAsyncResult result) {
             return base.Channel.Endtest(result);
         }
         
@@ -8164,7 +8395,7 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         private object[] OnEndtest(System.IAsyncResult result) {
-            ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] retVal = this.Endtest(result);
+            ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] retVal = this.Endtest(result);
             return new object[] {
                     retVal};
         }

@@ -93,7 +93,7 @@ namespace ExpertiseWPFApplication
             {
                 for(int i = 0; i < e.Result.ToList().Count; i++)
                 {
-                    MessageBox.Show(e.Result[i].name_fos);
+                    //MessageBox.Show(e.Result[i].name_fos);
                 }
                 
             }

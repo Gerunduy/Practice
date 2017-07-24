@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,9 +34,93 @@ namespace ExpertiseWPFApplication
             client.GetListGRNTICompleted += Client_GetListGRNTICompleted;
             client.EditProjectCompleted += Client_EditProjectCompleted;
             client.DeleteProjectCompleted += Client_DeleteProjectCompleted;
+            client.GetListExpertForProjectCompleted += Client_GetListExpertForProjectCompleted;
+            client.GetListRaitingForExpertiseCompleted += Client_GetListRaitingForExpertiseCompleted;
+            //client.testCompleted += Client_testCompleted;
+            //client.testAsync();
             client.GetListAuthorsAsync();
             client.GetListFOSAsync();
             client.GetListGRNTIAsync();
+        }
+
+        //private void Client_testCompleted(object sender, ServiceReference1.testCompletedEventArgs e)
+        //{
+        //    if (e.Error == null)
+        //    {
+              
+        //        MessageBox.Show(e.Result.ToList()[0].id_expertise.ToString());
+        //        //DialogResult = true;
+        //    }
+
+
+        //    else
+        //    {
+        //        MessageBox.Show(e.Error.Message);
+        //        //DialogResult = false;
+        //    }
+        //}
+
+        private void Client_GetListRaitingForExpertiseCompleted(object sender, ServiceReference1.GetListRaitingForExpertiseCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                for (int i = 0; i < e.Result.ToList().Count; i++)
+                {
+                    DataTable dt = new DataTable();
+                    string s = e.Result.ToList()[i].raiting_crit;
+                    String[] words = s.Split(new char[] { ';' });
+                    string t="";
+                    for (int j = 0; i < words.Length - 1; j++)
+                    {
+                       
+                        t += "\"" + words[i] + "\"";
+                        //temp.name_term = words[j];
+                        //temp.value_term = i + 1;
+                        //_AddCriterions_categories.ListTerm.Add(temp);
+                    }
+                    //string f = ("\"1\", \"2\"");
+                    dt.Rows.Add(t);
+                    dataGrid.ItemsSource = dt.DefaultView;
+                }
+            }
+            else
+            {
+                MessageBox.Show(e.Error.Message);
+                
+            }
+        }
+
+        private void Client_GetListExpertForProjectCompleted(object sender, ServiceReference1.GetListExpertForProjectCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                if (e.Result.ToList().Count != 0)
+                {
+                    for (int i = 0; i < e.Result.ToList().Count; i++)
+                    {
+                        DataTable dt = new DataTable();
+                        dt.Columns.Add(e.Result.ToList()[i].surname_expert + e.Result.ToList()[i].name_expert + e.Result.ToList()[i].patronymic_expert);
+                        dataGrid.ItemsSource = dt.DefaultView;
+                    }
+                    
+                }
+                client.GetListRaitingForExpertiseAsync(id_project);
+
+
+                //DataTable dt = new DataTable();
+                //dt.Columns.Add("Заказчик");
+                //dt.Columns.Add("Количество");
+                //dt.Rows.Add("1", "2");
+                //my_DataGrid.Items.Add(dt);
+
+            }
+
+
+            else
+            {
+                MessageBox.Show(e.Error.Message);
+               
+            }
         }
 
         private void Client_DeleteProjectCompleted(object sender, ServiceReference1.DeleteProjectCompletedEventArgs e)
@@ -227,7 +312,7 @@ namespace ExpertiseWPFApplication
 
         private void button4_Click(object sender, RoutedEventArgs e)
         {
-
+            client.GetListExpertForProjectAsync(id_project);
         }
     }
 }

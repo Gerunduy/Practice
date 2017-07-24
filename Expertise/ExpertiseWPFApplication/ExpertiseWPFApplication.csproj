@@ -250,6 +250,9 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myProject.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ProjectAuthors.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -455,6 +455,68 @@ namespace ExpertiseWCFService
 
         public List<Experts> GetListExpertForProject(int id_project)
         {
+            ProjectExpertise PE = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == id_project);
+            List<Experts> listExperts = new List<Experts>();
+            if (PE != null)
+            {
+                int id_expertise = PE.id_expertise;
+                List<ExpertiseExpert> lEE = db_AAZ.ExpertiseExpert.Where(o => o.id_expertise == id_expertise).ToList();
+                
+                for (int i = 0; i < lEE.Count; i++)
+                {
+                    int  id_expert = lEE[i].id_expert;
+                    Experts expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
+                    Experts temp = new Experts();
+                    temp.id_expert = expert.id_expert;
+                    temp.name_expert = expert.name_expert;
+                    temp.patronymic_expert = expert.patronymic_expert;
+                    temp.surname_expert = expert.surname_expert;
+                    listExperts.Add(temp);
+                }
+                return listExperts;
+            }
+            return listExperts;
+        }
+
+        public List<myRaitinfExpert> GetListRaitingForExpertise(int id_project)
+        {
+            ProjectExpertise PE = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == id_project);
+            List<myRaitinfExpert> ListRatingforproject = new List<myRaitinfExpert>();
+            int id_expertise = PE.id_expertise;
+            List<Experts> listExperts = new List<Experts>();
+            if (PE != null)
+            {
+                List<ExpertiseExpert> lEE = db_AAZ.ExpertiseExpert.Where(o => o.id_expertise == id_expertise).ToList();
+                for (int i = 0; i < lEE.Count; i++)
+                {
+                    int id_expert = lEE[i].id_expert;
+                    Experts expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
+                    Experts temp = new Experts();
+                    temp.id_expert = expert.id_expert;
+                    temp.name_expert = expert.name_expert;
+                    temp.patronymic_expert = expert.patronymic_expert;
+                    temp.surname_expert = expert.surname_expert;
+                    listExperts.Add(temp);
+                }
+                List< ExpCrit> ListEC= db_AAZ.ExpCrit.Where(o => o.id_exp == id_expertise).ToList();
+                
+                for(int i = 0; i < ListEC.Count; i++)
+                {
+                    int id_crit = ListEC[i].id_crit;
+                    myRaitinfExpert myraex = new myRaitinfExpert();
+                    Criterions crit = db_AAZ.Criterions.FirstOrDefault(o => o.id_crit == id_crit);
+                    myraex.name_crit = crit.name_crit;
+                    for(int j = 0; j < listExperts.Count; j++)
+                    {
+                        int id_expert = listExperts[j].id_expert;
+                        Marks temp = db_AAZ.Marks.FirstOrDefault(o => o.id_crit == id_crit && o.id_expert== id_expert && o.id_project==id_project);
+                        myraex.raiting_crit += temp.rating + ";";
+                    }
+                    ListRatingforproject.Add(myraex);
+                }
+               
+            }
+            return ListRatingforproject;
 
         }
 
@@ -1335,43 +1397,24 @@ namespace ExpertiseWCFService
             }
         }
 
-        public List<FiledsOfScience> test()
+        public List<ProjectExpertise> test()
         {
-            //Experts tempexperts = new Experts();
-            //tempexperts.contacts_expert = "agfag@adw.ty";
-            //tempexperts.degree_expert = "2";
-            //tempexperts.delete_expert = false;
-            //tempexperts.job_expert = "КемГУ";
-            //tempexperts.name_expert = "Алексей";
-            //tempexperts.patronymic_expert = "Иванович";
-            //tempexperts.post_expert = "менджер";
-            //tempexperts.rank_expert = "преподавтель";
-            //tempexperts.surname_expert = "Иванов";
+            Projects pr = db_AAZ.Projects.FirstOrDefault(o => o.name_project == "Test_Proj2");
+            int id = pr.id_project;
+            List <ProjectExpertise> temp = db_AAZ.ProjectExpertise.Where(o => o.id_project == id).ToList();
 
-            //db_AAZ.Experts.Add(tempexperts);
-            //db_AAZ.SaveChanges();
-
-            //FiledsOfScience tempFiledsOfScience = new FiledsOfScience();
-            //tempFiledsOfScience.name_fos = "МАТЕМАТИКА, ИНФОРМАТИКА И НАУКИ О СИСТЕМАХ";
-            //db_AAZ.FiledsOfScience.Add(tempFiledsOfScience);
-            //db_AAZ.SaveChanges();
-            //FiledsOfScience tempFiledsOfScience2 = new FiledsOfScience();
-            //tempFiledsOfScience2.name_fos = "ФИЗИКА И НАУКИ О КОСМОСЕ";
-            //db_AAZ.FiledsOfScience.Add(tempFiledsOfScience2);
-            //db_AAZ.SaveChanges();
-
-            List<FiledsOfScience> result = new List<FiledsOfScience>();
-            List<FiledsOfScience> tmplE = db_AAZ.FiledsOfScience.ToList();
-            foreach (FiledsOfScience pE in tmplE)
-            {
-                FiledsOfScience tmpE = new FiledsOfScience();
-                tmpE.id_fos = pE.id_fos;
-                tmpE.name_fos = pE.name_fos;
+            //List<ProjectExpertise> result = new List<ProjectExpertise>();
+            //List<ProjectExpertise> tmplE = db_AAZ.ProjectExpertise.ToList();
+            //foreach (ProjectExpertise pE in tmplE)
+            //{
+            //    ProjectExpertise tmpE = new ProjectExpertise();
+            //    //tmpE.id_fos = pE.id_fos;
+            //    //tmpE.name_fos = pE.name_fos;
 
 
-                result.Add(tmpE);
-            }
-            return result;
+            //    result.Add(tmpE);
+            //}
+            return temp;
         }
         public void test2()
         {
