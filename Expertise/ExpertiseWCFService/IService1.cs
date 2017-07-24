@@ -21,6 +21,9 @@ namespace ExpertiseWCFService
         List<myAuthors> GetListAuthors();
 
         [OperationContract]
+        List<myAuthors> GetListAuthorsForProject(int id_project);
+
+        [OperationContract]
         List<CatCrit> GetListCatCrit();
 
         [OperationContract]
@@ -186,6 +189,10 @@ namespace ExpertiseWCFService
         bool EditFiledsOfScience(int id_fos, string name_fos);
 
         [OperationContract]
+        bool EditProject(int id_project,string name_project, string lead_project, string grnti_project, DateTime begin_project,
+            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+
+        [OperationContract]
         List<Expertise_Expert> Expertise_Expert(int id_expert);
 
 
@@ -205,6 +212,9 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         bool DeleteExpert(int id_expert);
+
+        [OperationContract]
+        bool DeleteProject(int id_project);
 
         [OperationContract]
         void AddExpert(string surname_expert, string name_expert, string patronymic_expert,

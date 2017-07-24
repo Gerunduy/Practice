@@ -28,7 +28,23 @@ namespace ExpertiseWPFApplication
         {
             InitializeComponent();
             client.GetListAuthorsCompleted += Client_GetListAuthorsCompleted;
+            client.AddProjectsCompleted += Client_AddProjectsCompleted;
             
+        }
+
+        private void Client_AddProjectsCompleted(object sender, ServiceReference1.AddProjectsCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+
+                DialogResult = true;
+            }
+            else
+            {
+                MessageBox.Show(e.Error.Message);
+                DialogResult = false;
+            }
+                
         }
 
         private void Client_GetListAuthorsCompleted(object sender, ServiceReference1.GetListAuthorsCompletedEventArgs e)
@@ -59,7 +75,7 @@ namespace ExpertiseWPFApplication
                 idAuthorList[i] = listauthor[i].id_author;
             }
             client.AddProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, idAuthorList, fos);
-            MessageBox.Show(begin_project.ToString());
+           
         }
 
         private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)

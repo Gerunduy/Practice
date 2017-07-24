@@ -20,6 +20,12 @@
   <wsdl:message name="IService1_GetListAuthors_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListAuthorsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListAuthorsForProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAuthorsForProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListAuthorsForProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListAuthorsForProjectResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListCatCrit_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListCatCrit" />
   </wsdl:message>
@@ -332,6 +338,12 @@
   <wsdl:message name="IService1_EditFiledsOfScience_OutputMessage">
     <wsdl:part name="parameters" element="tns:EditFiledsOfScienceResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_EditProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditProjectResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Expertise_Expert_InputMessage">
     <wsdl:part name="parameters" element="tns:Expertise_Expert" />
   </wsdl:message>
@@ -367,6 +379,12 @@
   </wsdl:message>
   <wsdl:message name="IService1_DeleteExpert_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProjectResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_AddExpert_InputMessage">
     <wsdl:part name="parameters" element="tns:AddExpert" />
@@ -418,6 +436,10 @@
     <wsdl:operation name="GetListAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAuthors" message="tns:IService1_GetListAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAuthorsResponse" message="tns:IService1_GetListAuthors_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListAuthorsForProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAuthorsForProject" message="tns:IService1_GetListAuthorsForProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAuthorsForProjectResponse" message="tns:IService1_GetListAuthorsForProject_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetListCatCrit">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCatCrit" message="tns:IService1_GetListCatCrit_InputMessage" />
@@ -627,6 +649,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditFiledsOfScience" message="tns:IService1_EditFiledsOfScience_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditFiledsOfScienceResponse" message="tns:IService1_EditFiledsOfScience_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="EditProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditProject" message="tns:IService1_EditProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditProjectResponse" message="tns:IService1_EditProject_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Expertise_Expert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Expertise_Expert" message="tns:IService1_Expertise_Expert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/Expertise_ExpertResponse" message="tns:IService1_Expertise_Expert_OutputMessage" />
@@ -650,6 +676,10 @@
     <wsdl:operation name="DeleteExpert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteExpert" message="tns:IService1_DeleteExpert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteExpertResponse" message="tns:IService1_DeleteExpert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteProject" message="tns:IService1_DeleteProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteProjectResponse" message="tns:IService1_DeleteProject_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddExpert">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert" message="tns:IService1_AddExpert_InputMessage" />
@@ -693,6 +723,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetListAuthors">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListAuthors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListAuthorsForProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListAuthorsForProject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1168,6 +1207,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="EditProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Expertise_Expert">
       <soap:operation soapAction="http://tempuri.org/IService1/Expertise_Expert" style="document" />
       <wsdl:input>
@@ -1215,6 +1263,15 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteExpert">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteProject" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
