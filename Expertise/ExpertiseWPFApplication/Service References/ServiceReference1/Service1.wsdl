@@ -236,6 +236,12 @@
   <wsdl:message name="IService1_AddNewExpertFos_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewExpertFosResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertiseExpert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertiseExpert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewExpertiseExpert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewExpertiseExpertResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_AddNewExpertiseMark_InputMessage">
     <wsdl:part name="parameters" element="tns:AddNewExpertiseMark" />
   </wsdl:message>
@@ -580,6 +586,10 @@
     <wsdl:operation name="AddNewExpertFos">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertFos" message="tns:IService1_AddNewExpertFos_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertFosResponse" message="tns:IService1_AddNewExpertFos_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertiseExpert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertiseExpert" message="tns:IService1_AddNewExpertiseExpert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewExpertiseExpertResponse" message="tns:IService1_AddNewExpertiseExpert_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="AddNewExpertiseMark">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewExpertiseMark" message="tns:IService1_AddNewExpertiseMark_InputMessage" />
@@ -1047,6 +1057,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddNewExpertFos">
       <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpertFos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewExpertiseExpert">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewExpertiseExpert" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

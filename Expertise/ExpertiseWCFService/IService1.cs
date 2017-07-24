@@ -136,6 +136,9 @@ namespace ExpertiseWCFService
         bool AddNewExpertFos(int id_expert, int id_fos);
 
         [OperationContract]
+        bool AddNewExpertiseExpert(int id_expertise, int id_expert);
+
+        [OperationContract]
         bool AddNewExpertiseMark(int id_expertise, int id_mark);
 
         [OperationContract]
