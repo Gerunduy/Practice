@@ -3305,6 +3305,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.myAuthors[] EndGetListAuthors(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAuthorsForProject", ReplyAction="http://tempuri.org/IService1/GetListAuthorsForProjectResponse")]
+        ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthorsForProject(int id_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAuthorsForProject", ReplyAction="http://tempuri.org/IService1/GetListAuthorsForProjectResponse")]
+        System.IAsyncResult BeginGetListAuthorsForProject(int id_project, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.myAuthors[] EndGetListAuthorsForProject(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListCatCrit", ReplyAction="http://tempuri.org/IService1/GetListCatCritResponse")]
         ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListCatCrit();
         
@@ -3721,6 +3729,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         bool EndEditFiledsOfScience(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditProject", ReplyAction="http://tempuri.org/IService1/EditProjectResponse")]
+        bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditProject", ReplyAction="http://tempuri.org/IService1/EditProjectResponse")]
+        System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState);
+        
+        bool EndEditProject(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Expertise_Expert", ReplyAction="http://tempuri.org/IService1/Expertise_ExpertResponse")]
         ExpertiseWPFApplication.ServiceReference1.Expertise_Expert[] Expertise_Expert(int id_expert);
         
@@ -3768,6 +3784,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginDeleteExpert(int id_expert, System.AsyncCallback callback, object asyncState);
         
         bool EndDeleteExpert(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteProject", ReplyAction="http://tempuri.org/IService1/DeleteProjectResponse")]
+        bool DeleteProject(int id_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/DeleteProject", ReplyAction="http://tempuri.org/IService1/DeleteProjectResponse")]
+        System.IAsyncResult BeginDeleteProject(int id_project, System.AsyncCallback callback, object asyncState);
+        
+        bool EndDeleteProject(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
         void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS);
@@ -3856,6 +3880,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private object[] results;
         
         public GetListAuthorsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myAuthors[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.myAuthors[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAuthorsForProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAuthorsForProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -4820,6 +4863,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class EditProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public EditProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Expertise_ExpertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -4920,6 +4982,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private object[] results;
         
         public DeleteExpertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class DeleteProjectCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public DeleteProjectCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -5042,6 +5123,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndGetListAuthorsDelegate;
         
         private System.Threading.SendOrPostCallback onGetListAuthorsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetListAuthorsForProjectDelegate;
+        
+        private EndOperationDelegate onEndGetListAuthorsForProjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAuthorsForProjectCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetListCatCritDelegate;
         
@@ -5355,6 +5442,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onEditFiledsOfScienceCompletedDelegate;
         
+        private BeginOperationDelegate onBeginEditProjectDelegate;
+        
+        private EndOperationDelegate onEndEditProjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onEditProjectCompletedDelegate;
+        
         private BeginOperationDelegate onBeginExpertise_ExpertDelegate;
         
         private EndOperationDelegate onEndExpertise_ExpertDelegate;
@@ -5390,6 +5483,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndDeleteExpertDelegate;
         
         private System.Threading.SendOrPostCallback onDeleteExpertCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginDeleteProjectDelegate;
+        
+        private EndOperationDelegate onEndDeleteProjectDelegate;
+        
+        private System.Threading.SendOrPostCallback onDeleteProjectCompletedDelegate;
         
         private BeginOperationDelegate onBeginAddExpertDelegate;
         
@@ -5455,6 +5554,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<GetDataCompletedEventArgs> GetDataCompleted;
         
         public event System.EventHandler<GetListAuthorsCompletedEventArgs> GetListAuthorsCompleted;
+        
+        public event System.EventHandler<GetListAuthorsForProjectCompletedEventArgs> GetListAuthorsForProjectCompleted;
         
         public event System.EventHandler<GetListCatCritCompletedEventArgs> GetListCatCritCompleted;
         
@@ -5560,6 +5661,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<EditFiledsOfScienceCompletedEventArgs> EditFiledsOfScienceCompleted;
         
+        public event System.EventHandler<EditProjectCompletedEventArgs> EditProjectCompleted;
+        
         public event System.EventHandler<Expertise_ExpertCompletedEventArgs> Expertise_ExpertCompleted;
         
         public event System.EventHandler<AddProjectsCompletedEventArgs> AddProjectsCompleted;
@@ -5571,6 +5674,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<AddExpertisesCompletedEventArgs> AddExpertisesCompleted;
         
         public event System.EventHandler<DeleteExpertCompletedEventArgs> DeleteExpertCompleted;
+        
+        public event System.EventHandler<DeleteProjectCompletedEventArgs> DeleteProjectCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddExpertCompleted;
         
@@ -5682,6 +5787,56 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 this.onGetListAuthorsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAuthorsCompleted);
             }
             base.InvokeAsync(this.onBeginGetListAuthorsDelegate, null, this.onEndGetListAuthorsDelegate, this.onGetListAuthorsCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthorsForProject(int id_project) {
+            return base.Channel.GetListAuthorsForProject(id_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAuthorsForProject(int id_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAuthorsForProject(id_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.myAuthors[] EndGetListAuthorsForProject(System.IAsyncResult result) {
+            return base.Channel.EndGetListAuthorsForProject(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAuthorsForProject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            return this.BeginGetListAuthorsForProject(id_project, callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAuthorsForProject(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.myAuthors[] retVal = this.EndGetListAuthorsForProject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAuthorsForProjectCompleted(object state) {
+            if ((this.GetListAuthorsForProjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAuthorsForProjectCompleted(this, new GetListAuthorsForProjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAuthorsForProjectAsync(int id_project) {
+            this.GetListAuthorsForProjectAsync(id_project, null);
+        }
+        
+        public void GetListAuthorsForProjectAsync(int id_project, object userState) {
+            if ((this.onBeginGetListAuthorsForProjectDelegate == null)) {
+                this.onBeginGetListAuthorsForProjectDelegate = new BeginOperationDelegate(this.OnBeginGetListAuthorsForProject);
+            }
+            if ((this.onEndGetListAuthorsForProjectDelegate == null)) {
+                this.onEndGetListAuthorsForProjectDelegate = new EndOperationDelegate(this.OnEndGetListAuthorsForProject);
+            }
+            if ((this.onGetListAuthorsForProjectCompletedDelegate == null)) {
+                this.onGetListAuthorsForProjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAuthorsForProjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAuthorsForProjectDelegate, new object[] {
+                        id_project}, this.onEndGetListAuthorsForProjectDelegate, this.onGetListAuthorsForProjectCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.CatCrit[] GetListCatCrit() {
@@ -8314,6 +8469,74 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         name_fos}, this.onEndEditFiledsOfScienceDelegate, this.onEditFiledsOfScienceCompletedDelegate, userState);
         }
         
+        public bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
+            return base.Channel.EditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndEditProject(System.IAsyncResult result) {
+            return base.Channel.EndEditProject(result);
+        }
+        
+        private System.IAsyncResult OnBeginEditProject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            string name_project = ((string)(inValues[1]));
+            string lead_project = ((string)(inValues[2]));
+            string grnti_project = ((string)(inValues[3]));
+            System.DateTime begin_project = ((System.DateTime)(inValues[4]));
+            System.DateTime end_project = ((System.DateTime)(inValues[5]));
+            string money_project = ((string)(inValues[6]));
+            string email_project = ((string)(inValues[7]));
+            int[] listauthor = ((int[])(inValues[8]));
+            int fos = ((int)(inValues[9]));
+            return this.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+        }
+        
+        private object[] OnEndEditProject(System.IAsyncResult result) {
+            bool retVal = this.EndEditProject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnEditProjectCompleted(object state) {
+            if ((this.EditProjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.EditProjectCompleted(this, new EditProjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
+            this.EditProjectAsync(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, null);
+        }
+        
+        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, object userState) {
+            if ((this.onBeginEditProjectDelegate == null)) {
+                this.onBeginEditProjectDelegate = new BeginOperationDelegate(this.OnBeginEditProject);
+            }
+            if ((this.onEndEditProjectDelegate == null)) {
+                this.onEndEditProjectDelegate = new EndOperationDelegate(this.OnEndEditProject);
+            }
+            if ((this.onEditProjectCompletedDelegate == null)) {
+                this.onEditProjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnEditProjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginEditProjectDelegate, new object[] {
+                        id_project,
+                        name_project,
+                        lead_project,
+                        grnti_project,
+                        begin_project,
+                        end_project,
+                        money_project,
+                        email_project,
+                        listauthor,
+                        fos}, this.onEndEditProjectDelegate, this.onEditProjectCompletedDelegate, userState);
+        }
+        
         public ExpertiseWPFApplication.ServiceReference1.Expertise_Expert[] Expertise_Expert(int id_expert) {
             return base.Channel.Expertise_Expert(id_expert);
         }
@@ -8636,6 +8859,56 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginDeleteExpertDelegate, new object[] {
                         id_expert}, this.onEndDeleteExpertDelegate, this.onDeleteExpertCompletedDelegate, userState);
+        }
+        
+        public bool DeleteProject(int id_project) {
+            return base.Channel.DeleteProject(id_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginDeleteProject(int id_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginDeleteProject(id_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndDeleteProject(System.IAsyncResult result) {
+            return base.Channel.EndDeleteProject(result);
+        }
+        
+        private System.IAsyncResult OnBeginDeleteProject(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            return this.BeginDeleteProject(id_project, callback, asyncState);
+        }
+        
+        private object[] OnEndDeleteProject(System.IAsyncResult result) {
+            bool retVal = this.EndDeleteProject(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnDeleteProjectCompleted(object state) {
+            if ((this.DeleteProjectCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.DeleteProjectCompleted(this, new DeleteProjectCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void DeleteProjectAsync(int id_project) {
+            this.DeleteProjectAsync(id_project, null);
+        }
+        
+        public void DeleteProjectAsync(int id_project, object userState) {
+            if ((this.onBeginDeleteProjectDelegate == null)) {
+                this.onBeginDeleteProjectDelegate = new BeginOperationDelegate(this.OnBeginDeleteProject);
+            }
+            if ((this.onEndDeleteProjectDelegate == null)) {
+                this.onEndDeleteProjectDelegate = new EndOperationDelegate(this.OnEndDeleteProject);
+            }
+            if ((this.onDeleteProjectCompletedDelegate == null)) {
+                this.onDeleteProjectCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnDeleteProjectCompleted);
+            }
+            base.InvokeAsync(this.onBeginDeleteProjectDelegate, new object[] {
+                        id_project}, this.onEndDeleteProjectDelegate, this.onDeleteProjectCompletedDelegate, userState);
         }
         
         public void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS) {

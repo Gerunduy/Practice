@@ -66,6 +66,9 @@
     <Compile Include="Authorization.xaml.cs">
       <DependentUpon>Authorization.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CardExpertiseProject.xaml.cs">
+      <DependentUpon>CardExpertiseProject.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Criterions.xaml.cs">
       <DependentUpon>Criterions.xaml</DependentUpon>
     </Compile>
@@ -110,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Authorization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CardExpertiseProject.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

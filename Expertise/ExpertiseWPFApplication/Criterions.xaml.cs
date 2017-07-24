@@ -123,7 +123,11 @@ namespace ExpertiseWPFApplication
         private void dataGrid_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             ServiceReference1.Categories temp = dataGrid.SelectedItem as ServiceReference1.Categories;
-            client.GetListCriterionsAsync(temp.id_category);
+            if(temp != null)
+            {
+                client.GetListCriterionsAsync(temp.id_category);
+            }
+            
             //MessageBox.Show(temp.id_category.ToString());
         }
         //добавить категорий

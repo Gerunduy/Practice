@@ -434,6 +434,25 @@ namespace ExpertiseWCFService
             }
         }
 
+        public List<myAuthors> GetListAuthorsForProject(int id_project)
+        {
+            List<ProjectAuthors> PA = db_AAZ.ProjectAuthors.Where(p => p.id_proj == id_project).ToList();
+           List<myAuthors> ListAuthor = new List<myAuthors>();
+            for(int i = 0; i < PA.Count; i++)
+            {
+                int id_author = PA[i].id_author;
+                Authors temp = db_AAZ.Authors.FirstOrDefault(o => o.id_author == id_author);
+                myAuthors author = new myAuthors();
+                author.id_author = temp.id_author;
+                author.name_author = temp.name_author;
+                author.patronymic_author = temp.patronymic_author;
+                author.surname_author = temp.surname_author;
+                author.FIO = temp.surname_author + " " + temp.name_author + " " + temp.patronymic_author;
+                ListAuthor.Add(author);
+            }
+            return ListAuthor;
+        }
+
         #endregion
 
         #region Получение полных таблиц
@@ -1523,6 +1542,50 @@ namespace ExpertiseWCFService
             }
         }
 
+        public bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, DateTime begin_project,
+            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos)
+        {
+            try
+            {
+                Projects P = db_AAZ.Projects.FirstOrDefault(o=>o.id_project== id_project);
+                P.name_project = name_project;
+                P.lead_project = lead_project;
+                P.grnti_project = grnti_project;
+                P.begin_project = begin_project;
+                P.end_project = end_project;
+                P.money_project = money_project;
+                P.email_project = email_project;
+
+              
+                db_AAZ.SaveChanges();
+                ProjectFos PF = db_AAZ.ProjectFos.FirstOrDefault(o=>o.id_project== id_project) ;
+                PF.id_project = P.id_project;
+                PF.id_fos = fos;
+                
+                db_AAZ.SaveChanges();
+               List< ProjectAuthors> listoldauthor = db_AAZ.ProjectAuthors.Where(o => o.id_proj == id_project).ToList();
+                for (int i = 0; i < listoldauthor.Count; i++)
+                {
+                    db_AAZ.ProjectAuthors.Remove(listoldauthor[i]);
+                }
+                for (int i = 0; i < listauthor.Length; i++)
+                {
+                    ProjectAuthors temp = new ProjectAuthors();
+                    temp.id_proj = P.id_project;
+                    temp.id_author = listauthor[i];
+                    db_AAZ.ProjectAuthors.Add(temp);
+                    db_AAZ.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+
         public bool DeleteExpert(int id_expert)
         {
             Experts updateexpert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
@@ -1530,6 +1593,32 @@ namespace ExpertiseWCFService
             db_AAZ.SaveChanges();
             return true;
         }
+
+        public bool DeleteProject(int id_project)
+        {
+            List<ProjectExpertise> PE = db_AAZ.ProjectExpertise.Where(o => o.id_project == id_project).ToList();
+            if (PE.Count == 0)
+            {
+                List<ProjectAuthors> temp = db_AAZ.ProjectAuthors.Where(o => o.id_proj == id_project).ToList();
+                for (int i = 0; i < temp.Count; i++)
+                {
+                    db_AAZ.ProjectAuthors.Remove(temp[i]);
+                }
+                ProjectFos PF = db_AAZ.ProjectFos.FirstOrDefault(o => o.id_project == id_project);
+                db_AAZ.ProjectFos.Remove(PF);
+                Projects p = db_AAZ.Projects.FirstOrDefault(o => o.id_project == id_project);
+                db_AAZ.Projects.Remove(p);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
+
         public List<Expertise_Expert> Expertise_Expert(int id_expert)
         {
             List<Expertise_Expert> result = new List<Expertise_Expert>();
