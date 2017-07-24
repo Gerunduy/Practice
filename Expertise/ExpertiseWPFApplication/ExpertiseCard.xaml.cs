@@ -23,16 +23,24 @@ namespace ExpertiseWPFApplication
 
         //=== ========================== ===
         ServiceReference1.Projects tmpProj;
-        ServiceReference1.Projects tmpP;
         ServiceReference1.Projects CurrentProj;
         ServiceReference1.Projects CurrentExpertiseProj;
         //=== ========================== ===
+        ServiceReference1.Criterions tmpCrit;
+        ServiceReference1.Criterions CurrentCrit;
+        ServiceReference1.Criterions CurrentExpertiseCrit;
+        //=== ========================== ===
+        ServiceReference1.Experts tmpExpert;
+        ServiceReference1.Experts CurrentExpert;
+        ServiceReference1.Experts CurrentExpertiseExpert;
+        //=== ========================== ===
+
 
         List<ServiceReference1.Projects> lExpertiseProjects = new List<ServiceReference1.Projects>();
+        List<ServiceReference1.Criterions> lExpertiseCrit = new List<ServiceReference1.Criterions>();
         List<ServiceReference1.Experts> lExpertiseExperts = new List<ServiceReference1.Experts>();
 
         List<ServiceReference1.FiledsOfScience> lFOS = new List<ServiceReference1.FiledsOfScience>();
-        //ServiceReference1.FiledsOfScience tFOS = new ServiceReference1.FiledsOfScience();
         List<ServiceReference1.Projects> lProjects = new List<ServiceReference1.Projects>();
         List<ServiceReference1.ProjectFos> lProjectFos = new List<ServiceReference1.ProjectFos>();
         List<ServiceReference1.Categories> lCatigories = new List<ServiceReference1.Categories>();
@@ -162,23 +170,15 @@ namespace ExpertiseWPFApplication
             FilterFileds();
         }
 
-        //=== Работа с категориями ====================================
-        private void dgCatList_CurrentCellChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ServiceReference1.Categories CurrentCat = dgCatList.CurrentCell.Item as ServiceReference1.Categories;
-                GetCritCurrCat(CurrentCat.id_category);
-            }
-            catch { }
-        }
         //=== Работа с проектами ====================================
         private void CheckProjbtn()
         {
             if (CurrentProj != null && tmpProj != null) btnAddProject.IsEnabled = true;
             else btnAddProject.IsEnabled = false;
+            if (CurrentExpertiseProj != null) btnDeleteProject.IsEnabled = true;
+            else btnDeleteProject.IsEnabled = false;
         }
-        private void dgProjectList_CurrentCellChanged(object sender, EventArgs e)
+        private void dgProjectList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             try
             {
@@ -188,18 +188,17 @@ namespace ExpertiseWPFApplication
 
                 CheckProjbtn();
             }
-            catch { }  
+            catch { }
         }
-        private void dgExpertiseProjectList_CurrentCellChanged(object sender, EventArgs e)
+        private void dgExpertiseProjectList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
         {
             try
             {
-                tmpP = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
-                if (tmpP != null) CurrentExpertiseProj = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
+                CurrentExpertiseProj = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
+                CheckProjbtn();
             }
-            catch { }     
+            catch { }
         }
-
         private void btnAddProject_Click(object sender, RoutedEventArgs e)
         {
             ServiceReference1.Projects P = new ServiceReference1.Projects();
@@ -210,7 +209,6 @@ namespace ExpertiseWPFApplication
                 dgExpertiseProjectList.ItemsSource = null;
                 dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
 
-                tmpProj = null;
                 CheckProjbtn();
             }
             else
@@ -218,7 +216,6 @@ namespace ExpertiseWPFApplication
                 MessageBox.Show(string.Format("Проект с id = {0} уже был добавлен ранее!", P.id_project));
             }
         }
-
         private void btnDeleteProject_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -232,6 +229,143 @@ namespace ExpertiseWPFApplication
                 }
                 dgExpertiseProjectList.ItemsSource = null;
                 dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+
+                CurrentExpertiseProj = null;
+            }
+            catch { }
+        }
+        //=== Работа с категориями и критериями ====================================
+        private void dgCatList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.Categories CurrentCat = dgCatList.CurrentCell.Item as ServiceReference1.Categories;
+                GetCritCurrCat(CurrentCat.id_category);
+            }
+            catch { }
+        }
+        private void CheckCritbtn()
+        {
+            if (CurrentCrit != null && tmpCrit != null) btnAddCrit.IsEnabled = true;
+            else btnAddCrit.IsEnabled = false;
+            if (CurrentExpertiseCrit != null) btnDeleteCrit.IsEnabled = true;
+            else btnDeleteCrit.IsEnabled = false;
+        }
+        private void dgCritList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                CurrentCrit = dgCritList.SelectedCells[0].Item as ServiceReference1.Criterions;
+                tmpCrit = new ServiceReference1.Criterions();
+                tmpCrit = CurrentCrit;
+
+                CheckCritbtn();
+            }
+            catch { }
+        }
+        private void dgExpertiseCritList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                CurrentExpertiseCrit = dgExpertiseCritList.CurrentCell.Item as ServiceReference1.Criterions;
+                CheckCritbtn();
+            }
+            catch { }
+        }
+        private void btnAddCrit_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference1.Criterions C = new ServiceReference1.Criterions();
+            C = tmpCrit;
+            if (lExpertiseCrit.Where(p => p.id_crit == C.id_crit).FirstOrDefault() == null) // если этот критерий ещё не добавляли
+            {
+                lExpertiseCrit.Add(C);
+                dgExpertiseCritList.ItemsSource = null;
+                dgExpertiseCritList.ItemsSource = lExpertiseCrit;
+
+                CheckCritbtn();
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Критерий с id = {0} уже был добавлен ранее!", C.id_crit));
+            }
+        }
+        private void btnDeleteCrit_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < lExpertiseCrit.Count; i++)
+                {
+                    if (lExpertiseCrit[i].id_crit == CurrentExpertiseCrit.id_crit)
+                    {
+                        lExpertiseCrit.RemoveAt(i);
+                    }
+                }
+                dgExpertiseCritList.ItemsSource = null;
+                dgExpertiseCritList.ItemsSource = lExpertiseCrit;
+
+                CurrentExpertiseCrit = null;
+            }
+            catch { }
+        }
+        //=== Работа с экспертами ====================================
+        private void CheckExpertbtn()
+        {
+            if (CurrentExpert != null && tmpExpert != null) btnAddExpert.IsEnabled = true;
+            else btnAddExpert.IsEnabled = false;
+            if (CurrentExpertiseExpert != null) btnDeleteExpert.IsEnabled = true;
+            else btnDeleteExpert.IsEnabled = false;
+        }
+        private void dgExpertList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                CurrentExpert = dgExpertList.SelectedCells[0].Item as ServiceReference1.Experts;
+                tmpExpert = new ServiceReference1.Experts();
+                tmpExpert = CurrentExpert;
+
+                CheckExpertbtn();
+            }
+            catch { }
+        }
+        private void dgExpertiseExpertList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
+        {
+            try
+            {
+                CurrentExpertiseExpert = dgExpertiseExpertList.CurrentCell.Item as ServiceReference1.Experts;
+                CheckExpertbtn();
+            }
+            catch { }
+        }
+        private void btnAddExpert_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference1.Experts E = new ServiceReference1.Experts();
+            E = tmpExpert;
+            if (lExpertiseExperts.Where(p => p.id_expert == E.id_expert).FirstOrDefault() == null) // если этого эксперта ещё не добавляли
+            {
+                lExpertiseExperts.Add(E);
+                dgExpertiseExpertList.ItemsSource = null;
+                dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
+
+                CheckProjbtn();
+            }
+            else
+            {
+                MessageBox.Show(string.Format("Эксперт с id = {0} уже был добавлен ранее!", E.id_expert));
+            }
+        }
+        private void btnDeleteExpert_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                for (int i = 0; i < lExpertiseExperts.Count; i++)
+                {
+                    if (lExpertiseExperts[i].id_expert == CurrentExpertiseExpert.id_expert)
+                    {
+                        lExpertiseExperts.RemoveAt(i);
+                    }
+                }
+                dgExpertiseExpertList.ItemsSource = null;
+                dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
 
                 CurrentExpertiseProj = null;
             }

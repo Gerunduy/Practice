@@ -64,7 +64,7 @@
                     <ColumnDefinition Width="180"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты-участники:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgExpertiseProjectList_CurrentCellChanged">
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgExpertiseProjectList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_project}" Header="№" DisplayIndex="0" Width="auto"/>
                         <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
@@ -87,7 +87,7 @@
                     <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteProject" Click="btnDeleteProject_Click"/>
                 </Grid>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Все проекты:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgProjectList_CurrentCellChanged">
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgProjectList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_project}" Header="№" DisplayIndex="0" Width="auto"/>
                         <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
@@ -108,7 +108,7 @@
                     <ColumnDefinition Width="5*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Выбранные критерии:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgExpertiseCritList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=name_crit}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
@@ -126,12 +126,12 @@
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddCrit"/>
-                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteCrit"/>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddCrit" Click="btnAddCrit_Click"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteCrit" Click="btnDeleteCrit_Click"/>
                 </Grid>
 
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Доступные критерии:" HorizontalAlignment="Center"/>
-                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgCritList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=name_crit}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
@@ -167,7 +167,7 @@
                     <ColumnDefinition Width="180"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Эксперты-участники:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExperts" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgExpertiseExpertList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=surname_expert}" Header="Фамилия" DisplayIndex="0" Width="1*"/>
                         <DataGridTextColumn Binding="{Binding Path=name_expert}" Header="Имя" DisplayIndex="1" Width="1*"/>
@@ -187,11 +187,11 @@
                         <ColumnDefinition Width="30"/>
                         <ColumnDefinition Width="15"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddExpert"/>
-                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteExpert"/>
+                    <Button Grid.Row="1" Grid.Column="1" Content="+" Name="btnAddExpert" Click="btnAddExpert_Click"/>
+                    <Button Grid.Row="3" Grid.Column="1" Content="-" Name="btnDeleteExpert" Click="btnDeleteExpert_Click"/>
                 </Grid>
                 <TextBlock Grid.Row="0" Grid.Column="2" Text="Все эксперты:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" SelectedCellsChanged="dgExpertList_SelectedCellsChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=surname_expert}" Header="Фамилия" DisplayIndex="0" Width="1*"/>
                         <DataGridTextColumn Binding="{Binding Path=name_expert}" Header="Имя" DisplayIndex="1" Width="1*"/>
