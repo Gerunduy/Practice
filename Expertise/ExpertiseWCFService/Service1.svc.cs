@@ -510,7 +510,15 @@ namespace ExpertiseWCFService
                     {
                         int id_expert = listExperts[j].id_expert;
                         Marks temp = db_AAZ.Marks.FirstOrDefault(o => o.id_crit == id_crit && o.id_expert== id_expert && o.id_project==id_project);
-                        myraex.raiting_crit += temp.rating + ";";
+                        if (temp != null)
+                        {
+                            myraex.raiting_crit += temp.rating + ";";
+                        }
+                        else
+                        {
+                            myraex.raiting_crit +=";" ;
+                        }
+                       
                     }
                     ListRatingforproject.Add(myraex);
                 }
@@ -1402,6 +1410,7 @@ namespace ExpertiseWCFService
             Projects pr = db_AAZ.Projects.FirstOrDefault(o => o.name_project == "Test_Proj2");
             int id = pr.id_project;
             List <ProjectExpertise> temp = db_AAZ.ProjectExpertise.Where(o => o.id_project == id).ToList();
+            
 
             //List<ProjectExpertise> result = new List<ProjectExpertise>();
             //List<ProjectExpertise> tmplE = db_AAZ.ProjectExpertise.ToList();
@@ -1418,14 +1427,13 @@ namespace ExpertiseWCFService
         }
         public void test2()
         {
-            FiledsOfScience id_expertise = db_AAZ.FiledsOfScience.FirstOrDefault(o => o.name_fos == "ФИЗИКА И НАУКИ О КОСМОСЕ");
-            //db_AAZ.FiledsOfScience.Remove(id_expertise);
-            //db_AAZ.SaveChanges();
-            Experts id_Experts = db_AAZ.Experts.FirstOrDefault(o => o.name_expert == "Алексей");
-            ExpertFos tmpE = new ExpertFos();
-            tmpE.id_expert = id_Experts.id_expert;
-            tmpE.id_fos = id_expertise.id_fos;
-            db_AAZ.ExpertFos.Add(tmpE);
+            ExpertiseExpert eee = db_AAZ.ExpertiseExpert.FirstOrDefault(o => o.id_expertise_expert == 7);
+
+            db_AAZ.ExpertiseExpert.Remove(eee);
+
+            ExpertiseExpert eee2 = db_AAZ.ExpertiseExpert.FirstOrDefault(o => o.id_expertise_expert == 8);
+
+            db_AAZ.ExpertiseExpert.Remove(eee2);
             db_AAZ.SaveChanges();
         }
 

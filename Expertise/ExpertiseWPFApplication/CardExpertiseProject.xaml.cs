@@ -64,24 +64,39 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
+                DataTable dt = new DataTable();
+                for (int k = 0; k < dataGrid.Columns.Count; k++)
+                {
+                    dt.Columns.Add(dataGrid.Columns[k].Header.ToString());
+                }
                 for (int i = 0; i < e.Result.ToList().Count; i++)
                 {
-                    DataTable dt = new DataTable();
+                    
+
                     string s = e.Result.ToList()[i].raiting_crit;
                     String[] words = s.Split(new char[] { ';' });
+                    List<string> ls = new List<string>();
                     string t="";
-                    for (int j = 0; i < words.Length - 1; j++)
+                    for (int j = 0; j < (words.Length - 1); j++)
                     {
-                       
-                        t += "\"" + words[i] + "\"";
-                        //temp.name_term = words[j];
-                        //temp.value_term = i + 1;
-                        //_AddCriterions_categories.ListTerm.Add(temp);
+                        ls.Add(j.ToString());
+                        //t += words[j];
+                        //if(j< (words.Length - 1))
+                        //{
+                        //    t += ",";
+                        //}
+                        
+                        
                     }
-                    //string f = ("\"1\", \"2\"");
-                    dt.Rows.Add(t);
-                    dataGrid.ItemsSource = dt.DefaultView;
+                    string f = " 1, 2, 3,4 ";
+                    dt.Rows.Add(ls);
+                    ls.Clear();
+                    //dt.Rows.Add(1, 2);
+
+
+
                 }
+                dataGrid.ItemsSource = dt.DefaultView;
             }
             else
             {
@@ -96,13 +111,14 @@ namespace ExpertiseWPFApplication
             {
                 if (e.Result.ToList().Count != 0)
                 {
+                    DataTable dt = new DataTable();
                     for (int i = 0; i < e.Result.ToList().Count; i++)
                     {
-                        DataTable dt = new DataTable();
+                        
                         dt.Columns.Add(e.Result.ToList()[i].surname_expert + e.Result.ToList()[i].name_expert + e.Result.ToList()[i].patronymic_expert);
-                        dataGrid.ItemsSource = dt.DefaultView;
+                        
                     }
-                    
+                    dataGrid.ItemsSource = dt.DefaultView;
                 }
                 client.GetListRaitingForExpertiseAsync(id_project);
 
