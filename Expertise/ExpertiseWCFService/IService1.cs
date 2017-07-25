@@ -59,6 +59,9 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<Expertises> GetListExpertisesForExpert(int id_expert);
 
+        [OperationContract]
+        List<myCurrentexpertises> GetListCurrentExpertises();
+
         #endregion
 
         #region Получение полных таблиц
@@ -192,7 +195,7 @@ namespace ExpertiseWCFService
         [OperationContract]
         void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert, 
-            Boolean delete_expert, string contacts_expert, int[]  ListFOS);
+            Boolean delete_expert, string contacts_expert, int[]  ListFOS,string login_expert, string password_expert);
         [OperationContract]
         bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
 
@@ -233,12 +236,9 @@ namespace ExpertiseWCFService
         [OperationContract]
         void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
           string job_expert, string post_expert, string degree_expert, string rank_expert
-        , string contacts_expert, int[] ListFOS);
-
-        [OperationContract]
-        void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert,
-          string job_expert, string post_expert, string degree_expert, string rank_expert
         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert);
+
+       
 
         [OperationContract]
         bool AddCriterions(string name_crit, bool qualit_crit, string valid_values,int id_category);
@@ -256,6 +256,18 @@ namespace ExpertiseWCFService
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Добавьте здесь операции служб
+    }
+
+    public class myCurrentexpertises
+    {
+        public int number { get; set; }
+        public int id_expertise { get; set; }
+        public Boolean end_expertise { get; set; }
+        public string name_expertise { get; set; }
+        public DateTime date_expertise { get; set; }
+        public int count_project { get; set; }
+        public List<string> ListExperts { get; set; }
+        
     }
 
     public class myRaitinfExpert
@@ -285,7 +297,9 @@ namespace ExpertiseWCFService
         public string email_project { get; set; }
         public string fos { get; set; }
         public Boolean expertisa { get; set; }
-       
+        public DateTime date_expertise { get; set; }
+        public string name_expertise { get; set; }
+
     }
 
     public class ExpertsWithCountExpertise
@@ -303,8 +317,11 @@ namespace ExpertiseWCFService
         public string degree_rank_expert { get; set; }//звание + степень
         public Boolean delete_expert { get; set; }//удален\активен
         public string contacts_expert { get; set; }
+        public string login_expert { get; set; }
+        public string password_expert { get; set; }
         public int countexpertise { get; set; }
         public List<FiledsOfScience> ListFOS { get; set; }
+        
     }
 
     public class Expertise_Expert

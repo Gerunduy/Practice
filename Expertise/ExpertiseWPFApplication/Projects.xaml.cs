@@ -67,9 +67,10 @@ namespace ExpertiseWPFApplication
         private void bt_project_Click(object sender, RoutedEventArgs e)
         {
             ServiceReference1.myProject temp = dataGrid.SelectedItem as ServiceReference1.myProject;
-
+            
             _CardExpertiseProject = new CardExpertiseProject();
             _CardExpertiseProject.Owner = this;
+            _CardExpertiseProject.id_project = temp.id_project;
             _CardExpertiseProject.textBox.Text = temp.name_project;
             _CardExpertiseProject.textBox1.Text = temp.lead_project;
             _CardExpertiseProject.textBox2.Text = temp.fos;
@@ -78,7 +79,13 @@ namespace ExpertiseWPFApplication
             _CardExpertiseProject.datePicker2.SelectedDate = temp.end_project;
             _CardExpertiseProject.textBox6.Text = temp.money_project;
             _CardExpertiseProject.textBox7.Text = temp.email_project;
-            _CardExpertiseProject.id_project = temp.id_project;
+           _CardExpertiseProject.client.GetListExpertForProjectAsync(temp.id_project);
+            _CardExpertiseProject.textBox4.Text = temp.name_expertise;
+            if (temp.date_expertise.ToShortDateString() != "01.01.0001")
+            {
+                _CardExpertiseProject.textBox5.Text = temp.date_expertise.ToShortDateString();
+            }
+            
             client.GetListAuthorsForProjectAsync(temp.id_project);
             
 

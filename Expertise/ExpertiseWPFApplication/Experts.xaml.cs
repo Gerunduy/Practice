@@ -55,7 +55,10 @@ namespace ExpertiseWPFApplication
             _ExpertCard.textBox4.Text = temp.degree_expert;
             _ExpertCard.textBox5.Text = temp.rank_expert;
             _ExpertCard.textBox6.Text = temp.contacts_expert;
+            _ExpertCard.textBox8.Text = temp.login_expert;
+            _ExpertCard.textBox9.Text = temp.password_expert;
             _ExpertCard.id_expert = temp.id_expert;
+            _ExpertCard.client.Expertise_ExpertAsync(temp.id_expert);
             _ExpertCard.textBlock.Text = "";
             _ExpertCard.dataGrid.ItemsSource = null;
             _ExpertCard.tabControl.Visibility = Visibility.Visible;

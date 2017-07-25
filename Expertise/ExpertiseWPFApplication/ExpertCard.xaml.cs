@@ -19,7 +19,7 @@ namespace ExpertiseWPFApplication
     /// </summary>
     public partial class ExpertCard : Window
     {
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+      public  ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
        public List<ServiceReference1.FiledsOfScience> listFOSCurrentExpert = new List<ServiceReference1.FiledsOfScience>();
         public int j;
         public int id_expert=-1;
@@ -32,7 +32,7 @@ namespace ExpertiseWPFApplication
             client.Expertise_ExpertCompleted += Client_Expertise_ExpertCompleted;
             client.AddExpertCompleted += Client_AddExpertCompleted;
             client.DeleteExpertCompleted += Client_DeleteExpertCompleted;
-            client.Expertise_ExpertAsync(id_expert);
+            //client.Expertise_ExpertAsync(id_expert);
             client.GetListFOSAsync();
         }
 
@@ -108,7 +108,8 @@ namespace ExpertiseWPFApplication
                 textBox5.IsReadOnly = false;
                 textBox6.IsReadOnly = false;
                 textBox7.IsReadOnly = false;
-                
+                textBox8.IsReadOnly = false;
+                textBox9.IsReadOnly = false;
                 comboBox.Visibility = Visibility.Visible;
                 button1.Visibility = Visibility.Visible;
                 client.GetListFOSAsync();
@@ -126,6 +127,8 @@ namespace ExpertiseWPFApplication
                 string rank_expert = textBox5.Text;//звание
                 Boolean delete_expert = die;//удален\активен
                 string contacts_expert = textBox6.Text;
+                string login_expert = textBox8.Text;
+                string password_expert = textBox9.Text;
                 int[] idFOSList = new int[listFOSCurrentExpert.Count];
                 for (int i = 0; i < listFOSCurrentExpert.Count; i++)
                 {
@@ -134,12 +137,12 @@ namespace ExpertiseWPFApplication
                 if (id_expert != -1)
                 {
                     client.UpdateExpertCardAsync(id_expert, surname_expert, name_expert, patronymic_expert, job_expert,
-                   post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, idFOSList);
+                   post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, idFOSList, login_expert, password_expert);
                 }
                 else
                 {
                    client.AddExpertAsync(surname_expert, name_expert, patronymic_expert, job_expert,
-                   post_expert, degree_expert, rank_expert, contacts_expert, idFOSList);
+                   post_expert, degree_expert, rank_expert, contacts_expert, idFOSList, login_expert, password_expert);
                 }
                
                 //List<FiledsOfScience> ListFOS { get; set; }
@@ -151,6 +154,8 @@ namespace ExpertiseWPFApplication
                 textBox5.IsReadOnly = true;
                 textBox6.IsReadOnly = true;
                 textBox7.IsReadOnly = true;
+                textBox8.IsReadOnly = true;
+                textBox9.IsReadOnly = true;
                 comboBox.Visibility = Visibility.Hidden;
                 button1.Visibility = Visibility.Hidden;
                

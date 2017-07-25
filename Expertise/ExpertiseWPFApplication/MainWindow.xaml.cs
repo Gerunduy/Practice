@@ -32,6 +32,7 @@ namespace ExpertiseWPFApplication
         ExpertiseCard _ExpertiseCard;
         Authorization _Authorization;
         ExpertRoom _ExpertRoom;
+        CurrentExpertises _CurrentExpertises;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -188,6 +189,8 @@ namespace ExpertiseWPFApplication
             _ExpertCard.textBox5.IsReadOnly = false;
             _ExpertCard.textBox6.IsReadOnly = false;
             _ExpertCard.textBox7.IsReadOnly = false;
+            _ExpertCard.textBox8.IsReadOnly = false;
+            _ExpertCard.textBox9.IsReadOnly = false;
             _ExpertCard.ShowDialog();
         }
         //критерии
@@ -257,6 +260,13 @@ namespace ExpertiseWPFApplication
                 button10.IsEnabled = false;
                 button11.Content = "Вход";
             }
+        }
+        //текущие эксертизы
+        private void button9_Click(object sender, RoutedEventArgs e)
+        {
+            _CurrentExpertises = new CurrentExpertises();
+            _CurrentExpertises.Owner = this;
+            _CurrentExpertises.ShowDialog();
         }
     }
 }

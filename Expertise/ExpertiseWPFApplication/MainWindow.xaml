@@ -73,7 +73,7 @@
 
             <TextBlock Grid.Row="0" Grid.Column="4" Name="textBlock2" Text="Отчеты" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="4" Name="button8" Content="Завершенне экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
-            <Button Grid.Row="4" Grid.Column="4" Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144"/>
+            <Button Grid.Row="4" Grid.Column="4" Name="button9" Content="Текущие экспертизы" HorizontalAlignment="Center" VerticalAlignment="Center" Width="144" Click="button9_Click"/>
 
             <TextBlock Grid.Row="0" Grid.Column="6" Name="textBlock3" Text="Кабинет эксперта" HorizontalAlignment="Center"/>
             <Button Grid.Row="2" Grid.Column="6" Name="button10" Content="Кабинет эксперта" HorizontalAlignment="Center" VerticalAlignment="Center" Width="135" Click="button10_Click"/>

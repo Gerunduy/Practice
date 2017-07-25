@@ -23,9 +23,9 @@ namespace ExpertiseWPFApplication
         string grnti_project;
         AddAuthor _AddAuthor;
         int fos;
-       public int id_project;
+        public int id_project;
         public List<ServiceReference1.myAuthors> listauthor = new List<ServiceReference1.myAuthors>();
-        ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+      public  ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public CardExpertiseProject()
         {
             InitializeComponent();
@@ -41,6 +41,7 @@ namespace ExpertiseWPFApplication
             client.GetListAuthorsAsync();
             client.GetListFOSAsync();
             client.GetListGRNTIAsync();
+            //client.GetListExpertForProjectAsync(id_project);
         }
 
         //private void Client_testCompleted(object sender, ServiceReference1.testCompletedEventArgs e)
@@ -71,30 +72,21 @@ namespace ExpertiseWPFApplication
                 }
                 for (int i = 0; i < e.Result.ToList().Count; i++)
                 {
-                    
 
+                    DataRow carRow = dt.NewRow();
+                    carRow = dt.NewRow();
                     string s = e.Result.ToList()[i].raiting_crit;
                     String[] words = s.Split(new char[] { ';' });
                     List<string> ls = new List<string>();
-                    string t="";
+                    string t = "";
+                    carRow[0] = e.Result.ToList()[i].name_crit;
                     for (int j = 0; j < (words.Length - 1); j++)
                     {
-                        ls.Add(j.ToString());
-                        //t += words[j];
-                        //if(j< (words.Length - 1))
-                        //{
-                        //    t += ",";
-                        //}
-                        
-                        
+                        ls.Add(words[j].ToString());
+                        carRow[j+1] = ls[j];
                     }
-                    string f = " 1, 2, 3,4 ";
-                    dt.Rows.Add(ls);
+                    dt.Rows.Add(carRow);
                     ls.Clear();
-                    //dt.Rows.Add(1, 2);
-
-
-
                 }
                 dataGrid.ItemsSource = dt.DefaultView;
             }
@@ -112,26 +104,17 @@ namespace ExpertiseWPFApplication
                 if (e.Result.ToList().Count != 0)
                 {
                     DataTable dt = new DataTable();
+                    dt.Columns.Add("Критерии");
                     for (int i = 0; i < e.Result.ToList().Count; i++)
                     {
                         
-                        dt.Columns.Add(e.Result.ToList()[i].surname_expert + e.Result.ToList()[i].name_expert + e.Result.ToList()[i].patronymic_expert);
+                        dt.Columns.Add(e.Result.ToList()[i].surname_expert + " "+ e.Result.ToList()[i].name_expert +" "+ e.Result.ToList()[i].patronymic_expert);
                         
                     }
                     dataGrid.ItemsSource = dt.DefaultView;
+                    client.GetListRaitingForExpertiseAsync(id_project);
                 }
-                client.GetListRaitingForExpertiseAsync(id_project);
-
-
-                //DataTable dt = new DataTable();
-                //dt.Columns.Add("Заказчик");
-                //dt.Columns.Add("Количество");
-                //dt.Rows.Add("1", "2");
-                //my_DataGrid.Items.Add(dt);
-
             }
-
-
             else
             {
                 MessageBox.Show(e.Error.Message);
@@ -326,9 +309,6 @@ namespace ExpertiseWPFApplication
             
         }
 
-        private void button4_Click(object sender, RoutedEventArgs e)
-        {
-            client.GetListExpertForProjectAsync(id_project);
-        }
+       
     }
 }
