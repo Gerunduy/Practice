@@ -308,6 +308,12 @@
   <wsdl:message name="IService1_AddNewProjects_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewProjectsResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_CreateNewExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_CreateNewExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateNewExpertiseResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetTablesForExpertise_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTablesForExpertise" />
   </wsdl:message>
@@ -646,6 +652,10 @@
     <wsdl:operation name="AddNewProjects">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewProjects" message="tns:IService1_AddNewProjects_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewProjectsResponse" message="tns:IService1_AddNewProjects_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateNewExpertise" message="tns:IService1_CreateNewExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateNewExpertiseResponse" message="tns:IService1_CreateNewExpertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTablesForExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
@@ -1185,6 +1195,15 @@
     </wsdl:operation>
     <wsdl:operation name="AddNewProjects">
       <soap:operation soapAction="http://tempuri.org/IService1/AddNewProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateNewExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/CreateNewExpertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

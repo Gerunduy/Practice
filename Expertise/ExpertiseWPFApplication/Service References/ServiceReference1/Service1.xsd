@@ -165,9 +165,11 @@
       <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
       <xs:element minOccurs="0" name="ExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
       <xs:element minOccurs="0" name="ProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
       <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
       <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
       <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="id_fos" type="xs:int" />
       <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

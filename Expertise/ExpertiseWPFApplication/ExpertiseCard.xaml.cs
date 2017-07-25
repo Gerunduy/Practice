@@ -35,10 +35,13 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Experts CurrentExpertiseExpert;
         //=== ========================== ===
 
-
+        string ExpertiseName;
+        ServiceReference1.FiledsOfScience ExpertiseFOS = new ServiceReference1.FiledsOfScience();
         List<ServiceReference1.Projects> lExpertiseProjects = new List<ServiceReference1.Projects>();
         List<ServiceReference1.Criterions> lExpertiseCrit = new List<ServiceReference1.Criterions>();
+        int Count_proj_expertise;
         List<ServiceReference1.Experts> lExpertiseExperts = new List<ServiceReference1.Experts>();
+
 
         List<ServiceReference1.FiledsOfScience> lFOS = new List<ServiceReference1.FiledsOfScience>();
         List<ServiceReference1.Projects> lProjects = new List<ServiceReference1.Projects>();
@@ -59,7 +62,16 @@ namespace ExpertiseWPFApplication
         public ExpertiseCard()
         {
             InitializeComponent();
+
+            tbxExpertiseName.BorderBrush = Brushes.Black;
+            cmbFOS.BorderBrush = Brushes.Black;
+            dgExpertiseProjectList.BorderBrush = Brushes.Black;
+            dgExpertiseCritList.BorderBrush = Brushes.Black;
+            tbxCountExpertiseProjects.BorderBrush = Brushes.Black;
+            dgExpertiseExpertList.BorderBrush = Brushes.Black;
+
             client.GetTablesForExpertiseCompleted += Client_GetTablesForExpertiseCompleted;
+            client.CreateNewExpertiseCompleted += Client_CreateNewExpertiseCompleted;
             client.GetTablesForExpertiseAsync();
             Waiting(true);
             gProjects.IsEnabled = false;
@@ -193,7 +205,6 @@ namespace ExpertiseWPFApplication
             dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
             CheckExpertbtn();
         }
-
         //=== Работа с проектами ====================================
         private void CheckProjbtn()
         {
@@ -394,6 +405,87 @@ namespace ExpertiseWPFApplication
                 CurrentExpertiseProj = null;
             }
             catch { }
+        }
+        //=== Создание экспертизы и отмена ====================================
+        private void Client_CreateNewExpertiseCompleted(object sender, ServiceReference1.CreateNewExpertiseCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                this.Close();
+                MessageBox.Show("Экспертиза добавлена.");                
+            }
+            else
+            {
+                Waiting(false);
+            }
+        }
+
+        private bool CheckVars()
+        {
+            bool b1 = false; // имя экспертизы
+            bool b2 = false; // направление экспертизы
+            bool b3 = false; // проекты экспертизы
+            bool b4 = false; // критерии экспертизы
+            bool b5 = false; // количество поддерживыемых проектов экспертизы
+            bool b6 = false; // эксперты экспертизы
+
+            // проверка на правильнось заполнения всех полей
+
+            if (tbxExpertiseName.Text != "") { b1 = true; tbxExpertiseName.BorderBrush = Brushes.Black; } else { b1 = false; tbxExpertiseName.BorderBrush = Brushes.Red; }
+            if (cmbFOS.SelectedItem == null) { b2 = false; cmbFOS.BorderBrush = Brushes.Red; } else { b2 = true; cmbFOS.BorderBrush = Brushes.Black; }
+            if (lExpertiseProjects.Count < 1) { b3 = false; dgExpertiseProjectList.BorderBrush = Brushes.Red; } else { b3 = true; dgExpertiseProjectList.BorderBrush = Brushes.Black; }
+            if (lExpertiseCrit.Count < 1) { b4 = false; dgExpertiseCritList.BorderBrush = Brushes.Red; } else { b4 = true; dgExpertiseCritList.BorderBrush = Brushes.Black; } 
+            if (int.TryParse(tbxCountExpertiseProjects.Text, out Count_proj_expertise)) { b5 = true; tbxCountExpertiseProjects.BorderBrush = Brushes.Black; } else { b5 = false; tbxCountExpertiseProjects.BorderBrush = Brushes.Red; }
+            if (lExpertiseExperts.Count <1) { b6 = false; dgExpertiseExpertList.BorderBrush = Brushes.Red; } else { b6 = true; dgExpertiseExpertList.BorderBrush = Brushes.Black; }
+
+            // === === ===
+
+            if (b1 && b2 && b3 && b4 && b5 && b6) return true;
+            else return false;
+        }
+        private void CreateNewExpertise()
+        {
+            if (CheckVars())
+            {
+                ExpertiseName = tbxExpertiseName.Text;
+                ExpertiseFOS = cmbFOS.SelectedItem as ServiceReference1.FiledsOfScience;
+                Count_proj_expertise = int.Parse(tbxCountExpertiseProjects.Text);
+
+                List<int> projectsId = new List<int>();
+                foreach (ServiceReference1.Projects pP in lExpertiseProjects)
+                {
+                    projectsId.Add(pP.id_project);
+                }
+
+                List<int> critsId = new List<int>();
+                foreach (ServiceReference1.Criterions pC in lExpertiseCrit)
+                {
+                    critsId.Add(pC.id_crit);
+                }
+
+                List<int> expertsId = new List<int>();
+                foreach (ServiceReference1.Experts pE in lExpertiseExperts)
+                {
+                    expertsId.Add(pE.id_expert);
+                }
+
+                client.CreateNewExpertiseAsync(ExpertiseName, DateTime.Now, ExpertiseFOS.id_fos, Count_proj_expertise, projectsId.ToArray(), critsId.ToArray(), expertsId.ToArray());
+
+                Waiting(true);
+                tblWait.Text = string.Format("Создание \n экспертизы...");
+            }
+            else
+            {
+                MessageBox.Show("Выделенные поля заполнены неправильно!");
+            } 
+        }
+        private void btnOK_Click(object sender, RoutedEventArgs e)
+        {
+            CreateNewExpertise();
+        }
+        private void btnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
         //=======================================================================================
 

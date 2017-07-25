@@ -1400,6 +1400,49 @@ namespace ExpertiseWCFService
 
         #endregion
 
+        public bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId)
+        {
+            try
+            {
+                Expertises E = new Expertises();
+                E.name_expertise = name_expertise;
+                E.date_expertise = date_expertise;
+                E.end_expertise = false;
+                E.id_fos = id_fos;
+                E.count_proj_expertise = count_proj_expertise;
+
+                foreach (int i in projectsId)
+                {
+                    ProjectExpertise PE = new ProjectExpertise();
+                    PE.id_project = i;
+                    E.ProjectExpertise.Add(PE);
+                }
+
+                foreach (int i in critsId)
+                {
+                    ExpCrit EC = new ExpCrit();
+                    EC.id_crit = i;
+                    E.ExpCrit.Add(EC);
+                }
+
+                foreach (int i in expertsId)
+                {
+                    ExpertiseExpert EE = new ExpertiseExpert();
+                    EE.id_expert = i;
+                    E.ExpertiseExpert.Add(EE);
+                }
+
+                db_AAZ.Expertises.Add(E);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
         public TablesForExpertise GetTablesForExpertise()
         {
             try

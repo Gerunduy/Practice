@@ -27,6 +27,8 @@ namespace ExpertiseWCFService
         public string name_expertise { get; set; }
         public System.DateTime date_expertise { get; set; }
         public bool end_expertise { get; set; }
+        public int count_proj_expertise { get; set; }
+        public int id_fos { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExpCrit> ExpCrit { get; set; }

@@ -91,6 +91,8 @@
     <NavigationProperty Name="ProjectExpertise" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="Expertises" ToRole="ProjectExpertise" />
     <Property Name="end_expertise" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="Expertises" ToRole="ExpertiseExpert" />
+    <Property Name="count_proj_expertise" Type="Int32" Nullable="false" />
+    <Property Name="id_fos" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
