@@ -76,6 +76,7 @@
     <EntitySetMapping Name="Expertises">
       <EntityTypeMapping TypeName="db_AAZModel.Expertises">
         <MappingFragment StoreEntitySet="Expertises">
+          <ScalarProperty Name="count_proj_expertise" ColumnName="count_proj_expertise" />
           <ScalarProperty Name="end_expertise" ColumnName="end_expertise" />
           <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
           <ScalarProperty Name="name_expertise" ColumnName="name_expertise" />

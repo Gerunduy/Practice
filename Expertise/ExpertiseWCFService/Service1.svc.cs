@@ -229,6 +229,11 @@ namespace ExpertiseWCFService
                     tmpE.degree_rank_expert = pE.rank_expert + "," + pE.degree_expert;
                     tmpE.rank_expert = pE.rank_expert;
                     tmpE.contacts_expert = pE.contacts_expert;
+                    tmpE.login_expert = pE.login_expert;
+                    tmpE.password_expert = pE.password_expert;
+
+
+
                     tmpE.ListFOS = new List<FiledsOfScience>();
                     List<ExpertFos> expfos = db_AAZ.ExpertFos.Where(o => o.id_expert == pE.id_expert).ToList();
                     List<FiledsOfScience> Listfos = db_AAZ.FiledsOfScience.ToList();
@@ -340,10 +345,15 @@ namespace ExpertiseWCFService
                     tmpP.end_project = pP.end_project;
                     tmpP.money_project = pP.money_project;
                     tmpP.email_project = pP.email_project;
+
+
                     ProjectExpertise prexp = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == pP.id_project);
                     if (prexp != null)
                     {
                         tmpP.expertisa = true;
+                        Expertises ex = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == prexp.id_expertise);
+                        tmpP.date_expertise = ex.date_expertise;
+                        tmpP.name_expertise = ex.name_expertise;
                     }
                     else tmpP.expertisa = false;
                     ProjectFos prfos = db_AAZ.ProjectFos.FirstOrDefault(o=>o.id_project == pP.id_project);
@@ -1460,7 +1470,7 @@ namespace ExpertiseWCFService
 
         public void UpdateExpertCard(int id_expert,string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert,
-            Boolean delete_expert, string contacts_expert, int[] ListFOS)
+            Boolean delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
         {
             Experts updateexpert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
             updateexpert.surname_expert = surname_expert;
@@ -1472,6 +1482,8 @@ namespace ExpertiseWCFService
             updateexpert.rank_expert = rank_expert;
             updateexpert.delete_expert = delete_expert;
             updateexpert.contacts_expert = contacts_expert;
+            updateexpert.login_expert = login_expert;
+            updateexpert.password_expert = password_expert;
             db_AAZ.SaveChanges();
             List<ExpertFos> Listexpertfos = db_AAZ.ExpertFos
                          .Where(c => c.id_expert == updateexpert.id_expert).ToList();
@@ -1538,7 +1550,7 @@ namespace ExpertiseWCFService
 
         public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
            string job_expert, string post_expert, string degree_expert, string rank_expert
-         , string contacts_expert, int[] ListFOS)
+         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
         {
             Experts expert = new Experts();
             expert.surname_expert = surname_expert;
@@ -1550,42 +1562,11 @@ namespace ExpertiseWCFService
             expert.rank_expert = rank_expert;
             expert.delete_expert = false;
             expert.contacts_expert = contacts_expert;
-            db_AAZ.Experts.Add(expert);
-            db_AAZ.SaveChanges();
-
-            if (ListFOS != null)
-            {
-
-                for (int i = 0; i < ListFOS.Length; i++)
-                {
-                    ExpertFos temp = new ExpertFos();
-                    temp.id_expert = expert.id_expert;
-                    temp.id_fos = ListFOS[i];
-                    db_AAZ.ExpertFos.Add(temp);
-                    db_AAZ.SaveChanges();
-                }
-            }
-
-        }
-        public void AddExpert_new(string surname_expert, string name_expert, string patronymic_expert,
-           string job_expert, string post_expert, string degree_expert, string rank_expert
-         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
-        {
-            Experts expert =new Experts();
-            expert.surname_expert = surname_expert;
-            expert.name_expert = name_expert;
-            expert.patronymic_expert = patronymic_expert;
-            expert.job_expert = job_expert;
-            expert.post_expert = post_expert;
-            expert.degree_expert = degree_expert;
-            expert.rank_expert = rank_expert;
-            expert.delete_expert =false;
-            expert.contacts_expert = contacts_expert;
             expert.login_expert = login_expert;
             expert.password_expert = password_expert;
             db_AAZ.Experts.Add(expert);
             db_AAZ.SaveChanges();
-           
+
             if (ListFOS != null)
             {
 
@@ -1600,6 +1581,8 @@ namespace ExpertiseWCFService
             }
 
         }
+        
+        
 
         public bool EditFiledsOfScience(int id_fos, string name_fos)
         {
@@ -1696,62 +1679,68 @@ namespace ExpertiseWCFService
         }
 
 
-        public List<Expertise_Expert> Expertise_Expert(int id_expert)
+        public List<myCurrentexpertises> GetListCurrentExpertises()
         {
-            List<Expertise_Expert> result = new List<Expertise_Expert>();
+            List<myCurrentexpertises> result = new List<myCurrentexpertises>();
+            List<Expertises> awd = db_AAZ.Expertises.ToList();
+            List <Expertises> ListE = db_AAZ.Expertises.Where(o => o.end_expertise == false).ToList();
             int t = 1;
-            List<Marks> tmpMarks = db_AAZ.Marks.Where(o => o.id_expert == id_expert).ToList();
-            List<int> countexpertise = new List<int>();
-            for (int i = 0; i < tmpMarks.Count; i++)
+            for(int i = 0; i<ListE.Count; i++)
             {
-                int id_mark = tmpMarks[i].id_mark;
-                ExpertiseMark id_expertise = db_AAZ.ExpertiseMark.FirstOrDefault(o => o.id_mark == id_mark);
-                if (countexpertise.Count == 0)
+                myCurrentexpertises temp = new myCurrentexpertises();
+                temp.number = t + i;
+                temp.id_expertise = ListE[i].id_expertise;
+                temp.end_expertise = ListE[i].end_expertise;
+                temp.name_expertise = ListE[i].name_expertise;
+                temp.date_expertise = ListE[i].date_expertise;
+                List<ProjectExpertise> listPE = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == ListE[i].id_expertise).ToList();
+                temp.count_project = listPE.Count;
+                List<ExpertiseExpert> listEE = db_AAZ.ExpertiseExpert.Where(o=>o.id_expertise== ListE[i].id_expertise).ToList();
+
+                for(int j = 0; j < listEE.Count; j++)
                 {
-                    countexpertise.Add(id_expertise.id_expertise);
+                    Experts temp_expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == listEE[j].id_expert);
+                    temp.ListExperts.Add(temp_expert.surname_expert + " " + temp_expert.name_expert + " " + temp_expert.patronymic_expert);
                 }
-                else
-                {
-                    List<int> idtemplist = new List<int>();
-                    for (int j = 0; j < countexpertise.Count; j++)
-                    {
-                        if (countexpertise[j] != id_expertise.id_expertise)
-                        {
-                            idtemplist.Add(id_expertise.id_expertise);
-                        }
-                    }
-                    countexpertise.AddRange(idtemplist);
-                    idtemplist.Clear();
-                }
-            }
-            List<Expertise_Expert> listExpertise_Expert = new List<Expertise_Expert>();
-            for (int i = 0; i < countexpertise.Count; i++)
-            {
-                int id = countexpertise[i];
-                Expertises exp = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == id);
-                Expertise_Expert temp = new Expertise_Expert();
-                temp.date_expertise = exp.date_expertise;
-                temp.name_expertise = exp.name_expertise;
-                ProjectExpertise prexp = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_expertise == id);
-                ProjectFos prfos= db_AAZ.ProjectFos.FirstOrDefault(o => o.id_project == prexp.id_project);
-                FiledsOfScience fieldfos= db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == prfos.id_fos);
-                temp.name_fos = fieldfos.name_fos;
-                List<ProjectExpertise> lisrprexp = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id).ToList();
-                for (int j=0;j< lisrprexp.Count; j++)
-                {
-                    ProjectExpertise tempexppr = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == lisrprexp[j].id_project);
-                    if (tempexppr.accept == true)
-                    {
-                        Projects prtemp = db_AAZ.Projects.FirstOrDefault(o => o.id_project == tempexppr.id_project);
-                        temp.victory_project.Add(prtemp.name_project);
-                    }
-                }
-                temp.number = t;
-                t = t + 1;
                 result.Add(temp);
             }
             return result;
-            
+        }
+
+        public List<Expertise_Expert> Expertise_Expert(int id_expert)
+        {
+            List<Expertise_Expert> result = new List<Expertise_Expert>();
+            List<ExpertiseExpert> e = db_AAZ.ExpertiseExpert.ToList();
+            List< ExpertiseExpert> EE=db_AAZ.ExpertiseExpert.Where( o => o.id_expert == id_expert).ToList();
+            for(int i = 0; i < EE.Count; i++)
+            {
+                int id_expertise = EE[i].id_expertise;
+                ProjectExpertise PE = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_expertise == id_expertise);
+                int id_projecttemp = PE.id_project;
+                ProjectFos PF = db_AAZ.ProjectFos.FirstOrDefault(o => o.id_project == id_projecttemp);
+                int id_fos = PF.id_fos;
+                FiledsOfScience FOS = db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == id_fos);
+                Expertise_Expert temp = new Expertise_Expert();
+                temp.name_fos = FOS.name_fos;
+                temp.id_expertise = id_expertise;
+                Expertises E = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == id_expertise);
+                temp.name_expertise = E.name_expertise;
+                temp.date_expertise = E.date_expertise;
+                List<ProjectExpertise> ListPE= db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id_expertise).ToList();
+                for(int j = 0; j < ListPE.Count; j++)
+                {
+                    if (ListPE[j].accept == true)
+                    {
+                        int id_project = ListPE[j].id_project;
+                        Projects P = db_AAZ.Projects.FirstOrDefault(o => o.id_project == id_project);
+                        temp.victory_project.Add(P.name_project);
+                    }
+                }
+                result.Add(temp);
+            }
+            return result;
+           
+
         }
 
         public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project,int[] listauthor,int fos)

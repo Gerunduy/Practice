@@ -80,6 +80,7 @@
     <Property Name="name_expertise" Type="nvarchar(max)" Nullable="false" />
     <Property Name="date_expertise" Type="date" Nullable="false" />
     <Property Name="end_expertise" Type="bit" Nullable="false" />
+    <Property Name="count_proj_expertise" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>

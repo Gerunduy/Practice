@@ -165,6 +165,7 @@
       <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
       <xs:element minOccurs="0" name="ExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
       <xs:element minOccurs="0" name="ProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
       <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
       <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
       <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
@@ -325,8 +326,10 @@
       <xs:element minOccurs="0" name="delete_expert" type="xs:boolean" />
       <xs:element minOccurs="0" name="id_expert" type="xs:int" />
       <xs:element minOccurs="0" name="job_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="name_expert" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="patronymic_expert" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="post_expert" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
@@ -349,6 +352,7 @@
   <xs:complexType name="myProject">
     <xs:sequence>
       <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
       <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
       <xs:element minOccurs="0" name="expertisa" type="xs:boolean" />
@@ -357,6 +361,7 @@
       <xs:element minOccurs="0" name="id_project" type="xs:int" />
       <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="number" type="xs:int" />
     </xs:sequence>
@@ -368,6 +373,24 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfExpertises" nillable="true" type="tns:ArrayOfExpertises" />
+  <xs:complexType name="ArrayOfmyCurrentexpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCurrentexpertises" nillable="true" type="tns:myCurrentexpertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCurrentexpertises" nillable="true" type="tns:ArrayOfmyCurrentexpertises" />
+  <xs:complexType name="myCurrentexpertises">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListExperts" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="count_project" type="xs:int" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCurrentexpertises" nillable="true" type="tns:myCurrentexpertises" />
   <xs:complexType name="ArrayOfAuthors">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Authors" nillable="true" type="tns:Authors" />
@@ -416,7 +439,7 @@
       <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="number" type="xs:int" />
       <xs:element minOccurs="0" name="status_expertise" nillable="true" type="xs:string" />
-      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q2:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ExpertCard" Height="617.981" Width="667.211" MaxHeight="620" MaxWidth="670">
+        Title="ExpertCard" Height="717.981" Width="667.211" MaxHeight="720" MaxWidth="670">
     <Grid>
         <Label x:Name="label" Content="Фамилия" HorizontalAlignment="Left" Margin="136,33,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Имя" HorizontalAlignment="Left" Margin="136,60,0,0" VerticalAlignment="Top"/>
@@ -14,14 +14,14 @@
         <Label x:Name="label4" Content="Ученая степень" HorizontalAlignment="Left" Margin="136,174,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Ученое звание" HorizontalAlignment="Left" Margin="136,202,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label6" Content="Направление работы" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="Контактные данные" HorizontalAlignment="Left" Margin="137,360,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Content="Контактные данные" HorizontalAlignment="Left" Margin="136,351,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox"  IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,36,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <TextBox x:Name="textBox1" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <TextBox x:Name="textBox2" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,92,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <TextBox x:Name="textBox3" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,120,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <TextBox x:Name="textBox4" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,176,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <TextBox x:Name="textBox5" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,204,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
-        <TextBox x:Name="textBox6" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="278,363,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox6" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,354,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
 
         <Border x:Name="border" BorderBrush="Black" BorderThickness="1" Margin="136,259,0,0" Height="65" VerticalAlignment="Top" HorizontalAlignment="Left" Width="393">
             <ScrollViewer  VerticalScrollBarVisibility="Visible">
@@ -29,7 +29,7 @@
             </ScrollViewer>
         </Border>
 
-        <Button x:Name="button" Content="Редактировать" HorizontalAlignment="Left" Margin="114,403,0,0" VerticalAlignment="Top" Width="136" Height="39" Click="button_Click"/>
+        <Button x:Name="button" Content="Редактировать" HorizontalAlignment="Left" Margin="108,503,0,0" VerticalAlignment="Top" Width="136" Height="39" Click="button_Click"/>
         <Label x:Name="label8" Content="Должность" HorizontalAlignment="Left" Margin="136,145,0,0" VerticalAlignment="Top" Width="88"/>
         <TextBox x:Name="textBox7" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,148,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="252"/>
         <ComboBox x:Name="comboBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="277,232,0,0" VerticalAlignment="Top" Width="252" SelectionChanged="comboBox_SelectionChanged">
@@ -42,8 +42,8 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Button x:Name="button1" Content="очистить" Visibility="Hidden" Margin="260,329,285,0" VerticalAlignment="Top" Click="button1_Click"/>
-        <Button x:Name="button2" Content="удалить карточку" HorizontalAlignment="Left" Margin="466,403,0,0" VerticalAlignment="Top" Width="133" Height="39" Click="button2_Click"/>
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="130" BorderBrush="White" Foreground="White" Margin="10,447,0,0" VerticalAlignment="Top" Width="639">
+        <Button x:Name="button2" Content="удалить карточку" HorizontalAlignment="Left" Margin="460,503,0,0" VerticalAlignment="Top" Width="133" Height="39" Click="button2_Click"/>
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Height="130" BorderBrush="White" Foreground="White" Margin="18,547,0,0" VerticalAlignment="Top" Width="639">
             <TabItem Header="" Height="0" Width="0" Margin="0">
                 <Grid Background="#FFE5E5E5">
                     <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True">
@@ -69,5 +69,9 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Label x:Name="label9" Content="Логин" HorizontalAlignment="Left" Margin="136,382,0,0" VerticalAlignment="Top" Width="95"/>
+        <TextBox x:Name="textBox8" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="277,382,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label10" Content="Пароль" HorizontalAlignment="Left" Margin="136,406,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox9" IsReadOnly="True"  HorizontalAlignment="Left" Height="23" Margin="277,410,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
     </Grid>
 </Window>
