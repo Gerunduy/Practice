@@ -1659,6 +1659,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private int id_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_fosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string name_expertiseField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -1771,6 +1774,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.id_expertiseField.Equals(value) != true)) {
                     this.id_expertiseField = value;
                     this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_fos {
+            get {
+                return this.id_fosField;
+            }
+            set {
+                if ((this.id_fosField.Equals(value) != true)) {
+                    this.id_fosField = value;
+                    this.RaisePropertyChanged("id_fos");
                 }
             }
         }
@@ -3979,6 +3995,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         bool EndAddNewProjects(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateNewExpertise", ReplyAction="http://tempuri.org/IService1/CreateNewExpertiseResponse")]
+        bool CreateNewExpertise(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/CreateNewExpertise", ReplyAction="http://tempuri.org/IService1/CreateNewExpertiseResponse")]
+        System.IAsyncResult BeginCreateNewExpertise(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId, System.AsyncCallback callback, object asyncState);
+        
+        bool EndCreateNewExpertise(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
         ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise();
         
@@ -5131,6 +5155,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class CreateNewExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public CreateNewExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetTablesForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5800,6 +5843,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onAddNewProjectsCompletedDelegate;
         
+        private BeginOperationDelegate onBeginCreateNewExpertiseDelegate;
+        
+        private EndOperationDelegate onEndCreateNewExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onCreateNewExpertiseCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetTablesForExpertiseDelegate;
         
         private EndOperationDelegate onEndGetTablesForExpertiseDelegate;
@@ -6052,6 +6101,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<AddNewProjectFosCompletedEventArgs> AddNewProjectFosCompleted;
         
         public event System.EventHandler<AddNewProjectsCompletedEventArgs> AddNewProjectsCompleted;
+        
+        public event System.EventHandler<CreateNewExpertiseCompletedEventArgs> CreateNewExpertiseCompleted;
         
         public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
         
@@ -8651,6 +8702,68 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         end_project,
                         money_project,
                         email_project}, this.onEndAddNewProjectsDelegate, this.onAddNewProjectsCompletedDelegate, userState);
+        }
+        
+        public bool CreateNewExpertise(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId) {
+            return base.Channel.CreateNewExpertise(name_expertise, date_expertise, id_fos, count_proj_expertise, projectsId, critsId, expertsId);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginCreateNewExpertise(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginCreateNewExpertise(name_expertise, date_expertise, id_fos, count_proj_expertise, projectsId, critsId, expertsId, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndCreateNewExpertise(System.IAsyncResult result) {
+            return base.Channel.EndCreateNewExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginCreateNewExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_expertise = ((string)(inValues[0]));
+            System.DateTime date_expertise = ((System.DateTime)(inValues[1]));
+            int id_fos = ((int)(inValues[2]));
+            int count_proj_expertise = ((int)(inValues[3]));
+            int[] projectsId = ((int[])(inValues[4]));
+            int[] critsId = ((int[])(inValues[5]));
+            int[] expertsId = ((int[])(inValues[6]));
+            return this.BeginCreateNewExpertise(name_expertise, date_expertise, id_fos, count_proj_expertise, projectsId, critsId, expertsId, callback, asyncState);
+        }
+        
+        private object[] OnEndCreateNewExpertise(System.IAsyncResult result) {
+            bool retVal = this.EndCreateNewExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnCreateNewExpertiseCompleted(object state) {
+            if ((this.CreateNewExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.CreateNewExpertiseCompleted(this, new CreateNewExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void CreateNewExpertiseAsync(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId) {
+            this.CreateNewExpertiseAsync(name_expertise, date_expertise, id_fos, count_proj_expertise, projectsId, critsId, expertsId, null);
+        }
+        
+        public void CreateNewExpertiseAsync(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId, object userState) {
+            if ((this.onBeginCreateNewExpertiseDelegate == null)) {
+                this.onBeginCreateNewExpertiseDelegate = new BeginOperationDelegate(this.OnBeginCreateNewExpertise);
+            }
+            if ((this.onEndCreateNewExpertiseDelegate == null)) {
+                this.onEndCreateNewExpertiseDelegate = new EndOperationDelegate(this.OnEndCreateNewExpertise);
+            }
+            if ((this.onCreateNewExpertiseCompletedDelegate == null)) {
+                this.onCreateNewExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnCreateNewExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginCreateNewExpertiseDelegate, new object[] {
+                        name_expertise,
+                        date_expertise,
+                        id_fos,
+                        count_proj_expertise,
+                        projectsId,
+                        critsId,
+                        expertsId}, this.onEndCreateNewExpertiseDelegate, this.onCreateNewExpertiseCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise() {

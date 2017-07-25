@@ -177,6 +177,9 @@ namespace ExpertiseWCFService
         #endregion
 
         [OperationContract]
+        bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
+
+        [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]
