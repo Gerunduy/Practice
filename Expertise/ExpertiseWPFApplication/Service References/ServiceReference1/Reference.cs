@@ -3662,6 +3662,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         bool EndAddNewExpertFos(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpertiseExpert", ReplyAction="http://tempuri.org/IService1/AddNewExpertiseExpertResponse")]
+        bool AddNewExpertiseExpert(int id_expertise, int id_expert);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewExpertiseExpert", ReplyAction="http://tempuri.org/IService1/AddNewExpertiseExpertResponse")]
+        System.IAsyncResult BeginAddNewExpertiseExpert(int id_expertise, int id_expert, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewExpertiseExpert(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewExpertiseMark", ReplyAction="http://tempuri.org/IService1/AddNewExpertiseMarkResponse")]
         bool AddNewExpertiseMark(int id_expertise, int id_mark);
         
@@ -4674,6 +4682,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewExpertiseExpertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewExpertiseExpertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class AddNewExpertiseMarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5461,6 +5488,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onAddNewExpertFosCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddNewExpertiseExpertDelegate;
+        
+        private EndOperationDelegate onEndAddNewExpertiseExpertDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewExpertiseExpertCompletedDelegate;
+        
         private BeginOperationDelegate onBeginAddNewExpertiseMarkDelegate;
         
         private EndOperationDelegate onEndAddNewExpertiseMarkDelegate;
@@ -5755,6 +5788,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<AddNewExpCritCompletedEventArgs> AddNewExpCritCompleted;
         
         public event System.EventHandler<AddNewExpertFosCompletedEventArgs> AddNewExpertFosCompleted;
+        
+        public event System.EventHandler<AddNewExpertiseExpertCompletedEventArgs> AddNewExpertiseExpertCompleted;
         
         public event System.EventHandler<AddNewExpertiseMarkCompletedEventArgs> AddNewExpertiseMarkCompleted;
         
@@ -7732,6 +7767,58 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginAddNewExpertFosDelegate, new object[] {
                         id_expert,
                         id_fos}, this.onEndAddNewExpertFosDelegate, this.onAddNewExpertFosCompletedDelegate, userState);
+        }
+        
+        public bool AddNewExpertiseExpert(int id_expertise, int id_expert) {
+            return base.Channel.AddNewExpertiseExpert(id_expertise, id_expert);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewExpertiseExpert(int id_expertise, int id_expert, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewExpertiseExpert(id_expertise, id_expert, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewExpertiseExpert(System.IAsyncResult result) {
+            return base.Channel.EndAddNewExpertiseExpert(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewExpertiseExpert(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            int id_expert = ((int)(inValues[1]));
+            return this.BeginAddNewExpertiseExpert(id_expertise, id_expert, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewExpertiseExpert(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewExpertiseExpert(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewExpertiseExpertCompleted(object state) {
+            if ((this.AddNewExpertiseExpertCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewExpertiseExpertCompleted(this, new AddNewExpertiseExpertCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewExpertiseExpertAsync(int id_expertise, int id_expert) {
+            this.AddNewExpertiseExpertAsync(id_expertise, id_expert, null);
+        }
+        
+        public void AddNewExpertiseExpertAsync(int id_expertise, int id_expert, object userState) {
+            if ((this.onBeginAddNewExpertiseExpertDelegate == null)) {
+                this.onBeginAddNewExpertiseExpertDelegate = new BeginOperationDelegate(this.OnBeginAddNewExpertiseExpert);
+            }
+            if ((this.onEndAddNewExpertiseExpertDelegate == null)) {
+                this.onEndAddNewExpertiseExpertDelegate = new EndOperationDelegate(this.OnEndAddNewExpertiseExpert);
+            }
+            if ((this.onAddNewExpertiseExpertCompletedDelegate == null)) {
+                this.onAddNewExpertiseExpertCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewExpertiseExpertCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewExpertiseExpertDelegate, new object[] {
+                        id_expertise,
+                        id_expert}, this.onEndAddNewExpertiseExpertDelegate, this.onAddNewExpertiseExpertCompletedDelegate, userState);
         }
         
         public bool AddNewExpertiseMark(int id_expertise, int id_mark) {

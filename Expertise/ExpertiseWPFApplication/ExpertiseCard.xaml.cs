@@ -62,7 +62,12 @@ namespace ExpertiseWPFApplication
             client.GetTablesForExpertiseCompleted += Client_GetTablesForExpertiseCompleted;
             client.GetTablesForExpertiseAsync();
             Waiting(true);
-            CheckProjbtn();
+            gProjects.IsEnabled = false;
+            gCriterions.IsEnabled = false;
+            gExperts.IsEnabled = false;
+            //CheckProjbtn();
+            //CheckCritbtn();
+            //CheckExpertbtn();
         }
         //=======================================================================================
         private void Client_GetTablesForExpertiseCompleted(object sender, ServiceReference1.GetTablesForExpertiseCompletedEventArgs e)
@@ -168,6 +173,25 @@ namespace ExpertiseWPFApplication
         private void cmbFOS_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             FilterFileds();
+
+            gProjects.IsEnabled = true;
+            gCriterions.IsEnabled = true;
+            gExperts.IsEnabled = true;
+
+            lExpertiseProjects = new List<ServiceReference1.Projects>();
+            dgExpertiseProjectList.ItemsSource = null;
+            dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+            CheckProjbtn();
+
+            lExpertiseCrit = new List<ServiceReference1.Criterions>();
+            dgExpertiseCritList.ItemsSource = null;
+            dgExpertiseCritList.ItemsSource = lExpertiseCrit;
+            CheckCritbtn();
+
+            lExpertiseExperts = new List<ServiceReference1.Experts>();
+            dgExpertiseExpertList.ItemsSource = null;
+            dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
+            CheckExpertbtn();
         }
 
         //=== Работа с проектами ====================================

@@ -1175,6 +1175,27 @@ namespace ExpertiseWCFService
             }
         }
 
+        public bool AddNewExpertiseExpert(int id_expertise, int id_expert)
+        {
+            try
+            {
+                ExpertiseExpert EE = new ExpertiseExpert();
+                EE.id_expertise = id_expertise;
+                EE.id_expert = id_expert;
+                
+
+                db_AAZ.ExpertiseExpert.Add(EE);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+
         public bool AddNewExpertiseMark(int id_expertise, int id_mark)
         {
             try

@@ -94,3 +94,5 @@ C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExpertRoom.baml
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\CardExpertiseProject.g.cs
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\CardExpertiseProject.baml
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\CardExpertiseProject.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\CardExpertiseProject.baml
