@@ -488,6 +488,5 @@ namespace ExpertiseWPFApplication
             DialogResult = false;
         }
         //=======================================================================================
-
     }
 }

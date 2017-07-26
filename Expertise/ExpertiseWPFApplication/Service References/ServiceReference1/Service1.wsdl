@@ -320,6 +320,18 @@
   <wsdl:message name="IService1_CreateNewExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateNewExpertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListComoletedExpertises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListComoletedExpertises" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListComoletedExpertises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListComoletedExpertisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProjectExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateProjectExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProjectExpertiseResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetTablesForExpertise_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTablesForExpertise" />
   </wsdl:message>
@@ -660,6 +672,14 @@
     <wsdl:operation name="CreateNewExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateNewExpertise" message="tns:IService1_CreateNewExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateNewExpertiseResponse" message="tns:IService1_CreateNewExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListComoletedExpertises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListComoletedExpertises" message="tns:IService1_GetListComoletedExpertises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListComoletedExpertisesResponse" message="tns:IService1_GetListComoletedExpertises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProjectExpertise" message="tns:IService1_UpdateProjectExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProjectExpertiseResponse" message="tns:IService1_UpdateProjectExpertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTablesForExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
@@ -1213,6 +1233,24 @@
     </wsdl:operation>
     <wsdl:operation name="CreateNewExpertise">
       <soap:operation soapAction="http://tempuri.org/IService1/CreateNewExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListComoletedExpertises">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListComoletedExpertises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProjectExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateProjectExpertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

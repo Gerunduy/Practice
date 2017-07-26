@@ -3133,6 +3133,163 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="myCompletedexpertises", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class myCompletedexpertises : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] ListExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int count_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime date_end_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime date_start_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] names_sup_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statusField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] ListExperts {
+            get {
+                return this.ListExpertsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListExpertsField, value) != true)) {
+                    this.ListExpertsField = value;
+                    this.RaisePropertyChanged("ListExperts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int count_project {
+            get {
+                return this.count_projectField;
+            }
+            set {
+                if ((this.count_projectField.Equals(value) != true)) {
+                    this.count_projectField = value;
+                    this.RaisePropertyChanged("count_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date_end_expertise {
+            get {
+                return this.date_end_expertiseField;
+            }
+            set {
+                if ((this.date_end_expertiseField.Equals(value) != true)) {
+                    this.date_end_expertiseField = value;
+                    this.RaisePropertyChanged("date_end_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime date_start_expertise {
+            get {
+                return this.date_start_expertiseField;
+            }
+            set {
+                if ((this.date_start_expertiseField.Equals(value) != true)) {
+                    this.date_start_expertiseField = value;
+                    this.RaisePropertyChanged("date_start_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_expertise {
+            get {
+                return this.id_expertiseField;
+            }
+            set {
+                if ((this.id_expertiseField.Equals(value) != true)) {
+                    this.id_expertiseField = value;
+                    this.RaisePropertyChanged("id_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_expertise {
+            get {
+                return this.name_expertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_expertiseField, value) != true)) {
+                    this.name_expertiseField = value;
+                    this.RaisePropertyChanged("name_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] names_sup_project {
+            get {
+                return this.names_sup_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.names_sup_projectField, value) != true)) {
+                    this.names_sup_projectField = value;
+                    this.RaisePropertyChanged("names_sup_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statusField, value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TablesForExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class TablesForExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4002,6 +4159,22 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginCreateNewExpertise(string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId, System.AsyncCallback callback, object asyncState);
         
         bool EndCreateNewExpertise(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListComoletedExpertises", ReplyAction="http://tempuri.org/IService1/GetListComoletedExpertisesResponse")]
+        ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] GetListComoletedExpertises();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListComoletedExpertises", ReplyAction="http://tempuri.org/IService1/GetListComoletedExpertisesResponse")]
+        System.IAsyncResult BeginGetListComoletedExpertises(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] EndGetListComoletedExpertises(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProjectExpertise", ReplyAction="http://tempuri.org/IService1/UpdateProjectExpertiseResponse")]
+        bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/UpdateProjectExpertise", ReplyAction="http://tempuri.org/IService1/UpdateProjectExpertiseResponse")]
+        System.IAsyncResult BeginUpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept, System.AsyncCallback callback, object asyncState);
+        
+        bool EndUpdateProjectExpertise(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTablesForExpertise", ReplyAction="http://tempuri.org/IService1/GetTablesForExpertiseResponse")]
         ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise();
@@ -5174,6 +5347,44 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListComoletedExpertisesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListComoletedExpertisesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class UpdateProjectExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public UpdateProjectExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetTablesForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5849,6 +6060,18 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onCreateNewExpertiseCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListComoletedExpertisesDelegate;
+        
+        private EndOperationDelegate onEndGetListComoletedExpertisesDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListComoletedExpertisesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginUpdateProjectExpertiseDelegate;
+        
+        private EndOperationDelegate onEndUpdateProjectExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onUpdateProjectExpertiseCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetTablesForExpertiseDelegate;
         
         private EndOperationDelegate onEndGetTablesForExpertiseDelegate;
@@ -6103,6 +6326,10 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public event System.EventHandler<AddNewProjectsCompletedEventArgs> AddNewProjectsCompleted;
         
         public event System.EventHandler<CreateNewExpertiseCompletedEventArgs> CreateNewExpertiseCompleted;
+        
+        public event System.EventHandler<GetListComoletedExpertisesCompletedEventArgs> GetListComoletedExpertisesCompleted;
+        
+        public event System.EventHandler<UpdateProjectExpertiseCompletedEventArgs> UpdateProjectExpertiseCompleted;
         
         public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
         
@@ -8764,6 +8991,110 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         projectsId,
                         critsId,
                         expertsId}, this.onEndCreateNewExpertiseDelegate, this.onCreateNewExpertiseCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] GetListComoletedExpertises() {
+            return base.Channel.GetListComoletedExpertises();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListComoletedExpertises(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListComoletedExpertises(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] EndGetListComoletedExpertises(System.IAsyncResult result) {
+            return base.Channel.EndGetListComoletedExpertises(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListComoletedExpertises(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListComoletedExpertises(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListComoletedExpertises(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] retVal = this.EndGetListComoletedExpertises(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListComoletedExpertisesCompleted(object state) {
+            if ((this.GetListComoletedExpertisesCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListComoletedExpertisesCompleted(this, new GetListComoletedExpertisesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListComoletedExpertisesAsync() {
+            this.GetListComoletedExpertisesAsync(null);
+        }
+        
+        public void GetListComoletedExpertisesAsync(object userState) {
+            if ((this.onBeginGetListComoletedExpertisesDelegate == null)) {
+                this.onBeginGetListComoletedExpertisesDelegate = new BeginOperationDelegate(this.OnBeginGetListComoletedExpertises);
+            }
+            if ((this.onEndGetListComoletedExpertisesDelegate == null)) {
+                this.onEndGetListComoletedExpertisesDelegate = new EndOperationDelegate(this.OnEndGetListComoletedExpertises);
+            }
+            if ((this.onGetListComoletedExpertisesCompletedDelegate == null)) {
+                this.onGetListComoletedExpertisesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListComoletedExpertisesCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListComoletedExpertisesDelegate, null, this.onEndGetListComoletedExpertisesDelegate, this.onGetListComoletedExpertisesCompletedDelegate, userState);
+        }
+        
+        public bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept) {
+            return base.Channel.UpdateProjectExpertise(id_project_expertise, id_expertise, id_project, accept);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginUpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginUpdateProjectExpertise(id_project_expertise, id_expertise, id_project, accept, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndUpdateProjectExpertise(System.IAsyncResult result) {
+            return base.Channel.EndUpdateProjectExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginUpdateProjectExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project_expertise = ((int)(inValues[0]));
+            int id_expertise = ((int)(inValues[1]));
+            int id_project = ((int)(inValues[2]));
+            bool accept = ((bool)(inValues[3]));
+            return this.BeginUpdateProjectExpertise(id_project_expertise, id_expertise, id_project, accept, callback, asyncState);
+        }
+        
+        private object[] OnEndUpdateProjectExpertise(System.IAsyncResult result) {
+            bool retVal = this.EndUpdateProjectExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnUpdateProjectExpertiseCompleted(object state) {
+            if ((this.UpdateProjectExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.UpdateProjectExpertiseCompleted(this, new UpdateProjectExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void UpdateProjectExpertiseAsync(int id_project_expertise, int id_expertise, int id_project, bool accept) {
+            this.UpdateProjectExpertiseAsync(id_project_expertise, id_expertise, id_project, accept, null);
+        }
+        
+        public void UpdateProjectExpertiseAsync(int id_project_expertise, int id_expertise, int id_project, bool accept, object userState) {
+            if ((this.onBeginUpdateProjectExpertiseDelegate == null)) {
+                this.onBeginUpdateProjectExpertiseDelegate = new BeginOperationDelegate(this.OnBeginUpdateProjectExpertise);
+            }
+            if ((this.onEndUpdateProjectExpertiseDelegate == null)) {
+                this.onEndUpdateProjectExpertiseDelegate = new EndOperationDelegate(this.OnEndUpdateProjectExpertise);
+            }
+            if ((this.onUpdateProjectExpertiseCompletedDelegate == null)) {
+                this.onUpdateProjectExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnUpdateProjectExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginUpdateProjectExpertiseDelegate, new object[] {
+                        id_project_expertise,
+                        id_expertise,
+                        id_project,
+                        accept}, this.onEndUpdateProjectExpertiseDelegate, this.onUpdateProjectExpertiseCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.TablesForExpertise GetTablesForExpertise() {

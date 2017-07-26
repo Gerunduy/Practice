@@ -398,6 +398,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
+  <xs:complexType name="ArrayOfmyCompletedexpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCompletedexpertises" nillable="true" type="tns:ArrayOfmyCompletedexpertises" />
+  <xs:complexType name="myCompletedexpertises">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListExperts" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="count_project" type="xs:int" />
+      <xs:element minOccurs="0" name="date_end_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="date_start_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="names_sup_project" nillable="true" type="q3:ArrayOfstring" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
   <xs:complexType name="TablesForExpertise">
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />
@@ -440,7 +459,7 @@
       <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="number" type="xs:int" />
       <xs:element minOccurs="0" name="status_expertise" nillable="true" type="xs:string" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q4:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />

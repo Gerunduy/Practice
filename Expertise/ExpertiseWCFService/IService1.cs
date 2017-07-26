@@ -183,6 +183,9 @@ namespace ExpertiseWCFService
         List<myCompletedexpertises> GetListComoletedExpertises();
 
         [OperationContract]
+        bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
+
+        [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]

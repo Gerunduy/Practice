@@ -786,6 +786,7 @@ namespace ExpertiseWCFService
                     tmpE.id_expertise = pE.id_expertise;
                     tmpE.name_expertise = pE.name_expertise;
                     tmpE.date_expertise = pE.date_expertise;
+                    tmpE.end_expertise = pE.end_expertise;
 
 
                     result.Add(tmpE);
@@ -1500,6 +1501,24 @@ namespace ExpertiseWCFService
                 result.Add(tmpE);
 
                 return result;
+            }
+        }
+
+        public bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept)
+        {
+            try
+            {
+                ProjectExpertise PE = db_AAZ.ProjectExpertise.Where(p => p.id_project_expertise == id_project_expertise).FirstOrDefault();
+                PE.id_expertise = id_expertise;
+                PE.id_project = id_project;
+                PE.accept = accept;
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
             }
         }
 
