@@ -9,12 +9,15 @@
 //------------------------------------------------------------------------------
 
 
+using ExpertiseWCFService;
+using System.Collections.Generic;
+
 namespace ExpertiseWCFService
 {
 
 using System;
     using System.Collections.Generic;
-<<<<<<< HEAD
+
     
     public partial class Expertises
     {
@@ -44,7 +47,7 @@ using System;
         public virtual ICollection<ExpertiseExpert> ExpertiseExpert { get; set; }
     }
 }
-=======
+
     
 public partial class Expertises
 {
@@ -94,5 +97,5 @@ public partial class Expertises
 
 }
 
-}
->>>>>>> 20b152c3bfa9f6ead32865ad446af5633f2cd4d9
+
+

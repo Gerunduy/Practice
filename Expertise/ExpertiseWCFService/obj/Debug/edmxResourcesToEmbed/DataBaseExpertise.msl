@@ -76,10 +76,7 @@
     <EntitySetMapping Name="Expertises">
       <EntityTypeMapping TypeName="db_AAZModel.Expertises">
         <MappingFragment StoreEntitySet="Expertises">
-<<<<<<< HEAD
           <ScalarProperty Name="id_fos" ColumnName="id_fos" />
-=======
->>>>>>> 20b152c3bfa9f6ead32865ad446af5633f2cd4d9
           <ScalarProperty Name="count_proj_expertise" ColumnName="count_proj_expertise" />
           <ScalarProperty Name="end_expertise" ColumnName="end_expertise" />
           <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
