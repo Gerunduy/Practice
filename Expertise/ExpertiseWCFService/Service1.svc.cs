@@ -1731,18 +1731,21 @@ namespace ExpertiseWCFService
             for(int i = 0; i<ListE.Count; i++)
             {
                 myCurrentexpertises temp = new myCurrentexpertises();
+                temp.ListExperts = new List<string>();
                 temp.number = t + i;
                 temp.id_expertise = ListE[i].id_expertise;
                 temp.end_expertise = ListE[i].end_expertise;
                 temp.name_expertise = ListE[i].name_expertise;
                 temp.date_expertise = ListE[i].date_expertise;
-                List<ProjectExpertise> listPE = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == ListE[i].id_expertise).ToList();
+                int id_expertise = ListE[i].id_expertise;
+                List<ProjectExpertise> listPE = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id_expertise).ToList();
                 temp.count_project = listPE.Count;
-                List<ExpertiseExpert> listEE = db_AAZ.ExpertiseExpert.Where(o=>o.id_expertise== ListE[i].id_expertise).ToList();
+                List<ExpertiseExpert> listEE = db_AAZ.ExpertiseExpert.Where(o=>o.id_expertise== id_expertise).ToList();
 
                 for(int j = 0; j < listEE.Count; j++)
                 {
-                    Experts temp_expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == listEE[j].id_expert);
+                    int id_expert = listEE[j].id_expert;
+                    Experts temp_expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
                     temp.ListExperts.Add(temp_expert.surname_expert + " " + temp_expert.name_expert + " " + temp_expert.patronymic_expert);
                 }
                 result.Add(temp);
@@ -1755,6 +1758,7 @@ namespace ExpertiseWCFService
             List<Expertise_Expert> result = new List<Expertise_Expert>();
             List<ExpertiseExpert> e = db_AAZ.ExpertiseExpert.ToList();
             List< ExpertiseExpert> EE=db_AAZ.ExpertiseExpert.Where( o => o.id_expert == id_expert).ToList();
+            int t = 1;
             for(int i = 0; i < EE.Count; i++)
             {
                 int id_expertise = EE[i].id_expertise;
@@ -1769,6 +1773,16 @@ namespace ExpertiseWCFService
                 Expertises E = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == id_expertise);
                 temp.name_expertise = E.name_expertise;
                 temp.date_expertise = E.date_expertise;
+                temp.number = t + i;
+                if (E.end_expertise == true)
+                {
+                    temp.status_expertise = "Завершена";
+                }
+                else
+                {
+                    temp.status_expertise = "В работе";
+                }
+                
                 List<ProjectExpertise> ListPE= db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id_expertise).ToList();
                 for(int j = 0; j < ListPE.Count; j++)
                 {

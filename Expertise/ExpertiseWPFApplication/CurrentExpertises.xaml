@@ -14,10 +14,24 @@
                 <DataGridTextColumn Width="*" Binding="{Binding name_expertise }" Header="Наименование экспертизы" />
                 <DataGridTextColumn Width="*" Binding="{Binding date_expertise }" Header="Дата начала"/>
                 <DataGridTextColumn Width="*" Binding="{Binding count_project  }" Header="Кол-во проектов участников"   />
-                <DataGridTextColumn Width="*" Binding="{Binding ListExperts  }" Header="Экспертная комиссия"   />
-               
+                <!--<DataGridTextColumn Width="*" Binding="{Binding ListExperts  }" Header="Экспертная комиссия"   />-->
 
-                <DataGridTemplateColumn Width="2*" Header="Карточка экспертизы">
+                <DataGridTemplateColumn Header="Экспертная комиссия" Width="*">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ListBox ItemsSource="{Binding ListExperts}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+                                <ListBox.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <WrapPanel IsItemsHost="True"/>
+                                    </ItemsPanelTemplate>
+                                </ListBox.ItemsPanel>
+                            </ListBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            
+
+            <DataGridTemplateColumn Width="2*" Header="Карточка экспертизы">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
 
@@ -27,6 +41,7 @@
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
+        
             
             
         </DataGrid>

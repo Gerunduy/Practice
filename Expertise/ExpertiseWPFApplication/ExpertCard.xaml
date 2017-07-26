@@ -49,11 +49,27 @@
                     <DataGrid x:Name="dataGrid" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True">
                         <DataGrid.Columns>
                             <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Номер п\п" />
-                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Наименование конкурса" />
-                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Направление" />
-                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Дата экспертизы" />
-                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Поддержаный проект" />
-                            <DataGridTextColumn Width="*" Binding="{Binding number}" Header="Статус экспертизы" />
+                            <DataGridTextColumn Width="*" Binding="{Binding name_expertise}" Header="Наименование конкурса" />
+                            <DataGridTextColumn Width="*" Binding="{Binding name_fos}" Header="Направление" />
+                            <DataGridTextColumn Width="*" Binding="{Binding date_expertise}" Header="Дата экспертизы" />
+                            
+                            <DataGridTemplateColumn Header="Поддержаный проект" Width="*">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ListBox ItemsSource="{Binding victory_project}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" HorizontalContentAlignment="Stretch">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <WrapPanel IsItemsHost="True"/>
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                        </ListBox>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <!--<DataGridTextColumn Width="*" Binding="{Binding number}" Header="Поддержаный проект" />-->
+                            <DataGridTextColumn Width="*" Binding="{Binding status_expertise}" Header="Статус экспертизы" />
+                            
+                            
                             <DataGridTemplateColumn Width="2*" Header="Карточка экспертизы">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
