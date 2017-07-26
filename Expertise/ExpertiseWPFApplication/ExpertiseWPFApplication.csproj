@@ -69,6 +69,9 @@
     <Compile Include="CardExpertiseProject.xaml.cs">
       <DependentUpon>CardExpertiseProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CompletedExpertises.xaml.cs">
+      <DependentUpon>CompletedExpertises.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Criterions.xaml.cs">
       <DependentUpon>Criterions.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CardExpertiseProject.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CompletedExpertises.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

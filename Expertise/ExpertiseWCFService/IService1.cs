@@ -180,6 +180,9 @@ namespace ExpertiseWCFService
         bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
 
         [OperationContract]
+        List<myCompletedexpertises> GetListComoletedExpertises();
+
+        [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]
@@ -258,6 +261,18 @@ namespace ExpertiseWCFService
         // TODO: Добавьте здесь операции служб
     }
 
+    public class myCompletedexpertises
+    {
+        public int id_expertise { get; set; }
+        public string status { get; set; }
+        public string name_expertise { get; set; }
+        public DateTime date_start_expertise { get; set; }
+        public DateTime date_end_expertise { get; set; }
+        public int count_project { get; set; }
+        public List<string> ListExperts { get; set; }
+        public List<string> names_sup_project { get; set; }
+    }
+
     public class myCurrentexpertises
     {
         public int number { get; set; }
@@ -267,7 +282,7 @@ namespace ExpertiseWCFService
         public DateTime date_expertise { get; set; }
         public int count_project { get; set; }
         public List<string> ListExperts { get; set; }
-        
+
     }
 
     public class myRaitinfExpert

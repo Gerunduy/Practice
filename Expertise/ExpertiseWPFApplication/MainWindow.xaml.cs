@@ -33,6 +33,7 @@ namespace ExpertiseWPFApplication
         Authorization _Authorization;
         ExpertRoom _ExpertRoom;
         CurrentExpertises _CurrentExpertises;
+        CompletedExpertises _CompletedExpertises;
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         public MainWindow()
         {
@@ -267,6 +268,13 @@ namespace ExpertiseWPFApplication
             _CurrentExpertises = new CurrentExpertises();
             _CurrentExpertises.Owner = this;
             _CurrentExpertises.ShowDialog();
+        }
+        // завершенные экспертизы
+        private void button8_Click(object sender, RoutedEventArgs e)
+        {
+            _CompletedExpertises = new CompletedExpertises();
+            _CompletedExpertises.Owner = this;
+            _CompletedExpertises.ShowDialog(); // скорее всего здесь _CompletedExpertises.Show();
         }
     }
 }

@@ -1453,6 +1453,56 @@ namespace ExpertiseWCFService
             }
         }
 
+        public List<myCompletedexpertises> GetListComoletedExpertises()
+        {
+            try
+            {
+                List<myCompletedexpertises> result = new List<myCompletedexpertises>();
+                List<Expertises> tmplE = db_AAZ.Expertises.Where(p => p.end_expertise == true).ToList();
+                foreach (Expertises pE in tmplE)
+                {
+                    myCompletedexpertises tmpE = new myCompletedexpertises();
+                    tmpE.id_expertise = pE.id_expertise;
+                    if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "Не завершена";
+                    tmpE.name_expertise = pE.name_expertise;
+                    tmpE.date_start_expertise = pE.date_expertise;
+                    //tmpE.date_end_expertise = pE
+                    tmpE.count_project = pE.ProjectExpertise.Count();
+
+                    tmpE.ListExperts = new List<string>();
+                    foreach (ExpertiseExpert EE in pE.ExpertiseExpert)
+                    {
+                        Experts Exp = db_AAZ.Experts.Where(o => o.id_expert == EE.id_expert).FirstOrDefault();
+                        string S = string.Format("{0} {1} {2}", Exp.surname_expert, Exp.name_expert, Exp.patronymic_expert);
+                        tmpE.ListExperts.Add(S);
+                    }
+
+                    tmpE.names_sup_project = new List<string>();
+                    List<ProjectExpertise> lSupProj = pE.ProjectExpertise.Where(c => c.accept == true).ToList();
+                    foreach (ProjectExpertise PE in lSupProj)
+                    {
+                        Projects Proj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
+                        string S = string.Format("{0}", Proj.name_project);
+                        tmpE.names_sup_project.Add(S);
+                    }
+
+                    result.Add(tmpE);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<myCompletedexpertises> result = new List<myCompletedexpertises>();
+                myCompletedexpertises tmpE = new myCompletedexpertises();
+                tmpE.id_expertise = -1;
+                tmpE.name_expertise = "Содержимое не было получено";
+                result.Add(tmpE);
+
+                return result;
+            }
+        }
+
         public TablesForExpertise GetTablesForExpertise()
         {
             try
