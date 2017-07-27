@@ -78,6 +78,9 @@
     <Compile Include="CurrentExpertises.xaml.cs">
       <DependentUpon>CurrentExpertises.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EditExpertiseCard.xaml.cs">
+      <DependentUpon>EditExpertiseCard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CurrentExpertises.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditExpertiseCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

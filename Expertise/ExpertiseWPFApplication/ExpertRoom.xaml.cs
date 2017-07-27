@@ -26,6 +26,8 @@ namespace ExpertiseWPFApplication
         List<ServiceReference1.Expertises> lCurExpertises = new List<ServiceReference1.Expertises>();
         List<ServiceReference1.Expertises> lCompExpertises = new List<ServiceReference1.Expertises>();
 
+        ExpertiseCard _ExpertiseCard = new ExpertiseCard();
+
         public ExpertRoom(ServiceReference1.Experts User)
         {
             InitializeComponent();
@@ -118,6 +120,13 @@ namespace ExpertiseWPFApplication
                 dgCompletedExpertises.ItemsSource = lCompExpertises;
                 tblInfo2.Visibility = Visibility.Hidden;
             }
+        }
+
+        private void btnGoToExpertiseCard_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertiseCard = new ExpertiseCard();
+            _ExpertiseCard.Owner = App.Current.MainWindow;
+            _ExpertiseCard.Show();
         }
         // ===================================================================
     }

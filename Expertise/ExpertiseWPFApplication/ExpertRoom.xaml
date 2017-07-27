@@ -41,7 +41,7 @@
                         <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" />
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -64,7 +64,7 @@
                         <DataGridTemplateColumn Header="" Width="1*" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" />
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
