@@ -270,8 +270,8 @@ namespace ExpertiseWCFService
         public int id_expertise { get; set; }
         public string status { get; set; }
         public string name_expertise { get; set; }
-        public string date_start_expertise { get; set; }
-        public string end_date_expertise { get; set; }
+        public System.DateTime date_expertise { get; set; }
+        public System.DateTime end_date_expertise { get; set; }
         public List<myCompletedexpertisesProject> ListProject { get; set; }
         public List<string> ListExperts { get; set; }
     }

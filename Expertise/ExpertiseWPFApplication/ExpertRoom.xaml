@@ -68,7 +68,7 @@
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
-                        <DataGridTextColumn Binding="{Binding Path=D}" Header="Дата завершения" Width="auto" DisplayIndex="3"/>
+                        <DataGridTextColumn Binding="{Binding Path=end_date_expertise, StringFormat=\{0:d\}, ConverterCulture=ru}" Header="Дата завершения" Width="auto" DisplayIndex="3"/>
                     </DataGrid.Columns>
                 </DataGrid>
                 <TextBlock Grid.Row="4" FontSize="20" Text="" VerticalAlignment="Center" TextAlignment="Center" Name="tblInfo2"/>

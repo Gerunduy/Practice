@@ -37,8 +37,8 @@
                     <DataGridTextColumn Binding="{Binding Path=id_expertise}" Header="№" DisplayIndex="0" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Path=status}" Header="Статус" DisplayIndex="1" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Path=name_expertise}" Header="Наиминование" DisplayIndex="2" Width="1*"/>
-                    <DataGridTextColumn Binding="{Binding Path=date_start_expertise}" Header="дата начала" DisplayIndex="3" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding Path=end_date_expertise}" Header="дата конца" DisplayIndex="4" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Path=date_expertise, StringFormat=\{0:d\}, ConverterCulture=ru}" Header="дата начала" DisplayIndex="3" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Path=end_date_expertise, StringFormat=\{0:d\}, ConverterCulture=ru}" Header="дата конца" DisplayIndex="4" Width="auto"/>
                     <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="5">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>

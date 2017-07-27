@@ -427,6 +427,7 @@ namespace ExpertiseWCFService
                     tmpExp.name_expertise = pE.name_expertise;
                     tmpExp.date_expertise = pE.date_expertise;
                     tmpExp.end_expertise = pE.end_expertise;
+                    tmpExp.end_date_expertise = pE.end_date_expertise;
                     result.Add(tmpExp);
                 }
                 return result;
@@ -1467,8 +1468,8 @@ namespace ExpertiseWCFService
                     tmpE.id_expertise = pE.id_expertise;
                     if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "Не завершена";
                     tmpE.name_expertise = pE.name_expertise;
-                    tmpE.date_start_expertise = string.Format("{0}.{1}.{2}", pE.date_expertise.Day, pE.date_expertise.Month, pE.date_expertise.Year);
-                    tmpE.end_date_expertise = string.Format("{0}.{1}.{2}", pE.end_date_expertise.Day, pE.end_date_expertise.Month, pE.end_date_expertise.Year);
+                    tmpE.date_expertise = pE.date_expertise;
+                    tmpE.end_date_expertise = pE.end_date_expertise;
 
                     tmpE.ListExperts = new List<string>();
                     foreach (ExpertiseExpert EE in pE.ExpertiseExpert)

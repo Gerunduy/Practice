@@ -3163,10 +3163,10 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private ExpertiseWPFApplication.ServiceReference1.myCompletedexpertisesProject[] ListProjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string date_start_expertiseField;
+        private System.DateTime date_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string end_date_expertiseField;
+        private System.DateTime end_date_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_expertiseField;
@@ -3214,25 +3214,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string date_start_expertise {
+        public System.DateTime date_expertise {
             get {
-                return this.date_start_expertiseField;
+                return this.date_expertiseField;
             }
             set {
-                if ((object.ReferenceEquals(this.date_start_expertiseField, value) != true)) {
-                    this.date_start_expertiseField = value;
-                    this.RaisePropertyChanged("date_start_expertise");
+                if ((this.date_expertiseField.Equals(value) != true)) {
+                    this.date_expertiseField = value;
+                    this.RaisePropertyChanged("date_expertise");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string end_date_expertise {
+        public System.DateTime end_date_expertise {
             get {
                 return this.end_date_expertiseField;
             }
             set {
-                if ((object.ReferenceEquals(this.end_date_expertiseField, value) != true)) {
+                if ((this.end_date_expertiseField.Equals(value) != true)) {
                     this.end_date_expertiseField = value;
                     this.RaisePropertyChanged("end_date_expertise");
                 }
