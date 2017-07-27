@@ -1653,6 +1653,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private System.DateTime date_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime end_date_expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private bool end_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1748,6 +1751,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.date_expertiseField.Equals(value) != true)) {
                     this.date_expertiseField = value;
                     this.RaisePropertyChanged("date_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime end_date_expertise {
+            get {
+                return this.end_date_expertiseField;
+            }
+            set {
+                if ((this.end_date_expertiseField.Equals(value) != true)) {
+                    this.end_date_expertiseField = value;
+                    this.RaisePropertyChanged("end_date_expertise");
                 }
             }
         }
@@ -3144,22 +3160,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private string[] ListExpertsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int count_projectField;
+        private ExpertiseWPFApplication.ServiceReference1.myCompletedexpertisesProject[] ListProjectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime date_end_expertiseField;
+        private string date_start_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime date_start_expertiseField;
+        private string end_date_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_expertiseField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string name_expertiseField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] names_sup_projectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string statusField;
@@ -3188,40 +3201,40 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int count_project {
+        public ExpertiseWPFApplication.ServiceReference1.myCompletedexpertisesProject[] ListProject {
             get {
-                return this.count_projectField;
+                return this.ListProjectField;
             }
             set {
-                if ((this.count_projectField.Equals(value) != true)) {
-                    this.count_projectField = value;
-                    this.RaisePropertyChanged("count_project");
+                if ((object.ReferenceEquals(this.ListProjectField, value) != true)) {
+                    this.ListProjectField = value;
+                    this.RaisePropertyChanged("ListProject");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date_end_expertise {
-            get {
-                return this.date_end_expertiseField;
-            }
-            set {
-                if ((this.date_end_expertiseField.Equals(value) != true)) {
-                    this.date_end_expertiseField = value;
-                    this.RaisePropertyChanged("date_end_expertise");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime date_start_expertise {
+        public string date_start_expertise {
             get {
                 return this.date_start_expertiseField;
             }
             set {
-                if ((this.date_start_expertiseField.Equals(value) != true)) {
+                if ((object.ReferenceEquals(this.date_start_expertiseField, value) != true)) {
                     this.date_start_expertiseField = value;
                     this.RaisePropertyChanged("date_start_expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string end_date_expertise {
+            get {
+                return this.end_date_expertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.end_date_expertiseField, value) != true)) {
+                    this.end_date_expertiseField = value;
+                    this.RaisePropertyChanged("end_date_expertise");
                 }
             }
         }
@@ -3253,19 +3266,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] names_sup_project {
-            get {
-                return this.names_sup_projectField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.names_sup_projectField, value) != true)) {
-                    this.names_sup_projectField = value;
-                    this.RaisePropertyChanged("names_sup_project");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
         public string status {
             get {
                 return this.statusField;
@@ -3274,6 +3274,195 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.statusField, value) != true)) {
                     this.statusField = value;
                     this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="myCompletedexpertisesProject", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class myCompletedexpertisesProject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime begin_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool delete_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string email_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime end_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string grnti_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int id_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string is_acceptField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string lead_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string money_projectField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_projectField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime begin_project {
+            get {
+                return this.begin_projectField;
+            }
+            set {
+                if ((this.begin_projectField.Equals(value) != true)) {
+                    this.begin_projectField = value;
+                    this.RaisePropertyChanged("begin_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool delete_project {
+            get {
+                return this.delete_projectField;
+            }
+            set {
+                if ((this.delete_projectField.Equals(value) != true)) {
+                    this.delete_projectField = value;
+                    this.RaisePropertyChanged("delete_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string email_project {
+            get {
+                return this.email_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.email_projectField, value) != true)) {
+                    this.email_projectField = value;
+                    this.RaisePropertyChanged("email_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime end_project {
+            get {
+                return this.end_projectField;
+            }
+            set {
+                if ((this.end_projectField.Equals(value) != true)) {
+                    this.end_projectField = value;
+                    this.RaisePropertyChanged("end_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string grnti_project {
+            get {
+                return this.grnti_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.grnti_projectField, value) != true)) {
+                    this.grnti_projectField = value;
+                    this.RaisePropertyChanged("grnti_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id_project {
+            get {
+                return this.id_projectField;
+            }
+            set {
+                if ((this.id_projectField.Equals(value) != true)) {
+                    this.id_projectField = value;
+                    this.RaisePropertyChanged("id_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string is_accept {
+            get {
+                return this.is_acceptField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.is_acceptField, value) != true)) {
+                    this.is_acceptField = value;
+                    this.RaisePropertyChanged("is_accept");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string lead_project {
+            get {
+                return this.lead_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lead_projectField, value) != true)) {
+                    this.lead_projectField = value;
+                    this.RaisePropertyChanged("lead_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string money_project {
+            get {
+                return this.money_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.money_projectField, value) != true)) {
+                    this.money_projectField = value;
+                    this.RaisePropertyChanged("money_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_project {
+            get {
+                return this.name_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_projectField, value) != true)) {
+                    this.name_projectField = value;
+                    this.RaisePropertyChanged("name_project");
                 }
             }
         }

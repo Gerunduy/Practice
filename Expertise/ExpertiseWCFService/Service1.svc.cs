@@ -1466,9 +1466,8 @@ namespace ExpertiseWCFService
                     tmpE.id_expertise = pE.id_expertise;
                     if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "Не завершена";
                     tmpE.name_expertise = pE.name_expertise;
-                    tmpE.date_start_expertise = pE.date_expertise;
-                    //tmpE.date_end_expertise = pE
-                    tmpE.count_project = pE.ProjectExpertise.Count();
+                    tmpE.date_start_expertise = string.Format("{0}.{1}.{2}", pE.date_expertise.Day, pE.date_expertise.Month, pE.date_expertise.Year);
+                    tmpE.end_date_expertise = string.Format("{0}.{1}.{2}", pE.end_date_expertise.Day, pE.end_date_expertise.Month, pE.end_date_expertise.Year);
 
                     tmpE.ListExperts = new List<string>();
                     foreach (ExpertiseExpert EE in pE.ExpertiseExpert)
@@ -1478,13 +1477,23 @@ namespace ExpertiseWCFService
                         tmpE.ListExperts.Add(S);
                     }
 
-                    tmpE.names_sup_project = new List<string>();
-                    List<ProjectExpertise> lSupProj = pE.ProjectExpertise.Where(c => c.accept == true).ToList();
-                    foreach (ProjectExpertise PE in lSupProj)
+                    tmpE.ListProject = new List<myCompletedexpertisesProject>();
+                    foreach (ProjectExpertise PE in pE.ProjectExpertise)
                     {
-                        Projects Proj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
-                        string S = string.Format("{0}", Proj.name_project);
-                        tmpE.names_sup_project.Add(S);
+                        Projects tmpProj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
+                        myCompletedexpertisesProject Proj = new myCompletedexpertisesProject();
+                        Proj.id_project = tmpProj.id_project;
+                        Proj.name_project = tmpProj.name_project;
+                        Proj.lead_project = tmpProj.lead_project;
+                        Proj.grnti_project = tmpProj.grnti_project;
+                        Proj.begin_project = tmpProj.begin_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.money_project = tmpProj.money_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.delete_project = tmpProj.delete_project;
+                        if (PE.accept) Proj.is_accept = "Принят"; else Proj.is_accept = "Не принят";
+
+                        tmpE.ListProject.Add(Proj);
                     }
 
                     result.Add(tmpE);

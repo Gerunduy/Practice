@@ -264,17 +264,32 @@ namespace ExpertiseWCFService
         // TODO: Добавьте здесь операции служб
     }
 
+    #region Классы для завершенных экспертиз
     public class myCompletedexpertises
     {
         public int id_expertise { get; set; }
         public string status { get; set; }
         public string name_expertise { get; set; }
-        public DateTime date_start_expertise { get; set; }
-        public DateTime date_end_expertise { get; set; }
-        public int count_project { get; set; }
+        public string date_start_expertise { get; set; }
+        public string end_date_expertise { get; set; }
+        public List<myCompletedexpertisesProject> ListProject { get; set; }
         public List<string> ListExperts { get; set; }
-        public List<string> names_sup_project { get; set; }
     }
+    public class myCompletedexpertisesProject
+    {
+        public int id_project { get; set; }
+        public string name_project { get; set; }
+        public string lead_project { get; set; }
+        public string grnti_project { get; set; }
+        public System.DateTime begin_project { get; set; }
+        public System.DateTime end_project { get; set; }
+        public string money_project { get; set; }
+        public string email_project { get; set; }
+        public bool delete_project { get; set; }
+        public string is_accept { get; set; }
+    }
+    #endregion
+
 
     public class myCurrentexpertises
     {

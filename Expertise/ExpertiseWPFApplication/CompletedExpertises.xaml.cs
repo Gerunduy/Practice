@@ -22,6 +22,8 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
 
         List<ServiceReference1.myCompletedexpertises> lCompletedExpertises = new List<ServiceReference1.myCompletedexpertises>();
+        List<ServiceReference1.myCompletedexpertisesProject> ltmpProjects = new List<ServiceReference1.myCompletedexpertisesProject>();
+        List<string> ltmpExperts = new List<string>();
 
 
         public CompletedExpertises()
@@ -63,8 +65,31 @@ namespace ExpertiseWPFApplication
                 tblWait.Visibility = Visibility.Hidden;
             }
         }
+        private void GetInfoCurrExpertise(int id_expertise)
+        {
+            ServiceReference1.myCompletedexpertises tmpExpertise = lCompletedExpertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+
+            ltmpProjects = new List<ServiceReference1.myCompletedexpertisesProject>();
+            ltmpProjects = tmpExpertise.ListProject.ToList();
+            dgProjectList.ItemsSource = null;
+            dgProjectList.ItemsSource = ltmpProjects;
+            tblProjectCount.Text = string.Format("Количество: {0}", ltmpProjects.Count());
+
+            ltmpExperts = new List<string>();
+            ltmpExperts = tmpExpertise.ListExperts.ToList();
+            dgExpertList.ItemsSource = null;
+            dgExpertList.ItemsSource = ltmpExperts;
+        }
         //=======================================================================================
-        
+        private void dgExpertiseList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.myCompletedexpertises CurrentExpertise = dgExpertiseList.CurrentCell.Item as ServiceReference1.myCompletedexpertises;
+                GetInfoCurrExpertise(CurrentExpertise.id_expertise);
+            }
+            catch { }
+        }
         //=======================================================================================
     }
 }

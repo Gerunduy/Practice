@@ -82,6 +82,7 @@
     <Property Name="end_expertise" Type="bit" Nullable="false" />
     <Property Name="count_proj_expertise" Type="int" Nullable="false" />
     <Property Name="id_fos" Type="int" Nullable="false" />
+    <Property Name="end_date_expertise" Type="date" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>

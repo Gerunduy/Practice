@@ -93,6 +93,7 @@
     <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="Expertises" ToRole="ExpertiseExpert" />
     <Property Name="count_proj_expertise" Type="Int32" Nullable="false" />
     <Property Name="id_fos" Type="Int32" Nullable="false" />
+    <Property Name="end_date_expertise" Type="DateTime" Nullable="false" Precision="0" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>

@@ -32,17 +32,17 @@
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Экспертизы:" HorizontalAlignment="Left"/>
-            <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+            <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgExpertiseList_CurrentCellChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Binding="{Binding Path=id_expertise}" Header="№" DisplayIndex="0" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Path=status}" Header="Статус" DisplayIndex="1" Width="auto"/>
                     <DataGridTextColumn Binding="{Binding Path=name_expertise}" Header="Наиминование" DisplayIndex="2" Width="1*"/>
                     <DataGridTextColumn Binding="{Binding Path=date_start_expertise}" Header="дата начала" DisplayIndex="3" Width="auto"/>
-                    <DataGridTextColumn Binding="{Binding Path=date_end_expertise}" Header="дата конца" DisplayIndex="4" Width="auto"/>
+                    <DataGridTextColumn Binding="{Binding Path=end_date_expertise}" Header="дата конца" DisplayIndex="4" Width="auto"/>
                     <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="5">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard"/>
+                                <Button Content="В карточку Экспертизы" Name="btnGoToExpertiseCard"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
@@ -58,17 +58,18 @@
                     <ColumnDefinition Width="auto"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты:" HorizontalAlignment="Left"/>
-                <TextBlock Grid.Row="0" Grid.Column="2" Text="Количество: " HorizontalAlignment="Right"/>
+                <TextBlock Grid.Row="0" Grid.Column="2" Name="tblProjectCount" Text="Количество: " HorizontalAlignment="Right"/>
             </Grid>
             <DataGrid Grid.Row="2" Grid.Column="2" Name="dgProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=i}" Header="Наиминование" DisplayIndex="0" Width="1*"/>
+                    <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="0" Width="1*"/>
+                    <DataGridTextColumn Binding="{Binding Path=is_accept}" Header="Принят?" DisplayIndex="1" Width="auto"/>
                 </DataGrid.Columns>
             </DataGrid>
             <TextBlock Grid.Row="0" Grid.Column="4" Text="Экспертная комиссия:" HorizontalAlignment="Left"/>
             <DataGrid Grid.Row="2" Grid.Column="4" Name="dgExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=i}" Header="ФИО" DisplayIndex="0" Width="1*"/>
+                    <DataGridTextColumn Binding="{Binding}" Header="ФИО" DisplayIndex="0" Width="1*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
