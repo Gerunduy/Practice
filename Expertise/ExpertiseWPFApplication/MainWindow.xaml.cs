@@ -30,6 +30,7 @@ namespace ExpertiseWPFApplication
         Criterions _Criterions;
         FiledsOfScience _FiledsOfScience;
         ExpertiseCard _ExpertiseCard;
+        NewExpertiseWindow _NewExpertiseWindow;
         Authorization _Authorization;
         ExpertRoom _ExpertRoom;
         CurrentExpertises _CurrentExpertises;
@@ -211,9 +212,11 @@ namespace ExpertiseWPFApplication
         //new expertise
         private void button2_Click(object sender, RoutedEventArgs e)
         {
-            _ExpertiseCard = new ExpertiseCard();
-            _ExpertiseCard.Owner = this;
-            _ExpertiseCard.ShowDialog();
+            NewExpertiseWindow _NewExpertiseWindow;
+
+            _NewExpertiseWindow = new NewExpertiseWindow();
+            _NewExpertiseWindow.Owner = this;
+            _NewExpertiseWindow.ShowDialog();
             
         }
 

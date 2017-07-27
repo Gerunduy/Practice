@@ -30,7 +30,7 @@
                 <ColumnDefinition Width="5"/>
                 <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="auto" Text="Эксперт: Иванов Иван Иванович" TextAlignment="Right" Name="tblUserInfo"/>
+            <TextBlock Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Width="auto" Text="" TextAlignment="Right" Name="tblUserInfo"/>
             <Button Grid.Row="0" Grid.Column="3" Name="button11" Content="Вход" Padding="5,0,5,0" Click="button11_Click"/>
         </Grid>
         <Grid Grid.Row="5" Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ActiveBorderBrushKey}}"/>
