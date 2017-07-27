@@ -25,11 +25,11 @@
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="15"/>
                 <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="15"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="Экспертизы:" HorizontalAlignment="Left"/>
             <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgExpertiseList_CurrentCellChanged">

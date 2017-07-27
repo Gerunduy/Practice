@@ -1421,6 +1421,7 @@ namespace ExpertiseWCFService
                 E.end_expertise = false;
                 E.id_fos = id_fos;
                 E.count_proj_expertise = count_proj_expertise;
+                E.end_date_expertise = DateTime.MinValue;
 
                 foreach (int i in projectsId)
                 {
