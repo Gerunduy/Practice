@@ -427,6 +427,7 @@ namespace ExpertiseWCFService
                     tmpExp.name_expertise = pE.name_expertise;
                     tmpExp.date_expertise = pE.date_expertise;
                     tmpExp.end_expertise = pE.end_expertise;
+                    tmpExp.end_date_expertise = pE.end_date_expertise;
                     result.Add(tmpExp);
                 }
                 return result;
@@ -786,6 +787,7 @@ namespace ExpertiseWCFService
                     tmpE.id_expertise = pE.id_expertise;
                     tmpE.name_expertise = pE.name_expertise;
                     tmpE.date_expertise = pE.date_expertise;
+                    tmpE.end_expertise = pE.end_expertise;
 
 
                     result.Add(tmpE);
@@ -1420,6 +1422,7 @@ namespace ExpertiseWCFService
                 E.end_expertise = false;
                 E.id_fos = id_fos;
                 E.count_proj_expertise = count_proj_expertise;
+                E.end_date_expertise = DateTime.MinValue;
 
                 foreach (int i in projectsId)
                 {
@@ -1443,6 +1446,83 @@ namespace ExpertiseWCFService
                 }
 
                 db_AAZ.Expertises.Add(E);
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+        public List<myCompletedexpertises> GetListComoletedExpertises()
+        {
+            try
+            {
+                List<myCompletedexpertises> result = new List<myCompletedexpertises>();
+                List<Expertises> tmplE = db_AAZ.Expertises.Where(p => p.end_expertise == true).ToList();
+                foreach (Expertises pE in tmplE)
+                {
+                    myCompletedexpertises tmpE = new myCompletedexpertises();
+                    tmpE.id_expertise = pE.id_expertise;
+                    if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "Не завершена";
+                    tmpE.name_expertise = pE.name_expertise;
+                    tmpE.date_expertise = pE.date_expertise;
+                    tmpE.end_date_expertise = pE.end_date_expertise;
+
+                    tmpE.ListExperts = new List<string>();
+                    foreach (ExpertiseExpert EE in pE.ExpertiseExpert)
+                    {
+                        Experts Exp = db_AAZ.Experts.Where(o => o.id_expert == EE.id_expert).FirstOrDefault();
+                        string S = string.Format("{0} {1} {2}", Exp.surname_expert, Exp.name_expert, Exp.patronymic_expert);
+                        tmpE.ListExperts.Add(S);
+                    }
+
+                    tmpE.ListProject = new List<myCompletedexpertisesProject>();
+                    foreach (ProjectExpertise PE in pE.ProjectExpertise)
+                    {
+                        Projects tmpProj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
+                        myCompletedexpertisesProject Proj = new myCompletedexpertisesProject();
+                        Proj.id_project = tmpProj.id_project;
+                        Proj.name_project = tmpProj.name_project;
+                        Proj.lead_project = tmpProj.lead_project;
+                        Proj.grnti_project = tmpProj.grnti_project;
+                        Proj.begin_project = tmpProj.begin_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.money_project = tmpProj.money_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.delete_project = tmpProj.delete_project;
+                        if (PE.accept) Proj.is_accept = "Принят"; else Proj.is_accept = "Не принят";
+
+                        tmpE.ListProject.Add(Proj);
+                    }
+
+                    result.Add(tmpE);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<myCompletedexpertises> result = new List<myCompletedexpertises>();
+                myCompletedexpertises tmpE = new myCompletedexpertises();
+                tmpE.id_expertise = -1;
+                tmpE.name_expertise = "Содержимое не было получено";
+                result.Add(tmpE);
+
+                return result;
+            }
+        }
+
+        public bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept)
+        {
+            try
+            {
+                ProjectExpertise PE = db_AAZ.ProjectExpertise.Where(p => p.id_project_expertise == id_project_expertise).FirstOrDefault();
+                PE.id_expertise = id_expertise;
+                PE.id_project = id_project;
+                PE.accept = accept;
                 db_AAZ.SaveChanges();
                 return true;
             }

@@ -180,6 +180,12 @@ namespace ExpertiseWCFService
         bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
 
         [OperationContract]
+        List<myCompletedexpertises> GetListComoletedExpertises();
+
+        [OperationContract]
+        bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
+
+        [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]
@@ -258,6 +264,33 @@ namespace ExpertiseWCFService
         // TODO: Добавьте здесь операции служб
     }
 
+    #region Классы для завершенных экспертиз
+    public class myCompletedexpertises
+    {
+        public int id_expertise { get; set; }
+        public string status { get; set; }
+        public string name_expertise { get; set; }
+        public System.DateTime date_expertise { get; set; }
+        public System.DateTime end_date_expertise { get; set; }
+        public List<myCompletedexpertisesProject> ListProject { get; set; }
+        public List<string> ListExperts { get; set; }
+    }
+    public class myCompletedexpertisesProject
+    {
+        public int id_project { get; set; }
+        public string name_project { get; set; }
+        public string lead_project { get; set; }
+        public string grnti_project { get; set; }
+        public System.DateTime begin_project { get; set; }
+        public System.DateTime end_project { get; set; }
+        public string money_project { get; set; }
+        public string email_project { get; set; }
+        public bool delete_project { get; set; }
+        public string is_accept { get; set; }
+    }
+    #endregion
+
+
     public class myCurrentexpertises
     {
         public int number { get; set; }
@@ -267,7 +300,7 @@ namespace ExpertiseWCFService
         public DateTime date_expertise { get; set; }
         public int count_project { get; set; }
         public List<string> ListExperts { get; set; }
-        
+
     }
 
     public class myRaitinfExpert

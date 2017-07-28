@@ -69,11 +69,17 @@
     <Compile Include="CardExpertiseProject.xaml.cs">
       <DependentUpon>CardExpertiseProject.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CompletedExpertises.xaml.cs">
+      <DependentUpon>CompletedExpertises.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Criterions.xaml.cs">
       <DependentUpon>Criterions.xaml</DependentUpon>
     </Compile>
     <Compile Include="CurrentExpertises.xaml.cs">
       <DependentUpon>CurrentExpertises.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EditExpertiseCard.xaml.cs">
+      <DependentUpon>EditExpertiseCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
@@ -95,6 +101,9 @@
     </Compile>
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="NewExpertiseWindow.xaml.cs">
+      <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectCard.xaml.cs">
       <DependentUpon>ProjectCard.xaml</DependentUpon>
@@ -123,11 +132,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CompletedExpertises.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Criterions.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="CurrentExpertises.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EditExpertiseCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,6 +188,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="NewExpertiseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ProjectCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -252,6 +273,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myAuthors.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myCurrentexpertises.datasource">

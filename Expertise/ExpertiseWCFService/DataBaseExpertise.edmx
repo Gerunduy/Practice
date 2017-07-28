@@ -86,10 +86,8 @@
           <Property Name="date_expertise" Type="date" Nullable="false" />
           <Property Name="end_expertise" Type="bit" Nullable="false" />
           <Property Name="count_proj_expertise" Type="int" Nullable="false" />
-
           <Property Name="id_fos" Type="int" Nullable="false" />
-
-
+          <Property Name="end_date_expertise" Type="date" Nullable="false" />
         </EntityType>
         <EntityType Name="Experts">
           <Key>
@@ -847,12 +845,9 @@
           <NavigationProperty Name="ProjectExpertise" Relationship="Self.FK_ProjectExpertise_Expertises" FromRole="Expertises" ToRole="ProjectExpertise" />
           <Property Name="end_expertise" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="Expertises" ToRole="ExpertiseExpert" />
-
           <Property Name="count_proj_expertise" Type="Int32" Nullable="false" />
           <Property Name="id_fos" Type="Int32" Nullable="false" />
-
-         
-
+          <Property Name="end_date_expertise" Type="DateTime" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="Experts">
           <Key>
@@ -1628,9 +1623,8 @@
           <EntitySetMapping Name="Expertises">
             <EntityTypeMapping TypeName="db_AAZModel.Expertises">
               <MappingFragment StoreEntitySet="Expertises">
-
+                <ScalarProperty Name="end_date_expertise" ColumnName="end_date_expertise" />
                 <ScalarProperty Name="id_fos" ColumnName="id_fos" />
-
                 <ScalarProperty Name="count_proj_expertise" ColumnName="count_proj_expertise" />
                 <ScalarProperty Name="end_expertise" ColumnName="end_expertise" />
                 <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />

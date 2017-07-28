@@ -167,6 +167,7 @@
       <xs:element minOccurs="0" name="ProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
       <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
       <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
       <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
       <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
       <xs:element minOccurs="0" name="id_fos" type="xs:int" />
@@ -398,6 +399,45 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
+  <xs:complexType name="ArrayOfmyCompletedexpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCompletedexpertises" nillable="true" type="tns:ArrayOfmyCompletedexpertises" />
+  <xs:complexType name="myCompletedexpertises">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListExperts" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ListProject" nillable="true" type="tns:ArrayOfmyCompletedexpertisesProject" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
+  <xs:complexType name="ArrayOfmyCompletedexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertisesProject" nillable="true" type="tns:myCompletedexpertisesProject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCompletedexpertisesProject" nillable="true" type="tns:ArrayOfmyCompletedexpertisesProject" />
+  <xs:complexType name="myCompletedexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="delete_project" type="xs:boolean" />
+      <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="is_accept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCompletedexpertisesProject" nillable="true" type="tns:myCompletedexpertisesProject" />
   <xs:complexType name="TablesForExpertise">
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />
@@ -440,7 +480,7 @@
       <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="number" type="xs:int" />
       <xs:element minOccurs="0" name="status_expertise" nillable="true" type="xs:string" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q3:ArrayOfstring" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />
