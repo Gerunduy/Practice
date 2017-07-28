@@ -41,14 +41,14 @@
                         <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToCurExpertiseCard" Click="btnGoToCurExpertiseCard_Click"/>
+                                    <Button Content="В карточку" Name="btnGoToCurExpertiseCard" Click="btnGoToCurExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
                         <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="3">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти к проведению экспертизы" Name="btnGoToExpertise"/>
+                                    <Button Content="К проведению" Name="btnGoToExpertise"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -61,10 +61,10 @@
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_expertise}" Header="№" Width="auto" DisplayIndex="0"/>
                         <DataGridTextColumn Binding="{Binding Path=name_expertise}" Header="Наименование" Width="1*" DisplayIndex="1"/>
-                        <DataGridTemplateColumn Header="" Width="1*" DisplayIndex="2">
+                        <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToCompExpertiseCard" Click="btnGoToCompExpertiseCard_Click"/>
+                                    <Button Content="В карточку" Name="btnGoToCompExpertiseCard" Click="btnGoToCompExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

@@ -1482,7 +1482,7 @@ namespace ExpertiseWCFService
                     //P.Rating = 
                     result.ListProjects.Add(P);
                 }
-
+                // =======================================================================================================
                 result.ListCriterions = new List<Criterions>();
                 result.ListCatCrit = new List<CatCrit>();
                 result.ListCategories = new List<Categories>();
@@ -1500,16 +1500,18 @@ namespace ExpertiseWCFService
                         CC.id_cat = pCC.id_cat;
                         CC.id_crit = pCC.id_crit;
                         result.ListCatCrit.Add(CC);
+
                         Categories tmpCat = db_AAZ.Categories.Where(v => v.id_category == CC.id_cat).FirstOrDefault();
-                        Categories Cat = new Categories();
-                        Cat.id_category = tmpCat.id_category;
-                        Cat.name_category = tmpCat.name_category;
-                        result.ListCategories.Add(Cat);
+                        if (result.ListCategories.Where(q => q.id_category == tmpCat.id_category).FirstOrDefault() == default(Categories))
+                        {
+                            Categories Cat = new Categories();
+                            Cat.id_category = tmpCat.id_category;
+                            Cat.name_category = tmpCat.name_category;
+                            result.ListCategories.Add(Cat);
+                        }
                     }
                 }
-                result.ListCatCrit = result.ListCatCrit.Distinct().ToList();
-                result.ListCategories = result.ListCategories.Distinct().ToList();
-
+                // =======================================================================================================
                 result.ListExperts = new List<Experts>();
                 foreach (ExpertiseExpert EE in E.ExpertiseExpert)
                 {
