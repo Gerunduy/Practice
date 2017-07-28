@@ -320,6 +320,12 @@
   <wsdl:message name="IService1_CreateNewExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateNewExpertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetMyExpertiseForCardByID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyExpertiseForCardByID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetMyExpertiseForCardByID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMyExpertiseForCardByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListComoletedExpertises_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListComoletedExpertises" />
   </wsdl:message>
@@ -672,6 +678,10 @@
     <wsdl:operation name="CreateNewExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateNewExpertise" message="tns:IService1_CreateNewExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateNewExpertiseResponse" message="tns:IService1_CreateNewExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMyExpertiseForCardByID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMyExpertiseForCardByID" message="tns:IService1_GetMyExpertiseForCardByID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMyExpertiseForCardByIDResponse" message="tns:IService1_GetMyExpertiseForCardByID_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetListComoletedExpertises">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListComoletedExpertises" message="tns:IService1_GetListComoletedExpertises_InputMessage" />
@@ -1233,6 +1243,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateNewExpertise">
       <soap:operation soapAction="http://tempuri.org/IService1/CreateNewExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMyExpertiseForCardByID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetMyExpertiseForCardByID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

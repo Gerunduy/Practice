@@ -180,6 +180,9 @@ namespace ExpertiseWCFService
         bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
 
         [OperationContract]
+        myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise);
+
+        [OperationContract]
         List<myCompletedexpertises> GetListComoletedExpertises();
 
         [OperationContract]
@@ -263,6 +266,33 @@ namespace ExpertiseWCFService
 
         // TODO: Добавьте здесь операции служб
     }
+
+
+    #region Классы для карточки экспертизы
+    public class myExpertiseForCard
+    {
+        public int id_expertise { get; set; }
+        public string name_expertise { get; set; }
+        public string fos_expertise { get; set; }
+        public string status { get; set; }
+        public System.DateTime date_expertise { get; set; }
+        public System.DateTime end_date_expertise { get; set; }
+        public List<myProjectForExpertiseCard> ListProjects { get; set; }
+        public List<Criterions> ListCriterions { get; set; }
+        public List<CatCrit> ListCatCrit { get; set; }
+        public List<Categories> ListCategories { get; set; }
+        public List<Experts> ListExperts { get; set; }
+        public int count_project_expertise { get; set; }
+    }
+    public class myProjectForExpertiseCard
+    {
+        public int id_project { get; set; }
+        public string name_project { get; set; }
+        public string lead_project { get; set; }
+        public string organization { get; set; }
+        public string Rating { get; set; } // возможно будет другой тип
+    }
+    #endregion
 
     #region Классы для завершенных экспертиз
     public class myCompletedexpertises

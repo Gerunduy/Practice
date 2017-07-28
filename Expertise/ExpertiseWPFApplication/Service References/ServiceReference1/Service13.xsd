@@ -712,6 +712,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetMyExpertiseForCardByID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMyExpertiseForCardByIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetMyExpertiseForCardByIDResult" nillable="true" type="q36:myExpertiseForCard" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="GetListComoletedExpertises">
     <xs:complexType>
       <xs:sequence />
@@ -720,7 +734,7 @@
   <xs:element name="GetListComoletedExpertisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListComoletedExpertisesResult" nillable="true" type="q36:ArrayOfmyCompletedexpertises" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListComoletedExpertisesResult" nillable="true" type="q37:ArrayOfmyCompletedexpertises" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -749,7 +763,7 @@
   <xs:element name="GetTablesForExpertiseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetTablesForExpertiseResult" nillable="true" type="q37:TablesForExpertise" />
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetTablesForExpertiseResult" nillable="true" type="q38:TablesForExpertise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -763,7 +777,7 @@
   <xs:element name="GetListRaitingForExpertiseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListRaitingForExpertiseResult" nillable="true" type="q38:ArrayOfmyRaitinfExpert" />
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListRaitingForExpertiseResult" nillable="true" type="q39:ArrayOfmyRaitinfExpert" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -775,7 +789,7 @@
   <xs:element name="testResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="testResult" nillable="true" type="q39:ArrayOfProjectExpertise" />
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="testResult" nillable="true" type="q40:ArrayOfProjectExpertise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -802,7 +816,7 @@
         <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="delete_expert" type="xs:boolean" />
         <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
-        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFOS" nillable="true" type="q40:ArrayOfint" />
+        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFOS" nillable="true" type="q41:ArrayOfint" />
         <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -871,7 +885,7 @@
         <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
         <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
-        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listauthor" nillable="true" type="q41:ArrayOfint" />
+        <xs:element xmlns:q42="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listauthor" nillable="true" type="q42:ArrayOfint" />
         <xs:element minOccurs="0" name="fos" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -893,7 +907,7 @@
   <xs:element name="Expertise_ExpertResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="Expertise_ExpertResult" nillable="true" type="q42:ArrayOfExpertise_Expert" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="Expertise_ExpertResult" nillable="true" type="q43:ArrayOfExpertise_Expert" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -907,7 +921,7 @@
         <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
         <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
-        <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listauthor" nillable="true" type="q43:ArrayOfint" />
+        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="listauthor" nillable="true" type="q44:ArrayOfint" />
         <xs:element minOccurs="0" name="fos" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -954,7 +968,7 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
-        <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrExperts" nillable="true" type="q44:ArrayOfint" />
+        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="arrExperts" nillable="true" type="q45:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1004,7 +1018,7 @@
         <xs:element minOccurs="0" name="degree_expert" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
-        <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFOS" nillable="true" type="q45:ArrayOfint" />
+        <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListFOS" nillable="true" type="q46:ArrayOfint" />
         <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
       </xs:sequence>
@@ -1057,7 +1071,7 @@
   <xs:element name="AuthorizationResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="AuthorizationResult" nillable="true" type="q46:Experts" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="AuthorizationResult" nillable="true" type="q47:Experts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -1076,14 +1090,14 @@
   <xs:element name="GetDataUsingDataContract">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="composite" nillable="true" type="q47:CompositeType" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="composite" nillable="true" type="q48:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GetDataUsingDataContractResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q48:CompositeType" />
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetDataUsingDataContractResult" nillable="true" type="q49:CompositeType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

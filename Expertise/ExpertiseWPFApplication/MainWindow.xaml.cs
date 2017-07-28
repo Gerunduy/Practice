@@ -279,13 +279,5 @@ namespace ExpertiseWPFApplication
             _CompletedExpertises.Owner = this;
             _CompletedExpertises.ShowDialog(); // скорее всего здесь _CompletedExpertises.Show();
         }
-
-        private void Window_Closed(object sender, EventArgs e)
-        {
-            foreach (Window pW in App.Current.Windows)
-            {
-                pW.Close();
-            }
-        }
     }
 }

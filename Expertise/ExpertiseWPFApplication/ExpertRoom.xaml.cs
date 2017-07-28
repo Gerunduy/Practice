@@ -26,7 +26,9 @@ namespace ExpertiseWPFApplication
         List<ServiceReference1.Expertises> lCurExpertises = new List<ServiceReference1.Expertises>();
         List<ServiceReference1.Expertises> lCompExpertises = new List<ServiceReference1.Expertises>();
 
-        ExpertiseCard _ExpertiseCard = new ExpertiseCard();
+        int SelectedCurExpertiseID;
+        int SelectedCompExpertiseID;
+        ExpertiseCard _ExpertiseCard;
 
         public ExpertRoom(ServiceReference1.Experts User)
         {
@@ -73,6 +75,25 @@ namespace ExpertiseWPFApplication
                 Waiting(false);
                 ShowInfo("Ошибка!", "Ошибка!");
             }      
+        }
+        // ===================================================================
+        private void dgCurrentExpertises_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.Expertises CurrentCurExpertise = dgCurrentExpertises.CurrentCell.Item as ServiceReference1.Expertises;
+                SelectedCurExpertiseID = CurrentCurExpertise.id_expertise;
+            }
+            catch { }
+        }
+        private void dgCompletedExpertises_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.Expertises CurrentCompExpertise = dgCompletedExpertises.CurrentCell.Item as ServiceReference1.Expertises;
+                SelectedCompExpertiseID = CurrentCompExpertise.id_expertise;
+            }
+            catch { }
         }
         // ===================================================================
         private void Waiting(bool Wait)
@@ -122,9 +143,16 @@ namespace ExpertiseWPFApplication
             }
         }
 
-        private void btnGoToExpertiseCard_Click(object sender, RoutedEventArgs e)
+        private void btnGoToCurExpertiseCard_Click(object sender, RoutedEventArgs e)
         {
-            _ExpertiseCard = new ExpertiseCard();
+            _ExpertiseCard = new ExpertiseCard(SelectedCurExpertiseID);
+            _ExpertiseCard.Owner = App.Current.MainWindow;
+            _ExpertiseCard.Show();
+        }
+
+        private void btnGoToCompExpertiseCard_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertiseCard = new ExpertiseCard(SelectedCompExpertiseID);
             _ExpertiseCard.Owner = App.Current.MainWindow;
             _ExpertiseCard.Show();
         }

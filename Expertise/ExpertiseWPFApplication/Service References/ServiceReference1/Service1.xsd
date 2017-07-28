@@ -399,6 +399,39 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
+  <xs:complexType name="myExpertiseForCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="ListCategories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="ListExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfmyProjectForExpertiseCard" />
+      <xs:element minOccurs="0" name="count_project_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fos_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myExpertiseForCard" nillable="true" type="tns:myExpertiseForCard" />
+  <xs:complexType name="ArrayOfmyProjectForExpertiseCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myProjectForExpertiseCard" nillable="true" type="tns:myProjectForExpertiseCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyProjectForExpertiseCard" nillable="true" type="tns:ArrayOfmyProjectForExpertiseCard" />
+  <xs:complexType name="myProjectForExpertiseCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="organization" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myProjectForExpertiseCard" nillable="true" type="tns:myProjectForExpertiseCard" />
   <xs:complexType name="ArrayOfmyCompletedexpertises">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />

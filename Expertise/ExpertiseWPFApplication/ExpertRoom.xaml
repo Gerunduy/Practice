@@ -34,14 +34,14 @@
                 </Grid.RowDefinitions>
                 <TextBlock Grid.Row="0" Text="Текущие экспертизы:"/>
                 <TextBlock Grid.Row="1" FontSize="25" Text="Обработка..." VerticalAlignment="Center" TextAlignment="Center" Name="tblWaitInfo1"/>
-                <DataGrid Grid.Row="1" Name="dgCurrentExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="1" Name="dgCurrentExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgCurrentExpertises_CurrentCellChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_expertise}" Header="№" Width="auto" DisplayIndex="0"/>
                         <DataGridTextColumn Binding="{Binding Path=name_expertise}" Header="Наименование" Width="1*" DisplayIndex="1"/>
                         <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToCurExpertiseCard" Click="btnGoToCurExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -57,14 +57,14 @@
                 <TextBlock Grid.Row="1" FontSize="20" Text="" VerticalAlignment="Center" TextAlignment="Center" Name="tblInfo1"/>
                 <TextBlock Grid.Row="3" Text="Завершенные экспертизы:"/>
                 <TextBlock Grid.Row="4" FontSize="25" Text="Обработка..." VerticalAlignment="Center" TextAlignment="Center" Name="tblWaitInfo2"/>
-                <DataGrid Grid.Row="4" Name="dgCompletedExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <DataGrid Grid.Row="4" Name="dgCompletedExpertises" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgCompletedExpertises_CurrentCellChanged">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_expertise}" Header="№" Width="auto" DisplayIndex="0"/>
                         <DataGridTextColumn Binding="{Binding Path=name_expertise}" Header="Наименование" Width="1*" DisplayIndex="1"/>
                         <DataGridTemplateColumn Header="" Width="1*" DisplayIndex="2">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
+                                    <Button Content="Перейти в карточку Экспертизы" Name="btnGoToCompExpertiseCard" Click="btnGoToCompExpertiseCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

@@ -1456,6 +1456,84 @@ namespace ExpertiseWCFService
             }
         }
 
+        public myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise)
+        {
+            try
+            {
+                myExpertiseForCard result = new myExpertiseForCard();
+                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                result.id_expertise = E.id_expertise;
+                result.name_expertise = E.name_expertise;
+                result.fos_expertise = db_AAZ.FiledsOfScience.Where(o => o.id_fos == E.id_fos).FirstOrDefault().name_fos;
+                if (E.end_expertise) result.status = "Завершена"; else result.status = "Не завершена";
+                result.date_expertise = E.date_expertise;
+                result.end_date_expertise = E.end_date_expertise;
+                result.count_project_expertise = E.count_proj_expertise;
+
+                result.ListProjects = new List<myProjectForExpertiseCard>();
+                foreach (ProjectExpertise PE in E.ProjectExpertise)
+                {
+                    myProjectForExpertiseCard P = new myProjectForExpertiseCard();
+                    Projects proj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
+                    P.id_project = proj.id_project;
+                    P.name_project = proj.name_project;
+                    P.lead_project = proj.lead_project;
+                    //P.organization = 
+                    //P.Rating = 
+                    result.ListProjects.Add(P);
+                }
+
+                result.ListCriterions = new List<Criterions>();
+                result.ListCatCrit = new List<CatCrit>();
+                result.ListCategories = new List<Categories>();
+                foreach (ExpCrit EC in E.ExpCrit)
+                {
+                    Criterions tmpCrit = db_AAZ.Criterions.Where(x => x.id_crit == EC.id_crit).FirstOrDefault();
+                    Criterions Crit = new Criterions();
+                    Crit.id_crit = tmpCrit.id_crit;
+                    Crit.name_crit = tmpCrit.name_crit;
+                    result.ListCriterions.Add(Crit);
+                    foreach (CatCrit pCC in tmpCrit.CatCrit)
+                    {
+                        CatCrit CC = new CatCrit();
+                        CC.id_cat_crit = pCC.id_cat_crit;
+                        CC.id_cat = pCC.id_cat;
+                        CC.id_crit = pCC.id_crit;
+                        result.ListCatCrit.Add(CC);
+                        Categories tmpCat = db_AAZ.Categories.Where(v => v.id_category == CC.id_cat).FirstOrDefault();
+                        Categories Cat = new Categories();
+                        Cat.id_category = tmpCat.id_category;
+                        Cat.name_category = tmpCat.name_category;
+                        result.ListCategories.Add(Cat);
+                    }
+                }
+                result.ListCatCrit = result.ListCatCrit.Distinct().ToList();
+                result.ListCategories = result.ListCategories.Distinct().ToList();
+
+                result.ListExperts = new List<Experts>();
+                foreach (ExpertiseExpert EE in E.ExpertiseExpert)
+                {
+                    Experts tmpExpert = db_AAZ.Experts.Where(g => g.id_expert == EE.id_expert).FirstOrDefault();
+                    Experts Expert = new Experts();
+                    Expert.id_expert = tmpExpert.id_expert;
+                    Expert.surname_expert = tmpExpert.surname_expert;
+                    Expert.name_expert = tmpExpert.name_expert;
+                    Expert.patronymic_expert = tmpExpert.patronymic_expert;
+                    result.ListExperts.Add(Expert);
+                }
+
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                myExpertiseForCard result = new myExpertiseForCard();
+                result.id_expertise = -1;
+                result.name_expertise = "Ошибка получения данных";
+                return result;
+            }
+        }
+
         public List<myCompletedexpertises> GetListComoletedExpertises()
         {
             try

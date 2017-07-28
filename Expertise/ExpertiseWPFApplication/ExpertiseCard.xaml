@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="ExpertiseCard" Height="500" Width="1230" MinHeight="500" MinWidth="1230">
+        Title="ExpertiseCard" Height="600" Width="800" MinHeight="600" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -17,16 +17,18 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="100" Text="Обработка..." Padding="200,150,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="100" Text="Обработка..." Padding="120,200,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
         <Grid Grid.Row="1" Grid.Column="1" Name="Grid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="5"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="auto" MinHeight="150" MaxHeight="250"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="50"/>
             </Grid.RowDefinitions>
@@ -55,7 +57,7 @@
                 <TextBlock Grid.Row="0" Grid.Column="1" FontSize="14" Text="Направление науки:"/>
                 <TextBlock Grid.Row="0" Grid.Column="3" FontSize="14" Text="Направление" Name="tblFosExpertise"/>
             </Grid>
-            <Grid Grid.Row="4" Grid.Column="0">
+            <Grid Grid.Row="4" Grid.Column="0" Name="gProjects">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto"/>
                     <RowDefinition Height="5"/>
@@ -63,62 +65,82 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"/>
-                    <ColumnDefinition Width="380"/>
-                    <ColumnDefinition Width="15"/>
-                    <ColumnDefinition Width="380"/>
-                    <ColumnDefinition Width="15"/>
-                    <ColumnDefinition Width="380"/>
-                    <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Проекты-участники:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="1" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="10"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Проекты-участники:" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Row="0" Grid.Column="4" Text="Количество проектов:" HorizontalAlignment="Right"/>
+                </Grid>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseProjectList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=id_project}" Header="№" DisplayIndex="0" Width="auto"/>
                         <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Наиминование" DisplayIndex="1" Width="1*"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Руководитель" DisplayIndex="2" Width="auto"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Организация" DisplayIndex="3" Width="auto"/>
+                        <DataGridTextColumn Binding="{Binding Path=name_project}" Header="Итоговый рейтинг" DisplayIndex="4" Width="auto"/>
+                        <DataGridTemplateColumn Header="В карточку" Width="auto" DisplayIndex="5">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="В карточку" Name="btnGoToProjectCard"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0" Name="gCriterions">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="380"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Категории:" Name="tblAllCategories" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgCatList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False" CurrentCellChanged="dgCatList_CurrentCellChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Path=name_category}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
 
-                <TextBlock Grid.Row="0" Grid.Column="3" Text="Выбранные критерии:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="3" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Критерии:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="2" Name="dgExpertiseCritList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
                     <DataGrid.Columns>
                         <DataGridTextColumn Binding="{Binding Path=name_crit}" Header="Название" DisplayIndex="0" Width="1*"/>
                     </DataGrid.Columns>
                 </DataGrid>
-
-                <TextBlock Grid.Row="0" Grid.Column="5" Text="Эксперты-участники:" HorizontalAlignment="Left"/>
-                <DataGrid Grid.Row="2" Grid.Column="5" Name="dgExpertiseExpertList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Binding="{Binding Path=surname_expert}" Header="Фамилия" DisplayIndex="0" Width="1*"/>
-                        <DataGridTextColumn Binding="{Binding Path=name_expert}" Header="Имя" DisplayIndex="1" Width="1*"/>
-                        <DataGridTextColumn Binding="{Binding Path=patronymic_expert}" Header="Отчество" DisplayIndex="2" Width="1*"/>
-                    </DataGrid.Columns>
-                </DataGrid>
             </Grid>
-            <Grid Grid.Row="6" Grid.Column="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="210"/>
-                    <ColumnDefinition Width="15"/>
-                    <ColumnDefinition Width="155"/>
-                    <ColumnDefinition Width="1*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="0">Количество проектов, <LineBreak/> которые предполагается поддержать:</TextBlock>
-                <TextBlock Grid.Row="0" Grid.Column="2" FontSize="19" Name="tblCountExpertiseProjects" TextAlignment="Center"/>
-            </Grid>
-            <Grid Grid.Row="8" Grid.Column="0">
+            <Grid Grid.Row="8" Grid.Column="0" Name="gExperts">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="10"/>
-                    <ColumnDefinition Width="120"/>
-                    <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="1" Grid.Column="1" Content="Редактировать" Name="btnEdit"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Результаты работы экспертной комиссии:" HorizontalAlignment="Left"/>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExpertCommissionList" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="ФИО" Width="auto" DisplayIndex="0">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="{Binding Path=name_expert}" Name="btnGoToExpertCard"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </Grid>
     </Grid>
