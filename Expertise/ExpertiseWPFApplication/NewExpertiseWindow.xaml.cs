@@ -407,7 +407,7 @@ namespace ExpertiseWPFApplication
         //=== Создание экспертизы и отмена ====================================
         private void Client_CreateNewExpertiseCompleted(object sender, ServiceReference1.CreateNewExpertiseCompletedEventArgs e)
         {
-            if (e.Error == null)
+            if (e.Error == null && e.Result)
             {
                 this.Close();
                 MessageBox.Show("Экспертиза добавлена.");

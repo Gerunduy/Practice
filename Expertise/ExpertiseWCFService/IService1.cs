@@ -87,6 +87,9 @@ namespace ExpertiseWCFService
         List<ExpertFos> GetListAllExpertFos();
 
         [OperationContract]
+        List<ExpertiseExpert> GetListAllExpertiseExpert();
+
+        [OperationContract]
         List<ExpertiseMark> GetListAllExpertiseMark();
 
         [OperationContract]
@@ -180,10 +183,16 @@ namespace ExpertiseWCFService
         bool CreateNewExpertise(string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, int[] projectsId, int[] critsId, int[] expertsId);
 
         [OperationContract]
+        bool EditExpertiseByID(int id_expertise, string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, ProjectExpertise[] lprojects, ExpCrit[] lcrits, ExpertiseExpert[] lexperts);
+
+        [OperationContract]
         myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise);
 
         [OperationContract]
         List<myCompletedexpertises> GetListComoletedExpertises();
+
+        [OperationContract]
+        TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise);
 
         [OperationContract]
         bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
@@ -317,6 +326,27 @@ namespace ExpertiseWCFService
         public string email_project { get; set; }
         public bool delete_project { get; set; }
         public string is_accept { get; set; }
+    }
+    #endregion
+
+    #region Классы для редактирования экспертиз
+    public class TablesForEditExpertise
+    {
+        public Expertises Expertise { get; set; }
+        public List<ProjectExpertise> lProjectExpertise { get; set; }
+        public List<ExpCrit> lExpCrit { get; set; }
+        public List<ExpertiseExpert> lExpertiseExpert { get; set; }
+        // === === ===
+        public List<FiledsOfScience> lFOS { get; set; }
+        public List<Projects> lProjects { get; set; }
+        public List<ProjectFos> lProjectFos { get; set; }
+        public List<Categories> lCatigories { get; set; }
+        public List<CatCrit> lCatCrit { get; set; }
+        public List<Criterions> lCriterions { get; set; }
+        public List<CritValues> lCritValues { get; set; }
+        public List<Experts> lExperts { get; set; }
+        public List<ExpertFos> lExpertFos { get; set; }
+        public bool Err { get; set; }
     }
     #endregion
 

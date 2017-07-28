@@ -248,6 +248,9 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertFos.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpertiseMark.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -300,6 +303,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Projects.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.TablesForExpertise.datasource">

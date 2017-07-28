@@ -471,6 +471,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="myCompletedexpertisesProject" nillable="true" type="tns:myCompletedexpertisesProject" />
+  <xs:complexType name="TablesForEditExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Expertise" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="lCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="lCatigories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="lCritValues" nillable="true" type="tns:ArrayOfCritValues" />
+      <xs:element minOccurs="0" name="lCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="lExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
+      <xs:element minOccurs="0" name="lExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="lExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
+      <xs:element minOccurs="0" name="lExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="lFOS" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+      <xs:element minOccurs="0" name="lProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="lProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="lProjects" nillable="true" type="tns:ArrayOfProjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablesForEditExpertise" nillable="true" type="tns:TablesForEditExpertise" />
   <xs:complexType name="TablesForExpertise">
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />

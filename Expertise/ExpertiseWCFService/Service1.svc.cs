@@ -746,6 +746,35 @@ namespace ExpertiseWCFService
             }
         }
 
+        public List<ExpertiseExpert> GetListAllExpertiseExpert()
+        {
+            try
+            {
+                List<ExpertiseExpert> result = new List<ExpertiseExpert>();
+                List<ExpertiseExpert> tmplEE = db_AAZ.ExpertiseExpert.ToList();
+                foreach (ExpertiseExpert pEE in tmplEE)
+                {
+                    ExpertiseExpert tmpEE = new ExpertiseExpert();
+                    tmpEE.id_expertise_expert = pEE.id_expertise_expert;
+                    tmpEE.id_expertise = pEE.id_expertise;
+                    tmpEE.id_expert = pEE.id_expert;
+
+                    result.Add(tmpEE);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<ExpertiseExpert> result = new List<ExpertiseExpert>();
+                ExpertiseExpert tmpEE = new ExpertiseExpert();
+                tmpEE.id_expertise_expert = -1;
+                result.Add(tmpEE);
+
+                return result;
+            }
+        }
+
         public List<ExpertiseMark> GetListAllExpertiseMark()
         {
             try
@@ -1456,6 +1485,51 @@ namespace ExpertiseWCFService
             }
         }
 
+        public bool EditExpertiseByID(int id_expertise, string name_expertise, DateTime date_expertise, int id_fos, int count_proj_expertise, ProjectExpertise[] lprojects, ExpCrit[] lcrits, ExpertiseExpert[] lexperts)
+        {
+            try
+            {
+                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                E.name_expertise = name_expertise;
+                E.date_expertise = date_expertise;
+                //E.end_expertise = false;
+                E.id_fos = id_fos;
+                E.count_proj_expertise = count_proj_expertise;
+                //E.end_date_expertise = DateTime.MinValue;
+
+                //==========================================================
+                ProjectExpertise[] ePE = E.ProjectExpertise.ToArray();
+                foreach (ProjectExpertise PE in ePE)
+                {
+                    db_AAZ.ProjectExpertise.Remove(PE);
+                }
+                E.ProjectExpertise = lprojects;
+                //==========================================================
+                ExpCrit[] eEC = E.ExpCrit.ToArray();
+                foreach (ExpCrit EC in eEC)
+                {
+                    db_AAZ.ExpCrit.Remove(EC);
+                }
+                E.ExpCrit = lcrits;
+                //==========================================================
+                ExpertiseExpert[] eEE = E.ExpertiseExpert.ToArray();
+                foreach (ExpertiseExpert EE in eEE)
+                {
+                    db_AAZ.ExpertiseExpert.Remove(EE);
+                }
+                E.ExpertiseExpert = lexperts;
+                //==========================================================
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
         public myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise)
         {
             try
@@ -1591,6 +1665,75 @@ namespace ExpertiseWCFService
                 tmpE.name_expertise = "Содержимое не было получено";
                 result.Add(tmpE);
 
+                return result;
+            }
+        }
+
+        public TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise)
+        {
+            try
+            {
+                TablesForEditExpertise result = new TablesForEditExpertise();
+                Expertises tmpE = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                result.Expertise = new Expertises();
+                result.Expertise.id_expertise = tmpE.id_expertise;
+                result.Expertise.name_expertise = tmpE.name_expertise;
+                result.Expertise.date_expertise = tmpE.date_expertise;
+                result.Expertise.end_expertise = tmpE.end_expertise;
+                result.Expertise.count_proj_expertise = tmpE.count_proj_expertise;
+                result.Expertise.id_fos = tmpE.id_fos;
+                result.Expertise.end_date_expertise = tmpE.end_date_expertise;
+
+                result.lProjectExpertise = new List<ProjectExpertise>();
+                foreach (ProjectExpertise pPE in tmpE.ProjectExpertise)
+                {
+                    ProjectExpertise tmpPE = new ProjectExpertise();
+                    tmpPE.id_project_expertise = pPE.id_project_expertise;
+                    tmpPE.id_expertise = pPE.id_expertise;
+                    tmpPE.id_project = pPE.id_project;
+                    tmpPE.accept = pPE.accept;
+                    result.lProjectExpertise.Add(tmpPE);
+                }
+
+                result.lExpCrit = new List<ExpCrit>();
+                foreach (ExpCrit pEC in tmpE.ExpCrit)
+                {
+                    ExpCrit tmpEC = new ExpCrit();
+                    tmpEC.id_exp_crit = pEC.id_exp_crit;
+                    tmpEC.id_exp = pEC.id_exp;
+                    tmpEC.id_crit = pEC.id_crit;
+
+                    result.lExpCrit.Add(tmpEC);
+                }
+
+                result.lExpertiseExpert = new List<ExpertiseExpert>();
+                foreach (ExpertiseExpert pEE in tmpE.ExpertiseExpert)
+                {
+                    ExpertiseExpert tmpEE = new ExpertiseExpert();
+                    tmpEE.id_expertise_expert = pEE.id_expertise_expert;
+                    tmpEE.id_expertise = pEE.id_expertise;
+                    tmpEE.id_expert = pEE.id_expert;
+
+                    result.lExpertiseExpert.Add(tmpEE);
+                }
+
+                result.lFOS = GetListAllFiledsOfScience();
+                result.lProjects = GetListAllProjects();
+                result.lProjectFos = GetListAllProjectFos();
+                result.lCatigories = GetListAllCategories();
+                result.lCatCrit = GetListAllCatCrit();
+                result.lCriterions = GetListAllCriterions();
+                result.lCritValues = GetListAllCritValues();
+                result.lExperts = GetListAllExperts();
+                result.lExpertFos = GetListAllExpertFos();
+                result.Err = false;
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                TablesForEditExpertise result = new TablesForEditExpertise();
+                result.Err = true;
                 return result;
             }
         }

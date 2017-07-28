@@ -35,6 +35,7 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Experts CurrentExpertiseExpert;
         //=== ========================== ===
 
+        int id_expertise;
         string ExpertiseName;
         ServiceReference1.FiledsOfScience ExpertiseFOS = new ServiceReference1.FiledsOfScience();
         List<ServiceReference1.Projects> lExpertiseProjects = new List<ServiceReference1.Projects>();
@@ -57,9 +58,13 @@ namespace ExpertiseWPFApplication
         List<ServiceReference1.Criterions> ltmpCriterions = new List<ServiceReference1.Criterions>();
         List<ServiceReference1.CatCrit> ltmpCatCrit = new List<ServiceReference1.CatCrit>();
         List<ServiceReference1.Experts> ltmpExperts = new List<ServiceReference1.Experts>();
-        public EditExpertiseCard()
+
+        bool NeedToClear;
+        public EditExpertiseCard(int id_expertise)
         {
             InitializeComponent();
+            this.id_expertise = id_expertise;
+            NeedToClear = false;
 
             tbxExpertiseName.BorderBrush = Brushes.Black;
             cmbFOS.BorderBrush = Brushes.Black;
@@ -68,19 +73,21 @@ namespace ExpertiseWPFApplication
             tbxCountExpertiseProjects.BorderBrush = Brushes.Black;
             dgExpertiseExpertList.BorderBrush = Brushes.Black;
 
-            client.GetTablesForExpertiseCompleted += Client_GetTablesForExpertiseCompleted;
-            client.CreateNewExpertiseCompleted += Client_CreateNewExpertiseCompleted;
-            client.GetTablesForExpertiseAsync();
+            client.GetTabelsForEditExpertiseByIDCompleted += Client_GetTabelsForEditExpertiseByIDCompleted;
+            client.EditExpertiseByIDCompleted += Client_EditExpertiseByIDCompleted;
+            // подключение метода редактирования
+
+            client.GetTabelsForEditExpertiseByIDAsync(id_expertise);
             Waiting(true);
             gProjects.IsEnabled = false;
             gCriterions.IsEnabled = false;
             gExperts.IsEnabled = false;
-            //CheckProjbtn();
-            //CheckCritbtn();
-            //CheckExpertbtn();
         }
+
+        
+
         //=======================================================================================
-        private void Client_GetTablesForExpertiseCompleted(object sender, ServiceReference1.GetTablesForExpertiseCompletedEventArgs e)
+        private void Client_GetTabelsForEditExpertiseByIDCompleted(object sender, ServiceReference1.GetTabelsForEditExpertiseByIDCompletedEventArgs e)
         {
             if (e.Error == null)
             {
@@ -96,6 +103,32 @@ namespace ExpertiseWPFApplication
                     lExperts = e.Result.lExperts.ToList();
                     lExpertFos = e.Result.lExpertFos.ToList();
 
+                    ExpertiseName = e.Result.Expertise.name_expertise;
+                    ExpertiseFOS = lFOS.Where(p => p.id_fos == e.Result.Expertise.id_fos).FirstOrDefault();
+
+                    lExpertiseProjects = new List<ServiceReference1.Projects>();
+                    foreach (ServiceReference1.ProjectExpertise pPE in e.Result.lProjectExpertise)
+                    {
+                        ServiceReference1.Projects tmpP = e.Result.lProjects.Where(o => o.id_project == pPE.id_project).FirstOrDefault();
+                        lExpertiseProjects.Add(tmpP);
+                    }
+
+                    lExpertiseCrit = new List<ServiceReference1.Criterions>();
+                    foreach (ServiceReference1.ExpCrit pEC in e.Result.lExpCrit)
+                    {
+                        ServiceReference1.Criterions tmpC = e.Result.lCriterions.Where(z => z.id_crit == pEC.id_crit).FirstOrDefault();
+                        lExpertiseCrit.Add(tmpC);
+                    }
+
+                    Count_proj_expertise = e.Result.Expertise.count_proj_expertise;
+
+                    lExpertiseExperts = new List<ServiceReference1.Experts>();
+                    foreach (ServiceReference1.ExpertiseExpert pE in e.Result.lExpertiseExpert)
+                    {
+                        ServiceReference1.Experts tmpE = e.Result.lExperts.Where(x => x.id_expert == pE.id_expert).FirstOrDefault();
+                        lExpertiseExperts.Add(tmpE);
+                    }
+
                     ltmpProjects = lProjects;
                     ltmpExperts = lExperts;
                     FirstFillFileds();
@@ -105,23 +138,32 @@ namespace ExpertiseWPFApplication
                 else
                 {
                     Waiting(false);
-
                 }
             }
             else
             {
                 Waiting(false);
-
             }
         }
         //=======================================================================================
         private void FirstFillFileds()
         {
-            cmbFOS.ItemsSource = lFOS;
+            tbxExpertiseName.Text = ExpertiseName;
+
+            dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
             dgProjectList.ItemsSource = ltmpProjects;
+
+            dgExpertiseCritList.ItemsSource = lExpertiseCrit;
             dgCatList.ItemsSource = lCatigories;
             dgCritList.ItemsSource = null;
-            dgExpertList.ItemsSource = lExperts;
+
+            tbxCountExpertiseProjects.Text = Count_proj_expertise.ToString();
+
+            dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
+            dgExpertList.ItemsSource = ltmpExperts;
+
+            cmbFOS.ItemsSource = lFOS;
+            cmbFOS.SelectedItem = ExpertiseFOS;
         }
         private void FilterFileds()
         {
@@ -188,20 +230,26 @@ namespace ExpertiseWPFApplication
             gCriterions.IsEnabled = true;
             gExperts.IsEnabled = true;
 
-            lExpertiseProjects = new List<ServiceReference1.Projects>();
-            dgExpertiseProjectList.ItemsSource = null;
-            dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+            if (NeedToClear)
+            {
+                lExpertiseProjects = new List<ServiceReference1.Projects>();
+                dgExpertiseProjectList.ItemsSource = null;
+                dgExpertiseProjectList.ItemsSource = lExpertiseProjects;
+
+                lExpertiseCrit = new List<ServiceReference1.Criterions>();
+                dgExpertiseCritList.ItemsSource = null;
+                dgExpertiseCritList.ItemsSource = lExpertiseCrit;
+
+                lExpertiseExperts = new List<ServiceReference1.Experts>();
+                dgExpertiseExpertList.ItemsSource = null;
+                dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
+            }
+
             CheckProjbtn();
-
-            lExpertiseCrit = new List<ServiceReference1.Criterions>();
-            dgExpertiseCritList.ItemsSource = null;
-            dgExpertiseCritList.ItemsSource = lExpertiseCrit;
             CheckCritbtn();
-
-            lExpertiseExperts = new List<ServiceReference1.Experts>();
-            dgExpertiseExpertList.ItemsSource = null;
-            dgExpertiseExpertList.ItemsSource = lExpertiseExperts;
             CheckExpertbtn();
+
+            NeedToClear = true;
         }
         //=== Работа с проектами ====================================
         private void CheckProjbtn()
@@ -404,17 +452,19 @@ namespace ExpertiseWPFApplication
             }
             catch { }
         }
-        //=== Создание экспертизы и отмена ====================================
-        private void Client_CreateNewExpertiseCompleted(object sender, ServiceReference1.CreateNewExpertiseCompletedEventArgs e)
+        //=== Применение редактирования и отмена ====================================
+        private void Client_EditExpertiseByIDCompleted(object sender, ServiceReference1.EditExpertiseByIDCompletedEventArgs e)
         {
-            if (e.Error == null)
+            if (e.Error == null && e.Result)
             {
-                this.Close();
-                MessageBox.Show("Экспертиза добавлена.");
+                //this.Close();
+                DialogResult = true;
+                MessageBox.Show("Изменения внесены.");
             }
             else
             {
                 Waiting(false);
+                MessageBox.Show("Не удалось внести изменения.");
             }
         }
 
@@ -441,7 +491,7 @@ namespace ExpertiseWPFApplication
             if (b1 && b2 && b3 && b4 && b5 && b6) return true;
             else return false;
         }
-        private void CreateNewExpertise()
+        private void UpdateExpertise()
         {
             if (CheckVars())
             {
@@ -449,28 +499,35 @@ namespace ExpertiseWPFApplication
                 ExpertiseFOS = cmbFOS.SelectedItem as ServiceReference1.FiledsOfScience;
                 Count_proj_expertise = int.Parse(tbxCountExpertiseProjects.Text);
 
-                List<int> projectsId = new List<int>();
+                List<ServiceReference1.ProjectExpertise> lprojects = new List<ServiceReference1.ProjectExpertise>();
                 foreach (ServiceReference1.Projects pP in lExpertiseProjects)
                 {
-                    projectsId.Add(pP.id_project);
+                    ServiceReference1.ProjectExpertise tP = new ServiceReference1.ProjectExpertise();
+                    tP.id_project = pP.id_project;
+                    lprojects.Add(tP);
                 }
 
-                List<int> critsId = new List<int>();
+                List<ServiceReference1.ExpCrit> lcrits = new List<ServiceReference1.ExpCrit>();
                 foreach (ServiceReference1.Criterions pC in lExpertiseCrit)
                 {
-                    critsId.Add(pC.id_crit);
+                    ServiceReference1.ExpCrit tC = new ServiceReference1.ExpCrit();
+                    tC.id_crit = pC.id_crit;
+                    lcrits.Add(tC);
                 }
 
-                List<int> expertsId = new List<int>();
+                List<ServiceReference1.ExpertiseExpert> lexperts = new List<ServiceReference1.ExpertiseExpert>();
                 foreach (ServiceReference1.Experts pE in lExpertiseExperts)
                 {
-                    expertsId.Add(pE.id_expert);
+                    ServiceReference1.ExpertiseExpert tE = new ServiceReference1.ExpertiseExpert();
+                    tE.id_expert = pE.id_expert;
+                    lexperts.Add(tE);
                 }
 
-                client.CreateNewExpertiseAsync(ExpertiseName, DateTime.Now, ExpertiseFOS.id_fos, Count_proj_expertise, projectsId.ToArray(), critsId.ToArray(), expertsId.ToArray());
+                client.EditExpertiseByIDAsync(id_expertise, ExpertiseName, DateTime.Now, ExpertiseFOS.id_fos, Count_proj_expertise, lprojects.ToArray(), lcrits.ToArray(), lexperts.ToArray());
 
                 Waiting(true);
-                tblWait.Text = string.Format("Создание \n экспертизы...");
+                tblWait.Padding = new Thickness(100, 200, 200, 200);
+                tblWait.Text = string.Format("Редактирование \n экспертизы...");
             }
             else
             {
@@ -479,7 +536,7 @@ namespace ExpertiseWPFApplication
         }
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            CreateNewExpertise();
+            UpdateExpertise();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {

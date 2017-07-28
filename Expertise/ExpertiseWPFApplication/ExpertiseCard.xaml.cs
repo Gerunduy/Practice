@@ -20,22 +20,21 @@ namespace ExpertiseWPFApplication
     public partial class ExpertiseCard : Window
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+        int id_expertise;
         ServiceReference1.myExpertiseForCard Expertise;
 
         List<ServiceReference1.Criterions> ltmpCriterions = new List<ServiceReference1.Criterions>();
         List<ServiceReference1.CatCrit> ltmpCatCrit = new List<ServiceReference1.CatCrit>();
 
+        int SelectedProjectID;
+        int SelectedExpertID;
 
-        //=== ========================== ===
-        ServiceReference1.Projects CurrentProj;
-        //=== ========================== ===
-        ServiceReference1.Experts CurrentExpert;
-
-
+        EditExpertiseCard _EditExpertiseCard;
 
         public ExpertiseCard(int id_expertise)
         {
             InitializeComponent();
+            this.id_expertise = id_expertise;
 
             client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
@@ -63,6 +62,7 @@ namespace ExpertiseWPFApplication
             tblNameExpertise.Text = Expertise.name_expertise;
             tblFosExpertise.Text = Expertise.fos_expertise;
             dgExpertiseProjectList.ItemsSource = Expertise.ListProjects;
+            tblCountProject.Text = string.Format("Количество проектов: {0}", Expertise.ListProjects.Count());
             dgCatList.ItemsSource = Expertise.ListCategories;
             dgExpertiseCritList.ItemsSource = null;
         }
@@ -94,27 +94,15 @@ namespace ExpertiseWPFApplication
         }
         //=======================================================================================
         //=== Работа с проектами ====================================
-        //private void dgProjectList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        CurrentProj = dgProjectList.SelectedCells[0].Item as ServiceReference1.Projects;
-        //        tmpProj = new ServiceReference1.Projects();
-        //        tmpProj = CurrentProj;
-
-        //        CheckProjbtn();
-        //    }
-        //    catch { }
-        //}
-        //private void dgExpertiseProjectList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        CurrentExpertiseProj = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.Projects;
-        //        CheckProjbtn();
-        //    }
-        //    catch { }
-        //}
+        private void dgExpertiseProjectList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.myProjectForExpertiseCard CurrentProjectExpertise = dgExpertiseProjectList.CurrentCell.Item as ServiceReference1.myProjectForExpertiseCard;
+                SelectedProjectID = CurrentProjectExpertise.id_project;
+            }
+            catch { }
+        }
         //=== Работа с категориями и критериями ====================================
         private void dgCatList_CurrentCellChanged(object sender, EventArgs e)
         {
@@ -126,17 +114,27 @@ namespace ExpertiseWPFApplication
             catch { }
         }
         //=== Работа с экспертами ====================================
-        //private void dgExpertiseExpertList_SelectedCellsChanged(object sender, SelectedCellsChangedEventArgs e)
-        //{
-        //    try
-        //    {
-        //        CurrentExpertiseExpert = dgExpertiseExpertList.CurrentCell.Item as ServiceReference1.Experts;
-        //        CheckExpertbtn();
-        //    }
-        //    catch { }
-        //}
+        private void dgExpertiseExpertCommissionList_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReference1.Experts CurrentExpertExpertise = dgExpertiseExpertCommissionList.CurrentCell.Item as ServiceReference1.Experts;
+                SelectedExpertID = CurrentExpertExpertise.id_expert;
+            }
+            catch { }
+        }
         //=== Редактирование экспертизы ====================================
-
+        private void btnEditExpertise_Click(object sender, RoutedEventArgs e)
+        {
+            _EditExpertiseCard = new EditExpertiseCard(id_expertise);
+            _EditExpertiseCard.Owner = this;
+            _EditExpertiseCard.ShowDialog();
+            if (_EditExpertiseCard.DialogResult == true)
+            {
+                client.GetMyExpertiseForCardByIDAsync(id_expertise);
+                Waiting(true);
+            }
+        }
         //=======================================================================================
     }
 }

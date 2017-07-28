@@ -3809,6 +3809,259 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TablesForEditExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class TablesForEditExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool ErrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Expertises ExpertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CatCrit[] lCatCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Categories[] lCatigoriesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CritValues[] lCritValuesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions[] lCriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lExpCritField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertFos[] lExpertFosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lExpertiseExpertField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Experts[] lExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] lFOSField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lProjectExpertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.ProjectFos[] lProjectFosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Projects[] lProjectsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool Err {
+            get {
+                return this.ErrField;
+            }
+            set {
+                if ((this.ErrField.Equals(value) != true)) {
+                    this.ErrField = value;
+                    this.RaisePropertyChanged("Err");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Expertises Expertise {
+            get {
+                return this.ExpertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExpertiseField, value) != true)) {
+                    this.ExpertiseField = value;
+                    this.RaisePropertyChanged("Expertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CatCrit[] lCatCrit {
+            get {
+                return this.lCatCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCatCritField, value) != true)) {
+                    this.lCatCritField = value;
+                    this.RaisePropertyChanged("lCatCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Categories[] lCatigories {
+            get {
+                return this.lCatigoriesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCatigoriesField, value) != true)) {
+                    this.lCatigoriesField = value;
+                    this.RaisePropertyChanged("lCatigories");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CritValues[] lCritValues {
+            get {
+                return this.lCritValuesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCritValuesField, value) != true)) {
+                    this.lCritValuesField = value;
+                    this.RaisePropertyChanged("lCritValues");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] lCriterions {
+            get {
+                return this.lCriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lCriterionsField, value) != true)) {
+                    this.lCriterionsField = value;
+                    this.RaisePropertyChanged("lCriterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lExpCrit {
+            get {
+                return this.lExpCritField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpCritField, value) != true)) {
+                    this.lExpCritField = value;
+                    this.RaisePropertyChanged("lExpCrit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertFos[] lExpertFos {
+            get {
+                return this.lExpertFosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpertFosField, value) != true)) {
+                    this.lExpertFosField = value;
+                    this.RaisePropertyChanged("lExpertFos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lExpertiseExpert {
+            get {
+                return this.lExpertiseExpertField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpertiseExpertField, value) != true)) {
+                    this.lExpertiseExpertField = value;
+                    this.RaisePropertyChanged("lExpertiseExpert");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Experts[] lExperts {
+            get {
+                return this.lExpertsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lExpertsField, value) != true)) {
+                    this.lExpertsField = value;
+                    this.RaisePropertyChanged("lExperts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] lFOS {
+            get {
+                return this.lFOSField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lFOSField, value) != true)) {
+                    this.lFOSField = value;
+                    this.RaisePropertyChanged("lFOS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lProjectExpertise {
+            get {
+                return this.lProjectExpertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lProjectExpertiseField, value) != true)) {
+                    this.lProjectExpertiseField = value;
+                    this.RaisePropertyChanged("lProjectExpertise");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.ProjectFos[] lProjectFos {
+            get {
+                return this.lProjectFosField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lProjectFosField, value) != true)) {
+                    this.lProjectFosField = value;
+                    this.RaisePropertyChanged("lProjectFos");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] lProjects {
+            get {
+                return this.lProjectsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.lProjectsField, value) != true)) {
+                    this.lProjectsField = value;
+                    this.RaisePropertyChanged("lProjects");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="TablesForExpertise", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class TablesForExpertise : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -4447,6 +4700,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.ExpertFos[] EndGetListAllExpertFos(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpertiseExpert", ReplyAction="http://tempuri.org/IService1/GetListAllExpertiseExpertResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] GetListAllExpertiseExpert();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListAllExpertiseExpert", ReplyAction="http://tempuri.org/IService1/GetListAllExpertiseExpertResponse")]
+        System.IAsyncResult BeginGetListAllExpertiseExpert(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] EndGetListAllExpertiseExpert(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAllExpertiseMark", ReplyAction="http://tempuri.org/IService1/GetListAllExpertiseMarkResponse")]
         ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] GetListAllExpertiseMark();
         
@@ -4679,6 +4940,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         bool EndCreateNewExpertise(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditExpertiseByID", ReplyAction="http://tempuri.org/IService1/EditExpertiseByIDResponse")]
+        bool EditExpertiseByID(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditExpertiseByID", ReplyAction="http://tempuri.org/IService1/EditExpertiseByIDResponse")]
+        System.IAsyncResult BeginEditExpertiseByID(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts, System.AsyncCallback callback, object asyncState);
+        
+        bool EndEditExpertiseByID(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetMyExpertiseForCardByID", ReplyAction="http://tempuri.org/IService1/GetMyExpertiseForCardByIDResponse")]
         ExpertiseWPFApplication.ServiceReference1.myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise);
         
@@ -4694,6 +4963,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginGetListComoletedExpertises(System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[] EndGetListComoletedExpertises(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetTabelsForEditExpertiseByID", ReplyAction="http://tempuri.org/IService1/GetTabelsForEditExpertiseByIDResponse")]
+        ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetTabelsForEditExpertiseByID", ReplyAction="http://tempuri.org/IService1/GetTabelsForEditExpertiseByIDResponse")]
+        System.IAsyncResult BeginGetTabelsForEditExpertiseByID(int id_expertise, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise EndGetTabelsForEditExpertiseByID(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateProjectExpertise", ReplyAction="http://tempuri.org/IService1/UpdateProjectExpertiseResponse")]
         bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
@@ -5323,6 +5600,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListAllExpertiseExpertCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListAllExpertiseExpertCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetListAllExpertiseMarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5874,6 +6170,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class EditExpertiseByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public EditExpertiseByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetMyExpertiseForCardByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -5906,6 +6221,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.myCompletedexpertises[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetTabelsForEditExpertiseByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetTabelsForEditExpertiseByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise)(this.results[0]));
             }
         }
     }
@@ -6432,6 +6766,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetListAllExpertFosCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListAllExpertiseExpertDelegate;
+        
+        private EndOperationDelegate onEndGetListAllExpertiseExpertDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListAllExpertiseExpertCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListAllExpertiseMarkDelegate;
         
         private EndOperationDelegate onEndGetListAllExpertiseMarkDelegate;
@@ -6606,6 +6946,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onCreateNewExpertiseCompletedDelegate;
         
+        private BeginOperationDelegate onBeginEditExpertiseByIDDelegate;
+        
+        private EndOperationDelegate onEndEditExpertiseByIDDelegate;
+        
+        private System.Threading.SendOrPostCallback onEditExpertiseByIDCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetMyExpertiseForCardByIDDelegate;
         
         private EndOperationDelegate onEndGetMyExpertiseForCardByIDDelegate;
@@ -6617,6 +6963,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndGetListComoletedExpertisesDelegate;
         
         private System.Threading.SendOrPostCallback onGetListComoletedExpertisesCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetTabelsForEditExpertiseByIDDelegate;
+        
+        private EndOperationDelegate onEndGetTabelsForEditExpertiseByIDDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetTabelsForEditExpertiseByIDCompletedDelegate;
         
         private BeginOperationDelegate onBeginUpdateProjectExpertiseDelegate;
         
@@ -6821,6 +7173,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetListAllExpertFosCompletedEventArgs> GetListAllExpertFosCompleted;
         
+        public event System.EventHandler<GetListAllExpertiseExpertCompletedEventArgs> GetListAllExpertiseExpertCompleted;
+        
         public event System.EventHandler<GetListAllExpertiseMarkCompletedEventArgs> GetListAllExpertiseMarkCompleted;
         
         public event System.EventHandler<GetListAllExpertisesCompletedEventArgs> GetListAllExpertisesCompleted;
@@ -6879,9 +7233,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<CreateNewExpertiseCompletedEventArgs> CreateNewExpertiseCompleted;
         
+        public event System.EventHandler<EditExpertiseByIDCompletedEventArgs> EditExpertiseByIDCompleted;
+        
         public event System.EventHandler<GetMyExpertiseForCardByIDCompletedEventArgs> GetMyExpertiseForCardByIDCompleted;
         
         public event System.EventHandler<GetListComoletedExpertisesCompletedEventArgs> GetListComoletedExpertisesCompleted;
+        
+        public event System.EventHandler<GetTabelsForEditExpertiseByIDCompletedEventArgs> GetTabelsForEditExpertiseByIDCompleted;
         
         public event System.EventHandler<UpdateProjectExpertiseCompletedEventArgs> UpdateProjectExpertiseCompleted;
         
@@ -8043,6 +8401,54 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 this.onGetListAllExpertFosCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertFosCompleted);
             }
             base.InvokeAsync(this.onBeginGetListAllExpertFosDelegate, null, this.onEndGetListAllExpertFosDelegate, this.onGetListAllExpertFosCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] GetListAllExpertiseExpert() {
+            return base.Channel.GetListAllExpertiseExpert();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListAllExpertiseExpert(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListAllExpertiseExpert(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] EndGetListAllExpertiseExpert(System.IAsyncResult result) {
+            return base.Channel.EndGetListAllExpertiseExpert(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListAllExpertiseExpert(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListAllExpertiseExpert(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListAllExpertiseExpert(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] retVal = this.EndGetListAllExpertiseExpert(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListAllExpertiseExpertCompleted(object state) {
+            if ((this.GetListAllExpertiseExpertCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListAllExpertiseExpertCompleted(this, new GetListAllExpertiseExpertCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListAllExpertiseExpertAsync() {
+            this.GetListAllExpertiseExpertAsync(null);
+        }
+        
+        public void GetListAllExpertiseExpertAsync(object userState) {
+            if ((this.onBeginGetListAllExpertiseExpertDelegate == null)) {
+                this.onBeginGetListAllExpertiseExpertDelegate = new BeginOperationDelegate(this.OnBeginGetListAllExpertiseExpert);
+            }
+            if ((this.onEndGetListAllExpertiseExpertDelegate == null)) {
+                this.onEndGetListAllExpertiseExpertDelegate = new EndOperationDelegate(this.OnEndGetListAllExpertiseExpert);
+            }
+            if ((this.onGetListAllExpertiseExpertCompletedDelegate == null)) {
+                this.onGetListAllExpertiseExpertCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListAllExpertiseExpertCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListAllExpertiseExpertDelegate, null, this.onEndGetListAllExpertiseExpertDelegate, this.onGetListAllExpertiseExpertCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.ExpertiseMark[] GetListAllExpertiseMark() {
@@ -9547,6 +9953,70 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         expertsId}, this.onEndCreateNewExpertiseDelegate, this.onCreateNewExpertiseCompletedDelegate, userState);
         }
         
+        public bool EditExpertiseByID(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts) {
+            return base.Channel.EditExpertiseByID(id_expertise, name_expertise, date_expertise, id_fos, count_proj_expertise, lprojects, lcrits, lexperts);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginEditExpertiseByID(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginEditExpertiseByID(id_expertise, name_expertise, date_expertise, id_fos, count_proj_expertise, lprojects, lcrits, lexperts, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndEditExpertiseByID(System.IAsyncResult result) {
+            return base.Channel.EndEditExpertiseByID(result);
+        }
+        
+        private System.IAsyncResult OnBeginEditExpertiseByID(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            string name_expertise = ((string)(inValues[1]));
+            System.DateTime date_expertise = ((System.DateTime)(inValues[2]));
+            int id_fos = ((int)(inValues[3]));
+            int count_proj_expertise = ((int)(inValues[4]));
+            ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects = ((ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[])(inValues[5]));
+            ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits = ((ExpertiseWPFApplication.ServiceReference1.ExpCrit[])(inValues[6]));
+            ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts = ((ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[])(inValues[7]));
+            return this.BeginEditExpertiseByID(id_expertise, name_expertise, date_expertise, id_fos, count_proj_expertise, lprojects, lcrits, lexperts, callback, asyncState);
+        }
+        
+        private object[] OnEndEditExpertiseByID(System.IAsyncResult result) {
+            bool retVal = this.EndEditExpertiseByID(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnEditExpertiseByIDCompleted(object state) {
+            if ((this.EditExpertiseByIDCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.EditExpertiseByIDCompleted(this, new EditExpertiseByIDCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void EditExpertiseByIDAsync(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts) {
+            this.EditExpertiseByIDAsync(id_expertise, name_expertise, date_expertise, id_fos, count_proj_expertise, lprojects, lcrits, lexperts, null);
+        }
+        
+        public void EditExpertiseByIDAsync(int id_expertise, string name_expertise, System.DateTime date_expertise, int id_fos, int count_proj_expertise, ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] lprojects, ExpertiseWPFApplication.ServiceReference1.ExpCrit[] lcrits, ExpertiseWPFApplication.ServiceReference1.ExpertiseExpert[] lexperts, object userState) {
+            if ((this.onBeginEditExpertiseByIDDelegate == null)) {
+                this.onBeginEditExpertiseByIDDelegate = new BeginOperationDelegate(this.OnBeginEditExpertiseByID);
+            }
+            if ((this.onEndEditExpertiseByIDDelegate == null)) {
+                this.onEndEditExpertiseByIDDelegate = new EndOperationDelegate(this.OnEndEditExpertiseByID);
+            }
+            if ((this.onEditExpertiseByIDCompletedDelegate == null)) {
+                this.onEditExpertiseByIDCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnEditExpertiseByIDCompleted);
+            }
+            base.InvokeAsync(this.onBeginEditExpertiseByIDDelegate, new object[] {
+                        id_expertise,
+                        name_expertise,
+                        date_expertise,
+                        id_fos,
+                        count_proj_expertise,
+                        lprojects,
+                        lcrits,
+                        lexperts}, this.onEndEditExpertiseByIDDelegate, this.onEditExpertiseByIDCompletedDelegate, userState);
+        }
+        
         public ExpertiseWPFApplication.ServiceReference1.myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise) {
             return base.Channel.GetMyExpertiseForCardByID(id_expertise);
         }
@@ -9643,6 +10113,56 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 this.onGetListComoletedExpertisesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListComoletedExpertisesCompleted);
             }
             base.InvokeAsync(this.onBeginGetListComoletedExpertisesDelegate, null, this.onEndGetListComoletedExpertisesDelegate, this.onGetListComoletedExpertisesCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise) {
+            return base.Channel.GetTabelsForEditExpertiseByID(id_expertise);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetTabelsForEditExpertiseByID(int id_expertise, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetTabelsForEditExpertiseByID(id_expertise, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise EndGetTabelsForEditExpertiseByID(System.IAsyncResult result) {
+            return base.Channel.EndGetTabelsForEditExpertiseByID(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetTabelsForEditExpertiseByID(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            return this.BeginGetTabelsForEditExpertiseByID(id_expertise, callback, asyncState);
+        }
+        
+        private object[] OnEndGetTabelsForEditExpertiseByID(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.TablesForEditExpertise retVal = this.EndGetTabelsForEditExpertiseByID(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetTabelsForEditExpertiseByIDCompleted(object state) {
+            if ((this.GetTabelsForEditExpertiseByIDCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetTabelsForEditExpertiseByIDCompleted(this, new GetTabelsForEditExpertiseByIDCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetTabelsForEditExpertiseByIDAsync(int id_expertise) {
+            this.GetTabelsForEditExpertiseByIDAsync(id_expertise, null);
+        }
+        
+        public void GetTabelsForEditExpertiseByIDAsync(int id_expertise, object userState) {
+            if ((this.onBeginGetTabelsForEditExpertiseByIDDelegate == null)) {
+                this.onBeginGetTabelsForEditExpertiseByIDDelegate = new BeginOperationDelegate(this.OnBeginGetTabelsForEditExpertiseByID);
+            }
+            if ((this.onEndGetTabelsForEditExpertiseByIDDelegate == null)) {
+                this.onEndGetTabelsForEditExpertiseByIDDelegate = new EndOperationDelegate(this.OnEndGetTabelsForEditExpertiseByID);
+            }
+            if ((this.onGetTabelsForEditExpertiseByIDCompletedDelegate == null)) {
+                this.onGetTabelsForEditExpertiseByIDCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetTabelsForEditExpertiseByIDCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetTabelsForEditExpertiseByIDDelegate, new object[] {
+                        id_expertise}, this.onEndGetTabelsForEditExpertiseByIDDelegate, this.onGetTabelsForEditExpertiseByIDCompletedDelegate, userState);
         }
         
         public bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept) {

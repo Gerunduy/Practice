@@ -142,14 +142,12 @@ namespace ExpertiseWPFApplication
                 tblInfo2.Visibility = Visibility.Hidden;
             }
         }
-
         private void btnGoToCurExpertiseCard_Click(object sender, RoutedEventArgs e)
         {
             _ExpertiseCard = new ExpertiseCard(SelectedCurExpertiseID);
             _ExpertiseCard.Owner = App.Current.MainWindow;
             _ExpertiseCard.Show();
         }
-
         private void btnGoToCompExpertiseCard_Click(object sender, RoutedEventArgs e)
         {
             _ExpertiseCard = new ExpertiseCard(SelectedCompExpertiseID);
