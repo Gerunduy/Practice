@@ -39,6 +39,7 @@
     <NavigationProperty Name="CritValues" Relationship="Self.FK_CritValues_Criterions" FromRole="Criterions" ToRole="CritValues" />
     <NavigationProperty Name="ExpCrit" Relationship="Self.FK_ExpCrit_Criterions" FromRole="Criterions" ToRole="ExpCrit" />
     <NavigationProperty Name="Marks" Relationship="Self.FK_Marks_Criterions" FromRole="Criterions" ToRole="Marks" />
+    <NavigationProperty Name="CritCompareCrit" Relationship="db_AAZModel.FK_CritCompareCrit_Criterions" FromRole="Criterions" ToRole="CritCompareCrit" />
   </EntityType>
   <EntityType Name="CritValues">
     <Key>
@@ -94,6 +95,7 @@
     <Property Name="count_proj_expertise" Type="Int32" Nullable="false" />
     <Property Name="id_fos" Type="Int32" Nullable="false" />
     <Property Name="end_date_expertise" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="CritCompare" Relationship="db_AAZModel.FK_CritCompare_Expertises" FromRole="Expertises" ToRole="CritCompare" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
@@ -114,6 +116,7 @@
     <Property Name="login_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="password_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Experts" FromRole="Experts" ToRole="ExpertiseExpert" />
+    <NavigationProperty Name="CritCompare" Relationship="db_AAZModel.FK_CritCompare_Experts" FromRole="Experts" ToRole="CritCompare" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -741,6 +744,24 @@
       <End Role="Experts" EntitySet="Experts" />
       <End Role="ExpertiseExpert" EntitySet="ExpertiseExpert" />
     </AssociationSet>
+    <EntitySet Name="CritCompare" EntityType="db_AAZModel.CritCompare" />
+    <EntitySet Name="CritCompareCrit" EntityType="db_AAZModel.CritCompareCrit" />
+    <AssociationSet Name="FK_CritCompare_Expertises" Association="db_AAZModel.FK_CritCompare_Expertises">
+      <End Role="Expertises" EntitySet="Expertises" />
+      <End Role="CritCompare" EntitySet="CritCompare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompare_Experts" Association="db_AAZModel.FK_CritCompare_Experts">
+      <End Role="Experts" EntitySet="Experts" />
+      <End Role="CritCompare" EntitySet="CritCompare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompareCrit_CritCompare" Association="db_AAZModel.FK_CritCompareCrit_CritCompare">
+      <End Role="CritCompare" EntitySet="CritCompare" />
+      <End Role="CritCompareCrit" EntitySet="CritCompareCrit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompareCrit_Criterions" Association="db_AAZModel.FK_CritCompareCrit_Criterions">
+      <End Role="Criterions" EntitySet="Criterions" />
+      <End Role="CritCompareCrit" EntitySet="CritCompareCrit" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_ProjectExpertise_Projects">
     <End Type="db_AAZModel.Projects" Role="Projects" Multiplicity="1" />
@@ -785,6 +806,76 @@
       </Principal>
       <Dependent Role="ExpertiseExpert">
         <PropertyRef Name="id_expert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="CritCompare">
+    <Key>
+      <PropertyRef Name="id_compare" />
+    </Key>
+    <Property Name="id_compare" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_expertise" Type="Int32" Nullable="false" />
+    <Property Name="id_expert" Type="Int32" Nullable="false" />
+    <Property Name="mark_compare" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Expertises" Relationship="db_AAZModel.FK_CritCompare_Expertises" FromRole="CritCompare" ToRole="Expertises" />
+    <NavigationProperty Name="Experts" Relationship="db_AAZModel.FK_CritCompare_Experts" FromRole="CritCompare" ToRole="Experts" />
+    <NavigationProperty Name="CritCompareCrit" Relationship="db_AAZModel.FK_CritCompareCrit_CritCompare" FromRole="CritCompare" ToRole="CritCompareCrit" />
+  </EntityType>
+  <EntityType Name="CritCompareCrit">
+    <Key>
+      <PropertyRef Name="id_crit_crcompare" />
+    </Key>
+    <Property Name="id_crit_crcompare" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_compare" Type="Int32" Nullable="false" />
+    <Property Name="id_crit" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CritCompare" Relationship="db_AAZModel.FK_CritCompareCrit_CritCompare" FromRole="CritCompareCrit" ToRole="CritCompare" />
+    <NavigationProperty Name="Criterions" Relationship="db_AAZModel.FK_CritCompareCrit_Criterions" FromRole="CritCompareCrit" ToRole="Criterions" />
+  </EntityType>
+  <Association Name="FK_CritCompare_Expertises">
+    <End Type="db_AAZModel.Expertises" Role="Expertises" Multiplicity="1" />
+    <End Type="db_AAZModel.CritCompare" Role="CritCompare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expertises">
+        <PropertyRef Name="id_expertise" />
+      </Principal>
+      <Dependent Role="CritCompare">
+        <PropertyRef Name="id_expertise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompare_Experts">
+    <End Type="db_AAZModel.Experts" Role="Experts" Multiplicity="1" />
+    <End Type="db_AAZModel.CritCompare" Role="CritCompare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experts">
+        <PropertyRef Name="id_expert" />
+      </Principal>
+      <Dependent Role="CritCompare">
+        <PropertyRef Name="id_expert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompareCrit_CritCompare">
+    <End Type="db_AAZModel.CritCompare" Role="CritCompare" Multiplicity="1" />
+    <End Type="db_AAZModel.CritCompareCrit" Role="CritCompareCrit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CritCompare">
+        <PropertyRef Name="id_compare" />
+      </Principal>
+      <Dependent Role="CritCompareCrit">
+        <PropertyRef Name="id_compare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompareCrit_Criterions">
+    <End Type="db_AAZModel.Criterions" Role="Criterions" Multiplicity="1" />
+    <End Type="db_AAZModel.CritCompareCrit" Role="CritCompareCrit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criterions">
+        <PropertyRef Name="id_crit" />
+      </Principal>
+      <Dependent Role="CritCompareCrit">
+        <PropertyRef Name="id_crit" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

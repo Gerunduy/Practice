@@ -24,6 +24,23 @@
     <Property Name="id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="name_category" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="CritCompare">
+    <Key>
+      <PropertyRef Name="id_compare" />
+    </Key>
+    <Property Name="id_compare" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_expertise" Type="int" Nullable="false" />
+    <Property Name="id_expert" Type="int" Nullable="false" />
+    <Property Name="mark_compare" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CritCompareCrit">
+    <Key>
+      <PropertyRef Name="id_crit_crcompare" />
+    </Key>
+    <Property Name="id_crit_crcompare" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="id_compare" Type="int" Nullable="false" />
+    <Property Name="id_crit" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Criterions">
     <Key>
       <PropertyRef Name="id_crit" />
@@ -293,6 +310,54 @@
         <PropertyRef Name="id_crit" />
       </Principal>
       <Dependent Role="CatCrit">
+        <PropertyRef Name="id_crit" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompare_Expertises">
+    <End Role="Expertises" Type="Self.Expertises" Multiplicity="1" />
+    <End Role="CritCompare" Type="Self.CritCompare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Expertises">
+        <PropertyRef Name="id_expertise" />
+      </Principal>
+      <Dependent Role="CritCompare">
+        <PropertyRef Name="id_expertise" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompare_Experts">
+    <End Role="Experts" Type="Self.Experts" Multiplicity="1" />
+    <End Role="CritCompare" Type="Self.CritCompare" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Experts">
+        <PropertyRef Name="id_expert" />
+      </Principal>
+      <Dependent Role="CritCompare">
+        <PropertyRef Name="id_expert" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompareCrit_CritCompare">
+    <End Role="CritCompare" Type="Self.CritCompare" Multiplicity="1" />
+    <End Role="CritCompareCrit" Type="Self.CritCompareCrit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CritCompare">
+        <PropertyRef Name="id_compare" />
+      </Principal>
+      <Dependent Role="CritCompareCrit">
+        <PropertyRef Name="id_compare" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CritCompareCrit_Criterions">
+    <End Role="Criterions" Type="Self.Criterions" Multiplicity="1" />
+    <End Role="CritCompareCrit" Type="Self.CritCompareCrit" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criterions">
+        <PropertyRef Name="id_crit" />
+      </Principal>
+      <Dependent Role="CritCompareCrit">
         <PropertyRef Name="id_crit" />
       </Dependent>
     </ReferentialConstraint>
@@ -601,6 +666,8 @@
     <EntitySet Name="Authors" EntityType="Self.Authors" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CatCrit" EntityType="Self.CatCrit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CritCompare" EntityType="Self.CritCompare" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CritCompareCrit" EntityType="Self.CritCompareCrit" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Criterions" EntityType="Self.Criterions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CritValues" EntityType="Self.CritValues" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ExpCrit" EntityType="Self.ExpCrit" Schema="dbo" store:Type="Tables" />
@@ -643,6 +710,22 @@
     <AssociationSet Name="FK_CatCrit_Criterions" Association="Self.FK_CatCrit_Criterions">
       <End Role="Criterions" EntitySet="Criterions" />
       <End Role="CatCrit" EntitySet="CatCrit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompare_Expertises" Association="Self.FK_CritCompare_Expertises">
+      <End Role="Expertises" EntitySet="Expertises" />
+      <End Role="CritCompare" EntitySet="CritCompare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompare_Experts" Association="Self.FK_CritCompare_Experts">
+      <End Role="Experts" EntitySet="Experts" />
+      <End Role="CritCompare" EntitySet="CritCompare" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompareCrit_CritCompare" Association="Self.FK_CritCompareCrit_CritCompare">
+      <End Role="CritCompare" EntitySet="CritCompare" />
+      <End Role="CritCompareCrit" EntitySet="CritCompareCrit" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CritCompareCrit_Criterions" Association="Self.FK_CritCompareCrit_Criterions">
+      <End Role="Criterions" EntitySet="Criterions" />
+      <End Role="CritCompareCrit" EntitySet="CritCompareCrit" />
     </AssociationSet>
     <AssociationSet Name="FK_CritValues_Criterions" Association="Self.FK_CritValues_Criterions">
       <End Role="Criterions" EntitySet="Criterions" />

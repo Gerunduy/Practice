@@ -29,7 +29,7 @@ namespace ExpertiseWPFApplication
         int SelectedCurExpertiseID;
         int SelectedCompExpertiseID;
         ExpertiseCard _ExpertiseCard;
-
+        Examination _Examination;
         public ExpertRoom(ServiceReference1.Experts User)
         {
             InitializeComponent();
@@ -153,6 +153,13 @@ namespace ExpertiseWPFApplication
             _ExpertiseCard = new ExpertiseCard(SelectedCompExpertiseID);
             _ExpertiseCard.Owner = App.Current.MainWindow;
             _ExpertiseCard.Show();
+        }
+
+        private void btnGoToExamination_Click(object sender, RoutedEventArgs e)
+        {
+            _Examination = new Examination(SelectedCurExpertiseID);
+            _Examination.Owner = App.Current.MainWindow;
+            _Examination.ShowDialog();
         }
         // ===================================================================
     }

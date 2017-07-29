@@ -54,5 +54,7 @@ namespace ExpertiseWCFService
         public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<database_firewall_rules> database_firewall_rules { get; set; }
         public virtual DbSet<ExpertiseExpert> ExpertiseExpert { get; set; }
+        public virtual DbSet<CritCompare> CritCompare { get; set; }
+        public virtual DbSet<CritCompareCrit> CritCompareCrit { get; set; }
     }
 }

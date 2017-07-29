@@ -12,9 +12,13 @@ namespace ExpertiseWCFService
     [ServiceContract]
     public interface IService1
     {
-
         [OperationContract]
         string GetData(int value);
+
+        [OperationContract]
+        myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise);
+
+
         #region Получение таблиц
 
         [OperationContract]
@@ -346,6 +350,24 @@ namespace ExpertiseWCFService
         public List<CritValues> lCritValues { get; set; }
         public List<Experts> lExperts { get; set; }
         public List<ExpertFos> lExpertFos { get; set; }
+        public bool Err { get; set; }
+    }
+    #endregion
+
+    #region Классы для проведения экспертизы
+    public class myExpertiseExaminationTables
+    {
+        public Expertises expertise { get; set; }
+        public List<Criterions> ListCriterions { get; set; }
+        public List<Projects> ListProjects { get; set; }
+
+        //public System.DateTime date_expertise { get; set; }
+        //public System.DateTime end_date_expertise { get; set; }
+        //public List<CatCrit> ListCatCrit { get; set; }
+        //public List<Categories> ListCategories { get; set; }
+        //public List<Experts> ListExperts { get; set; }
+        //public int count_project_expertise { get; set; }
+
         public bool Err { get; set; }
     }
     #endregion

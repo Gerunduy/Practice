@@ -296,5 +296,24 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CritCompare">
+      <EntityTypeMapping TypeName="db_AAZModel.CritCompare">
+        <MappingFragment StoreEntitySet="CritCompare">
+          <ScalarProperty Name="mark_compare" ColumnName="mark_compare" />
+          <ScalarProperty Name="id_expert" ColumnName="id_expert" />
+          <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
+          <ScalarProperty Name="id_compare" ColumnName="id_compare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CritCompareCrit">
+      <EntityTypeMapping TypeName="db_AAZModel.CritCompareCrit">
+        <MappingFragment StoreEntitySet="CritCompareCrit">
+          <ScalarProperty Name="id_crit" ColumnName="id_crit" />
+          <ScalarProperty Name="id_compare" ColumnName="id_compare" />
+          <ScalarProperty Name="id_crit_crcompare" ColumnName="id_crit_crcompare" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

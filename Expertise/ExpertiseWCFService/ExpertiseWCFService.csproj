@@ -122,6 +122,12 @@
     <Compile Include="Categories.cs">
       <DependentUpon>DataBaseExpertise.tt</DependentUpon>
     </Compile>
+    <Compile Include="CritCompare.cs">
+      <DependentUpon>DataBaseExpertise.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CritCompareCrit.cs">
+      <DependentUpon>DataBaseExpertise.tt</DependentUpon>
+    </Compile>
     <Compile Include="Criterions.cs">
       <DependentUpon>DataBaseExpertise.tt</DependentUpon>
     </Compile>

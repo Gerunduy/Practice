@@ -30,6 +30,61 @@ namespace ExpertiseWCFService
             return composite;
         }
 
+        public myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise)
+        {
+            try
+            {
+                myExpertiseExaminationTables result = new myExpertiseExaminationTables();
+                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                result.expertise = new Expertises();
+                result.expertise.id_expertise = E.id_expertise;
+                result.expertise.name_expertise = E.name_expertise;
+                result.expertise.date_expertise = E.date_expertise;
+                result.expertise.end_date_expertise = E.end_date_expertise;
+                result.expertise.count_proj_expertise = E.count_proj_expertise;
+                result.expertise.id_fos = E.id_fos;
+                result.expertise.end_expertise = E.end_expertise;
+
+                result.ListCriterions = new List<Criterions>();
+                foreach (ExpCrit pEC in E.ExpCrit)
+                {
+                    Criterions tC = db_AAZ.Criterions.Where(o => o.id_crit == pEC.id_crit).FirstOrDefault();
+                    Criterions C = new Criterions();
+                    C.id_crit = tC.id_crit;
+                    C.name_crit = tC.name_crit;
+                    C.qualit_crit = tC.qualit_crit;
+                    result.ListCriterions.Add(C);
+                }
+
+                result.ListProjects = new List<Projects>();
+                foreach (ProjectExpertise pPE in E.ProjectExpertise)
+                {
+                    Projects tP = db_AAZ.Projects.Where(z => z.id_project == pPE.id_project).FirstOrDefault();
+                    Projects P = new Projects();
+                    P.id_project = tP.id_project;
+                    P.name_project = tP.name_project;
+                    P.lead_project = tP.lead_project;
+                    P.grnti_project = tP.grnti_project;
+                    P.begin_project = tP.begin_project;
+                    P.email_project = tP.email_project;
+                    P.money_project = tP.money_project;
+                    P.email_project = tP.email_project;
+                    result.ListProjects.Add(P);
+                }
+
+                result.Err = false;
+
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                myExpertiseExaminationTables result = new myExpertiseExaminationTables();
+                result.Err = true;
+                return result;
+            }
+        }
+
         #region Получение таблиц
 
         public List<myAuthors> GetListAuthors()

@@ -21,6 +21,7 @@ namespace ExpertiseWCFService
             this.ExpertiseMark = new HashSet<ExpertiseMark>();
             this.ProjectExpertise = new HashSet<ProjectExpertise>();
             this.ExpertiseExpert = new HashSet<ExpertiseExpert>();
+            this.CritCompare = new HashSet<CritCompare>();
         }
     
         public int id_expertise { get; set; }
@@ -39,5 +40,7 @@ namespace ExpertiseWCFService
         public virtual ICollection<ProjectExpertise> ProjectExpertise { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExpertiseExpert> ExpertiseExpert { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CritCompare> CritCompare { get; set; }
     }
 }

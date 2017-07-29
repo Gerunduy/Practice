@@ -81,6 +81,9 @@
     <Compile Include="EditExpertiseCard.xaml.cs">
       <DependentUpon>EditExpertiseCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Examination windows\Examination.xaml.cs">
+      <DependentUpon>Examination.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditExpertiseCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Examination windows\Examination.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -284,6 +291,9 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myCurrentexpertises.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myExpertiseExaminationTables.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.myExpertiseForCard.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -349,6 +359,7 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
