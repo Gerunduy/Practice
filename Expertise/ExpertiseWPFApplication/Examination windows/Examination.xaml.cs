@@ -22,6 +22,7 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         ServiceReference1.myExpertiseExaminationTables Tables;
         int id_expertise;
+
         public Examination(int id_expertise)
         {
             InitializeComponent();
@@ -52,7 +53,24 @@ namespace ExpertiseWPFApplication
         //=======================================================================================
         private void FirstFillFileds()
         {
-            List<int[]> lLineCoords = new List<int[]>(); 
+            PrintHierarchy();
+        }
+        private void PrintHierarchy()
+        {
+            int length1 = 20;
+            foreach (ServiceReference1.Criterions pC in Tables.ListCriterions)
+            {
+                length1 = length1 + (pC.name_crit.Count() * 8) + 20;
+            }
+            int length2 = 20;
+            foreach (ServiceReference1.Projects pP in Tables.ListProjects)
+            {
+                length2 = length2 + (pP.name_project.Count() * 10) + 20;
+            }
+            cnvsHierarchy.Height = 280;
+            if (length1 > length2) cnvsHierarchy.Width = length1; else cnvsHierarchy.Width = length2;
+
+            List<int[]> lLineCoords = new List<int[]>();
 
             SolidColorBrush ExpertiseNameBckgrnd = new SolidColorBrush();
             ExpertiseNameBckgrnd.Color = Color.FromRgb(243, 109, 109);
@@ -61,8 +79,8 @@ namespace ExpertiseWPFApplication
             tblExpertiseName.Text = Tables.expertise.name_expertise;
             tblExpertiseName.FontSize = 20;
             tblExpertiseName.TextAlignment = TextAlignment.Center;
-            tblExpertiseName.Width = (tblExpertiseName.Text.Count() * 15) + 50;
-            tblExpertiseName.SetValue(Canvas.LeftProperty, ((Math.Round(cnvsHierarchy.Width / 2, 0) )- Math.Round(tblExpertiseName.Width / 2, 0)));
+            tblExpertiseName.Width = (tblExpertiseName.Text.Count() * 15);
+            tblExpertiseName.SetValue(Canvas.LeftProperty, ((Math.Round(cnvsHierarchy.Width / 2, 0)) - Math.Round(tblExpertiseName.Width / 2, 0)));
             tblExpertiseName.SetValue(Canvas.TopProperty, (20.0));
             cnvsHierarchy.Children.Add(tblExpertiseName);
 
@@ -81,7 +99,7 @@ namespace ExpertiseWPFApplication
                 tblCrit.Text = pC.name_crit;
                 tblCrit.FontSize = 14;
                 tblCrit.TextAlignment = TextAlignment.Center;
-                tblCrit.Width = (tblCrit.Text.Count()*10) + 50;
+                tblCrit.Width = (tblCrit.Text.Count() * 8);
                 tblCrit.SetValue(Canvas.LeftProperty, (Left));
                 tblCrit.SetValue(Canvas.TopProperty, (120.0));
                 Left = Left + tblCrit.Width + 20.0;
@@ -93,10 +111,10 @@ namespace ExpertiseWPFApplication
                 lCritCoords.Add(Coord);
 
                 Line MyLine = new Line();
-                MyLine.X1 = ExpertiseCoord[0];// BeginPoint.X;
-                MyLine.Y1 = ExpertiseCoord[1];// BeginPoint.Y;
-                MyLine.X2 = Left-20-Math.Round(tblCrit.Width / 2, 0);// EndPoint.X;
-                MyLine.Y2 = 120;// EndPoint.Y;
+                MyLine.X1 = ExpertiseCoord[0];
+                MyLine.Y1 = ExpertiseCoord[1];
+                MyLine.X2 = Left - 20 - Math.Round(tblCrit.Width / 2, 0);
+                MyLine.Y2 = 120;
                 MyLine.Stroke = System.Windows.Media.Brushes.Black;
                 MyLine.StrokeThickness = 2;
                 cnvsHierarchy.Children.Add(MyLine);
@@ -112,7 +130,7 @@ namespace ExpertiseWPFApplication
                 tblProj.Text = pP.name_project;
                 tblProj.FontSize = 16;
                 tblProj.TextAlignment = TextAlignment.Center;
-                tblProj.Width = (tblProj.Text.Count() * 11) + 50;
+                tblProj.Width = (tblProj.Text.Count() * 10);
                 tblProj.SetValue(Canvas.LeftProperty, (Left));
                 tblProj.SetValue(Canvas.TopProperty, (220.0));
                 Left = Left + tblProj.Width + 20.0;
@@ -121,17 +139,15 @@ namespace ExpertiseWPFApplication
                 foreach (int[] pC in lCritCoords)
                 {
                     Line MyLine = new Line();
-                    MyLine.X1 = pC[0];// BeginPoint.X;
-                    MyLine.Y1 = pC[1];// BeginPoint.Y;
-                    MyLine.X2 = Left - 20 - Math.Round(tblProj.Width / 2, 0);// EndPoint.X;
-                    MyLine.Y2 = 220;// EndPoint.Y;
+                    MyLine.X1 = pC[0];
+                    MyLine.Y1 = pC[1];
+                    MyLine.X2 = Left - 20 - Math.Round(tblProj.Width / 2, 0);
+                    MyLine.Y2 = 220;
                     MyLine.Stroke = System.Windows.Media.Brushes.Black;
                     MyLine.StrokeThickness = 2;
                     cnvsHierarchy.Children.Add(MyLine);
                 }
             }
-
-
         }
         private void Waiting(bool Wait)
         {
