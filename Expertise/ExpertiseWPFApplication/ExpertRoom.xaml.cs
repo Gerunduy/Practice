@@ -157,7 +157,7 @@ namespace ExpertiseWPFApplication
 
         private void btnGoToExamination_Click(object sender, RoutedEventArgs e)
         {
-            _Examination = new Examination(SelectedCurExpertiseID);
+            _Examination = new Examination(SelectedCurExpertiseID, User.id_expert);
             _Examination.Owner = App.Current.MainWindow;
             _Examination.ShowDialog();
         }

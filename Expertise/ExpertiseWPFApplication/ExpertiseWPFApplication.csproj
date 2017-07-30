@@ -108,12 +108,16 @@
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PriorityWizard.xaml.cs">
+      <DependentUpon>PriorityWizard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ProjectCard.xaml.cs">
       <DependentUpon>ProjectCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="Projects.xaml.cs">
       <DependentUpon>Projects.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SaatiMark.cs" />
     <Compile Include="Service References\ServiceReference1\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -196,6 +200,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="NewExpertiseWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PriorityWizard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

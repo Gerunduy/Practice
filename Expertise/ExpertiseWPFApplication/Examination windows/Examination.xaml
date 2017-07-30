@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Проведение экспертизы" Height="600" Width="800">
+        Title="Проведение экспертизы" Height="800" Width="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -17,19 +17,55 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="90" Text="Обработка..." Padding="140,200,200,200" TextAlignment="Center" Background="#FFE3E3E3" />
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="90" Text="Обработка..." Padding="90,200,200,200" TextAlignment="Center" Background="#FFE3E3E3" />
         <Grid Grid.Row="1" Grid.Column="1" Name="Grid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="300"/>
                 <RowDefinition Height="15"/>
                 <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
-            <Grid Grid.Row="0" Grid.Column="0">
+            <Grid Grid.Row="0" Grid.Column="0" Name="gHierarchy">
                 <ScrollViewer Grid.Row="0" Grid.Column="1" Height="300" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
                     <Canvas Name="cnvsHierarchy" Height="auto" Width="auto"/>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0" Name="gStage1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Этап 1 - Определение степени важности критериев." TextAlignment="Left"/>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Name="svStage1" Height="auto" VerticalScrollBarVisibility="Auto">
+                    <Grid Grid.Row="2" Grid.Column="0" Name="gInsideStage1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0" Name="gStage2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Этап 2 - Оценивание проектов по критериям." TextAlignment="Left"/>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Name="svStage2" Height="auto" VerticalScrollBarVisibility="Auto">
+
                 </ScrollViewer>
             </Grid>
         </Grid>

@@ -30,11 +30,12 @@ namespace ExpertiseWCFService
             return composite;
         }
 
-        public myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise)
+        public myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise, int id_expert)
         {
             try
             {
                 myExpertiseExaminationTables result = new myExpertiseExaminationTables();
+                // = expertise
                 Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
                 result.expertise = new Expertises();
                 result.expertise.id_expertise = E.id_expertise;
@@ -44,7 +45,19 @@ namespace ExpertiseWCFService
                 result.expertise.count_proj_expertise = E.count_proj_expertise;
                 result.expertise.id_fos = E.id_fos;
                 result.expertise.end_expertise = E.end_expertise;
-
+                // = expert
+                Experts Exp = db_AAZ.Experts.Where(x => x.id_expert == id_expert).FirstOrDefault();
+                result.expert = new Experts();
+                result.expert.id_expert = Exp.id_expert;
+                result.expert.surname_expert = Exp.surname_expert;
+                result.expert.name_expert = Exp.name_expert;
+                result.expert.patronymic_expert = Exp.patronymic_expert;
+                result.expert.job_expert = Exp.job_expert;
+                result.expert.post_expert = Exp.post_expert;
+                result.expert.degree_expert = Exp.degree_expert;
+                result.expert.rank_expert = Exp.rank_expert;
+                result.expert.contacts_expert = Exp.contacts_expert;
+                // = ListCriterions
                 result.ListCriterions = new List<Criterions>();
                 foreach (ExpCrit pEC in E.ExpCrit)
                 {
@@ -55,7 +68,7 @@ namespace ExpertiseWCFService
                     C.qualit_crit = tC.qualit_crit;
                     result.ListCriterions.Add(C);
                 }
-
+                // = ListProjects
                 result.ListProjects = new List<Projects>();
                 foreach (ProjectExpertise pPE in E.ProjectExpertise)
                 {
@@ -71,7 +84,33 @@ namespace ExpertiseWCFService
                     P.email_project = tP.email_project;
                     result.ListProjects.Add(P);
                 }
+                // = ListCritCompare
+                result.ListCritCompare = new List<CritCompare>();
+                foreach (CritCompare pCC in E.CritCompare)
+                {
+                    //CritCompare tCC = db_AAZ.CritCompare.Where(s => s.id_compare == pCC.id_compare).FirstOrDefault();
+                    if (pCC.id_expert == id_expert)
+                    {
+                        CritCompare CC = new CritCompare();
+                        CC.id_compare = pCC.id_compare;
+                        CC.id_expertise = pCC.id_expertise;
+                        CC.id_expert = pCC.id_expert;
+                        CC.mark_compare = pCC.mark_compare;
+                        List<CritCompareCrit> lCCC = new List<CritCompareCrit>();
+                        foreach (CritCompareCrit pCCC in pCC.CritCompareCrit)
+                        {
+                            CritCompareCrit CCC = new CritCompareCrit();
+                            CCC.id_crit_crcompare = pCCC.id_crit_crcompare;
+                            CCC.id_compare = pCCC.id_compare;
+                            CCC.id_crit = pCCC.id_crit;
+                            lCCC.Add(CCC);
+                        }
+                        CC.CritCompareCrit = lCCC.ToArray();
 
+                        result.ListCritCompare.Add(CC);
+                    }
+                }
+                // = Err
                 result.Err = false;
 
                 return result;

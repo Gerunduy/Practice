@@ -16,7 +16,7 @@ namespace ExpertiseWCFService
         string GetData(int value);
 
         [OperationContract]
-        myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise);
+        myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise, int id_expert);
 
 
         #region Получение таблиц
@@ -358,8 +358,12 @@ namespace ExpertiseWCFService
     public class myExpertiseExaminationTables
     {
         public Expertises expertise { get; set; }
+        public Experts expert { get; set; }
         public List<Criterions> ListCriterions { get; set; }
         public List<Projects> ListProjects { get; set; }
+
+        public List<CritCompare> ListCritCompare { get; set; }
+        public List<CritCompareCrit> ListCritCompareCrit { get; set; }
 
         //public System.DateTime date_expertise { get; set; }
         //public System.DateTime end_date_expertise { get; set; }

@@ -22,15 +22,19 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         ServiceReference1.myExpertiseExaminationTables Tables;
         int id_expertise;
+        int id_expert;
 
-        public Examination(int id_expertise)
+        PriorityWizard _PriorityWizard;
+
+        public Examination(int id_expertise, int id_expert)
         {
             InitializeComponent();
 
             client.GetExpertiseExaminationTablesByIDCompleted += Client_GetExpertiseExaminationTablesByIDCompleted;
 
             this.id_expertise = id_expertise;
-            client.GetExpertiseExaminationTablesByIDAsync(id_expertise);
+            this.id_expert = id_expert;
+            client.GetExpertiseExaminationTablesByIDAsync(id_expertise, id_expert);
             Waiting(true);
         }
         //=======================================================================================
@@ -40,7 +44,7 @@ namespace ExpertiseWPFApplication
             {
                 Tables = new ServiceReference1.myExpertiseExaminationTables();
                 Tables = e.Result;
-                FirstFillFileds();
+                FillFileds();
 
                 Waiting(false);
             }
@@ -51,9 +55,10 @@ namespace ExpertiseWPFApplication
             }
         }
         //=======================================================================================
-        private void FirstFillFileds()
+        private void FillFileds()
         {
             PrintHierarchy();
+            ViewStage1();
         }
         private void PrintHierarchy()
         {
@@ -149,6 +154,23 @@ namespace ExpertiseWPFApplication
                 }
             }
         }
+        private void ViewStage1()
+        {
+            if (Tables.ListCritCompare.Count() == 0)
+            {
+                Button btnGoToCompareCrit = new Button();
+                btnGoToCompareCrit.Content = "Перейти к определению";
+                btnGoToCompareCrit.Height = 40;
+                btnGoToCompareCrit.Width = 200;
+                btnGoToCompareCrit.Click += BtnGoToCompareCrit_Click;
+
+                gInsideStage1.Children.Add(btnGoToCompareCrit);
+            }
+            else
+            {
+                // отобразить таблицу с данными сравнения
+            }
+        }
         private void Waiting(bool Wait)
         {
             if (Wait)
@@ -163,5 +185,11 @@ namespace ExpertiseWPFApplication
             }
         }
         //=======================================================================================
+        private void BtnGoToCompareCrit_Click(object sender, RoutedEventArgs e)
+        {
+            _PriorityWizard = new PriorityWizard(Tables.ListCriterions);
+            _PriorityWizard.Owner = this;
+            _PriorityWizard.ShowDialog();
+        }
     }
 }

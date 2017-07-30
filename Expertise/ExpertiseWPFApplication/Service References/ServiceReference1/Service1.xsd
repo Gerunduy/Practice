@@ -4,21 +4,53 @@
   <xs:complexType name="myExpertiseExaminationTables">
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+      <xs:element minOccurs="0" name="ListCritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
       <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
       <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfProjects" />
+      <xs:element minOccurs="0" name="expert" nillable="true" type="tns:Experts" />
       <xs:element minOccurs="0" name="expertise" nillable="true" type="tns:Expertises" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="myExpertiseExaminationTables" nillable="true" type="tns:myExpertiseExaminationTables" />
-  <xs:complexType name="ArrayOfCriterions">
+  <xs:complexType name="ArrayOfCritCompare">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CritCompare" nillable="true" type="tns:CritCompare" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+  <xs:element name="ArrayOfCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+  <xs:complexType name="CritCompare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="Experts" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="id_compare" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="mark_compare" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritCompare" nillable="true" type="tns:CritCompare" />
+  <xs:complexType name="ArrayOfCritCompareCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CritCompareCrit" nillable="true" type="tns:CritCompareCrit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
+  <xs:complexType name="CritCompareCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:CritCompare" />
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="id_compare" type="xs:int" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_crit_crcompare" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritCompareCrit" nillable="true" type="tns:CritCompareCrit" />
   <xs:complexType name="Criterions">
     <xs:sequence>
       <xs:element minOccurs="0" name="CatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="CritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
       <xs:element minOccurs="0" name="CritValues" nillable="true" type="tns:ArrayOfCritValues" />
       <xs:element minOccurs="0" name="ExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
       <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:ArrayOfMarks" />
@@ -85,6 +117,7 @@
   <xs:element name="ExpCrit" nillable="true" type="tns:ExpCrit" />
   <xs:complexType name="Expertises">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
       <xs:element minOccurs="0" name="ExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
       <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
       <xs:element minOccurs="0" name="ExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
@@ -117,6 +150,7 @@
   <xs:element name="ExpertiseExpert" nillable="true" type="tns:ExpertiseExpert" />
   <xs:complexType name="Experts">
     <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
       <xs:element minOccurs="0" name="ExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
       <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
       <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:ArrayOfMarks" />
@@ -286,6 +320,12 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ExpertiseMark" nillable="true" type="tns:ExpertiseMark" />
+  <xs:complexType name="ArrayOfCriterions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Criterions" nillable="true" type="tns:Criterions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCriterions" nillable="true" type="tns:ArrayOfCriterions" />
   <xs:complexType name="ArrayOfmyAuthors">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="myAuthors" nillable="true" type="tns:myAuthors" />
