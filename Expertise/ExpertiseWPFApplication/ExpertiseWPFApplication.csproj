@@ -105,6 +105,7 @@
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="myCompareRow.cs" />
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
     </Compile>

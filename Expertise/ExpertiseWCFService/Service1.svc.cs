@@ -124,6 +124,25 @@ namespace ExpertiseWCFService
             }
         }
 
+        public bool AddNewCritCompare(CritCompare[] arrCompare)
+        {
+            try
+            {
+                foreach (CritCompare pCC in arrCompare)
+                {
+                    db_AAZ.CritCompare.Add(pCC);
+                }
+                
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
         #region Получение таблиц
 
         public List<myAuthors> GetListAuthors()

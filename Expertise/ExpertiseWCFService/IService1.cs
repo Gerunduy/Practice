@@ -18,6 +18,9 @@ namespace ExpertiseWCFService
         [OperationContract]
         myExpertiseExaminationTables GetExpertiseExaminationTablesByID(int id_expertise, int id_expert);
 
+        [OperationContract]
+        bool AddNewCritCompare(CritCompare[] arrCompare);
+
 
         #region Получение таблиц
 

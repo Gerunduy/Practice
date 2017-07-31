@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Мастер приоритетов" Height="270" Width="600" MinHeight="270" MinWidth="600" MaxHeight="280">
+        Title="Мастер приоритетов" Height="300" Width="600" MinHeight="280" MinWidth="600">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -17,12 +17,13 @@
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Row="1" Grid.Column="1">
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="60" Text="Сохранение..." Padding="100,50,200,200" TextAlignment="Center" Background="#FFE3E3E3" />
+        <Grid Grid.Row="1" Grid.Column="1" Name="Grid">
             <Grid.RowDefinitions>
                 <RowDefinition Height="20"/>
                 <RowDefinition Height="15"/>
-                <RowDefinition Height="90"/>
-                <RowDefinition Height="1*"/>
+                <RowDefinition Height="auto" MaxHeight="150"/>
+                <RowDefinition Height="1*" MinHeight="1"/>
                 <RowDefinition Height="30"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -37,13 +38,14 @@
                     <ColumnDefinition Width="auto"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Grid.Row="0" Grid.Column="1" Text="Оцените элементы по предложенной шкале"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" Name="tblTitle" Text="Оцените элементы по предложенной шкале"/>
             </Grid>
-            <Grid Grid.Row="2" Grid.Column="0">
+            <Grid Grid.Row="2" Grid.Column="0" Name="gContent">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="40" MinHeight="40" MaxHeight="100"/>
                     <RowDefinition Height="15"/>
                     <RowDefinition Height="25"/>
+                    <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*"/>
@@ -74,7 +76,7 @@
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition Width="1*"/>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="1" Content="Сохранить оценку" Name="btnOK" Click="btnOK_Click"/>
+                <Button Grid.Row="0" Grid.Column="1" Content="Сохранить" Name="btnOK" Click="btnOK_Click"/>
                 <Button Grid.Row="0" Grid.Column="3" Content="Отмена" Name="btnCancel" Click="btnCancel_Click"/>
             </Grid>
         </Grid>

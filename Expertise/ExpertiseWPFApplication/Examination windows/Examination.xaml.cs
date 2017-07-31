@@ -24,6 +24,13 @@ namespace ExpertiseWPFApplication
         int id_expertise;
         int id_expert;
 
+        // =====================================
+        double[,] SaatiMatrix;
+        DataGrid dgSaatiMatrix;
+        int CountCriterions;
+        // =====================================
+
+
         PriorityWizard _PriorityWizard;
 
         public Examination(int id_expertise, int id_expert)
@@ -44,6 +51,7 @@ namespace ExpertiseWPFApplication
             {
                 Tables = new ServiceReference1.myExpertiseExaminationTables();
                 Tables = e.Result;
+                CountCriterions = Tables.ListCriterions.Count();
                 FillFileds();
 
                 Waiting(false);
@@ -55,10 +63,24 @@ namespace ExpertiseWPFApplication
             }
         }
         //=======================================================================================
+        private void Waiting(bool Wait)
+        {
+            if (Wait)
+            {
+                Grid.Visibility = Visibility.Hidden;
+                tblWait.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Grid.Visibility = Visibility.Visible;
+                tblWait.Visibility = Visibility.Hidden;
+            }
+        }
         private void FillFileds()
         {
             PrintHierarchy();
-            ViewStage1();
+            //ViewStage1();
+            ViewStage2();
         }
         private void PrintHierarchy()
         {
@@ -154,7 +176,75 @@ namespace ExpertiseWPFApplication
                 }
             }
         }
-        private void ViewStage1()
+        // === Первый этап ===
+        void SetPairCompareMatrix()
+        {
+            int CurContextCompare = 0;
+            SaatiMatrix = new double[CountCriterions, CountCriterions];
+            for (int i = 0; i < CountCriterions; i++)
+            {
+                for (int j = 0; j < CountCriterions; j++)
+                {
+                    if (j == i) { SaatiMatrix[i, j] = 1; }
+                    else
+                    {
+                        if (j > i)
+                        {
+                            SaatiMatrix[i, j] = Tables.ListCritCompare[CurContextCompare].mark_compare;
+                            CurContextCompare = CurContextCompare + 1;
+                        }
+                        else
+                        {
+                            if (SaatiMatrix[j, i] < 1)
+                            {
+                                SaatiMatrix[i, j] = Math.Round(1 / SaatiMatrix[j, i], 0);
+                            }
+                            else
+                            {
+                                SaatiMatrix[i, j] = Math.Round(1 / SaatiMatrix[j, i], 3);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        void ShowPairCompareMatrix()
+        {
+            dgSaatiMatrix = new DataGrid();
+            dgSaatiMatrix.AutoGenerateColumns = false;
+
+            DataGridTextColumn CritColumn = new DataGridTextColumn();
+            CritColumn.Binding = new Binding("name");
+            dgSaatiMatrix.Columns.Add(CritColumn);
+            for (int i = 0; i < CountCriterions; i++)
+            {
+                DataGridTextColumn Column = new DataGridTextColumn();
+                Column.Header = Tables.ListCriterions[i].name_crit;
+                Column.Binding = new Binding(string.Format("content.[{0}]", i));
+                dgSaatiMatrix.Columns.Add(Column);
+            }
+
+            List<myCompareRow> lRow = new List<myCompareRow>();
+            // === Формируем строку ===
+            for (int i = 0; i < CountCriterions; i++)
+            {
+                double[] arrMark = new double[CountCriterions];
+                for (int j = 0; j < CountCriterions; j++)
+                {
+                    arrMark[j] = SaatiMatrix[i, j];
+                }
+                myCompareRow Row = new myCompareRow(Tables.ListCriterions[i].name_crit, arrMark);
+                lRow.Add(Row);
+            }
+            // === === ===
+            dgSaatiMatrix.ItemsSource = lRow;
+
+            gInsideStage1.Children.Clear();
+            gInsideStage1.RowDefinitions.Clear();
+            gInsideStage1.ColumnDefinitions.Clear();
+            gInsideStage1.Children.Add(dgSaatiMatrix);
+        }
+        private bool ViewStage1()
         {
             if (Tables.ListCritCompare.Count() == 0)
             {
@@ -165,31 +255,39 @@ namespace ExpertiseWPFApplication
                 btnGoToCompareCrit.Click += BtnGoToCompareCrit_Click;
 
                 gInsideStage1.Children.Add(btnGoToCompareCrit);
+                return false;
             }
             else
             {
                 // отобразить таблицу с данными сравнения
+                SetPairCompareMatrix();
+                ShowPairCompareMatrix();
+                return true;
             }
         }
-        private void Waiting(bool Wait)
+        // === Второй этап ===
+        private void ViewStage2()
         {
-            if (Wait)
+            if (ViewStage1())
             {
-                Grid.Visibility = Visibility.Hidden;
-                tblWait.Visibility = Visibility.Visible;
+                // отобразить содержимое gStage2
             }
             else
             {
-                Grid.Visibility = Visibility.Visible;
-                tblWait.Visibility = Visibility.Hidden;
+                // сделать gStage2 неактивным
             }
         }
         //=======================================================================================
         private void BtnGoToCompareCrit_Click(object sender, RoutedEventArgs e)
         {
-            _PriorityWizard = new PriorityWizard(Tables.ListCriterions);
+            _PriorityWizard = new PriorityWizard(id_expertise, id_expert, Tables.ListCriterions);
             _PriorityWizard.Owner = this;
             _PriorityWizard.ShowDialog();
+            if (_PriorityWizard.DialogResult == true)
+            {
+                client.GetExpertiseExaminationTablesByIDAsync(id_expertise, id_expert);
+                Waiting(true);
+            }
         }
     }
 }

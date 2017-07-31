@@ -4971,6 +4971,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.myExpertiseExaminationTables EndGetExpertiseExaminationTablesByID(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewCritCompare", ReplyAction="http://tempuri.org/IService1/AddNewCritCompareResponse")]
+        bool AddNewCritCompare(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewCritCompare", ReplyAction="http://tempuri.org/IService1/AddNewCritCompareResponse")]
+        System.IAsyncResult BeginAddNewCritCompare(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewCritCompare(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAuthors", ReplyAction="http://tempuri.org/IService1/GetListAuthorsResponse")]
         ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthors();
         
@@ -5642,6 +5650,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.myExpertiseExaminationTables)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewCritCompareCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewCritCompareCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }
@@ -7106,6 +7133,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetExpertiseExaminationTablesByIDCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddNewCritCompareDelegate;
+        
+        private EndOperationDelegate onEndAddNewCritCompareDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewCritCompareCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListAuthorsDelegate;
         
         private EndOperationDelegate onEndGetListAuthorsDelegate;
@@ -7603,6 +7636,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetExpertiseExaminationTablesByIDCompletedEventArgs> GetExpertiseExaminationTablesByIDCompleted;
         
+        public event System.EventHandler<AddNewCritCompareCompletedEventArgs> AddNewCritCompareCompleted;
+        
         public event System.EventHandler<GetListAuthorsCompletedEventArgs> GetListAuthorsCompleted;
         
         public event System.EventHandler<GetListAuthorsForProjectCompletedEventArgs> GetListAuthorsForProjectCompleted;
@@ -7861,6 +7896,56 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginGetExpertiseExaminationTablesByIDDelegate, new object[] {
                         id_expertise,
                         id_expert}, this.onEndGetExpertiseExaminationTablesByIDDelegate, this.onGetExpertiseExaminationTablesByIDCompletedDelegate, userState);
+        }
+        
+        public bool AddNewCritCompare(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare) {
+            return base.Channel.AddNewCritCompare(arrCompare);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewCritCompare(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewCritCompare(arrCompare, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewCritCompare(System.IAsyncResult result) {
+            return base.Channel.EndAddNewCritCompare(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewCritCompare(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare = ((ExpertiseWPFApplication.ServiceReference1.CritCompare[])(inValues[0]));
+            return this.BeginAddNewCritCompare(arrCompare, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewCritCompare(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewCritCompare(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewCritCompareCompleted(object state) {
+            if ((this.AddNewCritCompareCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewCritCompareCompleted(this, new AddNewCritCompareCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewCritCompareAsync(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare) {
+            this.AddNewCritCompareAsync(arrCompare, null);
+        }
+        
+        public void AddNewCritCompareAsync(ExpertiseWPFApplication.ServiceReference1.CritCompare[] arrCompare, object userState) {
+            if ((this.onBeginAddNewCritCompareDelegate == null)) {
+                this.onBeginAddNewCritCompareDelegate = new BeginOperationDelegate(this.OnBeginAddNewCritCompare);
+            }
+            if ((this.onEndAddNewCritCompareDelegate == null)) {
+                this.onEndAddNewCritCompareDelegate = new EndOperationDelegate(this.OnEndAddNewCritCompare);
+            }
+            if ((this.onAddNewCritCompareCompletedDelegate == null)) {
+                this.onAddNewCritCompareCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewCritCompareCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewCritCompareDelegate, new object[] {
+                        arrCompare}, this.onEndAddNewCritCompareDelegate, this.onAddNewCritCompareCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthors() {

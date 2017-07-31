@@ -20,6 +20,12 @@
   <wsdl:message name="IService1_GetExpertiseExaminationTablesByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetExpertiseExaminationTablesByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_AddNewCritCompare_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCritCompare" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddNewCritCompare_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCritCompareResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListAuthors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListAuthors" />
   </wsdl:message>
@@ -503,6 +509,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetExpertiseExaminationTablesByID" message="tns:IService1_GetExpertiseExaminationTablesByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetExpertiseExaminationTablesByIDResponse" message="tns:IService1_GetExpertiseExaminationTablesByID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="AddNewCritCompare">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewCritCompare" message="tns:IService1_AddNewCritCompare_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewCritCompareResponse" message="tns:IService1_AddNewCritCompare_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetListAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAuthors" message="tns:IService1_GetListAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAuthorsResponse" message="tns:IService1_GetListAuthors_OutputMessage" />
@@ -833,6 +843,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetExpertiseExaminationTablesByID">
       <soap:operation soapAction="http://tempuri.org/IService1/GetExpertiseExaminationTablesByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCritCompare">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddNewCritCompare" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
