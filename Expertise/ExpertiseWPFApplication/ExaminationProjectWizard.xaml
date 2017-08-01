@@ -1,0 +1,84 @@
+﻿<Window x:Class="ExpertiseWPFApplication.ExaminationProjectWizard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="Мастер оценки проектов" Height="500" Width="600" MinHeight="500" MinWidth="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="60" Text="Сохранение..." Padding="100,165,200,200" TextAlignment="Center" Background="#FFE3E3E3" />
+        <Grid Grid.Row="1" Grid.Column="1" Name="gGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="20"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*" MinHeight="300"/>
+                <RowDefinition Height="55"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="1" Name="tblTitle" Text="Оцените проекты"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="15"/>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Name="tblCritName" FontSize="18" Text="Критерий: " TextAlignment="Center"/>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Height="auto" VerticalScrollBarVisibility="Auto">
+                    <Grid Grid.Row="0" Grid.Column="0" Name="gContent">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="15"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ScrollViewer>
+                <Button Grid.Row="4" Grid.Column="0" Content="Далее -->" Name="btnNext" Width="80" Click="btnNext_Click"/>
+            </Grid>
+            <Grid Grid.Row="4" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="1" Content="Сохранить" Name="btnOK" Click="btnOK_Click"/>
+                <Button Grid.Row="0" Grid.Column="3" Content="Отмена" Name="btnCancel" Click="btnCancel_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

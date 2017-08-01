@@ -84,6 +84,9 @@
     <Compile Include="Examination windows\Examination.xaml.cs">
       <DependentUpon>Examination.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ExaminationProjectWizard.xaml.cs">
+      <DependentUpon>ExaminationProjectWizard.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ExpertCard.xaml.cs">
       <DependentUpon>ExpertCard.xaml</DependentUpon>
     </Compile>
@@ -105,6 +108,7 @@
     <Compile Include="GRNTI.xaml.cs">
       <DependentUpon>GRNTI.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MarkForExaminationProject.cs" />
     <Compile Include="myCompareRow.cs" />
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
@@ -157,6 +161,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Examination windows\Examination.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ExaminationProjectWizard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

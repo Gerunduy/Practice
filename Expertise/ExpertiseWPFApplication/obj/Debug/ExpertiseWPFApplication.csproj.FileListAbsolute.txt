@@ -109,3 +109,5 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\Examination.baml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\PriorityWizard.g.cs
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\PriorityWizard.baml
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExaminationProjectWizard.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExaminationProjectWizard.baml

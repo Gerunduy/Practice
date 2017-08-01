@@ -9,7 +9,7 @@
         <EntityTypeShape EntityType="db_AAZModel.CatCrit" Width="1.5" PointX="4" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.Categories" Width="1.5" PointX="2.125" PointY="9.875" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.Criterions" Width="1.5" PointX="4.25" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="db_AAZModel.CritValues" Width="1.5" PointX="2.125" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="db_AAZModel.CritValues" Width="1.5" PointX="1.875" PointY="7.125" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.ExpCrit" Width="1.5" PointX="4.375" PointY="4.375" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.ExpertFos" Width="1.5" PointX="11.375" PointY="3.75" IsExpanded="true" />
         <EntityTypeShape EntityType="db_AAZModel.ExpertiseMark" Width="1.5" PointX="7.625" PointY="3.125" IsExpanded="true" />

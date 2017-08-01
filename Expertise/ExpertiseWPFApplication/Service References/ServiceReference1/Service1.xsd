@@ -5,8 +5,8 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="Err" type="xs:boolean" />
       <xs:element minOccurs="0" name="ListCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
-      <xs:element minOccurs="0" name="ListCritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
       <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="ListMark" nillable="true" type="tns:ArrayOfMarks" />
       <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfProjects" />
       <xs:element minOccurs="0" name="expert" nillable="true" type="tns:Experts" />
       <xs:element minOccurs="0" name="expertise" nillable="true" type="tns:Expertises" />

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Проведение экспертизы" Height="800" Width="700">
+        Title="Проведение экспертизы" Height="800" Width="700" MinHeight="400" MinWidth="700">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -59,7 +59,8 @@
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Этап 2 - Оценивание проектов по критериям." TextAlignment="Left"/>
                 <ScrollViewer Grid.Row="2" Grid.Column="0" Name="svStage2" Height="auto" VerticalScrollBarVisibility="Auto">
-
+                    <Grid Grid.Row="2" Grid.Column="0" Name="gInsideStage2">
+                    </Grid>
                 </ScrollViewer>
             </Grid>
         </Grid>

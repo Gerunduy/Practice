@@ -66,6 +66,14 @@ namespace ExpertiseWCFService
                     C.id_crit = tC.id_crit;
                     C.name_crit = tC.name_crit;
                     C.qualit_crit = tC.qualit_crit;
+                    foreach (CritValues ptCV in tC.CritValues)
+                    {
+                        CritValues CV = new CritValues();
+                        CV.id_value = ptCV.id_value;
+                        CV.id_crit = ptCV.id_crit;
+                        CV.valid_values = ptCV.valid_values;
+                        C.CritValues.Add(CV);
+                    }
                     result.ListCriterions.Add(C);
                 }
                 // = ListProjects
@@ -110,6 +118,21 @@ namespace ExpertiseWCFService
                         result.ListCritCompare.Add(CC);
                     }
                 }
+                // = ListMark
+                result.ListMark = new List<Marks>();
+                foreach (ExpertiseMark pEM in E.ExpertiseMark)
+                {
+                    Marks tM = db_AAZ.Marks.Where(f => f.id_mark == pEM.id_mark).FirstOrDefault();
+                    Marks M = new Marks();
+                    M.id_mark = tM.id_mark;
+                    M.id_expert = tM.id_expert;
+                    M.id_crit = tM.id_crit;
+                    M.id_project = tM.id_project;
+                    M.rating = tM.rating;
+
+                    result.ListMark.Add(M);
+                }
+
                 // = Err
                 result.Err = false;
 

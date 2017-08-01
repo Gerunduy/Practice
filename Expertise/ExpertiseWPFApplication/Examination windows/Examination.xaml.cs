@@ -32,6 +32,7 @@ namespace ExpertiseWPFApplication
 
 
         PriorityWizard _PriorityWizard;
+        ExaminationProjectWizard _ExaminationProjectWizard;
 
         public Examination(int id_expertise, int id_expert)
         {
@@ -79,7 +80,7 @@ namespace ExpertiseWPFApplication
         private void FillFileds()
         {
             PrintHierarchy();
-            //ViewStage1();
+            ViewStage1();
             ViewStage2();
         }
         private void PrintHierarchy()
@@ -244,7 +245,7 @@ namespace ExpertiseWPFApplication
             gInsideStage1.ColumnDefinitions.Clear();
             gInsideStage1.Children.Add(dgSaatiMatrix);
         }
-        private bool ViewStage1()
+        private void ViewStage1()
         {
             if (Tables.ListCritCompare.Count() == 0)
             {
@@ -255,26 +256,30 @@ namespace ExpertiseWPFApplication
                 btnGoToCompareCrit.Click += BtnGoToCompareCrit_Click;
 
                 gInsideStage1.Children.Add(btnGoToCompareCrit);
-                return false;
             }
             else
             {
                 // отобразить таблицу с данными сравнения
                 SetPairCompareMatrix();
                 ShowPairCompareMatrix();
-                return true;
             }
         }
         // === Второй этап ===
         private void ViewStage2()
         {
-            if (ViewStage1())
+            if (Tables.ListMark.Count() == 0)
             {
-                // отобразить содержимое gStage2
+                Button btnGoToSetMark = new Button();
+                btnGoToSetMark.Content = "Перейти к оцениванию";
+                btnGoToSetMark.Height = 40;
+                btnGoToSetMark.Width = 200;
+                btnGoToSetMark.Click += BtnGoToSetMark_Click;
+
+                gInsideStage2.Children.Add(btnGoToSetMark);
             }
             else
             {
-                // сделать gStage2 неактивным
+                // отобразить таблицу с оценками критериев
             }
         }
         //=======================================================================================
@@ -284,6 +289,17 @@ namespace ExpertiseWPFApplication
             _PriorityWizard.Owner = this;
             _PriorityWizard.ShowDialog();
             if (_PriorityWizard.DialogResult == true)
+            {
+                client.GetExpertiseExaminationTablesByIDAsync(id_expertise, id_expert);
+                Waiting(true);
+            }
+        }
+        private void BtnGoToSetMark_Click(object sender, RoutedEventArgs e)
+        {
+            _ExaminationProjectWizard = new ExaminationProjectWizard(id_expertise, id_expert, Tables.ListCriterions, Tables.ListProjects);
+            _ExaminationProjectWizard.Owner = this;
+            _ExaminationProjectWizard.ShowDialog();
+            if(_ExaminationProjectWizard.DialogResult == true)
             {
                 client.GetExpertiseExaminationTablesByIDAsync(id_expertise, id_expert);
                 Waiting(true);

@@ -364,16 +364,10 @@ namespace ExpertiseWCFService
         public Experts expert { get; set; }
         public List<Criterions> ListCriterions { get; set; }
         public List<Projects> ListProjects { get; set; }
-
         public List<CritCompare> ListCritCompare { get; set; }
-        public List<CritCompareCrit> ListCritCompareCrit { get; set; }
+        //public List<CritCompareCrit> ListCritCompareCrit { get; set; }
+        public List<Marks> ListMark { get; set; }
 
-        //public System.DateTime date_expertise { get; set; }
-        //public System.DateTime end_date_expertise { get; set; }
-        //public List<CatCrit> ListCatCrit { get; set; }
-        //public List<Categories> ListCategories { get; set; }
-        //public List<Experts> ListExperts { get; set; }
-        //public int count_project_expertise { get; set; }
 
         public bool Err { get; set; }
     }
