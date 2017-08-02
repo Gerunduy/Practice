@@ -135,6 +135,11 @@ namespace ExpertiseWPFApplication
                 Waiting(true);
             }
         }
+
+        private void btnGetResultExpertise_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
         //=======================================================================================
     }
 }

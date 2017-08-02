@@ -37,7 +37,7 @@ namespace ExpertiseWPFApplication
         public ExaminationProjectWizard(int id_expertise, int id_expert, ServiceReference1.Criterions[] arrCriterions, ServiceReference1.Projects[] arrProjects)
         {
             InitializeComponent();
-            // подключение завершения для ассинхронного метода сохранения оценок в базу
+            client.AddNewMarkCompleted += Client_AddNewMarkCompleted;
             btnOK.IsEnabled = false;
 
             this.id_expertise = id_expertise;
@@ -312,14 +312,28 @@ namespace ExpertiseWPFApplication
             }
         }
         //==============================================================================================
+        private void Client_AddNewMarkCompleted(object sender, ServiceReference1.AddNewMarkCompletedEventArgs e)
+        {
+            if (e.Error == null && e.Result)
+            {
+                DialogResult = true;
+                MessageBox.Show("Матрица сравнения критериев сохранена.");
+            }
+            else
+            {
+                Waiting(false);
+                MessageBox.Show("Ошибка сохранения");
+            }
+        }
         void SaveMarksInDataBase()
         {
-
+            Waiting(true);
+            client.AddNewMarkAsync(id_expertise, lMarks.ToArray());
         }
         //==============================================================================================
         private void btnOK_Click(object sender, RoutedEventArgs e)
         {
-            //SaveMarksInDataBase();
+            SaveMarksInDataBase();
         }
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {

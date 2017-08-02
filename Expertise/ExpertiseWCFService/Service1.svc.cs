@@ -146,7 +146,6 @@ namespace ExpertiseWCFService
                 return result;
             }
         }
-
         public bool AddNewCritCompare(CritCompare[] arrCompare)
         {
             try
@@ -165,6 +164,30 @@ namespace ExpertiseWCFService
                 return false;
             }
         }
+        public bool AddNewMark(int id_expertise, Marks[] arrMarks)
+        {
+            try
+            {
+                foreach (Marks pM in arrMarks)
+                {
+                    ExpertiseMark EM = new ExpertiseMark();
+                    EM.id_expertise = id_expertise;
+                    EM.Marks = pM;
+                    db_AAZ.ExpertiseMark.Add(EM);
+                }
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+
+
+
 
         #region Получение таблиц
 

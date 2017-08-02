@@ -21,6 +21,9 @@ namespace ExpertiseWCFService
         [OperationContract]
         bool AddNewCritCompare(CritCompare[] arrCompare);
 
+        [OperationContract]
+        bool AddNewMark(int id_expertise, Marks[] arrMarks);
+
 
         #region Получение таблиц
 

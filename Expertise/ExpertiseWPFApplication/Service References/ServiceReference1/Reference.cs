@@ -4979,6 +4979,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         bool EndAddNewCritCompare(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddNewMark", ReplyAction="http://tempuri.org/IService1/AddNewMarkResponse")]
+        bool AddNewMark(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddNewMark", ReplyAction="http://tempuri.org/IService1/AddNewMarkResponse")]
+        System.IAsyncResult BeginAddNewMark(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddNewMark(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListAuthors", ReplyAction="http://tempuri.org/IService1/GetListAuthorsResponse")]
         ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthors();
         
@@ -5661,6 +5669,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private object[] results;
         
         public AddNewCritCompareCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddNewMarkCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddNewMarkCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -7139,6 +7166,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onAddNewCritCompareCompletedDelegate;
         
+        private BeginOperationDelegate onBeginAddNewMarkDelegate;
+        
+        private EndOperationDelegate onEndAddNewMarkDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddNewMarkCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListAuthorsDelegate;
         
         private EndOperationDelegate onEndGetListAuthorsDelegate;
@@ -7638,6 +7671,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<AddNewCritCompareCompletedEventArgs> AddNewCritCompareCompleted;
         
+        public event System.EventHandler<AddNewMarkCompletedEventArgs> AddNewMarkCompleted;
+        
         public event System.EventHandler<GetListAuthorsCompletedEventArgs> GetListAuthorsCompleted;
         
         public event System.EventHandler<GetListAuthorsForProjectCompletedEventArgs> GetListAuthorsForProjectCompleted;
@@ -7946,6 +7981,58 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginAddNewCritCompareDelegate, new object[] {
                         arrCompare}, this.onEndAddNewCritCompareDelegate, this.onAddNewCritCompareCompletedDelegate, userState);
+        }
+        
+        public bool AddNewMark(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks) {
+            return base.Channel.AddNewMark(id_expertise, arrMarks);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddNewMark(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddNewMark(id_expertise, arrMarks, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddNewMark(System.IAsyncResult result) {
+            return base.Channel.EndAddNewMark(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddNewMark(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_expertise = ((int)(inValues[0]));
+            ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks = ((ExpertiseWPFApplication.ServiceReference1.Marks[])(inValues[1]));
+            return this.BeginAddNewMark(id_expertise, arrMarks, callback, asyncState);
+        }
+        
+        private object[] OnEndAddNewMark(System.IAsyncResult result) {
+            bool retVal = this.EndAddNewMark(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddNewMarkCompleted(object state) {
+            if ((this.AddNewMarkCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddNewMarkCompleted(this, new AddNewMarkCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddNewMarkAsync(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks) {
+            this.AddNewMarkAsync(id_expertise, arrMarks, null);
+        }
+        
+        public void AddNewMarkAsync(int id_expertise, ExpertiseWPFApplication.ServiceReference1.Marks[] arrMarks, object userState) {
+            if ((this.onBeginAddNewMarkDelegate == null)) {
+                this.onBeginAddNewMarkDelegate = new BeginOperationDelegate(this.OnBeginAddNewMark);
+            }
+            if ((this.onEndAddNewMarkDelegate == null)) {
+                this.onEndAddNewMarkDelegate = new EndOperationDelegate(this.OnEndAddNewMark);
+            }
+            if ((this.onAddNewMarkCompletedDelegate == null)) {
+                this.onAddNewMarkCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddNewMarkCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddNewMarkDelegate, new object[] {
+                        id_expertise,
+                        arrMarks}, this.onEndAddNewMarkDelegate, this.onAddNewMarkCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.myAuthors[] GetListAuthors() {

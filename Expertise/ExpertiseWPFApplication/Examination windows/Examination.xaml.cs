@@ -29,7 +29,9 @@ namespace ExpertiseWPFApplication
         DataGrid dgSaatiMatrix;
         int CountCriterions;
         // =====================================
-
+        DataGrid dgMarkTabel;
+        int CountProject;
+        // =====================================
 
         PriorityWizard _PriorityWizard;
         ExaminationProjectWizard _ExaminationProjectWizard;
@@ -53,6 +55,7 @@ namespace ExpertiseWPFApplication
                 Tables = new ServiceReference1.myExpertiseExaminationTables();
                 Tables = e.Result;
                 CountCriterions = Tables.ListCriterions.Count();
+                CountProject = Tables.ListProjects.Count();
                 FillFileds();
 
                 Waiting(false);
@@ -280,7 +283,44 @@ namespace ExpertiseWPFApplication
             else
             {
                 // отобразить таблицу с оценками критериев
+                ShowMarkTabel();
             }
+        }
+        void ShowMarkTabel()
+        {
+            dgMarkTabel = new DataGrid();
+            dgMarkTabel.AutoGenerateColumns = false;
+
+            DataGridTextColumn ProjectColumn = new DataGridTextColumn();
+            ProjectColumn.Binding = new Binding("name");
+            dgMarkTabel.Columns.Add(ProjectColumn);
+            for (int i = 0; i < CountCriterions; i++)
+            {
+                DataGridTextColumn Column = new DataGridTextColumn();
+                Column.Header = Tables.ListCriterions[i].name_crit;
+                Column.Binding = new Binding(string.Format("content.[{0}]", i));
+                dgMarkTabel.Columns.Add(Column);
+            }
+
+            List<myMarkRow> lRow = new List<myMarkRow>();
+            // === Формируем строку ===
+            for (int i = 0; i < CountProject; i++)
+            {
+                int[] arrMark = new int[CountCriterions];
+                for (int j = 0; j < CountCriterions; j++)
+                {
+                    arrMark[j] = Tables.ListMark.Where(b => b.id_crit == Tables.ListCriterions[j].id_crit).Where(n => n.id_project == Tables.ListProjects[i].id_project).FirstOrDefault().rating + 1;
+                }
+                myMarkRow Row = new myMarkRow(Tables.ListProjects[i].name_project, arrMark);
+                lRow.Add(Row);
+            }
+            // === === ===
+            dgMarkTabel.ItemsSource = lRow;
+
+            gInsideStage2.Children.Clear();
+            gInsideStage2.RowDefinitions.Clear();
+            gInsideStage2.ColumnDefinitions.Clear();
+            gInsideStage2.Children.Add(dgMarkTabel);
         }
         //=======================================================================================
         private void BtnGoToCompareCrit_Click(object sender, RoutedEventArgs e)
