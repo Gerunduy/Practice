@@ -1844,7 +1844,7 @@ namespace ExpertiseWCFService
             }
         }
 
-        public List<myCompletedexpertises> GetListComoletedExpertises()
+        public List<myCompletedexpertises> GetListCompletedExpertises()
         {
             try
             {
@@ -1854,7 +1854,7 @@ namespace ExpertiseWCFService
                 {
                     myCompletedexpertises tmpE = new myCompletedexpertises();
                     tmpE.id_expertise = pE.id_expertise;
-                    if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "Не завершена";
+                    if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "В работе";
                     tmpE.name_expertise = pE.name_expertise;
                     tmpE.date_expertise = pE.date_expertise;
                     tmpE.end_date_expertise = pE.end_date_expertise;
@@ -1895,6 +1895,63 @@ namespace ExpertiseWCFService
                 // тут логируется ошибка
                 List<myCompletedexpertises> result = new List<myCompletedexpertises>();
                 myCompletedexpertises tmpE = new myCompletedexpertises();
+                tmpE.id_expertise = -1;
+                tmpE.name_expertise = "Содержимое не было получено";
+                result.Add(tmpE);
+
+                return result;
+            }
+        }
+
+        public List<myCurrentexpertises> GetListCurrentExpertises()
+        {
+            try
+            {
+                List<myCurrentexpertises> result = new List<myCurrentexpertises>();
+                List<Expertises> tmplE = db_AAZ.Expertises.Where(p => p.end_expertise == false).ToList();
+                foreach (Expertises pE in tmplE)
+                {
+                    myCurrentexpertises tmpE = new myCurrentexpertises();
+                    tmpE.id_expertise = pE.id_expertise;
+                    if (pE.end_expertise) tmpE.status = "Завершена"; else tmpE.status = "В работе";
+                    tmpE.name_expertise = pE.name_expertise;
+                    tmpE.date_expertise = pE.date_expertise;
+
+                    tmpE.ListExperts = new List<string>();
+                    foreach (ExpertiseExpert EE in pE.ExpertiseExpert)
+                    {
+                        Experts Exp = db_AAZ.Experts.Where(o => o.id_expert == EE.id_expert).FirstOrDefault();
+                        string S = string.Format("{0} {1} {2}", Exp.surname_expert, Exp.name_expert, Exp.patronymic_expert);
+                        tmpE.ListExperts.Add(S);
+                    }
+
+                    tmpE.ListProject = new List<myCurrentexpertisesProject>();
+                    foreach (ProjectExpertise PE in pE.ProjectExpertise)
+                    {
+                        Projects tmpProj = db_AAZ.Projects.Where(z => z.id_project == PE.id_project).FirstOrDefault();
+                        myCurrentexpertisesProject Proj = new myCurrentexpertisesProject();
+                        Proj.id_project = tmpProj.id_project;
+                        Proj.name_project = tmpProj.name_project;
+                        Proj.lead_project = tmpProj.lead_project;
+                        Proj.grnti_project = tmpProj.grnti_project;
+                        Proj.begin_project = tmpProj.begin_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.money_project = tmpProj.money_project;
+                        Proj.email_project = tmpProj.email_project;
+                        Proj.delete_project = tmpProj.delete_project;
+
+                        tmpE.ListProject.Add(Proj);
+                    }
+
+                    result.Add(tmpE);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<myCurrentexpertises> result = new List<myCurrentexpertises>();
+                myCurrentexpertises tmpE = new myCurrentexpertises();
                 tmpE.id_expertise = -1;
                 tmpE.name_expertise = "Содержимое не было получено";
                 result.Add(tmpE);
@@ -2260,36 +2317,36 @@ namespace ExpertiseWCFService
         }
 
 
-        public List<myCurrentexpertises> GetListCurrentExpertises()
-        {
-            List<myCurrentexpertises> result = new List<myCurrentexpertises>();
-            List<Expertises> awd = db_AAZ.Expertises.ToList();
-            List <Expertises> ListE = db_AAZ.Expertises.Where(o => o.end_expertise == false).ToList();
-            int t = 1;
-            for(int i = 0; i<ListE.Count; i++)
-            {
-                myCurrentexpertises temp = new myCurrentexpertises();
-                temp.ListExperts = new List<string>();
-                temp.number = t + i;
-                temp.id_expertise = ListE[i].id_expertise;
-                temp.end_expertise = ListE[i].end_expertise;
-                temp.name_expertise = ListE[i].name_expertise;
-                temp.date_expertise = ListE[i].date_expertise;
-                int id_expertise = ListE[i].id_expertise;
-                List<ProjectExpertise> listPE = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id_expertise).ToList();
-                temp.count_project = listPE.Count;
-                List<ExpertiseExpert> listEE = db_AAZ.ExpertiseExpert.Where(o=>o.id_expertise== id_expertise).ToList();
+        //public List<myCurrentexpertises> GetListCurrentExpertises()
+        //{
+        //    List<myCurrentexpertises> result = new List<myCurrentexpertises>();
+        //    List<Expertises> awd = db_AAZ.Expertises.ToList();
+        //    List <Expertises> ListE = db_AAZ.Expertises.Where(o => o.end_expertise == false).ToList();
+        //    int t = 1;
+        //    for(int i = 0; i<ListE.Count; i++)
+        //    {
+        //        myCurrentexpertises temp = new myCurrentexpertises();
+        //        temp.ListExperts = new List<string>();
+        //        temp.number = t + i;
+        //        temp.id_expertise = ListE[i].id_expertise;
+        //        temp.end_expertise = ListE[i].end_expertise;
+        //        temp.name_expertise = ListE[i].name_expertise;
+        //        temp.date_expertise = ListE[i].date_expertise;
+        //        int id_expertise = ListE[i].id_expertise;
+        //        List<ProjectExpertise> listPE = db_AAZ.ProjectExpertise.Where(o => o.id_expertise == id_expertise).ToList();
+        //        temp.count_project = listPE.Count;
+        //        List<ExpertiseExpert> listEE = db_AAZ.ExpertiseExpert.Where(o=>o.id_expertise== id_expertise).ToList();
 
-                for(int j = 0; j < listEE.Count; j++)
-                {
-                    int id_expert = listEE[j].id_expert;
-                    Experts temp_expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
-                    temp.ListExperts.Add(temp_expert.surname_expert + " " + temp_expert.name_expert + " " + temp_expert.patronymic_expert);
-                }
-                result.Add(temp);
-            }
-            return result;
-        }
+        //        for(int j = 0; j < listEE.Count; j++)
+        //        {
+        //            int id_expert = listEE[j].id_expert;
+        //            Experts temp_expert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
+        //            temp.ListExperts.Add(temp_expert.surname_expert + " " + temp_expert.name_expert + " " + temp_expert.patronymic_expert);
+        //        }
+        //        result.Add(temp);
+        //    }
+        //    return result;
+        //}
 
         public List<Expertise_Expert> Expertise_Expert(int id_expert)
         {

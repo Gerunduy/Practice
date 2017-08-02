@@ -38,7 +38,6 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\bin\Microsoft.ApplicationInsights.xml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\bin\ru\EntityFramework.resources.dll
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.csprojResolveAssemblyReference.cache
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.dll
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWCFService\obj\Debug\ExpertiseWCFService.pdb
 C:\Users\User\Source\Repos\Practice\Expertise\ExpertiseWCFService\bin\ApplicationInsights.config

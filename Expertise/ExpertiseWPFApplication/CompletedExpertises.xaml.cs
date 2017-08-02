@@ -31,13 +31,13 @@ namespace ExpertiseWPFApplication
         public CompletedExpertises()
         {
             InitializeComponent();
-            client.GetListComoletedExpertisesCompleted += Client_GetListComoletedExpertisesCompleted;
+            client.GetListCompletedExpertisesCompleted += Client_GetListCompletedExpertisesCompleted;
 
             Waiting(true);
-            client.GetListComoletedExpertisesAsync();
+            client.GetListCompletedExpertisesAsync();
         }
         //=======================================================================================
-        private void Client_GetListComoletedExpertisesCompleted(object sender, ServiceReference1.GetListComoletedExpertisesCompletedEventArgs e)
+        private void Client_GetListCompletedExpertisesCompleted(object sender, ServiceReference1.GetListCompletedExpertisesCompletedEventArgs e)
         {
             if (e.Error == null)
             {

@@ -75,8 +75,8 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<Expertises> GetListExpertisesForExpert(int id_expert);
 
-        [OperationContract]
-        List<myCurrentexpertises> GetListCurrentExpertises();
+        //[OperationContract]
+        //List<myCurrentexpertises> GetListCurrentExpertises();
 
         #endregion
 
@@ -205,7 +205,10 @@ namespace ExpertiseWCFService
         myExpertiseForCard GetMyExpertiseForCardByID(int id_expertise);
 
         [OperationContract]
-        List<myCompletedexpertises> GetListComoletedExpertises();
+        List<myCompletedexpertises> GetListCompletedExpertises();
+
+        [OperationContract]
+        List<myCurrentexpertises> GetListCurrentExpertises();
 
         [OperationContract]
         TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise);
@@ -347,6 +350,30 @@ namespace ExpertiseWCFService
     }
     #endregion
 
+    #region Классы для текущих экспертиз
+    public class myCurrentexpertises
+    {
+        public int id_expertise { get; set; }
+        public string status { get; set; }
+        public string name_expertise { get; set; }
+        public System.DateTime date_expertise { get; set; }
+        public List<myCurrentexpertisesProject> ListProject { get; set; }
+        public List<string> ListExperts { get; set; }
+    }
+    public class myCurrentexpertisesProject
+    {
+        public int id_project { get; set; }
+        public string name_project { get; set; }
+        public string lead_project { get; set; }
+        public string grnti_project { get; set; }
+        public System.DateTime begin_project { get; set; }
+        public System.DateTime end_project { get; set; }
+        public string money_project { get; set; }
+        public string email_project { get; set; }
+        public bool delete_project { get; set; }
+    }
+    #endregion
+
     #region Классы для редактирования экспертиз
     public class TablesForEditExpertise
     {
@@ -385,17 +412,17 @@ namespace ExpertiseWCFService
     #endregion
 
 
-    public class myCurrentexpertises
-    {
-        public int number { get; set; }
-        public int id_expertise { get; set; }
-        public Boolean end_expertise { get; set; }
-        public string name_expertise { get; set; }
-        public DateTime date_expertise { get; set; }
-        public int count_project { get; set; }
-        public List<string> ListExperts { get; set; }
+    //public class myCurrentexpertises
+    //{
+    //    public int number { get; set; }
+    //    public int id_expertise { get; set; }
+    //    public Boolean end_expertise { get; set; }
+    //    public string name_expertise { get; set; }
+    //    public DateTime date_expertise { get; set; }
+    //    public int count_project { get; set; }
+    //    public List<string> ListExperts { get; set; }
 
-    }
+    //}
 
     public class myRaitinfExpert
     {

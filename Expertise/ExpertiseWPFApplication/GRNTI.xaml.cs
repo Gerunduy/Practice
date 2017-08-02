@@ -24,19 +24,32 @@ namespace ExpertiseWPFApplication
         {
             InitializeComponent();
             client.GetListGRNTICompleted += Client_GetListGRNTICompleted;
+            Waiting(true);
             client.GetListGRNTIAsync();
         }
+
+        private void Waiting(bool Wait)
+        {
+            if (Wait)
+            {
+                gGrid.Visibility = Visibility.Hidden;
+                tblWait.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                gGrid.Visibility = Visibility.Visible;
+                tblWait.Visibility = Visibility.Hidden;
+            }
+        }
+
         private void Client_GetListGRNTICompleted(object sender, ServiceReference1.GetListGRNTICompletedEventArgs e)
         {
             if (e.Error == null)
             {
                 dataGrid1.ItemsSource = e.Result.ToList();
-
+                Waiting(false);
             }
-
-
-            else
-                MessageBox.Show(e.Error.Message);
+            else MessageBox.Show(e.Error.Message);
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

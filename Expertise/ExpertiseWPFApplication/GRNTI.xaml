@@ -5,14 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="GRNTI" Height="293.617" Width="520.213">
+        Title="Справочник ГРНТИ" Height="300" Width="550" MinHeight="200" MinWidth="415">
     <Grid>
-        <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10">
-            <DataGrid.Columns>
-                <DataGridTextColumn Width="20*" Binding="{Binding code_grnti }" Header="Код ГРНТИ" />
-                <DataGridTextColumn Width="80*" Binding="{Binding name_grnti  }" Header="Название"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="1" TextAlignment="Center" FontSize="12" VerticalAlignment="Center" Text="Государственный рубрикатор научно-технической информации"/>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="80" Text="Обработка..." Padding="30,55,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+        <Grid Grid.Row="1" Grid.Column="1" Name="gGrid">
+            <DataGrid Name="dataGrid1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="auto" Binding="{Binding code_grnti }" Header="Код"/>
+                    <DataGridTextColumn Width="1*" Binding="{Binding name_grnti  }" Header="Название"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </Grid>
     </Grid>
 </Window>

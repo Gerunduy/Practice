@@ -23,10 +23,24 @@ namespace ExpertiseWPFApplication
         FOSCard _FOSCard;
         public FiledsOfScience()
         {
-         
             InitializeComponent();
             client.GetListFOSCompleted += Client_GetListFOSCompleted;
+            Waiting(true);
             client.GetListFOSAsync();
+        }
+
+        private void Waiting(bool Wait)
+        {
+            if (Wait)
+            {
+                gGrid.Visibility = Visibility.Hidden;
+                tblWait.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                gGrid.Visibility = Visibility.Visible;
+                tblWait.Visibility = Visibility.Hidden;
+            }
         }
 
         private void Client_GetListFOSCompleted(object sender, ServiceReference1.GetListFOSCompletedEventArgs e)
@@ -35,6 +49,7 @@ namespace ExpertiseWPFApplication
             {
                 dataGrid.ItemsSource = e.Result.ToList();
                 //MessageBox.Show(e.Result.ToList()[0].name_crit);
+                Waiting(false);
             }
             else
                 MessageBox.Show(e.Error.Message);
@@ -44,7 +59,7 @@ namespace ExpertiseWPFApplication
         {
             _FOSCard = new FOSCard();
             _FOSCard.Owner = this;
-            _FOSCard.button.Content = "сохранить";
+            _FOSCard.button.Content = "Сохранить";
             if (_FOSCard.ShowDialog() == true)
             {
                 client.GetListFOSAsync();
@@ -62,7 +77,7 @@ namespace ExpertiseWPFApplication
             _FOSCard.Owner = this;
             _FOSCard.id_fos = temp.id_fos;
             _FOSCard.textBox.Text = temp.name_fos;
-            _FOSCard.button.Content = "изменить";
+            _FOSCard.button.Content = "Изменить";
             if (_FOSCard.ShowDialog() == true)
             {
                 client.GetListFOSAsync();
@@ -72,7 +87,5 @@ namespace ExpertiseWPFApplication
                 client.GetListFOSAsync();
             }
         }
-
-        
     }
 }

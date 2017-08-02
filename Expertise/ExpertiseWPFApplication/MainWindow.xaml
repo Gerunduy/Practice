@@ -68,7 +68,7 @@
             <Button Grid.Row="2" Grid.Column="2" Name="button3" Content="Проекты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button3_Click"/>
             <Button Grid.Row="4" Grid.Column="2" Name="button4" Content="Эксперты" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button4_Click"/>
             <Button Grid.Row="6" Grid.Column="2" Name="button5" Content="Критерии" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button5_Click"/>
-            <Button Grid.Row="8" Grid.Column="2" Name="button6" Content="Направление науки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="116" Click="button6_Click"/>
+            <Button Grid.Row="8" Grid.Column="2" Name="button6" Content="Направления науки" HorizontalAlignment="Center" VerticalAlignment="Center" Width="116" Click="button6_Click"/>
             <Button Grid.Row="10" Grid.Column="2" Name="button7" Content="Код ГРНТИ" HorizontalAlignment="Center" VerticalAlignment="Center" Width="113" Click="button7_Click"/>
 
             <TextBlock Grid.Row="0" Grid.Column="4" Name="textBlock2" Text="Отчеты" HorizontalAlignment="Center"/>

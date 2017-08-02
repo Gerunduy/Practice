@@ -295,18 +295,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListCurrentExpertises">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="GetListCurrentExpertisesResponse">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListCurrentExpertisesResult" nillable="true" type="q20:ArrayOfmyCurrentexpertises" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
   <xs:element name="GetListAllAuthors">
     <xs:complexType>
       <xs:sequence />
@@ -315,7 +303,7 @@
   <xs:element name="GetListAllAuthorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllAuthorsResult" nillable="true" type="q21:ArrayOfAuthors" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllAuthorsResult" nillable="true" type="q20:ArrayOfAuthors" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -327,7 +315,7 @@
   <xs:element name="GetListAllCatCritResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCatCritResult" nillable="true" type="q22:ArrayOfCatCrit" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCatCritResult" nillable="true" type="q21:ArrayOfCatCrit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -339,7 +327,7 @@
   <xs:element name="GetListAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCategoriesResult" nillable="true" type="q23:ArrayOfCategories" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCategoriesResult" nillable="true" type="q22:ArrayOfCategories" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -351,7 +339,7 @@
   <xs:element name="GetListAllCriterionsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCriterionsResult" nillable="true" type="q24:ArrayOfCriterions" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCriterionsResult" nillable="true" type="q23:ArrayOfCriterions" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -363,7 +351,7 @@
   <xs:element name="GetListAllCritValuesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCritValuesResult" nillable="true" type="q25:ArrayOfCritValues" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllCritValuesResult" nillable="true" type="q24:ArrayOfCritValues" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -375,7 +363,7 @@
   <xs:element name="GetListAllExpCritResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpCritResult" nillable="true" type="q26:ArrayOfExpCrit" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpCritResult" nillable="true" type="q25:ArrayOfExpCrit" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -387,7 +375,7 @@
   <xs:element name="GetListAllExpertFosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertFosResult" nillable="true" type="q27:ArrayOfExpertFos" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertFosResult" nillable="true" type="q26:ArrayOfExpertFos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -399,7 +387,7 @@
   <xs:element name="GetListAllExpertiseExpertResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseExpertResult" nillable="true" type="q28:ArrayOfExpertiseExpert" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseExpertResult" nillable="true" type="q27:ArrayOfExpertiseExpert" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -411,7 +399,7 @@
   <xs:element name="GetListAllExpertiseMarkResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseMarkResult" nillable="true" type="q29:ArrayOfExpertiseMark" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertiseMarkResult" nillable="true" type="q28:ArrayOfExpertiseMark" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -423,7 +411,7 @@
   <xs:element name="GetListAllExpertisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertisesResult" nillable="true" type="q30:ArrayOfExpertises" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertisesResult" nillable="true" type="q29:ArrayOfExpertises" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -435,7 +423,7 @@
   <xs:element name="GetListAllExpertsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertsResult" nillable="true" type="q31:ArrayOfExperts" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllExpertsResult" nillable="true" type="q30:ArrayOfExperts" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -447,7 +435,7 @@
   <xs:element name="GetListAllFiledsOfScienceResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllFiledsOfScienceResult" nillable="true" type="q32:ArrayOfFiledsOfScience" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllFiledsOfScienceResult" nillable="true" type="q31:ArrayOfFiledsOfScience" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -459,7 +447,7 @@
   <xs:element name="GetListAllGRNTIResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllGRNTIResult" nillable="true" type="q33:ArrayOfGRNTI" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllGRNTIResult" nillable="true" type="q32:ArrayOfGRNTI" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -471,7 +459,7 @@
   <xs:element name="GetListAllMarksResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllMarksResult" nillable="true" type="q34:ArrayOfMarks" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllMarksResult" nillable="true" type="q33:ArrayOfMarks" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -483,7 +471,7 @@
   <xs:element name="GetListAllProjectAuthorsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectAuthorsResult" nillable="true" type="q35:ArrayOfProjectAuthors" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectAuthorsResult" nillable="true" type="q34:ArrayOfProjectAuthors" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -495,7 +483,7 @@
   <xs:element name="GetListAllProjectExpertiseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectExpertiseResult" nillable="true" type="q36:ArrayOfProjectExpertise" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectExpertiseResult" nillable="true" type="q35:ArrayOfProjectExpertise" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -507,7 +495,7 @@
   <xs:element name="GetListAllProjectFosResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectFosResult" nillable="true" type="q37:ArrayOfProjectFos" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectFosResult" nillable="true" type="q36:ArrayOfProjectFos" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -519,7 +507,7 @@
   <xs:element name="GetListAllProjectsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectsResult" nillable="true" type="q38:ArrayOfProjects" />
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListAllProjectsResult" nillable="true" type="q37:ArrayOfProjects" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -812,9 +800,9 @@
         <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
         <xs:element minOccurs="0" name="id_fos" type="xs:int" />
         <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
-        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="projectsId" nillable="true" type="q39:ArrayOfint" />
-        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="critsId" nillable="true" type="q40:ArrayOfint" />
-        <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="expertsId" nillable="true" type="q41:ArrayOfint" />
+        <xs:element xmlns:q38="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="projectsId" nillable="true" type="q38:ArrayOfint" />
+        <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="critsId" nillable="true" type="q39:ArrayOfint" />
+        <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="expertsId" nillable="true" type="q40:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -833,9 +821,9 @@
         <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
         <xs:element minOccurs="0" name="id_fos" type="xs:int" />
         <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
-        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lprojects" nillable="true" type="q42:ArrayOfProjectExpertise" />
-        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lcrits" nillable="true" type="q43:ArrayOfExpCrit" />
-        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lexperts" nillable="true" type="q44:ArrayOfExpertiseExpert" />
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lprojects" nillable="true" type="q41:ArrayOfProjectExpertise" />
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lcrits" nillable="true" type="q42:ArrayOfExpCrit" />
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="lexperts" nillable="true" type="q43:ArrayOfExpertiseExpert" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -856,19 +844,31 @@
   <xs:element name="GetMyExpertiseForCardByIDResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetMyExpertiseForCardByIDResult" nillable="true" type="q45:myExpertiseForCard" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetMyExpertiseForCardByIDResult" nillable="true" type="q44:myExpertiseForCard" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListComoletedExpertises">
+  <xs:element name="GetListCompletedExpertises">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="GetListComoletedExpertisesResponse">
+  <xs:element name="GetListCompletedExpertisesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListComoletedExpertisesResult" nillable="true" type="q46:ArrayOfmyCompletedexpertises" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListCompletedExpertisesResult" nillable="true" type="q45:ArrayOfmyCompletedexpertises" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListCurrentExpertises">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetListCurrentExpertisesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" minOccurs="0" name="GetListCurrentExpertisesResult" nillable="true" type="q46:ArrayOfmyCurrentexpertises" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

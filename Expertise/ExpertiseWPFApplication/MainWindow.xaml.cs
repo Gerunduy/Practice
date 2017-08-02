@@ -145,8 +145,9 @@ namespace ExpertiseWPFApplication
         {
             _GRNTI = new GRNTI();
             _GRNTI.Owner = this;
-            _GRNTI.ShowDialog();
-            
+            //_GRNTI.ShowDialog();
+            _GRNTI.Show();
+
         }
         //Эксперты
         private void button4_Click(object sender, RoutedEventArgs e)
@@ -225,7 +226,8 @@ namespace ExpertiseWPFApplication
         {
             _ExpertRoom = new ExpertRoom(User);
             _ExpertRoom.Owner = this;
-            _ExpertRoom.ShowDialog(); // скорее всего здесь _ExpertRoom.Show();
+            //_ExpertRoom.ShowDialog(); // скорее всего здесь _ExpertRoom.Show();
+            _ExpertRoom.Show();
         }
 
         // авторизация
@@ -270,14 +272,16 @@ namespace ExpertiseWPFApplication
         {
             _CurrentExpertises = new CurrentExpertises();
             _CurrentExpertises.Owner = this;
-            _CurrentExpertises.ShowDialog();
+            //_CurrentExpertises.ShowDialog();
+            _CurrentExpertises.Show();
         }
         // завершенные экспертизы
         private void button8_Click(object sender, RoutedEventArgs e)
         {
             _CompletedExpertises = new CompletedExpertises();
             _CompletedExpertises.Owner = this;
-            _CompletedExpertises.ShowDialog(); // скорее всего здесь _CompletedExpertises.Show();
+            //_CompletedExpertises.ShowDialog(); // скорее всего здесь _CompletedExpertises.Show();
+            _CompletedExpertises.Show();
         }
     }
 }

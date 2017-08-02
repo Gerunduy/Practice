@@ -140,12 +140,6 @@
   <wsdl:message name="IService1_GetListExpertisesForExpert_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListExpertisesForExpertResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetListCurrentExpertises_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListCurrentExpertises" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetListCurrentExpertises_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListCurrentExpertisesResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_GetListAllAuthors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListAllAuthors" />
   </wsdl:message>
@@ -380,11 +374,17 @@
   <wsdl:message name="IService1_GetMyExpertiseForCardByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetMyExpertiseForCardByIDResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetListComoletedExpertises_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetListComoletedExpertises" />
+  <wsdl:message name="IService1_GetListCompletedExpertises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCompletedExpertises" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetListComoletedExpertises_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetListComoletedExpertisesResponse" />
+  <wsdl:message name="IService1_GetListCompletedExpertises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCompletedExpertisesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCurrentExpertises_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCurrentExpertises" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCurrentExpertises_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCurrentExpertisesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetTabelsForEditExpertiseByID_InputMessage">
     <wsdl:part name="parameters" element="tns:GetTabelsForEditExpertiseByID" />
@@ -613,10 +613,6 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpert" message="tns:IService1_GetListExpertisesForExpert_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListExpertisesForExpertResponse" message="tns:IService1_GetListExpertisesForExpert_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetListCurrentExpertises">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCurrentExpertises" message="tns:IService1_GetListCurrentExpertises_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCurrentExpertisesResponse" message="tns:IService1_GetListCurrentExpertises_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="GetListAllAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAllAuthors" message="tns:IService1_GetListAllAuthors_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListAllAuthorsResponse" message="tns:IService1_GetListAllAuthors_OutputMessage" />
@@ -773,9 +769,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetMyExpertiseForCardByID" message="tns:IService1_GetMyExpertiseForCardByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetMyExpertiseForCardByIDResponse" message="tns:IService1_GetMyExpertiseForCardByID_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetListComoletedExpertises">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListComoletedExpertises" message="tns:IService1_GetListComoletedExpertises_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListComoletedExpertisesResponse" message="tns:IService1_GetListComoletedExpertises_OutputMessage" />
+    <wsdl:operation name="GetListCompletedExpertises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCompletedExpertises" message="tns:IService1_GetListCompletedExpertises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCompletedExpertisesResponse" message="tns:IService1_GetListCompletedExpertises_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetListCurrentExpertises">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCurrentExpertises" message="tns:IService1_GetListCurrentExpertises_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCurrentExpertisesResponse" message="tns:IService1_GetListCurrentExpertises_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetTabelsForEditExpertiseByID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTabelsForEditExpertiseByID" message="tns:IService1_GetTabelsForEditExpertiseByID_InputMessage" />
@@ -1063,15 +1063,6 @@
     </wsdl:operation>
     <wsdl:operation name="GetListExpertisesForExpert">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListExpertisesForExpert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetListCurrentExpertises">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetListCurrentExpertises" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1430,8 +1421,17 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetListComoletedExpertises">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetListComoletedExpertises" style="document" />
+    <wsdl:operation name="GetListCompletedExpertises">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCompletedExpertises" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetListCurrentExpertises">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCurrentExpertises" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -33,7 +33,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("обновлено");
+                MessageBox.Show("Изменения сохранены.");
                 this.DialogResult = true;
 
             }
@@ -45,7 +45,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("добавлено");
+                MessageBox.Show("Добавлено.");
                 this.DialogResult = true;
 
             }
@@ -55,13 +55,13 @@ namespace ExpertiseWPFApplication
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if(button.Content.ToString()== "сохранить")
+            if(button.Content.ToString() == "Сохранить")
             {
                 string name_fos = textBox.Text;
                 client.AddFiledsOfScienceAsync(name_fos);
 
             }
-            else if(button.Content.ToString() == "изменить")
+            else if(button.Content.ToString() == "Изменить")
             {
                 string name_fos = textBox.Text;
                 client.EditFiledsOfScienceAsync(id_fos, name_fos);

@@ -5,11 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="FOSCard" Height="254" Width="412.5" MaxHeight="254" MaxWidth="413" >
+        Title="Карточка направления науки" Height="160" Width="550" MinHeight="150" MinWidth="450">
     <Grid>
-        <Label x:Name="label" Content="название" HorizontalAlignment="Left" Margin="10,78,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="33" Margin="76,75,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="318"/>
-        <Button x:Name="button" Content="сохранить" HorizontalAlignment="Left" Margin="154,138,0,0" VerticalAlignment="Top" Width="93" Height="32" Click="button_Click"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="28"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="5"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Name="TextBlock" FontSize="20" Text="Название:"/>
+                <TextBox Grid.Row="0" Grid.Column="2" FontSize="18" Name="textBox"/>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="1" Name="button" Content="Сохранить" Click="button_Click"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Завершенные экспертизы" Height="400" Width="1000" MinHeight="400" MinWidth="1000">
+        Title="Завершенные экспертизы" Height="400" Width="1000" MinHeight="200" MinWidth="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="20"/>
@@ -42,7 +42,7 @@
                     <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="5">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="В карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
+                                <Button Content="В карточку" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
