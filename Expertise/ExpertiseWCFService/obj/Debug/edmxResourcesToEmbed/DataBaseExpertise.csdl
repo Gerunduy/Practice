@@ -96,6 +96,7 @@
     <Property Name="id_fos" Type="Int32" Nullable="false" />
     <Property Name="end_date_expertise" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="CritCompare" Relationship="db_AAZModel.FK_CritCompare_Expertises" FromRole="Expertises" ToRole="CritCompare" />
+    <Property Name="begin_expertise" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
@@ -117,6 +118,7 @@
     <Property Name="password_expert" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="ExpertiseExpert" Relationship="db_AAZModel.FK_ExpertiseExpert_Experts" FromRole="Experts" ToRole="ExpertiseExpert" />
     <NavigationProperty Name="CritCompare" Relationship="db_AAZModel.FK_CritCompare_Experts" FromRole="Experts" ToRole="CritCompare" />
+    <Property Name="comission_chairman" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -236,6 +238,7 @@
     <NavigationProperty Name="ProjectFos" Relationship="Self.FK_ProjectFos_Projects" FromRole="Projects" ToRole="ProjectFos" />
     <Property Name="delete_project" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ProjectExpertise" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="Projects" ToRole="ProjectExpertise" />
+    <Property Name="exsist_exp_project" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>
@@ -784,6 +787,7 @@
     <Property Name="id_expert" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Expertises" Relationship="db_AAZModel.FK_ExpertiseExpert_Expertises" FromRole="ExpertiseExpert" ToRole="Expertises" />
     <NavigationProperty Name="Experts" Relationship="db_AAZModel.FK_ExpertiseExpert_Experts" FromRole="ExpertiseExpert" ToRole="Experts" />
+    <Property Name="end_marking" Type="Boolean" Nullable="false" />
   </EntityType>
   <Association Name="FK_ExpertiseExpert_Expertises">
     <End Type="db_AAZModel.Expertises" Role="Expertises" Multiplicity="1" />

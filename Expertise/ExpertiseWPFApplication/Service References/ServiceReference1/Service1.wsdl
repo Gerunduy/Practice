@@ -8,6 +8,12 @@
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetData_InputMessage">
     <wsdl:part name="parameters" element="tns:GetData" />
   </wsdl:message>
@@ -31,6 +37,24 @@
   </wsdl:message>
   <wsdl:message name="IService1_AddNewMark_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddNewMarkResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseExpertStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseExpertStatus" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseExpertStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseExpertStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseStatusToComplete_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseStatusToComplete" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseStatusToComplete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseStatusToCompleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseStatusToStart_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseStatusToStart" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditExpertiseStatusToStart_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditExpertiseStatusToStartResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetListAuthors_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListAuthors" />
@@ -500,13 +524,11 @@
   <wsdl:message name="IService1_Gethello_OutputMessage">
     <wsdl:part name="parameters" element="tns:GethelloResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
-  </wsdl:message>
-  <wsdl:message name="IService1_GetDataUsingDataContract_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataResponse" message="tns:IService1_GetData_OutputMessage" />
@@ -522,6 +544,18 @@
     <wsdl:operation name="AddNewMark">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddNewMark" message="tns:IService1_AddNewMark_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddNewMarkResponse" message="tns:IService1_AddNewMark_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseExpertStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditExpertiseExpertStatus" message="tns:IService1_EditExpertiseExpertStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditExpertiseExpertStatusResponse" message="tns:IService1_EditExpertiseExpertStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseStatusToComplete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditExpertiseStatusToComplete" message="tns:IService1_EditExpertiseStatusToComplete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditExpertiseStatusToCompleteResponse" message="tns:IService1_EditExpertiseStatusToComplete_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseStatusToStart">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditExpertiseStatusToStart" message="tns:IService1_EditExpertiseStatusToStart_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditExpertiseStatusToStartResponse" message="tns:IService1_EditExpertiseStatusToStart_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetListAuthors">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListAuthors" message="tns:IService1_GetListAuthors_InputMessage" />
@@ -835,13 +869,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GethelloResponse" message="tns:IService1_Gethello_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetData">
       <soap:operation soapAction="http://tempuri.org/IService1/GetData" style="document" />
       <wsdl:input>
@@ -871,6 +910,33 @@
     </wsdl:operation>
     <wsdl:operation name="AddNewMark">
       <soap:operation soapAction="http://tempuri.org/IService1/AddNewMark" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseExpertStatus">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditExpertiseExpertStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseStatusToComplete">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditExpertiseStatusToComplete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditExpertiseStatusToStart">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditExpertiseStatusToStart" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1573,15 +1639,6 @@
     </wsdl:operation>
     <wsdl:operation name="Gethello">
       <soap:operation soapAction="http://tempuri.org/IService1/Gethello" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="GetDataUsingDataContract">
-      <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

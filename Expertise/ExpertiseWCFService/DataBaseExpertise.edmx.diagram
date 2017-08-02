@@ -64,7 +64,8 @@
         <EntityTypeShape EntityType="db_AAZModel.CritCompare" Width="1.5" PointX="0.5" PointY="3" />
         <EntityTypeShape EntityType="db_AAZModel.CritCompareCrit" Width="1.5" PointX="2.375" PointY="4" />
         <AssociationConnector Association="db_AAZModel.FK_CritCompare_Expertises" />
-        <AssociationConnector Association="db_AAZModel.FK_CritCompare_Experts" />
+        <AssociationConnector Association="db_AAZModel.FK_CritCompare_Experts" ManuallyRouted="false" >
+        </AssociationConnector>
         <AssociationConnector Association="db_AAZModel.FK_CritCompareCrit_CritCompare" />
         <AssociationConnector Association="db_AAZModel.FK_CritCompareCrit_Criterions" />
       </Diagram>

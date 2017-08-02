@@ -22,6 +22,7 @@ namespace ExpertiseWPFApplication
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
         int id_expertise;
         ServiceReference1.myExpertiseForCard Expertise;
+        ServiceReference1.Experts expert;
 
         List<ServiceReference1.Criterions> ltmpCriterions = new List<ServiceReference1.Criterions>();
         List<ServiceReference1.CatCrit> ltmpCatCrit = new List<ServiceReference1.CatCrit>();
@@ -31,6 +32,16 @@ namespace ExpertiseWPFApplication
 
         EditExpertiseCard _EditExpertiseCard;
 
+        public ExpertiseCard(int id_expertise, ServiceReference1.Experts expert)
+        {
+            InitializeComponent();
+            this.id_expertise = id_expertise;
+            this.expert = expert;
+
+            client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
+            client.GetMyExpertiseForCardByIDAsync(id_expertise);
+            Waiting(true);
+        }
         public ExpertiseCard(int id_expertise)
         {
             InitializeComponent();
@@ -38,6 +49,7 @@ namespace ExpertiseWPFApplication
 
             client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
+            btnEditExpertise.Visibility = Visibility.Hidden;
             Waiting(true);
         }
         //=======================================================================================
@@ -47,13 +59,16 @@ namespace ExpertiseWPFApplication
             {
                 Expertise = e.Result;
                 FirstFillFileds();
-
+                try
+                {
+                    if (expert.comission_chairman && !Expertise.begin_expertise) btnEditExpertise.IsEnabled = true; else btnEditExpertise.IsEnabled = false;
+                }
+                catch { }
                 Waiting(false);
             }
             else
             {
                 Waiting(false);
-
             }
         }
         //=======================================================================================
@@ -65,6 +80,11 @@ namespace ExpertiseWPFApplication
             tblCountProject.Text = string.Format("Количество проектов: {0}", Expertise.ListProjects.Count());
             dgCatList.ItemsSource = Expertise.ListCategories;
             dgExpertiseCritList.ItemsSource = null;
+
+            if (Expertise.MarkIsCompleted)
+            {
+                ShowResultExpertise();
+            }
         }
         private void GetCritCurrCat(int id_cat)
         {
@@ -91,6 +111,17 @@ namespace ExpertiseWPFApplication
                 Grid.Visibility = Visibility.Visible;
                 tblWait.Visibility = Visibility.Hidden;
             }
+        }
+        void ShowResultExpertise()
+        {
+            Button btnGetResultExpertise = new Button();
+            btnGetResultExpertise.Content = "Посмотреть результат";
+            btnGetResultExpertise.Height = 40;
+            btnGetResultExpertise.Width = 200;
+            btnGetResultExpertise.Click += btnGetResultExpertise_Click;
+
+            gResultExpertise.Children.Clear();
+            gResultExpertise.Children.Add(btnGetResultExpertise);
         }
         //=======================================================================================
         //=== Работа с проектами ====================================
@@ -138,7 +169,7 @@ namespace ExpertiseWPFApplication
 
         private void btnGetResultExpertise_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("test");
         }
         //=======================================================================================
     }

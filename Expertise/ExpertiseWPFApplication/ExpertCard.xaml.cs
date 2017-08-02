@@ -142,7 +142,7 @@ namespace ExpertiseWPFApplication
                 else
                 {
                    client.AddExpertAsync(surname_expert, name_expert, patronymic_expert, job_expert,
-                   post_expert, degree_expert, rank_expert, contacts_expert, idFOSList, login_expert, password_expert);
+                   post_expert, degree_expert, rank_expert, contacts_expert, idFOSList, login_expert, password_expert, false); // добавить возможность выбора значения в поле "председатель комиссии"
                 }
                
                 //List<FiledsOfScience> ListFOS { get; set; }

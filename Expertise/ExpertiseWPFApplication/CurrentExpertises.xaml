@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="CurrentExpertises" Height="300" Width="648.496">
     <Grid>
-        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10">
+        <DataGrid x:Name="dataGrid" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" Margin="10" CurrentCellChanged="dataGrid_CurrentCellChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Номер" />
                 <DataGridTextColumn Width="*" Binding="{Binding end_expertise  }" Header="Статус экспертизы"/>

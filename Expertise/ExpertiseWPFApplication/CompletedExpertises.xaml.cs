@@ -24,7 +24,9 @@ namespace ExpertiseWPFApplication
         List<ServiceReference1.myCompletedexpertises> lCompletedExpertises = new List<ServiceReference1.myCompletedexpertises>();
         List<ServiceReference1.myCompletedexpertisesProject> ltmpProjects = new List<ServiceReference1.myCompletedexpertisesProject>();
         List<string> ltmpExperts = new List<string>();
+        ServiceReference1.myCompletedexpertises CurrentExpertise;
 
+        ExpertiseCard _ExpertiseCard;
 
         public CompletedExpertises()
         {
@@ -85,10 +87,17 @@ namespace ExpertiseWPFApplication
         {
             try
             {
-                ServiceReference1.myCompletedexpertises CurrentExpertise = dgExpertiseList.CurrentCell.Item as ServiceReference1.myCompletedexpertises;
+                CurrentExpertise = dgExpertiseList.CurrentCell.Item as ServiceReference1.myCompletedexpertises;
                 GetInfoCurrExpertise(CurrentExpertise.id_expertise);
             }
             catch { }
+        }
+
+        private void btnGoToExpertiseCard_Click(object sender, RoutedEventArgs e)
+        {
+            _ExpertiseCard = new ExpertiseCard(CurrentExpertise.id_expertise);
+            _ExpertiseCard.Owner = App.Current.MainWindow;
+            _ExpertiseCard.Show();
         }
         //=======================================================================================
     }

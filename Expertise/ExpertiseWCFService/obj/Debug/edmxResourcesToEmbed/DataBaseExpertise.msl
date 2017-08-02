@@ -76,6 +76,7 @@
     <EntitySetMapping Name="Expertises">
       <EntityTypeMapping TypeName="db_AAZModel.Expertises">
         <MappingFragment StoreEntitySet="Expertises">
+          <ScalarProperty Name="begin_expertise" ColumnName="begin_expertise" />
           <ScalarProperty Name="end_date_expertise" ColumnName="end_date_expertise" />
           <ScalarProperty Name="id_fos" ColumnName="id_fos" />
           <ScalarProperty Name="count_proj_expertise" ColumnName="count_proj_expertise" />
@@ -89,6 +90,7 @@
     <EntitySetMapping Name="Experts">
       <EntityTypeMapping TypeName="db_AAZModel.Experts">
         <MappingFragment StoreEntitySet="Experts">
+          <ScalarProperty Name="comission_chairman" ColumnName="comission_chairman" />
           <ScalarProperty Name="password_expert" ColumnName="password_expert" />
           <ScalarProperty Name="login_expert" ColumnName="login_expert" />
           <ScalarProperty Name="delete_expert" ColumnName="delete_expert" />
@@ -201,6 +203,7 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="db_AAZModel.Projects">
         <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="exsist_exp_project" ColumnName="exsist_exp_project" />
           <ScalarProperty Name="delete_project" ColumnName="delete_project" />
           <ScalarProperty Name="id_project" ColumnName="id_project" />
           <ScalarProperty Name="name_project" ColumnName="name_project" />
@@ -290,6 +293,7 @@
     <EntitySetMapping Name="ExpertiseExpert">
       <EntityTypeMapping TypeName="db_AAZModel.ExpertiseExpert">
         <MappingFragment StoreEntitySet="ExpertiseExpert">
+          <ScalarProperty Name="end_marking" ColumnName="end_marking" />
           <ScalarProperty Name="id_expert" ColumnName="id_expert" />
           <ScalarProperty Name="id_expertise" ColumnName="id_expertise" />
           <ScalarProperty Name="id_expertise_expert" ColumnName="id_expertise_expert" />

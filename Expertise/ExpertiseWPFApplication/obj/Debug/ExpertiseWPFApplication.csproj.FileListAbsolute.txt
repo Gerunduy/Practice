@@ -107,7 +107,7 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\EditExpertiseCard.baml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\Examination.g.cs
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\Examination.baml
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\PriorityWizard.g.cs
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\PriorityWizard.baml
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExaminationProjectWizard.g.cs
-C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\ExaminationProjectWizard.baml
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\ExaminationProjectWizard.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\PriorityWizard.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\ExaminationProjectWizard.baml
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Examination windows\PriorityWizard.baml

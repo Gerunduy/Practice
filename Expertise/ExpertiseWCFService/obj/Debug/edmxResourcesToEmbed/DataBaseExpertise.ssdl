@@ -80,6 +80,7 @@
     <Property Name="id_expertise_expert" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="id_expertise" Type="int" Nullable="false" />
     <Property Name="id_expert" Type="int" Nullable="false" />
+    <Property Name="end_marking" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="ExpertiseMark">
     <Key>
@@ -100,6 +101,7 @@
     <Property Name="count_proj_expertise" Type="int" Nullable="false" />
     <Property Name="id_fos" Type="int" Nullable="false" />
     <Property Name="end_date_expertise" Type="date" Nullable="false" />
+    <Property Name="begin_expertise" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Experts">
     <Key>
@@ -117,6 +119,7 @@
     <Property Name="delete_expert" Type="bit" Nullable="false" />
     <Property Name="login_expert" Type="nvarchar(max)" Nullable="false" />
     <Property Name="password_expert" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="comission_chairman" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="FiledsOfScience">
     <Key>
@@ -215,6 +218,7 @@
     <Property Name="money_project" Type="nchar" MaxLength="30" Nullable="false" />
     <Property Name="email_project" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="delete_project" Type="bit" Nullable="false" />
+    <Property Name="exsist_exp_project" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>

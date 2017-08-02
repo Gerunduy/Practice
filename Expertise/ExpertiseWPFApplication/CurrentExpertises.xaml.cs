@@ -20,6 +20,12 @@ namespace ExpertiseWPFApplication
     public partial class CurrentExpertises : Window
     {
         ServiceReference1.Service1Client client = new ServiceReference1.Service1Client();
+
+        ServiceReference1.myCurrentexpertises CurrentExpertise;
+
+
+        ExpertiseCard _ExpertiseCard;
+
         public CurrentExpertises()
         {
             InitializeComponent();
@@ -41,8 +47,18 @@ namespace ExpertiseWPFApplication
 
         private void bt_update_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("test");
-           
+            _ExpertiseCard = new ExpertiseCard(CurrentExpertise.id_expertise);
+            _ExpertiseCard.Owner = App.Current.MainWindow;
+            _ExpertiseCard.Show();
+        }
+
+        private void dataGrid_CurrentCellChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                CurrentExpertise = dataGrid.CurrentCell.Item as ServiceReference1.myCurrentexpertises;
+            }
+            catch { }
         }
     }
 }

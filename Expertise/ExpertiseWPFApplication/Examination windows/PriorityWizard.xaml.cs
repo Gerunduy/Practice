@@ -226,6 +226,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null && e.Result)
             {
+                client.EditExpertiseStatusToStart(id_expertise);
                 DialogResult = true;
                 MessageBox.Show("Матрица сравнения критериев сохранена.");
             }

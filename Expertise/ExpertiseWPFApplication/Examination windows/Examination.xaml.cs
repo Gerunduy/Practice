@@ -33,6 +33,9 @@ namespace ExpertiseWPFApplication
         int CountProject;
         // =====================================
 
+        bool Stage1Completed = false;
+        bool Stage2Completed = false;
+
         PriorityWizard _PriorityWizard;
         ExaminationProjectWizard _ExaminationProjectWizard;
 
@@ -194,7 +197,7 @@ namespace ExpertiseWPFApplication
                     {
                         if (j > i)
                         {
-                            SaatiMatrix[i, j] = Tables.ListCritCompare[CurContextCompare].mark_compare;
+                            SaatiMatrix[i, j] = Tables.ListCritCompare.Where(p => p.id_expert == id_expert).ToList()[CurContextCompare].mark_compare;
                             CurContextCompare = CurContextCompare + 1;
                         }
                         else
@@ -250,8 +253,9 @@ namespace ExpertiseWPFApplication
         }
         private void ViewStage1()
         {
-            if (Tables.ListCritCompare.Count() == 0)
+            if (Tables.ListCritCompare.Where(p => p.id_expert == id_expert).Count() == 0)
             {
+                Stage1Completed = false;
                 Button btnGoToCompareCrit = new Button();
                 btnGoToCompareCrit.Content = "Перейти к определению";
                 btnGoToCompareCrit.Height = 40;
@@ -262,6 +266,8 @@ namespace ExpertiseWPFApplication
             }
             else
             {
+                Stage1Completed = true;
+                ChangeExpertiseExpertStatus();
                 // отобразить таблицу с данными сравнения
                 SetPairCompareMatrix();
                 ShowPairCompareMatrix();
@@ -270,8 +276,9 @@ namespace ExpertiseWPFApplication
         // === Второй этап ===
         private void ViewStage2()
         {
-            if (Tables.ListMark.Count() == 0)
+            if (Tables.ListMark.Where(p => p.id_expert == id_expert).Count() == 0)
             {
+                Stage2Completed = false;
                 Button btnGoToSetMark = new Button();
                 btnGoToSetMark.Content = "Перейти к оцениванию";
                 btnGoToSetMark.Height = 40;
@@ -282,6 +289,8 @@ namespace ExpertiseWPFApplication
             }
             else
             {
+                Stage2Completed = true;
+                ChangeExpertiseExpertStatus();
                 // отобразить таблицу с оценками критериев
                 ShowMarkTabel();
             }
@@ -309,7 +318,7 @@ namespace ExpertiseWPFApplication
                 int[] arrMark = new int[CountCriterions];
                 for (int j = 0; j < CountCriterions; j++)
                 {
-                    arrMark[j] = Tables.ListMark.Where(b => b.id_crit == Tables.ListCriterions[j].id_crit).Where(n => n.id_project == Tables.ListProjects[i].id_project).FirstOrDefault().rating + 1;
+                    arrMark[j] = Tables.ListMark.Where(b => b.id_crit == Tables.ListCriterions[j].id_crit).Where(n => n.id_project == Tables.ListProjects[i].id_project).Where(l => l.id_expert == id_expert).FirstOrDefault().rating + 1;
                 }
                 myMarkRow Row = new myMarkRow(Tables.ListProjects[i].name_project, arrMark);
                 lRow.Add(Row);
@@ -321,6 +330,14 @@ namespace ExpertiseWPFApplication
             gInsideStage2.RowDefinitions.Clear();
             gInsideStage2.ColumnDefinitions.Clear();
             gInsideStage2.Children.Add(dgMarkTabel);
+        }
+        // === Смена статуса ExpertiseExpert ===
+        void ChangeExpertiseExpertStatus()
+        {
+            if (Stage1Completed && Stage2Completed)
+            {
+                client.EditExpertiseExpertStatus(id_expertise, id_expert);
+            }  
         }
         //=======================================================================================
         private void BtnGoToCompareCrit_Click(object sender, RoutedEventArgs e)

@@ -24,6 +24,12 @@ namespace ExpertiseWCFService
         [OperationContract]
         bool AddNewMark(int id_expertise, Marks[] arrMarks);
 
+        [OperationContract]
+        bool EditExpertiseExpertStatus(int id_expertise, int id_expert);
+        [OperationContract]
+        bool EditExpertiseStatusToComplete(int id_expertise);
+        [OperationContract]
+        bool EditExpertiseStatusToStart(int id_expertise);
 
         #region Получение таблиц
 
@@ -264,7 +270,7 @@ namespace ExpertiseWCFService
         [OperationContract]
         void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
           string job_expert, string post_expert, string degree_expert, string rank_expert
-        , string contacts_expert, int[] ListFOS, string login_expert, string password_expert);
+        , string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman);
 
        
 
@@ -302,6 +308,8 @@ namespace ExpertiseWCFService
         public List<Categories> ListCategories { get; set; }
         public List<Experts> ListExperts { get; set; }
         public int count_project_expertise { get; set; }
+        public bool MarkIsCompleted { get; set; }
+        public bool begin_expertise { get; set; }
     }
     public class myProjectForExpertiseCard
     {

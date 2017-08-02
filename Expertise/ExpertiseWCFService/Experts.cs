@@ -35,6 +35,7 @@ namespace ExpertiseWCFService
         public bool delete_expert { get; set; }
         public string login_expert { get; set; }
         public string password_expert { get; set; }
+        public bool comission_chairman { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ExpertFos> ExpertFos { get; set; }

@@ -84,7 +84,7 @@
     <Compile Include="Examination windows\Examination.xaml.cs">
       <DependentUpon>Examination.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ExaminationProjectWizard.xaml.cs">
+    <Compile Include="Examination windows\ExaminationProjectWizard.xaml.cs">
       <DependentUpon>ExaminationProjectWizard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ExpertCard.xaml.cs">
@@ -114,7 +114,7 @@
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PriorityWizard.xaml.cs">
+    <Compile Include="Examination windows\PriorityWizard.xaml.cs">
       <DependentUpon>PriorityWizard.xaml</DependentUpon>
     </Compile>
     <Compile Include="ProjectCard.xaml.cs">
@@ -165,7 +165,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ExaminationProjectWizard.xaml">
+    <Page Include="Examination windows\ExaminationProjectWizard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -213,7 +213,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PriorityWizard.xaml">
+    <Page Include="Examination windows\PriorityWizard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

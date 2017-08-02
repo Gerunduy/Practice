@@ -42,7 +42,7 @@
                     <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="5">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <Button Content="В карточку Экспертизы" Name="btnGoToExpertiseCard"/>
+                                <Button Content="В карточку Экспертизы" Name="btnGoToExpertiseCard" Click="btnGoToExpertiseCard_Click"/>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

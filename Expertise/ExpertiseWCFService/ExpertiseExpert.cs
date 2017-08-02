@@ -17,6 +17,7 @@ namespace ExpertiseWCFService
         public int id_expertise_expert { get; set; }
         public int id_expertise { get; set; }
         public int id_expert { get; set; }
+        public bool end_marking { get; set; }
     
         public virtual Expertises Expertises { get; set; }
         public virtual Experts Experts { get; set; }

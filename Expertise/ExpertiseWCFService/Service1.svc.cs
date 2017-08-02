@@ -185,7 +185,65 @@ namespace ExpertiseWCFService
                 return false;
             }
         }
+        public bool EditExpertiseExpertStatus(int id_expertise, int id_expert)
+        {
+            try
+            {
+                ExpertiseExpert EE = db_AAZ.ExpertiseExpert.Where(p => p.id_expertise == id_expertise).Where(o => o.id_expert == id_expert).FirstOrDefault();
+                if (!EE.end_marking)
+                {
+                    EE.end_marking = true;
+                    db_AAZ.SaveChanges();
+                    return true;
+                }
+                else return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+        public bool EditExpertiseStatusToComplete(int id_expertise)
+        {
+            try
+            {
+                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                if (!E.end_expertise)
+                {
+                    E.end_expertise = true;
+                    db_AAZ.SaveChanges();
+                    return true;
+                }
+                else return true;
 
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
+        public bool EditExpertiseStatusToStart(int id_expertise)
+        {
+            try
+            {
+                Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+                if (!E.begin_expertise)
+                {
+                    E.begin_expertise = true;
+                    db_AAZ.SaveChanges();
+                    return true;
+                }
+                else return true;
+                
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
+            }
+        }
 
 
 
@@ -1695,6 +1753,7 @@ namespace ExpertiseWCFService
             {
                 myExpertiseForCard result = new myExpertiseForCard();
                 Expertises E = db_AAZ.Expertises.Where(p => p.id_expertise == id_expertise).FirstOrDefault();
+
                 result.id_expertise = E.id_expertise;
                 result.name_expertise = E.name_expertise;
                 result.fos_expertise = db_AAZ.FiledsOfScience.Where(o => o.id_fos == E.id_fos).FirstOrDefault().name_fos;
@@ -1702,6 +1761,7 @@ namespace ExpertiseWCFService
                 result.date_expertise = E.date_expertise;
                 result.end_date_expertise = E.end_date_expertise;
                 result.count_project_expertise = E.count_proj_expertise;
+                result.begin_expertise = E.begin_expertise;
 
                 result.ListProjects = new List<myProjectForExpertiseCard>();
                 foreach (ProjectExpertise PE in E.ProjectExpertise)
@@ -1745,6 +1805,7 @@ namespace ExpertiseWCFService
                     }
                 }
                 // =======================================================================================================
+                List<bool> lb = new List<bool>();
                 result.ListExperts = new List<Experts>();
                 foreach (ExpertiseExpert EE in E.ExpertiseExpert)
                 {
@@ -1755,7 +1816,21 @@ namespace ExpertiseWCFService
                     Expert.name_expert = tmpExpert.name_expert;
                     Expert.patronymic_expert = tmpExpert.patronymic_expert;
                     result.ListExperts.Add(Expert);
+
+                    lb.Add(EE.end_marking);
                 }
+
+                bool tmpMarkIsCompleted = true;
+                foreach(bool pb in lb)
+                {
+                    if (!pb)
+                    {
+                        tmpMarkIsCompleted = false;
+                        break;
+                    }
+                    else continue;
+                }
+                result.MarkIsCompleted = tmpMarkIsCompleted;
 
                 return result;
             }
@@ -2055,7 +2130,7 @@ namespace ExpertiseWCFService
 
         public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,
            string job_expert, string post_expert, string degree_expert, string rank_expert
-         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
+         , string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman)
         {
             Experts expert = new Experts();
             expert.surname_expert = surname_expert;
@@ -2069,6 +2144,7 @@ namespace ExpertiseWCFService
             expert.contacts_expert = contacts_expert;
             expert.login_expert = login_expert;
             expert.password_expert = password_expert;
+            expert.comission_chairman = comission_chairman;
             db_AAZ.Experts.Add(expert);
             db_AAZ.SaveChanges();
 
@@ -2434,6 +2510,7 @@ namespace ExpertiseWCFService
                             expert.rank_expert = tmpExp.rank_expert;
                             expert.delete_expert = tmpExp.delete_expert;
                             expert.contacts_expert = tmpExp.contacts_expert;
+                            expert.comission_chairman = tmpExp.comission_chairman;
 
                             return expert;
                         }
