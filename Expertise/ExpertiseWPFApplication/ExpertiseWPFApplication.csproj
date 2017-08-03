@@ -110,6 +110,7 @@
     </Compile>
     <Compile Include="MarkForExaminationProject.cs" />
     <Compile Include="myCompareRow.cs" />
+    <Compile Include="myExpertiseComissionResultRow.cs" />
     <Compile Include="myMarkRow.cs" />
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>

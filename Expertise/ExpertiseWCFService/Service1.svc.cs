@@ -1757,7 +1757,7 @@ namespace ExpertiseWCFService
                 result.id_expertise = E.id_expertise;
                 result.name_expertise = E.name_expertise;
                 result.fos_expertise = db_AAZ.FiledsOfScience.Where(o => o.id_fos == E.id_fos).FirstOrDefault().name_fos;
-                if (E.end_expertise) result.status = "Завершена"; else result.status = "Не завершена";
+                if (E.end_expertise) result.status = "Завершена"; else result.status = "В работе";
                 result.date_expertise = E.date_expertise;
                 result.end_date_expertise = E.end_date_expertise;
                 result.count_project_expertise = E.count_proj_expertise;
@@ -1773,6 +1773,7 @@ namespace ExpertiseWCFService
                     P.lead_project = proj.lead_project;
                     //P.organization = 
                     //P.Rating = 
+                    //P.accept = 
                     result.ListProjects.Add(P);
                 }
                 // =======================================================================================================
@@ -1831,7 +1832,39 @@ namespace ExpertiseWCFService
                     else continue;
                 }
                 result.MarkIsCompleted = tmpMarkIsCompleted;
-
+                // =======================================================================================================
+                result.ListMark = new List<Marks>();
+                foreach(ExpertiseMark pM in E.ExpertiseMark)
+                {
+                    Marks tM = db_AAZ.Marks.Where(k => k.id_mark == pM.id_mark).FirstOrDefault();
+                    Marks M = new Marks();
+                    M.id_mark = tM.id_mark;
+                    M.id_expert = tM.id_expert;
+                    M.id_crit = tM.id_crit;
+                    M.id_project = tM.id_project;
+                    M.rating = tM.rating;
+                    result.ListMark.Add(M);
+                }
+                // =======================================================================================================
+                result.ListCritCompare = new List<CritCompare>();
+                foreach (CritCompare pCC in E.CritCompare)
+                {
+                    CritCompare CC = new CritCompare();
+                    CC.id_compare = pCC.id_compare;
+                    CC.id_expertise = pCC.id_expertise;
+                    CC.id_expert = pCC.id_expert;
+                    CC.mark_compare = pCC.mark_compare;
+                    foreach (CritCompareCrit pCCC in pCC.CritCompareCrit)
+                    {
+                        CritCompareCrit CCC = new CritCompareCrit();
+                        CCC.id_crit_crcompare = pCCC.id_crit_crcompare;
+                        CCC.id_compare = pCC.id_compare;
+                        CCC.id_crit = pCCC.id_crit;
+                        CC.CritCompareCrit.Add(CCC);
+                    }
+                    result.ListCritCompare.Add(CC);
+                }
+                // =======================================================================================================
                 return result;
             }
             catch (Exception Ex)

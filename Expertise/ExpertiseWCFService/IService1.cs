@@ -310,6 +310,10 @@ namespace ExpertiseWCFService
         public List<CatCrit> ListCatCrit { get; set; }
         public List<Categories> ListCategories { get; set; }
         public List<Experts> ListExperts { get; set; }
+
+        public List<Marks> ListMark { get; set; }
+        public List<CritCompare> ListCritCompare { get; set; }
+
         public int count_project_expertise { get; set; }
         public bool MarkIsCompleted { get; set; }
         public bool begin_expertise { get; set; }
@@ -321,6 +325,7 @@ namespace ExpertiseWCFService
         public string lead_project { get; set; }
         public string organization { get; set; }
         public string Rating { get; set; } // возможно будет другой тип
+        public string accept { get; set; }
     }
     #endregion
 

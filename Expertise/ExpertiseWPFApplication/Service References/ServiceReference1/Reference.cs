@@ -3586,10 +3586,16 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private ExpertiseWPFApplication.ServiceReference1.Categories[] ListCategoriesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CritCompare[] ListCritCompareField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ExpertiseWPFApplication.ServiceReference1.Criterions[] ListCriterionsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ExpertiseWPFApplication.ServiceReference1.Experts[] ListExpertsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Marks[] ListMarkField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private ExpertiseWPFApplication.ServiceReference1.myProjectForExpertiseCard[] ListProjectsField;
@@ -3658,6 +3664,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CritCompare[] ListCritCompare {
+            get {
+                return this.ListCritCompareField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListCritCompareField, value) != true)) {
+                    this.ListCritCompareField = value;
+                    this.RaisePropertyChanged("ListCritCompare");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public ExpertiseWPFApplication.ServiceReference1.Criterions[] ListCriterions {
             get {
                 return this.ListCriterionsField;
@@ -3679,6 +3698,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ListExpertsField, value) != true)) {
                     this.ListExpertsField = value;
                     this.RaisePropertyChanged("ListExperts");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Marks[] ListMark {
+            get {
+                return this.ListMarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListMarkField, value) != true)) {
+                    this.ListMarkField = value;
+                    this.RaisePropertyChanged("ListMark");
                 }
             }
         }
@@ -3836,6 +3868,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private string RatingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string acceptField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int id_projectField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3866,6 +3901,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.RatingField, value) != true)) {
                     this.RatingField = value;
                     this.RaisePropertyChanged("Rating");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string accept {
+            get {
+                return this.acceptField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.acceptField, value) != true)) {
+                    this.acceptField = value;
+                    this.RaisePropertyChanged("accept");
                 }
             }
         }

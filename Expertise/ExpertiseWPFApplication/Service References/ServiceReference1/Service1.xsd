@@ -445,8 +445,10 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="ListCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
       <xs:element minOccurs="0" name="ListCategories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="ListCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
       <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
       <xs:element minOccurs="0" name="ListExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="ListMark" nillable="true" type="tns:ArrayOfMarks" />
       <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfmyProjectForExpertiseCard" />
       <xs:element minOccurs="0" name="MarkIsCompleted" type="xs:boolean" />
       <xs:element minOccurs="0" name="begin_expertise" type="xs:boolean" />
@@ -469,6 +471,7 @@
   <xs:complexType name="myProjectForExpertiseCard">
     <xs:sequence>
       <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="accept" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id_project" type="xs:int" />
       <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />

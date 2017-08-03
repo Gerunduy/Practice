@@ -30,6 +30,10 @@ namespace ExpertiseWPFApplication
         int SelectedProjectID;
         int SelectedExpertID;
 
+        int CountExpert;
+        int CounCriterions;
+        int CountProject;
+
         EditExpertiseCard _EditExpertiseCard;
 
         public ExpertiseCard(int id_expertise, ServiceReference1.Experts expert)
@@ -41,6 +45,7 @@ namespace ExpertiseWPFApplication
             client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
             Waiting(true);
+            ShowResultExpertiseTable(false);
         }
         public ExpertiseCard(int id_expertise)
         {
@@ -51,6 +56,7 @@ namespace ExpertiseWPFApplication
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
             btnEditExpertise.Visibility = Visibility.Hidden;
             Waiting(true);
+            ShowResultExpertiseTable(false);
         }
         //=======================================================================================
         private void Client_GetMyExpertiseForCardByIDCompleted(object sender, ServiceReference1.GetMyExpertiseForCardByIDCompletedEventArgs e)
@@ -58,6 +64,9 @@ namespace ExpertiseWPFApplication
             if (e.Error == null)
             {
                 Expertise = e.Result;
+                CountExpert = Expertise.ListExperts.Count();
+                CounCriterions = Expertise.ListCriterions.Count();
+                CountProject = Expertise.ListProjects.Count();
                 FirstFillFileds();
                 try
                 {
@@ -76,15 +85,13 @@ namespace ExpertiseWPFApplication
         {
             tblNameExpertise.Text = Expertise.name_expertise;
             tblFosExpertise.Text = Expertise.fos_expertise;
+            tblStatusExpertise.Text = Expertise.status;
             dgExpertiseProjectList.ItemsSource = Expertise.ListProjects;
             tblCountProject.Text = string.Format("Количество проектов: {0}", Expertise.ListProjects.Count());
             dgCatList.ItemsSource = Expertise.ListCategories;
             dgExpertiseCritList.ItemsSource = null;
 
-            if (Expertise.MarkIsCompleted)
-            {
-                ShowResultExpertise();
-            }
+            if (Expertise.MarkIsCompleted) ShowResultExpertiseTable(true);
         }
         private void GetCritCurrCat(int id_cat)
         {
@@ -112,16 +119,62 @@ namespace ExpertiseWPFApplication
                 tblWait.Visibility = Visibility.Hidden;
             }
         }
-        void ShowResultExpertise()
+        void SetResultExpertiseTable()
         {
-            Button btnGetResultExpertise = new Button();
-            btnGetResultExpertise.Content = "Посмотреть результат";
-            btnGetResultExpertise.Height = 40;
-            btnGetResultExpertise.Width = 200;
-            btnGetResultExpertise.Click += btnGetResultExpertise_Click;
+            GetExpertiseTableContent();
 
-            gResultExpertise.Children.Clear();
-            gResultExpertise.Children.Add(btnGetResultExpertise);
+            //dgExpertiseExpertCommissionResult = new DataGrid();
+
+            //DataGridTextColumn CritProjectColumn = new DataGridTextColumn();
+            //CritProjectColumn.Binding = new Binding("name");
+            //dgExpertiseExpertCommissionResult.Columns.Add(CritProjectColumn);
+            //for (int i = 0; i < CountExpert; i++)
+            //{
+            //    DataGridTextColumn Column = new DataGridTextColumn();
+            //    Column.Header = Tables.ListCriterions[i].name_crit;
+            //    Column.Binding = new Binding(string.Format("content.[{0}]", i));
+            //    dgMarkTabel.Columns.Add(Column);
+            //}
+
+            //List<myMarkRow> lRow = new List<myMarkRow>();
+            //// === Формируем строку ===
+            //for (int i = 0; i < CountProject; i++)
+            //{
+            //    int[] arrMark = new int[CountCriterions];
+            //    for (int j = 0; j < CountCriterions; j++)
+            //    {
+            //        arrMark[j] = Tables.ListMark.Where(b => b.id_crit == Tables.ListCriterions[j].id_crit).Where(n => n.id_project == Tables.ListProjects[i].id_project).Where(l => l.id_expert == id_expert).FirstOrDefault().rating + 1;
+            //    }
+            //    myMarkRow Row = new myMarkRow(Tables.ListProjects[i].name_project, arrMark);
+            //    lRow.Add(Row);
+            //}
+            //// === === ===
+            //dgMarkTabel.ItemsSource = lRow;
+
+            //gInsideStage2.Children.Clear();
+            //gInsideStage2.RowDefinitions.Clear();
+            //gInsideStage2.ColumnDefinitions.Clear();
+            //gInsideStage2.Children.Add(dgMarkTabel);
+        }
+        void GetExpertiseTableContent()
+        {
+
+        }
+        void ShowResultExpertiseTable(bool Show)
+        {
+            if (Show)
+            {
+                SetResultExpertiseTable();
+                tblResultExpertiseWait.Visibility = Visibility.Hidden;
+                dgExpertiseExpertCommissionResult.Visibility = Visibility.Visible;
+                btnShowGraphic.IsEnabled = true;
+            }
+            else
+            {
+                dgExpertiseExpertCommissionResult.Visibility = Visibility.Hidden;
+                tblResultExpertiseWait.Visibility = Visibility.Visible;
+                btnShowGraphic.IsEnabled = false;
+            } 
         }
         //=======================================================================================
         //=== Работа с проектами ====================================
@@ -145,15 +198,6 @@ namespace ExpertiseWPFApplication
             catch { }
         }
         //=== Работа с экспертами ====================================
-        private void dgExpertiseExpertCommissionList_CurrentCellChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                ServiceReference1.Experts CurrentExpertExpertise = dgExpertiseExpertCommissionList.CurrentCell.Item as ServiceReference1.Experts;
-                SelectedExpertID = CurrentExpertExpertise.id_expert;
-            }
-            catch { }
-        }
         //=== Редактирование экспертизы ====================================
         private void btnEditExpertise_Click(object sender, RoutedEventArgs e)
         {
