@@ -201,7 +201,7 @@ namespace ExpertiseWPFApplication
         {
             _Criterions = new Criterions();
             _Criterions.Owner = this;
-            _Criterions.ShowDialog();
+            _Criterions.Show();
         }
         //направление науки
         private void button6_Click(object sender, RoutedEventArgs e)

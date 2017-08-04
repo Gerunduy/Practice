@@ -602,6 +602,36 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="myRaitinfExpert" nillable="true" type="tns:myRaitinfExpert" />
+  <xs:complexType name="ArrayOfCategoryForCritDirectory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryForCritDirectory" nillable="true" type="tns:CategoryForCritDirectory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryForCritDirectory" nillable="true" type="tns:ArrayOfCategoryForCritDirectory" />
+  <xs:complexType name="CategoryForCritDirectory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Categories" />
+      <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryForCritDirectory" nillable="true" type="tns:CategoryForCritDirectory" />
+  <xs:complexType name="CritForCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritValue" nillable="true" type="tns:CritValues" />
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="name_category" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritForCard" nillable="true" type="tns:CritForCard" />
+  <xs:simpleType name="EditCriterionsMessage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Succes" />
+      <xs:enumeration value="ErrParticipant" />
+      <xs:enumeration value="ErrQualit" />
+      <xs:enumeration value="ErrDataBase" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EditCriterionsMessage" nillable="true" type="tns:EditCriterionsMessage" />
   <xs:complexType name="ArrayOfExpertise_Expert">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />

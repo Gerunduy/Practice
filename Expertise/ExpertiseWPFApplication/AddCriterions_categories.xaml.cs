@@ -28,23 +28,23 @@ namespace ExpertiseWPFApplication
         public AddCriterions_categories()
         {
             InitializeComponent();
-            client.AddCategoriesCompleted += Client_AddCategoriesCompleted;
-            client.AddCriterionsCompleted += Client_AddCriterionsCompleted;
-            client.EditCriterionsCompleted += Client_EditCriterionsCompleted;
-            client.EditCritValuesCompleted += Client_EditCritValuesCompleted;
+            //client.AddCategoriesCompleted += Client_AddCategoriesCompleted;
+            //client.AddCriterionsCompleted += Client_AddCriterionsCompleted;
+            //client.EditCriterionsCompleted += Client_EditCriterionsCompleted;
+            //client.EditCritValuesCompleted += Client_EditCritValuesCompleted;
         }
 
-        private void Client_EditCritValuesCompleted(object sender, ServiceReference1.EditCritValuesCompletedEventArgs e)
-        {
-            if (e.Error == null)
-            {
-                MessageBox.Show("Обновлено");
-                //button.Content = "Редактировать";
-                //this.DialogResult = true;
-            }
-            else
-                MessageBox.Show(e.Error.Message);
-        }
+        //private void Client_EditCritValuesCompleted(object sender, ServiceReference1.EditCritValuesCompletedEventArgs e)
+        //{
+        //    if (e.Error == null)
+        //    {
+        //        MessageBox.Show("Обновлено");
+        //        //button.Content = "Редактировать";
+        //        //this.DialogResult = true;
+        //    }
+        //    else
+        //        MessageBox.Show(e.Error.Message);
+        //}
 
         private void Client_EditCriterionsCompleted(object sender, ServiceReference1.EditCriterionsCompletedEventArgs e)
         {
@@ -90,93 +90,93 @@ namespace ExpertiseWPFApplication
         //сохранить критерий
         private void button1_Click(object sender, RoutedEventArgs e)
         {
-            if(button1.Content.ToString() == "Сохранить")
-            {
-                Boolean qualit_crit = true;
-                if (comboBox.SelectedIndex == 0)
-                {
-                    string name_crit = textBox1.Text;
-                    qualit_crit = true;//Количесвенный
-                    string OT = textBox2.Text;
-                    string DO = textBox3.Text;
-                    string measurement = textBox4.Text;
-                    string valid_values = OT + ";" + DO + ";" + measurement + ";";
-                    client.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_cat);
-                }
-                else if (comboBox.SelectedIndex == 1)
-                {
-                    string name_crit = textBox1.Text;
-                    qualit_crit = false;//Качественный
-                    bool triger = true;
-                    for (int i = 0; i < dataGrid.Items.Count; i++)
-                    {
-                        term temp = dataGrid.Items[i] as term;
-                        if (temp.name_term == "" || temp.name_term == null)
-                        {
-                            triger = false;
-                            break;
-                        }
-                    }
-                    if (triger == false)
-                    {
-                        MessageBox.Show("не все строки заполнены");
-                    }
-                    else if (triger == true)
-                    {
-                        string valid_values = null;
-                        for (int i = 0; i < ListTerm.Count; i++)
-                        {
-                            valid_values += ListTerm[i].name_term + ";";
-                        }
-                        client.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_cat);
-                    }
-                }
-            }
-            else if(button1.Content.ToString() == "Изменить")
-            {
-                if (comboBox.SelectedIndex == 0)//Количественный
-                {
-                    Boolean qualit_crit = true;
-                    string name_crit = textBox1.Text;
-                    qualit_crit = true;//Количесвенный
-                    string OT = textBox2.Text;
-                    string DO = textBox3.Text;
-                    string measurement = textBox4.Text;
-                    string valid_values = OT + ";" + DO + ";" + measurement + ";";
-                    client.EditCriterionsAsync(id_crit, name_crit, qualit_crit);
-                    client.EditCritValuesAsync(id_value, id_crit, valid_values);
-                }
-                else if (comboBox.SelectedIndex == 1)//Качественный
-                {
-                    Boolean qualit_crit = true;
-                    string name_crit = textBox1.Text;
-                    qualit_crit = false;//Качественный
-                    bool triger = true;
-                    for (int i = 0; i < dataGrid.Items.Count; i++)
-                    {
-                        term temp = dataGrid.Items[i] as term;
-                        if (temp.name_term == "" || temp.name_term == null)
-                        {
-                            triger = false;
-                            break;
-                        }
-                    }
-                    if (triger == false)
-                    {
-                        MessageBox.Show("не все строки заполнены");
-                    }
-                    else if (triger == true)
-                    {
-                        string valid_values = null;
-                        for (int i = 0; i < ListTerm.Count; i++)
-                        {
-                            valid_values += ListTerm[i].name_term + ";";
-                        }
-                        client.EditCriterionsAsync(id_crit, name_crit, qualit_crit);
-                        client.EditCritValuesAsync(id_value, id_crit, valid_values);
-                    }
-                }
-            }
+            //    if (button1.Content.ToString() == "Сохранить")
+            //    {
+            //        Boolean qualit_crit = true;
+            //        if (comboBox.SelectedIndex == 0)
+            //        {
+            //            string name_crit = textBox1.Text;
+            //            qualit_crit = true;//Количесвенный
+            //            string OT = textBox2.Text;
+            //            string DO = textBox3.Text;
+            //            string measurement = textBox4.Text;
+            //            string valid_values = OT + ";" + DO + ";" + measurement + ";";
+            //            client.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_cat);
+            //        }
+            //        else if (comboBox.SelectedIndex == 1)
+            //        {
+            //            string name_crit = textBox1.Text;
+            //            qualit_crit = false;//Качественный
+            //            bool triger = true;
+            //            for (int i = 0; i < dataGrid.Items.Count; i++)
+            //            {
+            //                term temp = dataGrid.Items[i] as term;
+            //                if (temp.name_term == "" || temp.name_term == null)
+            //                {
+            //                    triger = false;
+            //                    break;
+            //                }
+            //            }
+            //            if (triger == false)
+            //            {
+            //                MessageBox.Show("не все строки заполнены");
+            //            }
+            //            else if (triger == true)
+            //            {
+            //                string valid_values = null;
+            //                for (int i = 0; i < ListTerm.Count; i++)
+            //                {
+            //                    valid_values += ListTerm[i].name_term + ";";
+            //                }
+            //                client.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_cat);
+            //            }
+            //        }
+            //    }
+            //    else if (button1.Content.ToString() == "Изменить")
+            //    {
+            //        if (comboBox.SelectedIndex == 0)//Количественный
+            //        {
+            //            Boolean qualit_crit = true;
+            //            string name_crit = textBox1.Text;
+            //            qualit_crit = true;//Количесвенный
+            //            string OT = textBox2.Text;
+            //            string DO = textBox3.Text;
+            //            string measurement = textBox4.Text;
+            //            string valid_values = OT + ";" + DO + ";" + measurement + ";";
+            //            client.EditCriterionsAsync(id_crit, name_crit, qualit_crit);
+            //            client.EditCritValuesAsync(id_value, id_crit, valid_values);
+            //        }
+            //        else if (comboBox.SelectedIndex == 1)//Качественный
+            //        {
+            //            Boolean qualit_crit = true;
+            //            string name_crit = textBox1.Text;
+            //            qualit_crit = false;//Качественный
+            //            bool triger = true;
+            //            for (int i = 0; i < dataGrid.Items.Count; i++)
+            //            {
+            //                term temp = dataGrid.Items[i] as term;
+            //                if (temp.name_term == "" || temp.name_term == null)
+            //                {
+            //                    triger = false;
+            //                    break;
+            //                }
+            //            }
+            //            if (triger == false)
+            //            {
+            //                MessageBox.Show("не все строки заполнены");
+            //            }
+            //            else if (triger == true)
+            //            {
+            //                string valid_values = null;
+            //                for (int i = 0; i < ListTerm.Count; i++)
+            //                {
+            //                    valid_values += ListTerm[i].name_term + ";";
+            //                }
+            //                client.EditCriterionsAsync(id_crit, name_crit, qualit_crit);
+            //                client.EditCritValuesAsync(id_value, id_crit, valid_values);
+            //            }
+            //        }
+            //    }
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)

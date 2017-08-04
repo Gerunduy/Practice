@@ -5113,6 +5113,161 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CategoryForCritDirectory", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class CategoryForCritDirectory : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Categories CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions[] ListCriterionsField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Categories Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions[] ListCriterions {
+            get {
+                return this.ListCriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ListCriterionsField, value) != true)) {
+                    this.ListCriterionsField = value;
+                    this.RaisePropertyChanged("ListCriterions");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CritForCard", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    [System.SerializableAttribute()]
+    public partial class CritForCard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.CritValues CritValueField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private ExpertiseWPFApplication.ServiceReference1.Criterions CriterionsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string name_categoryField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.CritValues CritValue {
+            get {
+                return this.CritValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CritValueField, value) != true)) {
+                    this.CritValueField = value;
+                    this.RaisePropertyChanged("CritValue");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public ExpertiseWPFApplication.ServiceReference1.Criterions Criterions {
+            get {
+                return this.CriterionsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CriterionsField, value) != true)) {
+                    this.CriterionsField = value;
+                    this.RaisePropertyChanged("Criterions");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name_category {
+            get {
+                return this.name_categoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.name_categoryField, value) != true)) {
+                    this.name_categoryField = value;
+                    this.RaisePropertyChanged("name_category");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EditCriterionsMessage", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
+    public enum EditCriterionsMessage : int {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Succes = 0,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ErrParticipant = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ErrQualit = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ErrDataBase = 3,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Expertise_Expert", Namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService")]
     [System.SerializableAttribute()]
     public partial class Expertise_Expert : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -5255,6 +5410,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Gethello", ReplyAction="http://tempuri.org/IService1/GethelloResponse")]
+        string Gethello();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Gethello", ReplyAction="http://tempuri.org/IService1/GethelloResponse")]
+        System.IAsyncResult BeginGethello(System.AsyncCallback callback, object asyncState);
+        
+        string EndGethello(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
         ExpertiseWPFApplication.ServiceReference1.CompositeType GetDataUsingDataContract(ExpertiseWPFApplication.ServiceReference1.CompositeType composite);
@@ -5792,6 +5955,30 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] EndGetListRaitingForExpertise(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListCategoryForCritDirectory", ReplyAction="http://tempuri.org/IService1/GetListCategoryForCritDirectoryResponse")]
+        ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] GetListCategoryForCritDirectory();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListCategoryForCritDirectory", ReplyAction="http://tempuri.org/IService1/GetListCategoryForCritDirectoryResponse")]
+        System.IAsyncResult BeginGetListCategoryForCritDirectory(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] EndGetListCategoryForCritDirectory(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetCriterionsForCard", ReplyAction="http://tempuri.org/IService1/GetCriterionsForCardResponse")]
+        ExpertiseWPFApplication.ServiceReference1.CritForCard GetCriterionsForCard(int id_criterions);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetCriterionsForCard", ReplyAction="http://tempuri.org/IService1/GetCriterionsForCardResponse")]
+        System.IAsyncResult BeginGetCriterionsForCard(int id_criterions, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.CritForCard EndGetCriterionsForCard(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditCriterions", ReplyAction="http://tempuri.org/IService1/EditCriterionsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage EditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditCriterions", ReplyAction="http://tempuri.org/IService1/EditCriterionsResponse")]
+        System.IAsyncResult BeginEditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage EndEditCriterions(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/test", ReplyAction="http://tempuri.org/IService1/testResponse")]
         ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] test();
         
@@ -5815,22 +6002,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginUpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, System.AsyncCallback callback, object asyncState);
         
         void EndUpdateExpertCard(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditCriterions", ReplyAction="http://tempuri.org/IService1/EditCriterionsResponse")]
-        bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditCriterions", ReplyAction="http://tempuri.org/IService1/EditCriterionsResponse")]
-        System.IAsyncResult BeginEditCriterions(int id_crit, string name_crit, bool qualit_crit, System.AsyncCallback callback, object asyncState);
-        
-        bool EndEditCriterions(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditCritValues", ReplyAction="http://tempuri.org/IService1/EditCritValuesResponse")]
-        bool EditCritValues(int id_value, int id_crit, string valid_values);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditCritValues", ReplyAction="http://tempuri.org/IService1/EditCritValuesResponse")]
-        System.IAsyncResult BeginEditCritValues(int id_value, int id_crit, string valid_values, System.AsyncCallback callback, object asyncState);
-        
-        bool EndEditCritValues(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditFiledsOfScience", ReplyAction="http://tempuri.org/IService1/EditFiledsOfScienceResponse")]
         bool EditFiledsOfScience(int id_fos, string name_fos);
@@ -5935,18 +6106,29 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginAuthorization(string Login, string Password, System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.Experts EndAuthorization(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Gethello", ReplyAction="http://tempuri.org/IService1/GethelloResponse")]
-        string Gethello();
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/Gethello", ReplyAction="http://tempuri.org/IService1/GethelloResponse")]
-        System.IAsyncResult BeginGethello(System.AsyncCallback callback, object asyncState);
-        
-        string EndGethello(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : ExpertiseWPFApplication.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GethelloCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GethelloCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public string Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7224,19 +7406,38 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class testCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class GetListCategoryForCritDirectoryCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public testCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public GetListCategoryForCritDirectoryCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Result {
+        public ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[])(this.results[0]));
+                return ((ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetCriterionsForCardCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetCriterionsForCardCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CritForCard Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.CritForCard)(this.results[0]));
             }
         }
     }
@@ -7252,29 +7453,29 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             this.results = results;
         }
         
-        public bool Result {
+        public ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage)(this.results[0]));
             }
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class EditCritValuesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class testCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        public EditCritValuesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        public testCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
-        public bool Result {
+        public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] Result {
             get {
                 base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
+                return ((ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[])(this.results[0]));
             }
         }
     }
@@ -7509,26 +7710,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class GethelloCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public GethelloCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public string Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((string)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<ExpertiseWPFApplication.ServiceReference1.IService1>, ExpertiseWPFApplication.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginGethelloDelegate;
+        
+        private EndOperationDelegate onEndGethelloDelegate;
+        
+        private System.Threading.SendOrPostCallback onGethelloCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetDataUsingDataContractDelegate;
         
@@ -7932,6 +8120,24 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetListRaitingForExpertiseCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListCategoryForCritDirectoryDelegate;
+        
+        private EndOperationDelegate onEndGetListCategoryForCritDirectoryDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListCategoryForCritDirectoryCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetCriterionsForCardDelegate;
+        
+        private EndOperationDelegate onEndGetCriterionsForCardDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetCriterionsForCardCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginEditCriterionsDelegate;
+        
+        private EndOperationDelegate onEndEditCriterionsDelegate;
+        
+        private System.Threading.SendOrPostCallback onEditCriterionsCompletedDelegate;
+        
         private BeginOperationDelegate onBegintestDelegate;
         
         private EndOperationDelegate onEndtestDelegate;
@@ -7949,18 +8155,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private EndOperationDelegate onEndUpdateExpertCardDelegate;
         
         private System.Threading.SendOrPostCallback onUpdateExpertCardCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginEditCriterionsDelegate;
-        
-        private EndOperationDelegate onEndEditCriterionsDelegate;
-        
-        private System.Threading.SendOrPostCallback onEditCriterionsCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginEditCritValuesDelegate;
-        
-        private EndOperationDelegate onEndEditCritValuesDelegate;
-        
-        private System.Threading.SendOrPostCallback onEditCritValuesCompletedDelegate;
         
         private BeginOperationDelegate onBeginEditFiledsOfScienceDelegate;
         
@@ -8040,12 +8234,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onAuthorizationCompletedDelegate;
         
-        private BeginOperationDelegate onBeginGethelloDelegate;
-        
-        private EndOperationDelegate onEndGethelloDelegate;
-        
-        private System.Threading.SendOrPostCallback onGethelloCompletedDelegate;
-        
         public Service1Client() {
         }
         
@@ -8064,6 +8252,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
+        
+        public event System.EventHandler<GethelloCompletedEventArgs> GethelloCompleted;
         
         public event System.EventHandler<GetDataUsingDataContractCompletedEventArgs> GetDataUsingDataContractCompleted;
         
@@ -8199,15 +8389,17 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetListRaitingForExpertiseCompletedEventArgs> GetListRaitingForExpertiseCompleted;
         
+        public event System.EventHandler<GetListCategoryForCritDirectoryCompletedEventArgs> GetListCategoryForCritDirectoryCompleted;
+        
+        public event System.EventHandler<GetCriterionsForCardCompletedEventArgs> GetCriterionsForCardCompleted;
+        
+        public event System.EventHandler<EditCriterionsCompletedEventArgs> EditCriterionsCompleted;
+        
         public event System.EventHandler<testCompletedEventArgs> testCompleted;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> test2Completed;
         
         public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> UpdateExpertCardCompleted;
-        
-        public event System.EventHandler<EditCriterionsCompletedEventArgs> EditCriterionsCompleted;
-        
-        public event System.EventHandler<EditCritValuesCompletedEventArgs> EditCritValuesCompleted;
         
         public event System.EventHandler<EditFiledsOfScienceCompletedEventArgs> EditFiledsOfScienceCompleted;
         
@@ -8235,7 +8427,53 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<AuthorizationCompletedEventArgs> AuthorizationCompleted;
         
-        public event System.EventHandler<GethelloCompletedEventArgs> GethelloCompleted;
+        public string Gethello() {
+            return base.Channel.Gethello();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGethello(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGethello(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public string EndGethello(System.IAsyncResult result) {
+            return base.Channel.EndGethello(result);
+        }
+        
+        private System.IAsyncResult OnBeginGethello(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGethello(callback, asyncState);
+        }
+        
+        private object[] OnEndGethello(System.IAsyncResult result) {
+            string retVal = this.EndGethello(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGethelloCompleted(object state) {
+            if ((this.GethelloCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GethelloCompleted(this, new GethelloCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GethelloAsync() {
+            this.GethelloAsync(null);
+        }
+        
+        public void GethelloAsync(object userState) {
+            if ((this.onBeginGethelloDelegate == null)) {
+                this.onBeginGethelloDelegate = new BeginOperationDelegate(this.OnBeginGethello);
+            }
+            if ((this.onEndGethelloDelegate == null)) {
+                this.onEndGethelloDelegate = new EndOperationDelegate(this.OnEndGethello);
+            }
+            if ((this.onGethelloCompletedDelegate == null)) {
+                this.onGethelloCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGethelloCompleted);
+            }
+            base.InvokeAsync(this.onBeginGethelloDelegate, null, this.onEndGethelloDelegate, this.onGethelloCompletedDelegate, userState);
+        }
         
         public ExpertiseWPFApplication.ServiceReference1.CompositeType GetDataUsingDataContract(ExpertiseWPFApplication.ServiceReference1.CompositeType composite) {
             return base.Channel.GetDataUsingDataContract(composite);
@@ -11625,6 +11863,160 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         id_project}, this.onEndGetListRaitingForExpertiseDelegate, this.onGetListRaitingForExpertiseCompletedDelegate, userState);
         }
         
+        public ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] GetListCategoryForCritDirectory() {
+            return base.Channel.GetListCategoryForCritDirectory();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListCategoryForCritDirectory(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListCategoryForCritDirectory(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] EndGetListCategoryForCritDirectory(System.IAsyncResult result) {
+            return base.Channel.EndGetListCategoryForCritDirectory(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListCategoryForCritDirectory(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListCategoryForCritDirectory(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListCategoryForCritDirectory(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] retVal = this.EndGetListCategoryForCritDirectory(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListCategoryForCritDirectoryCompleted(object state) {
+            if ((this.GetListCategoryForCritDirectoryCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListCategoryForCritDirectoryCompleted(this, new GetListCategoryForCritDirectoryCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListCategoryForCritDirectoryAsync() {
+            this.GetListCategoryForCritDirectoryAsync(null);
+        }
+        
+        public void GetListCategoryForCritDirectoryAsync(object userState) {
+            if ((this.onBeginGetListCategoryForCritDirectoryDelegate == null)) {
+                this.onBeginGetListCategoryForCritDirectoryDelegate = new BeginOperationDelegate(this.OnBeginGetListCategoryForCritDirectory);
+            }
+            if ((this.onEndGetListCategoryForCritDirectoryDelegate == null)) {
+                this.onEndGetListCategoryForCritDirectoryDelegate = new EndOperationDelegate(this.OnEndGetListCategoryForCritDirectory);
+            }
+            if ((this.onGetListCategoryForCritDirectoryCompletedDelegate == null)) {
+                this.onGetListCategoryForCritDirectoryCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListCategoryForCritDirectoryCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListCategoryForCritDirectoryDelegate, null, this.onEndGetListCategoryForCritDirectoryDelegate, this.onGetListCategoryForCritDirectoryCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.CritForCard GetCriterionsForCard(int id_criterions) {
+            return base.Channel.GetCriterionsForCard(id_criterions);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetCriterionsForCard(int id_criterions, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetCriterionsForCard(id_criterions, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.CritForCard EndGetCriterionsForCard(System.IAsyncResult result) {
+            return base.Channel.EndGetCriterionsForCard(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetCriterionsForCard(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_criterions = ((int)(inValues[0]));
+            return this.BeginGetCriterionsForCard(id_criterions, callback, asyncState);
+        }
+        
+        private object[] OnEndGetCriterionsForCard(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.CritForCard retVal = this.EndGetCriterionsForCard(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetCriterionsForCardCompleted(object state) {
+            if ((this.GetCriterionsForCardCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetCriterionsForCardCompleted(this, new GetCriterionsForCardCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetCriterionsForCardAsync(int id_criterions) {
+            this.GetCriterionsForCardAsync(id_criterions, null);
+        }
+        
+        public void GetCriterionsForCardAsync(int id_criterions, object userState) {
+            if ((this.onBeginGetCriterionsForCardDelegate == null)) {
+                this.onBeginGetCriterionsForCardDelegate = new BeginOperationDelegate(this.OnBeginGetCriterionsForCard);
+            }
+            if ((this.onEndGetCriterionsForCardDelegate == null)) {
+                this.onEndGetCriterionsForCardDelegate = new EndOperationDelegate(this.OnEndGetCriterionsForCard);
+            }
+            if ((this.onGetCriterionsForCardCompletedDelegate == null)) {
+                this.onGetCriterionsForCardCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetCriterionsForCardCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetCriterionsForCardDelegate, new object[] {
+                        id_criterions}, this.onEndGetCriterionsForCardDelegate, this.onGetCriterionsForCardCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage EditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values) {
+            return base.Channel.EditCriterions(id_crit, name_crit, qualit_crit, valid_values);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginEditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginEditCriterions(id_crit, name_crit, qualit_crit, valid_values, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage EndEditCriterions(System.IAsyncResult result) {
+            return base.Channel.EndEditCriterions(result);
+        }
+        
+        private System.IAsyncResult OnBeginEditCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_crit = ((int)(inValues[0]));
+            string name_crit = ((string)(inValues[1]));
+            bool qualit_crit = ((bool)(inValues[2]));
+            string valid_values = ((string)(inValues[3]));
+            return this.BeginEditCriterions(id_crit, name_crit, qualit_crit, valid_values, callback, asyncState);
+        }
+        
+        private object[] OnEndEditCriterions(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage retVal = this.EndEditCriterions(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnEditCriterionsCompleted(object state) {
+            if ((this.EditCriterionsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.EditCriterionsCompleted(this, new EditCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void EditCriterionsAsync(int id_crit, string name_crit, bool qualit_crit, string valid_values) {
+            this.EditCriterionsAsync(id_crit, name_crit, qualit_crit, valid_values, null);
+        }
+        
+        public void EditCriterionsAsync(int id_crit, string name_crit, bool qualit_crit, string valid_values, object userState) {
+            if ((this.onBeginEditCriterionsDelegate == null)) {
+                this.onBeginEditCriterionsDelegate = new BeginOperationDelegate(this.OnBeginEditCriterions);
+            }
+            if ((this.onEndEditCriterionsDelegate == null)) {
+                this.onEndEditCriterionsDelegate = new EndOperationDelegate(this.OnEndEditCriterions);
+            }
+            if ((this.onEditCriterionsCompletedDelegate == null)) {
+                this.onEditCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnEditCriterionsCompleted);
+            }
+            base.InvokeAsync(this.onBeginEditCriterionsDelegate, new object[] {
+                        id_crit,
+                        name_crit,
+                        qualit_crit,
+                        valid_values}, this.onEndEditCriterionsDelegate, this.onEditCriterionsCompletedDelegate, userState);
+        }
+        
         public ExpertiseWPFApplication.ServiceReference1.ProjectExpertise[] test() {
             return base.Channel.test();
         }
@@ -11791,114 +12183,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         ListFOS,
                         login_expert,
                         password_expert}, this.onEndUpdateExpertCardDelegate, this.onUpdateExpertCardCompletedDelegate, userState);
-        }
-        
-        public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit) {
-            return base.Channel.EditCriterions(id_crit, name_crit, qualit_crit);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginEditCriterions(int id_crit, string name_crit, bool qualit_crit, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginEditCriterions(id_crit, name_crit, qualit_crit, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public bool EndEditCriterions(System.IAsyncResult result) {
-            return base.Channel.EndEditCriterions(result);
-        }
-        
-        private System.IAsyncResult OnBeginEditCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id_crit = ((int)(inValues[0]));
-            string name_crit = ((string)(inValues[1]));
-            bool qualit_crit = ((bool)(inValues[2]));
-            return this.BeginEditCriterions(id_crit, name_crit, qualit_crit, callback, asyncState);
-        }
-        
-        private object[] OnEndEditCriterions(System.IAsyncResult result) {
-            bool retVal = this.EndEditCriterions(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnEditCriterionsCompleted(object state) {
-            if ((this.EditCriterionsCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.EditCriterionsCompleted(this, new EditCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void EditCriterionsAsync(int id_crit, string name_crit, bool qualit_crit) {
-            this.EditCriterionsAsync(id_crit, name_crit, qualit_crit, null);
-        }
-        
-        public void EditCriterionsAsync(int id_crit, string name_crit, bool qualit_crit, object userState) {
-            if ((this.onBeginEditCriterionsDelegate == null)) {
-                this.onBeginEditCriterionsDelegate = new BeginOperationDelegate(this.OnBeginEditCriterions);
-            }
-            if ((this.onEndEditCriterionsDelegate == null)) {
-                this.onEndEditCriterionsDelegate = new EndOperationDelegate(this.OnEndEditCriterions);
-            }
-            if ((this.onEditCriterionsCompletedDelegate == null)) {
-                this.onEditCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnEditCriterionsCompleted);
-            }
-            base.InvokeAsync(this.onBeginEditCriterionsDelegate, new object[] {
-                        id_crit,
-                        name_crit,
-                        qualit_crit}, this.onEndEditCriterionsDelegate, this.onEditCriterionsCompletedDelegate, userState);
-        }
-        
-        public bool EditCritValues(int id_value, int id_crit, string valid_values) {
-            return base.Channel.EditCritValues(id_value, id_crit, valid_values);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginEditCritValues(int id_value, int id_crit, string valid_values, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginEditCritValues(id_value, id_crit, valid_values, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public bool EndEditCritValues(System.IAsyncResult result) {
-            return base.Channel.EndEditCritValues(result);
-        }
-        
-        private System.IAsyncResult OnBeginEditCritValues(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            int id_value = ((int)(inValues[0]));
-            int id_crit = ((int)(inValues[1]));
-            string valid_values = ((string)(inValues[2]));
-            return this.BeginEditCritValues(id_value, id_crit, valid_values, callback, asyncState);
-        }
-        
-        private object[] OnEndEditCritValues(System.IAsyncResult result) {
-            bool retVal = this.EndEditCritValues(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnEditCritValuesCompleted(object state) {
-            if ((this.EditCritValuesCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.EditCritValuesCompleted(this, new EditCritValuesCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void EditCritValuesAsync(int id_value, int id_crit, string valid_values) {
-            this.EditCritValuesAsync(id_value, id_crit, valid_values, null);
-        }
-        
-        public void EditCritValuesAsync(int id_value, int id_crit, string valid_values, object userState) {
-            if ((this.onBeginEditCritValuesDelegate == null)) {
-                this.onBeginEditCritValuesDelegate = new BeginOperationDelegate(this.OnBeginEditCritValues);
-            }
-            if ((this.onEndEditCritValuesDelegate == null)) {
-                this.onEndEditCritValuesDelegate = new EndOperationDelegate(this.OnEndEditCritValues);
-            }
-            if ((this.onEditCritValuesCompletedDelegate == null)) {
-                this.onEditCritValuesCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnEditCritValuesCompleted);
-            }
-            base.InvokeAsync(this.onBeginEditCritValuesDelegate, new object[] {
-                        id_value,
-                        id_crit,
-                        valid_values}, this.onEndEditCritValuesDelegate, this.onEditCritValuesCompletedDelegate, userState);
         }
         
         public bool EditFiledsOfScience(int id_fos, string name_fos) {
@@ -12622,54 +12906,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginAuthorizationDelegate, new object[] {
                         Login,
                         Password}, this.onEndAuthorizationDelegate, this.onAuthorizationCompletedDelegate, userState);
-        }
-        
-        public string Gethello() {
-            return base.Channel.Gethello();
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginGethello(System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginGethello(callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public string EndGethello(System.IAsyncResult result) {
-            return base.Channel.EndGethello(result);
-        }
-        
-        private System.IAsyncResult OnBeginGethello(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            return this.BeginGethello(callback, asyncState);
-        }
-        
-        private object[] OnEndGethello(System.IAsyncResult result) {
-            string retVal = this.EndGethello(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnGethelloCompleted(object state) {
-            if ((this.GethelloCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.GethelloCompleted(this, new GethelloCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void GethelloAsync() {
-            this.GethelloAsync(null);
-        }
-        
-        public void GethelloAsync(object userState) {
-            if ((this.onBeginGethelloDelegate == null)) {
-                this.onBeginGethelloDelegate = new BeginOperationDelegate(this.OnBeginGethello);
-            }
-            if ((this.onEndGethelloDelegate == null)) {
-                this.onEndGethelloDelegate = new EndOperationDelegate(this.OnEndGethello);
-            }
-            if ((this.onGethelloCompletedDelegate == null)) {
-                this.onGethelloCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGethelloCompleted);
-            }
-            base.InvokeAsync(this.onBeginGethelloDelegate, null, this.onEndGethelloDelegate, this.onGethelloCompletedDelegate, userState);
         }
     }
 }

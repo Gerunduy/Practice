@@ -2106,6 +2106,133 @@ namespace ExpertiseWCFService
             }
         }
 
+        #region Работа с критериями
+
+        public List<CategoryForCritDirectory> GetListCategoryForCritDirectory()
+        {
+            try
+            {
+                List<CategoryForCritDirectory> result = new List<CategoryForCritDirectory>();
+                List<Categories> tmpCatList = db_AAZ.Categories.ToList();
+                foreach (Categories pCat in tmpCatList)
+                {
+                    CategoryForCritDirectory Category = new CategoryForCritDirectory();
+                    Category.Category = new Categories();
+                    Category.Category.id_category = pCat.id_category;
+                    Category.Category.name_category = pCat.name_category;
+                    Category.ListCriterions = new List<Criterions>();
+                    foreach (CatCrit pCatCrit in pCat.CatCrit)
+                    {
+                        Criterions tmpCriterions = db_AAZ.Criterions.Where(p => p.id_crit == pCatCrit.id_crit).FirstOrDefault();
+                        Criterions Crit = new Criterions();
+                        Crit.id_crit = tmpCriterions.id_crit;
+                        Crit.name_crit = tmpCriterions.name_crit;
+                        Crit.qualit_crit = tmpCriterions.qualit_crit;
+                        CritValues CritVal = new CritValues();
+                        CritVal.id_value = tmpCriterions.CritValues.ToArray()[0].id_value;
+                        CritVal.id_crit = tmpCriterions.CritValues.ToArray()[0].id_crit;
+                        CritVal.valid_values = tmpCriterions.CritValues.ToArray()[0].valid_values;
+                        Crit.CritValues.Add(CritVal);
+                        Category.ListCriterions.Add(Crit);
+                    }
+                    result.Add(Category);
+                }
+
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<CategoryForCritDirectory> result = new List<CategoryForCritDirectory>();
+                CategoryForCritDirectory Category = new CategoryForCritDirectory();
+                Category.Category = new Categories();
+                Category.Category.id_category = -1;
+                Category.Category.name_category = "Содержимое не было получено";
+                result.Add(Category);
+
+                return result;
+            }
+        }
+
+        public CritForCard GetCriterionsForCard(int id_crit)
+        {
+            try
+            {
+                CritForCard result = new CritForCard();
+                Criterions tmpCrit = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
+                result.Criterions = new Criterions();
+                result.Criterions.id_crit = tmpCrit.id_crit;
+                result.Criterions.name_crit = tmpCrit.name_crit;
+                result.Criterions.qualit_crit = tmpCrit.qualit_crit;
+
+                result.CritValue = new CritValues();
+                result.CritValue.id_value = tmpCrit.CritValues.ToArray()[0].id_value;
+                result.CritValue.id_crit = tmpCrit.CritValues.ToArray()[0].id_crit;
+                result.CritValue.valid_values = tmpCrit.CritValues.ToArray()[0].valid_values;
+
+                CatCrit CC = tmpCrit.CatCrit.ToArray()[0];
+                Categories C = db_AAZ.Categories.Where(o => o.id_category == CC.id_cat).FirstOrDefault();
+                result.name_category = C.name_category;
+
+
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                CritForCard result = new CritForCard();
+                result.Criterions = new Criterions();
+                result.Criterions.id_crit = -1;
+                result.Criterions.name_crit = "Содержимое не было получено";
+
+                return result;
+            }
+        }
+
+        public EditCriterionsMessage EditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values)
+        {
+            try
+            {
+                Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
+
+                if (C.ExpCrit.Count() == 0) // Если экспертиз нет
+                {
+                    C.name_crit = name_crit;
+                    C.qualit_crit = qualit_crit;
+                    C.CritValues.ToArray()[0].valid_values = valid_values;
+                    db_AAZ.SaveChanges();
+                    return EditCriterionsMessage.Succes;
+                }
+
+                List<Expertises> lEndExp = new List<Expertises>();
+                foreach (ExpCrit pEC in C.ExpCrit)
+                {
+                    Expertises E = db_AAZ.Expertises.Where(o => o.id_expertise == pEC.id_exp).FirstOrDefault();
+                    if (!E.end_expertise) return EditCriterionsMessage.ErrParticipant;
+                }
+
+                if (C.qualit_crit != qualit_crit)
+                {
+                    return EditCriterionsMessage.ErrQualit;
+                }
+                else
+                {
+                    C.name_crit = name_crit;
+                    C.CritValues.ToArray()[0].valid_values = valid_values;
+                    db_AAZ.SaveChanges();
+                    return EditCriterionsMessage.Succes;
+                }
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return EditCriterionsMessage.ErrDataBase;
+            }
+        }
+
+        #endregion
+
+
         public List<ProjectExpertise> test()
         {
             Projects pr = db_AAZ.Projects.FirstOrDefault(o => o.name_project == "Test_Proj2");
@@ -2181,41 +2308,41 @@ namespace ExpertiseWCFService
 
         }
 
-        public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit)
-        {
-            try
-            {
-                Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
-                C.name_crit = name_crit;
-                C.qualit_crit = qualit_crit;
+        //public bool EditCriterions(int id_crit, string name_crit, bool qualit_crit)
+        //{
+        //    try
+        //    {
+        //        Criterions C = db_AAZ.Criterions.Where(p => p.id_crit == id_crit).FirstOrDefault();
+        //        C.name_crit = name_crit;
+        //        C.qualit_crit = qualit_crit;
 
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
+        //        db_AAZ.SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        // тут логируется ошибка
+        //        return false;
+        //    }
+        //}
 
-        public bool EditCritValues(int id_value, int id_crit, string valid_values)
-        {
-            try
-            {
-                CritValues CV = db_AAZ.CritValues.Where(p => p.id_value == id_value).FirstOrDefault();
-                CV.id_crit = id_crit;
-                CV.valid_values = valid_values;
+        //public bool EditCritValues(int id_value, int id_crit, string valid_values)
+        //{
+        //    try
+        //    {
+        //        CritValues CV = db_AAZ.CritValues.Where(p => p.id_value == id_value).FirstOrDefault();
+        //        CV.id_crit = id_crit;
+        //        CV.valid_values = valid_values;
 
-                db_AAZ.SaveChanges();
-                return true;
-            }
-            catch (Exception Ex)
-            {
-                // тут логируется ошибка
-                return false;
-            }
-        }
+        //        db_AAZ.SaveChanges();
+        //        return true;
+        //    }
+        //    catch (Exception Ex)
+        //    {
+        //        // тут логируется ошибка
+        //        return false;
+        //    }
+        //}
 
 
         public void AddExpert(string surname_expert, string name_expert, string patronymic_expert,

@@ -222,6 +222,19 @@ namespace ExpertiseWCFService
         [OperationContract]
         List<myRaitinfExpert> GetListRaitingForExpertise(int id_project);
 
+        #region Работа с критериями
+
+        [OperationContract]
+        List<CategoryForCritDirectory> GetListCategoryForCritDirectory();
+
+        [OperationContract]
+        CritForCard GetCriterionsForCard(int id_criterions);
+
+        [OperationContract]
+        EditCriterionsMessage EditCriterions(int id_crit, string name_crit, bool qualit_crit, string valid_values);
+
+        #endregion
+
 
 
         [OperationContract]
@@ -233,11 +246,11 @@ namespace ExpertiseWCFService
         void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert, 
             Boolean delete_expert, string contacts_expert, int[]  ListFOS,string login_expert, string password_expert);
-        [OperationContract]
-        bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
+        //[OperationContract]
+        //bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
 
-        [OperationContract]
-        bool EditCritValues(int id_value, int id_crit, string valid_values);
+        //[OperationContract]
+        //bool EditCritValues(int id_value, int id_crit, string valid_values);
 
         [OperationContract]
         bool EditFiledsOfScience(int id_fos, string name_fos);
@@ -295,6 +308,46 @@ namespace ExpertiseWCFService
         // TODO: Добавьте здесь операции служб
     }
 
+
+    #region Классы для отображения справочника критериев и карточки критерия
+    public class CategoryForCritDirectory
+    {
+        public Categories Category { get; set; }
+        public List<Criterions> ListCriterions { get; set; }
+    }
+    public class CritForCard
+    {
+        public Criterions Criterions { get; set; }
+        public CritValues CritValue { get; set; }
+        public string name_category { get; set; }
+    }
+
+    /// <summary>
+    /// Сообщение о проведённом процессе редактирования критерия
+    /// </summary>
+    public enum EditCriterionsMessage
+    {
+        /// <summary>
+        ///  всё успешно
+        /// </summary>
+        Succes,
+
+        /// <summary>
+        /// Нельзя редактировать, т.к. есть незавершенные экспертизы
+        /// </summary>
+        ErrParticipant,
+
+        /// <summary>
+        /// Нельзя менять природу критерия т.к он учавствует или учавствовал в экспертизах
+        /// </summary>
+        ErrQualit,
+
+        /// <summary>
+        /// Ошибка работы с базой во время редактирования
+        /// </summary>
+        ErrDataBase
+    }
+    #endregion
 
     #region Классы для карточки экспертизы
     public class myExpertiseForCard
@@ -493,6 +546,7 @@ namespace ExpertiseWCFService
         public  List<string> victory_project { get; set; }
         public string status_expertise { get; set; }
     }
+
 
     // объект класса хранит в себе таблицы необходимые для отображения информации в окне создания экспертизы
     public class TablesForExpertise

@@ -8,6 +8,12 @@
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Gethello_InputMessage">
+    <wsdl:part name="parameters" element="tns:Gethello" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Gethello_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GethelloResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetDataUsingDataContract_InputMessage">
     <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
   </wsdl:message>
@@ -410,6 +416,24 @@
   <wsdl:message name="IService1_GetListRaitingForExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListRaitingForExpertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListCategoryForCritDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategoryForCritDirectory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListCategoryForCritDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListCategoryForCritDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCriterionsForCard_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriterionsForCard" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetCriterionsForCard_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCriterionsForCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_EditCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditCriterionsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_test_InputMessage">
     <wsdl:part name="parameters" element="tns:test" />
   </wsdl:message>
@@ -427,18 +451,6 @@
   </wsdl:message>
   <wsdl:message name="IService1_UpdateExpertCard_OutputMessage">
     <wsdl:part name="parameters" element="tns:UpdateExpertCardResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_EditCriterions_InputMessage">
-    <wsdl:part name="parameters" element="tns:EditCriterions" />
-  </wsdl:message>
-  <wsdl:message name="IService1_EditCriterions_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EditCriterionsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_EditCritValues_InputMessage">
-    <wsdl:part name="parameters" element="tns:EditCritValues" />
-  </wsdl:message>
-  <wsdl:message name="IService1_EditCritValues_OutputMessage">
-    <wsdl:part name="parameters" element="tns:EditCritValuesResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_EditFiledsOfScience_InputMessage">
     <wsdl:part name="parameters" element="tns:EditFiledsOfScience" />
@@ -518,13 +530,11 @@
   <wsdl:message name="IService1_Authorization_OutputMessage">
     <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Gethello_InputMessage">
-    <wsdl:part name="parameters" element="tns:Gethello" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Gethello_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GethelloResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Gethello">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GethelloResponse" message="tns:IService1_Gethello_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContract" message="tns:IService1_GetDataUsingDataContract_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetDataUsingDataContractResponse" message="tns:IService1_GetDataUsingDataContract_OutputMessage" />
@@ -793,6 +803,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListRaitingForExpertise" message="tns:IService1_GetListRaitingForExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListRaitingForExpertiseResponse" message="tns:IService1_GetListRaitingForExpertise_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListCategoryForCritDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCategoryForCritDirectory" message="tns:IService1_GetListCategoryForCritDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListCategoryForCritDirectoryResponse" message="tns:IService1_GetListCategoryForCritDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCriterionsForCard">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetCriterionsForCard" message="tns:IService1_GetCriterionsForCard_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetCriterionsForCardResponse" message="tns:IService1_GetCriterionsForCard_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditCriterions" message="tns:IService1_EditCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditCriterionsResponse" message="tns:IService1_EditCriterions_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="test">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/test" message="tns:IService1_test_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/testResponse" message="tns:IService1_test_OutputMessage" />
@@ -804,14 +826,6 @@
     <wsdl:operation name="UpdateExpertCard">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateExpertCard" message="tns:IService1_UpdateExpertCard_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateExpertCardResponse" message="tns:IService1_UpdateExpertCard_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EditCriterions">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditCriterions" message="tns:IService1_EditCriterions_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditCriterionsResponse" message="tns:IService1_EditCriterions_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="EditCritValues">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditCritValues" message="tns:IService1_EditCritValues_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/EditCritValuesResponse" message="tns:IService1_EditCritValues_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="EditFiledsOfScience">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/EditFiledsOfScience" message="tns:IService1_EditFiledsOfScience_InputMessage" />
@@ -865,13 +879,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authorization" message="tns:IService1_Authorization_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthorizationResponse" message="tns:IService1_Authorization_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Gethello">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GethelloResponse" message="tns:IService1_Gethello_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Gethello">
+      <soap:operation soapAction="http://tempuri.org/IService1/Gethello" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetDataUsingDataContract">
       <soap:operation soapAction="http://tempuri.org/IService1/GetDataUsingDataContract" style="document" />
       <wsdl:input>
@@ -1475,6 +1494,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListCategoryForCritDirectory">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListCategoryForCritDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCriterionsForCard">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetCriterionsForCard" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/EditCriterions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="test">
       <soap:operation soapAction="http://tempuri.org/IService1/test" style="document" />
       <wsdl:input>
@@ -1495,24 +1541,6 @@
     </wsdl:operation>
     <wsdl:operation name="UpdateExpertCard">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateExpertCard" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditCriterions">
-      <soap:operation soapAction="http://tempuri.org/IService1/EditCriterions" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EditCritValues">
-      <soap:operation soapAction="http://tempuri.org/IService1/EditCritValues" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1630,15 +1658,6 @@
     </wsdl:operation>
     <wsdl:operation name="Authorization">
       <soap:operation soapAction="http://tempuri.org/IService1/Authorization" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Gethello">
-      <soap:operation soapAction="http://tempuri.org/IService1/Gethello" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -60,6 +60,12 @@
     <Compile Include="AddAuthor.xaml.cs">
       <DependentUpon>AddAuthor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Criterions windows\AddCategory.xaml.cs">
+      <DependentUpon>AddCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Criterions windows\AddCriterions.xaml.cs">
+      <DependentUpon>AddCriterions.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddCriterions_categories.xaml.cs">
       <DependentUpon>AddCriterions_categories.xaml</DependentUpon>
     </Compile>
@@ -72,8 +78,11 @@
     <Compile Include="CompletedExpertises.xaml.cs">
       <DependentUpon>CompletedExpertises.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Criterions.xaml.cs">
+    <Compile Include="Criterions windows\Criterions.xaml.cs">
       <DependentUpon>Criterions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Criterions windows\CriterionsCard.xaml.cs">
+      <DependentUpon>CriterionsCard.xaml</DependentUpon>
     </Compile>
     <Compile Include="CurrentExpertises.xaml.cs">
       <DependentUpon>CurrentExpertises.xaml</DependentUpon>
@@ -134,6 +143,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Criterions windows\AddCategory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Criterions windows\AddCriterions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddCriterions_categories.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -150,7 +167,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Criterions.xaml">
+    <Page Include="Criterions windows\Criterions.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Criterions windows\CriterionsCard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -259,13 +280,22 @@
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Categories.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CompositeType.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.Criterions.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CritForCard.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.CritValues.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.EditCriterionsMessage.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\ServiceReference1\ExpertiseWPFApplication.ServiceReference1.ExpCrit.datasource">
