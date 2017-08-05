@@ -1,0 +1,136 @@
+﻿<Window x:Class="ExpertiseWPFApplication.EspertiseResult"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ExpertiseWPFApplication"
+        mc:Ignorable="d"
+        Title="Результат экспертизы" Height="900" Width="1000" MinHeight="700" MinWidth="900">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="20"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="100" Text="Обработка..." Padding="230,335,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
+        <Grid Grid.Row="1" Grid.Column="1" Name="Grid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="15"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="15"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Row="0" Grid.Column="0" Name="gHierarchy" Grid.ColumnSpan="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Иерархия" TextAlignment="Center"/>
+                <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Black"></Rectangle>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" VerticalScrollBarVisibility="auto" HorizontalScrollBarVisibility="auto">
+                    <Canvas Name="cnvsHierarchy"/>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Результат экспертизы" TextAlignment="Center"/>
+                <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Black"></Rectangle>
+                <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="1*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="20"/>
+                        <ColumnDefinition Width="1*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="   Рейтинг проектов:" TextAlignment="Left"/>
+                    <DataGrid Grid.Row="2" Margin="2,0,0,2" Grid.Column="0" Name="dgExpertiseResult" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    </DataGrid>
+                    <Grid Grid.Row="2" Grid.Column="2" Name="gSupport">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="1*"/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition Height="1*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="4*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="1" FontSize="15" VerticalAlignment="Bottom" TextWrapping="Wrap" Text="Поддержать проекты-победители?" TextAlignment="Center"/>
+                        <Button Grid.Row="2" Grid.Column="1" VerticalAlignment="Top" Height="50" Width="150" Content="Поддержать" Name="btnSupport" Click="btnSupport_Click"/>
+                    </Grid>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Попарное сравнение критериев" TextAlignment="Center"/>
+                <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Black"></Rectangle>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Height="auto" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Grid Grid.Row="2" Grid.Column="0" Name="gInsideStage1">
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="График" TextAlignment="Center"/>
+                <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Black"></Rectangle>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Height="300" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Center">
+                    <Grid Grid.Row="0" Grid.Column="0" Name="gGraphic">
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+            <Grid Grid.Row="6" Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20"/>
+                    <RowDefinition Height="2"/>
+                    <RowDefinition Height="1*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="Оценивание проектов по критериям" TextAlignment="Center"/>
+                <Rectangle Grid.Row="2" Grid.Column="0" Stroke="Black"></Rectangle>
+                <ScrollViewer Grid.Row="2" Grid.Column="0" Height="auto" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                    <Grid Grid.Row="2" Grid.Column="0" Name="gInsideStage2">
+                    </Grid>
+                </ScrollViewer>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

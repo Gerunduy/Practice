@@ -214,6 +214,9 @@ namespace ExpertiseWCFService
         TablesForEditExpertise GetTabelsForEditExpertiseByID(int id_expertise);
 
         [OperationContract]
+        bool SupportProject(int id_expertise, int[] arrIdProjects);
+
+        [OperationContract]
         bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
 
         [OperationContract]
@@ -356,6 +359,7 @@ namespace ExpertiseWCFService
         public string name_expertise { get; set; }
         public string fos_expertise { get; set; }
         public string status { get; set; }
+        public bool end_expertise { get; set; }
         public System.DateTime date_expertise { get; set; }
         public System.DateTime end_date_expertise { get; set; }
         public List<myProjectForExpertiseCard> ListProjects { get; set; }

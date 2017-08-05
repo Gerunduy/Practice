@@ -117,3 +117,5 @@ C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Прог�
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions windows\AddCriterions.baml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions windows\Criterions.baml
 C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\Criterions windows\CriterionsCard.baml
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\EspertiseResult.g.cs
+C:\Users\Gerunduy\Desktop\КузГТУ\Практика\Задание\Программа\Practice\Expertise\ExpertiseWPFApplication\obj\Debug\EspertiseResult.baml

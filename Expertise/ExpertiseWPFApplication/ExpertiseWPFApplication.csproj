@@ -90,6 +90,9 @@
     <Compile Include="EditExpertiseCard.xaml.cs">
       <DependentUpon>EditExpertiseCard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="EspertiseResult.xaml.cs">
+      <DependentUpon>EspertiseResult.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Examination windows\Examination.xaml.cs">
       <DependentUpon>Examination.xaml</DependentUpon>
     </Compile>
@@ -120,6 +123,7 @@
     <Compile Include="MarkForExaminationProject.cs" />
     <Compile Include="myCompareRow.cs" />
     <Compile Include="myExpertiseComissionResultRow.cs" />
+    <Compile Include="myExpertiseProjectResult.cs" />
     <Compile Include="myMarkRow.cs" />
     <Compile Include="NewExpertiseWindow.xaml.cs">
       <DependentUpon>NewExpertiseWindow.xaml</DependentUpon>
@@ -180,6 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="EditExpertiseCard.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EspertiseResult.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

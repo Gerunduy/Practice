@@ -1758,6 +1758,7 @@ namespace ExpertiseWCFService
                 result.name_expertise = E.name_expertise;
                 result.fos_expertise = db_AAZ.FiledsOfScience.Where(o => o.id_fos == E.id_fos).FirstOrDefault().name_fos;
                 if (E.end_expertise) result.status = "Завершена"; else result.status = "В работе";
+                result.end_expertise = E.end_expertise;
                 result.date_expertise = E.date_expertise;
                 result.end_date_expertise = E.end_date_expertise;
                 result.count_project_expertise = E.count_proj_expertise;
@@ -1772,8 +1773,7 @@ namespace ExpertiseWCFService
                     P.name_project = proj.name_project;
                     P.lead_project = proj.lead_project;
                     //P.organization = 
-                    //P.Rating = 
-                    //P.accept = 
+                    if (PE.accept) P.accept = "Да"; else P.accept = "Нет";
                     result.ListProjects.Add(P);
                 }
                 // =======================================================================================================
@@ -2059,6 +2059,29 @@ namespace ExpertiseWCFService
                 TablesForEditExpertise result = new TablesForEditExpertise();
                 result.Err = true;
                 return result;
+            }
+        }
+
+        public bool SupportProject(int id_expertise, int[] arrIdProjects)
+        {
+            try
+            {
+                foreach (int idProj in arrIdProjects)
+                {
+                    ProjectExpertise P = db_AAZ.ProjectExpertise.Where(p => p.id_expertise == id_expertise).Where(p => p.id_project == idProj).FirstOrDefault();
+                    P.accept = true;
+                }
+                Expertises E = db_AAZ.Expertises.Where(e => e.id_expertise == id_expertise).FirstOrDefault();
+                E.end_expertise = true;
+                E.end_date_expertise = DateTime.Now;
+
+                db_AAZ.SaveChanges();
+                return true;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                return false;
             }
         }
 

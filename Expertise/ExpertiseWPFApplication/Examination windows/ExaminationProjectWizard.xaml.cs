@@ -75,7 +75,7 @@ namespace ExpertiseWPFApplication
             gContent.Children.Clear();
             gContent.RowDefinitions.Clear();
 
-            if (CurrCrit.qualit_crit) // если критерий количественный
+            if (!CurrCrit.qualit_crit) // если критерий количественный
             {
                 List<string> ltmpValidValues = CurrCrit.CritValues[0].valid_values.Split(new char[] { ';' }).ToList();
                 int C = ltmpValidValues.Count();

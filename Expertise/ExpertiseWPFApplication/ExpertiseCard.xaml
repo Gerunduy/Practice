@@ -143,10 +143,20 @@
                         <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <TextBlock Grid.Row="0" Grid.Column="0" Text="Результат работы экспертной комиссии:" TextAlignment="Left"/>
-                    <Button Grid.Row="0" Grid.Column="2" Content="Смотреть график" Name="btnShowGraphic"/>
+                    <Button Grid.Row="0" Grid.Column="2" Content="Смотреть результат" Name="btnShowResult" Click="btnShowResult_Click"/>
                 </Grid>
                 <TextBlock Grid.Row="2" Grid.Column="0" Name="tblResultExpertiseWait" FontSize="40" TextWrapping="Wrap" Text="Не все эксперты выставили оценки." Padding="120,40,100,0" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
-                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExpertCommissionResult" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False"></DataGrid>
+                <DataGrid Grid.Row="2" Grid.Column="0" Name="dgExpertiseExpertCommissionResult" AutoGenerateColumns="False" IsReadOnly="True" CanUserAddRows="False">
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="0">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="В карточку" Name="btnGoToExpertCard"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
             </Grid>
         </Grid>
     </Grid>

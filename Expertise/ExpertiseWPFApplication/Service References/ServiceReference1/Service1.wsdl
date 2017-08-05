@@ -8,6 +8,12 @@
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_Authorization_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authorization" />
+  </wsdl:message>
+  <wsdl:message name="IService1_Authorization_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Gethello_InputMessage">
     <wsdl:part name="parameters" element="tns:Gethello" />
   </wsdl:message>
@@ -398,6 +404,12 @@
   <wsdl:message name="IService1_GetTabelsForEditExpertiseByID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTabelsForEditExpertiseByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_SupportProject_InputMessage">
+    <wsdl:part name="parameters" element="tns:SupportProject" />
+  </wsdl:message>
+  <wsdl:message name="IService1_SupportProject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SupportProjectResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_UpdateProjectExpertise_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateProjectExpertise" />
   </wsdl:message>
@@ -524,13 +536,11 @@
   <wsdl:message name="IService1_AddFiledsOfScience_OutputMessage">
     <wsdl:part name="parameters" element="tns:AddFiledsOfScienceResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_Authorization_InputMessage">
-    <wsdl:part name="parameters" element="tns:Authorization" />
-  </wsdl:message>
-  <wsdl:message name="IService1_Authorization_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AuthorizationResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="Authorization">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authorization" message="tns:IService1_Authorization_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthorizationResponse" message="tns:IService1_Authorization_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Gethello">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Gethello" message="tns:IService1_Gethello_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GethelloResponse" message="tns:IService1_Gethello_OutputMessage" />
@@ -791,6 +801,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTabelsForEditExpertiseByID" message="tns:IService1_GetTabelsForEditExpertiseByID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTabelsForEditExpertiseByIDResponse" message="tns:IService1_GetTabelsForEditExpertiseByID_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="SupportProject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/SupportProject" message="tns:IService1_SupportProject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/SupportProjectResponse" message="tns:IService1_SupportProject_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="UpdateProjectExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateProjectExpertise" message="tns:IService1_UpdateProjectExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateProjectExpertiseResponse" message="tns:IService1_UpdateProjectExpertise_OutputMessage" />
@@ -875,13 +889,18 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScience" message="tns:IService1_AddFiledsOfScience_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScienceResponse" message="tns:IService1_AddFiledsOfScience_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Authorization">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authorization" message="tns:IService1_Authorization_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthorizationResponse" message="tns:IService1_Authorization_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Authorization">
+      <soap:operation soapAction="http://tempuri.org/IService1/Authorization" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Gethello">
       <soap:operation soapAction="http://tempuri.org/IService1/Gethello" style="document" />
       <wsdl:input>
@@ -1467,6 +1486,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="SupportProject">
+      <soap:operation soapAction="http://tempuri.org/IService1/SupportProject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="UpdateProjectExpertise">
       <soap:operation soapAction="http://tempuri.org/IService1/UpdateProjectExpertise" style="document" />
       <wsdl:input>
@@ -1649,15 +1677,6 @@
     </wsdl:operation>
     <wsdl:operation name="AddFiledsOfScience">
       <soap:operation soapAction="http://tempuri.org/IService1/AddFiledsOfScience" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="Authorization">
-      <soap:operation soapAction="http://tempuri.org/IService1/Authorization" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
