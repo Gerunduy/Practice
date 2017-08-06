@@ -42,7 +42,7 @@
             </Grid>
             <Grid Grid.Row="2" Grid.Column="0" Name="gContent">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="40" MinHeight="40" MaxHeight="100"/>
+                    <RowDefinition Height="100"/>
                     <RowDefinition Height="15"/>
                     <RowDefinition Height="25"/>
                     <RowDefinition Height="1*"/>

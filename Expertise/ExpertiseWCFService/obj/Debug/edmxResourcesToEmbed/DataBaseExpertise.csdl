@@ -239,6 +239,7 @@
     <Property Name="delete_project" Type="Boolean" Nullable="false" />
     <NavigationProperty Name="ProjectExpertise" Relationship="db_AAZModel.FK_ProjectExpertise_Projects" FromRole="Projects" ToRole="ProjectExpertise" />
     <Property Name="exsist_exp_project" Type="Boolean" Nullable="false" />
+    <Property Name="org_project" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>

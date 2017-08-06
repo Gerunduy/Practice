@@ -32,6 +32,7 @@ namespace ExpertiseWCFService
         public string email_project { get; set; }
         public bool delete_project { get; set; }
         public bool exsist_exp_project { get; set; }
+        public string org_project { get; set; }
     
         public virtual GRNTI GRNTI { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

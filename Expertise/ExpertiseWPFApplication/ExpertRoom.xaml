@@ -19,11 +19,13 @@
         </Grid.ColumnDefinitions>
         <Grid Grid.Row="1" Grid.Column="1">
             <Grid.RowDefinitions>
-                <RowDefinition Height="auto"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition Height="30"/>
                 <RowDefinition Height="1*"/>
             </Grid.RowDefinitions>
-            <TextBlock Grid.Row="0" Grid.Column="1" Text="Эксперт: Фамилия Имя Отчество" VerticalAlignment="Center" TextAlignment="Right" Name="tblExpertFullName"/>
+            <Border BorderThickness="1" BorderBrush="#FF9E9E9E">
+                <TextBlock Grid.Row="0" Grid.Column="2" Text="Эксперт: Фамилия Имя Отчество" VerticalAlignment="Center" TextAlignment="Right" Name="tblExpertFullName"/>
+            </Border>
             <Grid Grid.Row="2" Grid.Column="0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="20"/>

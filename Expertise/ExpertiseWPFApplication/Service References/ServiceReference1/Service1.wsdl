@@ -4,10 +4,28 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" />
-      <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" />
     </xsd:schema>
   </wsdl:types>
+  <wsdl:message name="IService1_AddExpert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpert" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddExpert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExpertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCriterions_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCriterions" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddCriterions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCriterionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddFiledsOfScience_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddFiledsOfScience" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddFiledsOfScience_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddFiledsOfScienceResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_Authorization_InputMessage">
     <wsdl:part name="parameters" element="tns:Authorization" />
   </wsdl:message>
@@ -422,11 +440,29 @@
   <wsdl:message name="IService1_GetTablesForExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTablesForExpertiseResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetListNotExistProjects_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNotExistProjects" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetListNotExistProjects_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetListNotExistProjectsResponse" />
+  </wsdl:message>
   <wsdl:message name="IService1_GetListRaitingForExpertise_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListRaitingForExpertise" />
   </wsdl:message>
   <wsdl:message name="IService1_GetListRaitingForExpertise_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetListRaitingForExpertiseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetmyProjectsfForID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetmyProjectsfForID" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetmyProjectsfForID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetmyProjectsfForIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetExpertsWithCountExpertise_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertsWithCountExpertise" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetExpertsWithCountExpertise_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetExpertsWithCountExpertiseResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_GetListCategoryForCritDirectory_InputMessage">
     <wsdl:part name="parameters" element="tns:GetListCategoryForCritDirectory" />
@@ -518,25 +554,19 @@
   <wsdl:message name="IService1_DeleteProject_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProjectResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_AddExpert_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddExpert" />
-  </wsdl:message>
-  <wsdl:message name="IService1_AddExpert_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddExpertResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_AddCriterions_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddCriterions" />
-  </wsdl:message>
-  <wsdl:message name="IService1_AddCriterions_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddCriterionsResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_AddFiledsOfScience_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddFiledsOfScience" />
-  </wsdl:message>
-  <wsdl:message name="IService1_AddFiledsOfScience_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddFiledsOfScienceResponse" />
-  </wsdl:message>
   <wsdl:portType name="IService1">
+    <wsdl:operation name="AddExpert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert" message="tns:IService1_AddExpert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddExpertResponse" message="tns:IService1_AddExpert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCriterions">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCriterions" message="tns:IService1_AddCriterions_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCriterionsResponse" message="tns:IService1_AddCriterions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddFiledsOfScience">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScience" message="tns:IService1_AddFiledsOfScience_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScienceResponse" message="tns:IService1_AddFiledsOfScience_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Authorization">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/Authorization" message="tns:IService1_Authorization_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/AuthorizationResponse" message="tns:IService1_Authorization_OutputMessage" />
@@ -813,9 +843,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertise" message="tns:IService1_GetTablesForExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetTablesForExpertiseResponse" message="tns:IService1_GetTablesForExpertise_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetListNotExistProjects">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListNotExistProjects" message="tns:IService1_GetListNotExistProjects_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListNotExistProjectsResponse" message="tns:IService1_GetListNotExistProjects_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetListRaitingForExpertise">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListRaitingForExpertise" message="tns:IService1_GetListRaitingForExpertise_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetListRaitingForExpertiseResponse" message="tns:IService1_GetListRaitingForExpertise_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetmyProjectsfForID">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetmyProjectsfForID" message="tns:IService1_GetmyProjectsfForID_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetmyProjectsfForIDResponse" message="tns:IService1_GetmyProjectsfForID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertsWithCountExpertise">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetExpertsWithCountExpertise" message="tns:IService1_GetExpertsWithCountExpertise_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetExpertsWithCountExpertiseResponse" message="tns:IService1_GetExpertsWithCountExpertise_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetListCategoryForCritDirectory">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetListCategoryForCritDirectory" message="tns:IService1_GetListCategoryForCritDirectory_InputMessage" />
@@ -877,21 +919,36 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteProject" message="tns:IService1_DeleteProject_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteProjectResponse" message="tns:IService1_DeleteProject_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddExpert">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddExpert" message="tns:IService1_AddExpert_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddExpertResponse" message="tns:IService1_AddExpert_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AddCriterions">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddCriterions" message="tns:IService1_AddCriterions_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddCriterionsResponse" message="tns:IService1_AddCriterions_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="AddFiledsOfScience">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScience" message="tns:IService1_AddFiledsOfScience_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddFiledsOfScienceResponse" message="tns:IService1_AddFiledsOfScience_OutputMessage" />
-    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddExpert">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddExpert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCriterions">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddCriterions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddFiledsOfScience">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddFiledsOfScience" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="Authorization">
       <soap:operation soapAction="http://tempuri.org/IService1/Authorization" style="document" />
       <wsdl:input>
@@ -1513,8 +1570,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetListNotExistProjects">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetListNotExistProjects" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetListRaitingForExpertise">
       <soap:operation soapAction="http://tempuri.org/IService1/GetListRaitingForExpertise" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetmyProjectsfForID">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetmyProjectsfForID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetExpertsWithCountExpertise">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetExpertsWithCountExpertise" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -1650,33 +1734,6 @@
     </wsdl:operation>
     <wsdl:operation name="DeleteProject">
       <soap:operation soapAction="http://tempuri.org/IService1/DeleteProject" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddExpert">
-      <soap:operation soapAction="http://tempuri.org/IService1/AddExpert" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddCriterions">
-      <soap:operation soapAction="http://tempuri.org/IService1/AddCriterions" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="AddFiledsOfScience">
-      <soap:operation soapAction="http://tempuri.org/IService1/AddFiledsOfScience" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

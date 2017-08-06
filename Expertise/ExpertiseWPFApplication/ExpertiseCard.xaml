@@ -91,7 +91,7 @@
                         <DataGridTemplateColumn Header="В карточку" Width="auto" DisplayIndex="6">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="В карточку" Name="btnGoToProjectCard"/>
+                                    <Button Content="В карточку" Name="btnGoToProjectCard" Click="btnGoToProjectCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>
@@ -151,7 +151,7 @@
                         <DataGridTemplateColumn Header="" Width="auto" DisplayIndex="0">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Button Content="В карточку" Name="btnGoToExpertCard"/>
+                                    <Button Content="В карточку" Name="btnGoToExpertCard" Click="btnGoToExpertCard_Click"/>
                                 </DataTemplate>
                             </DataGridTemplateColumn.CellTemplate>
                         </DataGridTemplateColumn>

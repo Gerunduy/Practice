@@ -1,15 +1,659 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfint">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/ExpertiseWCFService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:51335/Service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="Experts">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="int" type="xs:int" />
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+      <xs:element minOccurs="0" name="ExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
+      <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:ArrayOfMarks" />
+      <xs:element minOccurs="0" name="comission_chairman" type="xs:boolean" />
+      <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="degree_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delete_expert" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="job_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patronymic_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="post_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="surname_expert" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
-  <xs:complexType name="ArrayOfstring">
+  <xs:element name="Experts" nillable="true" type="tns:Experts" />
+  <xs:complexType name="ArrayOfCritCompare">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CritCompare" nillable="true" type="tns:CritCompare" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfstring" nillable="true" type="tns:ArrayOfstring" />
+  <xs:element name="ArrayOfCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+  <xs:complexType name="CritCompare">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="Experts" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="id_compare" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="mark_compare" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritCompare" nillable="true" type="tns:CritCompare" />
+  <xs:complexType name="ArrayOfCritCompareCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CritCompareCrit" nillable="true" type="tns:CritCompareCrit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
+  <xs:complexType name="CritCompareCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:CritCompare" />
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="id_compare" type="xs:int" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_crit_crcompare" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritCompareCrit" nillable="true" type="tns:CritCompareCrit" />
+  <xs:complexType name="Criterions">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="CritCompareCrit" nillable="true" type="tns:ArrayOfCritCompareCrit" />
+      <xs:element minOccurs="0" name="CritValues" nillable="true" type="tns:ArrayOfCritValues" />
+      <xs:element minOccurs="0" name="ExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
+      <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:ArrayOfMarks" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="name_crit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qualit_crit" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Criterions" nillable="true" type="tns:Criterions" />
+  <xs:complexType name="ArrayOfCatCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CatCrit" nillable="true" type="tns:CatCrit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+  <xs:complexType name="CatCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Categories" nillable="true" type="tns:Categories" />
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="id_cat" type="xs:int" />
+      <xs:element minOccurs="0" name="id_cat_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CatCrit" nillable="true" type="tns:CatCrit" />
+  <xs:complexType name="Categories">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="id_category" type="xs:int" />
+      <xs:element minOccurs="0" name="name_category" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Categories" nillable="true" type="tns:Categories" />
+  <xs:complexType name="ArrayOfCritValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CritValues" nillable="true" type="tns:CritValues" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCritValues" nillable="true" type="tns:ArrayOfCritValues" />
+  <xs:complexType name="CritValues">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_value" type="xs:int" />
+      <xs:element minOccurs="0" name="valid_values" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritValues" nillable="true" type="tns:CritValues" />
+  <xs:complexType name="ArrayOfExpCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpCrit" nillable="true" type="tns:ExpCrit" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
+  <xs:complexType name="ExpCrit">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_exp" type="xs:int" />
+      <xs:element minOccurs="0" name="id_exp_crit" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpCrit" nillable="true" type="tns:ExpCrit" />
+  <xs:complexType name="Expertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+      <xs:element minOccurs="0" name="ExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
+      <xs:element minOccurs="0" name="ExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
+      <xs:element minOccurs="0" name="ExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
+      <xs:element minOccurs="0" name="ProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="begin_expertise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="count_proj_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expertises" nillable="true" type="tns:Expertises" />
+  <xs:complexType name="ArrayOfExpertiseExpert">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpertiseExpert" nillable="true" type="tns:ExpertiseExpert" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
+  <xs:complexType name="ExpertiseExpert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="Experts" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="end_marking" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expertise_expert" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpertiseExpert" nillable="true" type="tns:ExpertiseExpert" />
+  <xs:complexType name="ArrayOfExpertiseMark">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpertiseMark" nillable="true" type="tns:ExpertiseMark" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
+  <xs:complexType name="ExpertiseMark">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="Marks" nillable="true" type="tns:Marks" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expertise_mark" type="xs:int" />
+      <xs:element minOccurs="0" name="id_mark" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpertiseMark" nillable="true" type="tns:ExpertiseMark" />
+  <xs:complexType name="Marks">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="ExpertiseMark" nillable="true" type="tns:ArrayOfExpertiseMark" />
+      <xs:element minOccurs="0" name="Experts" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="id_crit" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="id_mark" type="xs:int" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="rating" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Marks" nillable="true" type="tns:Marks" />
+  <xs:complexType name="ArrayOfProjectExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectExpertise" nillable="true" type="tns:ProjectExpertise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+  <xs:complexType name="ProjectExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Expertises" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
+      <xs:element minOccurs="0" name="accept" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="id_project_expertise" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectExpertise" nillable="true" type="tns:ProjectExpertise" />
+  <xs:complexType name="Projects">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GRNTI" nillable="true" type="tns:GRNTI" />
+      <xs:element minOccurs="0" name="ProjectAuthors" nillable="true" type="tns:ArrayOfProjectAuthors" />
+      <xs:element minOccurs="0" name="ProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="ProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="delete_project" type="xs:boolean" />
+      <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="exsist_exp_project" type="xs:boolean" />
+      <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="org_project" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Projects" nillable="true" type="tns:Projects" />
+  <xs:complexType name="GRNTI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:ArrayOfProjects" />
+      <xs:element minOccurs="0" name="code_grnti" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_grnti" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GRNTI" nillable="true" type="tns:GRNTI" />
+  <xs:complexType name="ArrayOfProjects">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Projects" nillable="true" type="tns:Projects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjects" nillable="true" type="tns:ArrayOfProjects" />
+  <xs:complexType name="ArrayOfProjectAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectAuthors" nillable="true" type="tns:ProjectAuthors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectAuthors" nillable="true" type="tns:ArrayOfProjectAuthors" />
+  <xs:complexType name="ProjectAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Authors" nillable="true" type="tns:Authors" />
+      <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
+      <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      <xs:element minOccurs="0" name="id_proj" type="xs:int" />
+      <xs:element minOccurs="0" name="id_proj_author" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectAuthors" nillable="true" type="tns:ProjectAuthors" />
+  <xs:complexType name="Authors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ProjectAuthors" nillable="true" type="tns:ArrayOfProjectAuthors" />
+      <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      <xs:element minOccurs="0" name="name_author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patronymic_author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="surname_author" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Authors" nillable="true" type="tns:Authors" />
+  <xs:complexType name="ArrayOfProjectFos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProjectFos" nillable="true" type="tns:ProjectFos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+  <xs:complexType name="ProjectFos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FiledsOfScience" nillable="true" type="tns:FiledsOfScience" />
+      <xs:element minOccurs="0" name="Projects" nillable="true" type="tns:Projects" />
+      <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="id_project_fos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProjectFos" nillable="true" type="tns:ProjectFos" />
+  <xs:complexType name="FiledsOfScience">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="ProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+      <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="FiledsOfScience" nillable="true" type="tns:FiledsOfScience" />
+  <xs:complexType name="ArrayOfExpertFos">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpertFos" nillable="true" type="tns:ExpertFos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+  <xs:complexType name="ExpertFos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Experts" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="FiledsOfScience" nillable="true" type="tns:FiledsOfScience" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="id_expert_fos" type="xs:int" />
+      <xs:element minOccurs="0" name="id_fos" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpertFos" nillable="true" type="tns:ExpertFos" />
+  <xs:complexType name="ArrayOfMarks">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Marks" nillable="true" type="tns:Marks" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMarks" nillable="true" type="tns:ArrayOfMarks" />
+  <xs:complexType name="CompositeType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
+      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
+  <xs:complexType name="myExpertiseExaminationTables">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ListCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+      <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="ListMark" nillable="true" type="tns:ArrayOfMarks" />
+      <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfProjects" />
+      <xs:element minOccurs="0" name="expert" nillable="true" type="tns:Experts" />
+      <xs:element minOccurs="0" name="expertise" nillable="true" type="tns:Expertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myExpertiseExaminationTables" nillable="true" type="tns:myExpertiseExaminationTables" />
+  <xs:complexType name="ArrayOfCriterions">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Criterions" nillable="true" type="tns:Criterions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+  <xs:complexType name="ArrayOfmyAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myAuthors" nillable="true" type="tns:myAuthors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyAuthors" nillable="true" type="tns:ArrayOfmyAuthors" />
+  <xs:complexType name="myAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      <xs:element minOccurs="0" name="name_author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patronymic_author" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="surname_author" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myAuthors" nillable="true" type="tns:myAuthors" />
+  <xs:complexType name="ArrayOfExperts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Experts" nillable="true" type="tns:Experts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExperts" nillable="true" type="tns:ArrayOfExperts" />
+  <xs:complexType name="ArrayOfCategories">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Categories" nillable="true" type="tns:Categories" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategories" nillable="true" type="tns:ArrayOfCategories" />
+  <xs:complexType name="ArrayOfGRNTI">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GRNTI" nillable="true" type="tns:GRNTI" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGRNTI" nillable="true" type="tns:ArrayOfGRNTI" />
+  <xs:complexType name="ArrayOfExpertsWithCountExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ExpertsWithCountExpertise" nillable="true" type="tns:ExpertsWithCountExpertise" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertsWithCountExpertise" nillable="true" type="tns:ArrayOfExpertsWithCountExpertise" />
+  <xs:complexType name="ExpertsWithCountExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FIO" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ListFOS" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+      <xs:element minOccurs="0" name="commision_chairman" type="xs:boolean" />
+      <xs:element minOccurs="0" name="contacts_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="countexpertise" type="xs:int" />
+      <xs:element minOccurs="0" name="degree_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="degree_rank_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="delete_expert" type="xs:boolean" />
+      <xs:element minOccurs="0" name="id_expert" type="xs:int" />
+      <xs:element minOccurs="0" name="job_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="login_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="password_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patronymic_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="post_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rank_expert" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="surname_expert" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExpertsWithCountExpertise" nillable="true" type="tns:ExpertsWithCountExpertise" />
+  <xs:complexType name="ArrayOfFiledsOfScience">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="FiledsOfScience" nillable="true" type="tns:FiledsOfScience" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfFiledsOfScience" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+  <xs:complexType name="ArrayOfmyProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myProject" nillable="true" type="tns:myProject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyProject" nillable="true" type="tns:ArrayOfmyProject" />
+  <xs:complexType name="myProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="expertisa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="org_project" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myProject" nillable="true" type="tns:myProject" />
+  <xs:complexType name="ArrayOfExpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expertises" nillable="true" type="tns:Expertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertises" nillable="true" type="tns:ArrayOfExpertises" />
+  <xs:complexType name="ArrayOfAuthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Authors" nillable="true" type="tns:Authors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAuthors" nillable="true" type="tns:ArrayOfAuthors" />
+  <xs:complexType name="myExpertiseForCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ListCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="ListCategories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="ListCritCompare" nillable="true" type="tns:ArrayOfCritCompare" />
+      <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="ListExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="ListMark" nillable="true" type="tns:ArrayOfMarks" />
+      <xs:element minOccurs="0" name="ListProjects" nillable="true" type="tns:ArrayOfmyProjectForExpertiseCard" />
+      <xs:element minOccurs="0" name="MarkIsCompleted" type="xs:boolean" />
+      <xs:element minOccurs="0" name="begin_expertise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="count_project_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_expertise" type="xs:boolean" />
+      <xs:element minOccurs="0" name="fos_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myExpertiseForCard" nillable="true" type="tns:myExpertiseForCard" />
+  <xs:complexType name="ArrayOfmyProjectForExpertiseCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myProjectForExpertiseCard" nillable="true" type="tns:myProjectForExpertiseCard" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyProjectForExpertiseCard" nillable="true" type="tns:ArrayOfmyProjectForExpertiseCard" />
+  <xs:complexType name="myProjectForExpertiseCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Rating" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="accept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="organization" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myProjectForExpertiseCard" nillable="true" type="tns:myProjectForExpertiseCard" />
+  <xs:complexType name="ArrayOfmyCompletedexpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCompletedexpertises" nillable="true" type="tns:ArrayOfmyCompletedexpertises" />
+  <xs:complexType name="myCompletedexpertises">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListExperts" nillable="true" type="q1:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ListProject" nillable="true" type="tns:ArrayOfmyCompletedexpertisesProject" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="end_date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCompletedexpertises" nillable="true" type="tns:myCompletedexpertises" />
+  <xs:complexType name="ArrayOfmyCompletedexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCompletedexpertisesProject" nillable="true" type="tns:myCompletedexpertisesProject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCompletedexpertisesProject" nillable="true" type="tns:ArrayOfmyCompletedexpertisesProject" />
+  <xs:complexType name="myCompletedexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="delete_project" type="xs:boolean" />
+      <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="is_accept" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCompletedexpertisesProject" nillable="true" type="tns:myCompletedexpertisesProject" />
+  <xs:complexType name="ArrayOfmyCurrentexpertises">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCurrentexpertises" nillable="true" type="tns:myCurrentexpertises" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCurrentexpertises" nillable="true" type="tns:ArrayOfmyCurrentexpertises" />
+  <xs:complexType name="myCurrentexpertises">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="ListExperts" nillable="true" type="q2:ArrayOfstring" />
+      <xs:element minOccurs="0" name="ListProject" nillable="true" type="tns:ArrayOfmyCurrentexpertisesProject" />
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCurrentexpertises" nillable="true" type="tns:myCurrentexpertises" />
+  <xs:complexType name="ArrayOfmyCurrentexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myCurrentexpertisesProject" nillable="true" type="tns:myCurrentexpertisesProject" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyCurrentexpertisesProject" nillable="true" type="tns:ArrayOfmyCurrentexpertisesProject" />
+  <xs:complexType name="myCurrentexpertisesProject">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="begin_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="delete_project" type="xs:boolean" />
+      <xs:element minOccurs="0" name="email_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="end_project" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="grnti_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_project" type="xs:int" />
+      <xs:element minOccurs="0" name="lead_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="money_project" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_project" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myCurrentexpertisesProject" nillable="true" type="tns:myCurrentexpertisesProject" />
+  <xs:complexType name="TablesForEditExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Expertise" nillable="true" type="tns:Expertises" />
+      <xs:element minOccurs="0" name="lCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="lCatigories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="lCritValues" nillable="true" type="tns:ArrayOfCritValues" />
+      <xs:element minOccurs="0" name="lCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="lExpCrit" nillable="true" type="tns:ArrayOfExpCrit" />
+      <xs:element minOccurs="0" name="lExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="lExpertiseExpert" nillable="true" type="tns:ArrayOfExpertiseExpert" />
+      <xs:element minOccurs="0" name="lExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="lFOS" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+      <xs:element minOccurs="0" name="lProjectExpertise" nillable="true" type="tns:ArrayOfProjectExpertise" />
+      <xs:element minOccurs="0" name="lProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="lProjects" nillable="true" type="tns:ArrayOfProjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablesForEditExpertise" nillable="true" type="tns:TablesForEditExpertise" />
+  <xs:complexType name="TablesForExpertise">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Err" type="xs:boolean" />
+      <xs:element minOccurs="0" name="lCatCrit" nillable="true" type="tns:ArrayOfCatCrit" />
+      <xs:element minOccurs="0" name="lCatigories" nillable="true" type="tns:ArrayOfCategories" />
+      <xs:element minOccurs="0" name="lCritValues" nillable="true" type="tns:ArrayOfCritValues" />
+      <xs:element minOccurs="0" name="lCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+      <xs:element minOccurs="0" name="lExpertFos" nillable="true" type="tns:ArrayOfExpertFos" />
+      <xs:element minOccurs="0" name="lExperts" nillable="true" type="tns:ArrayOfExperts" />
+      <xs:element minOccurs="0" name="lFOS" nillable="true" type="tns:ArrayOfFiledsOfScience" />
+      <xs:element minOccurs="0" name="lProjectFos" nillable="true" type="tns:ArrayOfProjectFos" />
+      <xs:element minOccurs="0" name="lProjects" nillable="true" type="tns:ArrayOfProjects" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TablesForExpertise" nillable="true" type="tns:TablesForExpertise" />
+  <xs:complexType name="ArrayOfmyRaitinfExpert">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="myRaitinfExpert" nillable="true" type="tns:myRaitinfExpert" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfmyRaitinfExpert" nillable="true" type="tns:ArrayOfmyRaitinfExpert" />
+  <xs:complexType name="myRaitinfExpert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name_crit" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="raiting_crit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="myRaitinfExpert" nillable="true" type="tns:myRaitinfExpert" />
+  <xs:complexType name="ArrayOfCategoryForCritDirectory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CategoryForCritDirectory" nillable="true" type="tns:CategoryForCritDirectory" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategoryForCritDirectory" nillable="true" type="tns:ArrayOfCategoryForCritDirectory" />
+  <xs:complexType name="CategoryForCritDirectory">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Category" nillable="true" type="tns:Categories" />
+      <xs:element minOccurs="0" name="ListCriterions" nillable="true" type="tns:ArrayOfCriterions" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CategoryForCritDirectory" nillable="true" type="tns:CategoryForCritDirectory" />
+  <xs:complexType name="CritForCard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CritValue" nillable="true" type="tns:CritValues" />
+      <xs:element minOccurs="0" name="Criterions" nillable="true" type="tns:Criterions" />
+      <xs:element minOccurs="0" name="name_category" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CritForCard" nillable="true" type="tns:CritForCard" />
+  <xs:simpleType name="EditCriterionsMessage">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Succes" />
+      <xs:enumeration value="ErrParticipant" />
+      <xs:enumeration value="ErrQualit" />
+      <xs:enumeration value="ErrDataBase" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="EditCriterionsMessage" nillable="true" type="tns:EditCriterionsMessage" />
+  <xs:complexType name="ArrayOfExpertise_Expert">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfExpertise_Expert" nillable="true" type="tns:ArrayOfExpertise_Expert" />
+  <xs:complexType name="Expertise_Expert">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date_expertise" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id_expertise" type="xs:int" />
+      <xs:element minOccurs="0" name="name_expertise" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="name_fos" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="number" type="xs:int" />
+      <xs:element minOccurs="0" name="status_expertise" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="victory_project" nillable="true" type="q3:ArrayOfstring" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Expertise_Expert" nillable="true" type="tns:Expertise_Expert" />
 </xs:schema>

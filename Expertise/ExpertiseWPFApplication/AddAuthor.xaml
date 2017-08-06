@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="AddAuthor" Height="300" Width="300" MaxHeight="300" MaxWidth="300">
-    <Grid>
-        <Label x:Name="label" Content="Фамилия" HorizontalAlignment="Left" Margin="30,59,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Имя" HorizontalAlignment="Left" Margin="30,87,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label2" Content="Отчество" HorizontalAlignment="Left" Margin="30,115,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="128,62,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="128,90,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="128,118,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="91,168,0,0" VerticalAlignment="Top" Width="100" Height="33" Click="button_Click"/>
+        Title="Новый автор" Height="198.305" Width="300" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,2">
+        <Label x:Name="label" Content="Фамилия:" HorizontalAlignment="Left" Margin="11,15,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label1" Content="Имя:" HorizontalAlignment="Left" Margin="38,41,0,0" VerticalAlignment="Top" Width="43"/>
+        <Label x:Name="label2" Content="Отчество:" HorizontalAlignment="Left" Margin="11,66,0,0" VerticalAlignment="Top" Width="76"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="72,15,0,0" Text="" VerticalAlignment="Top" Width="193"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="23" Margin="72,43,0,0" Text="" VerticalAlignment="Top" Width="193"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Height="23" Margin="72,71,0,0" Text="" VerticalAlignment="Top" Width="193"/>
+        <Button x:Name="button" Content="Добавить" HorizontalAlignment="Left" Margin="100,121,0,0" VerticalAlignment="Top" Width="100" Height="33" Click="button_Click"/>
 
     </Grid>
 </Window>

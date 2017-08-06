@@ -219,11 +219,26 @@ namespace ExpertiseWCFService
         [OperationContract]
         bool UpdateProjectExpertise(int id_project_expertise, int id_expertise, int id_project, bool accept);
 
+        
+
         [OperationContract]
         TablesForExpertise GetTablesForExpertise();
 
         [OperationContract]
+        List<Projects> GetListNotExistProjects();
+
+
+
+
+        [OperationContract]
         List<myRaitinfExpert> GetListRaitingForExpertise(int id_project);
+
+        [OperationContract]
+        myProject GetmyProjectsfForID(int id_project);
+
+        [OperationContract]
+        ExpertsWithCountExpertise GetExpertsWithCountExpertise(int id_experts);
+
 
         #region Работа с критериями
 
@@ -248,7 +263,7 @@ namespace ExpertiseWCFService
         [OperationContract]
         void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert, 
-            Boolean delete_expert, string contacts_expert, int[]  ListFOS,string login_expert, string password_expert);
+            Boolean delete_expert, string contacts_expert, int[]  ListFOS,string login_expert, string password_expert, bool comission_chairman);
         //[OperationContract]
         //bool EditCriterions(int id_crit, string name_crit, bool qualit_crit);
 
@@ -260,7 +275,7 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         bool EditProject(int id_project,string name_project, string lead_project, string grnti_project, DateTime begin_project,
-            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+            DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos);
 
         [OperationContract]
         List<Expertise_Expert> Expertise_Expert(int id_expert);
@@ -268,7 +283,7 @@ namespace ExpertiseWCFService
 
         [OperationContract]
         bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project,
-            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+            DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos);
 
         [OperationContract]
         bool AddAuthors(string surname_author, string name_author, string patronymic_author);
@@ -509,10 +524,12 @@ namespace ExpertiseWCFService
         public string grnti_project { get; set; }
         public DateTime begin_project { get; set; }
         public DateTime end_project { get; set; }
+        public string org_project { get; set; }
         public string money_project { get; set; }
         public string email_project { get; set; }
         public string fos { get; set; }
         public Boolean expertisa { get; set; }
+        public string expertise { get; set; }
         public DateTime date_expertise { get; set; }
         public string name_expertise { get; set; }
 
@@ -532,9 +549,11 @@ namespace ExpertiseWCFService
         public string rank_expert { get; set; }//звание
         public string degree_rank_expert { get; set; }//звание + степень
         public Boolean delete_expert { get; set; }//удален\активен
+        public string status { get; set; }//удален\активен
         public string contacts_expert { get; set; }
         public string login_expert { get; set; }
         public string password_expert { get; set; }
+        public bool commision_chairman { get; set; }
         public int countexpertise { get; set; }
         public List<FiledsOfScience> ListFOS { get; set; }
         

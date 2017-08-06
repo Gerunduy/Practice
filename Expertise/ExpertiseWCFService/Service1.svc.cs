@@ -443,11 +443,12 @@ namespace ExpertiseWCFService
                     tmpE.job_expert = pE.job_expert;
                     tmpE.post_expert = pE.post_expert;
                     tmpE.degree_expert = pE.degree_expert;
-                    tmpE.degree_rank_expert = pE.rank_expert + "," + pE.degree_expert;
+                    tmpE.degree_rank_expert = pE.rank_expert + ", " + pE.degree_expert;
                     tmpE.rank_expert = pE.rank_expert;
                     tmpE.contacts_expert = pE.contacts_expert;
                     tmpE.login_expert = pE.login_expert;
                     tmpE.password_expert = pE.password_expert;
+                    tmpE.commision_chairman = pE.comission_chairman;
 
 
 
@@ -479,7 +480,8 @@ namespace ExpertiseWCFService
                     {
                         tmpE.ListFOS.Clear();
                     }
-                    tmpE.delete_expert = pE.delete_expert;
+                    if (pE.delete_expert) tmpE.status = "Удалён"; else tmpE.status = "Активен";
+                    //tmpE.delete_expert = pE.delete_expert;
                     List<Marks> tmpMarks = db_AAZ.Marks.Where(o => o.id_expert == pE.id_expert).ToList();
                     List<int> countexpertise = new List<int>();
                     for (int i = 0; i < tmpMarks.Count; i++)
@@ -560,6 +562,7 @@ namespace ExpertiseWCFService
                     tmpP.begin_project = pP.begin_project;
                     tmpP.number = t;
                     tmpP.end_project = pP.end_project;
+                    tmpP.org_project = pP.org_project;
                     tmpP.money_project = pP.money_project;
                     tmpP.email_project = pP.email_project;
 
@@ -568,11 +571,16 @@ namespace ExpertiseWCFService
                     if (prexp != null)
                     {
                         tmpP.expertisa = true;
+                        tmpP.expertise = "Проводилась";
                         Expertises ex = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == prexp.id_expertise);
                         tmpP.date_expertise = ex.date_expertise;
                         tmpP.name_expertise = ex.name_expertise;
                     }
-                    else tmpP.expertisa = false;
+                    else
+                    {
+                        tmpP.expertisa = false;
+                        tmpP.expertise = "Не проводилась";
+                    }
                     ProjectFos prfos = db_AAZ.ProjectFos.FirstOrDefault(o=>o.id_project == pP.id_project);
                     if (prfos != null)
                     {
@@ -1070,6 +1078,7 @@ namespace ExpertiseWCFService
                     tmpE.degree_expert = pE.degree_expert;
                     tmpE.rank_expert = pE.rank_expert;
                     tmpE.contacts_expert = pE.contacts_expert;
+                    tmpE.comission_chairman = pE.comission_chairman;
 
                     result.Add(tmpE);
                 }
@@ -1675,6 +1684,8 @@ namespace ExpertiseWCFService
                     ProjectExpertise PE = new ProjectExpertise();
                     PE.id_project = i;
                     E.ProjectExpertise.Add(PE);
+                    Projects P = db_AAZ.Projects.Where(p => p.id_project == i).FirstOrDefault();
+                    P.exsist_exp_project = true;
                 }
 
                 foreach (int i in critsId)
@@ -1718,9 +1729,16 @@ namespace ExpertiseWCFService
                 ProjectExpertise[] ePE = E.ProjectExpertise.ToArray();
                 foreach (ProjectExpertise PE in ePE)
                 {
+                    Projects p = db_AAZ.Projects.Where(o => o.id_project == PE.id_project).FirstOrDefault();
+                    p.exsist_exp_project = false;
                     db_AAZ.ProjectExpertise.Remove(PE);
                 }
                 E.ProjectExpertise = lprojects;
+                foreach (ProjectExpertise pe in lprojects)
+                {
+                    Projects p = db_AAZ.Projects.Where(o => o.id_project == pe.id_project).FirstOrDefault();
+                    p.exsist_exp_project = true;
+                }
                 //==========================================================
                 ExpCrit[] eEC = E.ExpCrit.ToArray();
                 foreach (ExpCrit EC in eEC)
@@ -1772,7 +1790,7 @@ namespace ExpertiseWCFService
                     P.id_project = proj.id_project;
                     P.name_project = proj.name_project;
                     P.lead_project = proj.lead_project;
-                    //P.organization = 
+                    P.organization = proj.org_project;
                     if (PE.accept) P.accept = "Да"; else P.accept = "Нет";
                     result.ListProjects.Add(P);
                 }
@@ -2103,13 +2121,15 @@ namespace ExpertiseWCFService
             }
         }
 
+
+
         public TablesForExpertise GetTablesForExpertise()
         {
             try
             {
                 TablesForExpertise result = new TablesForExpertise();
                 result.lFOS = GetListAllFiledsOfScience();
-                result.lProjects = GetListAllProjects();
+                result.lProjects = GetListNotExistProjects();
                 result.lProjectFos = GetListAllProjectFos();
                 result.lCatigories = GetListAllCategories();
                 result.lCatCrit = GetListAllCatCrit();
@@ -2128,6 +2148,180 @@ namespace ExpertiseWCFService
                 return result;
             }
         }
+
+        public List<Projects> GetListNotExistProjects()
+        {
+            try
+            {
+                List<Projects> result = new List<Projects>();
+                List<Projects> tmplP = db_AAZ.Projects.Where(p => p.exsist_exp_project == false).ToList();
+                foreach (Projects pP in tmplP)
+                {
+                    Projects tmpP = new Projects();
+                    tmpP.id_project = pP.id_project;
+                    tmpP.name_project = pP.name_project;
+                    tmpP.lead_project = pP.lead_project;
+                    tmpP.grnti_project = pP.grnti_project;
+                    tmpP.begin_project = pP.begin_project;
+                    tmpP.email_project = pP.email_project;
+                    tmpP.money_project = pP.money_project;
+                    tmpP.email_project = pP.email_project;
+
+                    result.Add(tmpP);
+                }
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                List<Projects> result = new List<Projects>();
+                Projects tmpP = new Projects();
+                tmpP.id_project = -1;
+                result.Add(tmpP);
+
+                return result;
+            }
+        }
+            
+
+
+        public myProject GetmyProjectsfForID(int id_project)
+        {
+            try
+            {
+                myProject result = new myProject();
+                Projects pP = db_AAZ.Projects.Where(p => p.id_project == id_project).FirstOrDefault();
+
+                result.id_project = pP.id_project;
+                result.name_project = pP.name_project;
+                result.lead_project = pP.lead_project;
+                result.grnti_project = pP.grnti_project;
+                result.begin_project = pP.begin_project;
+                result.end_project = pP.end_project;
+                result.org_project = pP.org_project;
+                result.money_project = pP.money_project;
+                result.email_project = pP.email_project;
+
+
+                ProjectExpertise prexp = db_AAZ.ProjectExpertise.FirstOrDefault(o => o.id_project == pP.id_project);
+                if (prexp != null)
+                {
+                    result.expertisa = true;
+                    result.expertise = "Проводилась";
+                    Expertises ex = db_AAZ.Expertises.FirstOrDefault(o => o.id_expertise == prexp.id_expertise);
+                    result.date_expertise = ex.date_expertise;
+                    result.name_expertise = ex.name_expertise;
+                }
+                else
+                {
+                    result.expertisa = false;
+                    result.expertise = "Не проводилась";
+                }
+                ProjectFos prfos = db_AAZ.ProjectFos.FirstOrDefault(o => o.id_project == pP.id_project);
+                if (prfos != null)
+                {
+                    FiledsOfScience fos = db_AAZ.FiledsOfScience.FirstOrDefault(o => o.id_fos == prfos.id_fos);
+                    result.fos = fos.name_fos;
+                }
+                
+                return result;
+            }
+            catch (Exception Ex)
+            {
+                // тут логируется ошибка
+                myProject result = new myProject();
+                result.id_project = -1;
+                return result;
+            }
+        }
+
+        public ExpertsWithCountExpertise GetExpertsWithCountExpertise(int id_experts)
+        {
+            ExpertsWithCountExpertise result = new ExpertsWithCountExpertise();
+            Experts pE = db_AAZ.Experts.Where(p => p.id_expert == id_experts).FirstOrDefault();
+            int t = 0;
+
+            if (pE.delete_expert == false)
+            {
+                result.id_expert = pE.id_expert;
+                result.surname_expert = pE.surname_expert;
+                result.name_expert = pE.name_expert;
+                result.patronymic_expert = pE.patronymic_expert;
+                result.FIO = pE.surname_expert + " " + pE.name_expert + " " + pE.patronymic_expert;
+                result.job_expert = pE.job_expert;
+                result.post_expert = pE.post_expert;
+                result.degree_expert = pE.degree_expert;
+                result.degree_rank_expert = pE.rank_expert + ", " + pE.degree_expert;
+                result.rank_expert = pE.rank_expert;
+                result.contacts_expert = pE.contacts_expert;
+                result.login_expert = pE.login_expert;
+                result.password_expert = pE.password_expert;
+                result.commision_chairman = pE.comission_chairman;
+
+
+
+                result.ListFOS = new List<FiledsOfScience>();
+                List<ExpertFos> expfos = db_AAZ.ExpertFos.Where(o => o.id_expert == pE.id_expert).ToList();
+                List<FiledsOfScience> Listfos = db_AAZ.FiledsOfScience.ToList();
+                List<FiledsOfScience> GetFOSCurrentExpert = new List<FiledsOfScience>();
+                if (expfos != null)
+                {
+
+                    for (int i = 0; i < expfos.Count; i++)
+                    {
+                        FiledsOfScience fos = new FiledsOfScience();
+                        fos = Listfos.Find(c => c.id_fos == expfos[i].id_fos);
+
+                        GetFOSCurrentExpert.Add(fos);
+                    }
+                    Listfos.Clear();
+                    for (int i = 0; i < GetFOSCurrentExpert.Count; i++)
+                    {
+                        FiledsOfScience temp = new FiledsOfScience();
+                        temp.id_fos = GetFOSCurrentExpert[i].id_fos;
+                        temp.name_fos = GetFOSCurrentExpert[i].name_fos;
+
+                        result.ListFOS.Add(temp);
+                    }
+                }
+                else
+                {
+                    result.ListFOS.Clear();
+                }
+                if (pE.delete_expert) result.status = "Удалён"; else result.status = "Активен";
+                //tmpE.delete_expert = pE.delete_expert;
+                List<Marks> tmpMarks = db_AAZ.Marks.Where(o => o.id_expert == pE.id_expert).ToList();
+                List<int> countexpertise = new List<int>();
+                for (int i = 0; i < tmpMarks.Count; i++)
+                {
+                    int id_mark = tmpMarks[i].id_mark;
+                    ExpertiseMark id_expertise = db_AAZ.ExpertiseMark.FirstOrDefault(o => o.id_mark == id_mark);
+                    if (countexpertise.Count == 0)
+                    {
+                        countexpertise.Add(id_expertise.id_expertise);
+                    }
+                    else
+                    {
+                        List<int> idtemplist = new List<int>();
+                        for (int j = 0; j < countexpertise.Count; j++)
+                        {
+                            if (countexpertise[j] != id_expertise.id_expertise)
+                            {
+                                idtemplist.Add(id_expertise.id_expertise);
+                            }
+                        }
+                        countexpertise.AddRange(idtemplist);
+                        idtemplist.Clear();
+                    }
+                }
+                result.countexpertise = countexpertise.Count();
+                result.number = t;
+                t++;
+            }
+            
+            return result;
+        }
+
 
         #region Работа с критериями
 
@@ -2290,7 +2484,7 @@ namespace ExpertiseWCFService
 
         public void UpdateExpertCard(int id_expert,string surname_expert, string name_expert, string patronymic_expert,
             string job_expert, string post_expert, string degree_expert, string rank_expert,
-            Boolean delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert)
+            Boolean delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman)
         {
             Experts updateexpert = db_AAZ.Experts.FirstOrDefault(o => o.id_expert == id_expert);
             updateexpert.surname_expert = surname_expert;
@@ -2304,6 +2498,7 @@ namespace ExpertiseWCFService
             updateexpert.contacts_expert = contacts_expert;
             updateexpert.login_expert = login_expert;
             updateexpert.password_expert = password_expert;
+            updateexpert.comission_chairman = comission_chairman;
             db_AAZ.SaveChanges();
             List<ExpertFos> Listexpertfos = db_AAZ.ExpertFos
                          .Where(c => c.id_expert == updateexpert.id_expert).ToList();
@@ -2424,7 +2619,7 @@ namespace ExpertiseWCFService
         }
 
         public bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, DateTime begin_project,
-            DateTime end_project, string money_project, string email_project, int[] listauthor, int fos)
+            DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos)
         {
             try
             {
@@ -2434,6 +2629,7 @@ namespace ExpertiseWCFService
                 P.grnti_project = grnti_project;
                 P.begin_project = begin_project;
                 P.end_project = end_project;
+                P.org_project = org_project;
                 P.money_project = money_project;
                 P.email_project = email_project;
 
@@ -2578,7 +2774,7 @@ namespace ExpertiseWCFService
 
         }
 
-        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string money_project, string email_project,int[] listauthor,int fos)
+        public bool AddProjects(string name_project, string lead_project, string grnti_project, DateTime begin_project, DateTime end_project, string org_project, string money_project, string email_project,int[] listauthor,int fos)
         {
             try
             {
@@ -2588,6 +2784,7 @@ namespace ExpertiseWCFService
                 P.grnti_project = grnti_project;
                 P.begin_project = begin_project;
                 P.end_project = end_project;
+                P.org_project = org_project;
                 P.money_project = money_project;
                 P.email_project = email_project;
 

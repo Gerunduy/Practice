@@ -2022,6 +2022,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string name_projectField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string org_projectField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -2210,6 +2213,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.name_projectField, value) != true)) {
                     this.name_projectField = value;
                     this.RaisePropertyChanged("name_project");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string org_project {
+            get {
+                return this.org_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.org_projectField, value) != true)) {
+                    this.org_projectField = value;
+                    this.RaisePropertyChanged("org_project");
                 }
             }
         }
@@ -3048,6 +3064,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private ExpertiseWPFApplication.ServiceReference1.FiledsOfScience[] ListFOSField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool commision_chairmanField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string contacts_expertField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3090,6 +3109,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private string rank_expertField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string statusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string surname_expertField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -3124,6 +3146,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((object.ReferenceEquals(this.ListFOSField, value) != true)) {
                     this.ListFOSField = value;
                     this.RaisePropertyChanged("ListFOS");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool commision_chairman {
+            get {
+                return this.commision_chairmanField;
+            }
+            set {
+                if ((this.commision_chairmanField.Equals(value) != true)) {
+                    this.commision_chairmanField = value;
+                    this.RaisePropertyChanged("commision_chairman");
                 }
             }
         }
@@ -3311,6 +3346,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string status {
+            get {
+                return this.statusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.statusField, value) != true)) {
+                    this.statusField = value;
+                    this.RaisePropertyChanged("status");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string surname_expert {
             get {
                 return this.surname_expertField;
@@ -3358,6 +3406,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         private bool expertisaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string expertiseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string fosField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -3380,6 +3431,9 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int numberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string org_projectField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -3452,6 +3506,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.expertisaField.Equals(value) != true)) {
                     this.expertisaField = value;
                     this.RaisePropertyChanged("expertisa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string expertise {
+            get {
+                return this.expertiseField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.expertiseField, value) != true)) {
+                    this.expertiseField = value;
+                    this.RaisePropertyChanged("expertise");
                 }
             }
         }
@@ -3556,6 +3623,19 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                 if ((this.numberField.Equals(value) != true)) {
                     this.numberField = value;
                     this.RaisePropertyChanged("number");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string org_project {
+            get {
+                return this.org_projectField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.org_projectField, value) != true)) {
+                    this.org_projectField = value;
+                    this.RaisePropertyChanged("org_project");
                 }
             }
         }
@@ -5427,6 +5507,30 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService1")]
     public interface IService1 {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
+        void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
+        System.IAsyncResult BeginAddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, System.AsyncCallback callback, object asyncState);
+        
+        void EndAddExpert(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddCriterions", ReplyAction="http://tempuri.org/IService1/AddCriterionsResponse")]
+        bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddCriterions", ReplyAction="http://tempuri.org/IService1/AddCriterionsResponse")]
+        System.IAsyncResult BeginAddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddCriterions(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddFiledsOfScienceResponse")]
+        bool AddFiledsOfScience(string name_fos);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddFiledsOfScienceResponse")]
+        System.IAsyncResult BeginAddFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState);
+        
+        bool EndAddFiledsOfScience(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/Authorization", ReplyAction="http://tempuri.org/IService1/AuthorizationResponse")]
         ExpertiseWPFApplication.ServiceReference1.Experts Authorization(string Login, string Password);
         
@@ -5979,6 +6083,14 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         ExpertiseWPFApplication.ServiceReference1.TablesForExpertise EndGetTablesForExpertise(System.IAsyncResult result);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListNotExistProjects", ReplyAction="http://tempuri.org/IService1/GetListNotExistProjectsResponse")]
+        ExpertiseWPFApplication.ServiceReference1.Projects[] GetListNotExistProjects();
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetListNotExistProjects", ReplyAction="http://tempuri.org/IService1/GetListNotExistProjectsResponse")]
+        System.IAsyncResult BeginGetListNotExistProjects(System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.Projects[] EndGetListNotExistProjects(System.IAsyncResult result);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListRaitingForExpertise", ReplyAction="http://tempuri.org/IService1/GetListRaitingForExpertiseResponse")]
         ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] GetListRaitingForExpertise(int id_project);
         
@@ -5986,6 +6098,22 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginGetListRaitingForExpertise(int id_project, System.AsyncCallback callback, object asyncState);
         
         ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] EndGetListRaitingForExpertise(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetmyProjectsfForID", ReplyAction="http://tempuri.org/IService1/GetmyProjectsfForIDResponse")]
+        ExpertiseWPFApplication.ServiceReference1.myProject GetmyProjectsfForID(int id_project);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetmyProjectsfForID", ReplyAction="http://tempuri.org/IService1/GetmyProjectsfForIDResponse")]
+        System.IAsyncResult BeginGetmyProjectsfForID(int id_project, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.myProject EndGetmyProjectsfForID(System.IAsyncResult result);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetExpertsWithCountExpertise", ReplyAction="http://tempuri.org/IService1/GetExpertsWithCountExpertiseResponse")]
+        ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise GetExpertsWithCountExpertise(int id_experts);
+        
+        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/GetExpertsWithCountExpertise", ReplyAction="http://tempuri.org/IService1/GetExpertsWithCountExpertiseResponse")]
+        System.IAsyncResult BeginGetExpertsWithCountExpertise(int id_experts, System.AsyncCallback callback, object asyncState);
+        
+        ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise EndGetExpertsWithCountExpertise(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetListCategoryForCritDirectory", ReplyAction="http://tempuri.org/IService1/GetListCategoryForCritDirectoryResponse")]
         ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] GetListCategoryForCritDirectory();
@@ -6028,10 +6156,26 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         void Endtest2(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateExpertCard", ReplyAction="http://tempuri.org/IService1/UpdateExpertCardResponse")]
-        void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert);
+        void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/UpdateExpertCard", ReplyAction="http://tempuri.org/IService1/UpdateExpertCardResponse")]
-        System.IAsyncResult BeginUpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginUpdateExpertCard(
+                    int id_expert, 
+                    string surname_expert, 
+                    string name_expert, 
+                    string patronymic_expert, 
+                    string job_expert, 
+                    string post_expert, 
+                    string degree_expert, 
+                    string rank_expert, 
+                    bool delete_expert, 
+                    string contacts_expert, 
+                    int[] ListFOS, 
+                    string login_expert, 
+                    string password_expert, 
+                    bool comission_chairman, 
+                    System.AsyncCallback callback, 
+                    object asyncState);
         
         void EndUpdateExpertCard(System.IAsyncResult result);
         
@@ -6044,10 +6188,10 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         bool EndEditFiledsOfScience(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/EditProject", ReplyAction="http://tempuri.org/IService1/EditProjectResponse")]
-        bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+        bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/EditProject", ReplyAction="http://tempuri.org/IService1/EditProjectResponse")]
-        System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState);
         
         bool EndEditProject(System.IAsyncResult result);
         
@@ -6060,10 +6204,10 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         ExpertiseWPFApplication.ServiceReference1.Expertise_Expert[] EndExpertise_Expert(System.IAsyncResult result);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddProjects", ReplyAction="http://tempuri.org/IService1/AddProjectsResponse")]
-        bool AddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos);
+        bool AddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos);
         
         [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddProjects", ReplyAction="http://tempuri.org/IService1/AddProjectsResponse")]
-        System.IAsyncResult BeginAddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState);
+        System.IAsyncResult BeginAddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState);
         
         bool EndAddProjects(System.IAsyncResult result);
         
@@ -6106,34 +6250,48 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         System.IAsyncResult BeginDeleteProject(int id_project, System.AsyncCallback callback, object asyncState);
         
         bool EndDeleteProject(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
-        void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddExpert", ReplyAction="http://tempuri.org/IService1/AddExpertResponse")]
-        System.IAsyncResult BeginAddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, System.AsyncCallback callback, object asyncState);
-        
-        void EndAddExpert(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddCriterions", ReplyAction="http://tempuri.org/IService1/AddCriterionsResponse")]
-        bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddCriterions", ReplyAction="http://tempuri.org/IService1/AddCriterionsResponse")]
-        System.IAsyncResult BeginAddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category, System.AsyncCallback callback, object asyncState);
-        
-        bool EndAddCriterions(System.IAsyncResult result);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/AddFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddFiledsOfScienceResponse")]
-        bool AddFiledsOfScience(string name_fos);
-        
-        [System.ServiceModel.OperationContractAttribute(AsyncPattern=true, Action="http://tempuri.org/IService1/AddFiledsOfScience", ReplyAction="http://tempuri.org/IService1/AddFiledsOfScienceResponse")]
-        System.IAsyncResult BeginAddFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState);
-        
-        bool EndAddFiledsOfScience(System.IAsyncResult result);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface IService1Channel : ExpertiseWPFApplication.ServiceReference1.IService1, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddCriterionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddCriterionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class AddFiledsOfScienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public AddFiledsOfScienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public bool Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -7449,6 +7607,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetListNotExistProjectsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetListNotExistProjectsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.Projects[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class GetListRaitingForExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
@@ -7462,6 +7639,44 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             get {
                 base.RaiseExceptionIfNecessary();
                 return ((ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[])(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetmyProjectsfForIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetmyProjectsfForIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myProject Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.myProject)(this.results[0]));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GetExpertsWithCountExpertiseCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        public GetExpertsWithCountExpertiseCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise Result {
+            get {
+                base.RaiseExceptionIfNecessary();
+                return ((ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise)(this.results[0]));
             }
         }
     }
@@ -7715,45 +7930,25 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddCriterionsCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddCriterionsCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public bool Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class AddFiledsOfScienceCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        public AddFiledsOfScienceCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        public bool Result {
-            get {
-                base.RaiseExceptionIfNecessary();
-                return ((bool)(this.results[0]));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public partial class Service1Client : System.ServiceModel.ClientBase<ExpertiseWPFApplication.ServiceReference1.IService1>, ExpertiseWPFApplication.ServiceReference1.IService1 {
+        
+        private BeginOperationDelegate onBeginAddExpertDelegate;
+        
+        private EndOperationDelegate onEndAddExpertDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddExpertCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddCriterionsDelegate;
+        
+        private EndOperationDelegate onEndAddCriterionsDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddCriterionsCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginAddFiledsOfScienceDelegate;
+        
+        private EndOperationDelegate onEndAddFiledsOfScienceDelegate;
+        
+        private System.Threading.SendOrPostCallback onAddFiledsOfScienceCompletedDelegate;
         
         private BeginOperationDelegate onBeginAuthorizationDelegate;
         
@@ -8169,11 +8364,29 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onGetTablesForExpertiseCompletedDelegate;
         
+        private BeginOperationDelegate onBeginGetListNotExistProjectsDelegate;
+        
+        private EndOperationDelegate onEndGetListNotExistProjectsDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetListNotExistProjectsCompletedDelegate;
+        
         private BeginOperationDelegate onBeginGetListRaitingForExpertiseDelegate;
         
         private EndOperationDelegate onEndGetListRaitingForExpertiseDelegate;
         
         private System.Threading.SendOrPostCallback onGetListRaitingForExpertiseCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetmyProjectsfForIDDelegate;
+        
+        private EndOperationDelegate onEndGetmyProjectsfForIDDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetmyProjectsfForIDCompletedDelegate;
+        
+        private BeginOperationDelegate onBeginGetExpertsWithCountExpertiseDelegate;
+        
+        private EndOperationDelegate onEndGetExpertsWithCountExpertiseDelegate;
+        
+        private System.Threading.SendOrPostCallback onGetExpertsWithCountExpertiseCompletedDelegate;
         
         private BeginOperationDelegate onBeginGetListCategoryForCritDirectoryDelegate;
         
@@ -8265,24 +8478,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         private System.Threading.SendOrPostCallback onDeleteProjectCompletedDelegate;
         
-        private BeginOperationDelegate onBeginAddExpertDelegate;
-        
-        private EndOperationDelegate onEndAddExpertDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddExpertCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddCriterionsDelegate;
-        
-        private EndOperationDelegate onEndAddCriterionsDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddCriterionsCompletedDelegate;
-        
-        private BeginOperationDelegate onBeginAddFiledsOfScienceDelegate;
-        
-        private EndOperationDelegate onEndAddFiledsOfScienceDelegate;
-        
-        private System.Threading.SendOrPostCallback onAddFiledsOfScienceCompletedDelegate;
-        
         public Service1Client() {
         }
         
@@ -8301,6 +8496,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
         }
+        
+        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddExpertCompleted;
+        
+        public event System.EventHandler<AddCriterionsCompletedEventArgs> AddCriterionsCompleted;
+        
+        public event System.EventHandler<AddFiledsOfScienceCompletedEventArgs> AddFiledsOfScienceCompleted;
         
         public event System.EventHandler<AuthorizationCompletedEventArgs> AuthorizationCompleted;
         
@@ -8440,7 +8641,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<GetTablesForExpertiseCompletedEventArgs> GetTablesForExpertiseCompleted;
         
+        public event System.EventHandler<GetListNotExistProjectsCompletedEventArgs> GetListNotExistProjectsCompleted;
+        
         public event System.EventHandler<GetListRaitingForExpertiseCompletedEventArgs> GetListRaitingForExpertiseCompleted;
+        
+        public event System.EventHandler<GetmyProjectsfForIDCompletedEventArgs> GetmyProjectsfForIDCompleted;
+        
+        public event System.EventHandler<GetExpertsWithCountExpertiseCompletedEventArgs> GetExpertsWithCountExpertiseCompleted;
         
         public event System.EventHandler<GetListCategoryForCritDirectoryCompletedEventArgs> GetListCategoryForCritDirectoryCompleted;
         
@@ -8472,11 +8679,182 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
         
         public event System.EventHandler<DeleteProjectCompletedEventArgs> DeleteProjectCompleted;
         
-        public event System.EventHandler<System.ComponentModel.AsyncCompletedEventArgs> AddExpertCompleted;
+        public void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
+            base.Channel.AddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman);
+        }
         
-        public event System.EventHandler<AddCriterionsCompletedEventArgs> AddCriterionsCompleted;
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
+        }
         
-        public event System.EventHandler<AddFiledsOfScienceCompletedEventArgs> AddFiledsOfScienceCompleted;
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public void EndAddExpert(System.IAsyncResult result) {
+            base.Channel.EndAddExpert(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddExpert(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string surname_expert = ((string)(inValues[0]));
+            string name_expert = ((string)(inValues[1]));
+            string patronymic_expert = ((string)(inValues[2]));
+            string job_expert = ((string)(inValues[3]));
+            string post_expert = ((string)(inValues[4]));
+            string degree_expert = ((string)(inValues[5]));
+            string rank_expert = ((string)(inValues[6]));
+            string contacts_expert = ((string)(inValues[7]));
+            int[] ListFOS = ((int[])(inValues[8]));
+            string login_expert = ((string)(inValues[9]));
+            string password_expert = ((string)(inValues[10]));
+            bool comission_chairman = ((bool)(inValues[11]));
+            return this.BeginAddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
+        }
+        
+        private object[] OnEndAddExpert(System.IAsyncResult result) {
+            this.EndAddExpert(result);
+            return null;
+        }
+        
+        private void OnAddExpertCompleted(object state) {
+            if ((this.AddExpertCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddExpertCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddExpertAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
+            this.AddExpertAsync(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, null);
+        }
+        
+        public void AddExpertAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, object userState) {
+            if ((this.onBeginAddExpertDelegate == null)) {
+                this.onBeginAddExpertDelegate = new BeginOperationDelegate(this.OnBeginAddExpert);
+            }
+            if ((this.onEndAddExpertDelegate == null)) {
+                this.onEndAddExpertDelegate = new EndOperationDelegate(this.OnEndAddExpert);
+            }
+            if ((this.onAddExpertCompletedDelegate == null)) {
+                this.onAddExpertCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddExpertCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddExpertDelegate, new object[] {
+                        surname_expert,
+                        name_expert,
+                        patronymic_expert,
+                        job_expert,
+                        post_expert,
+                        degree_expert,
+                        rank_expert,
+                        contacts_expert,
+                        ListFOS,
+                        login_expert,
+                        password_expert,
+                        comission_chairman}, this.onEndAddExpertDelegate, this.onAddExpertCompletedDelegate, userState);
+        }
+        
+        public bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category) {
+            return base.Channel.AddCriterions(name_crit, qualit_crit, valid_values, id_category);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddCriterions(name_crit, qualit_crit, valid_values, id_category, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddCriterions(System.IAsyncResult result) {
+            return base.Channel.EndAddCriterions(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_crit = ((string)(inValues[0]));
+            bool qualit_crit = ((bool)(inValues[1]));
+            string valid_values = ((string)(inValues[2]));
+            int id_category = ((int)(inValues[3]));
+            return this.BeginAddCriterions(name_crit, qualit_crit, valid_values, id_category, callback, asyncState);
+        }
+        
+        private object[] OnEndAddCriterions(System.IAsyncResult result) {
+            bool retVal = this.EndAddCriterions(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddCriterionsCompleted(object state) {
+            if ((this.AddCriterionsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddCriterionsCompleted(this, new AddCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddCriterionsAsync(string name_crit, bool qualit_crit, string valid_values, int id_category) {
+            this.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_category, null);
+        }
+        
+        public void AddCriterionsAsync(string name_crit, bool qualit_crit, string valid_values, int id_category, object userState) {
+            if ((this.onBeginAddCriterionsDelegate == null)) {
+                this.onBeginAddCriterionsDelegate = new BeginOperationDelegate(this.OnBeginAddCriterions);
+            }
+            if ((this.onEndAddCriterionsDelegate == null)) {
+                this.onEndAddCriterionsDelegate = new EndOperationDelegate(this.OnEndAddCriterions);
+            }
+            if ((this.onAddCriterionsCompletedDelegate == null)) {
+                this.onAddCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddCriterionsCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddCriterionsDelegate, new object[] {
+                        name_crit,
+                        qualit_crit,
+                        valid_values,
+                        id_category}, this.onEndAddCriterionsDelegate, this.onAddCriterionsCompletedDelegate, userState);
+        }
+        
+        public bool AddFiledsOfScience(string name_fos) {
+            return base.Channel.AddFiledsOfScience(name_fos);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginAddFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddFiledsOfScience(name_fos, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public bool EndAddFiledsOfScience(System.IAsyncResult result) {
+            return base.Channel.EndAddFiledsOfScience(result);
+        }
+        
+        private System.IAsyncResult OnBeginAddFiledsOfScience(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            string name_fos = ((string)(inValues[0]));
+            return this.BeginAddFiledsOfScience(name_fos, callback, asyncState);
+        }
+        
+        private object[] OnEndAddFiledsOfScience(System.IAsyncResult result) {
+            bool retVal = this.EndAddFiledsOfScience(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnAddFiledsOfScienceCompleted(object state) {
+            if ((this.AddFiledsOfScienceCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.AddFiledsOfScienceCompleted(this, new AddFiledsOfScienceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void AddFiledsOfScienceAsync(string name_fos) {
+            this.AddFiledsOfScienceAsync(name_fos, null);
+        }
+        
+        public void AddFiledsOfScienceAsync(string name_fos, object userState) {
+            if ((this.onBeginAddFiledsOfScienceDelegate == null)) {
+                this.onBeginAddFiledsOfScienceDelegate = new BeginOperationDelegate(this.OnBeginAddFiledsOfScience);
+            }
+            if ((this.onEndAddFiledsOfScienceDelegate == null)) {
+                this.onEndAddFiledsOfScienceDelegate = new EndOperationDelegate(this.OnEndAddFiledsOfScience);
+            }
+            if ((this.onAddFiledsOfScienceCompletedDelegate == null)) {
+                this.onAddFiledsOfScienceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddFiledsOfScienceCompleted);
+            }
+            base.InvokeAsync(this.onBeginAddFiledsOfScienceDelegate, new object[] {
+                        name_fos}, this.onEndAddFiledsOfScienceDelegate, this.onAddFiledsOfScienceCompletedDelegate, userState);
+        }
         
         public ExpertiseWPFApplication.ServiceReference1.Experts Authorization(string Login, string Password) {
             return base.Channel.Authorization(Login, Password);
@@ -11968,6 +12346,54 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBeginGetTablesForExpertiseDelegate, null, this.onEndGetTablesForExpertiseDelegate, this.onGetTablesForExpertiseCompletedDelegate, userState);
         }
         
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] GetListNotExistProjects() {
+            return base.Channel.GetListNotExistProjects();
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetListNotExistProjects(System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetListNotExistProjects(callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.Projects[] EndGetListNotExistProjects(System.IAsyncResult result) {
+            return base.Channel.EndGetListNotExistProjects(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetListNotExistProjects(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            return this.BeginGetListNotExistProjects(callback, asyncState);
+        }
+        
+        private object[] OnEndGetListNotExistProjects(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.Projects[] retVal = this.EndGetListNotExistProjects(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetListNotExistProjectsCompleted(object state) {
+            if ((this.GetListNotExistProjectsCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetListNotExistProjectsCompleted(this, new GetListNotExistProjectsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetListNotExistProjectsAsync() {
+            this.GetListNotExistProjectsAsync(null);
+        }
+        
+        public void GetListNotExistProjectsAsync(object userState) {
+            if ((this.onBeginGetListNotExistProjectsDelegate == null)) {
+                this.onBeginGetListNotExistProjectsDelegate = new BeginOperationDelegate(this.OnBeginGetListNotExistProjects);
+            }
+            if ((this.onEndGetListNotExistProjectsDelegate == null)) {
+                this.onEndGetListNotExistProjectsDelegate = new EndOperationDelegate(this.OnEndGetListNotExistProjects);
+            }
+            if ((this.onGetListNotExistProjectsCompletedDelegate == null)) {
+                this.onGetListNotExistProjectsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetListNotExistProjectsCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetListNotExistProjectsDelegate, null, this.onEndGetListNotExistProjectsDelegate, this.onGetListNotExistProjectsCompletedDelegate, userState);
+        }
+        
         public ExpertiseWPFApplication.ServiceReference1.myRaitinfExpert[] GetListRaitingForExpertise(int id_project) {
             return base.Channel.GetListRaitingForExpertise(id_project);
         }
@@ -12016,6 +12442,106 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginGetListRaitingForExpertiseDelegate, new object[] {
                         id_project}, this.onEndGetListRaitingForExpertiseDelegate, this.onGetListRaitingForExpertiseCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.myProject GetmyProjectsfForID(int id_project) {
+            return base.Channel.GetmyProjectsfForID(id_project);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetmyProjectsfForID(int id_project, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetmyProjectsfForID(id_project, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.myProject EndGetmyProjectsfForID(System.IAsyncResult result) {
+            return base.Channel.EndGetmyProjectsfForID(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetmyProjectsfForID(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_project = ((int)(inValues[0]));
+            return this.BeginGetmyProjectsfForID(id_project, callback, asyncState);
+        }
+        
+        private object[] OnEndGetmyProjectsfForID(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.myProject retVal = this.EndGetmyProjectsfForID(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetmyProjectsfForIDCompleted(object state) {
+            if ((this.GetmyProjectsfForIDCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetmyProjectsfForIDCompleted(this, new GetmyProjectsfForIDCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetmyProjectsfForIDAsync(int id_project) {
+            this.GetmyProjectsfForIDAsync(id_project, null);
+        }
+        
+        public void GetmyProjectsfForIDAsync(int id_project, object userState) {
+            if ((this.onBeginGetmyProjectsfForIDDelegate == null)) {
+                this.onBeginGetmyProjectsfForIDDelegate = new BeginOperationDelegate(this.OnBeginGetmyProjectsfForID);
+            }
+            if ((this.onEndGetmyProjectsfForIDDelegate == null)) {
+                this.onEndGetmyProjectsfForIDDelegate = new EndOperationDelegate(this.OnEndGetmyProjectsfForID);
+            }
+            if ((this.onGetmyProjectsfForIDCompletedDelegate == null)) {
+                this.onGetmyProjectsfForIDCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetmyProjectsfForIDCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetmyProjectsfForIDDelegate, new object[] {
+                        id_project}, this.onEndGetmyProjectsfForIDDelegate, this.onGetmyProjectsfForIDCompletedDelegate, userState);
+        }
+        
+        public ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise GetExpertsWithCountExpertise(int id_experts) {
+            return base.Channel.GetExpertsWithCountExpertise(id_experts);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public System.IAsyncResult BeginGetExpertsWithCountExpertise(int id_experts, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginGetExpertsWithCountExpertise(id_experts, callback, asyncState);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        public ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise EndGetExpertsWithCountExpertise(System.IAsyncResult result) {
+            return base.Channel.EndGetExpertsWithCountExpertise(result);
+        }
+        
+        private System.IAsyncResult OnBeginGetExpertsWithCountExpertise(object[] inValues, System.AsyncCallback callback, object asyncState) {
+            int id_experts = ((int)(inValues[0]));
+            return this.BeginGetExpertsWithCountExpertise(id_experts, callback, asyncState);
+        }
+        
+        private object[] OnEndGetExpertsWithCountExpertise(System.IAsyncResult result) {
+            ExpertiseWPFApplication.ServiceReference1.ExpertsWithCountExpertise retVal = this.EndGetExpertsWithCountExpertise(result);
+            return new object[] {
+                    retVal};
+        }
+        
+        private void OnGetExpertsWithCountExpertiseCompleted(object state) {
+            if ((this.GetExpertsWithCountExpertiseCompleted != null)) {
+                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
+                this.GetExpertsWithCountExpertiseCompleted(this, new GetExpertsWithCountExpertiseCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
+            }
+        }
+        
+        public void GetExpertsWithCountExpertiseAsync(int id_experts) {
+            this.GetExpertsWithCountExpertiseAsync(id_experts, null);
+        }
+        
+        public void GetExpertsWithCountExpertiseAsync(int id_experts, object userState) {
+            if ((this.onBeginGetExpertsWithCountExpertiseDelegate == null)) {
+                this.onBeginGetExpertsWithCountExpertiseDelegate = new BeginOperationDelegate(this.OnBeginGetExpertsWithCountExpertise);
+            }
+            if ((this.onEndGetExpertsWithCountExpertiseDelegate == null)) {
+                this.onEndGetExpertsWithCountExpertiseDelegate = new EndOperationDelegate(this.OnEndGetExpertsWithCountExpertise);
+            }
+            if ((this.onGetExpertsWithCountExpertiseCompletedDelegate == null)) {
+                this.onGetExpertsWithCountExpertiseCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnGetExpertsWithCountExpertiseCompleted);
+            }
+            base.InvokeAsync(this.onBeginGetExpertsWithCountExpertiseDelegate, new object[] {
+                        id_experts}, this.onEndGetExpertsWithCountExpertiseDelegate, this.onGetExpertsWithCountExpertiseCompletedDelegate, userState);
         }
         
         public ExpertiseWPFApplication.ServiceReference1.CategoryForCritDirectory[] GetListCategoryForCritDirectory() {
@@ -12267,13 +12793,29 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             base.InvokeAsync(this.onBegintest2Delegate, null, this.onEndtest2Delegate, this.ontest2CompletedDelegate, userState);
         }
         
-        public void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert) {
-            base.Channel.UpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert);
+        public void UpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
+            base.Channel.UpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginUpdateExpertCard(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginUpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, callback, asyncState);
+        public System.IAsyncResult BeginUpdateExpertCard(
+                    int id_expert, 
+                    string surname_expert, 
+                    string name_expert, 
+                    string patronymic_expert, 
+                    string job_expert, 
+                    string post_expert, 
+                    string degree_expert, 
+                    string rank_expert, 
+                    bool delete_expert, 
+                    string contacts_expert, 
+                    int[] ListFOS, 
+                    string login_expert, 
+                    string password_expert, 
+                    bool comission_chairman, 
+                    System.AsyncCallback callback, 
+                    object asyncState) {
+            return base.Channel.BeginUpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -12295,7 +12837,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             int[] ListFOS = ((int[])(inValues[10]));
             string login_expert = ((string)(inValues[11]));
             string password_expert = ((string)(inValues[12]));
-            return this.BeginUpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, callback, asyncState);
+            bool comission_chairman = ((bool)(inValues[13]));
+            return this.BeginUpdateExpertCard(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
         }
         
         private object[] OnEndUpdateExpertCard(System.IAsyncResult result) {
@@ -12310,11 +12853,11 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
         }
         
-        public void UpdateExpertCardAsync(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert) {
-            this.UpdateExpertCardAsync(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, null);
+        public void UpdateExpertCardAsync(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
+            this.UpdateExpertCardAsync(id_expert, surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, delete_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, null);
         }
         
-        public void UpdateExpertCardAsync(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, object userState) {
+        public void UpdateExpertCardAsync(int id_expert, string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, bool delete_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, object userState) {
             if ((this.onBeginUpdateExpertCardDelegate == null)) {
                 this.onBeginUpdateExpertCardDelegate = new BeginOperationDelegate(this.OnBeginUpdateExpertCard);
             }
@@ -12337,7 +12880,8 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         contacts_expert,
                         ListFOS,
                         login_expert,
-                        password_expert}, this.onEndUpdateExpertCardDelegate, this.onUpdateExpertCardCompletedDelegate, userState);
+                        password_expert,
+                        comission_chairman}, this.onEndUpdateExpertCardDelegate, this.onUpdateExpertCardCompletedDelegate, userState);
         }
         
         public bool EditFiledsOfScience(int id_fos, string name_fos) {
@@ -12392,13 +12936,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         name_fos}, this.onEndEditFiledsOfScienceDelegate, this.onEditFiledsOfScienceCompletedDelegate, userState);
         }
         
-        public bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
-            return base.Channel.EditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos);
+        public bool EditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos) {
+            return base.Channel.EditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+        public System.IAsyncResult BeginEditProject(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -12413,11 +12957,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             string grnti_project = ((string)(inValues[3]));
             System.DateTime begin_project = ((System.DateTime)(inValues[4]));
             System.DateTime end_project = ((System.DateTime)(inValues[5]));
-            string money_project = ((string)(inValues[6]));
-            string email_project = ((string)(inValues[7]));
-            int[] listauthor = ((int[])(inValues[8]));
-            int fos = ((int)(inValues[9]));
-            return this.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+            string org_project = ((string)(inValues[6]));
+            string money_project = ((string)(inValues[7]));
+            string email_project = ((string)(inValues[8]));
+            int[] listauthor = ((int[])(inValues[9]));
+            int fos = ((int)(inValues[10]));
+            return this.BeginEditProject(id_project, name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, callback, asyncState);
         }
         
         private object[] OnEndEditProject(System.IAsyncResult result) {
@@ -12433,11 +12978,11 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
         }
         
-        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
-            this.EditProjectAsync(id_project, name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, null);
+        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos) {
+            this.EditProjectAsync(id_project, name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, null);
         }
         
-        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, object userState) {
+        public void EditProjectAsync(int id_project, string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, object userState) {
             if ((this.onBeginEditProjectDelegate == null)) {
                 this.onBeginEditProjectDelegate = new BeginOperationDelegate(this.OnBeginEditProject);
             }
@@ -12454,6 +12999,7 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         grnti_project,
                         begin_project,
                         end_project,
+                        org_project,
                         money_project,
                         email_project,
                         listauthor,
@@ -12510,13 +13056,13 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         id_expert}, this.onEndExpertise_ExpertDelegate, this.onExpertise_ExpertCompletedDelegate, userState);
         }
         
-        public bool AddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
-            return base.Channel.AddProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos);
+        public bool AddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos) {
+            return base.Channel.AddProjects(name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+        public System.IAsyncResult BeginAddProjects(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, System.AsyncCallback callback, object asyncState) {
+            return base.Channel.BeginAddProjects(name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, callback, asyncState);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -12530,11 +13076,12 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             string grnti_project = ((string)(inValues[2]));
             System.DateTime begin_project = ((System.DateTime)(inValues[3]));
             System.DateTime end_project = ((System.DateTime)(inValues[4]));
-            string money_project = ((string)(inValues[5]));
-            string email_project = ((string)(inValues[6]));
-            int[] listauthor = ((int[])(inValues[7]));
-            int fos = ((int)(inValues[8]));
-            return this.BeginAddProjects(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, callback, asyncState);
+            string org_project = ((string)(inValues[5]));
+            string money_project = ((string)(inValues[6]));
+            string email_project = ((string)(inValues[7]));
+            int[] listauthor = ((int[])(inValues[8]));
+            int fos = ((int)(inValues[9]));
+            return this.BeginAddProjects(name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, callback, asyncState);
         }
         
         private object[] OnEndAddProjects(System.IAsyncResult result) {
@@ -12550,11 +13097,11 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
         }
         
-        public void AddProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos) {
-            this.AddProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, listauthor, fos, null);
+        public void AddProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos) {
+            this.AddProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, org_project, money_project, email_project, listauthor, fos, null);
         }
         
-        public void AddProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string money_project, string email_project, int[] listauthor, int fos, object userState) {
+        public void AddProjectsAsync(string name_project, string lead_project, string grnti_project, System.DateTime begin_project, System.DateTime end_project, string org_project, string money_project, string email_project, int[] listauthor, int fos, object userState) {
             if ((this.onBeginAddProjectsDelegate == null)) {
                 this.onBeginAddProjectsDelegate = new BeginOperationDelegate(this.OnBeginAddProjects);
             }
@@ -12570,6 +13117,7 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
                         grnti_project,
                         begin_project,
                         end_project,
+                        org_project,
                         money_project,
                         email_project,
                         listauthor,
@@ -12832,183 +13380,6 @@ namespace ExpertiseWPFApplication.ServiceReference1 {
             }
             base.InvokeAsync(this.onBeginDeleteProjectDelegate, new object[] {
                         id_project}, this.onEndDeleteProjectDelegate, this.onDeleteProjectCompletedDelegate, userState);
-        }
-        
-        public void AddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
-            base.Channel.AddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddExpert(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public void EndAddExpert(System.IAsyncResult result) {
-            base.Channel.EndAddExpert(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddExpert(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string surname_expert = ((string)(inValues[0]));
-            string name_expert = ((string)(inValues[1]));
-            string patronymic_expert = ((string)(inValues[2]));
-            string job_expert = ((string)(inValues[3]));
-            string post_expert = ((string)(inValues[4]));
-            string degree_expert = ((string)(inValues[5]));
-            string rank_expert = ((string)(inValues[6]));
-            string contacts_expert = ((string)(inValues[7]));
-            int[] ListFOS = ((int[])(inValues[8]));
-            string login_expert = ((string)(inValues[9]));
-            string password_expert = ((string)(inValues[10]));
-            bool comission_chairman = ((bool)(inValues[11]));
-            return this.BeginAddExpert(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, callback, asyncState);
-        }
-        
-        private object[] OnEndAddExpert(System.IAsyncResult result) {
-            this.EndAddExpert(result);
-            return null;
-        }
-        
-        private void OnAddExpertCompleted(object state) {
-            if ((this.AddExpertCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddExpertCompleted(this, new System.ComponentModel.AsyncCompletedEventArgs(e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddExpertAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman) {
-            this.AddExpertAsync(surname_expert, name_expert, patronymic_expert, job_expert, post_expert, degree_expert, rank_expert, contacts_expert, ListFOS, login_expert, password_expert, comission_chairman, null);
-        }
-        
-        public void AddExpertAsync(string surname_expert, string name_expert, string patronymic_expert, string job_expert, string post_expert, string degree_expert, string rank_expert, string contacts_expert, int[] ListFOS, string login_expert, string password_expert, bool comission_chairman, object userState) {
-            if ((this.onBeginAddExpertDelegate == null)) {
-                this.onBeginAddExpertDelegate = new BeginOperationDelegate(this.OnBeginAddExpert);
-            }
-            if ((this.onEndAddExpertDelegate == null)) {
-                this.onEndAddExpertDelegate = new EndOperationDelegate(this.OnEndAddExpert);
-            }
-            if ((this.onAddExpertCompletedDelegate == null)) {
-                this.onAddExpertCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddExpertCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddExpertDelegate, new object[] {
-                        surname_expert,
-                        name_expert,
-                        patronymic_expert,
-                        job_expert,
-                        post_expert,
-                        degree_expert,
-                        rank_expert,
-                        contacts_expert,
-                        ListFOS,
-                        login_expert,
-                        password_expert,
-                        comission_chairman}, this.onEndAddExpertDelegate, this.onAddExpertCompletedDelegate, userState);
-        }
-        
-        public bool AddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category) {
-            return base.Channel.AddCriterions(name_crit, qualit_crit, valid_values, id_category);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddCriterions(string name_crit, bool qualit_crit, string valid_values, int id_category, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddCriterions(name_crit, qualit_crit, valid_values, id_category, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public bool EndAddCriterions(System.IAsyncResult result) {
-            return base.Channel.EndAddCriterions(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddCriterions(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string name_crit = ((string)(inValues[0]));
-            bool qualit_crit = ((bool)(inValues[1]));
-            string valid_values = ((string)(inValues[2]));
-            int id_category = ((int)(inValues[3]));
-            return this.BeginAddCriterions(name_crit, qualit_crit, valid_values, id_category, callback, asyncState);
-        }
-        
-        private object[] OnEndAddCriterions(System.IAsyncResult result) {
-            bool retVal = this.EndAddCriterions(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddCriterionsCompleted(object state) {
-            if ((this.AddCriterionsCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddCriterionsCompleted(this, new AddCriterionsCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddCriterionsAsync(string name_crit, bool qualit_crit, string valid_values, int id_category) {
-            this.AddCriterionsAsync(name_crit, qualit_crit, valid_values, id_category, null);
-        }
-        
-        public void AddCriterionsAsync(string name_crit, bool qualit_crit, string valid_values, int id_category, object userState) {
-            if ((this.onBeginAddCriterionsDelegate == null)) {
-                this.onBeginAddCriterionsDelegate = new BeginOperationDelegate(this.OnBeginAddCriterions);
-            }
-            if ((this.onEndAddCriterionsDelegate == null)) {
-                this.onEndAddCriterionsDelegate = new EndOperationDelegate(this.OnEndAddCriterions);
-            }
-            if ((this.onAddCriterionsCompletedDelegate == null)) {
-                this.onAddCriterionsCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddCriterionsCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddCriterionsDelegate, new object[] {
-                        name_crit,
-                        qualit_crit,
-                        valid_values,
-                        id_category}, this.onEndAddCriterionsDelegate, this.onAddCriterionsCompletedDelegate, userState);
-        }
-        
-        public bool AddFiledsOfScience(string name_fos) {
-            return base.Channel.AddFiledsOfScience(name_fos);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public System.IAsyncResult BeginAddFiledsOfScience(string name_fos, System.AsyncCallback callback, object asyncState) {
-            return base.Channel.BeginAddFiledsOfScience(name_fos, callback, asyncState);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        public bool EndAddFiledsOfScience(System.IAsyncResult result) {
-            return base.Channel.EndAddFiledsOfScience(result);
-        }
-        
-        private System.IAsyncResult OnBeginAddFiledsOfScience(object[] inValues, System.AsyncCallback callback, object asyncState) {
-            string name_fos = ((string)(inValues[0]));
-            return this.BeginAddFiledsOfScience(name_fos, callback, asyncState);
-        }
-        
-        private object[] OnEndAddFiledsOfScience(System.IAsyncResult result) {
-            bool retVal = this.EndAddFiledsOfScience(result);
-            return new object[] {
-                    retVal};
-        }
-        
-        private void OnAddFiledsOfScienceCompleted(object state) {
-            if ((this.AddFiledsOfScienceCompleted != null)) {
-                InvokeAsyncCompletedEventArgs e = ((InvokeAsyncCompletedEventArgs)(state));
-                this.AddFiledsOfScienceCompleted(this, new AddFiledsOfScienceCompletedEventArgs(e.Results, e.Error, e.Cancelled, e.UserState));
-            }
-        }
-        
-        public void AddFiledsOfScienceAsync(string name_fos) {
-            this.AddFiledsOfScienceAsync(name_fos, null);
-        }
-        
-        public void AddFiledsOfScienceAsync(string name_fos, object userState) {
-            if ((this.onBeginAddFiledsOfScienceDelegate == null)) {
-                this.onBeginAddFiledsOfScienceDelegate = new BeginOperationDelegate(this.OnBeginAddFiledsOfScience);
-            }
-            if ((this.onEndAddFiledsOfScienceDelegate == null)) {
-                this.onEndAddFiledsOfScienceDelegate = new EndOperationDelegate(this.OnEndAddFiledsOfScience);
-            }
-            if ((this.onAddFiledsOfScienceCompletedDelegate == null)) {
-                this.onAddFiledsOfScienceCompletedDelegate = new System.Threading.SendOrPostCallback(this.OnAddFiledsOfScienceCompleted);
-            }
-            base.InvokeAsync(this.onBeginAddFiledsOfScienceDelegate, new object[] {
-                        name_fos}, this.onEndAddFiledsOfScienceDelegate, this.onAddFiledsOfScienceCompletedDelegate, userState);
         }
     }
 }

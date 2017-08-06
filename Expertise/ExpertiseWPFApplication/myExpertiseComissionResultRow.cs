@@ -8,12 +8,14 @@ namespace ExpertiseWPFApplication
 {
     class myExpertiseComissionResultRow
     {
-        public myExpertiseComissionResultRow(string name, double[] content)
+        public myExpertiseComissionResultRow(int id_expert, string name, double[] content)
         {
+            this.id_expert = id_expert;
             this.name = name;
             this.content = content;
         }
 
+        public int id_expert { get; set; }
         public string name { get; set; }
         public double[] content { get; set; }
     }

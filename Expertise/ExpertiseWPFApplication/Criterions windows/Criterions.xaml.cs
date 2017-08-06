@@ -197,11 +197,15 @@ namespace ExpertiseWPFApplication
             _AddCategory.Owner = this;
             if (_AddCategory.ShowDialog() == true)
             {
-                client.GetListCategoriesAsync();
+                Waiting(true);
+                dataGrid.ItemsSource = null;
+                client.GetListCategoryForCritDirectoryAsync();
             }
             else
             {
-                client.GetListCategoriesAsync();
+                //Waiting(true);
+                //dataGrid.ItemsSource = null;
+                //client.GetListCategoriesAsync();
             }
         }
         private void button1_Click_1(object sender, RoutedEventArgs e) //добавить критерий
@@ -231,8 +235,8 @@ namespace ExpertiseWPFApplication
                 _AddCriterions.Owner = this;
                 if (_AddCriterions.ShowDialog() == true)
                 {
-                    dataGrid1.ItemsSource = null;
                     Waiting(true);
+                    dataGrid1.ItemsSource = null;
                     client.GetListCategoryForCritDirectoryAsync();
                 }
             }

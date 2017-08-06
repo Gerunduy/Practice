@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="CardExpertiseProject" Height="699.722" Width="553" MaxWidth="636" >
+        Title="CardExpertiseProject" Height="700" Width="553" ResizeMode="NoResize">
     <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"></ColumnDefinition>
@@ -28,12 +28,12 @@
         <Label x:Name="label4" Grid.Column="0" Content="Код ГРНТИ" HorizontalAlignment="Left" Margin="17,231,0,0" Height="26" VerticalAlignment="Top"/>
         <Label x:Name="label5" Grid.Column="0" Content="Дата начала проекта" HorizontalAlignment="Left" Margin="17,262,0,0" Height="26" VerticalAlignment="Top"/>
         <Label x:Name="label6" Grid.Column="0" Content="Дата завершения" HorizontalAlignment="Left" Margin="17,284,0,0" Height="26" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Grid.Column="0" Content="Сумма финансирования" HorizontalAlignment="Left" Margin="17,310,0,0" Height="26" VerticalAlignment="Top"/>
-        <Label x:Name="label8" Grid.Column="0" Content="Контактные данные" HorizontalAlignment="Left" Margin="17,341,0,0" Height="26" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,30,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,58,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox6" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,316,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox7" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,344,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Grid.Column="0" Content="Сумма финансирования" HorizontalAlignment="Left" Margin="17,343,0,0" Height="26" VerticalAlignment="Top"/>
+        <Label x:Name="label8" Grid.Column="0" Content="Контактные данные" HorizontalAlignment="Left" Margin="17,369,0,0" Height="26" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,30,10,0" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,58,10,0" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox6" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,344,10,0" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox7" IsReadOnly="True" Grid.Column="0" Height="23" Margin="171,372,10,0" Text="" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" Grid.Column="0" Visibility="Hidden" Margin="171,87,10,0" VerticalAlignment="Top" SelectionChanged="comboBox_SelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
@@ -52,7 +52,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="button" Content="Редактировать" Grid.Column="0" Margin="17,392,234,0" VerticalAlignment="Top" Height="42" Click="button_Click"/>
+        <Button x:Name="button" Content="Редактировать" Grid.Column="0" Margin="18,409,233,0" VerticalAlignment="Top" Height="42" Click="button_Click"/>
         <Button x:Name="button1" Grid.Column="1" Visibility="Hidden" Content="Новый автор" Margin="10,87,10,0" VerticalAlignment="Top" Height="22" Click="button1_Click" RenderTransformOrigin="0.5,0.5">
 
         </Button>
@@ -70,14 +70,16 @@
         </ComboBox>
         <DatePicker Name="datePicker1" IsEnabled="False" Grid.Column="0" Margin="171,258,10,0" VerticalAlignment="Top"/>
         <DatePicker Name="datePicker2" IsEnabled="False" Grid.Column="0" Margin="171,287,10,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox2" IsReadOnly="True" Height="23" Margin="171,203,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox3" IsReadOnly="True" Height="23" Margin="171,231,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <Button x:Name="button3" Content="Удалить" Margin="241,392,10,0" VerticalAlignment="Top" Height="42" Click="Delete_Click"/>
+        <TextBox x:Name="textBox2" IsReadOnly="True" Height="23" Margin="171,203,10,0" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox3" IsReadOnly="True" Height="23" Margin="171,231,10,0" Text="" VerticalAlignment="Top"/>
+        <Button x:Name="button3" Content="Удалить" Margin="242,409,9,0" VerticalAlignment="Top" Height="42" Click="Delete_Click"/>
         <DataGrid x:Name="dataGrid" IsReadOnly="True" CanUserAddRows="False" Margin="10,0,10,10" Grid.ColumnSpan="2" Height="114" VerticalAlignment="Bottom"/>
-        <Label x:Name="label9" Content="Информация о проведенной экспертизе:" HorizontalAlignment="Left" Margin="17,439,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label10" Content="Наименование конкурса" HorizontalAlignment="Left" Margin="17,465,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label11" Content="Дата участия" HorizontalAlignment="Left" Margin="17,496,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox4" IsReadOnly="True" Height="23" Margin="185,468,71,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox5" IsReadOnly="True" Height="23" Margin="185,496,71,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label x:Name="label9" Content="Информация о проведенной экспертизе:" HorizontalAlignment="Left" Margin="18,456,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label10" Content="Наименование конкурса" HorizontalAlignment="Left" Margin="18,482,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label11" Content="Дата участия" HorizontalAlignment="Left" Margin="18,513,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox4" IsReadOnly="True" Height="23" Margin="186,485,70,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox5" IsReadOnly="True" Height="23" Margin="186,513,70,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top"/>
+        <Label x:Name="label8_Copy" Grid.Column="0" Content="Организация" HorizontalAlignment="Left" Margin="17,313,0,0" Height="26" VerticalAlignment="Top" Width="127"/>
+        <TextBox x:Name="tbxOrganization" IsReadOnly="True" Height="23" Margin="171,316,10,0" Text="" VerticalAlignment="Top"/>
     </Grid>
 </Window>

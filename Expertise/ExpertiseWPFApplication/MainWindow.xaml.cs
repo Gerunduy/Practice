@@ -154,7 +154,8 @@ namespace ExpertiseWPFApplication
         {
             _Experts = new Experts();
             _Experts.Owner = this;
-            _Experts.ShowDialog();
+            //_Experts.ShowDialog();
+            _Experts.Show();
         }
         //новый проект
         private void button_Click(object sender, RoutedEventArgs e)
@@ -172,7 +173,8 @@ namespace ExpertiseWPFApplication
             
             _Projects = new Projects();
             _Projects.Owner = this;
-            _Projects.ShowDialog();
+            //_Projects.ShowDialog();
+            _Projects.Show();
         }
         //новый эксперт
         private void button1_Click(object sender, RoutedEventArgs e)
@@ -258,6 +260,10 @@ namespace ExpertiseWPFApplication
                 tblUserInfo.Text = FullNameUser;
                 button10.IsEnabled = true;
                 button11.Content = "Выход";
+
+                button.IsEnabled = true;
+                button1.IsEnabled = true;
+                if (User.comission_chairman) button2.IsEnabled = true; else button2.IsEnabled = false;
             }
             else
             {
@@ -265,6 +271,10 @@ namespace ExpertiseWPFApplication
                 tblUserInfo.Text = FullNameUser;
                 button10.IsEnabled = false;
                 button11.Content = "Вход";
+
+                button.IsEnabled = false;
+                button1.IsEnabled = false;
+                button2.IsEnabled = false;
             }
         }
         //текущие эксертизы

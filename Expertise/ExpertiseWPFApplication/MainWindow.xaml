@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="310" Width="590" MinHeight="290" MinWidth="570" MaxHeight="360" MaxWidth="640">
+        Title="Мастер экспертиз" Height="310" Width="590" MinHeight="290" MinWidth="570" MaxHeight="360" MaxWidth="640">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>

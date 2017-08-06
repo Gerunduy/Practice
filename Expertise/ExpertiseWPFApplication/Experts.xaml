@@ -5,25 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ExpertiseWPFApplication"
         mc:Ignorable="d"
-        Title="Experts" Height="495.839" Width="896.273">
+        Title="Эксперты" Height="400" Width="1000" MinHeight="250" MinWidth="900">
     <Grid>
+        <TextBlock Grid.Row="1" Grid.Column="1" Name="tblWait" FontSize="100" Text="Обработка..." Margin="10" Padding="220,100,200,200" TextAlignment="Center" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}" />
         <DataGrid x:Name="dataGrid1" AutoGenerateColumns="False"  CanUserAddRows="False" IsReadOnly="True" Margin="10">
             <DataGrid.Columns>
 
-                <DataGridTextColumn Width="*" Binding="{Binding number }" Header="Номер п\п" />
-                <DataGridTextColumn Width="2*" Binding="{Binding FIO  }" Header="ФИО"/>
-                <DataGridTextColumn Width="*" Binding="{Binding job_expert }" Header="Организация" />
-                <DataGridTextColumn Width="*" Binding="{Binding post_expert }" Header="Должность"/>
-                <DataGridTextColumn Width="2*" Binding="{Binding degree_rank_expert  }" Header="Ученая степень, ученое звание"   />
+                <DataGridTextColumn Width="auto" Binding="{Binding id_expert}" Header="№" />
+                <DataGridTextColumn Width="3*" Binding="{Binding FIO  }" Header="ФИО"/>
+                <DataGridTextColumn Width="auto" Binding="{Binding job_expert }" Header="Организация" />
+                <DataGridTextColumn Width="auto" Binding="{Binding post_expert }" Header="Должность"/>
+                <DataGridTextColumn Width="auto" Binding="{Binding degree_rank_expert  }" Header="Ученая степень, ученое звание"   />
                 <DataGridTextColumn Width="*" Binding="{Binding countexpertise  }" Header="Кол-во проведенных экспертиз"   />
-                <DataGridTextColumn Width="*" Binding="{Binding delete_expert  }" Header="статус"   />
-                
+                <DataGridTextColumn Width="auto" Binding="{Binding status  }" Header="Статус"   />
 
-                <DataGridTemplateColumn Width="2*" Header="Карточка эксперта">
+
+                <DataGridTemplateColumn Width="auto" Header="">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
 
-                            <Button Content="перейте в карточку эксперта"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_expert_Click"/>
+                            <Button Content="В карточку"  Width="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type ComboBox}}, Path=ActualWidth}"  Click="bt_expert_Click"/>
 
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

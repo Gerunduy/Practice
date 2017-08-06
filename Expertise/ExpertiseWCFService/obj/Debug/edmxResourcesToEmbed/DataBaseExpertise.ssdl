@@ -219,6 +219,7 @@
     <Property Name="email_project" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="delete_project" Type="bit" Nullable="false" />
     <Property Name="exsist_exp_project" Type="bit" Nullable="false" />
+    <Property Name="org_project" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="RatedFilms">
     <Key>

@@ -51,6 +51,8 @@ namespace ExpertiseWPFApplication
 
         EditExpertiseCard _EditExpertiseCard;
         EspertiseResult _ExpertiseResult;
+        CardExpertiseProject _CardExpertiseProject;
+        ExpertCard _ExpertCard;
 
         public ExpertiseCard(int id_expertise, ServiceReference1.Experts expert)
         {
@@ -59,6 +61,7 @@ namespace ExpertiseWPFApplication
             this.expert = expert;
 
             client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
+            client.GetListAuthorsForProjectCompleted += Client_GetListAuthorsForProjectCompleted;
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
             Waiting(true);
             ShowResultExpertiseTable(false);
@@ -69,6 +72,7 @@ namespace ExpertiseWPFApplication
             this.id_expertise = id_expertise;
 
             client.GetMyExpertiseForCardByIDCompleted += Client_GetMyExpertiseForCardByIDCompleted;
+            client.GetListAuthorsForProjectCompleted += Client_GetListAuthorsForProjectCompleted;
             client.GetMyExpertiseForCardByIDAsync(id_expertise);
             btnEditExpertise.Visibility = Visibility.Hidden;
             Waiting(true);
@@ -177,7 +181,7 @@ namespace ExpertiseWPFApplication
                     arr[d] = Math.Round(arr[d], 3);
                 }
 
-                myExpertiseComissionResultRow Row = new myExpertiseComissionResultRow(Expertise.ListExperts[i].name_expert, arr);
+                myExpertiseComissionResultRow Row = new myExpertiseComissionResultRow(Expertise.ListExperts[i].id_expert, string.Format("{0} {1}, {2}", Expertise.ListExperts[i].surname_expert, Expertise.ListExperts[i].name_expert, Expertise.ListExperts[i].patronymic_expert), arr);
                 ListComissionResult.Add(Row);
             }
             // === === ===
@@ -457,6 +461,47 @@ namespace ExpertiseWPFApplication
             _ExpertiseResult = new EspertiseResult(Expertise,expert);
             _ExpertiseResult.Owner = this;
             _ExpertiseResult.Show();
+        }
+        //=======================================================================================
+        private void Client_GetListAuthorsForProjectCompleted(object sender, ServiceReference1.GetListAuthorsForProjectCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                _CardExpertiseProject.listauthor = e.Result.ToList();
+                for (int i = 0; i < e.Result.ToList().Count; i++)
+                {
+                    _CardExpertiseProject.textBlock.Text += e.Result.ToList()[i].FIO + "\r\n";
+
+                }
+                if (_CardExpertiseProject.ShowDialog() == true)
+                {
+                    Waiting(true);
+                    client.GetMyExpertiseForCardByIDAsync(id_expertise);
+                }
+                else
+                {
+                    Waiting(true);
+                }
+            }
+            else
+                MessageBox.Show(e.Error.Message);
+        }
+        private void btnGoToProjectCard_Click(object sender, RoutedEventArgs e)
+        {
+            ServiceReference1.myProjectForExpertiseCard temp = dgExpertiseProjectList.SelectedItem as ServiceReference1.myProjectForExpertiseCard;
+
+            _CardExpertiseProject = new CardExpertiseProject(temp.id_project);
+            _CardExpertiseProject.Owner = this;
+            _CardExpertiseProject.ShowDialog();
+        }
+
+        private void btnGoToExpertCard_Click(object sender, RoutedEventArgs e)
+        {
+            myExpertiseComissionResultRow temp = dgExpertiseExpertCommissionResult.SelectedItem as myExpertiseComissionResultRow;
+
+            _ExpertCard = new ExpertCard(temp.id_expert);
+            _ExpertCard.Owner = this;
+            _ExpertCard.ShowDialog();
         }
         //=======================================================================================
     }

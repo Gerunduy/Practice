@@ -25,7 +25,8 @@ namespace ExpertiseWPFApplication
         {
             InitializeComponent();
             client.GetListExpertsWithCountExpertiseCompleted += Client_GetListExpertsWithCountExpertiseCompleted;
-            client.GetListExpertsWithCountExpertiseAsync();
+            Waiting(true);
+            client.GetListExpertsWithCountExpertiseAsync();        
         }
 
         private void Client_GetListExpertsWithCountExpertiseCompleted(object sender, ServiceReference1.GetListExpertsWithCountExpertiseCompletedEventArgs e)
@@ -33,14 +34,26 @@ namespace ExpertiseWPFApplication
             if (e.Error == null)
             {
                 dataGrid1.ItemsSource = e.Result.ToList();
-
+                Waiting(false);
             }
 
 
             else
                 MessageBox.Show(e.Error.Message);
         }
-
+        private void Waiting(bool Wait)
+        {
+            if (Wait)
+            {
+                dataGrid1.Visibility = Visibility.Hidden;
+                tblWait.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                dataGrid1.Visibility = Visibility.Visible;
+                tblWait.Visibility = Visibility.Hidden;
+            }
+        }
         private void bt_expert_Click(object sender, RoutedEventArgs e)
         {
             ServiceReference1.ExpertsWithCountExpertise temp = dataGrid1.SelectedItem as ServiceReference1.ExpertsWithCountExpertise;
@@ -57,6 +70,8 @@ namespace ExpertiseWPFApplication
             _ExpertCard.textBox6.Text = temp.contacts_expert;
             _ExpertCard.textBox8.Text = temp.login_expert;
             _ExpertCard.textBox9.Text = temp.password_expert;
+            if(temp.commision_chairman) _ExpertCard.chkbxChairman.IsChecked = true; else _ExpertCard.chkbxChairman.IsChecked = false;
+            _ExpertCard.chkbxChairman.IsEnabled = false;
             _ExpertCard.id_expert = temp.id_expert;
             _ExpertCard.client.Expertise_ExpertAsync(temp.id_expert);
             _ExpertCard.textBlock.Text = "";

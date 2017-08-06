@@ -29,7 +29,8 @@ namespace ExpertiseWPFApplication
             InitializeComponent();
             client.GetListAuthorsCompleted += Client_GetListAuthorsCompleted;
             client.AddProjectsCompleted += Client_AddProjectsCompleted;
-            
+            datePicker1.SelectedDate = DateTime.Now;
+            datePicker2.SelectedDate = DateTime.Now;
         }
 
         private void Client_AddProjectsCompleted(object sender, ServiceReference1.AddProjectsCompletedEventArgs e)
@@ -61,21 +62,27 @@ namespace ExpertiseWPFApplication
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            
-            string name_project = textBox.Text;
-            string lead_project = textBox1.Text;
-           
-            DateTime begin_project = DateTime.Parse(datePicker1.SelectedDate.Value.ToShortDateString());
-            DateTime end_project = DateTime.Parse( datePicker2.SelectedDate.Value.ToShortDateString());
-            string money_project = textBox6.Text;
-            string email_project = textBox7.Text;
-            int[] idAuthorList = new int[listauthor.Count];
-            for (int i = 0; i < listauthor.Count; i++)
+            if (textBox.Text.Trim(' ') != "" && textBox1.Text.Trim(' ') != "" && textBox6.Text.Trim(' ') != "" && textBox7.Text.Trim(' ') != "" && tbxOrganization.Text.Trim(' ') != "" && listauthor.Count() != 0 && comboBox1.SelectedItem != null && comboBox2.SelectedItem != null)
             {
-                idAuthorList[i] = listauthor[i].id_author;
+                string name_project = textBox.Text;
+                string lead_project = textBox1.Text;
+
+                DateTime begin_project = DateTime.Parse(datePicker1.SelectedDate.Value.ToShortDateString());
+                DateTime end_project = DateTime.Parse(datePicker2.SelectedDate.Value.ToShortDateString());
+                string money_project = textBox6.Text;
+                string email_project = textBox7.Text;
+                string organization = tbxOrganization.Text;
+                int[] idAuthorList = new int[listauthor.Count];
+                for (int i = 0; i < listauthor.Count; i++)
+                {
+                    idAuthorList[i] = listauthor[i].id_author;
+                }
+                client.AddProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, organization, money_project, email_project, idAuthorList, fos);
             }
-            client.AddProjectsAsync(name_project, lead_project, grnti_project, begin_project, end_project, money_project, email_project, idAuthorList, fos);
-           
+            else
+            {
+                MessageBox.Show("Некорректное заполнение полей!");
+            }
         }
 
         private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -103,7 +103,7 @@ namespace ExpertiseWPFApplication
                     Math.DivRem(i, 2, out x);
 
                     RowDefinition rd = new RowDefinition();
-                    if (x == 0) rd.Height = new GridLength(40); else rd.Height = new GridLength(5);
+                    if (x == 0) rd.Height = new GridLength(55); else rd.Height = new GridLength(5);
                     gContent.RowDefinitions.Add(rd);      
                 }
 

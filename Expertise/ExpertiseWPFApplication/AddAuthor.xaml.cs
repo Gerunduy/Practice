@@ -30,7 +30,7 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("добавлено");
+                MessageBox.Show("Автор добавлен");
                 this.DialogResult = true;
 
             }
@@ -42,10 +42,17 @@ namespace ExpertiseWPFApplication
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            string surname_author = textBox.Text;
-            string name_author = textBox1.Text;
-            string patronymic_author = textBox2.Text;
-            client.AddAuthorsAsync(surname_author, name_author, patronymic_author);
+            if (textBox.Text.Trim(' ') != "" && textBox1.Text.Trim(' ') != "" && textBox2.Text.Trim(' ') != "")
+            {
+                string surname_author = textBox.Text;
+                string name_author = textBox1.Text;
+                string patronymic_author = textBox2.Text;
+                client.AddAuthorsAsync(surname_author, name_author, patronymic_author);
+            }
+            else
+            {
+                MessageBox.Show("Некорректное заполнение полей!");
+            }
         }
     }
 }

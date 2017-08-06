@@ -203,6 +203,7 @@
     <EntitySetMapping Name="Projects">
       <EntityTypeMapping TypeName="db_AAZModel.Projects">
         <MappingFragment StoreEntitySet="Projects">
+          <ScalarProperty Name="org_project" ColumnName="org_project" />
           <ScalarProperty Name="exsist_exp_project" ColumnName="exsist_exp_project" />
           <ScalarProperty Name="delete_project" ColumnName="delete_project" />
           <ScalarProperty Name="id_project" ColumnName="id_project" />

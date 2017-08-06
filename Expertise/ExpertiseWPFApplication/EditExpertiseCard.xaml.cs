@@ -83,9 +83,6 @@ namespace ExpertiseWPFApplication
             gCriterions.IsEnabled = false;
             gExperts.IsEnabled = false;
         }
-
-        
-
         //=======================================================================================
         private void Client_GetTabelsForEditExpertiseByIDCompleted(object sender, ServiceReference1.GetTabelsForEditExpertiseByIDCompletedEventArgs e)
         {
@@ -483,7 +480,7 @@ namespace ExpertiseWPFApplication
             if (cmbFOS.SelectedItem == null) { b2 = false; cmbFOS.BorderBrush = Brushes.Red; } else { b2 = true; cmbFOS.BorderBrush = Brushes.Black; }
             if (lExpertiseProjects.Count < 1) { b3 = false; dgExpertiseProjectList.BorderBrush = Brushes.Red; } else { b3 = true; dgExpertiseProjectList.BorderBrush = Brushes.Black; }
             if (lExpertiseCrit.Count < 1) { b4 = false; dgExpertiseCritList.BorderBrush = Brushes.Red; } else { b4 = true; dgExpertiseCritList.BorderBrush = Brushes.Black; }
-            if (int.TryParse(tbxCountExpertiseProjects.Text, out Count_proj_expertise)) { b5 = true; tbxCountExpertiseProjects.BorderBrush = Brushes.Black; } else { b5 = false; tbxCountExpertiseProjects.BorderBrush = Brushes.Red; }
+            if (int.TryParse(tbxCountExpertiseProjects.Text, out Count_proj_expertise) && Count_proj_expertise > 0) { b5 = true; tbxCountExpertiseProjects.BorderBrush = Brushes.Black; } else { b5 = false; tbxCountExpertiseProjects.BorderBrush = Brushes.Red; }
             if (lExpertiseExperts.Count < 1) { b6 = false; dgExpertiseExpertList.BorderBrush = Brushes.Red; } else { b6 = true; dgExpertiseExpertList.BorderBrush = Brushes.Black; }
 
             // === === ===
@@ -523,11 +520,19 @@ namespace ExpertiseWPFApplication
                     lexperts.Add(tE);
                 }
 
-                client.EditExpertiseByIDAsync(id_expertise, ExpertiseName, DateTime.Now, ExpertiseFOS.id_fos, Count_proj_expertise, lprojects.ToArray(), lcrits.ToArray(), lexperts.ToArray());
+                if (Count_proj_expertise >= lprojects.Count())
+                {
+                    MessageBox.Show("Количество поддерживаемых проектов не должно ровняться количеству участвуюцих проектов и привышать его!");
+                }
+                else
+                {
+                    client.EditExpertiseByIDAsync(id_expertise, ExpertiseName, DateTime.Now, ExpertiseFOS.id_fos, Count_proj_expertise, lprojects.ToArray(), lcrits.ToArray(), lexperts.ToArray());
 
-                Waiting(true);
-                tblWait.Padding = new Thickness(100, 200, 200, 200);
-                tblWait.Text = string.Format("Редактирование \n экспертизы...");
+                    Waiting(true);
+                    tblWait.Padding = new Thickness(100, 200, 200, 200);
+                    tblWait.Text = string.Format("Редактирование \n экспертизы...");
+                }
+
             }
             else
             {

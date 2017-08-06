@@ -33,9 +33,8 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("Изменения сохранены.");
                 this.DialogResult = true;
-
+                MessageBox.Show("Изменения сохранены.");
             }
             else
                 MessageBox.Show(e.Error.Message);
@@ -45,9 +44,8 @@ namespace ExpertiseWPFApplication
         {
             if (e.Error == null)
             {
-                MessageBox.Show("Добавлено.");
                 this.DialogResult = true;
-
+                MessageBox.Show("Добавлено.");
             }
             else
                 MessageBox.Show(e.Error.Message);
@@ -66,7 +64,6 @@ namespace ExpertiseWPFApplication
                 string name_fos = textBox.Text;
                 client.EditFiledsOfScienceAsync(id_fos, name_fos);
             }
-
         }
     }
 }
